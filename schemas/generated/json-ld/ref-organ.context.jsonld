@@ -1,0 +1,153 @@
+{
+   "_comments": "Auto generated from ref-organ.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2023-03-09T15:08:54\n    Schema: ref-organ\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: http://purl.humanatlas.io/specs/ref-organ\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "@context": {
+      "ccf": "http://purl.org/ccf/",
+      "dcterms": "http://purl.org/dc/terms/",
+      "linkml": "https://w3id.org/linkml/",
+      "obo": "http://purl.obolibrary.org/obo/",
+      "pav": "http://purl.org/pav/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "@vocab": "http://purl.org/ccf/",
+      "extraction_sets": {
+         "@type": "@id"
+      },
+      "rui_placements": {
+         "@type": "@id"
+      },
+      "spatial_entities": {
+         "@type": "@id"
+      },
+      "creation_date": {
+         "@type": "xsd:date",
+         "@id": "dcterms:created"
+      },
+      "creator": {
+         "@id": "dcterms:creator"
+      },
+      "dimension_unit": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "extraction_set": {
+         "@type": "@id"
+      },
+      "extraction_set_for": {
+         "@type": "@id"
+      },
+      "id": "@id",
+      "label": {
+         "@id": "rdfs:label"
+      },
+      "object_reference": {
+         "@type": "@id"
+      },
+      "organ_donor_sex": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "organ_side": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "placement": {
+         "@type": "@id"
+      },
+      "placement_date": {
+         "@type": "xsd:date",
+         "@id": "dcterms:created"
+      },
+      "placements": {
+         "@type": "@id"
+      },
+      "reference_organ": {
+         "@type": "@id"
+      },
+      "representation_of": {
+         "@type": "@id"
+      },
+      "rotation_unit": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "rui_rank": {
+         "@type": "xsd:integer"
+      },
+      "scaling_unit": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "source": {
+         "@type": "@id"
+      },
+      "target": {
+         "@type": "@id"
+      },
+      "translation_unit": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "x_dimension": {
+         "@type": "xsd:decimal"
+      },
+      "x_rotation": {
+         "@type": "xsd:decimal"
+      },
+      "x_scaling": {
+         "@type": "xsd:decimal"
+      },
+      "x_translation": {
+         "@type": "xsd:decimal"
+      },
+      "y_dimension": {
+         "@type": "xsd:decimal"
+      },
+      "y_rotation": {
+         "@type": "xsd:decimal"
+      },
+      "y_scaling": {
+         "@type": "xsd:decimal"
+      },
+      "y_translation": {
+         "@type": "xsd:decimal"
+      },
+      "z_dimension": {
+         "@type": "xsd:decimal"
+      },
+      "z_rotation": {
+         "@type": "xsd:decimal"
+      },
+      "z_scaling": {
+         "@type": "xsd:decimal"
+      },
+      "z_translation": {
+         "@type": "xsd:decimal"
+      }
+   }
+}
+

@@ -1,0 +1,582 @@
+@prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
+@prefix ccf: <http://purl.org/ccf/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.humanatlas.io/specs/ref-organ> a owl:Ontology ;
+    rdfs:label "ref-organ" ;
+    IAO:0000700 ccf:AnatomicalStructure,
+        ccf:Container,
+        ccf:ExtractionSet,
+        ccf:SpatialEntity,
+        ccf:SpatialObjectReference,
+        ccf:SpatialPlacement ;
+    dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
+    linkml:generation_date "2023-03-09T15:08:55" ;
+    linkml:metamodel_version "1.7.0" ;
+    linkml:source_file "ref-organ.yaml" ;
+    linkml:source_file_date "2023-03-09T15:07:24" ;
+    linkml:source_file_size 7485 .
+
+linkml:SubsetDefinition a owl:Class ;
+    rdfs:label "subset_definition" ;
+    skos:definition "the name and description of a subset" .
+
+linkml:TypeDefinition a owl:Class ;
+    rdfs:label "type_definition" ;
+    skos:definition "A data type definition." .
+
+linkml:topValue a owl:DatatypeProperty ;
+    rdfs:label "value" .
+
+ccf:Container a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Container" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ccf:ExtractionSet ;
+            owl:onProperty ccf:extraction_sets ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:SpatialEntity ;
+            owl:onProperty ccf:spatial_entities ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:SpatialPlacement ;
+            owl:onProperty ccf:rui_placements ] .
+
+ccf:extraction_sets a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "extraction_sets" ;
+    rdfs:range ccf:ExtractionSet .
+
+ccf:rui_placements a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "rui_placements" ;
+    rdfs:range ccf:SpatialPlacement .
+
+ccf:spatial_entities a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "spatial_entities" ;
+    rdfs:range ccf:SpatialEntity .
+
+obo:HP_0012834 a ccf:OrganSideEnum,
+        owl:Class ;
+    rdfs:label "Right" ;
+    skos:definition "Being located on the right side of the body." .
+
+obo:HP_0012835 a ccf:OrganSideEnum,
+        owl:Class ;
+    rdfs:label "Left" ;
+    skos:definition "Being located on the left side of the body." .
+
+obo:UO_0000185 a ccf:RotationUnitEnum,
+        owl:Class ;
+    rdfs:label "degree" ;
+    skos:definition "A plane angle unit which is equal to 1/360 of a full rotation." .
+
+obo:UO_0010006 a ccf:ScalingUnitEnum,
+        owl:Class ;
+    rdfs:label "ratio" ;
+    skos:definition "A dimensionless ratio unit which, given a pair of quantities a and b, for which b is a multiple of a, denotes b by giving the multiplier (coefficient) c for a to result in b." .
+
+ccf:creator_first_name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "creator_first_name" ;
+    rdfs:range linkml:String ;
+    skos:exactMatch ccf:creator_first_name .
+
+ccf:creator_last_name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "creator_last_name" ;
+    rdfs:range linkml:String ;
+    skos:exactMatch ccf:creator_last_name .
+
+ccf:creator_orcid a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "creator_orcid" ;
+    rdfs:range linkml:String ;
+    skos:exactMatch ccf:creator_orcid .
+
+ccf:dimension_unit a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "dimension_unit" ;
+    rdfs:range ccf:DimensionUnitEnum ;
+    skos:exactMatch ccf:dimension_unit .
+
+ccf:extraction_set_for a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "extraction_set_for" ;
+    rdfs:range ccf:SpatialEntity ;
+    skos:exactMatch ccf:extraction_set_for .
+
+ccf:file_format a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "file_format" ;
+    rdfs:range linkml:String ;
+    skos:exactMatch ccf:file_format .
+
+ccf:file_subpath a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "file_subpath" ;
+    rdfs:range linkml:String ;
+    skos:exactMatch ccf:file_subpath .
+
+ccf:file_url a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "file" ;
+    rdfs:range linkml:String ;
+    skos:exactMatch ccf:file_url .
+
+ccf:has_extraction_set a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "extraction_set" ;
+    rdfs:range ccf:ExtractionSet ;
+    skos:exactMatch ccf:has_extraction_set .
+
+ccf:has_object_reference a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "object_reference" ;
+    rdfs:range ccf:SpatialObjectReference ;
+    skos:exactMatch ccf:has_object_reference .
+
+ccf:has_placement a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+ccf:has_reference_organ a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "reference_organ" ;
+    rdfs:range ccf:SpatialEntity ;
+    skos:exactMatch ccf:has_reference_organ .
+
+ccf:organ_donor_sex a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "organ_donor_sex" ;
+    rdfs:range ccf:DonorSexEnum ;
+    skos:exactMatch ccf:organ_donor_sex .
+
+ccf:organ_side a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "organ_side" ;
+    rdfs:range ccf:OrganSideEnum ;
+    skos:exactMatch ccf:organ_side .
+
+ccf:placement_for a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "source" ;
+    rdfs:range ccf:SpatialEntity ;
+    skos:exactMatch ccf:placement_for .
+
+ccf:placement_relative_to a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "target" ;
+    rdfs:range ccf:SpatialEntity ;
+    skos:exactMatch ccf:placement_relative_to .
+
+ccf:representation_of a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "representation_of" ;
+    rdfs:range ccf:AnatomicalStructure ;
+    skos:exactMatch ccf:representation_of .
+
+ccf:rotation_order a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "rotation_order" ;
+    rdfs:range linkml:String ;
+    skos:exactMatch ccf:rotation_order .
+
+ccf:rotation_unit a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "rotation_unit" ;
+    rdfs:range ccf:RotationUnitEnum ;
+    skos:exactMatch ccf:rotation_unit .
+
+ccf:scaling_unit a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "scaling_unit" ;
+    rdfs:range ccf:ScalingUnitEnum ;
+    skos:exactMatch ccf:scaling_unit .
+
+ccf:translation_unit a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "translation_unit" ;
+    rdfs:range ccf:TranslationUnitEnum ;
+    skos:exactMatch ccf:translation_unit .
+
+ccf:x_dimension a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "x_dimension" ;
+    rdfs:range linkml:Decimal ;
+    skos:exactMatch ccf:x_dimension .
+
+ccf:x_rotation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "x_rotation" ;
+    rdfs:range linkml:Decimal ;
+    skos:exactMatch ccf:x_rotation .
+
+ccf:x_scaling a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "x_scaling" ;
+    rdfs:range linkml:Decimal ;
+    skos:exactMatch ccf:x_scaling .
+
+ccf:x_translation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "x_translation" ;
+    rdfs:range linkml:Decimal ;
+    skos:exactMatch ccf:x_translation .
+
+ccf:y_dimension a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "y_dimension" ;
+    rdfs:range linkml:Decimal ;
+    skos:exactMatch ccf:y_dimension .
+
+ccf:y_rotation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "y_rotation" ;
+    rdfs:range linkml:Decimal ;
+    skos:exactMatch ccf:y_rotation .
+
+ccf:y_scaling a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "y_scaling" ;
+    rdfs:range linkml:Decimal ;
+    skos:exactMatch ccf:y_scaling .
+
+ccf:y_translation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "y_translation" ;
+    rdfs:range linkml:Decimal ;
+    skos:exactMatch ccf:y_translation .
+
+ccf:z_dimension a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "z_dimension" ;
+    rdfs:range linkml:Decimal ;
+    skos:exactMatch ccf:z_dimension .
+
+ccf:z_rotation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "z_rotation" ;
+    rdfs:range linkml:Decimal ;
+    skos:exactMatch ccf:z_rotation .
+
+ccf:z_scaling a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "z_scaling" ;
+    rdfs:range linkml:Decimal ;
+    skos:exactMatch ccf:z_scaling .
+
+ccf:z_translation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "z_translation" ;
+    rdfs:range linkml:Decimal ;
+    skos:exactMatch ccf:z_translation .
+
+dcterms:created a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
+dcterms:creator a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "creator" ;
+    rdfs:range linkml:String ;
+    skos:exactMatch dcterms:creator .
+
+obo:PATO_0000384 a ccf:DonorSexEnum,
+        owl:Class ;
+    rdfs:label "Female",
+        "Male" ;
+    skos:definition "A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes.",
+        "A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes." .
+
+ccf:DonorSexEnum a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "DonorSexEnum" ;
+    owl:unionOf ( obo:PATO_0000384 obo:PATO_0000384 ) ;
+    linkml:permissible_values obo:PATO_0000384 .
+
+ccf:RotationUnitEnum a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "RotationUnitEnum" ;
+    owl:unionOf ( obo:UO_0000185 ) ;
+    linkml:permissible_values obo:UO_0000185 .
+
+ccf:ScalingUnitEnum a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "ScalingUnitEnum" ;
+    owl:unionOf ( obo:UO_0010006 ) ;
+    linkml:permissible_values obo:UO_0010006 .
+
+ccf:rui_rank a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "rui_rank" ;
+    rdfs:range linkml:Integer ;
+    skos:exactMatch ccf:rui_rank .
+
+rdfs:label a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "label" ;
+    rdfs:range linkml:String ;
+    skos:exactMatch rdfs:label .
+
+obo:UO_0000015 a ccf:DimensionUnitEnum,
+        ccf:TranslationUnitEnum,
+        owl:Class ;
+    rdfs:label "centimeter" ;
+    skos:definition "A length unit which is equal to one hundredth of a meter." .
+
+obo:UO_0000016 a ccf:DimensionUnitEnum,
+        ccf:TranslationUnitEnum,
+        owl:Class ;
+    rdfs:label "millimeter" ;
+    skos:definition "A length unit which is equal to one thousandth of a meter." .
+
+ccf:AnatomicalStructure a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "AnatomicalStructure" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:exactMatch ccf:AnatomicalStructure .
+
+ccf:DimensionUnitEnum a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "DimensionUnitEnum" ;
+    owl:unionOf ( obo:UO_0000015 obo:UO_0000016 ) ;
+    linkml:permissible_values obo:UO_0000015,
+        obo:UO_0000016 .
+
+ccf:OrganSideEnum a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "OrganSideEnum" ;
+    owl:unionOf ( obo:HP_0012835 obo:HP_0012834 ) ;
+    linkml:permissible_values obo:HP_0012834,
+        obo:HP_0012835 .
+
+ccf:SpatialObjectReference a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SpatialObjectReference" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty ccf:file_url ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:SpatialPlacement ;
+            owl:onProperty ccf:has_placement ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty ccf:file_subpath ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty ccf:file_format ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:exactMatch ccf:SpatialObjectReference .
+
+ccf:TranslationUnitEnum a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "TranslationUnitEnum" ;
+    owl:unionOf ( obo:UO_0000015 obo:UO_0000016 ) ;
+    linkml:permissible_values obo:UO_0000015,
+        obo:UO_0000016 .
+
+ccf:id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "id" ;
+    rdfs:range linkml:String .
+
+ccf:ExtractionSet a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ExtractionSet" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty rdfs:label ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:SpatialEntity ;
+            owl:onProperty ccf:extraction_set_for ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty ccf:rui_rank ] ;
+    skos:exactMatch ccf:ExtractionSet .
+
+ccf:SpatialPlacement a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SpatialPlacement" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:SpatialEntity ;
+            owl:onProperty ccf:placement_for ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:RotationUnitEnum ;
+            owl:onProperty ccf:rotation_unit ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Decimal ;
+            owl:onProperty ccf:x_translation ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty ccf:rotation_order ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Decimal ;
+            owl:onProperty ccf:y_translation ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:ScalingUnitEnum ;
+            owl:onProperty ccf:scaling_unit ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Decimal ;
+            owl:onProperty ccf:y_scaling ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Decimal ;
+            owl:onProperty ccf:x_rotation ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:SpatialEntity ;
+            owl:onProperty ccf:placement_relative_to ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Decimal ;
+            owl:onProperty ccf:z_translation ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Decimal ;
+            owl:onProperty ccf:z_rotation ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Decimal ;
+            owl:onProperty ccf:z_scaling ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Decimal ;
+            owl:onProperty ccf:y_rotation ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:TranslationUnitEnum ;
+            owl:onProperty ccf:translation_unit ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Date ;
+            owl:onProperty dcterms:created ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Decimal ;
+            owl:onProperty ccf:x_scaling ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:exactMatch ccf:SpatialPlacement .
+
+linkml:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" ;
+    skos:definition "the definition of a class or interface" .
+
+ccf:SpatialEntity a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SpatialEntity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty ccf:creator_first_name ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Decimal ;
+            owl:onProperty ccf:z_dimension ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Date ;
+            owl:onProperty dcterms:created ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty ccf:creator_orcid ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Decimal ;
+            owl:onProperty ccf:y_dimension ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:AnatomicalStructure ;
+            owl:onProperty ccf:representation_of ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:OrganSideEnum ;
+            owl:onProperty ccf:organ_side ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:SpatialEntity ;
+            owl:onProperty ccf:has_reference_organ ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:DonorSexEnum ;
+            owl:onProperty ccf:organ_donor_sex ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty dcterms:creator ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:SpatialPlacement ;
+            owl:onProperty ccf:has_placement ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty ccf:rui_rank ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:DimensionUnitEnum ;
+            owl:onProperty ccf:dimension_unit ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:ExtractionSet ;
+            owl:onProperty ccf:has_extraction_set ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:SpatialObjectReference ;
+            owl:onProperty ccf:has_object_reference ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Decimal ;
+            owl:onProperty ccf:x_dimension ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty rdfs:label ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty ccf:creator_last_name ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:exactMatch ccf:SpatialEntity .
+
+linkml:SlotDefinition a owl:Class ;
+    rdfs:label "slot_definition" ;
+    skos:definition "the definition of a property or a slot" .
+
+
+
