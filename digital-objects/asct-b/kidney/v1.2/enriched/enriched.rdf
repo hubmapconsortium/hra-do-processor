@@ -1,0 +1,2726 @@
+@prefix ccf: <http://purl.org/ccf/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+obo:CL_0000084 a ccf:CellType ;
+    rdfs:label "T cell" ;
+    ccf:pref_label "T Cell" .
+
+obo:CL_0000097 a ccf:CellType ;
+    rdfs:label "mast cell" ;
+    ccf:pref_label "Mast cell" .
+
+obo:CL_0000115 a ccf:CellType ;
+    rdfs:label "endothlial cell" ;
+    ccf:pref_label "Endothelial Cell" .
+
+obo:CL_0000236 a ccf:CellType ;
+    rdfs:label "B cell" ;
+    ccf:pref_label "B cell" .
+
+obo:CL_0000576 a ccf:CellType ;
+    rdfs:label "monocyte" ;
+    ccf:pref_label "Monocyte" .
+
+obo:CL_0000623 a ccf:CellType ;
+    rdfs:label "natural killer cell" ;
+    ccf:pref_label "Natural Killer Cell" .
+
+obo:CL_0000648 a ccf:CellType ;
+    rdfs:label "kidney granular cell" ;
+    ccf:pref_label "Juxtaglomerular granular cell (Renin positive)" .
+
+obo:CL_0000775 a ccf:CellType ;
+    rdfs:label "neutrophil" ;
+    ccf:pref_label "Neutrophil" .
+
+obo:CL_0000786 a ccf:CellType ;
+    rdfs:label "plasma cell" ;
+    ccf:pref_label "Plasma cell" .
+
+obo:CL_0000814 a ccf:CellType ;
+    rdfs:label "mature NK T cell" ;
+    ccf:pref_label "Natural Killer T Cell" .
+
+obo:CL_0000875 a ccf:CellType ;
+    rdfs:label "non-classical monocyte" ;
+    ccf:pref_label "non Classical Monocyte" .
+
+obo:CL_0000910 a ccf:CellType ;
+    rdfs:label "cytotoxic T cell" ;
+    ccf:pref_label "Cytotoxic T Cell" .
+
+obo:CL_0000990 a ccf:CellType ;
+    rdfs:label "conventional dendritic cell" ;
+    ccf:pref_label "Dendritic Cell (classical)" .
+
+obo:CL_0001056 a ccf:CellType ;
+    rdfs:label "dendritic cell, human" ;
+    ccf:pref_label "Dendritic Cell (general)" .
+
+obo:CL_0001058 a ccf:CellType ;
+    rdfs:label "plasmacytoid dendritic cell, human" ;
+    ccf:pref_label "Dendritic Cell (plasmatoid)" .
+
+obo:CL_0002138 a ccf:CellType ;
+    rdfs:label "endothelial cell of lymphatic vessel" ;
+    ccf:pref_label "Lymphatic Endothelial Cell" .
+
+obo:CL_0002201 a ccf:CellType ;
+    rdfs:label "renal beta-intercalated cell" ;
+    ccf:pref_label "Intercalated Cell Type B" .
+
+obo:CL_0002306 a ccf:CellType ;
+    rdfs:label "epithelial cell of proximal tubule" ;
+    ccf:pref_label "Proximal Tubule Epithelial Cell" .
+
+obo:CL_1000452 a ccf:CellType ;
+    rdfs:label "parietal epithelial cell" ;
+    ccf:pref_label "Parietal Epithelial Cell" .
+
+obo:CL_1000454 a ccf:CellType ;
+    rdfs:label "kidney collecting duct epithelial cell" ;
+    ccf:pref_label "Collecting Duct Cell" .
+
+obo:CL_1000597 a ccf:CellType ;
+    rdfs:label "papillary tips cell" ;
+    ccf:pref_label "Papillary Tip Epithelial Cell" .
+
+obo:CL_1000691 a ccf:CellType ;
+    rdfs:label "kidney interstitial myofibroblast" ;
+    ccf:pref_label "Myofibroblast" .
+
+obo:CL_1000692 a ccf:CellType ;
+    rdfs:label "kidney interstitial fibroblast" ;
+    ccf:pref_label "Fibroblast" .
+
+obo:CL_1000698 a ccf:CellType ;
+    rdfs:label "kidney resident macrophage" ;
+    ccf:pref_label "M2-Macrophage" .
+
+obo:CL_1000716 a ccf:CellType ;
+    rdfs:label "kidney outer medulla collecting duct principal cell" ;
+    ccf:pref_label "Outer Medullary Collecting Duct Principal Cell" .
+
+obo:CL_1000717 a ccf:CellType ;
+    rdfs:label "kidney outer medulla collecting duct intercalated cell" ;
+    ccf:pref_label "Outer Medullary Collecting Duct Intercalated Cell Type A" .
+
+obo:CL_1000742 a ccf:CellType ;
+    rdfs:label "glomerular mesangial cell" ;
+    ccf:pref_label "Mesangial Cell" .
+
+obo:CL_1000768 a ccf:CellType ;
+    rdfs:label "kidney connecting tubule epithelial cell" ;
+    ccf:pref_label "Connecting Tubule Cell" .
+
+obo:CL_1000849 a ccf:CellType ;
+    rdfs:label "kidney distal convoluted tubule epithelial cell" ;
+    ccf:pref_label "Distal Convoluted Tubule Cell" .
+
+obo:CL_1000850 a ccf:CellType ;
+    rdfs:label "macula densa epithelial cell" ;
+    ccf:pref_label "Macula Densa cell" .
+
+obo:CL_1001005 a ccf:CellType ;
+    rdfs:label "glomerular capillary endothelial cell" ;
+    ccf:pref_label "Glomerular Capillary Endothelial Cell" .
+
+obo:CL_1001033 a ccf:CellType ;
+    rdfs:label "peritubular capillary endothelial cell" ;
+    ccf:pref_label "Peritubular Capillary Endothelial Cell" .
+
+obo:CL_1001096 a ccf:CellType ;
+    rdfs:label "kidney afferent arteriole endothelial cell" ;
+    ccf:pref_label "Afferent Arteriole Endothelial Cell" .
+
+obo:CL_1001099 a ccf:CellType ;
+    rdfs:label "kidney efferent arteriole endothelial cell" ;
+    ccf:pref_label "Efferent Arteriole Endothelial cell" .
+
+obo:CL_1001106 a ccf:CellType ;
+    rdfs:label "kidney loop of Henle thick ascending limb epithelial cell" ;
+    ccf:pref_label "Thick Ascending Limb Cell" .
+
+obo:CL_1001107 a ccf:CellType ;
+    rdfs:label "kidney loop of Henle thin ascending limb epithelial cell" ;
+    ccf:pref_label "Ascending Thin Limb Cell" .
+
+obo:CL_1001109 a ccf:CellType ;
+    rdfs:label "kidney loop of Henle cortical thick ascending limb epithelial cell" ;
+    ccf:pref_label "Cortical Thick Ascending Limb Cell" .
+
+obo:CL_1001111 a ccf:CellType ;
+    rdfs:label "kidney loop of Henle thin descending limb epithelial cell" ;
+    ccf:pref_label "Descending Thin Limb Cell" .
+
+obo:CL_1001131 a ccf:CellType ;
+    rdfs:label "vasa recta ascending limb cell" ;
+    ccf:pref_label "Ascending Vasa Recta Endothelial Cell" .
+
+obo:CL_1001318 a ccf:CellType ;
+    rdfs:label "renal interstitial pericyte" ;
+    ccf:pref_label "Vascular Smooth Muscle Cell/Pericyte (general)" .
+
+obo:CL_1001431 a ccf:CellType ;
+    rdfs:label "kidney collecting duct principal cell" ;
+    ccf:pref_label "Collecting Duct Principal Cell" .
+
+obo:CL_1001432 a ccf:CellType ;
+    rdfs:label "kidney collecting duct intercalated cell" ;
+    ccf:pref_label "Collecting Duct Intercalated Cell" .
+
+obo:CL_4030009 a ccf:CellType ;
+    rdfs:label "epithelial cell of proximal tubule segment 1" ;
+    ccf:pref_label "Proximal Tubule Epithelial Cell Segment 1" .
+
+obo:CL_4030010 a ccf:CellType ;
+    rdfs:label "epithelial cell of proximal tubule segment 2" ;
+    ccf:pref_label "Proximal Tubule Epithelial Cell Segment 2" .
+
+obo:CL_4030011 a ccf:CellType ;
+    rdfs:label "epithelial cell of proximal tubule segment 3" ;
+    ccf:pref_label "Proximal Tubule Cell Epithelial Segment 3" .
+
+obo:CL_4030012 a ccf:CellType ;
+    rdfs:label "descending thin limb cell type 1" ;
+    ccf:pref_label "Descending Thin Limb Cell Type 1" .
+
+obo:CL_4030013 a ccf:CellType ;
+    rdfs:label "Descending Thin Limb Cell Type 2" ;
+    ccf:pref_label "Descending Thin Limb Cell Type 2" .
+
+obo:CL_4030014 a ccf:CellType ;
+    rdfs:label "Descending Thin Limb Cell Type 3" ;
+    ccf:pref_label "Descending Thin Limb Cell Type 3" .
+
+obo:CL_4030015 a ccf:CellType ;
+    rdfs:label "collecting duct intercalated cell type A" ;
+    ccf:pref_label "Collecting Duct Intercalated Cell Type A" .
+
+obo:CL_4030016 a ccf:CellType ;
+    rdfs:label "distal convoluted tubule cell type 1" ;
+    ccf:pref_label "Distal Convoluted Tubule Cell Type 1" .
+
+obo:CL_4030017 a ccf:CellType ;
+    rdfs:label "distal convoluted tubule cell type 2" ;
+    ccf:pref_label "Distal Convoluted Tubule Cell Type 2" .
+
+obo:CL_4030018 a ccf:CellType ;
+    rdfs:label "connecting tubule principal cell" ;
+    ccf:pref_label "Connecting Tubule Principal Cell" .
+
+obo:CL_4030019 a ccf:CellType ;
+    rdfs:label "connecting tubule intercalated cell" ;
+    ccf:pref_label "Connecting Tubule Intercalated Cell" .
+
+obo:CL_4030020 a ccf:CellType ;
+    rdfs:label "connecting tubule intercalated cell type A" ;
+    ccf:pref_label "Connecting Tubule Intercalated Cell Type A" .
+
+obo:CL_4030021 a ccf:CellType ;
+    rdfs:label "connecting tubule intercalated cell type B" ;
+    ccf:pref_label "Intercalated Cell Type B" .
+
+obo:CL_4030022 a ccf:CellType ;
+    rdfs:label "medullary fibroblast" ;
+    ccf:pref_label "Medullary Fibroblast" .
+
+obo:UBERON_0001284 a ccf:AnatomicalStructure ;
+    rdfs:label "renal column (column of Bertin)" ;
+    ccf:pref_label "renal column" .
+
+obo:UBERON_0001290 a ccf:AnatomicalStructure ;
+    rdfs:label "proximal straight tubule" ;
+    ccf:pref_label "proximal straight tubule segment 3" .
+
+obo:UBERON_0001986 a ccf:AnatomicalStructure ;
+    rdfs:label "endothelium" ;
+    ccf:pref_label "Endothelium (non glomerular)" .
+
+obo:UBERON_0002015 a ccf:AnatomicalStructure ;
+    rdfs:label "kidney capsule" ;
+    ccf:pref_label "kidney capsule" .
+
+obo:UBERON_0002042 a ccf:AnatomicalStructure ;
+    rdfs:label "lymphatic vessel endothelium" ;
+    ccf:pref_label "lymphatics" .
+
+obo:UBERON_0002189 a ccf:AnatomicalStructure ;
+    rdfs:label "outer cortex of kidney" ;
+    ccf:pref_label "outer cortex of kidney" .
+
+obo:UBERON_0002319 a ccf:AnatomicalStructure ;
+    rdfs:label "mesangium" ;
+    ccf:pref_label "Mesangium" .
+
+obo:UBERON_0002320 a ccf:AnatomicalStructure ;
+    rdfs:label "glomerular mesangium" ;
+    ccf:pref_label "glomerular mesangium" .
+
+obo:UBERON_0002335 a ccf:AnatomicalStructure ;
+    rdfs:label "macula densa" ;
+    ccf:pref_label "Macula Densa" .
+
+obo:UBERON_0004190 a ccf:AnatomicalStructure ;
+    rdfs:label "glomerulus vasculature" ;
+    ccf:pref_label "Glomerulus Vasculature" .
+
+obo:UBERON_0004196 a ccf:AnatomicalStructure ;
+    rdfs:label "proximal convoluted tubule segment 1" ;
+    ccf:pref_label "proximal convoluted tubule segment 1" .
+
+obo:UBERON_0004197 a ccf:AnatomicalStructure ;
+    rdfs:label "proximal convoluted tubule segment 2" ;
+    ccf:pref_label "proximal convoluted tubule segment 2" .
+
+obo:UBERON_0004200 a ccf:AnatomicalStructure ;
+    rdfs:label "kidney pyramid" ;
+    ccf:pref_label "renal pyramid" .
+
+obo:UBERON_0004201 a ccf:AnatomicalStructure ;
+    rdfs:label "kidney outer medulla inner stripe" ;
+    ccf:pref_label "kidney outer medulla inner stripe" .
+
+obo:UBERON_0004202 a ccf:AnatomicalStructure ;
+    rdfs:label "kidney outer medulla outer stripe" ;
+    ccf:pref_label "kidney outer medulla outer stripe" .
+
+obo:UBERON_0004205 a ccf:AnatomicalStructure ;
+    rdfs:label "inner medullary collecting duct" ;
+    ccf:pref_label "Collecting Duct (Inner Medulla)" .
+
+obo:UBERON_0004294 a ccf:AnatomicalStructure ;
+    rdfs:label "glomerular capillary endothelium" ;
+    ccf:pref_label "glomerular capillary endothelium" .
+
+obo:UBERON_0004639 a ccf:AnatomicalStructure ;
+    rdfs:label "renal afferent arteriole" ;
+    ccf:pref_label "Afferent Arteriole" .
+
+obo:UBERON_0004640 a ccf:AnatomicalStructure ;
+    rdfs:label "renal efferent arteriole" ;
+    ccf:pref_label "Efferent Arteriole" .
+
+obo:UBERON_0005096 a ccf:AnatomicalStructure ;
+    rdfs:label "descending thin limb" ;
+    ccf:pref_label "descending thin limb of loop of Henle" .
+
+obo:UBERON_0005271 a ccf:AnatomicalStructure ;
+    rdfs:label "juxtamedullary cortex" ;
+    ccf:pref_label "juxtamedullary cortex" .
+
+obo:UBERON_0005272 a ccf:AnatomicalStructure ;
+    rdfs:label "peritubular capillary" ;
+    ccf:pref_label "Peritubular Capillary" .
+
+obo:UBERON_0005750 a ccf:AnatomicalStructure ;
+    rdfs:label "glomerular parietal epithelium" ;
+    ccf:pref_label "parietal epithelial layer" .
+
+obo:UBERON_0009091 a ccf:AnatomicalStructure ;
+    rdfs:label "vasa recta ascending limb" ;
+    ccf:pref_label "Ascending Vasa Recta" .
+
+obo:UBERON_0009883 a ccf:AnatomicalStructure ;
+    rdfs:label "medullary ray" ;
+    ccf:pref_label "medullary ray" .
+
+obo:UBERON_0012441 a ccf:AnatomicalStructure ;
+    rdfs:label "endothelium of peritubular capillary" ;
+    ccf:pref_label "Endothelium (non glomerular)" .
+
+<https://www.doi.org/10.1016/j.exphem.2016.10.008> a ccf:StudyReference ;
+    ccf:pubmed_id "" ;
+    dcterms:references "https://www.doi.org/10.1016/j.exphem.2016.10.008" .
+
+<https://www.doi.org/10.1084/jem.20030323> a ccf:StudyReference ;
+    ccf:pubmed_id "" ;
+    dcterms:references "https://www.doi.org/10.1084/jem.20030323" .
+
+<https://www.doi.org/10.1152/ajprenal.2000.278.2.F202> a ccf:StudyReference ;
+    ccf:pubmed_id "https://pubmed.ncbi.nlm.nih.gov/10662724/" ;
+    dcterms:references "https://www.doi.org/10.1152/ajprenal.2000.278.2.F202" .
+
+<https://www.doi.org/10.1371/journal.pone.0187118> a ccf:StudyReference ;
+    ccf:pubmed_id "" ;
+    dcterms:references "https://www.doi.org/10.1371/journal.pone.0187118" .
+
+<https://www.doi.org/10.3389/fimmu.2019.02035> a ccf:StudyReference ;
+    ccf:pubmed_id "" ;
+    dcterms:references "https://www.doi.org/10.3389/fimmu.2019.02035" .
+
+<http://identifiers.org/hgnc/10249> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "ROBO1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "ROBO1" .
+
+<http://identifiers.org/hgnc/10250> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "ROBO2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "ROBO2" .
+
+<http://identifiers.org/hgnc/10498> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "S100A8" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "S100A8" .
+
+<http://identifiers.org/hgnc/10499> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "S100A9" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "S100A9" .
+
+<http://identifiers.org/hgnc/10527> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SALL3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SALL3" .
+
+<http://identifiers.org/hgnc/10630> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CCL4" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CCL4" .
+
+<http://identifiers.org/hgnc/10632> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CCL5" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CCL5" .
+
+<http://identifiers.org/hgnc/10916> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC13A1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC13A1" .
+
+<http://identifiers.org/hgnc/10929> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC17A1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC17A1" .
+
+<http://identifiers.org/hgnc/10971> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "solute carrier family 22 member 7" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC22A7" .
+
+<http://identifiers.org/hgnc/11037> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC5A2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC5A2" .
+
+<http://identifiers.org/hgnc/11073> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC9A3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC9A3" .
+
+<http://identifiers.org/hgnc/11509> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "synaptotagmin 1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SYT1" .
+
+<http://identifiers.org/hgnc/11592> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "TBX1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "TBX1" .
+
+<http://identifiers.org/hgnc/11935> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CD40LG" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CD40LG" .
+
+<http://identifiers.org/hgnc/1241> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "C1QA" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "C1QA" .
+
+<http://identifiers.org/hgnc/1346> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "C7" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "C7" .
+
+<http://identifiers.org/hgnc/1437> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CALCA" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CALCA" .
+
+<http://identifiers.org/hgnc/14430> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC13A3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC13A3" .
+
+<http://identifiers.org/hgnc/14881> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "ZEB2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "ZEB2" .
+
+<http://identifiers.org/hgnc/1628> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CD14" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CD14" .
+
+<http://identifiers.org/hgnc/1631> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CD163" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CD163" .
+
+<http://identifiers.org/hgnc/1636> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CD1C" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CD1C" .
+
+<http://identifiers.org/hgnc/1638> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CD1E" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CD1E" .
+
+<http://identifiers.org/hgnc/1673> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CD3D" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CD3D" .
+
+<http://identifiers.org/hgnc/1675> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CD3G" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CD3G" .
+
+<http://identifiers.org/hgnc/16953> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "periostin" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "POSTN" .
+
+<http://identifiers.org/hgnc/1698> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CD79A" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CD79A" .
+
+<http://identifiers.org/hgnc/17732> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SYNPO2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SYNPO2" .
+
+<http://identifiers.org/hgnc/18210> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "MOGAT1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "MOGAT1" .
+
+<http://identifiers.org/hgnc/18508> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "FCRL5" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "FCRL5" .
+
+<http://identifiers.org/hgnc/18688> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CRB2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CRB2" .
+
+<http://identifiers.org/hgnc/1975> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "VSX2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "VSX2" .
+
+<http://identifiers.org/hgnc/2026> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CLCNKA" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CLCNKA" .
+
+<http://identifiers.org/hgnc/2037> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CLDN16" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CLDN16" .
+
+<http://identifiers.org/hgnc/20391> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "sulfatase 1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SULF1" .
+
+<http://identifiers.org/hgnc/2045> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CLDN3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CLDN3" .
+
+<http://identifiers.org/hgnc/2193> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "collagen type XVI alpha 1 chain" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "COL16A1" .
+
+<http://identifiers.org/hgnc/2198> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "COL1A2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "COL1A2" .
+
+<http://identifiers.org/hgnc/2209> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "collagen type V alpha 1 chain" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "COL5A1" .
+
+<http://identifiers.org/hgnc/2298> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CPA3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CPA3" .
+
+<http://identifiers.org/hgnc/234> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "adenylate cyclase 3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "ADCY3" .
+
+<http://identifiers.org/hgnc/24039> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CXADR like membrane protein" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CLMP" .
+
+<http://identifiers.org/hgnc/2439> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CSF3R" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CSF3R" .
+
+<http://identifiers.org/hgnc/2548> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "cubilin" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CUBN" .
+
+<http://identifiers.org/hgnc/26183> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "multiple C2 and transmembrane domain containing 1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "MCTP1" .
+
+<http://identifiers.org/hgnc/26270> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "PIEZO2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "PIEZO2" .
+
+<http://identifiers.org/hgnc/26295> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "coiled-coil domain containing 102B" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CCDC102B" .
+
+<http://identifiers.org/hgnc/26705> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CLEC9A" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CLEC9A" .
+
+<http://identifiers.org/hgnc/27220> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "TMEM213" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "TMEM213" .
+
+<http://identifiers.org/hgnc/28750> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "solute carrier family 5 member 12" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC5A12" .
+
+<http://identifiers.org/hgnc/29853> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "HECW2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "HECW2" .
+
+<http://identifiers.org/hgnc/30125> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "MZB1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "MZB1" .
+
+<http://identifiers.org/hgnc/32017> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "ACSM2A" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "ACSM2A" .
+
+<http://identifiers.org/hgnc/3244> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "EH domain containing 3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "EHD3" .
+
+<http://identifiers.org/hgnc/33705> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "TMEM207" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "TMEM207" .
+
+<http://identifiers.org/hgnc/3609> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "FCER1A" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "FCER1A" .
+
+<http://identifiers.org/hgnc/3619> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "FCGR3A" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "FCGR3A" .
+
+<http://identifiers.org/hgnc/3620> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "FCGR3B" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "FCGR3B" .
+
+<http://identifiers.org/hgnc/3802> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "forkhead box D1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "Foxd1" .
+
+<http://identifiers.org/hgnc/417> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "ALDOB" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "ALDOB" .
+
+<http://identifiers.org/hgnc/4175> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "GATM" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "GATM" .
+
+<http://identifiers.org/hgnc/4460> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "glycoprotein M6A" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "GPM6A" .
+
+<http://identifiers.org/hgnc/4883> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CFH" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CFH" .
+
+<http://identifiers.org/hgnc/4947> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "HLA-DRA" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "HLA-DRA" .
+
+<http://identifiers.org/hgnc/5318> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "tenascin C" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "TNC" .
+
+<http://identifiers.org/hgnc/5360> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "ID1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "ID1" .
+
+<http://identifiers.org/hgnc/5716> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "IGKC" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "IGKC" .
+
+<http://identifiers.org/hgnc/6012> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "IL3RA" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "IL3RA" .
+
+<http://identifiers.org/hgnc/6024> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "IL7R" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "IL7R" .
+
+<http://identifiers.org/hgnc/613> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "APOE" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "APOE" .
+
+<http://identifiers.org/hgnc/6144> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "ITGA8" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "ITGA8" .
+
+<http://identifiers.org/hgnc/6152> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "ITGAX" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "ITGAX" .
+
+<http://identifiers.org/hgnc/6188> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "JAG1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "JAG1" .
+
+<http://identifiers.org/hgnc/6277> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "potassium two pore domain channel subfamily K member 2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "KCNK2" .
+
+<http://identifiers.org/hgnc/6694> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "LRP2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "LRP2" .
+
+<http://identifiers.org/hgnc/6724> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "LUM" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "LUM" .
+
+<http://identifiers.org/hgnc/6934> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "MCAM" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "MCAM" .
+
+<http://identifiers.org/hgnc/7178> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "MMRN1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "MMRN1" .
+
+<http://identifiers.org/hgnc/7315> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "MS4A1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "MS4A1" .
+
+<http://identifiers.org/hgnc/7316> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "MS4A2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "MS4A2" .
+
+<http://identifiers.org/hgnc/7656> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "neural cell adhesion molecule 1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "NCAM1" .
+
+<http://identifiers.org/hgnc/7872> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "NOS1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "NOS1" .
+
+<http://identifiers.org/hgnc/7976> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "nuclear receptor subfamily 2 group F member 2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "NR2F2" .
+
+<http://identifiers.org/hgnc/8031> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "NTRK1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "NTRK1" .
+
+<http://identifiers.org/hgnc/8804> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "PDGFRB" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "PDGFRB" .
+
+<http://identifiers.org/hgnc/8823> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "PECAM1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "PECAM1" .
+
+<http://identifiers.org/hgnc/9051> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "PLAT" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "PLAT" .
+
+<http://identifiers.org/hgnc/9453> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "PRODH2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "PRODH2" .
+
+<http://identifiers.org/hgnc/9845> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "receptor activity modifying protein 3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "RAMP3" .
+
+<http://identifiers.org/hgnc/9858> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "RAP1GAP" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "RAP1GAP" .
+
+<http://identifiers.org/hgnc/9958> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "REN" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "REN" .
+
+obo:CL_1000714 a ccf:CellType ;
+    rdfs:label "kidney cortex collecting duct principal cell" ;
+    ccf:pref_label "Cortical Collecting Duct Principal Cell" .
+
+obo:CL_1000715 a ccf:CellType ;
+    rdfs:label "kidney cortex collecting duct intercalated cell" ;
+    ccf:pref_label "Cortical Collecting Duct Intercalated Cell Type A",
+        "Cortical Collecting Duct Intercalated Cell Type B" .
+
+obo:CL_1000718 a ccf:CellType ;
+    rdfs:label "kidney inner medulla collecting duct",
+        "kidney inner medulla collecting duct principal cell" ;
+    ccf:pref_label "Inner Medullary Collecting Duct Cell" .
+
+obo:CL_1001108 a ccf:CellType ;
+    rdfs:label "kidney loop of Henle medullary thick ascending limb epithelial cell" ;
+    ccf:pref_label "Medullary Thick Ascending Limb Cell" .
+
+obo:UBERON_0001228 a ccf:AnatomicalStructure ;
+    rdfs:label "renal papilla" ;
+    ccf:pref_label "Papilla",
+        "renal papilla" .
+
+obo:UBERON_0001294 a ccf:AnatomicalStructure ;
+    rdfs:label "inner medulla of kidney" ;
+    ccf:pref_label "inner medulla of kidney" .
+
+obo:UBERON_0004193 a ccf:AnatomicalStructure,
+        ccf:FtuType ;
+    rdfs:label "ascending thin limb of loop of Henle" ;
+    ccf:pref_label "Loop of Henle (Thin Limb)" .
+
+obo:UBERON_0004204 a ccf:AnatomicalStructure ;
+    rdfs:label "outer medullary collecting duct",
+        "renal outer medullary collecting duct" ;
+    ccf:pref_label "Collecting Duct (Medulla)",
+        "Collecting Duct (Outer Medulla)" .
+
+obo:UBERON_0009095 a ccf:AnatomicalStructure ;
+    rdfs:label "tip of renal papilla" ;
+    ccf:pref_label "Papillary Tip",
+        "papillary tip" .
+
+obo:CL_1001285 a ccf:CellType ;
+    rdfs:label "vasa recta descending limb cell" ;
+    ccf:pref_label "Descending Vasa Recta Endothelial Cell" .
+
+obo:UBERON_0009202 a ccf:AnatomicalStructure ;
+    rdfs:label "vasa recta descending limb" ;
+    ccf:pref_label "Descending Vasa Recta" .
+
+<https://www.doi.org/10.1126/science.aat1699> a ccf:StudyReference ;
+    ccf:pubmed_id "" ;
+    dcterms:references "https://www.doi.org/10.1126/science.aat1699" .
+
+<https://www.doi.org/10.1152/ajprenal.2000.278.1.F52> a ccf:StudyReference ;
+    ccf:pubmed_id "" ;
+    dcterms:references "https://www.doi.org/10.1152/ajprenal.2000.278.1.F52" .
+
+<http://identifiers.org/hgnc/10473> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "RUNX3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "RUNX3" .
+
+<http://identifiers.org/hgnc/10832> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SH3GL3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SH3GL3" .
+
+<http://identifiers.org/hgnc/10970> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC22A6" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC22A6" .
+
+<http://identifiers.org/hgnc/10972> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC22A8" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC22A8" .
+
+<http://identifiers.org/hgnc/11019> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC34A1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC34A1" .
+
+<http://identifiers.org/hgnc/11255> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SPP1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SPP1" .
+
+<http://identifiers.org/hgnc/11553> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "TAGLN" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "TAGLN" .
+
+<http://identifiers.org/hgnc/12663> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "VCAM1",
+        "vascular cell adhesion molecule 1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "VCAM1" .
+
+<http://identifiers.org/hgnc/130> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "ACTA2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "ACTA2" .
+
+<http://identifiers.org/hgnc/13635> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "PLVAP" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "PLVAP" .
+
+<http://identifiers.org/hgnc/1373> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "carbonic anhydrase 2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CA2" .
+
+<http://identifiers.org/hgnc/16041> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "EMCN" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "EMCN" .
+
+<http://identifiers.org/hgnc/16438> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC4A11",
+        "SLC9A3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC4A11",
+        "SLC9A3" .
+
+<http://identifiers.org/hgnc/1677> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CD247" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CD247" .
+
+<http://identifiers.org/hgnc/16892> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CD96" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CD96" .
+
+<http://identifiers.org/hgnc/17995> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "TRPM6" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "TRPM6" .
+
+<http://identifiers.org/hgnc/18122> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SRY-box transcription factor 17" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SOX17" .
+
+<http://identifiers.org/hgnc/18266> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "ATP6V0D2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "ATP6V0D2" .
+
+<http://identifiers.org/hgnc/2032> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CLDN1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CLDN1" .
+
+<http://identifiers.org/hgnc/20862> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC39A8" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC39A8" .
+
+<http://identifiers.org/hgnc/2197> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "COL1A1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "COL1A1" .
+
+<http://identifiers.org/hgnc/2303> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CPE" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CPE" .
+
+<http://identifiers.org/hgnc/23091> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC5A11",
+        "solute carrier family 5 member 11" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC5A11" .
+
+<http://identifiers.org/hgnc/2705> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "DCN" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "DCN" .
+
+<http://identifiers.org/hgnc/2959> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "DNASE1L3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "DNASE1L3" .
+
+<http://identifiers.org/hgnc/3145> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "TRPV5" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "TRPV5" .
+
+<http://identifiers.org/hgnc/3763> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "FLT1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "FLT1" .
+
+<http://identifiers.org/hgnc/3765> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "FLT3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "FLT3" .
+
+<http://identifiers.org/hgnc/4414> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "GNLY" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "GNLY" .
+
+<http://identifiers.org/hgnc/5209> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "HSD11B2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "HSD11B2" .
+
+<http://identifiers.org/hgnc/5713> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "JCHAIN" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "JCHAIN" .
+
+<http://identifiers.org/hgnc/7569> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "MYH11" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "MYH11" .
+
+<http://identifiers.org/hgnc/7830> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "NKG7" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "NKG7" .
+
+<http://identifiers.org/hgnc/8033> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "NTRK3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "NTRK3" .
+
+obo:CL_0000653 a ccf:CellType ;
+    rdfs:label "glomerular visceral epithelial cell" ;
+    ccf:pref_label "Podocyte" .
+
+obo:UBERON_0001225 a ccf:AnatomicalStructure ;
+    rdfs:label "cortex of kidney" ;
+    ccf:pref_label "cortex of kidney",
+        "renal cortex" .
+
+obo:UBERON_0004203 a ccf:AnatomicalStructure ;
+    rdfs:label "cortical collecting duct" ;
+    ccf:pref_label "Collecting Duct",
+        "Collecting Duct (Cortex)" .
+
+obo:UBERON_0006852 a ccf:AnatomicalStructure ;
+    rdfs:label "glomerular visceral epithelium" ;
+    ccf:pref_label "visceral epithelial layer" .
+
+obo:UBERON_0000362 a ccf:AnatomicalStructure ;
+    rdfs:label "renal medulla" ;
+    ccf:pref_label "renal medulla" .
+
+obo:UBERON_0004188 a ccf:AnatomicalStructure ;
+    rdfs:label "glomerular epithelium" ;
+    ccf:pref_label "Glomerular Epithelium" .
+
+obo:UBERON_0005097 a ccf:AnatomicalStructure ;
+    rdfs:label "connecting tubule" ;
+    ccf:pref_label "Connecting Tubule" .
+
+<https://www.doi.org/10.1038/s41467-019-12872-5> a ccf:StudyReference ;
+    ccf:pubmed_id "" ;
+    dcterms:references "https://www.doi.org/10.1038/s41467-019-12872-5" .
+
+<http://identifiers.org/hgnc/10912> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "solute carrier family 12 member 3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC12A3" .
+
+<http://identifiers.org/hgnc/10918> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "solute carrier family 14 member 1 (Kidd blood group)" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC14A1" .
+
+<http://identifiers.org/hgnc/1434> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CALB1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CALB1" .
+
+<http://identifiers.org/hgnc/21637> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SATB2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SATB2" .
+
+<http://identifiers.org/hgnc/4708> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "GZMA" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "GZMA" .
+
+<http://identifiers.org/hgnc/639> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "AQP6" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "AQP6" .
+
+<http://identifiers.org/hgnc/8818> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC26A4",
+        "solute carrier family 26 member 4" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC26A4" .
+
+<http://identifiers.org/hgnc/9459> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "PROX1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "PROX1" .
+
+obo:UBERON_0001232 a ccf:AnatomicalStructure ;
+    rdfs:label "collecting duct of renal tubule" ;
+    ccf:pref_label "Collecting Duct" .
+
+obo:UBERON_0001292 a ccf:AnatomicalStructure,
+        ccf:FtuType ;
+    rdfs:label "distal convoluted tubule" ;
+    ccf:pref_label "Distal Convolution" .
+
+obo:UBERON_0003918 a ccf:AnatomicalStructure ;
+    rdfs:label "kidney mesenchyme" ;
+    ccf:pref_label "Stroma (non glomerular)" .
+
+obo:UBERON_0006544 a ccf:AnatomicalStructure ;
+    rdfs:label "kidney vasculature" ;
+    ccf:pref_label "Vessels" .
+
+<http://identifiers.org/hgnc/10919> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC14A2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC14A2" .
+
+<http://identifiers.org/hgnc/11027> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC4A1",
+        "solute carrier family 4 member 1 (Diego blood group)" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC4A1" .
+
+<http://identifiers.org/hgnc/11035> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC4A9" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC4A9" .
+
+<http://identifiers.org/hgnc/11068> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC8A1",
+        "solute carrier family 8 member A1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC8A1" .
+
+<http://identifiers.org/hgnc/12559> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "UMOD" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "UMOD" .
+
+<http://identifiers.org/hgnc/13394> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "NPHS2 stomatin family member, podocin" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "NPHS2" .
+
+<http://identifiers.org/hgnc/1514> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "CASR" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CASR" .
+
+<http://identifiers.org/hgnc/633> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "AQP1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "AQP1" .
+
+<http://identifiers.org/hgnc/6342> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "KIT" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "KIT" .
+
+<http://identifiers.org/hgnc/7908> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "NPHS1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "NPHS1" .
+
+<http://identifiers.org/hgnc/9171> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "PODXL" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "PODXL" .
+
+obo:UBERON_0001229 a ccf:AnatomicalStructure,
+        ccf:FtuType ;
+    rdfs:label "Renal Corpuscle" ;
+    ccf:pref_label "Renal Corpuscle" .
+
+obo:UBERON_0004134 a ccf:AnatomicalStructure,
+        ccf:FtuType ;
+    rdfs:label "proximal tubule" ;
+    ccf:pref_label "Proximal Tubule" .
+
+<https://www.doi.org/10.1073/pnas.2005477117> a ccf:StudyReference ;
+    ccf:pubmed_id "" ;
+    dcterms:references "https://www.doi.org/10.1073/pnas.2005477117" .
+
+obo:UBERON_0001289 a ccf:AnatomicalStructure,
+        ccf:FtuType ;
+    rdfs:label "descending thin limb of loop of Henle" ;
+    ccf:pref_label "Loop of Henle (Thin Limb)" .
+
+obo:UBERON_0001291 a ccf:AnatomicalStructure,
+        ccf:FtuType ;
+    rdfs:label "thick ascending limb of loop of Henle" ;
+    ccf:pref_label "Loop of Henle (Thick Limb)",
+        "Loop of Henle (Thick Limb/ Cortex)",
+        "Loop of Henle (Thick Limb/Cortex)",
+        "Loop of Henle (Thick Limb/Medulla)" .
+
+<https://www.doi.org/10.1681/ASN.2020010071> a ccf:StudyReference ;
+    ccf:pubmed_id "PMID: 32358040" ;
+    dcterms:references "https://www.doi.org/10.1681/ASN.2020010071" .
+
+<http://identifiers.org/hgnc/10910> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "solute carrier family 12 member 1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC12A1" .
+
+<http://identifiers.org/hgnc/11530> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "TACSTD2",
+        "TACSTSD2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "TACSTD2",
+        "TACSTSD2" .
+
+<http://identifiers.org/hgnc/11853> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "TM4SF1" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "TM4SF1" .
+
+<http://identifiers.org/hgnc/14467> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SLC26A7",
+        "solute carrier family 26 member 7" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SLC26A7" .
+
+<http://identifiers.org/hgnc/15846> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "PALMD" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "PALMD" .
+
+<http://identifiers.org/hgnc/222> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "ADAMTS6" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "ADAMTS6" .
+
+<http://identifiers.org/hgnc/4028> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "FXYD domain containing ion transport regulator 4",
+        "FXYD4" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "FXYD4" .
+
+<http://identifiers.org/hgnc/4172> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "GATA binding protein 3",
+        "GATA3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "GATA3" .
+
+<http://identifiers.org/hgnc/636> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "AQP3" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "AQP3" .
+
+<http://identifiers.org/hgnc/8951> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SERPINE2",
+        "serpin family E member 2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SERPINE2" .
+
+<http://identifiers.org/hgnc/10602> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "SCNN1G" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "SCNN1G" .
+
+<http://identifiers.org/hgnc/2389> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "crystallin alpha B" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "CRYAB" .
+
+obo:UBERON_0004100 a ccf:AnatomicalStructure ;
+    rdfs:label "renal collecting system" ;
+    ccf:pref_label "renal collecting system" .
+
+<https://www.doi.org/10.1101/2021.07.28.454201> a ccf:StudyReference ;
+    ccf:pubmed_id "",
+        "https://www.doi.org/10.1101/2021.07.28.454201" ;
+    dcterms:references "https://www.doi.org/10.1101/2021.07.28.454201" .
+
+<http://identifiers.org/hgnc/634> a ccf:Biomarker,
+        ccf:GeneBiomarker ;
+    rdfs:label "aquaporin 2" ;
+    ccf:biomarker_type "gene" ;
+    ccf:pref_label "AQP2" .
+
+<https://www.doi.org/10.1016/j.devcel.2019.10.005> a ccf:StudyReference ;
+    ccf:pubmed_id "PMID: 31689386" ;
+    dcterms:references "https://www.doi.org/10.1016/j.devcel.2019.10.005" .
+
+obo:UBERON_0001231 a ccf:AnatomicalStructure ;
+    rdfs:label "nephron tubule" ;
+    ccf:pref_label "Tubules" .
+
+obo:UBERON_0005215 a ccf:AnatomicalStructure ;
+    rdfs:label "kidney interstitium" ;
+    ccf:pref_label "Interstitium" .
+
+<https://www.doi.org/10.1038/s41586-020-2941-1> a ccf:StudyReference ;
+    ccf:pubmed_id "" ;
+    dcterms:references "https://www.doi.org/10.1038/s41586-020-2941-1" .
+
+<https://www.doi.org/10.1172/jci.insight.133267> a ccf:StudyReference ;
+    ccf:pubmed_id "" ;
+    dcterms:references "https://www.doi.org/10.1172/jci.insight.133267" .
+
+obo:UBERON_0001285 a ccf:AnatomicalStructure,
+        ccf:FtuType ;
+    rdfs:label "nephron" ;
+    ccf:pref_label "nephron" .
+
+<https://www.doi.org/10.1038/s41467-019-10861-2> a ccf:StudyReference ;
+    ccf:pubmed_id "",
+        "PMID: 31249312. PMCID: PMC6597610" ;
+    dcterms:references "https://www.doi.org/10.1038/s41467-019-10861-2" .
+
+obo:UBERON_0002113 a ccf:AnatomicalStructure ;
+    rdfs:label "kidney" ;
+    ccf:pref_label "kidney" .
+
+[] a ccf:Container ;
+    ccf:data [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0001291,
+                obo:UBERON_0002113 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10910>,
+                <http://identifiers.org/hgnc/12559>,
+                <http://identifiers.org/hgnc/1514>,
+                <http://identifiers.org/hgnc/9459>,
+                <http://identifiers.org/hgnc/9858> ;
+            ccf:contains_cell_types obo:CL_1001108 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10910>,
+                <http://identifiers.org/hgnc/12559>,
+                <http://identifiers.org/hgnc/1514>,
+                <http://identifiers.org/hgnc/9459>,
+                <http://identifiers.org/hgnc/9858> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0001291 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001232,
+                obo:UBERON_0002113,
+                obo:UBERON_0004100 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/4172> ;
+            ccf:contains_cell_types obo:CL_1000454 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/4172> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1172/jci.insight.133267>,
+                <https://www.doi.org/10.1681/ASN.2020010071> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0006544,
+                obo:UBERON_0009202 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10918>,
+                <http://identifiers.org/hgnc/11853>,
+                <http://identifiers.org/hgnc/15846>,
+                <http://identifiers.org/hgnc/222>,
+                <http://identifiers.org/hgnc/26183>,
+                <http://identifiers.org/hgnc/8951> ;
+            ccf:contains_cell_types obo:CL_1001285 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10918>,
+                <http://identifiers.org/hgnc/11853>,
+                <http://identifiers.org/hgnc/15846>,
+                <http://identifiers.org/hgnc/222>,
+                <http://identifiers.org/hgnc/26183>,
+                <http://identifiers.org/hgnc/8951> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41467-019-12872-5>,
+                <https://www.doi.org/10.1101/2021.07.28.454201> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/3619> ;
+            ccf:contains_cell_types obo:CL_0000875 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/3619> ;
+            ccf:contains_references <https://www.doi.org/10.1101/2021.07.28.454201>,
+                <https://www.doi.org/10.1172/jci.insight.133267>,
+                <https://www.doi.org/10.3389/fimmu.2019.02035> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/2298>,
+                <http://identifiers.org/hgnc/6342>,
+                <http://identifiers.org/hgnc/7316> ;
+            ccf:contains_cell_types obo:CL_0000097 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/2298>,
+                <http://identifiers.org/hgnc/6342>,
+                <http://identifiers.org/hgnc/7316> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1101/2021.07.28.454201>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10498>,
+                <http://identifiers.org/hgnc/10499>,
+                <http://identifiers.org/hgnc/2439>,
+                <http://identifiers.org/hgnc/3620> ;
+            ccf:contains_cell_types obo:CL_0000775 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10498>,
+                <http://identifiers.org/hgnc/10499>,
+                <http://identifiers.org/hgnc/2439>,
+                <http://identifiers.org/hgnc/3620> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.exphem.2016.10.008>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1101/2021.07.28.454201>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001986,
+                obo:UBERON_0002113,
+                obo:UBERON_0006544 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/16041>,
+                <http://identifiers.org/hgnc/3763>,
+                <http://identifiers.org/hgnc/8823> ;
+            ccf:contains_cell_types obo:CL_0000115 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/16041>,
+                <http://identifiers.org/hgnc/3763>,
+                <http://identifiers.org/hgnc/8823> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0001291,
+                obo:UBERON_0002113 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10910>,
+                <http://identifiers.org/hgnc/12559>,
+                <http://identifiers.org/hgnc/1514>,
+                <http://identifiers.org/hgnc/2037>,
+                <http://identifiers.org/hgnc/33705> ;
+            ccf:contains_cell_types obo:CL_1001109 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10910>,
+                <http://identifiers.org/hgnc/12559>,
+                <http://identifiers.org/hgnc/1514>,
+                <http://identifiers.org/hgnc/2037>,
+                <http://identifiers.org/hgnc/33705> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0001291 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001232,
+                obo:UBERON_0002113,
+                obo:UBERON_0004100 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11027>,
+                <http://identifiers.org/hgnc/14467>,
+                <http://identifiers.org/hgnc/27220>,
+                <http://identifiers.org/hgnc/6342>,
+                <http://identifiers.org/hgnc/639> ;
+            ccf:contains_cell_types obo:CL_4030015 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11027>,
+                <http://identifiers.org/hgnc/14467>,
+                <http://identifiers.org/hgnc/27220>,
+                <http://identifiers.org/hgnc/6342>,
+                <http://identifiers.org/hgnc/639> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0004100,
+                obo:UBERON_0004203 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10602>,
+                <http://identifiers.org/hgnc/4028>,
+                <http://identifiers.org/hgnc/4172>,
+                <http://identifiers.org/hgnc/634>,
+                <http://identifiers.org/hgnc/636> ;
+            ccf:contains_cell_types obo:CL_1000714 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10602>,
+                <http://identifiers.org/hgnc/4028>,
+                <http://identifiers.org/hgnc/4172>,
+                <http://identifiers.org/hgnc/634>,
+                <http://identifiers.org/hgnc/636> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001228,
+                obo:UBERON_0002113,
+                obo:UBERON_0009095 ;
+            ccf:contains_cell_types obo:CL_1000597 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0001289,
+                obo:UBERON_0002113 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11530>,
+                <http://identifiers.org/hgnc/16438>,
+                <http://identifiers.org/hgnc/20862>,
+                <http://identifiers.org/hgnc/2389>,
+                <http://identifiers.org/hgnc/633> ;
+            ccf:contains_cell_types obo:CL_4030013 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11530>,
+                <http://identifiers.org/hgnc/16438>,
+                <http://identifiers.org/hgnc/20862>,
+                <http://identifiers.org/hgnc/2389>,
+                <http://identifiers.org/hgnc/633> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1101/2021.07.28.454201>,
+                <https://www.doi.org/10.1152/ajprenal.2000.278.1.F52> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0001289 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0004100,
+                obo:UBERON_0004205 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10919>,
+                <http://identifiers.org/hgnc/634> ;
+            ccf:contains_cell_types obo:CL_1000718 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10919>,
+                <http://identifiers.org/hgnc/634> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1101/2021.07.28.454201> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001229,
+                obo:UBERON_0001285,
+                obo:UBERON_0002113,
+                obo:UBERON_0004190,
+                obo:UBERON_0004294 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/16041>,
+                <http://identifiers.org/hgnc/29853>,
+                <http://identifiers.org/hgnc/3244>,
+                <http://identifiers.org/hgnc/3763>,
+                <http://identifiers.org/hgnc/633>,
+                <http://identifiers.org/hgnc/9051> ;
+            ccf:contains_cell_types obo:CL_1001005 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/16041>,
+                <http://identifiers.org/hgnc/29853>,
+                <http://identifiers.org/hgnc/3244>,
+                <http://identifiers.org/hgnc/3763>,
+                <http://identifiers.org/hgnc/633>,
+                <http://identifiers.org/hgnc/9051> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41467-019-12872-5>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ;
+            ccf:ftu_types obo:UBERON_0001229,
+                obo:UBERON_0001285 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0001291,
+                obo:UBERON_0002113 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10910>,
+                <http://identifiers.org/hgnc/12559>,
+                <http://identifiers.org/hgnc/1514> ;
+            ccf:contains_cell_types obo:CL_1001106 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10910>,
+                <http://identifiers.org/hgnc/12559>,
+                <http://identifiers.org/hgnc/1514> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0001291 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0004100,
+                obo:UBERON_0004203 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11035>,
+                <http://identifiers.org/hgnc/8818> ;
+            ccf:contains_cell_types obo:CL_1000715 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11035>,
+                <http://identifiers.org/hgnc/8818> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1126/science.aat1699>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0004640,
+                obo:UBERON_0006544 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10918>,
+                <http://identifiers.org/hgnc/11853>,
+                <http://identifiers.org/hgnc/15846>,
+                <http://identifiers.org/hgnc/18122>,
+                <http://identifiers.org/hgnc/222>,
+                <http://identifiers.org/hgnc/8951> ;
+            ccf:contains_cell_types obo:CL_1001099 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10918>,
+                <http://identifiers.org/hgnc/11853>,
+                <http://identifiers.org/hgnc/15846>,
+                <http://identifiers.org/hgnc/18122>,
+                <http://identifiers.org/hgnc/222>,
+                <http://identifiers.org/hgnc/8951> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001225,
+                obo:UBERON_0002113,
+                obo:UBERON_0002189,
+                obo:UBERON_0004188,
+                obo:UBERON_0006852 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/13394>,
+                <http://identifiers.org/hgnc/7908>,
+                <http://identifiers.org/hgnc/9171> ;
+            ccf:contains_cell_types obo:CL_0000653 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/13394>,
+                <http://identifiers.org/hgnc/7908>,
+                <http://identifiers.org/hgnc/9171> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001232,
+                obo:UBERON_0002113,
+                obo:UBERON_0004100 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10602>,
+                <http://identifiers.org/hgnc/4028>,
+                <http://identifiers.org/hgnc/4172>,
+                <http://identifiers.org/hgnc/634>,
+                <http://identifiers.org/hgnc/636> ;
+            ccf:contains_cell_types obo:CL_1001431 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10602>,
+                <http://identifiers.org/hgnc/4028>,
+                <http://identifiers.org/hgnc/4172>,
+                <http://identifiers.org/hgnc/634>,
+                <http://identifiers.org/hgnc/636> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0000362,
+                obo:UBERON_0001294,
+                obo:UBERON_0002113,
+                obo:UBERON_0009202 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11853>,
+                <http://identifiers.org/hgnc/15846>,
+                <http://identifiers.org/hgnc/222>,
+                <http://identifiers.org/hgnc/8951> ;
+            ccf:contains_cell_types obo:CL_1001285 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11853>,
+                <http://identifiers.org/hgnc/15846>,
+                <http://identifiers.org/hgnc/222>,
+                <http://identifiers.org/hgnc/8951> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0004100,
+                obo:UBERON_0004204 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10602>,
+                <http://identifiers.org/hgnc/4028>,
+                <http://identifiers.org/hgnc/4172>,
+                <http://identifiers.org/hgnc/634>,
+                <http://identifiers.org/hgnc/636> ;
+            ccf:contains_cell_types obo:CL_1000716 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10602>,
+                <http://identifiers.org/hgnc/4028>,
+                <http://identifiers.org/hgnc/4172>,
+                <http://identifiers.org/hgnc/634>,
+                <http://identifiers.org/hgnc/636> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0001292,
+                obo:UBERON_0002113 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10912>,
+                <http://identifiers.org/hgnc/17995> ;
+            ccf:contains_cell_types obo:CL_4030016 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10912>,
+                <http://identifiers.org/hgnc/17995> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1681/ASN.2020010071> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0001292 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0002113,
+                obo:UBERON_0005097 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10602>,
+                <http://identifiers.org/hgnc/4028>,
+                <http://identifiers.org/hgnc/634>,
+                <http://identifiers.org/hgnc/636> ;
+            ccf:contains_cell_types obo:CL_4030018 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10602>,
+                <http://identifiers.org/hgnc/4028>,
+                <http://identifiers.org/hgnc/634>,
+                <http://identifiers.org/hgnc/636> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1681/ASN.2020010071> ;
+            ccf:ftu_types obo:UBERON_0001285 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/3765>,
+                <http://identifiers.org/hgnc/6012> ;
+            ccf:contains_cell_types obo:CL_0001058 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/3765>,
+                <http://identifiers.org/hgnc/6012> ;
+            ccf:contains_references <https://www.doi.org/10.1101/2021.07.28.454201> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005215 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0003918,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/6934>,
+                <http://identifiers.org/hgnc/7569>,
+                <http://identifiers.org/hgnc/8033> ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/6934>,
+                <http://identifiers.org/hgnc/7569>,
+                <http://identifiers.org/hgnc/8033> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/18508>,
+                <http://identifiers.org/hgnc/30125>,
+                <http://identifiers.org/hgnc/5713>,
+                <http://identifiers.org/hgnc/5716> ;
+            ccf:contains_cell_types obo:CL_0000786 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/18508>,
+                <http://identifiers.org/hgnc/30125>,
+                <http://identifiers.org/hgnc/5713>,
+                <http://identifiers.org/hgnc/5716> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1101/2021.07.28.454201>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0001292,
+                obo:UBERON_0002113 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10602>,
+                <http://identifiers.org/hgnc/10912>,
+                <http://identifiers.org/hgnc/11068>,
+                <http://identifiers.org/hgnc/1434>,
+                <http://identifiers.org/hgnc/3145>,
+                <http://identifiers.org/hgnc/5209> ;
+            ccf:contains_cell_types obo:CL_4030017 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10602>,
+                <http://identifiers.org/hgnc/10912>,
+                <http://identifiers.org/hgnc/11068>,
+                <http://identifiers.org/hgnc/1434>,
+                <http://identifiers.org/hgnc/3145>,
+                <http://identifiers.org/hgnc/5209> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1681/ASN.2020010071> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0001292 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0001290,
+                obo:UBERON_0002113,
+                obo:UBERON_0004134 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10929>,
+                <http://identifiers.org/hgnc/10971>,
+                <http://identifiers.org/hgnc/18210>,
+                <http://identifiers.org/hgnc/21637>,
+                <http://identifiers.org/hgnc/23091>,
+                <http://identifiers.org/hgnc/633> ;
+            ccf:contains_cell_types obo:CL_4030011 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10929>,
+                <http://identifiers.org/hgnc/10971>,
+                <http://identifiers.org/hgnc/18210>,
+                <http://identifiers.org/hgnc/21637>,
+                <http://identifiers.org/hgnc/23091>,
+                <http://identifiers.org/hgnc/633> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1073/pnas.2005477117> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0004134 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0003918,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/1346>,
+                <http://identifiers.org/hgnc/14881>,
+                <http://identifiers.org/hgnc/2197>,
+                <http://identifiers.org/hgnc/2198>,
+                <http://identifiers.org/hgnc/2705>,
+                <http://identifiers.org/hgnc/6724> ;
+            ccf:contains_cell_types obo:CL_1000692 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/1346>,
+                <http://identifiers.org/hgnc/14881>,
+                <http://identifiers.org/hgnc/2197>,
+                <http://identifiers.org/hgnc/2198>,
+                <http://identifiers.org/hgnc/2705>,
+                <http://identifiers.org/hgnc/6724> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/26705>,
+                <http://identifiers.org/hgnc/3765>,
+                <http://identifiers.org/hgnc/6152> ;
+            ccf:contains_cell_types obo:CL_0000990 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/26705>,
+                <http://identifiers.org/hgnc/3765>,
+                <http://identifiers.org/hgnc/6152> ;
+            ccf:contains_references <https://www.doi.org/10.1084/jem.20030323>,
+                <https://www.doi.org/10.1101/2021.07.28.454201> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001232,
+                obo:UBERON_0002113,
+                obo:UBERON_0004100 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/1373>,
+                <http://identifiers.org/hgnc/18266> ;
+            ccf:contains_cell_types obo:CL_1001432 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/1373>,
+                <http://identifiers.org/hgnc/18266> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11935>,
+                <http://identifiers.org/hgnc/1673>,
+                <http://identifiers.org/hgnc/1675>,
+                <http://identifiers.org/hgnc/1677>,
+                <http://identifiers.org/hgnc/16892> ;
+            ccf:contains_cell_types obo:CL_0000084 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11935>,
+                <http://identifiers.org/hgnc/1673>,
+                <http://identifiers.org/hgnc/1675>,
+                <http://identifiers.org/hgnc/1677>,
+                <http://identifiers.org/hgnc/16892> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0000362,
+                obo:UBERON_0001291,
+                obo:UBERON_0002113,
+                obo:UBERON_0004202 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10910>,
+                <http://identifiers.org/hgnc/12559>,
+                <http://identifiers.org/hgnc/1514> ;
+            ccf:contains_cell_types obo:CL_1001108 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10910>,
+                <http://identifiers.org/hgnc/12559>,
+                <http://identifiers.org/hgnc/1514> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0004100,
+                obo:UBERON_0004203 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11027>,
+                <http://identifiers.org/hgnc/14467>,
+                <http://identifiers.org/hgnc/6342>,
+                <http://identifiers.org/hgnc/639> ;
+            ccf:contains_cell_types obo:CL_1000715 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11027>,
+                <http://identifiers.org/hgnc/14467>,
+                <http://identifiers.org/hgnc/6342>,
+                <http://identifiers.org/hgnc/639> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0003918,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11553>,
+                <http://identifiers.org/hgnc/130>,
+                <http://identifiers.org/hgnc/20391>,
+                <http://identifiers.org/hgnc/2193>,
+                <http://identifiers.org/hgnc/2197>,
+                <http://identifiers.org/hgnc/2209> ;
+            ccf:contains_cell_types obo:CL_1000691 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11553>,
+                <http://identifiers.org/hgnc/130>,
+                <http://identifiers.org/hgnc/20391>,
+                <http://identifiers.org/hgnc/2193>,
+                <http://identifiers.org/hgnc/2197>,
+                <http://identifiers.org/hgnc/2209> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001225,
+                obo:UBERON_0001284,
+                obo:UBERON_0002113,
+                obo:UBERON_0004188,
+                obo:UBERON_0006852 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/13394>,
+                <http://identifiers.org/hgnc/7908>,
+                <http://identifiers.org/hgnc/9171> ;
+            ccf:contains_cell_types obo:CL_0000653 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/13394>,
+                <http://identifiers.org/hgnc/7908>,
+                <http://identifiers.org/hgnc/9171> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001232,
+                obo:UBERON_0002113,
+                obo:UBERON_0004100 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11035>,
+                <http://identifiers.org/hgnc/8031>,
+                <http://identifiers.org/hgnc/8818> ;
+            ccf:contains_cell_types obo:CL_0002201 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11035>,
+                <http://identifiers.org/hgnc/8031>,
+                <http://identifiers.org/hgnc/8818> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1126/science.aat1699>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/1628>,
+                <http://identifiers.org/hgnc/1631>,
+                <http://identifiers.org/hgnc/6024> ;
+            ccf:contains_cell_types obo:CL_1000698 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/1628>,
+                <http://identifiers.org/hgnc/1631>,
+                <http://identifiers.org/hgnc/6024> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0002113,
+                obo:UBERON_0005097 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10602>,
+                <http://identifiers.org/hgnc/11068>,
+                <http://identifiers.org/hgnc/1434>,
+                <http://identifiers.org/hgnc/3145>,
+                <http://identifiers.org/hgnc/4172>,
+                <http://identifiers.org/hgnc/5209> ;
+            ccf:contains_cell_types obo:CL_1000768 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10602>,
+                <http://identifiers.org/hgnc/11068>,
+                <http://identifiers.org/hgnc/1434>,
+                <http://identifiers.org/hgnc/3145>,
+                <http://identifiers.org/hgnc/4172>,
+                <http://identifiers.org/hgnc/5209> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1681/ASN.2020010071> ;
+            ccf:ftu_types obo:UBERON_0001285 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001229,
+                obo:UBERON_0001285,
+                obo:UBERON_0002113,
+                obo:UBERON_0004188,
+                obo:UBERON_0006852 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/13394>,
+                <http://identifiers.org/hgnc/7908>,
+                <http://identifiers.org/hgnc/9171> ;
+            ccf:contains_cell_types obo:CL_0000653 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/13394>,
+                <http://identifiers.org/hgnc/7908>,
+                <http://identifiers.org/hgnc/9171> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1073/pnas.2005477117>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ;
+            ccf:ftu_types obo:UBERON_0001229,
+                obo:UBERON_0001285 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0002113,
+                obo:UBERON_0005097 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11027>,
+                <http://identifiers.org/hgnc/11068>,
+                <http://identifiers.org/hgnc/14467>,
+                <http://identifiers.org/hgnc/639> ;
+            ccf:contains_cell_types obo:CL_4030020 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11027>,
+                <http://identifiers.org/hgnc/11068>,
+                <http://identifiers.org/hgnc/14467>,
+                <http://identifiers.org/hgnc/639> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1681/ASN.2020010071> ;
+            ccf:ftu_types obo:UBERON_0001285 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0000362,
+                obo:UBERON_0002113,
+                obo:UBERON_0004200,
+                obo:UBERON_0009202 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11853>,
+                <http://identifiers.org/hgnc/15846>,
+                <http://identifiers.org/hgnc/222>,
+                <http://identifiers.org/hgnc/8951> ;
+            ccf:contains_cell_types obo:CL_1001285 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11853>,
+                <http://identifiers.org/hgnc/15846>,
+                <http://identifiers.org/hgnc/222>,
+                <http://identifiers.org/hgnc/8951> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0002113,
+                obo:UBERON_0004134 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10916>,
+                <http://identifiers.org/hgnc/2548>,
+                <http://identifiers.org/hgnc/417>,
+                <http://identifiers.org/hgnc/4175>,
+                <http://identifiers.org/hgnc/6694> ;
+            ccf:contains_cell_types obo:CL_0002306 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10916>,
+                <http://identifiers.org/hgnc/2548>,
+                <http://identifiers.org/hgnc/417>,
+                <http://identifiers.org/hgnc/4175>,
+                <http://identifiers.org/hgnc/6694> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1073/pnas.2005477117>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0004134 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001229,
+                obo:UBERON_0001285,
+                obo:UBERON_0002113,
+                obo:UBERON_0004188,
+                obo:UBERON_0005750 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/12663>,
+                <http://identifiers.org/hgnc/18688>,
+                <http://identifiers.org/hgnc/2032>,
+                <http://identifiers.org/hgnc/4883> ;
+            ccf:contains_cell_types obo:CL_1000452 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/12663>,
+                <http://identifiers.org/hgnc/18688>,
+                <http://identifiers.org/hgnc/2032>,
+                <http://identifiers.org/hgnc/4883> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ;
+            ccf:ftu_types obo:UBERON_0001229,
+                obo:UBERON_0001285 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0000362,
+                obo:UBERON_0001289,
+                obo:UBERON_0002113,
+                obo:UBERON_0004201 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11073>,
+                <http://identifiers.org/hgnc/11530>,
+                <http://identifiers.org/hgnc/20862>,
+                <http://identifiers.org/hgnc/2389>,
+                <http://identifiers.org/hgnc/633> ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11073>,
+                <http://identifiers.org/hgnc/11530>,
+                <http://identifiers.org/hgnc/20862>,
+                <http://identifiers.org/hgnc/2389>,
+                <http://identifiers.org/hgnc/633> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0001292,
+                obo:UBERON_0002113 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10527>,
+                <http://identifiers.org/hgnc/10912>,
+                <http://identifiers.org/hgnc/1434>,
+                <http://identifiers.org/hgnc/17995> ;
+            ccf:contains_cell_types obo:CL_1000849 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10527>,
+                <http://identifiers.org/hgnc/10912>,
+                <http://identifiers.org/hgnc/1434>,
+                <http://identifiers.org/hgnc/17995> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1681/ASN.2020010071> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0001292 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001232,
+                obo:UBERON_0002113,
+                obo:UBERON_0004100 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11035>,
+                <http://identifiers.org/hgnc/14467>,
+                <http://identifiers.org/hgnc/4028> ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11035>,
+                <http://identifiers.org/hgnc/14467>,
+                <http://identifiers.org/hgnc/4028> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0002113,
+                obo:UBERON_0005097 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11068>,
+                <http://identifiers.org/hgnc/1373>,
+                <http://identifiers.org/hgnc/18266> ;
+            ccf:contains_cell_types obo:CL_4030019 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11068>,
+                <http://identifiers.org/hgnc/1373>,
+                <http://identifiers.org/hgnc/18266> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1681/ASN.2020010071> ;
+            ccf:ftu_types obo:UBERON_0001285 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0001289,
+                obo:UBERON_0002113,
+                obo:UBERON_0005096 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11255>,
+                <http://identifiers.org/hgnc/12663>,
+                <http://identifiers.org/hgnc/21637>,
+                <http://identifiers.org/hgnc/2389> ;
+            ccf:contains_cell_types obo:CL_1001111 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11255>,
+                <http://identifiers.org/hgnc/12663>,
+                <http://identifiers.org/hgnc/21637>,
+                <http://identifiers.org/hgnc/2389> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0001289 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/1636>,
+                <http://identifiers.org/hgnc/1638>,
+                <http://identifiers.org/hgnc/3609>,
+                <http://identifiers.org/hgnc/613> ;
+            ccf:contains_cell_types obo:CL_0001056 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/1636>,
+                <http://identifiers.org/hgnc/1638>,
+                <http://identifiers.org/hgnc/3609>,
+                <http://identifiers.org/hgnc/613> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0003918,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/9958> ;
+            ccf:contains_cell_types obo:CL_0000648 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/9958> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1073/pnas.2005477117> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001225,
+                obo:UBERON_0002113,
+                obo:UBERON_0004188,
+                obo:UBERON_0005271,
+                obo:UBERON_0006852 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/13394>,
+                <http://identifiers.org/hgnc/7908>,
+                <http://identifiers.org/hgnc/9171> ;
+            ccf:contains_cell_types obo:CL_0000653 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/13394>,
+                <http://identifiers.org/hgnc/7908>,
+                <http://identifiers.org/hgnc/9171> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10473>,
+                <http://identifiers.org/hgnc/1677>,
+                <http://identifiers.org/hgnc/16892>,
+                <http://identifiers.org/hgnc/4414>,
+                <http://identifiers.org/hgnc/4708>,
+                <http://identifiers.org/hgnc/7830> ;
+            ccf:contains_cell_types obo:CL_0000814 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10473>,
+                <http://identifiers.org/hgnc/1677>,
+                <http://identifiers.org/hgnc/16892>,
+                <http://identifiers.org/hgnc/4414>,
+                <http://identifiers.org/hgnc/4708>,
+                <http://identifiers.org/hgnc/7830> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/1241>,
+                <http://identifiers.org/hgnc/4947> ;
+            ccf:contains_cell_types obo:CL_0000576 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/1241>,
+                <http://identifiers.org/hgnc/4947> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005272,
+                obo:UBERON_0006544,
+                obo:UBERON_0012441 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/13635>,
+                <http://identifiers.org/hgnc/2959>,
+                <http://identifiers.org/hgnc/9845> ;
+            ccf:contains_cell_types obo:CL_1001033 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/13635>,
+                <http://identifiers.org/hgnc/2959>,
+                <http://identifiers.org/hgnc/9845> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41467-019-12872-5>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0002113,
+                obo:UBERON_0004134,
+                obo:UBERON_0004197 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10970>,
+                <http://identifiers.org/hgnc/10972>,
+                <http://identifiers.org/hgnc/11019>,
+                <http://identifiers.org/hgnc/14430>,
+                <http://identifiers.org/hgnc/23091>,
+                <http://identifiers.org/hgnc/32017> ;
+            ccf:contains_cell_types obo:CL_4030010 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10970>,
+                <http://identifiers.org/hgnc/10972>,
+                <http://identifiers.org/hgnc/11019>,
+                <http://identifiers.org/hgnc/14430>,
+                <http://identifiers.org/hgnc/23091>,
+                <http://identifiers.org/hgnc/32017> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1073/pnas.2005477117>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0004134 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0004639,
+                obo:UBERON_0006544 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10918>,
+                <http://identifiers.org/hgnc/11853>,
+                <http://identifiers.org/hgnc/15846>,
+                <http://identifiers.org/hgnc/18122>,
+                <http://identifiers.org/hgnc/222>,
+                <http://identifiers.org/hgnc/8951> ;
+            ccf:contains_cell_types obo:CL_1001096 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10918>,
+                <http://identifiers.org/hgnc/11853>,
+                <http://identifiers.org/hgnc/15846>,
+                <http://identifiers.org/hgnc/18122>,
+                <http://identifiers.org/hgnc/222>,
+                <http://identifiers.org/hgnc/8951> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0004100,
+                obo:UBERON_0004204 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11027>,
+                <http://identifiers.org/hgnc/1437>,
+                <http://identifiers.org/hgnc/14467>,
+                <http://identifiers.org/hgnc/6342> ;
+            ccf:contains_cell_types obo:CL_1000717 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11027>,
+                <http://identifiers.org/hgnc/1437>,
+                <http://identifiers.org/hgnc/14467>,
+                <http://identifiers.org/hgnc/6342> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1126/science.aat1699> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001229,
+                obo:UBERON_0001285,
+                obo:UBERON_0002113,
+                obo:UBERON_0002319,
+                obo:UBERON_0002320 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10249>,
+                <http://identifiers.org/hgnc/16953>,
+                <http://identifiers.org/hgnc/17732>,
+                <http://identifiers.org/hgnc/26270>,
+                <http://identifiers.org/hgnc/6144>,
+                <http://identifiers.org/hgnc/8804> ;
+            ccf:contains_cell_types obo:CL_1000742 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10249>,
+                <http://identifiers.org/hgnc/16953>,
+                <http://identifiers.org/hgnc/17732>,
+                <http://identifiers.org/hgnc/26270>,
+                <http://identifiers.org/hgnc/6144>,
+                <http://identifiers.org/hgnc/8804> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1073/pnas.2005477117>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ;
+            ccf:ftu_types obo:UBERON_0001229,
+                obo:UBERON_0001285 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0002113,
+                obo:UBERON_0004134,
+                obo:UBERON_0004196 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10970>,
+                <http://identifiers.org/hgnc/10972>,
+                <http://identifiers.org/hgnc/11019>,
+                <http://identifiers.org/hgnc/11037>,
+                <http://identifiers.org/hgnc/28750>,
+                <http://identifiers.org/hgnc/9453> ;
+            ccf:contains_cell_types obo:CL_4030009 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10970>,
+                <http://identifiers.org/hgnc/10972>,
+                <http://identifiers.org/hgnc/11019>,
+                <http://identifiers.org/hgnc/11037>,
+                <http://identifiers.org/hgnc/28750>,
+                <http://identifiers.org/hgnc/9453> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1073/pnas.2005477117>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0004134 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/1698>,
+                <http://identifiers.org/hgnc/5713>,
+                <http://identifiers.org/hgnc/7315> ;
+            ccf:contains_cell_types obo:CL_0000236 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/1698>,
+                <http://identifiers.org/hgnc/5713>,
+                <http://identifiers.org/hgnc/7315> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0002113,
+                obo:UBERON_0005097 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11035>,
+                <http://identifiers.org/hgnc/8818> ;
+            ccf:contains_cell_types obo:CL_4030021 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11035>,
+                <http://identifiers.org/hgnc/8818> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1681/ASN.2020010071> ;
+            ccf:ftu_types obo:UBERON_0001285 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0001289,
+                obo:UBERON_0002113 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10832>,
+                <http://identifiers.org/hgnc/10919>,
+                <http://identifiers.org/hgnc/11530>,
+                <http://identifiers.org/hgnc/16438>,
+                <http://identifiers.org/hgnc/2032>,
+                <http://identifiers.org/hgnc/2303>,
+                <http://identifiers.org/hgnc/2389> ;
+            ccf:contains_cell_types obo:CL_4030014 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10832>,
+                <http://identifiers.org/hgnc/10919>,
+                <http://identifiers.org/hgnc/11530>,
+                <http://identifiers.org/hgnc/16438>,
+                <http://identifiers.org/hgnc/2032>,
+                <http://identifiers.org/hgnc/2303>,
+                <http://identifiers.org/hgnc/2389> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1101/2021.07.28.454201>,
+                <https://www.doi.org/10.1152/ajprenal.2000.278.1.F52>,
+                <https://www.doi.org/10.1152/ajprenal.2000.278.2.F202> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0001289 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10473>,
+                <http://identifiers.org/hgnc/4414>,
+                <http://identifiers.org/hgnc/4708>,
+                <http://identifiers.org/hgnc/7830> ;
+            ccf:contains_cell_types obo:CL_0000623 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10473>,
+                <http://identifiers.org/hgnc/4414>,
+                <http://identifiers.org/hgnc/4708>,
+                <http://identifiers.org/hgnc/7830> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0002113,
+                obo:UBERON_0004193 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10832>,
+                <http://identifiers.org/hgnc/11530>,
+                <http://identifiers.org/hgnc/2026>,
+                <http://identifiers.org/hgnc/2045>,
+                <http://identifiers.org/hgnc/2389>,
+                <http://identifiers.org/hgnc/9459> ;
+            ccf:contains_cell_types obo:CL_1001107 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10832>,
+                <http://identifiers.org/hgnc/11530>,
+                <http://identifiers.org/hgnc/2026>,
+                <http://identifiers.org/hgnc/2045>,
+                <http://identifiers.org/hgnc/2389>,
+                <http://identifiers.org/hgnc/9459> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0004193 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0001291,
+                obo:UBERON_0002113,
+                obo:UBERON_0002335 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10250>,
+                <http://identifiers.org/hgnc/10910>,
+                <http://identifiers.org/hgnc/7872> ;
+            ccf:contains_cell_types obo:CL_1000850 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10250>,
+                <http://identifiers.org/hgnc/10910>,
+                <http://identifiers.org/hgnc/7872> ;
+            ccf:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>,
+                <https://www.doi.org/10.1038/s41467-019-10861-2> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0001291 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10630>,
+                <http://identifiers.org/hgnc/10632>,
+                <http://identifiers.org/hgnc/4708> ;
+            ccf:contains_cell_types obo:CL_0000910 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10630>,
+                <http://identifiers.org/hgnc/10632>,
+                <http://identifiers.org/hgnc/4708> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002042,
+                obo:UBERON_0002113,
+                obo:UBERON_0006544 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11592>,
+                <http://identifiers.org/hgnc/7178>,
+                <http://identifiers.org/hgnc/9459> ;
+            ccf:contains_cell_types obo:CL_0002138 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11592>,
+                <http://identifiers.org/hgnc/7178>,
+                <http://identifiers.org/hgnc/9459> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41467-019-12872-5>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001231,
+                obo:UBERON_0001285,
+                obo:UBERON_0001289,
+                obo:UBERON_0002113 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10919>,
+                <http://identifiers.org/hgnc/11255>,
+                <http://identifiers.org/hgnc/11530>,
+                <http://identifiers.org/hgnc/21637>,
+                <http://identifiers.org/hgnc/2303>,
+                <http://identifiers.org/hgnc/2389>,
+                <http://identifiers.org/hgnc/5360>,
+                <http://identifiers.org/hgnc/6188> ;
+            ccf:contains_cell_types obo:CL_4030012 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10919>,
+                <http://identifiers.org/hgnc/11255>,
+                <http://identifiers.org/hgnc/11530>,
+                <http://identifiers.org/hgnc/21637>,
+                <http://identifiers.org/hgnc/2303>,
+                <http://identifiers.org/hgnc/2389>,
+                <http://identifiers.org/hgnc/5360>,
+                <http://identifiers.org/hgnc/6188> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1152/ajprenal.2000.278.1.F52>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ;
+            ccf:ftu_types obo:UBERON_0001285,
+                obo:UBERON_0001289 ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0003918,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11509>,
+                <http://identifiers.org/hgnc/24039>,
+                <http://identifiers.org/hgnc/2705>,
+                <http://identifiers.org/hgnc/5318>,
+                <http://identifiers.org/hgnc/6277>,
+                <http://identifiers.org/hgnc/7656> ;
+            ccf:contains_cell_types obo:CL_4030022 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11509>,
+                <http://identifiers.org/hgnc/24039>,
+                <http://identifiers.org/hgnc/2705>,
+                <http://identifiers.org/hgnc/5318>,
+                <http://identifiers.org/hgnc/6277>,
+                <http://identifiers.org/hgnc/7656> ;
+            ccf:contains_references <https://www.doi.org/10.1101/2021.07.28.454201> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0000362,
+                obo:UBERON_0001228,
+                obo:UBERON_0001294,
+                obo:UBERON_0002113,
+                obo:UBERON_0009095 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/10919>,
+                <http://identifiers.org/hgnc/634> ;
+            ccf:contains_cell_types obo:CL_1000718 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/10919>,
+                <http://identifiers.org/hgnc/634> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0006544,
+                obo:UBERON_0009091 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/13635>,
+                <http://identifiers.org/hgnc/2959>,
+                <http://identifiers.org/hgnc/4460>,
+                <http://identifiers.org/hgnc/7976> ;
+            ccf:contains_cell_types obo:CL_1001131 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/13635>,
+                <http://identifiers.org/hgnc/2959>,
+                <http://identifiers.org/hgnc/4460>,
+                <http://identifiers.org/hgnc/7976> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41467-019-12872-5>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1101/2021.07.28.454201> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002015,
+                obo:UBERON_0002113 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/1975>,
+                <http://identifiers.org/hgnc/3802> ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/1975>,
+                <http://identifiers.org/hgnc/3802> ;
+            ccf:contains_references <https://www.doi.org/10.1371/journal.pone.0187118> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0002113,
+                obo:UBERON_0003918,
+                obo:UBERON_0005215 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/11553>,
+                <http://identifiers.org/hgnc/130>,
+                <http://identifiers.org/hgnc/234>,
+                <http://identifiers.org/hgnc/26295>,
+                <http://identifiers.org/hgnc/7569>,
+                <http://identifiers.org/hgnc/8033> ;
+            ccf:contains_cell_types obo:CL_1001318 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/11553>,
+                <http://identifiers.org/hgnc/130>,
+                <http://identifiers.org/hgnc/234>,
+                <http://identifiers.org/hgnc/26295>,
+                <http://identifiers.org/hgnc/7569>,
+                <http://identifiers.org/hgnc/8033> ;
+            ccf:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>,
+                <https://www.doi.org/10.1038/s41586-020-2941-1>,
+                <https://www.doi.org/10.1073/pnas.2005477117>,
+                <https://www.doi.org/10.1172/jci.insight.133267> ],
+        [ a ccf:AsctbRecord ;
+            ccf:contains_anatomical_structures obo:UBERON_0001225,
+                obo:UBERON_0002113,
+                obo:UBERON_0004203,
+                obo:UBERON_0009883 ;
+            ccf:contains_biomarkers <http://identifiers.org/hgnc/634>,
+                <http://identifiers.org/hgnc/636> ;
+            ccf:contains_cell_types obo:CL_1000714 ;
+            ccf:contains_gene_biomarkers <http://identifiers.org/hgnc/634>,
+                <http://identifiers.org/hgnc/636> ] .
+

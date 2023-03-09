@@ -1,0 +1,182 @@
+id: http://purl.humanatlas.io/specs/asct-b
+name: asct-b
+prefixes:
+  ccf: http://purl.org/ccf/
+  dcterms: http://purl.org/dc/terms/
+  pav: http://purl.org/pav/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  obo: http://purl.obolibrary.org/obo/
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_prefix: ccf
+default_range: string
+
+classes:
+  AsctbRecord:
+    class_uri: ccf:AsctbRecord
+    slots:
+      - anatomical_structures
+      - cell_types
+      - biomarkers
+      - biomarkers_protein
+      - biomarkers_gene
+      - biomarkers_lipids
+      - biomarkers_meta
+      - biomarkers_prot
+      - ftu_types
+      - references
+  AnatomicalStructure:
+    class_uri: ccf:AnatomicalStructure
+    slots:
+      - id
+      - label
+      - preferred_name
+  CellType:
+    class_uri: ccf:CellType
+    slots:
+      - id
+      - label
+      - preferred_name
+  Biomarker:
+    class_uri: ccf:Biomarker
+    slots:
+      - id
+      - label
+      - preferred_name
+      - biomarker_type
+  ProteinBiomarker:
+    class_uri: ccf:ProteinBiomarker
+    slots:
+      - id
+      - label
+      - preferred_name
+      - biomarker_type
+  GeneBiomarker:
+    class_uri: ccf:GeneBiomarker
+    slots:
+      - id
+      - label
+      - preferred_name
+      - biomarker_type
+  LipidBiomarker:
+    class_uri: ccf:LipidBiomarker
+    slots:
+      - id
+      - label
+      - preferred_name
+      - biomarker_type
+  MetaBiomarker:
+    class_uri: ccf:MetaBiomarker
+    slots:
+      - id
+      - label
+      - preferred_name
+      - biomarker_type
+  ProtBiomarker:
+    class_uri: ccf:ProtBiomarker
+    slots:
+      - id
+      - label
+      - preferred_name
+      - biomarker_type
+  FtuType:
+    class_uri: ccf:FtuType
+    slots:
+      - id
+      - label
+      - preferred_name
+  StudyReference:
+    class_uri: ccf:StudyReference
+    slots:
+      - id
+      - doi
+      - pubmed_id
+  Container:
+    tree_root: true
+    attributes:
+      data:
+        multivalued: true
+        inlined_as_list: true
+        range: AsctbRecord
+
+slots:
+  id:
+    required: true
+    identifier: true
+  anatomical_structures:
+    required: true
+    slot_uri: ccf:contains_anatomical_structures
+    range: AnatomicalStructure
+    multivalued: true
+    inlined_as_list: true
+  cell_types:
+    required: false
+    slot_uri: ccf:contains_cell_types
+    range: CellType
+    multivalued: true
+    inlined_as_list: true
+  biomarkers:
+    required: false
+    slot_uri: ccf:contains_biomarkers
+    range: Biomarker
+    multivalued: true
+    inlined_as_list: true
+  biomarkers_protein:
+    required: false
+    slot_uri: ccf:contains_protein_biomarkers
+    range: ProteinBiomarker
+    multivalued: true
+    inlined_as_list: true
+  biomarkers_gene:
+    required: false
+    slot_uri: ccf:contains_gene_biomarkers
+    range: GeneBiomarker
+    multivalued: true
+    inlined_as_list: true
+  biomarkers_lipids:
+    required: false
+    slot_uri: ccf:contains_lipid_biomarkers
+    range: LipidBiomarker
+    multivalued: true
+    inlined_as_list: true
+  biomarkers_meta:
+    required: false
+    slot_uri: ccf:contains_meta_biomarkers
+    range: MetaBiomarker
+    multivalued: true
+    inlined_as_list: true  
+  biomarkers_prot:
+    required: false
+    slot_uri: ccf:contains_prot_biomarkers
+    range: ProtBiomarker
+    multivalued: true
+    inlined_as_list: true
+  ftu_types:
+    required: false
+    slot_uri: ccf:ftu_types
+    range: FtuType
+    multivalued: true
+    inlined_as_list: true
+  references:
+    required: false
+    slot_uri: ccf:contains_references
+    range: StudyReference
+    multivalued: true
+    inlined_as_list: true
+  label:
+    required: true
+    slot_uri: rdfs:label
+  preferred_name:
+    required: false
+    slot_uri: ccf:pref_label
+  biomarker_type:
+    required: false
+    slot_uri: ccf:biomarker_type
+  doi:
+    required: false
+    slot_uri: dcterms:references
+  pubmed_id:
+    required: false
+    slot_uri: ccf:pubmed_id
