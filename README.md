@@ -42,7 +42,7 @@ Commands:
                                    form (ie add Metadata to nodes in the SVG or GLB files).
   package <digital-object-path>    Packages an Enriched Digital Object, such that it can published to a website/DOI'd/etc and used
   build <digital-object-path>      Given a Digital Object, checks for and runs normalization, enrichment, and packaging in one command.
-  list [glob]                      Lists digital object information in the DO_HOME directory
+  list                             Lists all digital objects in the DO_HOME directory
   help [command]                   display help for command
 ```
 
