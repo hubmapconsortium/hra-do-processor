@@ -1,6 +1,7 @@
 import { InvalidArgumentError } from 'commander';
 import { existsSync, lstatSync, readFileSync } from 'fs';
 import { dirname, isAbsolute, resolve } from 'path';
+import { getDigitalObjectInformation } from './digital-object.js';
 import { getDirName } from './source-info.js';
 
 const DEFAULT_DO_HOME = resolve(process.env.DO_HOME || './digital-objects');
@@ -20,7 +21,8 @@ export function getEnvironment(program, subcommand, selectedDigitalObject) {
   };
   if (selectedDigitalObject) {
     try {
-      environment.selectedDigitalObject = parseDirectory(selectedDigitalObject, environment.doHome);
+      const doPath = parseDirectory(selectedDigitalObject, environment.doHome);
+      environment.selectedDigitalObject = getDigitalObjectInformation(doPath);
     } catch (error) {
       program.error(error.message);
     }
