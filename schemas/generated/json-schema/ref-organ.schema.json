@@ -1,0 +1,344 @@
+{
+   "$defs": {
+      "AnatomicalStructure": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
+         "title": "AnatomicalStructure",
+         "type": "object"
+      },
+      "Container": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "extraction_sets": {
+               "items": {
+                  "$ref": "#/$defs/ExtractionSet"
+               },
+               "type": "array"
+            },
+            "rui_placements": {
+               "items": {
+                  "$ref": "#/$defs/SpatialPlacement"
+               },
+               "type": "array"
+            },
+            "spatial_entities": {
+               "items": {
+                  "$ref": "#/$defs/SpatialEntity"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "Container",
+         "type": "object"
+      },
+      "DimensionUnitEnum": {
+         "description": "",
+         "enum": [
+            "centimeter",
+            "millimeter"
+         ],
+         "title": "DimensionUnitEnum",
+         "type": "string"
+      },
+      "DonorSexEnum": {
+         "description": "",
+         "enum": [
+            "Female",
+            "Male"
+         ],
+         "title": "DonorSexEnum",
+         "type": "string"
+      },
+      "ExtractionSet": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "extraction_set_for": {
+               "type": "string"
+            },
+            "id": {
+               "type": "string"
+            },
+            "label": {
+               "type": "string"
+            },
+            "rui_rank": {
+               "type": "integer"
+            }
+         },
+         "required": [
+            "id",
+            "label",
+            "extraction_set_for"
+         ],
+         "title": "ExtractionSet",
+         "type": "object"
+      },
+      "OrganSideEnum": {
+         "description": "",
+         "enum": [
+            "Left",
+            "Right"
+         ],
+         "title": "OrganSideEnum",
+         "type": "string"
+      },
+      "RotationUnitEnum": {
+         "description": "",
+         "enum": [
+            "degree"
+         ],
+         "title": "RotationUnitEnum",
+         "type": "string"
+      },
+      "ScalingUnitEnum": {
+         "description": "",
+         "enum": [
+            "ratio"
+         ],
+         "title": "ScalingUnitEnum",
+         "type": "string"
+      },
+      "SpatialEntity": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "creation_date": {
+               "format": "date",
+               "type": "string"
+            },
+            "creator": {
+               "type": "string"
+            },
+            "creator_first_name": {
+               "type": "string"
+            },
+            "creator_last_name": {
+               "type": "string"
+            },
+            "creator_orcid": {
+               "type": "string"
+            },
+            "dimension_unit": {
+               "$ref": "#/$defs/DimensionUnitEnum"
+            },
+            "extraction_set": {
+               "type": "string"
+            },
+            "id": {
+               "type": "string"
+            },
+            "label": {
+               "type": "string"
+            },
+            "object_reference": {
+               "$ref": "#/$defs/SpatialObjectReference"
+            },
+            "organ_donor_sex": {
+               "$ref": "#/$defs/DonorSexEnum"
+            },
+            "organ_side": {
+               "$ref": "#/$defs/OrganSideEnum"
+            },
+            "placements": {
+               "items": {
+                  "$ref": "#/$defs/SpatialPlacement"
+               },
+               "type": "array"
+            },
+            "reference_organ": {
+               "type": "string"
+            },
+            "representation_of": {
+               "type": "string"
+            },
+            "rui_rank": {
+               "type": "integer"
+            },
+            "x_dimension": {
+               "minimum": 0,
+               "type": "number"
+            },
+            "y_dimension": {
+               "minimum": 0,
+               "type": "number"
+            },
+            "z_dimension": {
+               "minimum": 0,
+               "type": "number"
+            }
+         },
+         "required": [
+            "id",
+            "label",
+            "creator",
+            "creator_first_name",
+            "creator_last_name",
+            "creation_date",
+            "x_dimension",
+            "y_dimension",
+            "z_dimension",
+            "dimension_unit"
+         ],
+         "title": "SpatialEntity",
+         "type": "object"
+      },
+      "SpatialObjectReference": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "file": {
+               "type": "string"
+            },
+            "file_format": {
+               "type": "string"
+            },
+            "file_subpath": {
+               "type": "string"
+            },
+            "id": {
+               "type": "string"
+            },
+            "placement": {
+               "$ref": "#/$defs/SpatialPlacement"
+            }
+         },
+         "required": [
+            "id",
+            "file",
+            "file_format",
+            "placement"
+         ],
+         "title": "SpatialObjectReference",
+         "type": "object"
+      },
+      "SpatialPlacement": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "id": {
+               "type": "string"
+            },
+            "placement_date": {
+               "format": "date",
+               "type": "string"
+            },
+            "rotation_order": {
+               "type": "string"
+            },
+            "rotation_unit": {
+               "$ref": "#/$defs/RotationUnitEnum"
+            },
+            "scaling_unit": {
+               "$ref": "#/$defs/ScalingUnitEnum"
+            },
+            "source": {
+               "type": "string"
+            },
+            "target": {
+               "type": "string"
+            },
+            "translation_unit": {
+               "$ref": "#/$defs/TranslationUnitEnum"
+            },
+            "x_rotation": {
+               "type": "number"
+            },
+            "x_scaling": {
+               "minimum": 0,
+               "type": "number"
+            },
+            "x_translation": {
+               "type": "number"
+            },
+            "y_rotation": {
+               "type": "number"
+            },
+            "y_scaling": {
+               "minimum": 0,
+               "type": "number"
+            },
+            "y_translation": {
+               "type": "number"
+            },
+            "z_rotation": {
+               "type": "number"
+            },
+            "z_scaling": {
+               "minimum": 0,
+               "type": "number"
+            },
+            "z_translation": {
+               "type": "number"
+            }
+         },
+         "required": [
+            "id",
+            "target",
+            "placement_date",
+            "x_scaling",
+            "y_scaling",
+            "z_scaling",
+            "scaling_unit",
+            "x_rotation",
+            "y_rotation",
+            "z_rotation",
+            "rotation_unit",
+            "x_translation",
+            "y_translation",
+            "z_translation",
+            "translation_unit"
+         ],
+         "title": "SpatialPlacement",
+         "type": "object"
+      },
+      "TranslationUnitEnum": {
+         "description": "",
+         "enum": [
+            "centimeter",
+            "millimeter"
+         ],
+         "title": "TranslationUnitEnum",
+         "type": "string"
+      }
+   },
+   "$id": "http://purl.humanatlas.io/specs/ref-organ",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "metamodel_version": "1.7.0",
+   "properties": {
+      "extraction_sets": {
+         "items": {
+            "$ref": "#/$defs/ExtractionSet"
+         },
+         "type": "array"
+      },
+      "rui_placements": {
+         "items": {
+            "$ref": "#/$defs/SpatialPlacement"
+         },
+         "type": "array"
+      },
+      "spatial_entities": {
+         "items": {
+            "$ref": "#/$defs/SpatialEntity"
+         },
+         "type": "array"
+      }
+   },
+   "required": [],
+   "title": "ref-organ",
+   "type": "object",
+   "version": null
+}
+

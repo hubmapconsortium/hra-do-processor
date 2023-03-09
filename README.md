@@ -1,4 +1,4 @@
-# Human Reference Atlas Digital Objects Processor (do-processor)
+# HRA Digital Objects Processor (do-processor)
 
 This repository contains digital object definitions and a data processor to process conforming digital objects. The primary use case for this processor is to generate the Human Reference Atlas Knowledge Graph (hra-kg).
 
