@@ -1,0 +1,173 @@
+{
+  "@context": {
+    "@base": "http://purl.org/ccf/latest/ccf-entity.owl#",
+    "@vocab": "http://purl.org/ccf/latest/ccf-entity.owl#",
+    "ccf": "http://purl.org/ccf/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+
+    "dataset": {
+      "@reverse": "has_cell_gene_summary",
+      "@type": "@id"
+    },
+    "summary": {
+      "@id": "has_cell_gene_summary_row"
+    },
+    "cell": {
+      "@id": "has_cell_type",
+      "@type": "@id"
+    },
+    "gene": {
+      "@id": "has_gene",
+      "@type": "@id"
+    },
+    "count": {
+      "@id": "has_raw_cell_count",
+    },
+    "percentage": {
+      "@id": "has_cell_percentage",
+    },
+
+    "label": "rdfs:label",
+    "description": "rdfs:comment",
+    "link": {
+      "@id": "rdfs:seeAlso",
+      "@type": "@id"
+    },
+    "samples": {
+      "@reverse": "has_donor"
+    },
+    "sections": {
+      "@id": "has_tissue_section",
+      "@type": "@id"
+    },
+    "datasets": {
+      "@id": "has_dataset",
+      "@type": "@id"
+    },
+    "rui_location": {
+      "@id": "has_spatial_entity",
+      "@type": "@id"
+    },
+    "ontologyTerms": {
+      "@id": "has_ontology_term",
+      "@type": "@id"
+    },
+    "cellTypeTerms": {
+      "@id": "has_cell_type_term",
+      "@type": "@id"
+    },
+    "thumbnail": {
+      "@id": "has_thumbnail"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "https://entity.api.hubmapconsortium.org/entities/1e0b527a436936050455fe755dfbaba2",
+      "@type": "Donor",
+      "label": "Male, Age 67",
+      "description": "Entered 10/29/2020, Diane Salamon, TMC-UCSD",
+      "link": "https://portal.hubmapconsortium.org/browse/donor/1e0b527a436936050455fe755dfbaba2",
+      "age": 67,
+      "sex": "Male",
+      "consortium_name": "HuBMAP",
+      "provider_name": "TMC-UCSD",
+      "provider_uuid": "03b3d854-ed44-11e8-8bce-0e368f3075e8",
+      "samples": [
+        {
+          "@type": "Sample",
+          "sample_type": "Tissue Block",
+          "rui_location": {
+            "@context": "https://hubmapconsortium.github.io/hubmap-ontology/ccf-context.jsonld",
+            "@id": "http://purl.org/ccf/1.5/df0b33f7-371a-47a4-a636-a27db19bdbc9",
+            "@type": "SpatialEntity",
+            "ccf_annotations": [
+              "http://purl.obolibrary.org/obo/UBERON_0000362",
+              "http://purl.obolibrary.org/obo/UBERON_0002015",
+              "http://purl.obolibrary.org/obo/UBERON_0001225",
+              "http://purl.obolibrary.org/obo/UBERON_0002189",
+              "http://purl.obolibrary.org/obo/UBERON_0004200",
+              "http://purl.obolibrary.org/obo/UBERON_0001284"
+            ],
+            "creation_date": "2022-09-23",
+            "creator": "Amanda Knoten",
+            "creator_first_name": "Amanda",
+            "creator_last_name": "Knoten",
+            "dimension_units": "millimeter",
+            "placement": {
+              "@context": "https://hubmapconsortium.github.io/hubmap-ontology/ccf-context.jsonld",
+              "@id": "http://purl.org/ccf/1.5/df0b33f7-371a-47a4-a636-a27db19bdbc9_placement",
+              "@type": "SpatialPlacement",
+              "placement_date": "2022-09-23",
+              "rotation_order": "XYZ",
+              "rotation_units": "degree",
+              "scaling_units": "ratio",
+              "target": "http://purl.org/ccf/latest/ccf.owl#VHMRightKidney",
+              "translation_units": "millimeter",
+              "x_rotation": -30,
+              "x_scaling": 1,
+              "x_translation": 56.641,
+              "y_rotation": -22,
+              "y_scaling": 1,
+              "y_translation": 88.893,
+              "z_rotation": 22,
+              "z_scaling": 1,
+              "z_translation": 30.677
+            },
+            "x_dimension": 4,
+            "y_dimension": 6,
+            "z_dimension": 2
+          },
+          "@id": "https://entity.api.hubmapconsortium.org/entities/0a558711c6b9d5b9029717d722a2c31c",
+          "label": "Registered 9/23/2022, Diane Salamon, TMC-UCSD",
+          "link": "https://portal.hubmapconsortium.org/browse/sample/0a558711c6b9d5b9029717d722a2c31c",
+          "sections": [],
+          "datasets": [
+            {
+              "@id": "https://entity.api.hubmapconsortium.org/entities/12cc2c41d0669ab1067a0c1f52c06144",
+              "@type": "Dataset",
+              "label": "Registered 5/11/2022, Joel Welling, undefined",
+              "description": "Data/Assay Types: Slide-seq, ",
+              "link": "https://portal.hubmapconsortium.org/browse/dataset/12cc2c41d0669ab1067a0c1f52c06144",
+              "technology": "OTHER",
+              "thumbnail": "assets/icons/ico-unknown.svg"
+            },
+            {
+              "@id": "https://entity.api.hubmapconsortium.org/entities/d655e506e3e07f345c65c3cc90d045e2",
+              "@type": "Dataset",
+              "label": "Registered 2/14/2022, HuBMAP Process, undefined",
+              "description": "Data/Assay Types: salmon_rnaseq_slideseq, ",
+              "link": "https://portal.hubmapconsortium.org/browse/dataset/d655e506e3e07f345c65c3cc90d045e2",
+              "technology": "OTHER",
+              "thumbnail": "assets/icons/ico-unknown.svg"
+            }
+          ],
+          "section_count": 0,
+          "section_size": 2,
+          "section_units": "millimeter",
+          "description": "4 x 6 x 2 millimeter, 2 millimeter, fresh_frozen_oct_block, 0 Sections"
+        }
+      ]
+    },
+    {
+      "@id": "https://entity.api.hubmapconsortium.org/entities/d655e506e3e07f345c65c3cc90d045e2#CxGSummary",
+      "@type": "CellGeneSummary",
+      "dataset": "https://entity.api.hubmapconsortium.org/entities/d655e506e3e07f345c65c3cc90d045e2",
+      "summary": [
+        {
+          "@type": "CellGeneSummaryRow",
+          "cell": "http://purl.obolibrary.org/obo/CL_000001",
+          "gene": "http://identifiers.org/hgnc/11111",
+          "count": 10,
+          "percentage": 0.01
+        },
+        {
+          "@type": "CellGeneSummaryRow",
+          "cell": "http://purl.obolibrary.org/obo/CL_000002",
+          "gene": "http://identifiers.org/hgnc/222222",
+          "count": 10,
+          "percentage": 0.01
+        }
+      ]
+    }
+  ]
+}

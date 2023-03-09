@@ -1,0 +1,985 @@
+@prefix ccf: <http://purl.org/ccf/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://lod.humanatlas.io/ref-organ/VHFColonObj> a ccf:SpatialObjectReference ;
+    ccf:file_format "model/gltf-binary" ;
+    ccf:file_subpath "VHF_colon" ;
+    ccf:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/SBU_F_Intestine_Large.glb" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFColonObjPlacement> .
+
+<http://lod.humanatlas.io/ref-organ/VHFColonObjPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFColon> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation -90.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 128.446499999999986130205797962844371795654296875 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 9.3037410000000004828279998037032783031463623046875 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 106.358870999999993500750861130654811859130859375 ;
+    dcterms:created "2021-05-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFColonToVHFLargeIntestinePlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFLargeIntestine> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 0.0 ;
+    ccf:x_scaling 0.939999999999999946709294817992486059665679931640625 ;
+    ccf:x_translation 0.0 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.1100000000000000976996261670137755572795867919921875 ;
+    ccf:y_translation 0.0 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 0.939999999999999946709294817992486059665679931640625 ;
+    ccf:z_translation 0.0 ;
+    dcterms:created "2022-01-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFHeartObj> a ccf:SpatialObjectReference ;
+    ccf:file_format "model/gltf-binary" ;
+    ccf:file_subpath "VHF_heart" ;
+    ccf:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_Heart.glb" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFHeartObjPlacement> .
+
+<http://lod.humanatlas.io/ref-organ/VHFHeartObjPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFHeart> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation -90.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 32.25875649999999694728103349916636943817138671875 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation -362.73804300000000466752680949866771697998046875 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 58.16093459999999737419784651137888431549072265625 ;
+    dcterms:created "2021-05-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFHeartV1.0ToV1.1Placement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFHeartV1.1> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 0.0 ;
+    ccf:x_scaling 0.89400000000000001687538997430237941443920135498046875 ;
+    ccf:x_translation 0.0 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0480000000000000426325641456060111522674560546875 ;
+    ccf:y_translation 0.0 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 0.89400000000000001687538997430237941443920135498046875 ;
+    ccf:z_translation 0.0 ;
+    dcterms:created "2022-01-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFLeftKidneyObj> a ccf:SpatialObjectReference ;
+    ccf:file_format "model/gltf-binary" ;
+    ccf:file_subpath "VHF_left_kidney" ;
+    ccf:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_Kidney_Left.glb" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFLeftKidneyObjPlacement> .
+
+<http://lod.humanatlas.io/ref-organ/VHFLeftKidneyObjPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFLeftKidney> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation -90.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation -50.0042700000000053250914788804948329925537109375 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation -161.083071999999987156115821562707424163818359375 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 98.100359999999994897734723053872585296630859375 ;
+    dcterms:created "2021-05-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFLeftKidneyV1.0ToV1.1Placement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFLeftKidneyV1.1> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 0.0 ;
+    ccf:x_scaling 0.939999999999999946709294817992486059665679931640625 ;
+    ccf:x_translation 0.0 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.096999999999999975131004248396493494510650634765625 ;
+    ccf:y_translation 0.0 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 0.939999999999999946709294817992486059665679931640625 ;
+    ccf:z_translation 0.0 ;
+    dcterms:created "2022-01-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFLeftKidney_Patch> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Female Left Kidney (RUI 0.5)" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFLeftKidney_PatchGlobalPlacement> ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0004538" ;
+    ccf:x_dimension 60.0 ;
+    ccf:y_dimension 100.0 ;
+    ccf:z_dimension 60.0 ;
+    dcterms:created "2020-01-01" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHFLeftKidney_PatchGlobalPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFLeftKidney> ;
+    ccf:rotation_order "XYZ" ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation -19.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 41.48700000000000187583282240666449069976806640625 ;
+    ccf:y_rotation -13.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 54.421999999999997044142219237983226776123046875 ;
+    ccf:z_rotation 22.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 42.94200000000000017053025658242404460906982421875 ;
+    dcterms:created "2021-05-20" .
+
+<http://lod.humanatlas.io/ref-organ/VHFLungObj> a ccf:SpatialObjectReference ;
+    ccf:file_format "model/gltf-binary" ;
+    ccf:file_subpath "VHF_respiratory_system" ;
+    ccf:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_Lung.glb" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFLungObjPlacement> .
+
+<http://lod.humanatlas.io/ref-organ/VHFLungObjPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFLung> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation -90.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 139.351683034527326299212290905416011810302734375 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation -341.66131132658000524315866641700267791748046875 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 113.2899970911729923273014719597995281219482421875 ;
+    dcterms:created "2021-05-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFLungV1.0ToV1.1Placement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFLungV1.1> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 0.0 ;
+    ccf:x_scaling 0.89400000000000001687538997430237941443920135498046875 ;
+    ccf:x_translation 0.0 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 0.9901999999999999690913909944356419146060943603515625 ;
+    ccf:y_translation 0.0 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 0.84940000000000004387601393318618647754192352294921875 ;
+    ccf:z_translation 0.0 ;
+    dcterms:created "2022-01-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFRightKidneyObj> a ccf:SpatialObjectReference ;
+    ccf:file_format "model/gltf-binary" ;
+    ccf:file_subpath "VHF_right_kidney" ;
+    ccf:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_Kidney_Right.glb" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFRightKidneyObjPlacement> .
+
+<http://lod.humanatlas.io/ref-organ/VHFRightKidneyObjPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFRightKidney> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation -90.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 110.29311999999998761268216185271739959716796875 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation -181.13952899999998180646798573434352874755859375 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 93.1011199999999945475792628712952136993408203125 ;
+    dcterms:created "2021-05-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFRightKidneyV1.0ToV1.1Placement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFRightKidneyV1.1> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 0.0 ;
+    ccf:x_scaling 0.939999999999999946709294817992486059665679931640625 ;
+    ccf:x_translation 0.0 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.096999999999999975131004248396493494510650634765625 ;
+    ccf:y_translation 0.0 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 0.939999999999999946709294817992486059665679931640625 ;
+    ccf:z_translation 0.0 ;
+    dcterms:created "2022-01-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFRightKidney_Patch> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Female Right Kidney (RUI 0.5)" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFRightKidney_PatchGlobalPlacement> ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0004539" ;
+    ccf:x_dimension 60.0 ;
+    ccf:y_dimension 100.0 ;
+    ccf:z_dimension 60.0 ;
+    dcterms:created "2020-01-01" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHFRightKidney_PatchGlobalPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFRightKidney> ;
+    ccf:rotation_order "XYZ" ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation -19.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 38.191000000000002501110429875552654266357421875 ;
+    ccf:y_rotation -13.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 48.2879999999999967030817060731351375579833984375 ;
+    ccf:z_rotation -21.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 36.98899999999999721467247582040727138519287109375 ;
+    dcterms:created "2021-05-20" .
+
+<http://lod.humanatlas.io/ref-organ/VHFSkinObj> a ccf:SpatialObjectReference ;
+    ccf:file_format "model/gltf-binary" ;
+    ccf:file_subpath "VHF_skin" ;
+    ccf:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_Skin.glb" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFSkinObjPlacement> .
+
+<http://lod.humanatlas.io/ref-organ/VHFSkinObjPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFSkin> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation -90.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 521.19594800000004397588782012462615966796875 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 861.540799999999990177457220852375030517578125 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 165.862187599999998610655893571674823760986328125 ;
+    dcterms:created "2021-05-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFSkinV1.0ToV1.1Placement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFSkinV1.1> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 0.0 ;
+    ccf:x_scaling 0.9276999999999999690913909944356419146060943603515625 ;
+    ccf:x_translation 0.0 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 0.96699999999999997069011214989586733281612396240234375 ;
+    ccf:y_translation 0.0 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 0.99199999999999999289457264239899814128875732421875 ;
+    ccf:z_translation 0.0 ;
+    dcterms:created "2022-01-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFSpleenCC1> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Female Spleen (CC1)" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFSpleenCC1GlobalPlacement> ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0002106" ;
+    ccf:x_dimension 59.89999999999999857891452847979962825775146484375 ;
+    ccf:y_dimension 40.7000000000000028421709430404007434844970703125 ;
+    ccf:z_dimension 9.03999999999999914734871708787977695465087890625 ;
+    dcterms:created "2020-01-01" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHFSpleenCC1GlobalPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFSpleen> ;
+    ccf:rotation_order "XYZ" ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 95.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 70.63200000000000500222085975110530853271484375 ;
+    ccf:y_rotation 52.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 27.83899999999999863575794734060764312744140625 ;
+    ccf:z_rotation 17.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 39.6700000000000017053025658242404460906982421875 ;
+    dcterms:created "2021-05-20" .
+
+<http://lod.humanatlas.io/ref-organ/VHFSpleenCC2> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Female Spleen (CC2)" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFSpleenCC2GlobalPlacement> ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0002106" ;
+    ccf:x_dimension 63.0 ;
+    ccf:y_dimension 40.10000000000000142108547152020037174224853515625 ;
+    ccf:z_dimension 8.8900000000000005684341886080801486968994140625 ;
+    dcterms:created "2020-01-01" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHFSpleenCC2GlobalPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFSpleen> ;
+    ccf:rotation_order "XYZ" ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 82.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 51.58800000000000096633812063373625278472900390625 ;
+    ccf:y_rotation 52.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 45.941000000000002501110429875552654266357421875 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 24.707999999999998408384271897375583648681640625 ;
+    dcterms:created "2021-05-20" .
+
+<http://lod.humanatlas.io/ref-organ/VHFSpleenCC3> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Female Spleen (CC3)" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFSpleenCC3GlobalPlacement> ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0002106" ;
+    ccf:x_dimension 58.7000000000000028421709430404007434844970703125 ;
+    ccf:y_dimension 43.39999999999999857891452847979962825775146484375 ;
+    ccf:z_dimension 9.53999999999999914734871708787977695465087890625 ;
+    dcterms:created "2020-01-01" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHFSpleenCC3GlobalPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFSpleen> ;
+    ccf:rotation_order "XYZ" ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 82.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 18.964999999999999857891452847979962825775146484375 ;
+    ccf:y_rotation 52.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 53.5930000000000035242919693700969219207763671875 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 23.30199999999999960209606797434389591217041015625 ;
+    dcterms:created "2021-05-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFSpleenObj> a ccf:SpatialObjectReference ;
+    ccf:file_format "model/gltf-binary" ;
+    ccf:file_subpath "VHF_spleen" ;
+    ccf:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_Spleen.glb" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFSpleenObjPlacement> .
+
+<http://lod.humanatlas.io/ref-organ/VHFSpleenObjPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFSpleen> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation -90.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation -46.21593279999999737128746346570551395416259765625 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation -260.71469999999999345163814723491668701171875 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 112.8726899999999915280568529851734638214111328125 ;
+    dcterms:created "2021-05-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFSpleenV1.0ToV1.1Placement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFSpleenV1.1> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 0.0 ;
+    ccf:x_scaling 0.939999999999999946709294817992486059665679931640625 ;
+    ccf:x_translation 0.0 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.096999999999999975131004248396493494510650634765625 ;
+    ccf:y_translation 0.0 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 0.939999999999999946709294817992486059665679931640625 ;
+    ccf:z_translation 0.0 ;
+    dcterms:created "2022-01-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFThymusObj> a ccf:SpatialObjectReference ;
+    ccf:file_format "model/gltf-binary" ;
+    ccf:file_subpath "VHF_thymus" ;
+    ccf:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_Thymus.glb" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFThymusObjPlacement> .
+
+<http://lod.humanatlas.io/ref-organ/VHFThymusObjPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFThymus> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation -90.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 19.792461800000001659327608649618923664093017578125 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation -418.4277359999999816864146851003170013427734375 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation -3.115577620000000269584461420890875160694122314453125 ;
+    dcterms:created "2021-05-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFThymusV1.0ToV1.1Placement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFThymusV1.1> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 0.0 ;
+    ccf:x_scaling 0.9330000000000000515143483426072634756565093994140625 ;
+    ccf:x_translation 0.0 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.1140000000000001012523398458142764866352081298828125 ;
+    ccf:y_translation 0.0 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 0.9330000000000000515143483426072634756565093994140625 ;
+    ccf:z_translation 0.0 ;
+    dcterms:created "2022-01-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHFemaleGlobalPlacement2> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHBothSexes> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 0.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 400.0 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 0.0 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 0.0 ;
+    dcterms:created "2020-01-01" .
+
+<http://lod.humanatlas.io/ref-organ/VHFemaleOrgansGlobalPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFemale> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 0.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 0.0 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 0.0 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 0.0 ;
+    dcterms:created "2020-01-01" .
+
+<http://lod.humanatlas.io/ref-organ/VHFemaleOrgansObj> a ccf:SpatialObjectReference ;
+    ccf:file_format "model/gltf-binary" ;
+    ccf:file_subpath "VHF_United" ;
+    ccf:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_United.glb" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFemaleOrgansObjPlacement> .
+
+<http://lod.humanatlas.io/ref-organ/VHFemaleOrgansObjPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFemaleOrgans> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation -90.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 0.0 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 0.0 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 0.0 ;
+    dcterms:created "2020-01-01" .
+
+<http://lod.humanatlas.io/ref-organ/VHMLeftKidney_Patch> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Male Left Kidney (RUI 0.5)" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHMLeftKidney_PatchGlobalPlacement> ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0004538" ;
+    ccf:x_dimension 60.0 ;
+    ccf:y_dimension 100.0 ;
+    ccf:z_dimension 60.0 ;
+    dcterms:created "2020-01-01" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHMLeftKidney_PatchGlobalPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMLeftKidney> ;
+    ccf:rotation_order "XYZ" ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation -19.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 39.3119999999999976125764078460633754730224609375 ;
+    ccf:y_rotation -13.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 57.71900000000000119371179607696831226348876953125 ;
+    ccf:z_rotation 25.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 39.893000000000000682121026329696178436279296875 ;
+    dcterms:created "2021-05-20" .
+
+<http://lod.humanatlas.io/ref-organ/VHMRightKidney_Patch> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Male Right Kidney (RUI 0.5)" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHMRightKidney_PatchGlobalPlacement> ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0004539" ;
+    ccf:x_dimension 60.0 ;
+    ccf:y_dimension 100.0 ;
+    ccf:z_dimension 60.0 ;
+    dcterms:created "2020-01-01" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHMRightKidney_PatchGlobalPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMRightKidney> ;
+    ccf:rotation_order "XYZ" ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation -19.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 34.04299999999999926103555480949580669403076171875 ;
+    ccf:y_rotation -13.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 55.76299999999999812416717759333550930023193359375 ;
+    ccf:z_rotation -3.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 38.17699999999999960209606797434389591217041015625 ;
+    dcterms:created "2021-05-20" .
+
+<http://lod.humanatlas.io/ref-organ/VHMSkinObj> a ccf:SpatialObjectReference ;
+    ccf:file_format "model/gltf-binary" ;
+    ccf:file_subpath "VHM_skin" ;
+    ccf:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_M_Skin.glb" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHMSkinObjPlacement> .
+
+<http://lod.humanatlas.io/ref-organ/VHMSkinObjPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMSkin> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation -90.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 524.2242999999999710780684836208820343017578125 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 898.1607000000000198269844986498355865478515625 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 172.658533000000005586116458289325237274169921875 ;
+    dcterms:created "2021-05-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHMSkinV1.0ToV1.1Placement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMSkinV1.1> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 0.0 ;
+    ccf:x_scaling 0.99809999999999998721023075631819665431976318359375 ;
+    ccf:x_translation 0.0 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0124999999999999555910790149937383830547332763671875 ;
+    ccf:y_translation 0.0 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 0.90200000000000002398081733190338127315044403076171875 ;
+    ccf:z_translation 0.0 ;
+    dcterms:created "2022-01-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHMSpleenCC1> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Male Spleen (CC1)" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHMSpleenCC1GlobalPlacement> ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0002106" ;
+    ccf:x_dimension 59.89999999999999857891452847979962825775146484375 ;
+    ccf:y_dimension 40.7000000000000028421709430404007434844970703125 ;
+    ccf:z_dimension 9.03999999999999914734871708787977695465087890625 ;
+    dcterms:created "2020-01-01" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHMSpleenCC1GlobalPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMSpleen> ;
+    ccf:rotation_order "XYZ" ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 80.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 82.8169999999999930651028989814221858978271484375 ;
+    ccf:y_rotation 44.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 46.6039999999999992041921359486877918243408203125 ;
+    ccf:z_rotation 52.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 50.7349999999999994315658113919198513031005859375 ;
+    dcterms:created "2021-05-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHMSpleenCC2> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Male Spleen (CC2)" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHMSpleenCC2GlobalPlacement> ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0002106" ;
+    ccf:x_dimension 63.0 ;
+    ccf:y_dimension 40.10000000000000142108547152020037174224853515625 ;
+    ccf:z_dimension 8.8900000000000005684341886080801486968994140625 ;
+    dcterms:created "2020-01-01" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHMSpleenCC2GlobalPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMSpleen> ;
+    ccf:rotation_order "XYZ" ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 92.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 56.19500000000000028421709430404007434844970703125 ;
+    ccf:y_rotation 50.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 53.743999999999999772626324556767940521240234375 ;
+    ccf:z_rotation 25.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 29.144999999999999573674358543939888477325439453125 ;
+    dcterms:created "2021-05-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHMSpleenCC3> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Male Spleen (CC3)" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHMSpleenCC3GlobalPlacement> ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0002106" ;
+    ccf:x_dimension 58.7000000000000028421709430404007434844970703125 ;
+    ccf:y_dimension 43.39999999999999857891452847979962825775146484375 ;
+    ccf:z_dimension 9.53999999999999914734871708787977695465087890625 ;
+    dcterms:created "2020-01-01" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHMSpleenCC3GlobalPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMSpleen> ;
+    ccf:rotation_order "XYZ" ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 77.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 32.90100000000000335376171278767287731170654296875 ;
+    ccf:y_rotation 48.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 70.72100000000000363797880709171295166015625 ;
+    ccf:z_rotation 18.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 26.550999999999998379962562466971576213836669921875 ;
+    dcterms:created "2021-05-21" .
+
+<http://lod.humanatlas.io/ref-organ/VHMaleGlobalPlacement2> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHBothSexes> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 0.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation -400.0 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 0.0 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 0.0 ;
+    dcterms:created "2020-01-01" .
+
+<http://lod.humanatlas.io/ref-organ/VHMaleOrgansGlobalPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMale> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation 0.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 0.0 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 0.0 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 0.0 ;
+    dcterms:created "2020-01-01" .
+
+<http://lod.humanatlas.io/ref-organ/VHMaleOrgansObj> a ccf:SpatialObjectReference ;
+    ccf:file_format "model/gltf-binary" ;
+    ccf:file_subpath "VHM_United" ;
+    ccf:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_M_United.glb" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHMaleOrgansObjPlacement> .
+
+<http://lod.humanatlas.io/ref-organ/VHMaleOrgansObjPlacement> a ccf:SpatialPlacement ;
+    ccf:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMaleOrgans> ;
+    ccf:rotation_unit "degree" ;
+    ccf:scaling_unit "ratio" ;
+    ccf:translation_unit "millimeter" ;
+    ccf:x_rotation -90.0 ;
+    ccf:x_scaling 1.0 ;
+    ccf:x_translation 0.0 ;
+    ccf:y_rotation 0.0 ;
+    ccf:y_scaling 1.0 ;
+    ccf:y_translation 0.0 ;
+    ccf:z_rotation 0.0 ;
+    ccf:z_scaling 1.0 ;
+    ccf:z_translation 0.0 ;
+    dcterms:created "2020-01-01" .
+
+<http://lod.humanatlas.io/ref-organ/VHFColon> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Female Colon" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFColonObj> ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFColonToVHFLargeIntestinePlacement> ;
+    ccf:organ_owner_sex "Female" ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0000059" ;
+    ccf:x_dimension 258.8039999999999736246536485850811004638671875 ;
+    ccf:y_dimension 265.78874100000001590160536579787731170654296875 ;
+    ccf:z_dimension 205.763700999999997520717442966997623443603515625 ;
+    dcterms:created "2021-05-21" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHFHeart> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Female Heart v1.0" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFHeartObj> ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFHeartV1.0ToV1.1Placement> ;
+    ccf:organ_owner_sex "Female" ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0000948" ;
+    ccf:x_dimension 159.443207499999999754436430521309375762939453125 ;
+    ccf:y_dimension 104.9475069999999732317519374191761016845703125 ;
+    ccf:z_dimension 113.53179810000000315994839183986186981201171875 ;
+    dcterms:created "2021-05-21" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHFLung> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Female Lung" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFLungObj> ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFLungV1.0ToV1.1Placement> ;
+    ccf:organ_owner_sex "Female" ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0001004" ;
+    ccf:x_dimension 280.91133494814408777529024519026279449462890625 ;
+    ccf:y_dimension 299.75201360194984090412617661058902740478515625 ;
+    ccf:z_dimension 180.30054394856080079989624209702014923095703125 ;
+    dcterms:created "2021-05-21" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHFSkin> a ccf:SpatialEntity ;
+    rdfs:label "Skin" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFSkinObj> ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFSkinV1.0ToV1.1Placement> ;
+    ccf:organ_owner_sex "Female" ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0002097" ;
+    ccf:x_dimension 1042.3918960000000879517756402492523193359375 ;
+    ccf:y_dimension 1723.48309199999994234531186521053314208984375 ;
+    ccf:z_dimension 331.7520167999999785024556331336498260498046875 ;
+    dcterms:created "2021-05-21" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHFThymus> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Female Thymus v1.0" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFThymusObj> ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFThymusV1.0ToV1.1Placement> ;
+    ccf:organ_owner_sex "Female" ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0002370" ;
+    ccf:x_dimension 92.259651800000000321233528666198253631591796875 ;
+    ccf:y_dimension 110.9386980000000448853825218975543975830078125 ;
+    ccf:z_dimension 57.623708579999998846687958575785160064697265625 ;
+    dcterms:created "2021-05-21" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHFemale> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Female" ;
+    ccf:creator_first_name "Bruce" ;
+    ccf:creator_last_name "Herr" ;
+    ccf:creator_orcid "https://orcid.org/0000-0002-6703-7647" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFemaleGlobalPlacement2> ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0005172" ;
+    ccf:x_dimension 1000.0 ;
+    ccf:y_dimension 1000.0 ;
+    ccf:z_dimension 200.0 ;
+    dcterms:created "2020-01-01" ;
+    dcterms:creator "Bruce Herr - https://orcid.org/0000-0002-6703-7647" .
+
+<http://lod.humanatlas.io/ref-organ/VHFemaleOrgans> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Female Organs" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFemaleOrgansObj> ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFemaleOrgansGlobalPlacement> ;
+    ccf:x_dimension 1000.0 ;
+    ccf:y_dimension 1000.0 ;
+    ccf:z_dimension 200.0 ;
+    dcterms:created "2020-01-01" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHMSkin> a ccf:SpatialEntity ;
+    rdfs:label "Skin" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_object_reference <http://lod.humanatlas.io/ref-organ/VHMSkinObj> ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHMSkinV1.0ToV1.1Placement> ;
+    ccf:organ_owner_sex "Male" ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0002097" ;
+    ccf:x_dimension 1048.4486999999999170540831983089447021484375 ;
+    ccf:y_dimension 1807.29379999999991923687048256397247314453125 ;
+    ccf:z_dimension 345.31706600000001117223291657865047454833984375 ;
+    dcterms:created "2021-05-21" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHMale> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Male" ;
+    ccf:creator_first_name "Bruce" ;
+    ccf:creator_last_name "Herr" ;
+    ccf:creator_orcid "https://orcid.org/0000-0002-6703-7647" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHMaleGlobalPlacement2> ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0005172" ;
+    ccf:x_dimension 1000.0 ;
+    ccf:y_dimension 1000.0 ;
+    ccf:z_dimension 200.0 ;
+    dcterms:created "2020-01-01" ;
+    dcterms:creator "Bruce Herr - https://orcid.org/0000-0002-6703-7647" .
+
+<http://lod.humanatlas.io/ref-organ/VHMaleOrgans> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Male Organs" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_object_reference <http://lod.humanatlas.io/ref-organ/VHMaleOrgansObj> ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHMaleOrgansGlobalPlacement> ;
+    ccf:x_dimension 1000.0 ;
+    ccf:y_dimension 1000.0 ;
+    ccf:z_dimension 200.0 ;
+    dcterms:created "2020-01-01" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHBothSexes> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human (Both Sexes)" ;
+    ccf:creator_first_name "Bruce" ;
+    ccf:creator_last_name "Herr" ;
+    ccf:creator_orcid "https://orcid.org/0000-0002-6703-7647" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0005172" ;
+    ccf:x_dimension 1000.0 ;
+    ccf:y_dimension 1000.0 ;
+    ccf:z_dimension 200.0 ;
+    dcterms:created "2020-01-01" ;
+    dcterms:creator "Bruce Herr - https://orcid.org/0000-0002-6703-7647" .
+
+<http://lod.humanatlas.io/ref-organ/VHFLeftKidney> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Female Left Kidney v1.0" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFLeftKidneyObj> ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFLeftKidneyV1.0ToV1.1Placement> ;
+    ccf:organ_owner_sex "Female" ;
+    ccf:organ_side "Left" ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0004538" ;
+    ccf:x_dimension 77.80807099999998399653122760355472564697265625 ;
+    ccf:y_dimension 113.767684000000002697561285458505153656005859375 ;
+    ccf:z_dimension 82.564033099999988962736097164452075958251953125 ;
+    dcterms:created "2021-05-21" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHFRightKidney> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Female Right Kidney v1.0" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFRightKidneyObj> ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFRightKidneyV1.0ToV1.1Placement> ;
+    ccf:organ_owner_sex "Female" ;
+    ccf:organ_side "Right" ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0004539" ;
+    ccf:x_dimension 78.0752199999999874080458539538085460662841796875 ;
+    ccf:y_dimension 90.2197059999999737556208856403827667236328125 ;
+    ccf:z_dimension 73.978892000000001871740096248686313629150390625 ;
+    dcterms:created "2021-05-21" ;
+    dcterms:creator "Kristin Browne" .
+
+<http://lod.humanatlas.io/ref-organ/VHFSpleen> a ccf:SpatialEntity ;
+    rdfs:label "Visual Human Female Spleen v1.0" ;
+    ccf:creator_first_name "Kristin" ;
+    ccf:creator_last_name "Browne" ;
+    ccf:dimension_unit "millimeter" ;
+    ccf:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFSpleenObj> ;
+    ccf:has_placement <http://lod.humanatlas.io/ref-organ/VHFSpleenV1.0ToV1.1Placement> ;
+    ccf:organ_owner_sex "Female" ;
+    ccf:representation_of "http://purl.obolibrary.org/obo/UBERON_0002106" ;
+    ccf:x_dimension 95.277283200000027818532544188201427459716796875 ;
+    ccf:y_dimension 93.2681360000000267973518930375576019287109375 ;
+    ccf:z_dimension 75.469356099999998832572600804269313812255859375 ;
+    dcterms:created "2021-05-21" ;
+    dcterms:creator "Kristin Browne" .
+
+[] a ccf:Container ;
+    ccf:data <http://lod.humanatlas.io/ref-organ/VHBothSexes>,
+        <http://lod.humanatlas.io/ref-organ/VHFColon>,
+        <http://lod.humanatlas.io/ref-organ/VHFHeart>,
+        <http://lod.humanatlas.io/ref-organ/VHFLeftKidney>,
+        <http://lod.humanatlas.io/ref-organ/VHFLeftKidney_Patch>,
+        <http://lod.humanatlas.io/ref-organ/VHFLung>,
+        <http://lod.humanatlas.io/ref-organ/VHFRightKidney>,
+        <http://lod.humanatlas.io/ref-organ/VHFRightKidney_Patch>,
+        <http://lod.humanatlas.io/ref-organ/VHFSkin>,
+        <http://lod.humanatlas.io/ref-organ/VHFSpleen>,
+        <http://lod.humanatlas.io/ref-organ/VHFSpleenCC1>,
+        <http://lod.humanatlas.io/ref-organ/VHFSpleenCC2>,
+        <http://lod.humanatlas.io/ref-organ/VHFSpleenCC3>,
+        <http://lod.humanatlas.io/ref-organ/VHFThymus>,
+        <http://lod.humanatlas.io/ref-organ/VHFemale>,
+        <http://lod.humanatlas.io/ref-organ/VHFemaleOrgans>,
+        <http://lod.humanatlas.io/ref-organ/VHMLeftKidney_Patch>,
+        <http://lod.humanatlas.io/ref-organ/VHMRightKidney_Patch>,
+        <http://lod.humanatlas.io/ref-organ/VHMSkin>,
+        <http://lod.humanatlas.io/ref-organ/VHMSpleenCC1>,
+        <http://lod.humanatlas.io/ref-organ/VHMSpleenCC2>,
+        <http://lod.humanatlas.io/ref-organ/VHMSpleenCC3>,
+        <http://lod.humanatlas.io/ref-organ/VHMale>,
+        <http://lod.humanatlas.io/ref-organ/VHMaleOrgans> .
+

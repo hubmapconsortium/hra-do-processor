@@ -1,0 +1,208 @@
+id: http://purl.humanatlas.io/specs/ref-organ
+name: ref-organ
+prefixes:
+  ccf: http://purl.org/ccf/
+  dcterms: http://purl.org/dc/terms/
+  pav: http://purl.org/pav/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  obo: http://purl.obolibrary.org/obo/
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_prefix: ccf
+default_range: string
+  
+classes:
+  SpatialEntity:
+    class_uri: ccf:SpatialEntity
+    slots:
+      - id
+      - label
+      - creator
+      - creator_first_name
+      - creator_last_name
+      - creator_orcid
+      - creation_date
+      - x_dimension
+      - y_dimension
+      - z_dimension
+      - dimension_unit
+      - representation_of
+      - organ_owner_sex
+      - organ_side
+      - object_reference
+      - placements
+  SpatialObjectReference:
+    class_uri: ccf:SpatialObjectReference
+    slots:
+      - id
+      - file
+      - file_subpath
+      - file_format
+      - placement
+  SpatialPlacement:
+    class_uri: ccf:SpatialPlacement
+    slots:
+      - id
+      - target
+      - source
+      - placement_date
+      - x_scaling
+      - y_scaling
+      - z_scaling
+      - scaling_unit
+      - x_rotation
+      - y_rotation
+      - z_rotation
+      - rotation_unit
+      - rotation_order
+      - x_translation
+      - y_translation
+      - z_translation
+      - translation_unit
+  Container:
+    tree_root: true
+    attributes:
+      data:
+        multivalued: true
+        inlined_as_list: true
+        range: SpatialEntity
+
+slots:
+  id:
+    identifier: true
+  label:
+    required: true
+    slot_uri: rdfs:label
+  creator:
+    required: true
+    slot_uri: dcterms:creator
+  creator_first_name:
+    required: true
+    slot_uri: ccf:creator_first_name
+  creator_last_name:
+    required: true
+    slot_uri: ccf:creator_last_name
+  creator_orcid:
+    required: false
+    slot_uri: ccf:creator_orcid
+  creation_date:
+    required: true
+    slot_uri: dcterms:created
+  x_dimension:
+    required: true
+    slot_uri: ccf:x_dimension
+    range: decimal
+    minimum_value: 0.0
+  y_dimension:
+    required: true
+    slot_uri: ccf:y_dimension
+    range: decimal
+    minimum_value: 0.0
+  z_dimension:
+    required: true
+    slot_uri: ccf:z_dimension
+    range: decimal
+    minimum_value: 0.0
+  dimension_unit:
+    required: true
+    slot_uri: ccf:dimension_unit
+  x_scaling:
+    required: true
+    slot_uri: ccf:x_scaling
+    range: decimal
+    minimum_value: 0.0
+  y_scaling:
+    required: true
+    slot_uri: ccf:y_scaling
+    range: decimal
+    minimum_value: 0.0
+  z_scaling:
+    required: true
+    slot_uri: ccf:z_scaling    
+    range: decimal
+    minimum_value: 0.0
+  scaling_unit:
+    required: true
+    slot_uri: ccf:scaling_unit
+  x_rotation:
+    required: true
+    slot_uri: ccf:x_rotation
+    range: decimal
+  y_rotation:
+    required: true
+    slot_uri: ccf:y_rotation
+    range: decimal
+  z_rotation:
+    required: true
+    slot_uri: ccf:z_rotation
+    range: decimal
+  rotation_unit:
+    required: true
+    slot_uri: ccf:rotation_unit
+  rotation_order:
+    required: false
+    slot_uri: ccf:rotation_order
+  x_translation:
+    required: true
+    slot_uri: ccf:x_translation
+    range: decimal
+  y_translation:
+    required: true
+    slot_uri: ccf:y_translation
+    range: decimal
+  z_translation:
+    required: true
+    slot_uri: ccf:z_translation
+    range: decimal
+  translation_unit:
+    required: true
+    slot_uri: ccf:translation_unit
+  representation_of:
+    slot_uri: ccf:representation_of
+  organ_owner_sex:
+    required: false
+    slot_uri: ccf:organ_owner_sex
+  organ_side:
+    required: false
+    slot_uri: ccf:organ_side
+  file:
+    required: true
+    slot_uri: ccf:file_url
+  file_subpath:
+    required: false
+    slot_uri: ccf:file_subpath
+  file_format:
+    required: true
+    slot_uri: ccf:file_format
+  placement_date:
+    required: true
+    slot_uri: dcterms:created
+  target:
+    required: true
+    slot_uri: ccf:placement_relative_to
+    range: SpatialEntity
+    inlined: false
+  source:
+    required: false
+    slot_uri: ccf:placement_for
+    range: SpatialEntity
+    inlined: false
+  object_reference:
+    required: false
+    slot_uri: ccf:has_object_reference
+    range: SpatialObjectReference
+    inlined: true
+  placement:
+    required: true
+    slot_uri: ccf:has_placement
+    range: SpatialPlacement
+    inlined: true
+  placements:
+    required: false
+    slot_uri: ccf:has_placement
+    range: SpatialPlacement
+    inlined: true
+    multivalued: true
+    inlined_as_list: true
