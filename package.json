@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/hubmapconsortium/ccf-linkml#readme",
   "dependencies": {
-    "commander": "^10.0.0"
+    "commander": "^10.0.0",
+    "glob": "^9.2.1"
   },
   "devDependencies": {
     "eslint": "^8.35.0",

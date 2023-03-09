@@ -56,10 +56,9 @@ program
 
 program
   .command('list')
-  .description('Lists digital object information in the DO_HOME directory')
-  .argument('[glob]', 'Optional glob for filtering digital objects')
-  .action((str, _options, command) => {
-    list(getEnvironment(program, command, str));
+  .description('Lists all digital objects in the DO_HOME directory')
+  .action((_options, command) => {
+    list(getEnvironment(program, command));
   });
 
 program.parse(process.argv);
