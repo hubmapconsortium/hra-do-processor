@@ -1,4 +1,5 @@
 import { enrichAsctb } from './enrich-asct-b.js';
+import { enrichCollection } from './enrich-collection.js';
 import { enrichRefOrgan } from './enrich-ref-organ.js';
 
 export function enrich(context) {
@@ -6,6 +7,9 @@ export function enrich(context) {
   switch (obj.type) {
     case 'asct-b':
       enrichAsctb(context);
+      break;
+    case 'collection':
+      enrichCollection(context);
       break;
     case 'ref-organ':
       enrichRefOrgan(context);
