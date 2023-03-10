@@ -1,0 +1,2447 @@
+@prefix ccf1: <http://purl.org/ccf/latest/ccf.owl#>.
+@prefix ccfo: <http://purl.org/ccf/>.
+@prefix dc: <http://purl.org/dc/terms/>.
+@prefix hgnc: <http://identifiers.org/hgnc/>.
+@prefix obo: <http://purl.obolibrary.org/obo/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+obo:CL_0000084 a ccfo:CellType;
+    rdfs:label "T cell";
+    ccfo:pref_label "T Cell".
+obo:CL_0000097 a ccfo:CellType;
+    rdfs:label "mast cell";
+    ccfo:pref_label "Mast cell".
+obo:CL_0000115 a ccfo:CellType;
+    rdfs:label "endothlial cell";
+    ccfo:pref_label "Endothelial Cell".
+obo:CL_0000236 a ccfo:CellType;
+    rdfs:label "B cell";
+    ccfo:pref_label "B cell".
+obo:CL_0000576 a ccfo:CellType;
+    rdfs:label "monocyte";
+    ccfo:pref_label "Monocyte".
+obo:CL_0000623 a ccfo:CellType;
+    rdfs:label "natural killer cell";
+    ccfo:pref_label "Natural Killer Cell".
+obo:CL_0000648 a ccfo:CellType;
+    rdfs:label "kidney granular cell";
+    ccfo:pref_label "Juxtaglomerular granular cell (Renin positive)".
+obo:CL_0000775 a ccfo:CellType;
+    rdfs:label "neutrophil";
+    ccfo:pref_label "Neutrophil".
+obo:CL_0000786 a ccfo:CellType;
+    rdfs:label "plasma cell";
+    ccfo:pref_label "Plasma cell".
+obo:CL_0000814 a ccfo:CellType;
+    rdfs:label "mature NK T cell";
+    ccfo:pref_label "Natural Killer T Cell".
+obo:CL_0000875 a ccfo:CellType;
+    rdfs:label "non-classical monocyte";
+    ccfo:pref_label "non Classical Monocyte".
+obo:CL_0000910 a ccfo:CellType;
+    rdfs:label "cytotoxic T cell";
+    ccfo:pref_label "Cytotoxic T Cell".
+obo:CL_0000990 a ccfo:CellType;
+    rdfs:label "conventional dendritic cell";
+    ccfo:pref_label "Dendritic Cell (classical)".
+obo:CL_0001056 a ccfo:CellType;
+    rdfs:label "dendritic cell, human";
+    ccfo:pref_label "Dendritic Cell (general)".
+obo:CL_0001058 a ccfo:CellType;
+    rdfs:label "plasmacytoid dendritic cell, human";
+    ccfo:pref_label "Dendritic Cell (plasmatoid)".
+obo:CL_0002138 a ccfo:CellType;
+    rdfs:label "endothelial cell of lymphatic vessel";
+    ccfo:pref_label "Lymphatic Endothelial Cell".
+obo:CL_0002201 a ccfo:CellType;
+    rdfs:label "renal beta-intercalated cell";
+    ccfo:pref_label "Intercalated Cell Type B".
+obo:CL_0002306 a ccfo:CellType;
+    rdfs:label "epithelial cell of proximal tubule";
+    ccfo:pref_label "Proximal Tubule Epithelial Cell".
+obo:CL_1000452 a ccfo:CellType;
+    rdfs:label "parietal epithelial cell";
+    ccfo:pref_label "Parietal Epithelial Cell".
+obo:CL_1000454 a ccfo:CellType;
+    rdfs:label "kidney collecting duct epithelial cell";
+    ccfo:pref_label "Collecting Duct Cell".
+obo:CL_1000597 a ccfo:CellType;
+    rdfs:label "papillary tips cell";
+    ccfo:pref_label "Papillary Tip Epithelial Cell".
+obo:CL_1000691 a ccfo:CellType;
+    rdfs:label "kidney interstitial myofibroblast";
+    ccfo:pref_label "Myofibroblast".
+obo:CL_1000692 a ccfo:CellType;
+    rdfs:label "kidney interstitial fibroblast";
+    ccfo:pref_label "Fibroblast".
+obo:CL_1000698 a ccfo:CellType;
+    rdfs:label "kidney resident macrophage";
+    ccfo:pref_label "M2-Macrophage".
+obo:CL_1000716 a ccfo:CellType;
+    rdfs:label "kidney outer medulla collecting duct principal cell";
+    ccfo:pref_label "Outer Medullary Collecting Duct Principal Cell".
+obo:CL_1000717 a ccfo:CellType;
+    rdfs:label "kidney outer medulla collecting duct intercalated cell";
+    ccfo:pref_label "Outer Medullary Collecting Duct Intercalated Cell Type A".
+obo:CL_1000742 a ccfo:CellType;
+    rdfs:label "glomerular mesangial cell";
+    ccfo:pref_label "Mesangial Cell".
+obo:CL_1000768 a ccfo:CellType;
+    rdfs:label "kidney connecting tubule epithelial cell";
+    ccfo:pref_label "Connecting Tubule Cell".
+obo:CL_1000849 a ccfo:CellType;
+    rdfs:label "kidney distal convoluted tubule epithelial cell";
+    ccfo:pref_label "Distal Convoluted Tubule Cell".
+obo:CL_1000850 a ccfo:CellType;
+    rdfs:label "macula densa epithelial cell";
+    ccfo:pref_label "Macula Densa cell".
+obo:CL_1001005 a ccfo:CellType;
+    rdfs:label "glomerular capillary endothelial cell";
+    ccfo:pref_label "Glomerular Capillary Endothelial Cell".
+obo:CL_1001033 a ccfo:CellType;
+    rdfs:label "peritubular capillary endothelial cell";
+    ccfo:pref_label "Peritubular Capillary Endothelial Cell".
+obo:CL_1001096 a ccfo:CellType;
+    rdfs:label "kidney afferent arteriole endothelial cell";
+    ccfo:pref_label "Afferent Arteriole Endothelial Cell".
+obo:CL_1001099 a ccfo:CellType;
+    rdfs:label "kidney efferent arteriole endothelial cell";
+    ccfo:pref_label "Efferent Arteriole Endothelial cell".
+obo:CL_1001106 a ccfo:CellType;
+    rdfs:label "kidney loop of Henle thick ascending limb epithelial cell";
+    ccfo:pref_label "Thick Ascending Limb Cell".
+obo:CL_1001107 a ccfo:CellType;
+    rdfs:label "kidney loop of Henle thin ascending limb epithelial cell";
+    ccfo:pref_label "Ascending Thin Limb Cell".
+obo:CL_1001109 a ccfo:CellType;
+    rdfs:label "kidney loop of Henle cortical thick ascending limb epithelial cell";
+    ccfo:pref_label "Cortical Thick Ascending Limb Cell".
+obo:CL_1001111 a ccfo:CellType;
+    rdfs:label "kidney loop of Henle thin descending limb epithelial cell";
+    ccfo:pref_label "Descending Thin Limb Cell".
+obo:CL_1001131 a ccfo:CellType;
+    rdfs:label "vasa recta ascending limb cell";
+    ccfo:pref_label "Ascending Vasa Recta Endothelial Cell".
+obo:CL_1001318 a ccfo:CellType;
+    rdfs:label "renal interstitial pericyte";
+    ccfo:pref_label "Vascular Smooth Muscle Cell/Pericyte (general)".
+obo:CL_1001431 a ccfo:CellType;
+    rdfs:label "kidney collecting duct principal cell";
+    ccfo:pref_label "Collecting Duct Principal Cell".
+obo:CL_1001432 a ccfo:CellType;
+    rdfs:label "kidney collecting duct intercalated cell";
+    ccfo:pref_label "Collecting Duct Intercalated Cell".
+obo:CL_4030009 a ccfo:CellType;
+    rdfs:label "epithelial cell of proximal tubule segment 1";
+    ccfo:pref_label "Proximal Tubule Epithelial Cell Segment 1".
+obo:CL_4030010 a ccfo:CellType;
+    rdfs:label "epithelial cell of proximal tubule segment 2";
+    ccfo:pref_label "Proximal Tubule Epithelial Cell Segment 2".
+obo:CL_4030011 a ccfo:CellType;
+    rdfs:label "epithelial cell of proximal tubule segment 3";
+    ccfo:pref_label "Proximal Tubule Cell Epithelial Segment 3".
+obo:CL_4030012 a ccfo:CellType;
+    rdfs:label "descending thin limb cell type 1";
+    ccfo:pref_label "Descending Thin Limb Cell Type 1".
+obo:CL_4030013 a ccfo:CellType;
+    rdfs:label "Descending Thin Limb Cell Type 2";
+    ccfo:pref_label "Descending Thin Limb Cell Type 2".
+obo:CL_4030014 a ccfo:CellType;
+    rdfs:label "Descending Thin Limb Cell Type 3";
+    ccfo:pref_label "Descending Thin Limb Cell Type 3".
+obo:CL_4030015 a ccfo:CellType;
+    rdfs:label "collecting duct intercalated cell type A";
+    ccfo:pref_label "Collecting Duct Intercalated Cell Type A".
+obo:CL_4030016 a ccfo:CellType;
+    rdfs:label "distal convoluted tubule cell type 1";
+    ccfo:pref_label "Distal Convoluted Tubule Cell Type 1".
+obo:CL_4030017 a ccfo:CellType;
+    rdfs:label "distal convoluted tubule cell type 2";
+    ccfo:pref_label "Distal Convoluted Tubule Cell Type 2".
+obo:CL_4030018 a ccfo:CellType;
+    rdfs:label "connecting tubule principal cell";
+    ccfo:pref_label "Connecting Tubule Principal Cell".
+obo:CL_4030019 a ccfo:CellType;
+    rdfs:label "connecting tubule intercalated cell";
+    ccfo:pref_label "Connecting Tubule Intercalated Cell".
+obo:CL_4030020 a ccfo:CellType;
+    rdfs:label "connecting tubule intercalated cell type A";
+    ccfo:pref_label "Connecting Tubule Intercalated Cell Type A".
+obo:CL_4030021 a ccfo:CellType;
+    rdfs:label "connecting tubule intercalated cell type B";
+    ccfo:pref_label "Intercalated Cell Type B".
+obo:CL_4030022 a ccfo:CellType;
+    rdfs:label "medullary fibroblast";
+    ccfo:pref_label "Medullary Fibroblast".
+obo:UBERON_0001284 a ccfo:AnatomicalStructure;
+    rdfs:label "renal column (column of Bertin)";
+    ccfo:pref_label "renal column".
+obo:UBERON_0001290 a ccfo:AnatomicalStructure;
+    rdfs:label "proximal straight tubule";
+    ccfo:pref_label "proximal straight tubule segment 3".
+obo:UBERON_0001986 a ccfo:AnatomicalStructure;
+    rdfs:label "endothelium";
+    ccfo:pref_label "Endothelium (non glomerular)".
+obo:UBERON_0002015 a ccfo:AnatomicalStructure;
+    rdfs:label "kidney capsule";
+    ccfo:pref_label "kidney capsule".
+obo:UBERON_0002042 a ccfo:AnatomicalStructure;
+    rdfs:label "lymphatic vessel endothelium";
+    ccfo:pref_label "lymphatics".
+obo:UBERON_0002189 a ccfo:AnatomicalStructure;
+    rdfs:label "outer cortex of kidney";
+    ccfo:pref_label "outer cortex of kidney".
+obo:UBERON_0002319 a ccfo:AnatomicalStructure;
+    rdfs:label "mesangium";
+    ccfo:pref_label "Mesangium".
+obo:UBERON_0002320 a ccfo:AnatomicalStructure;
+    rdfs:label "glomerular mesangium";
+    ccfo:pref_label "glomerular mesangium".
+obo:UBERON_0002335 a ccfo:AnatomicalStructure;
+    rdfs:label "macula densa";
+    ccfo:pref_label "Macula Densa".
+obo:UBERON_0004190 a ccfo:AnatomicalStructure;
+    rdfs:label "glomerulus vasculature";
+    ccfo:pref_label "Glomerulus Vasculature".
+obo:UBERON_0004196 a ccfo:AnatomicalStructure;
+    rdfs:label "proximal convoluted tubule segment 1";
+    ccfo:pref_label "proximal convoluted tubule segment 1".
+obo:UBERON_0004197 a ccfo:AnatomicalStructure;
+    rdfs:label "proximal convoluted tubule segment 2";
+    ccfo:pref_label "proximal convoluted tubule segment 2".
+obo:UBERON_0004200 a ccfo:AnatomicalStructure;
+    rdfs:label "kidney pyramid";
+    ccfo:pref_label "renal pyramid".
+obo:UBERON_0004201 a ccfo:AnatomicalStructure;
+    rdfs:label "kidney outer medulla inner stripe";
+    ccfo:pref_label "kidney outer medulla inner stripe".
+obo:UBERON_0004202 a ccfo:AnatomicalStructure;
+    rdfs:label "kidney outer medulla outer stripe";
+    ccfo:pref_label "kidney outer medulla outer stripe".
+obo:UBERON_0004205 a ccfo:AnatomicalStructure;
+    rdfs:label "inner medullary collecting duct";
+    ccfo:pref_label "Collecting Duct (Inner Medulla)".
+obo:UBERON_0004294 a ccfo:AnatomicalStructure;
+    rdfs:label "glomerular capillary endothelium";
+    ccfo:pref_label "glomerular capillary endothelium".
+obo:UBERON_0004639 a ccfo:AnatomicalStructure;
+    rdfs:label "renal afferent arteriole";
+    ccfo:pref_label "Afferent Arteriole".
+obo:UBERON_0004640 a ccfo:AnatomicalStructure;
+    rdfs:label "renal efferent arteriole";
+    ccfo:pref_label "Efferent Arteriole".
+obo:UBERON_0005096 a ccfo:AnatomicalStructure;
+    rdfs:label "descending thin limb";
+    ccfo:pref_label "descending thin limb of loop of Henle".
+obo:UBERON_0005271 a ccfo:AnatomicalStructure;
+    rdfs:label "juxtamedullary cortex";
+    ccfo:pref_label "juxtamedullary cortex".
+obo:UBERON_0005272 a ccfo:AnatomicalStructure;
+    rdfs:label "peritubular capillary";
+    ccfo:pref_label "Peritubular Capillary".
+obo:UBERON_0005750 a ccfo:AnatomicalStructure;
+    rdfs:label "glomerular parietal epithelium";
+    ccfo:pref_label "parietal epithelial layer".
+obo:UBERON_0009091 a ccfo:AnatomicalStructure;
+    rdfs:label "vasa recta ascending limb";
+    ccfo:pref_label "Ascending Vasa Recta".
+obo:UBERON_0009883 a ccfo:AnatomicalStructure;
+    rdfs:label "medullary ray";
+    ccfo:pref_label "medullary ray".
+obo:UBERON_0012441 a ccfo:AnatomicalStructure;
+    rdfs:label "endothelium of peritubular capillary";
+    ccfo:pref_label "Endothelium (non glomerular)".
+<https://www.doi.org/10.1016/j.exphem.2016.10.008> a ccfo:StudyReference;
+    ccfo:pubmed_id "";
+    dc:references "https://www.doi.org/10.1016/j.exphem.2016.10.008".
+<https://www.doi.org/10.1084/jem.20030323> a ccfo:StudyReference;
+    ccfo:pubmed_id "";
+    dc:references "https://www.doi.org/10.1084/jem.20030323".
+<https://www.doi.org/10.1152/ajprenal.2000.278.2.F202> a ccfo:StudyReference;
+    ccfo:pubmed_id "https://pubmed.ncbi.nlm.nih.gov/10662724/";
+    dc:references "https://www.doi.org/10.1152/ajprenal.2000.278.2.F202".
+<https://www.doi.org/10.1371/journal.pone.0187118> a ccfo:StudyReference;
+    ccfo:pubmed_id "";
+    dc:references "https://www.doi.org/10.1371/journal.pone.0187118".
+<https://www.doi.org/10.3389/fimmu.2019.02035> a ccfo:StudyReference;
+    ccfo:pubmed_id "";
+    dc:references "https://www.doi.org/10.3389/fimmu.2019.02035".
+<http://identifiers.org/hgnc/10249> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "ROBO1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "ROBO1".
+<http://identifiers.org/hgnc/10250> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "ROBO2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "ROBO2".
+<http://identifiers.org/hgnc/10498> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "S100A8";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "S100A8".
+<http://identifiers.org/hgnc/10499> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "S100A9";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "S100A9".
+<http://identifiers.org/hgnc/10527> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SALL3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SALL3".
+<http://identifiers.org/hgnc/10630> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CCL4";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CCL4".
+<http://identifiers.org/hgnc/10632> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CCL5";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CCL5".
+<http://identifiers.org/hgnc/10916> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC13A1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC13A1".
+<http://identifiers.org/hgnc/10929> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC17A1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC17A1".
+<http://identifiers.org/hgnc/10971> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "solute carrier family 22 member 7";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC22A7".
+<http://identifiers.org/hgnc/11037> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC5A2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC5A2".
+<http://identifiers.org/hgnc/11073> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC9A3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC9A3".
+<http://identifiers.org/hgnc/11509> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "synaptotagmin 1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SYT1".
+<http://identifiers.org/hgnc/11592> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "TBX1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "TBX1".
+<http://identifiers.org/hgnc/11935> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CD40LG";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CD40LG".
+<http://identifiers.org/hgnc/1241> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "C1QA";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "C1QA".
+<http://identifiers.org/hgnc/1346> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "C7";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "C7".
+<http://identifiers.org/hgnc/1437> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CALCA";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CALCA".
+<http://identifiers.org/hgnc/14430> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC13A3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC13A3".
+<http://identifiers.org/hgnc/14881> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "ZEB2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "ZEB2".
+<http://identifiers.org/hgnc/1628> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CD14";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CD14".
+<http://identifiers.org/hgnc/1631> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CD163";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CD163".
+<http://identifiers.org/hgnc/1636> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CD1C";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CD1C".
+<http://identifiers.org/hgnc/1638> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CD1E";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CD1E".
+<http://identifiers.org/hgnc/1673> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CD3D";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CD3D".
+<http://identifiers.org/hgnc/1675> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CD3G";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CD3G".
+<http://identifiers.org/hgnc/16953> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "periostin";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "POSTN".
+<http://identifiers.org/hgnc/1698> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CD79A";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CD79A".
+<http://identifiers.org/hgnc/17732> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SYNPO2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SYNPO2".
+<http://identifiers.org/hgnc/18210> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "MOGAT1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "MOGAT1".
+<http://identifiers.org/hgnc/18508> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "FCRL5";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "FCRL5".
+<http://identifiers.org/hgnc/18688> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CRB2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CRB2".
+<http://identifiers.org/hgnc/1975> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "VSX2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "VSX2".
+<http://identifiers.org/hgnc/2026> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CLCNKA";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CLCNKA".
+<http://identifiers.org/hgnc/2037> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CLDN16";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CLDN16".
+<http://identifiers.org/hgnc/20391> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "sulfatase 1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SULF1".
+<http://identifiers.org/hgnc/2045> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CLDN3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CLDN3".
+<http://identifiers.org/hgnc/2193> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "collagen type XVI alpha 1 chain";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "COL16A1".
+<http://identifiers.org/hgnc/2198> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "COL1A2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "COL1A2".
+<http://identifiers.org/hgnc/2209> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "collagen type V alpha 1 chain";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "COL5A1".
+<http://identifiers.org/hgnc/2298> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CPA3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CPA3".
+<http://identifiers.org/hgnc/234> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "adenylate cyclase 3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "ADCY3".
+<http://identifiers.org/hgnc/24039> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CXADR like membrane protein";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CLMP".
+<http://identifiers.org/hgnc/2439> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CSF3R";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CSF3R".
+<http://identifiers.org/hgnc/2548> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "cubilin";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CUBN".
+<http://identifiers.org/hgnc/26183> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "multiple C2 and transmembrane domain containing 1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "MCTP1".
+<http://identifiers.org/hgnc/26270> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "PIEZO2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "PIEZO2".
+<http://identifiers.org/hgnc/26295> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "coiled-coil domain containing 102B";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CCDC102B".
+<http://identifiers.org/hgnc/26705> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CLEC9A";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CLEC9A".
+<http://identifiers.org/hgnc/27220> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "TMEM213";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "TMEM213".
+<http://identifiers.org/hgnc/28750> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "solute carrier family 5 member 12";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC5A12".
+<http://identifiers.org/hgnc/29853> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "HECW2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "HECW2".
+<http://identifiers.org/hgnc/30125> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "MZB1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "MZB1".
+<http://identifiers.org/hgnc/32017> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "ACSM2A";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "ACSM2A".
+<http://identifiers.org/hgnc/3244> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "EH domain containing 3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "EHD3".
+<http://identifiers.org/hgnc/33705> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "TMEM207";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "TMEM207".
+<http://identifiers.org/hgnc/3609> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "FCER1A";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "FCER1A".
+<http://identifiers.org/hgnc/3619> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "FCGR3A";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "FCGR3A".
+<http://identifiers.org/hgnc/3620> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "FCGR3B";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "FCGR3B".
+<http://identifiers.org/hgnc/3802> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "forkhead box D1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "Foxd1".
+<http://identifiers.org/hgnc/417> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "ALDOB";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "ALDOB".
+<http://identifiers.org/hgnc/4175> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "GATM";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "GATM".
+<http://identifiers.org/hgnc/4460> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "glycoprotein M6A";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "GPM6A".
+<http://identifiers.org/hgnc/4883> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CFH";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CFH".
+<http://identifiers.org/hgnc/4947> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "HLA-DRA";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "HLA-DRA".
+<http://identifiers.org/hgnc/5318> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "tenascin C";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "TNC".
+<http://identifiers.org/hgnc/5360> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "ID1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "ID1".
+<http://identifiers.org/hgnc/5716> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "IGKC";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "IGKC".
+<http://identifiers.org/hgnc/6012> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "IL3RA";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "IL3RA".
+<http://identifiers.org/hgnc/6024> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "IL7R";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "IL7R".
+<http://identifiers.org/hgnc/613> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "APOE";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "APOE".
+<http://identifiers.org/hgnc/6144> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "ITGA8";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "ITGA8".
+<http://identifiers.org/hgnc/6152> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "ITGAX";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "ITGAX".
+<http://identifiers.org/hgnc/6188> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "JAG1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "JAG1".
+<http://identifiers.org/hgnc/6277> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "potassium two pore domain channel subfamily K member 2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "KCNK2".
+<http://identifiers.org/hgnc/6694> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "LRP2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "LRP2".
+<http://identifiers.org/hgnc/6724> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "LUM";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "LUM".
+<http://identifiers.org/hgnc/6934> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "MCAM";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "MCAM".
+<http://identifiers.org/hgnc/7178> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "MMRN1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "MMRN1".
+<http://identifiers.org/hgnc/7315> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "MS4A1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "MS4A1".
+<http://identifiers.org/hgnc/7316> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "MS4A2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "MS4A2".
+<http://identifiers.org/hgnc/7656> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "neural cell adhesion molecule 1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "NCAM1".
+<http://identifiers.org/hgnc/7872> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "NOS1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "NOS1".
+<http://identifiers.org/hgnc/7976> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "nuclear receptor subfamily 2 group F member 2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "NR2F2".
+<http://identifiers.org/hgnc/8031> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "NTRK1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "NTRK1".
+<http://identifiers.org/hgnc/8804> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "PDGFRB";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "PDGFRB".
+<http://identifiers.org/hgnc/8823> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "PECAM1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "PECAM1".
+<http://identifiers.org/hgnc/9051> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "PLAT";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "PLAT".
+<http://identifiers.org/hgnc/9453> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "PRODH2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "PRODH2".
+<http://identifiers.org/hgnc/9845> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "receptor activity modifying protein 3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "RAMP3".
+<http://identifiers.org/hgnc/9858> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "RAP1GAP";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "RAP1GAP".
+<http://identifiers.org/hgnc/9958> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "REN";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "REN".
+obo:CL_1000714 a ccfo:CellType;
+    rdfs:label "kidney cortex collecting duct principal cell";
+    ccfo:pref_label "Cortical Collecting Duct Principal Cell".
+obo:CL_1000715 a ccfo:CellType;
+    rdfs:label "kidney cortex collecting duct intercalated cell";
+    ccfo:pref_label "Cortical Collecting Duct Intercalated Cell Type A", "Cortical Collecting Duct Intercalated Cell Type B".
+obo:CL_1000718 a ccfo:CellType;
+    rdfs:label "kidney inner medulla collecting duct", "kidney inner medulla collecting duct principal cell";
+    ccfo:pref_label "Inner Medullary Collecting Duct Cell".
+obo:CL_1001108 a ccfo:CellType;
+    rdfs:label "kidney loop of Henle medullary thick ascending limb epithelial cell";
+    ccfo:pref_label "Medullary Thick Ascending Limb Cell".
+obo:UBERON_0001228 a ccfo:AnatomicalStructure;
+    rdfs:label "renal papilla";
+    ccfo:pref_label "Papilla", "renal papilla".
+obo:UBERON_0001294 a ccfo:AnatomicalStructure;
+    rdfs:label "inner medulla of kidney";
+    ccfo:pref_label "inner medulla of kidney".
+obo:UBERON_0004193 a ccfo:AnatomicalStructure, ccfo:FtuType;
+    rdfs:label "ascending thin limb of loop of Henle";
+    ccfo:pref_label "Loop of Henle (Thin Limb)".
+obo:UBERON_0004204 a ccfo:AnatomicalStructure;
+    rdfs:label "outer medullary collecting duct", "renal outer medullary collecting duct";
+    ccfo:pref_label "Collecting Duct (Medulla)", "Collecting Duct (Outer Medulla)".
+obo:UBERON_0009095 a ccfo:AnatomicalStructure;
+    rdfs:label "tip of renal papilla";
+    ccfo:pref_label "Papillary Tip", "papillary tip".
+obo:CL_1001285 a ccfo:CellType;
+    rdfs:label "vasa recta descending limb cell";
+    ccfo:pref_label "Descending Vasa Recta Endothelial Cell".
+obo:UBERON_0009202 a ccfo:AnatomicalStructure;
+    rdfs:label "vasa recta descending limb";
+    ccfo:pref_label "Descending Vasa Recta".
+<https://www.doi.org/10.1126/science.aat1699> a ccfo:StudyReference;
+    ccfo:pubmed_id "";
+    dc:references "https://www.doi.org/10.1126/science.aat1699".
+<https://www.doi.org/10.1152/ajprenal.2000.278.1.F52> a ccfo:StudyReference;
+    ccfo:pubmed_id "";
+    dc:references "https://www.doi.org/10.1152/ajprenal.2000.278.1.F52".
+<http://identifiers.org/hgnc/10473> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "RUNX3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "RUNX3".
+<http://identifiers.org/hgnc/10832> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SH3GL3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SH3GL3".
+<http://identifiers.org/hgnc/10970> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC22A6";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC22A6".
+<http://identifiers.org/hgnc/10972> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC22A8";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC22A8".
+<http://identifiers.org/hgnc/11019> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC34A1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC34A1".
+<http://identifiers.org/hgnc/11255> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SPP1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SPP1".
+<http://identifiers.org/hgnc/11553> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "TAGLN";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "TAGLN".
+<http://identifiers.org/hgnc/12663> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "VCAM1", "vascular cell adhesion molecule 1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "VCAM1".
+<http://identifiers.org/hgnc/130> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "ACTA2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "ACTA2".
+<http://identifiers.org/hgnc/13635> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "PLVAP";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "PLVAP".
+<http://identifiers.org/hgnc/1373> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "carbonic anhydrase 2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CA2".
+<http://identifiers.org/hgnc/16041> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "EMCN";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "EMCN".
+<http://identifiers.org/hgnc/16438> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC4A11", "SLC9A3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC4A11", "SLC9A3".
+<http://identifiers.org/hgnc/1677> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CD247";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CD247".
+<http://identifiers.org/hgnc/16892> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CD96";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CD96".
+<http://identifiers.org/hgnc/17995> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "TRPM6";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "TRPM6".
+<http://identifiers.org/hgnc/18122> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SRY-box transcription factor 17";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SOX17".
+<http://identifiers.org/hgnc/18266> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "ATP6V0D2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "ATP6V0D2".
+<http://identifiers.org/hgnc/2032> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CLDN1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CLDN1".
+<http://identifiers.org/hgnc/20862> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC39A8";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC39A8".
+<http://identifiers.org/hgnc/2197> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "COL1A1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "COL1A1".
+<http://identifiers.org/hgnc/2303> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CPE";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CPE".
+<http://identifiers.org/hgnc/23091> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC5A11", "solute carrier family 5 member 11";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC5A11".
+<http://identifiers.org/hgnc/2705> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "DCN";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "DCN".
+<http://identifiers.org/hgnc/2959> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "DNASE1L3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "DNASE1L3".
+<http://identifiers.org/hgnc/3145> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "TRPV5";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "TRPV5".
+<http://identifiers.org/hgnc/3763> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "FLT1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "FLT1".
+<http://identifiers.org/hgnc/3765> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "FLT3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "FLT3".
+<http://identifiers.org/hgnc/4414> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "GNLY";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "GNLY".
+<http://identifiers.org/hgnc/5209> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "HSD11B2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "HSD11B2".
+<http://identifiers.org/hgnc/5713> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "JCHAIN";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "JCHAIN".
+<http://identifiers.org/hgnc/7569> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "MYH11";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "MYH11".
+<http://identifiers.org/hgnc/7830> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "NKG7";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "NKG7".
+<http://identifiers.org/hgnc/8033> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "NTRK3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "NTRK3".
+obo:CL_0000653 a ccfo:CellType;
+    rdfs:label "glomerular visceral epithelial cell";
+    ccfo:pref_label "Podocyte".
+obo:UBERON_0001225 a ccfo:AnatomicalStructure;
+    rdfs:label "cortex of kidney";
+    ccfo:pref_label "cortex of kidney", "renal cortex".
+obo:UBERON_0004203 a ccfo:AnatomicalStructure;
+    rdfs:label "cortical collecting duct";
+    ccfo:pref_label "Collecting Duct", "Collecting Duct (Cortex)".
+obo:UBERON_0006852 a ccfo:AnatomicalStructure;
+    rdfs:label "glomerular visceral epithelium";
+    ccfo:pref_label "visceral epithelial layer".
+obo:UBERON_0000362 a ccfo:AnatomicalStructure;
+    rdfs:label "renal medulla";
+    ccfo:pref_label "renal medulla".
+obo:UBERON_0004188 a ccfo:AnatomicalStructure;
+    rdfs:label "glomerular epithelium";
+    ccfo:pref_label "Glomerular Epithelium".
+obo:UBERON_0005097 a ccfo:AnatomicalStructure;
+    rdfs:label "connecting tubule";
+    ccfo:pref_label "Connecting Tubule".
+<https://www.doi.org/10.1038/s41467-019-12872-5> a ccfo:StudyReference;
+    ccfo:pubmed_id "";
+    dc:references "https://www.doi.org/10.1038/s41467-019-12872-5".
+<http://identifiers.org/hgnc/10912> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "solute carrier family 12 member 3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC12A3".
+<http://identifiers.org/hgnc/10918> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "solute carrier family 14 member 1 (Kidd blood group)";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC14A1".
+<http://identifiers.org/hgnc/1434> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CALB1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CALB1".
+<http://identifiers.org/hgnc/21637> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SATB2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SATB2".
+<http://identifiers.org/hgnc/4708> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "GZMA";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "GZMA".
+<http://identifiers.org/hgnc/639> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "AQP6";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "AQP6".
+<http://identifiers.org/hgnc/8818> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC26A4", "solute carrier family 26 member 4";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC26A4".
+<http://identifiers.org/hgnc/9459> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "PROX1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "PROX1".
+obo:UBERON_0001232 a ccfo:AnatomicalStructure;
+    rdfs:label "collecting duct of renal tubule";
+    ccfo:pref_label "Collecting Duct".
+obo:UBERON_0001292 a ccfo:AnatomicalStructure, ccfo:FtuType;
+    rdfs:label "distal convoluted tubule";
+    ccfo:pref_label "Distal Convolution".
+obo:UBERON_0003918 a ccfo:AnatomicalStructure;
+    rdfs:label "kidney mesenchyme";
+    ccfo:pref_label "Stroma (non glomerular)".
+obo:UBERON_0006544 a ccfo:AnatomicalStructure;
+    rdfs:label "kidney vasculature";
+    ccfo:pref_label "Vessels".
+<http://identifiers.org/hgnc/10919> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC14A2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC14A2".
+<http://identifiers.org/hgnc/11027> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC4A1", "solute carrier family 4 member 1 (Diego blood group)";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC4A1".
+<http://identifiers.org/hgnc/11035> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC4A9";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC4A9".
+<http://identifiers.org/hgnc/11068> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC8A1", "solute carrier family 8 member A1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC8A1".
+<http://identifiers.org/hgnc/12559> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "UMOD";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "UMOD".
+<http://identifiers.org/hgnc/13394> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "NPHS2 stomatin family member, podocin";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "NPHS2".
+<http://identifiers.org/hgnc/1514> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "CASR";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CASR".
+<http://identifiers.org/hgnc/633> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "AQP1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "AQP1".
+<http://identifiers.org/hgnc/6342> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "KIT";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "KIT".
+<http://identifiers.org/hgnc/7908> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "NPHS1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "NPHS1".
+<http://identifiers.org/hgnc/9171> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "PODXL";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "PODXL".
+obo:UBERON_0001229 a ccfo:AnatomicalStructure, ccfo:FtuType;
+    rdfs:label "Renal Corpuscle";
+    ccfo:pref_label "Renal Corpuscle".
+obo:UBERON_0004134 a ccfo:AnatomicalStructure, ccfo:FtuType;
+    rdfs:label "proximal tubule";
+    ccfo:pref_label "Proximal Tubule".
+<https://www.doi.org/10.1073/pnas.2005477117> a ccfo:StudyReference;
+    ccfo:pubmed_id "";
+    dc:references "https://www.doi.org/10.1073/pnas.2005477117".
+obo:UBERON_0001289 a ccfo:AnatomicalStructure, ccfo:FtuType;
+    rdfs:label "descending thin limb of loop of Henle";
+    ccfo:pref_label "Loop of Henle (Thin Limb)".
+obo:UBERON_0001291 a ccfo:AnatomicalStructure, ccfo:FtuType;
+    rdfs:label "thick ascending limb of loop of Henle";
+    ccfo:pref_label "Loop of Henle (Thick Limb)", "Loop of Henle (Thick Limb/ Cortex)", "Loop of Henle (Thick Limb/Cortex)", "Loop of Henle (Thick Limb/Medulla)".
+<https://www.doi.org/10.1681/ASN.2020010071> a ccfo:StudyReference;
+    ccfo:pubmed_id "PMID: 32358040";
+    dc:references "https://www.doi.org/10.1681/ASN.2020010071".
+<http://identifiers.org/hgnc/10910> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "solute carrier family 12 member 1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC12A1".
+<http://identifiers.org/hgnc/11530> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "TACSTD2", "TACSTSD2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "TACSTD2", "TACSTSD2".
+<http://identifiers.org/hgnc/11853> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "TM4SF1";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "TM4SF1".
+<http://identifiers.org/hgnc/14467> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SLC26A7", "solute carrier family 26 member 7";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SLC26A7".
+<http://identifiers.org/hgnc/15846> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "PALMD";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "PALMD".
+<http://identifiers.org/hgnc/222> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "ADAMTS6";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "ADAMTS6".
+<http://identifiers.org/hgnc/4028> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "FXYD domain containing ion transport regulator 4", "FXYD4";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "FXYD4".
+<http://identifiers.org/hgnc/4172> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "GATA binding protein 3", "GATA3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "GATA3".
+<http://identifiers.org/hgnc/636> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "AQP3";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "AQP3".
+<http://identifiers.org/hgnc/8951> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SERPINE2", "serpin family E member 2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SERPINE2".
+<http://identifiers.org/hgnc/10602> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "SCNN1G";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "SCNN1G".
+<http://identifiers.org/hgnc/2389> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "crystallin alpha B";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "CRYAB".
+obo:UBERON_0004100 a ccfo:AnatomicalStructure;
+    rdfs:label "renal collecting system";
+    ccfo:pref_label "renal collecting system".
+<https://www.doi.org/10.1101/2021.07.28.454201> a ccfo:StudyReference;
+    ccfo:pubmed_id "", "https://www.doi.org/10.1101/2021.07.28.454201";
+    dc:references "https://www.doi.org/10.1101/2021.07.28.454201".
+<http://identifiers.org/hgnc/634> a ccfo:Biomarker, ccfo:GeneBiomarker;
+    rdfs:label "aquaporin 2";
+    ccfo:biomarker_type "gene";
+    ccfo:pref_label "AQP2".
+<https://www.doi.org/10.1016/j.devcel.2019.10.005> a ccfo:StudyReference;
+    ccfo:pubmed_id "PMID: 31689386";
+    dc:references "https://www.doi.org/10.1016/j.devcel.2019.10.005".
+obo:UBERON_0001231 a ccfo:AnatomicalStructure;
+    rdfs:label "nephron tubule";
+    ccfo:pref_label "Tubules".
+obo:UBERON_0005215 a ccfo:AnatomicalStructure;
+    rdfs:label "kidney interstitium";
+    ccfo:pref_label "Interstitium".
+<https://www.doi.org/10.1038/s41586-020-2941-1> a ccfo:StudyReference;
+    ccfo:pubmed_id "";
+    dc:references "https://www.doi.org/10.1038/s41586-020-2941-1".
+<https://www.doi.org/10.1172/jci.insight.133267> a ccfo:StudyReference;
+    ccfo:pubmed_id "";
+    dc:references "https://www.doi.org/10.1172/jci.insight.133267".
+obo:UBERON_0001285 a ccfo:AnatomicalStructure, ccfo:FtuType;
+    rdfs:label "nephron";
+    ccfo:pref_label "nephron".
+<https://www.doi.org/10.1038/s41467-019-10861-2> a ccfo:StudyReference;
+    ccfo:pubmed_id "", "PMID: 31249312. PMCID: PMC6597610";
+    dc:references "https://www.doi.org/10.1038/s41467-019-10861-2".
+obo:UBERON_0002113 a ccfo:AnatomicalStructure;
+    rdfs:label "kidney";
+    ccfo:pref_label "kidney".
+_:n3-0 a ccfo:Container.
+_:n3-1 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0001291, obo:UBERON_0002113;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10910>, <http://identifiers.org/hgnc/12559>, <http://identifiers.org/hgnc/1514>, <http://identifiers.org/hgnc/9459>, <http://identifiers.org/hgnc/9858>;
+    ccfo:contains_cell_types obo:CL_1001108;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10910>, <http://identifiers.org/hgnc/12559>, <http://identifiers.org/hgnc/1514>, <http://identifiers.org/hgnc/9459>, <http://identifiers.org/hgnc/9858>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1172/jci.insight.133267>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0001291.
+_:n3-0 ccfo:data _:n3-1.
+_:n3-2 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001232, obo:UBERON_0002113, obo:UBERON_0004100;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/4172>;
+    ccfo:contains_cell_types obo:CL_1000454;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/4172>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1172/jci.insight.133267>, <https://www.doi.org/10.1681/ASN.2020010071>.
+_:n3-0 ccfo:data _:n3-2.
+_:n3-3 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0006544, obo:UBERON_0009202;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10918>, <http://identifiers.org/hgnc/11853>, <http://identifiers.org/hgnc/15846>, <http://identifiers.org/hgnc/222>, <http://identifiers.org/hgnc/26183>, <http://identifiers.org/hgnc/8951>;
+    ccfo:contains_cell_types obo:CL_1001285;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10918>, <http://identifiers.org/hgnc/11853>, <http://identifiers.org/hgnc/15846>, <http://identifiers.org/hgnc/222>, <http://identifiers.org/hgnc/26183>, <http://identifiers.org/hgnc/8951>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41467-019-12872-5>, <https://www.doi.org/10.1101/2021.07.28.454201>.
+_:n3-0 ccfo:data _:n3-3.
+_:n3-4 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/3619>;
+    ccfo:contains_cell_types obo:CL_0000875;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/3619>;
+    ccfo:contains_references <https://www.doi.org/10.1101/2021.07.28.454201>, <https://www.doi.org/10.1172/jci.insight.133267>, <https://www.doi.org/10.3389/fimmu.2019.02035>.
+_:n3-0 ccfo:data _:n3-4.
+_:n3-5 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/2298>, <http://identifiers.org/hgnc/6342>, <http://identifiers.org/hgnc/7316>;
+    ccfo:contains_cell_types obo:CL_0000097;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/2298>, <http://identifiers.org/hgnc/6342>, <http://identifiers.org/hgnc/7316>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1101/2021.07.28.454201>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-5.
+_:n3-6 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10498>, <http://identifiers.org/hgnc/10499>, <http://identifiers.org/hgnc/2439>, <http://identifiers.org/hgnc/3620>;
+    ccfo:contains_cell_types obo:CL_0000775;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10498>, <http://identifiers.org/hgnc/10499>, <http://identifiers.org/hgnc/2439>, <http://identifiers.org/hgnc/3620>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.exphem.2016.10.008>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1101/2021.07.28.454201>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-6.
+_:n3-7 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001986, obo:UBERON_0002113, obo:UBERON_0006544;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/16041>, <http://identifiers.org/hgnc/3763>, <http://identifiers.org/hgnc/8823>;
+    ccfo:contains_cell_types obo:CL_0000115;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/16041>, <http://identifiers.org/hgnc/3763>, <http://identifiers.org/hgnc/8823>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-7.
+_:n3-8 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0001291, obo:UBERON_0002113;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10910>, <http://identifiers.org/hgnc/12559>, <http://identifiers.org/hgnc/1514>, <http://identifiers.org/hgnc/2037>, <http://identifiers.org/hgnc/33705>;
+    ccfo:contains_cell_types obo:CL_1001109;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10910>, <http://identifiers.org/hgnc/12559>, <http://identifiers.org/hgnc/1514>, <http://identifiers.org/hgnc/2037>, <http://identifiers.org/hgnc/33705>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0001291.
+_:n3-0 ccfo:data _:n3-8.
+_:n3-9 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001232, obo:UBERON_0002113, obo:UBERON_0004100;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11027>, <http://identifiers.org/hgnc/14467>, <http://identifiers.org/hgnc/27220>, <http://identifiers.org/hgnc/6342>, <http://identifiers.org/hgnc/639>;
+    ccfo:contains_cell_types obo:CL_4030015;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11027>, <http://identifiers.org/hgnc/14467>, <http://identifiers.org/hgnc/27220>, <http://identifiers.org/hgnc/6342>, <http://identifiers.org/hgnc/639>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-9.
+_:n3-10 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0004100, obo:UBERON_0004203;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10602>, <http://identifiers.org/hgnc/4028>, <http://identifiers.org/hgnc/4172>, <http://identifiers.org/hgnc/634>, <http://identifiers.org/hgnc/636>;
+    ccfo:contains_cell_types obo:CL_1000714;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10602>, <http://identifiers.org/hgnc/4028>, <http://identifiers.org/hgnc/4172>, <http://identifiers.org/hgnc/634>, <http://identifiers.org/hgnc/636>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-10.
+_:n3-11 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001228, obo:UBERON_0002113, obo:UBERON_0009095;
+    ccfo:contains_cell_types obo:CL_1000597.
+_:n3-0 ccfo:data _:n3-11.
+_:n3-12 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0001289, obo:UBERON_0002113;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11530>, <http://identifiers.org/hgnc/16438>, <http://identifiers.org/hgnc/20862>, <http://identifiers.org/hgnc/2389>, <http://identifiers.org/hgnc/633>;
+    ccfo:contains_cell_types obo:CL_4030013;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11530>, <http://identifiers.org/hgnc/16438>, <http://identifiers.org/hgnc/20862>, <http://identifiers.org/hgnc/2389>, <http://identifiers.org/hgnc/633>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1101/2021.07.28.454201>, <https://www.doi.org/10.1152/ajprenal.2000.278.1.F52>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0001289.
+_:n3-0 ccfo:data _:n3-12.
+_:n3-13 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0004100, obo:UBERON_0004205;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10919>, <http://identifiers.org/hgnc/634>;
+    ccfo:contains_cell_types obo:CL_1000718;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10919>, <http://identifiers.org/hgnc/634>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1101/2021.07.28.454201>.
+_:n3-0 ccfo:data _:n3-13.
+_:n3-14 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001229, obo:UBERON_0001285, obo:UBERON_0002113, obo:UBERON_0004190, obo:UBERON_0004294;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/16041>, <http://identifiers.org/hgnc/29853>, <http://identifiers.org/hgnc/3244>, <http://identifiers.org/hgnc/3763>, <http://identifiers.org/hgnc/633>, <http://identifiers.org/hgnc/9051>;
+    ccfo:contains_cell_types obo:CL_1001005;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/16041>, <http://identifiers.org/hgnc/29853>, <http://identifiers.org/hgnc/3244>, <http://identifiers.org/hgnc/3763>, <http://identifiers.org/hgnc/633>, <http://identifiers.org/hgnc/9051>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41467-019-12872-5>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1172/jci.insight.133267>;
+    ccfo:ftu_types obo:UBERON_0001229, obo:UBERON_0001285.
+_:n3-0 ccfo:data _:n3-14.
+_:n3-15 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0001291, obo:UBERON_0002113;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10910>, <http://identifiers.org/hgnc/12559>, <http://identifiers.org/hgnc/1514>;
+    ccfo:contains_cell_types obo:CL_1001106;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10910>, <http://identifiers.org/hgnc/12559>, <http://identifiers.org/hgnc/1514>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1172/jci.insight.133267>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0001291.
+_:n3-0 ccfo:data _:n3-15.
+_:n3-16 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0004100, obo:UBERON_0004203;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11035>, <http://identifiers.org/hgnc/8818>;
+    ccfo:contains_cell_types obo:CL_1000715;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11035>, <http://identifiers.org/hgnc/8818>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1126/science.aat1699>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-16.
+_:n3-17 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0004640, obo:UBERON_0006544;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10918>, <http://identifiers.org/hgnc/11853>, <http://identifiers.org/hgnc/15846>, <http://identifiers.org/hgnc/18122>, <http://identifiers.org/hgnc/222>, <http://identifiers.org/hgnc/8951>;
+    ccfo:contains_cell_types obo:CL_1001099;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10918>, <http://identifiers.org/hgnc/11853>, <http://identifiers.org/hgnc/15846>, <http://identifiers.org/hgnc/18122>, <http://identifiers.org/hgnc/222>, <http://identifiers.org/hgnc/8951>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-17.
+_:n3-18 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001225, obo:UBERON_0002113, obo:UBERON_0002189, obo:UBERON_0004188, obo:UBERON_0006852;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/13394>, <http://identifiers.org/hgnc/7908>, <http://identifiers.org/hgnc/9171>;
+    ccfo:contains_cell_types obo:CL_0000653;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/13394>, <http://identifiers.org/hgnc/7908>, <http://identifiers.org/hgnc/9171>.
+_:n3-0 ccfo:data _:n3-18.
+_:n3-19 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001232, obo:UBERON_0002113, obo:UBERON_0004100;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10602>, <http://identifiers.org/hgnc/4028>, <http://identifiers.org/hgnc/4172>, <http://identifiers.org/hgnc/634>, <http://identifiers.org/hgnc/636>;
+    ccfo:contains_cell_types obo:CL_1001431;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10602>, <http://identifiers.org/hgnc/4028>, <http://identifiers.org/hgnc/4172>, <http://identifiers.org/hgnc/634>, <http://identifiers.org/hgnc/636>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-19.
+_:n3-20 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0000362, obo:UBERON_0001294, obo:UBERON_0002113, obo:UBERON_0009202;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11853>, <http://identifiers.org/hgnc/15846>, <http://identifiers.org/hgnc/222>, <http://identifiers.org/hgnc/8951>;
+    ccfo:contains_cell_types obo:CL_1001285;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11853>, <http://identifiers.org/hgnc/15846>, <http://identifiers.org/hgnc/222>, <http://identifiers.org/hgnc/8951>.
+_:n3-0 ccfo:data _:n3-20.
+_:n3-21 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0004100, obo:UBERON_0004204;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10602>, <http://identifiers.org/hgnc/4028>, <http://identifiers.org/hgnc/4172>, <http://identifiers.org/hgnc/634>, <http://identifiers.org/hgnc/636>;
+    ccfo:contains_cell_types obo:CL_1000716;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10602>, <http://identifiers.org/hgnc/4028>, <http://identifiers.org/hgnc/4172>, <http://identifiers.org/hgnc/634>, <http://identifiers.org/hgnc/636>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-21.
+_:n3-22 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0001292, obo:UBERON_0002113;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10912>, <http://identifiers.org/hgnc/17995>.
+<http://lod.humanatlas.io/ref-organ/VHFColonObj> a ccfo:SpatialObjectReference;
+    ccfo:file_format "model/gltf-binary";
+    ccfo:file_subpath "VHF_colon";
+    ccfo:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/SBU_F_Intestine_Large.glb";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFColonObjPlacement>.
+<http://lod.humanatlas.io/ref-organ/VHFColonObjPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFColon>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation -90.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 128.446499999999986130205797962844371795654296875;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 9.3037410000000004828279998037032783031463623046875;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 106.358870999999993500750861130654811859130859375;
+    dc:created "2021-05-21".
+<http://lod.humanatlas.io/ref-organ/VHFColonToVHFLargeIntestinePlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFLargeIntestine>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 0.0;
+    ccfo:x_scaling 0.939999999999999946709294817992486059665679931640625;
+    ccfo:x_translation 0.0;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.1100000000000000976996261670137755572795867919921875;
+    ccfo:y_translation 0.0;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 0.939999999999999946709294817992486059665679931640625;
+    ccfo:z_translation 0.0;
+    dc:created "2022-01-21".
+<http://lod.humanatlas.io/ref-organ/VHFHeartObj> a ccfo:SpatialObjectReference;
+    ccfo:file_format "model/gltf-binary";
+    ccfo:file_subpath "VHF_heart";
+    ccfo:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_Heart.glb";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFHeartObjPlacement>.
+<http://lod.humanatlas.io/ref-organ/VHFHeartObjPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFHeart>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation -90.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 32.25875649999999694728103349916636943817138671875;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation -362.73804300000000466752680949866771697998046875;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 58.16093459999999737419784651137888431549072265625;
+    dc:created "2021-05-21".
+<http://lod.humanatlas.io/ref-organ/VHFHeartV1.0ToV1.1Placement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFHeartV1.1>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 0.0;
+    ccfo:x_scaling 0.89400000000000001687538997430237941443920135498046875;
+    ccfo:x_translation 0.0;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0480000000000000426325641456060111522674560546875;
+    ccfo:y_translation 0.0;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 0.89400000000000001687538997430237941443920135498046875;
+    ccfo:z_translation 0.0;
+    dc:created "2022-01-21".
+<http://lod.humanatlas.io/ref-organ/VHFLeftKidneyObj> a ccfo:SpatialObjectReference;
+    ccfo:file_format "model/gltf-binary";
+    ccfo:file_subpath "VHF_left_kidney";
+    ccfo:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_Kidney_Left.glb";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFLeftKidneyObjPlacement>.
+<http://lod.humanatlas.io/ref-organ/VHFLeftKidneyObjPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFLeftKidney>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation -90.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation -50.0042700000000053250914788804948329925537109375;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation -161.083071999999987156115821562707424163818359375;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 98.100359999999994897734723053872585296630859375;
+    dc:created "2021-05-21".
+<http://lod.humanatlas.io/ref-organ/VHFLeftKidneyV1.0ToV1.1Placement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFLeftKidneyV1.1>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 0.0;
+    ccfo:x_scaling 0.939999999999999946709294817992486059665679931640625;
+    ccfo:x_translation 0.0;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.096999999999999975131004248396493494510650634765625;
+    ccfo:y_translation 0.0;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 0.939999999999999946709294817992486059665679931640625;
+    ccfo:z_translation 0.0;
+    dc:created "2022-01-21".
+<http://lod.humanatlas.io/ref-organ/VHFLeftKidney_Patch> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Female Left Kidney (RUI 0.5)";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFLeftKidney_PatchGlobalPlacement>;
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0004538";
+    ccfo:x_dimension 60.0;
+    ccfo:y_dimension 100.0;
+    ccfo:z_dimension 60.0;
+    dc:created "2020-01-01";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHFLeftKidney_PatchGlobalPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFLeftKidney>;
+    ccfo:rotation_order "XYZ";
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation -19.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 41.48700000000000187583282240666449069976806640625;
+    ccfo:y_rotation -13.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 54.421999999999997044142219237983226776123046875;
+    ccfo:z_rotation 22.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 42.94200000000000017053025658242404460906982421875;
+    dc:created "2021-05-20".
+<http://lod.humanatlas.io/ref-organ/VHFLungObj> a ccfo:SpatialObjectReference;
+    ccfo:file_format "model/gltf-binary";
+    ccfo:file_subpath "VHF_respiratory_system";
+    ccfo:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_Lung.glb";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFLungObjPlacement>.
+<http://lod.humanatlas.io/ref-organ/VHFLungObjPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFLung>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation -90.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 139.351683034527326299212290905416011810302734375;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation -341.66131132658000524315866641700267791748046875;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 113.2899970911729923273014719597995281219482421875;
+    dc:created "2021-05-21".
+<http://lod.humanatlas.io/ref-organ/VHFLungV1.0ToV1.1Placement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFLungV1.1>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 0.0;
+    ccfo:x_scaling 0.89400000000000001687538997430237941443920135498046875;
+    ccfo:x_translation 0.0;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 0.9901999999999999690913909944356419146060943603515625;
+    ccfo:y_translation 0.0;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 0.84940000000000004387601393318618647754192352294921875;
+    ccfo:z_translation 0.0;
+    dc:created "2022-01-21".
+<http://lod.humanatlas.io/ref-organ/VHFRightKidneyObj> a ccfo:SpatialObjectReference;
+    ccfo:file_format "model/gltf-binary";
+    ccfo:file_subpath "VHF_right_kidney";
+    ccfo:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_Kidney_Right.glb";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFRightKidneyObjPlacement>.
+<http://lod.humanatlas.io/ref-organ/VHFRightKidneyObjPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFRightKidney>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation -90.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 110.29311999999998761268216185271739959716796875;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation -181.13952899999998180646798573434352874755859375;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 93.1011199999999945475792628712952136993408203125;
+    dc:created "2021-05-21".
+<http://lod.humanatlas.io/ref-organ/VHFRightKidneyV1.0ToV1.1Placement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFRightKidneyV1.1>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 0.0;
+    ccfo:x_scaling 0.939999999999999946709294817992486059665679931640625;
+    ccfo:x_translation 0.0;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.096999999999999975131004248396493494510650634765625;
+    ccfo:y_translation 0.0;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 0.939999999999999946709294817992486059665679931640625;
+    ccfo:z_translation 0.0;
+    dc:created "2022-01-21".
+<http://lod.humanatlas.io/ref-organ/VHFRightKidney_Patch> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Female Right Kidney (RUI 0.5)";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFRightKidney_PatchGlobalPlacement>;
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0004539";
+    ccfo:x_dimension 60.0;
+    ccfo:y_dimension 100.0;
+    ccfo:z_dimension 60.0;
+    dc:created "2020-01-01";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHFRightKidney_PatchGlobalPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFRightKidney>;
+    ccfo:rotation_order "XYZ";
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation -19.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 38.191000000000002501110429875552654266357421875;
+    ccfo:y_rotation -13.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 48.2879999999999967030817060731351375579833984375;
+    ccfo:z_rotation -21.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 36.98899999999999721467247582040727138519287109375;
+    dc:created "2021-05-20".
+<http://lod.humanatlas.io/ref-organ/VHFSkinObj> a ccfo:SpatialObjectReference;
+    ccfo:file_format "model/gltf-binary";
+    ccfo:file_subpath "VHF_skin";
+    ccfo:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_Skin.glb";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFSkinObjPlacement>.
+<http://lod.humanatlas.io/ref-organ/VHFSkinObjPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFSkin>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation -90.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 521.19594800000004397588782012462615966796875;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 861.540799999999990177457220852375030517578125;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 165.862187599999998610655893571674823760986328125;
+    dc:created "2021-05-21".
+<http://lod.humanatlas.io/ref-organ/VHFSkinV1.0ToV1.1Placement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFSkinV1.1>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 0.0;
+    ccfo:x_scaling 0.9276999999999999690913909944356419146060943603515625;
+    ccfo:x_translation 0.0;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 0.96699999999999997069011214989586733281612396240234375;
+    ccfo:y_translation 0.0;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 0.99199999999999999289457264239899814128875732421875;
+    ccfo:z_translation 0.0;
+    dc:created "2022-01-21".
+<http://lod.humanatlas.io/ref-organ/VHFSpleenCC1> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Female Spleen (CC1)";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFSpleenCC1GlobalPlacement>;
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0002106";
+    ccfo:x_dimension 59.89999999999999857891452847979962825775146484375;
+    ccfo:y_dimension 40.7000000000000028421709430404007434844970703125;
+    ccfo:z_dimension 9.03999999999999914734871708787977695465087890625;
+    dc:created "2020-01-01";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHFSpleenCC1GlobalPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFSpleen>;
+    ccfo:rotation_order "XYZ";
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 95.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 70.63200000000000500222085975110530853271484375;
+    ccfo:y_rotation 52.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 27.83899999999999863575794734060764312744140625;
+    ccfo:z_rotation 17.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 39.6700000000000017053025658242404460906982421875;
+    dc:created "2021-05-20".
+<http://lod.humanatlas.io/ref-organ/VHFSpleenCC2> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Female Spleen (CC2)";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFSpleenCC2GlobalPlacement>;
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0002106";
+    ccfo:x_dimension 63.0;
+    ccfo:y_dimension 40.10000000000000142108547152020037174224853515625;
+    ccfo:z_dimension 8.8900000000000005684341886080801486968994140625;
+    dc:created "2020-01-01";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHFSpleenCC2GlobalPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFSpleen>;
+    ccfo:rotation_order "XYZ";
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 82.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 51.58800000000000096633812063373625278472900390625;
+    ccfo:y_rotation 52.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 45.941000000000002501110429875552654266357421875;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 24.707999999999998408384271897375583648681640625;
+    dc:created "2021-05-20".
+<http://lod.humanatlas.io/ref-organ/VHFSpleenCC3> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Female Spleen (CC3)";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFSpleenCC3GlobalPlacement>;
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0002106";
+    ccfo:x_dimension 58.7000000000000028421709430404007434844970703125;
+    ccfo:y_dimension 43.39999999999999857891452847979962825775146484375;
+    ccfo:z_dimension 9.53999999999999914734871708787977695465087890625;
+    dc:created "2020-01-01";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHFSpleenCC3GlobalPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFSpleen>;
+    ccfo:rotation_order "XYZ";
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 82.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 18.964999999999999857891452847979962825775146484375;
+    ccfo:y_rotation 52.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 53.5930000000000035242919693700969219207763671875;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 23.30199999999999960209606797434389591217041015625;
+    dc:created "2021-05-21".
+<http://lod.humanatlas.io/ref-organ/VHFSpleenObj> a ccfo:SpatialObjectReference;
+    ccfo:file_format "model/gltf-binary";
+    ccfo:file_subpath "VHF_spleen";
+    ccfo:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_Spleen.glb";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFSpleenObjPlacement>.
+<http://lod.humanatlas.io/ref-organ/VHFSpleenObjPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFSpleen>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation -90.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation -46.21593279999999737128746346570551395416259765625;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation -260.71469999999999345163814723491668701171875;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 112.8726899999999915280568529851734638214111328125;
+    dc:created "2021-05-21".
+<http://lod.humanatlas.io/ref-organ/VHFSpleenV1.0ToV1.1Placement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFSpleenV1.1>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 0.0;
+    ccfo:x_scaling 0.939999999999999946709294817992486059665679931640625;
+    ccfo:x_translation 0.0;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.096999999999999975131004248396493494510650634765625;
+    ccfo:y_translation 0.0;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 0.939999999999999946709294817992486059665679931640625;
+    ccfo:z_translation 0.0;
+    dc:created "2022-01-21".
+<http://lod.humanatlas.io/ref-organ/VHFThymusObj> a ccfo:SpatialObjectReference;
+    ccfo:file_format "model/gltf-binary";
+    ccfo:file_subpath "VHF_thymus";
+    ccfo:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_Thymus.glb";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFThymusObjPlacement>.
+<http://lod.humanatlas.io/ref-organ/VHFThymusObjPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFThymus>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation -90.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 19.792461800000001659327608649618923664093017578125;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation -418.4277359999999816864146851003170013427734375;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation -3.115577620000000269584461420890875160694122314453125;
+    dc:created "2021-05-21".
+<http://lod.humanatlas.io/ref-organ/VHFThymusV1.0ToV1.1Placement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFThymusV1.1>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 0.0;
+    ccfo:x_scaling 0.9330000000000000515143483426072634756565093994140625;
+    ccfo:x_translation 0.0;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.1140000000000001012523398458142764866352081298828125;
+    ccfo:y_translation 0.0;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 0.9330000000000000515143483426072634756565093994140625;
+    ccfo:z_translation 0.0;
+    dc:created "2022-01-21".
+<http://lod.humanatlas.io/ref-organ/VHFemaleGlobalPlacement2> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHBothSexes>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 0.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 400.0;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 0.0;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 0.0;
+    dc:created "2020-01-01".
+<http://lod.humanatlas.io/ref-organ/VHFemaleOrgansGlobalPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFemale>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 0.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 0.0;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 0.0;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 0.0;
+    dc:created "2020-01-01".
+<http://lod.humanatlas.io/ref-organ/VHFemaleOrgansObj> a ccfo:SpatialObjectReference;
+    ccfo:file_format "model/gltf-binary";
+    ccfo:file_subpath "VHF_United";
+    ccfo:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_F_United.glb";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFemaleOrgansObjPlacement>.
+<http://lod.humanatlas.io/ref-organ/VHFemaleOrgansObjPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHFemaleOrgans>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation -90.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 0.0;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 0.0;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 0.0;
+    dc:created "2020-01-01".
+<http://lod.humanatlas.io/ref-organ/VHMLeftKidney_Patch> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Male Left Kidney (RUI 0.5)";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHMLeftKidney_PatchGlobalPlacement>;
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0004538";
+    ccfo:x_dimension 60.0;
+    ccfo:y_dimension 100.0;
+    ccfo:z_dimension 60.0;
+    dc:created "2020-01-01";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHMLeftKidney_PatchGlobalPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMLeftKidney>;
+    ccfo:rotation_order "XYZ";
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation -19.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 39.3119999999999976125764078460633754730224609375;
+    ccfo:y_rotation -13.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 57.71900000000000119371179607696831226348876953125;
+    ccfo:z_rotation 25.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 39.893000000000000682121026329696178436279296875;
+    dc:created "2021-05-20".
+<http://lod.humanatlas.io/ref-organ/VHMRightKidney_Patch> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Male Right Kidney (RUI 0.5)";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHMRightKidney_PatchGlobalPlacement>;
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0004539";
+    ccfo:x_dimension 60.0;
+    ccfo:y_dimension 100.0;
+    ccfo:z_dimension 60.0;
+    dc:created "2020-01-01";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHMRightKidney_PatchGlobalPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMRightKidney>;
+    ccfo:rotation_order "XYZ";
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation -19.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 34.04299999999999926103555480949580669403076171875;
+    ccfo:y_rotation -13.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 55.76299999999999812416717759333550930023193359375;
+    ccfo:z_rotation -3.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 38.17699999999999960209606797434389591217041015625;
+    dc:created "2021-05-20".
+<http://lod.humanatlas.io/ref-organ/VHMSkinObj> a ccfo:SpatialObjectReference;
+    ccfo:file_format "model/gltf-binary";
+    ccfo:file_subpath "VHM_skin";
+    ccfo:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_M_Skin.glb";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHMSkinObjPlacement>.
+<http://lod.humanatlas.io/ref-organ/VHMSkinObjPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMSkin>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation -90.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 524.2242999999999710780684836208820343017578125;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 898.1607000000000198269844986498355865478515625;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 172.658533000000005586116458289325237274169921875;
+    dc:created "2021-05-21".
+<http://lod.humanatlas.io/ref-organ/VHMSkinV1.0ToV1.1Placement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMSkinV1.1>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 0.0;
+    ccfo:x_scaling 0.99809999999999998721023075631819665431976318359375;
+    ccfo:x_translation 0.0;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0124999999999999555910790149937383830547332763671875;
+    ccfo:y_translation 0.0;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 0.90200000000000002398081733190338127315044403076171875;
+    ccfo:z_translation 0.0;
+    dc:created "2022-01-21".
+<http://lod.humanatlas.io/ref-organ/VHMSpleenCC1> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Male Spleen (CC1)";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHMSpleenCC1GlobalPlacement>;
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0002106";
+    ccfo:x_dimension 59.89999999999999857891452847979962825775146484375;
+    ccfo:y_dimension 40.7000000000000028421709430404007434844970703125;
+    ccfo:z_dimension 9.03999999999999914734871708787977695465087890625;
+    dc:created "2020-01-01";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHMSpleenCC1GlobalPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMSpleen>;
+    ccfo:rotation_order "XYZ";
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 80.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 82.8169999999999930651028989814221858978271484375;
+    ccfo:y_rotation 44.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 46.6039999999999992041921359486877918243408203125;
+    ccfo:z_rotation 52.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 50.7349999999999994315658113919198513031005859375;
+    dc:created "2021-05-21".
+<http://lod.humanatlas.io/ref-organ/VHMSpleenCC2> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Male Spleen (CC2)";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHMSpleenCC2GlobalPlacement>;
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0002106";
+    ccfo:x_dimension 63.0;
+    ccfo:y_dimension 40.10000000000000142108547152020037174224853515625;
+    ccfo:z_dimension 8.8900000000000005684341886080801486968994140625;
+    dc:created "2020-01-01";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHMSpleenCC2GlobalPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMSpleen>;
+    ccfo:rotation_order "XYZ";
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 92.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 56.19500000000000028421709430404007434844970703125;
+    ccfo:y_rotation 50.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 53.743999999999999772626324556767940521240234375;
+    ccfo:z_rotation 25.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 29.144999999999999573674358543939888477325439453125;
+    dc:created "2021-05-21".
+<http://lod.humanatlas.io/ref-organ/VHMSpleenCC3> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Male Spleen (CC3)";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHMSpleenCC3GlobalPlacement>;
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0002106";
+    ccfo:x_dimension 58.7000000000000028421709430404007434844970703125;
+    ccfo:y_dimension 43.39999999999999857891452847979962825775146484375;
+    ccfo:z_dimension 9.53999999999999914734871708787977695465087890625;
+    dc:created "2020-01-01";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHMSpleenCC3GlobalPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMSpleen>;
+    ccfo:rotation_order "XYZ";
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 77.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 32.90100000000000335376171278767287731170654296875;
+    ccfo:y_rotation 48.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 70.72100000000000363797880709171295166015625;
+    ccfo:z_rotation 18.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 26.550999999999998379962562466971576213836669921875;
+    dc:created "2021-05-21".
+<http://lod.humanatlas.io/ref-organ/VHMaleGlobalPlacement2> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHBothSexes>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 0.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation -400.0;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 0.0;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 0.0;
+    dc:created "2020-01-01".
+<http://lod.humanatlas.io/ref-organ/VHMaleOrgansGlobalPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMale>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation 0.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 0.0;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 0.0;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 0.0;
+    dc:created "2020-01-01".
+<http://lod.humanatlas.io/ref-organ/VHMaleOrgansObj> a ccfo:SpatialObjectReference;
+    ccfo:file_format "model/gltf-binary";
+    ccfo:file_subpath "VHM_United";
+    ccfo:file_url "https://ccf-ontology.hubmapconsortium.org/object_references/v1.0/VH_M_United.glb";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHMaleOrgansObjPlacement>.
+<http://lod.humanatlas.io/ref-organ/VHMaleOrgansObjPlacement> a ccfo:SpatialPlacement;
+    ccfo:placement_relative_to <http://lod.humanatlas.io/ref-organ/VHMaleOrgans>;
+    ccfo:rotation_unit "degree";
+    ccfo:scaling_unit "ratio";
+    ccfo:translation_unit "millimeter";
+    ccfo:x_rotation -90.0;
+    ccfo:x_scaling 1.0;
+    ccfo:x_translation 0.0;
+    ccfo:y_rotation 0.0;
+    ccfo:y_scaling 1.0;
+    ccfo:y_translation 0.0;
+    ccfo:z_rotation 0.0;
+    ccfo:z_scaling 1.0;
+    ccfo:z_translation 0.0;
+    dc:created "2020-01-01".
+<http://lod.humanatlas.io/ref-organ/VHFColon> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Female Colon";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFColonObj>;
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFColonToVHFLargeIntestinePlacement>;
+    ccfo:organ_owner_sex "Female";
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0000059";
+    ccfo:x_dimension 258.8039999999999736246536485850811004638671875;
+    ccfo:y_dimension 265.78874100000001590160536579787731170654296875;
+    ccfo:z_dimension 205.763700999999997520717442966997623443603515625;
+    dc:created "2021-05-21";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHFHeart> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Female Heart v1.0";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFHeartObj>;
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFHeartV1.0ToV1.1Placement>;
+    ccfo:organ_owner_sex "Female";
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0000948";
+    ccfo:x_dimension 159.443207499999999754436430521309375762939453125;
+    ccfo:y_dimension 104.9475069999999732317519374191761016845703125;
+    ccfo:z_dimension 113.53179810000000315994839183986186981201171875;
+    dc:created "2021-05-21";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHFLung> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Female Lung";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFLungObj>;
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFLungV1.0ToV1.1Placement>;
+    ccfo:organ_owner_sex "Female";
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0001004";
+    ccfo:x_dimension 280.91133494814408777529024519026279449462890625;
+    ccfo:y_dimension 299.75201360194984090412617661058902740478515625;
+    ccfo:z_dimension 180.30054394856080079989624209702014923095703125;
+    dc:created "2021-05-21";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHFSkin> a ccfo:SpatialEntity;
+    rdfs:label "Skin";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFSkinObj>;
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFSkinV1.0ToV1.1Placement>;
+    ccfo:organ_owner_sex "Female";
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0002097";
+    ccfo:x_dimension 1042.3918960000000879517756402492523193359375;
+    ccfo:y_dimension 1723.48309199999994234531186521053314208984375;
+    ccfo:z_dimension 331.7520167999999785024556331336498260498046875;
+    dc:created "2021-05-21";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHFThymus> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Female Thymus v1.0";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFThymusObj>;
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFThymusV1.0ToV1.1Placement>;
+    ccfo:organ_owner_sex "Female";
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0002370";
+    ccfo:x_dimension 92.259651800000000321233528666198253631591796875;
+    ccfo:y_dimension 110.9386980000000448853825218975543975830078125;
+    ccfo:z_dimension 57.623708579999998846687958575785160064697265625;
+    dc:created "2021-05-21";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHFemale> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Female";
+    ccfo:creator_first_name "Bruce";
+    ccfo:creator_last_name "Herr";
+    ccfo:creator_orcid "https://orcid.org/0000-0002-6703-7647";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFemaleGlobalPlacement2>;
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0005172";
+    ccfo:x_dimension 1000.0;
+    ccfo:y_dimension 1000.0;
+    ccfo:z_dimension 200.0;
+    dc:created "2020-01-01";
+    dc:creator "Bruce Herr - https://orcid.org/0000-0002-6703-7647".
+<http://lod.humanatlas.io/ref-organ/VHFemaleOrgans> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Female Organs";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFemaleOrgansObj>;
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFemaleOrgansGlobalPlacement>;
+    ccfo:x_dimension 1000.0;
+    ccfo:y_dimension 1000.0;
+    ccfo:z_dimension 200.0;
+    dc:created "2020-01-01";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHMSkin> a ccfo:SpatialEntity;
+    rdfs:label "Skin";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_object_reference <http://lod.humanatlas.io/ref-organ/VHMSkinObj>;
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHMSkinV1.0ToV1.1Placement>;
+    ccfo:organ_owner_sex "Male";
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0002097";
+    ccfo:x_dimension 1048.4486999999999170540831983089447021484375;
+    ccfo:y_dimension 1807.29379999999991923687048256397247314453125;
+    ccfo:z_dimension 345.31706600000001117223291657865047454833984375;
+    dc:created "2021-05-21";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHMale> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Male";
+    ccfo:creator_first_name "Bruce";
+    ccfo:creator_last_name "Herr";
+    ccfo:creator_orcid "https://orcid.org/0000-0002-6703-7647";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHMaleGlobalPlacement2>;
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0005172";
+    ccfo:x_dimension 1000.0;
+    ccfo:y_dimension 1000.0;
+    ccfo:z_dimension 200.0;
+    dc:created "2020-01-01";
+    dc:creator "Bruce Herr - https://orcid.org/0000-0002-6703-7647".
+<http://lod.humanatlas.io/ref-organ/VHMaleOrgans> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Male Organs";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_object_reference <http://lod.humanatlas.io/ref-organ/VHMaleOrgansObj>;
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHMaleOrgansGlobalPlacement>;
+    ccfo:x_dimension 1000.0;
+    ccfo:y_dimension 1000.0;
+    ccfo:z_dimension 200.0;
+    dc:created "2020-01-01";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHBothSexes> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human (Both Sexes)";
+    ccfo:creator_first_name "Bruce";
+    ccfo:creator_last_name "Herr";
+    ccfo:creator_orcid "https://orcid.org/0000-0002-6703-7647";
+    ccfo:dimension_unit "millimeter";
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0005172";
+    ccfo:x_dimension 1000.0;
+    ccfo:y_dimension 1000.0;
+    ccfo:z_dimension 200.0;
+    dc:created "2020-01-01";
+    dc:creator "Bruce Herr - https://orcid.org/0000-0002-6703-7647".
+<http://lod.humanatlas.io/ref-organ/VHFLeftKidney> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Female Left Kidney v1.0";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFLeftKidneyObj>;
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFLeftKidneyV1.0ToV1.1Placement>;
+    ccfo:organ_owner_sex "Female";
+    ccfo:organ_side "Left";
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0004538";
+    ccfo:x_dimension 77.80807099999998399653122760355472564697265625;
+    ccfo:y_dimension 113.767684000000002697561285458505153656005859375;
+    ccfo:z_dimension 82.564033099999988962736097164452075958251953125;
+    dc:created "2021-05-21";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHFRightKidney> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Female Right Kidney v1.0";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFRightKidneyObj>;
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFRightKidneyV1.0ToV1.1Placement>;
+    ccfo:organ_owner_sex "Female";
+    ccfo:organ_side "Right";
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0004539";
+    ccfo:x_dimension 78.0752199999999874080458539538085460662841796875;
+    ccfo:y_dimension 90.2197059999999737556208856403827667236328125;
+    ccfo:z_dimension 73.978892000000001871740096248686313629150390625;
+    dc:created "2021-05-21";
+    dc:creator "Kristin Browne".
+<http://lod.humanatlas.io/ref-organ/VHFSpleen> a ccfo:SpatialEntity;
+    rdfs:label "Visual Human Female Spleen v1.0";
+    ccfo:creator_first_name "Kristin";
+    ccfo:creator_last_name "Browne";
+    ccfo:dimension_unit "millimeter";
+    ccfo:has_object_reference <http://lod.humanatlas.io/ref-organ/VHFSpleenObj>;
+    ccfo:has_placement <http://lod.humanatlas.io/ref-organ/VHFSpleenV1.0ToV1.1Placement>;
+    ccfo:organ_owner_sex "Female";
+    ccfo:representation_of "http://purl.obolibrary.org/obo/UBERON_0002106";
+    ccfo:x_dimension 95.277283200000027818532544188201427459716796875;
+    ccfo:y_dimension 93.2681360000000267973518930375576019287109375;
+    ccfo:z_dimension 75.469356099999998832572600804269313812255859375;
+    dc:created "2021-05-21";
+    dc:creator "Kristin Browne".
+_:n3-23 a ccfo:Container;
+    ccfo:data <http://lod.humanatlas.io/ref-organ/VHBothSexes>, <http://lod.humanatlas.io/ref-organ/VHFColon>, <http://lod.humanatlas.io/ref-organ/VHFHeart>, <http://lod.humanatlas.io/ref-organ/VHFLeftKidney>, <http://lod.humanatlas.io/ref-organ/VHFLeftKidney_Patch>, <http://lod.humanatlas.io/ref-organ/VHFLung>, <http://lod.humanatlas.io/ref-organ/VHFRightKidney>, <http://lod.humanatlas.io/ref-organ/VHFRightKidney_Patch>, <http://lod.humanatlas.io/ref-organ/VHFSkin>, <http://lod.humanatlas.io/ref-organ/VHFSpleen>, <http://lod.humanatlas.io/ref-organ/VHFSpleenCC1>, <http://lod.humanatlas.io/ref-organ/VHFSpleenCC2>, <http://lod.humanatlas.io/ref-organ/VHFSpleenCC3>, <http://lod.humanatlas.io/ref-organ/VHFThymus>, <http://lod.humanatlas.io/ref-organ/VHFemale>, <http://lod.humanatlas.io/ref-organ/VHFemaleOrgans>, <http://lod.humanatlas.io/ref-organ/VHMLeftKidney_Patch>, <http://lod.humanatlas.io/ref-organ/VHMRightKidney_Patch>, <http://lod.humanatlas.io/ref-organ/VHMSkin>, <http://lod.humanatlas.io/ref-organ/VHMSpleenCC1>, <http://lod.humanatlas.io/ref-organ/VHMSpleenCC2>, <http://lod.humanatlas.io/ref-organ/VHMSpleenCC3>, <http://lod.humanatlas.io/ref-organ/VHMale>, <http://lod.humanatlas.io/ref-organ/VHMaleOrgans>.
+_:n3-22 ccfo:contains_cell_types obo:CL_4030016;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10912>, <http://identifiers.org/hgnc/17995>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1681/ASN.2020010071>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0001292.
+_:n3-0 ccfo:data _:n3-22.
+_:n3-24 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0002113, obo:UBERON_0005097;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10602>, <http://identifiers.org/hgnc/4028>, <http://identifiers.org/hgnc/634>, <http://identifiers.org/hgnc/636>;
+    ccfo:contains_cell_types obo:CL_4030018;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10602>, <http://identifiers.org/hgnc/4028>, <http://identifiers.org/hgnc/634>, <http://identifiers.org/hgnc/636>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1681/ASN.2020010071>;
+    ccfo:ftu_types obo:UBERON_0001285.
+_:n3-0 ccfo:data _:n3-24.
+_:n3-25 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/3765>, <http://identifiers.org/hgnc/6012>;
+    ccfo:contains_cell_types obo:CL_0001058;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/3765>, <http://identifiers.org/hgnc/6012>;
+    ccfo:contains_references <https://www.doi.org/10.1101/2021.07.28.454201>.
+_:n3-0 ccfo:data _:n3-25.
+_:n3-26 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005215.
+_:n3-0 ccfo:data _:n3-26.
+_:n3-27 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0003918, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/6934>, <http://identifiers.org/hgnc/7569>, <http://identifiers.org/hgnc/8033>;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/6934>, <http://identifiers.org/hgnc/7569>, <http://identifiers.org/hgnc/8033>.
+_:n3-0 ccfo:data _:n3-27.
+_:n3-28 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/18508>, <http://identifiers.org/hgnc/30125>, <http://identifiers.org/hgnc/5713>, <http://identifiers.org/hgnc/5716>;
+    ccfo:contains_cell_types obo:CL_0000786;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/18508>, <http://identifiers.org/hgnc/30125>, <http://identifiers.org/hgnc/5713>, <http://identifiers.org/hgnc/5716>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1101/2021.07.28.454201>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-28.
+_:n3-29 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0001292, obo:UBERON_0002113;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10602>, <http://identifiers.org/hgnc/10912>, <http://identifiers.org/hgnc/11068>, <http://identifiers.org/hgnc/1434>, <http://identifiers.org/hgnc/3145>, <http://identifiers.org/hgnc/5209>;
+    ccfo:contains_cell_types obo:CL_4030017;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10602>, <http://identifiers.org/hgnc/10912>, <http://identifiers.org/hgnc/11068>, <http://identifiers.org/hgnc/1434>, <http://identifiers.org/hgnc/3145>, <http://identifiers.org/hgnc/5209>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1681/ASN.2020010071>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0001292.
+_:n3-0 ccfo:data _:n3-29.
+_:n3-30 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0001290, obo:UBERON_0002113, obo:UBERON_0004134;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10929>, <http://identifiers.org/hgnc/10971>, <http://identifiers.org/hgnc/18210>, <http://identifiers.org/hgnc/21637>, <http://identifiers.org/hgnc/23091>, <http://identifiers.org/hgnc/633>;
+    ccfo:contains_cell_types obo:CL_4030011;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10929>, <http://identifiers.org/hgnc/10971>, <http://identifiers.org/hgnc/18210>, <http://identifiers.org/hgnc/21637>, <http://identifiers.org/hgnc/23091>, <http://identifiers.org/hgnc/633>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1073/pnas.2005477117>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0004134.
+_:n3-0 ccfo:data _:n3-30.
+_:n3-31 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0003918, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/1346>, <http://identifiers.org/hgnc/14881>, <http://identifiers.org/hgnc/2197>, <http://identifiers.org/hgnc/2198>, <http://identifiers.org/hgnc/2705>, <http://identifiers.org/hgnc/6724>;
+    ccfo:contains_cell_types obo:CL_1000692;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/1346>, <http://identifiers.org/hgnc/14881>, <http://identifiers.org/hgnc/2197>, <http://identifiers.org/hgnc/2198>, <http://identifiers.org/hgnc/2705>, <http://identifiers.org/hgnc/6724>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-31.
+_:n3-32 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/26705>, <http://identifiers.org/hgnc/3765>, <http://identifiers.org/hgnc/6152>;
+    ccfo:contains_cell_types obo:CL_0000990;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/26705>, <http://identifiers.org/hgnc/3765>, <http://identifiers.org/hgnc/6152>;
+    ccfo:contains_references <https://www.doi.org/10.1084/jem.20030323>, <https://www.doi.org/10.1101/2021.07.28.454201>.
+_:n3-0 ccfo:data _:n3-32.
+_:n3-33 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001232, obo:UBERON_0002113, obo:UBERON_0004100;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/1373>, <http://identifiers.org/hgnc/18266>;
+    ccfo:contains_cell_types obo:CL_1001432;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/1373>, <http://identifiers.org/hgnc/18266>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-33.
+_:n3-34 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11935>, <http://identifiers.org/hgnc/1673>, <http://identifiers.org/hgnc/1675>, <http://identifiers.org/hgnc/1677>, <http://identifiers.org/hgnc/16892>;
+    ccfo:contains_cell_types obo:CL_0000084;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11935>, <http://identifiers.org/hgnc/1673>, <http://identifiers.org/hgnc/1675>, <http://identifiers.org/hgnc/1677>, <http://identifiers.org/hgnc/16892>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-34.
+_:n3-35 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0000362, obo:UBERON_0001291, obo:UBERON_0002113, obo:UBERON_0004202;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10910>, <http://identifiers.org/hgnc/12559>, <http://identifiers.org/hgnc/1514>;
+    ccfo:contains_cell_types obo:CL_1001108;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10910>, <http://identifiers.org/hgnc/12559>, <http://identifiers.org/hgnc/1514>.
+_:n3-0 ccfo:data _:n3-35.
+_:n3-36 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0004100, obo:UBERON_0004203;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11027>, <http://identifiers.org/hgnc/14467>, <http://identifiers.org/hgnc/6342>, <http://identifiers.org/hgnc/639>;
+    ccfo:contains_cell_types obo:CL_1000715;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11027>, <http://identifiers.org/hgnc/14467>, <http://identifiers.org/hgnc/6342>, <http://identifiers.org/hgnc/639>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-36.
+_:n3-37 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0003918, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11553>, <http://identifiers.org/hgnc/130>, <http://identifiers.org/hgnc/20391>, <http://identifiers.org/hgnc/2193>, <http://identifiers.org/hgnc/2197>, <http://identifiers.org/hgnc/2209>;
+    ccfo:contains_cell_types obo:CL_1000691;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11553>, <http://identifiers.org/hgnc/130>, <http://identifiers.org/hgnc/20391>, <http://identifiers.org/hgnc/2193>, <http://identifiers.org/hgnc/2197>, <http://identifiers.org/hgnc/2209>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>.
+_:n3-0 ccfo:data _:n3-37.
+_:n3-38 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001225, obo:UBERON_0001284, obo:UBERON_0002113, obo:UBERON_0004188, obo:UBERON_0006852;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/13394>, <http://identifiers.org/hgnc/7908>, <http://identifiers.org/hgnc/9171>;
+    ccfo:contains_cell_types obo:CL_0000653;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/13394>, <http://identifiers.org/hgnc/7908>, <http://identifiers.org/hgnc/9171>.
+_:n3-0 ccfo:data _:n3-38.
+_:n3-39 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001232, obo:UBERON_0002113, obo:UBERON_0004100;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11035>, <http://identifiers.org/hgnc/8031>, <http://identifiers.org/hgnc/8818>;
+    ccfo:contains_cell_types obo:CL_0002201;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11035>, <http://identifiers.org/hgnc/8031>, <http://identifiers.org/hgnc/8818>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1126/science.aat1699>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-39.
+_:n3-40 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/1628>, <http://identifiers.org/hgnc/1631>, <http://identifiers.org/hgnc/6024>;
+    ccfo:contains_cell_types obo:CL_1000698;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/1628>, <http://identifiers.org/hgnc/1631>, <http://identifiers.org/hgnc/6024>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>.
+_:n3-0 ccfo:data _:n3-40.
+_:n3-41 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0002113, obo:UBERON_0005097;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10602>, <http://identifiers.org/hgnc/11068>, <http://identifiers.org/hgnc/1434>, <http://identifiers.org/hgnc/3145>, <http://identifiers.org/hgnc/4172>, <http://identifiers.org/hgnc/5209>;
+    ccfo:contains_cell_types obo:CL_1000768;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10602>, <http://identifiers.org/hgnc/11068>, <http://identifiers.org/hgnc/1434>, <http://identifiers.org/hgnc/3145>, <http://identifiers.org/hgnc/4172>, <http://identifiers.org/hgnc/5209>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1681/ASN.2020010071>;
+    ccfo:ftu_types obo:UBERON_0001285.
+_:n3-0 ccfo:data _:n3-41.
+_:n3-42 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001229, obo:UBERON_0001285, obo:UBERON_0002113, obo:UBERON_0004188, obo:UBERON_0006852;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/13394>, <http://identifiers.org/hgnc/7908>, <http://identifiers.org/hgnc/9171>;
+    ccfo:contains_cell_types obo:CL_0000653;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/13394>, <http://identifiers.org/hgnc/7908>, <http://identifiers.org/hgnc/9171>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1073/pnas.2005477117>, <https://www.doi.org/10.1172/jci.insight.133267>;
+    ccfo:ftu_types obo:UBERON_0001229, obo:UBERON_0001285.
+_:n3-0 ccfo:data _:n3-42.
+_:n3-43 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0002113, obo:UBERON_0005097;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11027>, <http://identifiers.org/hgnc/11068>, <http://identifiers.org/hgnc/14467>, <http://identifiers.org/hgnc/639>;
+    ccfo:contains_cell_types obo:CL_4030020;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11027>, <http://identifiers.org/hgnc/11068>, <http://identifiers.org/hgnc/14467>, <http://identifiers.org/hgnc/639>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1681/ASN.2020010071>;
+    ccfo:ftu_types obo:UBERON_0001285.
+_:n3-0 ccfo:data _:n3-43.
+_:n3-44 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0000362, obo:UBERON_0002113, obo:UBERON_0004200, obo:UBERON_0009202;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11853>, <http://identifiers.org/hgnc/15846>, <http://identifiers.org/hgnc/222>, <http://identifiers.org/hgnc/8951>;
+    ccfo:contains_cell_types obo:CL_1001285;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11853>, <http://identifiers.org/hgnc/15846>, <http://identifiers.org/hgnc/222>, <http://identifiers.org/hgnc/8951>.
+_:n3-0 ccfo:data _:n3-44.
+_:n3-45 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0002113, obo:UBERON_0004134;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10916>, <http://identifiers.org/hgnc/2548>, <http://identifiers.org/hgnc/417>, <http://identifiers.org/hgnc/4175>, <http://identifiers.org/hgnc/6694>;
+    ccfo:contains_cell_types obo:CL_0002306;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10916>, <http://identifiers.org/hgnc/2548>, <http://identifiers.org/hgnc/417>, <http://identifiers.org/hgnc/4175>, <http://identifiers.org/hgnc/6694>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1073/pnas.2005477117>, <https://www.doi.org/10.1172/jci.insight.133267>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0004134.
+_:n3-0 ccfo:data _:n3-45.
+_:n3-46 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001229, obo:UBERON_0001285, obo:UBERON_0002113, obo:UBERON_0004188, obo:UBERON_0005750;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/12663>, <http://identifiers.org/hgnc/18688>, <http://identifiers.org/hgnc/2032>, <http://identifiers.org/hgnc/4883>;
+    ccfo:contains_cell_types obo:CL_1000452;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/12663>, <http://identifiers.org/hgnc/18688>, <http://identifiers.org/hgnc/2032>, <http://identifiers.org/hgnc/4883>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1172/jci.insight.133267>;
+    ccfo:ftu_types obo:UBERON_0001229, obo:UBERON_0001285.
+_:n3-0 ccfo:data _:n3-46.
+_:n3-47 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0000362, obo:UBERON_0001289, obo:UBERON_0002113, obo:UBERON_0004201;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11073>, <http://identifiers.org/hgnc/11530>, <http://identifiers.org/hgnc/20862>, <http://identifiers.org/hgnc/2389>, <http://identifiers.org/hgnc/633>;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11073>, <http://identifiers.org/hgnc/11530>, <http://identifiers.org/hgnc/20862>, <http://identifiers.org/hgnc/2389>, <http://identifiers.org/hgnc/633>.
+_:n3-0 ccfo:data _:n3-47.
+_:n3-48 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0001292, obo:UBERON_0002113;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10527>, <http://identifiers.org/hgnc/10912>, <http://identifiers.org/hgnc/1434>, <http://identifiers.org/hgnc/17995>;
+    ccfo:contains_cell_types obo:CL_1000849;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10527>, <http://identifiers.org/hgnc/10912>, <http://identifiers.org/hgnc/1434>, <http://identifiers.org/hgnc/17995>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1681/ASN.2020010071>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0001292.
+_:n3-0 ccfo:data _:n3-48.
+_:n3-49 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001232, obo:UBERON_0002113, obo:UBERON_0004100;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11035>, <http://identifiers.org/hgnc/14467>, <http://identifiers.org/hgnc/4028>;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11035>, <http://identifiers.org/hgnc/14467>, <http://identifiers.org/hgnc/4028>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-49.
+_:n3-50 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0002113, obo:UBERON_0005097;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11068>, <http://identifiers.org/hgnc/1373>, <http://identifiers.org/hgnc/18266>;
+    ccfo:contains_cell_types obo:CL_4030019;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11068>, <http://identifiers.org/hgnc/1373>, <http://identifiers.org/hgnc/18266>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1681/ASN.2020010071>;
+    ccfo:ftu_types obo:UBERON_0001285.
+_:n3-0 ccfo:data _:n3-50.
+_:n3-51 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0001289, obo:UBERON_0002113, obo:UBERON_0005096;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11255>, <http://identifiers.org/hgnc/12663>, <http://identifiers.org/hgnc/21637>, <http://identifiers.org/hgnc/2389>;
+    ccfo:contains_cell_types obo:CL_1001111;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11255>, <http://identifiers.org/hgnc/12663>, <http://identifiers.org/hgnc/21637>, <http://identifiers.org/hgnc/2389>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1172/jci.insight.133267>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0001289.
+_:n3-0 ccfo:data _:n3-51.
+_:n3-52 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/1636>, <http://identifiers.org/hgnc/1638>, <http://identifiers.org/hgnc/3609>, <http://identifiers.org/hgnc/613>;
+    ccfo:contains_cell_types obo:CL_0001056;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/1636>, <http://identifiers.org/hgnc/1638>, <http://identifiers.org/hgnc/3609>, <http://identifiers.org/hgnc/613>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>.
+_:n3-0 ccfo:data _:n3-52.
+_:n3-53 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0003918, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/9958>;
+    ccfo:contains_cell_types obo:CL_0000648;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/9958>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1073/pnas.2005477117>.
+_:n3-0 ccfo:data _:n3-53.
+_:n3-54 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001225, obo:UBERON_0002113, obo:UBERON_0004188, obo:UBERON_0005271, obo:UBERON_0006852;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/13394>, <http://identifiers.org/hgnc/7908>, <http://identifiers.org/hgnc/9171>;
+    ccfo:contains_cell_types obo:CL_0000653;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/13394>, <http://identifiers.org/hgnc/7908>, <http://identifiers.org/hgnc/9171>.
+_:n3-0 ccfo:data _:n3-54.
+_:n3-55 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10473>, <http://identifiers.org/hgnc/1677>, <http://identifiers.org/hgnc/16892>, <http://identifiers.org/hgnc/4414>, <http://identifiers.org/hgnc/4708>, <http://identifiers.org/hgnc/7830>;
+    ccfo:contains_cell_types obo:CL_0000814;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10473>, <http://identifiers.org/hgnc/1677>, <http://identifiers.org/hgnc/16892>, <http://identifiers.org/hgnc/4414>, <http://identifiers.org/hgnc/4708>, <http://identifiers.org/hgnc/7830>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-55.
+_:n3-56 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/1241>, <http://identifiers.org/hgnc/4947>;
+    ccfo:contains_cell_types obo:CL_0000576;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/1241>, <http://identifiers.org/hgnc/4947>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>.
+_:n3-0 ccfo:data _:n3-56.
+_:n3-57 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005272, obo:UBERON_0006544, obo:UBERON_0012441;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/13635>, <http://identifiers.org/hgnc/2959>, <http://identifiers.org/hgnc/9845>;
+    ccfo:contains_cell_types obo:CL_1001033;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/13635>, <http://identifiers.org/hgnc/2959>, <http://identifiers.org/hgnc/9845>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41467-019-12872-5>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-57.
+_:n3-58 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0002113, obo:UBERON_0004134, obo:UBERON_0004197;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10970>, <http://identifiers.org/hgnc/10972>, <http://identifiers.org/hgnc/11019>, <http://identifiers.org/hgnc/14430>, <http://identifiers.org/hgnc/23091>, <http://identifiers.org/hgnc/32017>;
+    ccfo:contains_cell_types obo:CL_4030010;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10970>, <http://identifiers.org/hgnc/10972>, <http://identifiers.org/hgnc/11019>, <http://identifiers.org/hgnc/14430>, <http://identifiers.org/hgnc/23091>, <http://identifiers.org/hgnc/32017>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1073/pnas.2005477117>, <https://www.doi.org/10.1172/jci.insight.133267>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0004134.
+_:n3-0 ccfo:data _:n3-58.
+_:n3-59 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0004639, obo:UBERON_0006544;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10918>, <http://identifiers.org/hgnc/11853>, <http://identifiers.org/hgnc/15846>, <http://identifiers.org/hgnc/18122>, <http://identifiers.org/hgnc/222>, <http://identifiers.org/hgnc/8951>;
+    ccfo:contains_cell_types obo:CL_1001096;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10918>, <http://identifiers.org/hgnc/11853>, <http://identifiers.org/hgnc/15846>, <http://identifiers.org/hgnc/18122>, <http://identifiers.org/hgnc/222>, <http://identifiers.org/hgnc/8951>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-59.
+_:n3-60 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0004100, obo:UBERON_0004204;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11027>, <http://identifiers.org/hgnc/1437>, <http://identifiers.org/hgnc/14467>, <http://identifiers.org/hgnc/6342>;
+    ccfo:contains_cell_types obo:CL_1000717;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11027>, <http://identifiers.org/hgnc/1437>, <http://identifiers.org/hgnc/14467>, <http://identifiers.org/hgnc/6342>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1126/science.aat1699>.
+_:n3-0 ccfo:data _:n3-60.
+_:n3-61 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001229, obo:UBERON_0001285, obo:UBERON_0002113, obo:UBERON_0002319, obo:UBERON_0002320;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10249>, <http://identifiers.org/hgnc/16953>, <http://identifiers.org/hgnc/17732>, <http://identifiers.org/hgnc/26270>, <http://identifiers.org/hgnc/6144>, <http://identifiers.org/hgnc/8804>;
+    ccfo:contains_cell_types obo:CL_1000742;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10249>, <http://identifiers.org/hgnc/16953>, <http://identifiers.org/hgnc/17732>, <http://identifiers.org/hgnc/26270>, <http://identifiers.org/hgnc/6144>, <http://identifiers.org/hgnc/8804>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1073/pnas.2005477117>, <https://www.doi.org/10.1172/jci.insight.133267>;
+    ccfo:ftu_types obo:UBERON_0001229, obo:UBERON_0001285.
+_:n3-0 ccfo:data _:n3-61.
+_:n3-62 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0002113, obo:UBERON_0004134, obo:UBERON_0004196;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10970>, <http://identifiers.org/hgnc/10972>, <http://identifiers.org/hgnc/11019>, <http://identifiers.org/hgnc/11037>, <http://identifiers.org/hgnc/28750>, <http://identifiers.org/hgnc/9453>;
+    ccfo:contains_cell_types obo:CL_4030009;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10970>, <http://identifiers.org/hgnc/10972>, <http://identifiers.org/hgnc/11019>, <http://identifiers.org/hgnc/11037>, <http://identifiers.org/hgnc/28750>, <http://identifiers.org/hgnc/9453>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1073/pnas.2005477117>, <https://www.doi.org/10.1172/jci.insight.133267>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0004134.
+_:n3-0 ccfo:data _:n3-62.
+_:n3-63 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/1698>, <http://identifiers.org/hgnc/5713>, <http://identifiers.org/hgnc/7315>;
+    ccfo:contains_cell_types obo:CL_0000236;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/1698>, <http://identifiers.org/hgnc/5713>, <http://identifiers.org/hgnc/7315>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-63.
+_:n3-64 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0002113, obo:UBERON_0005097;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11035>, <http://identifiers.org/hgnc/8818>;
+    ccfo:contains_cell_types obo:CL_4030021;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11035>, <http://identifiers.org/hgnc/8818>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1681/ASN.2020010071>;
+    ccfo:ftu_types obo:UBERON_0001285.
+_:n3-0 ccfo:data _:n3-64.
+_:n3-65 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0001289, obo:UBERON_0002113;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10832>, <http://identifiers.org/hgnc/10919>, <http://identifiers.org/hgnc/11530>, <http://identifiers.org/hgnc/16438>, <http://identifiers.org/hgnc/2032>, <http://identifiers.org/hgnc/2303>, <http://identifiers.org/hgnc/2389>;
+    ccfo:contains_cell_types obo:CL_4030014;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10832>, <http://identifiers.org/hgnc/10919>, <http://identifiers.org/hgnc/11530>, <http://identifiers.org/hgnc/16438>, <http://identifiers.org/hgnc/2032>, <http://identifiers.org/hgnc/2303>, <http://identifiers.org/hgnc/2389>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1101/2021.07.28.454201>, <https://www.doi.org/10.1152/ajprenal.2000.278.1.F52>, <https://www.doi.org/10.1152/ajprenal.2000.278.2.F202>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0001289.
+_:n3-0 ccfo:data _:n3-65.
+_:n3-66 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10473>, <http://identifiers.org/hgnc/4414>, <http://identifiers.org/hgnc/4708>, <http://identifiers.org/hgnc/7830>;
+    ccfo:contains_cell_types obo:CL_0000623;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10473>, <http://identifiers.org/hgnc/4414>, <http://identifiers.org/hgnc/4708>, <http://identifiers.org/hgnc/7830>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-66.
+_:n3-67 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0002113, obo:UBERON_0004193;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10832>, <http://identifiers.org/hgnc/11530>, <http://identifiers.org/hgnc/2026>, <http://identifiers.org/hgnc/2045>, <http://identifiers.org/hgnc/2389>, <http://identifiers.org/hgnc/9459>;
+    ccfo:contains_cell_types obo:CL_1001107;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10832>, <http://identifiers.org/hgnc/11530>, <http://identifiers.org/hgnc/2026>, <http://identifiers.org/hgnc/2045>, <http://identifiers.org/hgnc/2389>, <http://identifiers.org/hgnc/9459>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0004193.
+_:n3-0 ccfo:data _:n3-67.
+_:n3-68 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0001291, obo:UBERON_0002113, obo:UBERON_0002335;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10250>, <http://identifiers.org/hgnc/10910>, <http://identifiers.org/hgnc/7872>;
+    ccfo:contains_cell_types obo:CL_1000850;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10250>, <http://identifiers.org/hgnc/10910>, <http://identifiers.org/hgnc/7872>;
+    ccfo:contains_references <https://www.doi.org/10.1016/j.devcel.2019.10.005>, <https://www.doi.org/10.1038/s41467-019-10861-2>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0001291.
+_:n3-0 ccfo:data _:n3-68.
+_:n3-69 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10630>, <http://identifiers.org/hgnc/10632>, <http://identifiers.org/hgnc/4708>;
+    ccfo:contains_cell_types obo:CL_0000910;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10630>, <http://identifiers.org/hgnc/10632>, <http://identifiers.org/hgnc/4708>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-69.
+_:n3-70 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002042, obo:UBERON_0002113, obo:UBERON_0006544;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11592>, <http://identifiers.org/hgnc/7178>, <http://identifiers.org/hgnc/9459>;
+    ccfo:contains_cell_types obo:CL_0002138;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11592>, <http://identifiers.org/hgnc/7178>, <http://identifiers.org/hgnc/9459>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41467-019-12872-5>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-70.
+_:n3-71 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001231, obo:UBERON_0001285, obo:UBERON_0001289, obo:UBERON_0002113;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10919>, <http://identifiers.org/hgnc/11255>, <http://identifiers.org/hgnc/11530>, <http://identifiers.org/hgnc/21637>, <http://identifiers.org/hgnc/2303>, <http://identifiers.org/hgnc/2389>, <http://identifiers.org/hgnc/5360>, <http://identifiers.org/hgnc/6188>;
+    ccfo:contains_cell_types obo:CL_4030012;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10919>, <http://identifiers.org/hgnc/11255>, <http://identifiers.org/hgnc/11530>, <http://identifiers.org/hgnc/21637>, <http://identifiers.org/hgnc/2303>, <http://identifiers.org/hgnc/2389>, <http://identifiers.org/hgnc/5360>, <http://identifiers.org/hgnc/6188>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1152/ajprenal.2000.278.1.F52>, <https://www.doi.org/10.1172/jci.insight.133267>;
+    ccfo:ftu_types obo:UBERON_0001285, obo:UBERON_0001289.
+_:n3-0 ccfo:data _:n3-71.
+_:n3-72 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0003918, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11509>, <http://identifiers.org/hgnc/24039>, <http://identifiers.org/hgnc/2705>, <http://identifiers.org/hgnc/5318>, <http://identifiers.org/hgnc/6277>, <http://identifiers.org/hgnc/7656>;
+    ccfo:contains_cell_types obo:CL_4030022;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11509>, <http://identifiers.org/hgnc/24039>, <http://identifiers.org/hgnc/2705>, <http://identifiers.org/hgnc/5318>, <http://identifiers.org/hgnc/6277>, <http://identifiers.org/hgnc/7656>;
+    ccfo:contains_references <https://www.doi.org/10.1101/2021.07.28.454201>.
+_:n3-0 ccfo:data _:n3-72.
+_:n3-73 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0000362, obo:UBERON_0001228, obo:UBERON_0001294, obo:UBERON_0002113, obo:UBERON_0009095;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/10919>, <http://identifiers.org/hgnc/634>;
+    ccfo:contains_cell_types obo:CL_1000718;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/10919>, <http://identifiers.org/hgnc/634>.
+_:n3-0 ccfo:data _:n3-73.
+_:n3-74 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0006544, obo:UBERON_0009091;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/13635>, <http://identifiers.org/hgnc/2959>, <http://identifiers.org/hgnc/4460>, <http://identifiers.org/hgnc/7976>;
+    ccfo:contains_cell_types obo:CL_1001131;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/13635>, <http://identifiers.org/hgnc/2959>, <http://identifiers.org/hgnc/4460>, <http://identifiers.org/hgnc/7976>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41467-019-12872-5>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1101/2021.07.28.454201>.
+_:n3-0 ccfo:data _:n3-74.
+_:n3-75 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002015, obo:UBERON_0002113;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/1975>, <http://identifiers.org/hgnc/3802>;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/1975>, <http://identifiers.org/hgnc/3802>;
+    ccfo:contains_references <https://www.doi.org/10.1371/journal.pone.0187118>.
+_:n3-0 ccfo:data _:n3-75.
+_:n3-76 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0002113, obo:UBERON_0003918, obo:UBERON_0005215;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/11553>, <http://identifiers.org/hgnc/130>, <http://identifiers.org/hgnc/234>, <http://identifiers.org/hgnc/26295>, <http://identifiers.org/hgnc/7569>, <http://identifiers.org/hgnc/8033>;
+    ccfo:contains_cell_types obo:CL_1001318;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/11553>, <http://identifiers.org/hgnc/130>, <http://identifiers.org/hgnc/234>, <http://identifiers.org/hgnc/26295>, <http://identifiers.org/hgnc/7569>, <http://identifiers.org/hgnc/8033>;
+    ccfo:contains_references <https://www.doi.org/10.1038/s41467-019-10861-2>, <https://www.doi.org/10.1038/s41586-020-2941-1>, <https://www.doi.org/10.1073/pnas.2005477117>, <https://www.doi.org/10.1172/jci.insight.133267>.
+_:n3-0 ccfo:data _:n3-76.
+_:n3-77 a ccfo:AsctbRecord;
+    ccfo:contains_anatomical_structures obo:UBERON_0001225, obo:UBERON_0002113, obo:UBERON_0004203, obo:UBERON_0009883;
+    ccfo:contains_biomarkers <http://identifiers.org/hgnc/634>, <http://identifiers.org/hgnc/636>;
+    ccfo:contains_cell_types obo:CL_1000714;
+    ccfo:contains_gene_biomarkers <http://identifiers.org/hgnc/634>, <http://identifiers.org/hgnc/636>.
+_:n3-0 ccfo:data _:n3-77.
