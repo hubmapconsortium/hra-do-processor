@@ -4,8 +4,8 @@ import { readMetadata, validateNormalized, writeNormalized } from './utils.js';
 
 const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
 
-export async function normalizeAsctb(environment) {
-  const obj = environment.selectedDigitalObject;
+export async function normalizeAsctb(context) {
+  const obj = context.selectedDigitalObject;
   const metadata = readMetadata(obj);
   const dataUrl = metadata.datatable;
   const requestUrl =
@@ -20,8 +20,8 @@ export async function normalizeAsctb(environment) {
   writeNormalized(obj, metadata, data.data);
   console.log('normalized asct-b table written to', obj.doString + '/normalized/normalized.yaml');
 
-  if (!environment.skipValidation) {
-    const isValid = validateNormalized(obj, environment.processorHome);
+  if (!context.skipValidation) {
+    const isValid = validateNormalized(obj, context.processorHome);
     if (!isValid) {
       console.log(
         'normalized asct-b table was invalid! Check the errors at',

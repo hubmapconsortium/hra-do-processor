@@ -1,3 +1,3 @@
-export function packageIt(environment) {
-  console.log('package', environment);
+export function packageIt(context) {
+  console.log('package', context);
 }

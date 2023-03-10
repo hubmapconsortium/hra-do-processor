@@ -1,3 +1,3 @@
-export function enrichAsctb(environment) {
-  console.log('enrich asct-b', environment);
+export function enrichAsctb(context) {
+  console.log('enrich asct-b', context);
 }

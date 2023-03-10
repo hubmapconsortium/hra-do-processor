@@ -1,3 +1,3 @@
-export function normalizeRefOrgan(environment) {
-  console.log('normalize ref-organ', environment);
+export function normalizeRefOrgan(context) {
+  console.log('normalize ref-organ', context);
 }

@@ -1,14 +1,14 @@
 import { normalizeAsctb } from './normalize-asct-b.js';
 import { normalizeRefOrgan } from './normalize-ref-organ.js';
 
-export function normalize(environment) {
-  const obj = environment.selectedDigitalObject;
+export function normalize(context) {
+  const obj = context.selectedDigitalObject;
   switch (obj.type) {
     case 'asct-b':
-      normalizeAsctb(environment);
+      normalizeAsctb(context);
       break;
     case 'ref-organ':
-      normalizeRefOrgan(environment);
+      normalizeRefOrgan(context);
       break;
     default:
       console.log(`normalize: "${obj.type}" digital object type not supported (yet)`);

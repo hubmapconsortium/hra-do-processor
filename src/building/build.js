@@ -1,3 +1,3 @@
-export function build(environment) {
-  console.log('build', environment);
+export function build(context) {
+  console.log('build', context);
 }

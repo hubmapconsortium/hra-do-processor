@@ -12,8 +12,8 @@ export function getProcessorVersion() {
   return packageJson.version;
 }
 
-export function getEnvironment(program, subcommand, selectedDigitalObject) {
-  const environment = {
+export function getContext(program, subcommand, selectedDigitalObject) {
+  const context = {
     doHome: DEFAULT_DO_HOME,
     processorHome: PROCESSOR_HOME,
     ...program.opts(),
@@ -21,14 +21,14 @@ export function getEnvironment(program, subcommand, selectedDigitalObject) {
   };
   if (selectedDigitalObject) {
     try {
-      const doPath = parseDirectory(selectedDigitalObject, environment.doHome);
-      environment.selectedDigitalObject = getDigitalObjectInformation(doPath);
+      const doPath = parseDirectory(selectedDigitalObject, context.doHome);
+      context.selectedDigitalObject = getDigitalObjectInformation(doPath);
     } catch (error) {
       program.error(error.message);
     }
   }
 
-  return environment;
+  return context;
 }
 
 export function parseDirectory(path, baseDir) {
