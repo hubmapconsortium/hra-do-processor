@@ -41,8 +41,88 @@ export async function normalizeAsctb(context) {
 }
 
 function normalizeAsctbApiResponse(data) {
-  // TODO: convert individual asctb rows to the format specified by LinkML
-  return data.map((d) => {
-    return d;
-  });
+  const normalizedData = data.reduce((newData, oldRecord) => {
+    newData.push({
+      anatomical_structures: normalizeAnatomicalStructures(oldRecord.anatomical_structures),
+      cell_types: normalizeCellTypes(oldRecord.cell_types),
+      biomarkers: normalizeBiomarkers(oldRecord.biomarkers),
+      biomarkers_protein: normalizeBiomarkers(oldRecord.biomarkers_protein),
+      biomarkers_gene: normalizeBiomarkers(oldRecord.biomarkers_gene),
+      biomarkers_lipids: normalizeBiomarkers(oldRecord.biomarkers_lipids),
+      biomarkers_meta: normalizeBiomarkers(oldRecord.biomarkers_meta),
+      biomarkers_prot: normalizeBiomarkers(oldRecord.biomarkers_prot),
+      ftu_types: normalizeFtuTypes(oldRecord.ftu_types),
+      references: normalizeReferences(oldRecord.references),
+    });
+    return newData;
+  }, []);
+  return normalizedData;
+}
+
+function normalizeAnatomicalStructures(arr, excludeIdlessObject=true) {
+  return arr.filter((item) => excludeIdlessObject && item.id !== "")
+            .map((item) => ({
+              id: expandId(item.id),
+              label: item.rdfs_label,
+              preferred_name: item.name,
+            }))
+            .filter(removeDuplicate);
+}
+
+function normalizeCellTypes(arr, excludeIdlessObject=true) {
+  return arr.filter((item) => excludeIdlessObject && item.id !== "")
+            .map((item) => ({
+              id: expandId(item.id),
+              label: item.rdfs_label,
+              preferred_name: item.name,
+            }))
+            .filter(removeDuplicate);
+}
+
+function normalizeBiomarkers(arr, excludeIdlessObject=true) {
+  return arr.filter((item) => excludeIdlessObject && item.id !== "")
+            .map((item) => ({
+              id: expandId(item.id),
+              label: item.rdfs_label,
+              preferred_name: item.name,
+              biomarker_type: item.b_type,
+            }))
+            .filter(removeDuplicate);
+}
+
+function normalizeFtuTypes(arr, excludeIdlessObject=true) {
+  return arr.filter((item) => excludeIdlessObject && item.id !== "")
+            .map((item) => ({
+              id: expandId(item.id),
+              label: item.rdfs_label,
+              preferred_name: item.name,
+            }))
+            .filter(removeDuplicate);
+}
+
+function normalizeReferences(arr, excludeIdlessObject=true) {
+  return arr.filter((item) => excludeIdlessObject && item.doi !== "")
+          .map((item) => ({
+            id: expandId(item.doi),
+            doi: printDoi(item.doi),
+            pubmed_id: item.id,
+          }))
+          .filter(removeDuplicate);
+}
+
+function expandId(id) {
+  return id.replace(/^UBERON:/, "http://purl.obolibrary.org/obo/UBERON_")
+           .replace(/^FMA:/, "http://purl.org/sig/ont/fma/fma")
+           .replace(/^CL:/, "http://purl.obolibrary.org/obo/CL_")
+           .replace(/^HGNC:/, "http://identifiers.org/hgnc/")
+           .replace(/^DOI:/, "https://doi.org/")
+           .replace(/\s+/g, "");
+}
+
+function printDoi(doi) {
+  return doi.replace(/^DOI:/, "").replace(/\s+/g, "");
+}
+
+function removeDuplicate(obj, index, arr) {
+  return index === arr.findIndex((item) => item.id === obj.id);
 }
