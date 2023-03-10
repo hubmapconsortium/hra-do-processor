@@ -1,4 +1,9 @@
+import chalk from 'chalk';
+import { writeFileSync } from 'fs';
+import { dump } from 'js-yaml';
 import fetch from 'node-fetch';
+import { resolve } from 'path';
+import sh from 'shelljs';
 import { validateNormalized } from '../utils/validation.js';
 import { readMetadata, writeNormalized } from './utils.js';
 
@@ -19,4 +24,16 @@ export async function normalizeAsctb(context) {
 
   writeNormalized(obj, metadata, data.data);
   validateNormalized(context);
+
+  // If warnings are found in the response, save for reference.
+  const warningsFile = resolve(obj.path, 'normalized/warnings.yaml');
+  sh.rm('-f', warningsFile); // Clear previous warnings file
+  if (!context.skipValidation && data.warnings?.length > 0) {
+    writeFileSync(warningsFile, dump({ warnings: data.warnings }));
+    console.log(
+      chalk.yellow('Warnings were reported by the ASCTB-API.'),
+      'This may indicate further errors that need resolved. Please review the warnings at',
+      warningsFile
+    );
+  }
 }
