@@ -12,6 +12,7 @@ const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
 export async function normalizeAsctb(context) {
   const obj = context.selectedDigitalObject;
   const metadata = readMetadata(obj);
+
   const dataUrl = metadata.datatable;
   const requestUrl =
     ASCTB_API +
@@ -21,8 +22,9 @@ export async function normalizeAsctb(context) {
       cached: true,
     });
   const data = await fetch(requestUrl).then((r) => r.json());
+  const normalizedData = normalizeAsctbApiResponse(data.data);
 
-  writeNormalized(obj, metadata, data.data);
+  writeNormalized(obj, metadata, normalizedData);
   validateNormalized(context);
 
   // If warnings are found in the response, save for reference.
@@ -36,4 +38,11 @@ export async function normalizeAsctb(context) {
       warningsFile
     );
   }
+}
+
+function normalizeAsctbApiResponse(data) {
+  // TODO: convert individual asctb rows to the format specified by LinkML
+  return data.map((d) => {
+    return d;
+  });
 }
