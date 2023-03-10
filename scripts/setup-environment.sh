@@ -33,6 +33,7 @@ if [ -e "$ENV/bin/activate" ]; then
 
     npm ci
     npm install -g .
+    npm install -g ttl-merge
 fi
 
 if [ -e "$ENV/bin/activate" ]; then

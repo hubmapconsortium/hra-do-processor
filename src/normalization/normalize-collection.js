@@ -8,11 +8,11 @@ export function normalizeCollection(context) {
   const obj = context.selectedDigitalObject;
   const metadata = readMetadata(obj);
 
-  const dataUrl = resolve(obj.path, 'raw', metadata.datatable);
-  const data = load(readFileSync(dataUrl))['digital-objects'];
+  const dataPath = resolve(obj.path, 'raw', metadata.datatable);
+  const data = load(readFileSync(dataPath))['digital-objects'];
 
-  validateCollection(context, data);
   writeNormalized(obj, metadata, data);
+  validateCollection(context, data);
 }
 
 function validateCollection(context, data) {

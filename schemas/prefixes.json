@@ -1,6 +1,8 @@
 {
   "ccf1": "http://purl.org/ccf/latest/ccf.owl#",
   "ccfo": "http://purl.org/ccf/",
+  "dc": "http://purl.org/dc/terms/",
+  "hgnc": "http://identifiers.org/hgnc/",
   "obo": "http://purl.obolibrary.org/obo/",
   "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
 }
