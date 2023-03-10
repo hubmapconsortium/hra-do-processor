@@ -6,7 +6,7 @@ import { enrich } from './enrichment/enrich.js';
 import { list } from './list.js';
 import { normalize } from './normalization/normalize.js';
 import { packageIt } from './packaging/package.js';
-import { getEnvironment, getProcessorVersion, parseDirectory } from './utils/cli-environment.js';
+import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
 
 const program = new Command();
 
@@ -25,7 +25,7 @@ program
   )
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
-    normalize(getEnvironment(program, command, str));
+    normalize(getContext(program, command, str));
   });
 
 program
@@ -35,7 +35,7 @@ program
   )
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
-    enrich(getEnvironment(program, command, str));
+    enrich(getContext(program, command, str));
   });
 
 program
@@ -43,7 +43,7 @@ program
   .description("Packages an Enriched Digital Object, such that it can published to a website/DOI'd/etc and used")
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
-    packageIt(getEnvironment(program, command, str));
+    packageIt(getContext(program, command, str));
   });
 
 program
@@ -51,14 +51,14 @@ program
   .description('Given a Digital Object, checks for and runs normalization, enrichment, and packaging in one command.')
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
-    build(getEnvironment(program, command, str));
+    build(getContext(program, command, str));
   });
 
 program
   .command('list')
   .description('Lists all digital objects in the DO_HOME directory')
   .action((_options, command) => {
-    list(getEnvironment(program, command));
+    list(getContext(program, command));
   });
 
 program.parse(process.argv);
