@@ -1,3 +1,6 @@
+import { convertNormalized } from './utils.js';
+
 export function enrichAsctb(context) {
-  console.log('enrich asct-b', context);
+  // TODO: do more than a straight conversion to rdf
+  convertNormalized(context);
 }
