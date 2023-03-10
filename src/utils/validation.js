@@ -28,7 +28,7 @@ export function validateNormalized(context) {
   const isValid = results.status !== 'fail';
   if (!isValid) {
     console.log(
-      chalk.red('normalized', obj.type, 'digital object was invalid!'),
+      chalk.red('Normalized', obj.type, 'digital object was invalid!'),
       'Check errors at',
       resolve(obj.path, 'normalized/errors.yaml')
     );

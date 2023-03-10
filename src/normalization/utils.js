@@ -16,5 +16,5 @@ export function writeNormalized(obj, metadata, data) {
     })
   );
 
-  console.log('normalized', obj.type, 'digital object written to', obj.doString + '/normalized/normalized.yaml');
+  console.log('Normalized', obj.type, 'digital object written to', obj.doString + '/normalized/normalized.yaml');
 }
