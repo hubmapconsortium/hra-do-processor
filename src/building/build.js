@@ -98,7 +98,6 @@ export async function build(context) {
   const commands = obj.type === 'collection' ? COLLECTION_COMMANDS : COMMANDS;
   for (const cmd of commands) {
     if (clean || !testCmdSuccess(context, cmd)) {
-      console.log(cmd.test);
       await cmd.action(context);
     }
   }
