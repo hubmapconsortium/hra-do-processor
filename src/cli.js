@@ -49,6 +49,7 @@ program
 program
   .command('build')
   .description('Given a Digital Object, checks for and runs normalization, enrichment, and packaging in one command.')
+  .option('-c --clean', 'clean and re-run all steps', false)
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     build(getContext(program, command, str));
