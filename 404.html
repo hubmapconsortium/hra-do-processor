@@ -12,11 +12,12 @@
 <body>
   <div id="app"></div>
   <script>
+    const basePath = document.getElementsByTagName('base')[0].href;
     window.$docsify = {
       name: 'HRA Digital Object Processor',
       repo: 'hubmapconsortium/hra-do-processor',
       routerMode: 'history',
-      basePath: '/hra-do-processor/',
+      basePath,
       noCompileLinks: [
         'digital-objects/.+/v.+/(raw|normalized|enriched)/.+\..+',
       ],
