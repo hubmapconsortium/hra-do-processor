@@ -1,7 +1,7 @@
 {
   "name": "do-processor",
   "version": "0.0.0",
-  "description": "## Pre-requisite",
+  "description": "Human Reference Atlas (HRA) Digital Object (DO) Processor - do-processor",
   "main": "src/cli.js",
   "bin": {
     "do-processor": "src/cli.js"
@@ -9,11 +9,12 @@
   "type": "module",
   "scripts": {
     "do-processor": "node ./src/cli.js",
+    "serve": "npx live-server --cors --entry-file=./index.html --watch=. --verbose --mount=/hra-do-processor/:. .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hubmapconsortium/ccf-linkml.git"
+    "url": "git+https://github.com/hubmapconsortium/hra-do-processor.git"
   },
   "author": "",
   "license": "MIT",
