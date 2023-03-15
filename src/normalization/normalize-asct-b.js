@@ -1,7 +1,6 @@
 import chalk from 'chalk';
 import { readFileSync, writeFileSync } from 'fs';
 import { dump } from 'js-yaml';
-import fetch from 'node-fetch';
 import { resolve } from 'path';
 import sh from 'shelljs';
 import { validateNormalized } from '../utils/validation.js';
