@@ -1,12 +1,14 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { dump, load } from 'js-yaml';
 import { resolve } from 'path';
+import sh from 'shelljs';
 
 export function readMetadata(obj) {
   return load(readFileSync(resolve(obj.path, 'raw/metadata.yaml')));
 }
 
 export function writeNormalized(obj, metadata, data) {
+  sh.mkdir('-p', resolve(obj.path, 'normalized'));
   const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
   writeFileSync(
     normalizedPath,
