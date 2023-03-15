@@ -1,0 +1,13 @@
+warnings:
+  - 'WARNING: unmapped field found: AS/1/ABBR'
+  - 'WARNING: unmapped field found: AS/2/ABBR'
+  - 'WARNING: unmapped field found: AS/3/ABBR'
+  - 'WARNING: unmapped field found: AS/4/ABBR'
+  - 'WARNING: unmapped field found: AS/5/ABBR'
+  - 'WARNING: unmapped field found: CT/1/ABBR'
+  - 'WARNING: unmapped field found: BGENE/1/ABBR'
+  - 'WARNING: unmapped field found: BGENE/2/ABBR'
+  - 'WARNING: unmapped field found: BGENE/3/ABBR'
+  - 'WARNING: unmapped field found: BGENE/4/ABBR'
+  - 'WARNING: unmapped field found: BGENE/5/ABBR'
+  - 'WARNING: unmapped field found: BLIPID/1/ABBR'

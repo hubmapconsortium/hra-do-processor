@@ -1,0 +1,3059 @@
+metadata:
+  type: asct-b
+  name: skin
+  version: v1.2
+  title: Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for Skin
+  description: >-
+    [Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B)
+    tables](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html)
+    aim to capture the nested *part_of* structure of anatomical human body
+    parts, the typology of cells, and biomarkers used to identify cell types.
+    The tables are authored and reviewed by an international team of experts.
+  creators:
+    - fullName: Fiona Ginty
+      firstName: Fiona
+      lastName: Ginty
+      orcid: 0000-0001-6638-683X
+    - fullName: Jonhan Ho
+      firstName: Jonhan
+      lastName: Ho
+      orcid: 0000-0002-1134-8585
+    - fullName: Joel Sunshine
+      firstName: Joel
+      lastName: Sunshine
+      orcid: 0000-0001-9987-6712
+  project_leads:
+    - fullName: Katy Börner
+      firstName: Katy
+      lastName: Börner
+      orcid: 0000-0002-3321-6137
+  reviewers:
+    - fullName: Lou Falo
+      firstName: Lou
+      lastName: Falo
+      orcid: 0000-0001-9813-0433
+    - fullName: Muzlifah A. Haniffa
+      firstName: Muzlifah
+      lastName: Haniffa
+      orcid: 0000-0002-3927-2084
+    - fullName: Hemali Phatnani
+      firstName: Hemali
+      lastName: Phatnani
+      orcid: 0000-0002-6571-3891
+    - fullName: David M. Owens
+      firstName: David
+      lastName: Owens
+      orcid: 0000-0003-0297-4370
+    - fullName: Ellen M. Quardokus
+      firstName: Ellen
+      lastName: Quardokus
+      orcid: 0000-0001-7655-4833
+  externalReviewers: []
+  creation_date: '2022-05-06'
+  license: >-
+    Creative Commons Attribution 4.0 International ([CC BY
+    4.0](https://creativecommons.org/licenses/by/4.0/))
+  publisher: HuBMAP
+  funders:
+    - funder: National Institutes of Health
+      awardNumber: OT2OD026671
+  hubmapId: HBM725.JHNS.532
+  doi: https://doi.org/10.48539/HBM725.JHNS.532
+  citation: >-
+    Fiona Ginty; Jonhan Ho; Joel Sunshine, HuBMAP ASCT+B Tables. Skin v1.1
+    [https://doi.org/10.48539/HBM725.JHNS.532](https://doi.org/10.48539/HBM725.JHNS.532)
+  citationOverall: >-
+    Quardokus, Ellen, Bruce W. Herr II, Lisel Record, Katy Börner. 2021.
+    [*HuBMAP ASCT+B
+    Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
+    Accessed on May 6, 2022
+  datatable:
+    - ASCT-B_VH_Skin.csv
+data:
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0002027
+        label: stratum corneum of epidermis
+        preferred_name: Stratum corneum (SC)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002153
+        label: corneocyte
+        preferred_name: Keratinocyte (Corneocyte)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6187
+        label: IVL
+        preferred_name: Involucrin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3748
+        label: FLG
+        preferred_name: filaggrin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/6187
+        label: IVL
+        preferred_name: Involucrin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3748
+        label: FLG
+        preferred_name: filaggrin
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+    references:
+      - id: https://doi.org/10.1146/annurev.cb.11.110195.001011
+        doi: 10.1146/annurev.cb.11.110195.001011
+        pubmed_id: 'PMID: 8689554.'
+      - id: https://doi.org/10.1111/1523-1747.ep12298323
+        doi: 10.1111/1523-1747.ep12298323
+        pubmed_id: 'PMID: 8752847'
+      - id: https://doi.org/10.1021/bi00492a018
+        doi: 10.1021/bi00492a018
+        pubmed_id: 'PMID: 2248957'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0002069
+        label: stratum granulosum of epidermis
+        preferred_name: Stratum granulosum (SG)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000312
+        label: keratinocyte
+        preferred_name: Keratinocyte (Granular)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6413
+        label: KRT10
+        preferred_name: keratin 10
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11998
+        label: p53
+        preferred_name: tumor protein p53
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7107
+        label: MKI67
+        preferred_name: marker of proliferation Ki-67
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2718
+        label: DDB2
+        preferred_name: damage specific DNA binding protein 2
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/6413
+        label: KRT10
+        preferred_name: keratin 10
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11998
+        label: p53
+        preferred_name: tumor protein p53
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7107
+        label: MKI67
+        preferred_name: marker of proliferation Ki-67
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2718
+        label: DDB2
+        preferred_name: damage specific DNA binding protein 2
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+    references:
+      - id: https://doi.org/10.1146/annurev.cb.11.110195.001011
+        doi: 10.1146/annurev.cb.11.110195.001011
+        pubmed_id: 'PMID: 8689554.'
+      - id: https://doi.org/10.1083/jcb.200603161
+        doi: 10.1083/jcb.200603161
+        pubmed_id: 'PMID: 16831889'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0002069
+        label: stratum granulosum of epidermis
+        preferred_name: Stratum granulosum (SG)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002457
+        label: epidermal Langerhans cell
+        preferred_name: Langerhans cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1634
+        label: CD1A
+        preferred_name: CD1a molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/17935
+        label: CD207
+        preferred_name: CD207 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7067
+        label: CIITA
+        preferred_name: class II major histocompatibility complex transactivator
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1634
+        label: CD1A
+        preferred_name: CD1a molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/17935
+        label: CD207
+        preferred_name: CD207 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7067
+        label: CIITA
+        preferred_name: class II major histocompatibility complex transactivator
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+    references:
+      - id: https://doi.org/10.1016/S0171-2985(84)80117-5
+        doi: 10.1016/S0171-2985(84)80117-5
+        pubmed_id: 'PMID: 6397423.'
+      - id: https://doi.org/10.1111/1523-1747.ep12712175
+        doi: 10.1111/1523-1747.ep12712175
+        pubmed_id: 'PMID: 2784820'
+      - id: https://doi.org/10.1016/s1074-7613(00)80160-0
+        doi: 10.1016/s1074-7613(00)80160-0
+        pubmed_id: 'PMID: 10661407'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0002026
+        label: stratum spinosum of epidermis
+        preferred_name: Stratum spinosum (SS)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000649
+        label: prickle cell
+        preferred_name: Keratinocytes (Spinous)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6412
+        label: KRT1
+        preferred_name: keratin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6413
+        label: KRT10
+        preferred_name: keratin 10
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/6412
+        label: KRT1
+        preferred_name: keratin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6413
+        label: KRT10
+        preferred_name: keratin 10
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+    references:
+      - id: https://doi.org/10.1038/jid.1952.87
+        doi: 10.1038/jid.1952.87
+        pubmed_id: 'PMID: 12981303.'
+      - id: https://doi.org/10.1083/jcb.200603161
+        doi: 10.1083/jcb.200603161
+        pubmed_id: 'PMID: 16831889'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0002026
+        label: stratum spinosum of epidermis
+        preferred_name: Stratum spinosum (SS)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002457
+        label: epidermal Langerhans cell
+        preferred_name: Langerhans cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1634
+        label: CD1A
+        preferred_name: CD1a molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/17935
+        label: CD207
+        preferred_name: CD207 molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1634
+        label: CD1A
+        preferred_name: CD1a molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/17935
+        label: CD207
+        preferred_name: CD207 molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+    references:
+      - id: https://doi.org/10.1016/S0171-2985(84)80117-5
+        doi: 10.1016/S0171-2985(84)80117-5
+        pubmed_id: 'PMID: 6397423.'
+      - id: https://doi.org/10.1111/1523-1747.ep12712175
+        doi: 10.1111/1523-1747.ep12712175
+        pubmed_id: 'PMID: 2784820'
+      - id: https://doi.org/10.1016/s1074-7613(00)80160-0
+        doi: 10.1016/s1074-7613(00)80160-0
+        pubmed_id: 'PMID: 10661407'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0002026
+        label: stratum spinosum of epidermis
+        preferred_name: Stratum spinosum (SS)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000242
+        label: Merkel cell
+        preferred_name: Merkel cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/20412
+        label: KRT20
+        preferred_name: Keratin 20
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11506
+        label: SYP
+        preferred_name: synaptophysin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/20412
+        label: KRT20
+        preferred_name: Keratin 20
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11506
+        label: SYP
+        preferred_name: synaptophysin
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+    references:
+      - id: https://doi.org/10.4103/0973-029X.125208
+        doi: 10.4103/0973-029X.125208
+        pubmed_id: 'PMID: 24574661'
+      - id: https://doi.org/10.1159/000248491
+        doi: 10.1159/000248491
+        pubmed_id: 'PMID: 3141225'
+      - id: https://doi.org/10.1111/1523-1747.ep12606183
+        doi: 10.1111/1523-1747.ep12606183
+        pubmed_id: pmid:7769257
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0002025
+        label: stratum basale of epidermis
+        preferred_name: Stratum basale (SB)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000646
+        label: basal cell
+        preferred_name: Keratinocyte (Basal)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6442
+        label: KRT5
+        preferred_name: keratin 5
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6416
+        label: KRT14
+        preferred_name: keratin 14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11998
+        label: p53
+        preferred_name: tumor protein p53
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7107
+        label: MKI67
+        preferred_name: marker of proliferation Ki-67
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2718
+        label: DDB2
+        preferred_name: damage specific DNA binding protein 2
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/6442
+        label: KRT5
+        preferred_name: keratin 5
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6416
+        label: KRT14
+        preferred_name: keratin 14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11998
+        label: p53
+        preferred_name: tumor protein p53
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7107
+        label: MKI67
+        preferred_name: marker of proliferation Ki-67
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2718
+        label: DDB2
+        preferred_name: damage specific DNA binding protein 2
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+    references:
+      - id: https://doi.org/10.1038/nrm3175
+        doi: 10.1038/nrm3175
+        pubmed_id: 'PMID: 21860392'
+      - id: https://doi.org/10.1083/jcb.200603161
+        doi: 10.1083/jcb.200603161
+        pubmed_id: 'PMID: 16831889'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0002025
+        label: stratum basale of epidermis
+        preferred_name: Stratum basale (SB)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002457
+        label: epidermal Langerhans cell
+        preferred_name: Langerhans cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1634
+        label: CD1A
+        preferred_name: CD1a molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/17935
+        label: CD207
+        preferred_name: CD207 molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1634
+        label: CD1A
+        preferred_name: CD1a molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/17935
+        label: CD207
+        preferred_name: CD207 molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+    references:
+      - id: https://doi.org/10.1016/S0171-2985(84)80117-5
+        doi: 10.1016/S0171-2985(84)80117-5
+        pubmed_id: 'PMID: 6397423.'
+      - id: https://doi.org/10.1111/1523-1747.ep12712175
+        doi: 10.1111/1523-1747.ep12712175
+        pubmed_id: 'PMID: 2784820'
+      - id: https://doi.org/10.1016/s1074-7613(00)80160-0
+        doi: 10.1016/s1074-7613(00)80160-0
+        pubmed_id: 'PMID: 10661407'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0002025
+        label: stratum basale of epidermis
+        preferred_name: Stratum basale (SB)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000242
+        label: Merkel cell
+        preferred_name: Merkel cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/11506
+        label: SYP
+        preferred_name: synaptophysin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1929
+        label: CHGA
+        preferred_name: chromogranin A
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/20412
+        label: KRT20
+        preferred_name: keratin 20
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/11506
+        label: SYP
+        preferred_name: synaptophysin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1929
+        label: CHGA
+        preferred_name: chromogranin A
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/20412
+        label: KRT20
+        preferred_name: keratin 20
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+    references:
+      - id: https://doi.org/10.4103/0973-029X.125208
+        doi: 10.4103/0973-029X.125208
+        pubmed_id: 'PMID: 24574661'
+      - id: https://doi.org/10.1111/1523-1747.ep12606183
+        doi: 10.1111/1523-1747.ep12606183
+        pubmed_id: pmid:7769257
+      - id: https://doi.org/10.1111/1523-1747.ep12319788
+        doi: 10.1111/1523-1747.ep12319788
+        pubmed_id: 'PMID: 2677156'
+      - id: https://doi.org/10.1083/jcb.200603161
+        doi: 10.1083/jcb.200603161
+        pubmed_id: 'PMID: 16831889'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0002025
+        label: stratum basale of epidermis
+        preferred_name: Stratum basale (SB)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_1000458
+        label: melanocyte of skin
+        preferred_name: Melanocyte
+    biomarkers:
+      - id: http://identifiers.org/hgnc/11190
+        label: SOX10
+        preferred_name: SRY-box transcription factor 10
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10492
+        label: S100A2
+        preferred_name: S100 calcium binding protein A2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7124
+        label: MLANA
+        preferred_name: melan-A
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/11190
+        label: SOX10
+        preferred_name: SRY-box transcription factor 10
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10492
+        label: S100A2
+        preferred_name: S100 calcium binding protein A2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7124
+        label: MLANA
+        preferred_name: melan-A
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+    references:
+      - id: https://doi.org/10.1038/s41586-020-2785-8
+        doi: 10.1038/s41586-020-2785-8
+        pubmed_id: 'PMID: 33029006'
+      - id: https://doi.org/10.1074/jbc.m309036200
+        doi: 10.1074/jbc.m309036200
+        pubmed_id: 'PMID: 12944398'
+      - id: https://doi.org/10.1046/j.1365-2133.1997.17651853.x
+        doi: 10.1046/j.1365-2133.1997.17651853.x
+        pubmed_id: 'PMID: 9274623'
+      - id: https://doi.org/10.1034/j.1600-0854.2002.30909.x
+        doi: 10.1034/j.1600-0854.2002.30909.x
+        pubmed_id: 'PMID: 12191019'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0008198
+        label: nail plate
+        preferred_name: Nail plate
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6442
+        label: KRT5
+        preferred_name: keratin 5
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6413
+        label: KRT10
+        preferred_name: keratin 10
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6427
+        label: KRT17
+        preferred_name: keratin 17
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/6442
+        label: KRT5
+        preferred_name: keratin 5
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6413
+        label: KRT10
+        preferred_name: keratin 10
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6427
+        label: KRT17
+        preferred_name: keratin 17
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001003
+        label: skin epidermis
+        preferred_name: Epidermis
+    references:
+      - id: https://doi.org/10.1111/j.1365-2133.2004.06108.x
+        doi: 10.1111/j.1365-2133.2004.06108.x
+        pubmed_id: 'PMID: 15327543.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0002073
+        label: hair follicle
+        preferred_name: Hair follicles
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002337
+        label: keratinocyte stem cell
+        preferred_name: keratinocyte stem cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6421
+        label: KRT15
+        preferred_name: keratin 15
+        biomarker_type: protein
+      - id: CD200
+        label: HGNC:7203
+        preferred_name: CD200 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34 molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/6421
+        label: KRT15
+        preferred_name: keratin 15
+        biomarker_type: protein
+      - id: CD200
+        label: HGNC:7203
+        preferred_name: CD200 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34 molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1002/jcp.22275
+        doi: 10.1002/jcp.22275
+        pubmed_id: 'PMID: 20568222.'
+      - id: https://doi.org/10.1038/labinvest.2009.48
+        doi: 10.1038/labinvest.2009.48
+        pubmed_id: 'PMID: 19506554'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0001821
+        label: sebaceous gland
+        preferred_name: Sebaceous glands
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000151
+        label: sebum secreting cell
+        preferred_name: Germinative (epithelial) cell, Sebocyte
+    biomarkers:
+      - id: http://identifiers.org/hgnc/7508
+        label: MUC1
+        preferred_name: Epidermal membrane Antigen
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/248
+        label: PLIN2
+        preferred_name: perilipin 2
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/7508
+        label: MUC1
+        preferred_name: Epidermal membrane Antigen
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/248
+        label: PLIN2
+        preferred_name: perilipin 2
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1016/j.biocel.2009.11.017
+        doi: 10.1016/j.biocel.2009.11.017
+        pubmed_id: 'PMID: 19944183'
+      - id: https://doi.org/10.4161/derm.1.2.8736
+        doi: 10.4161/derm.1.2.8736
+        pubmed_id: 'PMID: 20224690'
+      - id: https://doi.org/10.1016/j.bbagen.2013.05.016
+        doi: 10.1016/j.bbagen.2013.05.016
+        pubmed_id: 'PMID: 23688400'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0000423
+        label: eccrine sweat gland
+        preferred_name: Eccrine (sweat) glands
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_1000417
+        label: myoepithelial cell of sweat gland
+        preferred_name: myoepithelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6436
+        label: KRT19
+        preferred_name: keratin 19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10492
+        label: S100A2
+        preferred_name: S100 calcium binding protein A2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/30840
+        label: KRT26
+        preferred_name: keratin 26
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/6436
+        label: KRT19
+        preferred_name: keratin 19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10492
+        label: S100A2
+        preferred_name: S100 calcium binding protein A2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/30840
+        label: KRT26
+        preferred_name: keratin 26
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1111/exd.12773
+        doi: 10.1111/exd.12773
+        pubmed_id: 'PMID: 26014472'
+      - id: https://doi.org/10.1111/1523-1747.ep12277180
+        doi: 10.1111/1523-1747.ep12277180
+        pubmed_id: 'PMID: 2414369'
+      - id: https://doi.org/10.1046/j.1365-2133.1997.17651853.x
+        doi: 10.1046/j.1365-2133.1997.17651853.x
+        pubmed_id: 'PMID: 9274623'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0008974
+        label: apocrine gland
+        preferred_name: Apocrine glands
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_1000417
+        label: myoepithelial cell of sweat gland
+        preferred_name: myoepithelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/8993
+        label: PIP
+        preferred_name: GCDFP-15
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4172
+        label: GATA3
+        preferred_name: GATA3
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/8993
+        label: PIP
+        preferred_name: GCDFP-15
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4172
+        label: GATA3
+        preferred_name: GATA3
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1083/jcb.95.2.580
+        doi: 10.1083/jcb.95.2.580
+        pubmed_id: 'PMID: 6183275'
+      - id: https://doi.org/10.1046/j.0022-202x.2001.00005.x
+        doi: 10.1046/j.0022-202x.2001.00005.x
+        pubmed_id: 'PMID: 11764285'
+      - id: https://doi.org/10.1097/DAD.0000000000000306
+        doi: 10.1097/DAD.0000000000000306
+        pubmed_id: 'PMID: 26595821'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_1000417
+        label: myoepithelial cell of sweat gland
+        preferred_name: myoepithelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/130
+        label: ACTA2
+        preferred_name: actin alpha 2, smooth muscle
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2155
+        label: CNN1
+        preferred_name: calponin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10492
+        label: S100A2
+        preferred_name: S100 calcium binding protein A2
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/130
+        label: ACTA2
+        preferred_name: actin alpha 2, smooth muscle
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2155
+        label: CNN1
+        preferred_name: calponin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10492
+        label: S100A2
+        preferred_name: S100 calcium binding protein A2
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1247/csf.14009
+        doi: 10.1247/csf.14009
+        pubmed_id: 'PMID: 25196208'
+      - id: https://doi.org/10.1097/DAD.0000000000000431
+        doi: 10.1097/DAD.0000000000000431
+        pubmed_id: 'PMID: 26630681.'
+      - id: https://doi.org/10.1046/j.1365-2133.1997.17651853.x
+        doi: 10.1046/j.1365-2133.1997.17651853.x
+        pubmed_id: 'PMID: 9274623'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002620
+        label: skin fibroblast
+        preferred_name: Fibroblast
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3541
+        label: F3
+        preferred_name: Factor XIIIa
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/12692
+        label: VIM
+        preferred_name: vimentin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34 molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/3541
+        label: F3
+        preferred_name: Factor XIIIa
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/12692
+        label: VIM
+        preferred_name: vimentin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34 molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1016/j.tcb.2014.10.001
+        doi: 10.1016/j.tcb.2014.10.001
+        pubmed_id: 'PMID: 25455110.'
+      - id: https://doi.org/10.1111/j.1365-2133.1989.tb15509.x
+        doi: 10.1111/j.1365-2133.1989.tb15509.x
+        pubmed_id: 'PMID: 2576222'
+      - id: https://doi.org/10.1074/jbc.M701586200
+        doi: 10.1074/jbc.M701586200
+        pubmed_id: 'PMID: 17567584'
+      - id: https://doi.org/10.1097/00000372-199606000-00008
+        doi: 10.1097/00000372-199606000-00008
+        pubmed_id: 'PMID: 8806963'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000097
+        label: mast cell
+        preferred_name: Mast cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3358
+        label: ENPP3
+        preferred_name: CD203c
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: KIT proto-oncogene, receptor tyrosine kinase
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1604
+        label: CCR3
+        preferred_name: C-C motif chemokine receptor 3
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/3358
+        label: ENPP3
+        preferred_name: CD203c
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: KIT proto-oncogene, receptor tyrosine kinase
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1604
+        label: CCR3
+        preferred_name: C-C motif chemokine receptor 3
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1016/S1081-1206(10)62853-0
+        doi: 10.1016/S1081-1206(10)62853-0
+        pubmed_id: 'PMID: 10582733.'
+      - id: https://doi.org/10.1111/imr.12639
+        doi: 10.1111/imr.12639
+        pubmed_id: 'PMID: 29431209.'
+      - id: NoDOI
+        doi: NoDOI
+        pubmed_id: 'PMID: 7682764'
+      - id: https://doi.org/10.1159/000053694.
+        doi: 10.1159/000053694.
+        pubmed_id: 'PMID: 11306952'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0001006
+        label: dermal dendritic cell
+        preferred_name: Dendritic cell (DC1)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6147
+        label: ITGAE
+        preferred_name: integrin subunit alpha E/CD103
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6149
+        label: ITGAM
+        preferred_name: integrin subunit alpha M/CD11b
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/6147
+        label: ITGAE
+        preferred_name: integrin subunit alpha E/CD103
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6149
+        label: ITGAM
+        preferred_name: integrin subunit alpha M/CD11b
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1016/j.jdermsci.2014.08.012
+        doi: 10.1016/j.jdermsci.2014.08.012
+        pubmed_id: 'PMID: 25301671'
+      - id: https://doi.org/10.1111/j.0105-2896.2009.00874.x
+        doi: 10.1111/j.0105-2896.2009.00874.x
+        pubmed_id: 'PMID: 20193025.'
+      - id: https://doi.org/10.4049/jimmunol.1701056
+        doi: 10.4049/jimmunol.1701056
+        pubmed_id: 'PMID: 29158419.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0001006
+        label: dermal dendritic cell
+        preferred_name: Dendritic cell (DC2)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6147
+        label: ITGAE
+        preferred_name: integrin subunit alpha E/CD103
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6149
+        label: ITGAM
+        preferred_name: integrin subunit alpha M/CD11b
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/6147
+        label: ITGAE
+        preferred_name: integrin subunit alpha E/CD103
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6149
+        label: ITGAM
+        preferred_name: integrin subunit alpha M/CD11b
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1016/j.jdermsci.2014.08.012
+        doi: 10.1016/j.jdermsci.2014.08.012
+        pubmed_id: 'PMID: 25301671'
+      - id: https://doi.org/10.1111/j.0105-2896.2009.00874.x
+        doi: 10.1111/j.0105-2896.2009.00874.x
+        pubmed_id: 'PMID: 20193025.'
+      - id: https://doi.org/10.4049/jimmunol.1701056
+        doi: 10.4049/jimmunol.1701056
+        pubmed_id: 'PMID: 29158419.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0001006
+        label: dermal dendritic cell
+        preferred_name: Dendritic cell (monocyte-derived)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6147
+        label: ITGAE
+        preferred_name: integrin subunit alpha E/CD103
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6149
+        label: ITGAM
+        preferred_name: integrin subunit alpha M/CD11b
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/6147
+        label: ITGAE
+        preferred_name: integrin subunit alpha E/CD103
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6149
+        label: ITGAM
+        preferred_name: integrin subunit alpha M/CD11b
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1016/j.jdermsci.2014.08.012
+        doi: 10.1016/j.jdermsci.2014.08.012
+        pubmed_id: 'PMID: 25301671'
+      - id: https://doi.org/10.1111/j.0105-2896.2009.00874.x
+        doi: 10.1111/j.0105-2896.2009.00874.x
+        pubmed_id: 'PMID: 20193025.'
+      - id: https://doi.org/10.4049/jimmunol.1701056
+        doi: 10.4049/jimmunol.1701056
+        pubmed_id: 'PMID: 29158419.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0001006
+        label: dermal dendritic cell
+        preferred_name: Dendritic cell (migratory)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6147
+        label: ITGAE
+        preferred_name: integrin subunit alpha E/CD103
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6149
+        label: ITGAM
+        preferred_name: integrin subunit alpha M/CD11b
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/6147
+        label: ITGAE
+        preferred_name: integrin subunit alpha E/CD103
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6149
+        label: ITGAM
+        preferred_name: integrin subunit alpha M/CD11b
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1016/j.jdermsci.2014.08.012
+        doi: 10.1016/j.jdermsci.2014.08.012
+        pubmed_id: 'PMID: 25301671'
+      - id: https://doi.org/10.1111/j.0105-2896.2009.00874.x
+        doi: 10.1111/j.0105-2896.2009.00874.x
+        pubmed_id: 'PMID: 20193025.'
+      - id: https://doi.org/10.4049/jimmunol.1701056
+        doi: 10.4049/jimmunol.1701056
+        pubmed_id: 'PMID: 29158419.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000235
+        label: macrophage
+        preferred_name: Macrophage
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1693
+        label: CD68
+        preferred_name: CD68 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1631
+        label: CD163
+        preferred_name: CD163 molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1693
+        label: CD68
+        preferred_name: CD68 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1631
+        label: CD163
+        preferred_name: CD163 molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1038/nri2622
+        doi: 10.1038/nri2622
+        pubmed_id: 'PMID: 19763149'
+      - id: https://doi.org/10.1136/ard.2003.013029
+        doi: 10.1136/ard.2003.013029
+        pubmed_id: 'PMID: 15194571'
+      - id: https://doi.org/10.1016/j.actatropica.2016.01.008
+        doi: 10.1016/j.actatropica.2016.01.008
+        pubmed_id: 'PMID: 26827741.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000545
+        label: T-helper 1 cell
+        preferred_name: T helper
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4 molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4 molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1111/1523-1747.ep12470172
+        doi: 10.1111/1523-1747.ep12470172
+        pubmed_id: 'PMID: 3494791'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000910
+        label: cytotoxic T cell
+        preferred_name: T killer
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8a molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8a molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1111/1523-1747.ep12470172
+        doi: 10.1111/1523-1747.ep12470172
+        pubmed_id: 'PMID: 3494791'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000815
+        label: regulatory T cell
+        preferred_name: T reg
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6106
+        label: FOXP3
+        preferred_name: forkhead box P3
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6106
+        label: FOXP3
+        preferred_name: forkhead box P3
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1111/1523-1747.ep12470172
+        doi: 10.1111/1523-1747.ep12470172
+        pubmed_id: 'PMID: 3494791'
+      - id: https://doi.org/10.1111/imm.12791
+        doi: 10.1111/imm.12791
+        pubmed_id: 'PMID: 28699278'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000623
+        label: natural killer cell
+        preferred_name: Natural killer cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: neural cell adhesion molecule 1/CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: Fc fragment of IgG receptor IIIa/CD16
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: neural cell adhesion molecule 1/CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: Fc fragment of IgG receptor IIIa/CD16
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1016/j.jaci.2009.11.020
+        doi: 10.1016/j.jaci.2009.11.020
+        pubmed_id: 'PMID: 20109737'
+      - id: https://doi.org/10.1016/s1471-4906(01)02060-9
+        doi: 10.1016/s1471-4906(01)02060-9
+        pubmed_id: 'PMID: 11698225.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0001067
+        label: group 1 innate lymphoid cell
+        preferred_name: Natural killer cell / Innate lymphoid cell 1
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: neural cell adhesion molecule 1/CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11599
+        label: TBX21
+        preferred_name: T-box transcription factor 21
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: neural cell adhesion molecule 1/CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11599
+        label: TBX21
+        preferred_name: T-box transcription factor 21
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1126/science.aaa6566
+        doi: 10.1126/science.aaa6566
+        pubmed_id: 'PMID: 25999512;'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0001069
+        label: group 2 innate lymphoid cell
+        preferred_name: Innate lymphoid cell 2
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: neural cell adhesion molecule 1/CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4172
+        label: GATA3
+        preferred_name: GATA binding protein 3
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: neural cell adhesion molecule 1/CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4172
+        label: GATA3
+        preferred_name: GATA binding protein 3
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1038/ni.2584
+        doi: 10.1038/ni.2584
+        pubmed_id: 'PMID: 23603794'
+      - id: https://doi.org/10.1126/science.aaa6566
+        doi: 10.1126/science.aaa6566
+        pubmed_id: 'PMID: 25999512;'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0001071
+        label: group 3 innate lymphoid cell
+        preferred_name: Innate lymphoid cell 3
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: neural cell adhesion molecule 1/CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10260
+        label: RORC
+        preferred_name: RAR related orphan receptor C
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: neural cell adhesion molecule 1/CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10260
+        label: RORC
+        preferred_name: RAR related orphan receptor C
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1038/ncomms11394
+        doi: 10.1038/ncomms11394
+        pubmed_id: 'PMID: 27099134'
+      - id: https://doi.org/10.1126/science.aaa6566
+        doi: 10.1126/science.aaa6566
+        pubmed_id: 'PMID: 25999512;'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000236
+        label: B cell
+        preferred_name: B cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7315
+        label: MS4A1
+        preferred_name: membrane spanning 4-domains A1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1698
+        label: CD79A
+        preferred_name: CD79a molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7315
+        label: MS4A1
+        preferred_name: membrane spanning 4-domains A1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1698
+        label: CD79A
+        preferred_name: CD79a molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.4049/jimmunol.1801211
+        doi: 10.4049/jimmunol.1801211
+        pubmed_id: 'PMID: 30833422'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000786
+        label: plasma cell
+        preferred_name: Plasma cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10658
+        label: SDC1
+        preferred_name: syndecan 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1698
+        label: CD79A
+        preferred_name: CD79a molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10658
+        label: SDC1
+        preferred_name: syndecan 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1698
+        label: CD79A
+        preferred_name: CD79a molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1016/j.jid.2019.05.009
+        doi: 10.1016/j.jid.2019.05.009
+        pubmed_id: 'PMID: 31152755'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000775
+        label: neutrophil
+        preferred_name: Neutrophil
+    biomarkers:
+      - id: http://identifiers.org/hgnc/7218
+        label: MPO
+        preferred_name: myeloperoxidase
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11249
+        label: SPN
+        preferred_name: sialophorin/p43
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/7218
+        label: MPO
+        preferred_name: myeloperoxidase
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11249
+        label: SPN
+        preferred_name: sialophorin/p43
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1172/JCI124616
+        doi: 10.1172/JCI124616
+        pubmed_id: 'PMID: 31205028'
+      - id: https://doi.org/10.1111/1523-1747.ep12506462
+        doi: 10.1111/1523-1747.ep12506462
+        pubmed_id: 'PMID: 6276474.'
+      - id: https://doi.org/10.4049/jimmunol.181.5.3628
+        doi: 10.4049/jimmunol.181.5.3628
+        pubmed_id: 'PMID: 18714037'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000771
+        label: eosinophil
+        preferred_name: Eosinophil
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1709
+        label: CD9
+        preferred_name: CD9 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7218
+        label: MPO
+        preferred_name: myeloperoxidase
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1709
+        label: CD9
+        preferred_name: CD9 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7218
+        label: MPO
+        preferred_name: myeloperoxidase
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1016/j.jaip.2018.06.002
+        doi: 10.1016/j.jaip.2018.06.002
+        pubmed_id: 'PMID: 29902530.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0007121
+        label: skin nerve field
+        preferred_name: nerve
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+    biomarkers:
+      - id: http://identifiers.org/hgnc/7738
+        label: NEFHP1
+        preferred_name: neurofilament heavy pseudogene 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/12513
+        label: UCHL1
+        preferred_name: ubiquitin C-terminal hydrolase L1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/17888
+        label: CGRP receptor component
+        preferred_name: CRCP
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/7738
+        label: NEFHP1
+        preferred_name: neurofilament heavy pseudogene 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/12513
+        label: UCHL1
+        preferred_name: ubiquitin C-terminal hydrolase L1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/17888
+        label: CGRP receptor component
+        preferred_name: CRCP
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.14670/HH-11-610
+        doi: 10.14670/HH-11-610
+        pubmed_id: 'PMID: 25799052'
+      - id: https://doi.org/10.1212/WNL.0000000000001773
+        doi: 10.1212/WNL.0000000000001773
+        pubmed_id: 'PMID: 26109717'
+      - id: https://doi.org/10.1016/j.pneurobio.2009.10.020
+        doi: 10.1016/j.pneurobio.2009.10.020
+        pubmed_id: 'PMID: 19879917'
+      - id: https://doi.org/10.1016/S0065-1281(97)80024-4
+        doi: 10.1016/S0065-1281(97)80024-4
+        pubmed_id: 'PMID: 9381913.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002573
+        label: Schwann cell
+        preferred_name: Schwann cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/10492
+        label: S100A2
+        preferred_name: S100 calcium binding protein A2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7809
+        label: NGFR
+        preferred_name: nerve growth factor receptor
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/10492
+        label: S100A2
+        preferred_name: S100 calcium binding protein A2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7809
+        label: NGFR
+        preferred_name: nerve growth factor receptor
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1111/wrr.12647
+        doi: 10.1111/wrr.12647
+        pubmed_id: 'PMID: 30098299'
+      - id: https://doi.org/10.1111/j.1365-4362.1984.tb05661.x
+        doi: 10.1111/j.1365-4362.1984.tb05661.x
+        pubmed_id: 'PMID: 6373634.'
+      - id: https://doi.org/10.1093/brain/awm199
+        doi: 10.1093/brain/awm199
+        pubmed_id: 'PMID: 17898011.'
+      - id: https://doi.org/10.1016/S0065-1281(97)80024-4
+        doi: 10.1016/S0065-1281(97)80024-4
+        pubmed_id: 'PMID: 9381913.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/7508
+        label: MUC1
+        preferred_name: Epidermal membrane Antigen
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34 molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/7508
+        label: MUC1
+        preferred_name: Epidermal membrane Antigen
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34 molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1007/BF00687077
+        doi: 10.1007/BF00687077
+        pubmed_id: 'PMID: 3434224.'
+      - id: https://doi.org/10.1097/01.MP.0000062654.83617.B7
+        doi: 10.1097/01.MP.0000062654.83617.B7
+        pubmed_id: 'PMID: 12692193.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+      - id: http://purl.obolibrary.org/obo/UBERON_0035549
+        label: vasculature of integument
+        preferred_name: Blood vessels
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000115
+        label: endothelial cell
+        preferred_name: Endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/8823
+        label: PECAM
+        preferred_name: platelet and endothelial cell adhesion molecule 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3446
+        label: ERG
+        preferred_name: ETS transcription factor ERG
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/8823
+        label: PECAM
+        preferred_name: platelet and endothelial cell adhesion molecule 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3446
+        label: ERG
+        preferred_name: ETS transcription factor ERG
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1111/1523-1747.ep12512516
+        doi: 10.1111/1523-1747.ep12512516
+        pubmed_id: 'PMID: 778283'
+      - id: https://doi.org/10.1152/ajpcell.00524.2001
+        doi: 10.1152/ajpcell.00524.2001
+        pubmed_id: 'PMID: 11940533.'
+      - id: https://doi.org/10.1016/j.vph.2016.05.003
+        doi: 10.1016/j.vph.2016.05.003
+        pubmed_id: 'PMID: 27208692'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000359
+        label: smooth muscle cell
+        preferred_name: Perivascular smooth muscle cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/130
+        label: ACTA2
+        preferred_name: actin alpha 2, smooth muscle
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2155
+        label: CNN1
+        preferred_name: calponin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1441
+        label: CALD1
+        preferred_name: caldesmon 1
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/130
+        label: ACTA2
+        preferred_name: actin alpha 2, smooth muscle
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2155
+        label: CNN1
+        preferred_name: calponin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1441
+        label: CALD1
+        preferred_name: caldesmon 1
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1002/biot.201200199
+        doi: 10.1002/biot.201200199
+        pubmed_id: 'PMID: 23554249'
+      - id: https://doi.org/10.1083/jcb.113.1.147
+        doi: 10.1083/jcb.113.1.147
+        pubmed_id: 'PMID: 2007619'
+      - id: NoDOI
+        doi: NoDOI
+        pubmed_id: 'PMID: 8006064.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002292
+        label: type I cell of carotid body
+        preferred_name: Glomus cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/130
+        label: ACTA2
+        preferred_name: actin alpha 2, smooth muscle
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3023
+        label: DRD2
+        preferred_name: dopamine receptor D2
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/130
+        label: ACTA2
+        preferred_name: actin alpha 2, smooth muscle
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3023
+        label: DRD2
+        preferred_name: dopamine receptor D2
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1016/j.cmet.2015.09.004
+        doi: 10.1016/j.cmet.2015.09.004
+        pubmed_id: 'PMID: 26437605.'
+      - id: NoDOI
+        doi: NoDOI
+        pubmed_id: 'PMID: 2158236'
+      - id: https://doi.org/10.1016/j.acthis.2015.07.007
+        doi: 10.1016/j.acthis.2015.07.007
+        pubmed_id: 'PMID: 26272445'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000669
+        label: pericyte cell
+        preferred_name: Pericyte
+    biomarkers:
+      - id: http://identifiers.org/hgnc/130
+        label: ACTA2
+        preferred_name: actin alpha 2, smooth muscle
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6934
+        label: MCAM
+        preferred_name: melanoma cell adhesion molecule/CD146
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/8804
+        label: PDGFRB
+        preferred_name: platelet derived growth factor receptor beta
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/130
+        label: ACTA2
+        preferred_name: actin alpha 2, smooth muscle
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6934
+        label: MCAM
+        preferred_name: melanoma cell adhesion molecule/CD146
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/8804
+        label: PDGFRB
+        preferred_name: platelet derived growth factor receptor beta
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1186/s12929-018-0423-7
+        doi: 10.1186/s12929-018-0423-7
+        pubmed_id: 'PMID: 295192458'
+      - id: https://doi.org/10.1083/jcb.113.1.147
+        doi: 10.1083/jcb.113.1.147
+        pubmed_id: 'PMID: 2007619'
+      - id: https://doi.org/10.1016/j.jchemneu.2018.06.001
+        doi: 10.1016/j.jchemneu.2018.06.001
+        pubmed_id: 'PMID: 29885791'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000669
+        label: pericyte cell
+        preferred_name: Pericyte
+    biomarkers:
+      - id: http://identifiers.org/hgnc/130
+        label: ACTA2
+        preferred_name: actin alpha 2, smooth muscle
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6934
+        label: MCAM
+        preferred_name: melanoma cell adhesion molecule/CD146
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/8804
+        label: PDGFRB
+        preferred_name: platelet derived growth factor receptor beta
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/130
+        label: ACTA2
+        preferred_name: actin alpha 2, smooth muscle
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6934
+        label: MCAM
+        preferred_name: melanoma cell adhesion molecule/CD146
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/8804
+        label: PDGFRB
+        preferred_name: platelet derived growth factor receptor beta
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1186/s12929-018-0423-7
+        doi: 10.1186/s12929-018-0423-7
+        pubmed_id: 'PMID: 295192458'
+      - id: https://doi.org/10.1083/jcb.113.1.147
+        doi: 10.1083/jcb.113.1.147
+        pubmed_id: 'PMID: 2007619'
+      - id: https://doi.org/10.1016/j.jchemneu.2018.06.001
+        doi: 10.1016/j.jchemneu.2018.06.001
+        pubmed_id: 'PMID: 29885791'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: Lymphatic
+    biomarkers:
+      - id: http://identifiers.org/hgnc/29602
+        label: PDPN
+        preferred_name: podoplanin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/14687
+        label: LYVE1
+        preferred_name: lymphatic vessel endothelial hyaluronan receptor 1
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/29602
+        label: PDPN
+        preferred_name: podoplanin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/14687
+        label: LYVE1
+        preferred_name: lymphatic vessel endothelial hyaluronan receptor 1
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002067
+        label: dermis
+        preferred_name: Dermis
+    references:
+      - id: https://doi.org/10.1046/j.1087-0024.2000.00001.x
+        doi: 10.1046/j.1087-0024.2000.00001.x
+        pubmed_id: 'PMID: 11147669.'
+      - id: https://doi.org/10.3389/fimmu.2012.00283
+        doi: 10.3389/fimmu.2012.00283
+        pubmed_id: 'PMID: 22988448'
+      - id: https://doi.org/10.1038/jid.2013.481
+        doi: 10.1038/jid.2013.481
+        pubmed_id: 'PMID: 24352044'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: Lymphatic
+    biomarkers:
+      - id: http://identifiers.org/hgnc/29602
+        label: PDPN
+        preferred_name: podoplanin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/14687
+        label: LYVE1
+        preferred_name: lymphatic vessel endothelial hyaluronan receptor 1
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/29602
+        label: PDPN
+        preferred_name: podoplanin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/14687
+        label: LYVE1
+        preferred_name: lymphatic vessel endothelial hyaluronan receptor 1
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1046/j.1087-0024.2000.00001.x
+        doi: 10.1046/j.1087-0024.2000.00001.x
+        pubmed_id: 'PMID: 11147669.'
+      - id: https://doi.org/10.3389/fimmu.2012.00283
+        doi: 10.3389/fimmu.2012.00283
+        pubmed_id: 'PMID: 22988448'
+      - id: https://doi.org/10.1038/jid.2013.481
+        doi: 10.1038/jid.2013.481
+        pubmed_id: 'PMID: 24352044'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002521
+        label: subcutaneous fat cell
+        preferred_name: Adipocyte
+    biomarkers:
+      - id: http://identifiers.org/hgnc/10500
+        label: S100B
+        preferred_name: S100 calcium binding protein B
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1435
+        label: CALB2
+        preferred_name: calbindin 2/calretinin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/10500
+        label: S100B
+        preferred_name: S100 calcium binding protein B
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1435
+        label: CALB2
+        preferred_name: calbindin 2/calretinin
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1101/cshperspect.a015271
+        doi: 10.1101/cshperspect.a015271
+        pubmed_id: 'PMID: 24591537'
+      - id: https://doi.org/10.1155/2010/790431
+        doi: 10.1155/2010/790431
+        pubmed_id: 'PMID: 20672003'
+      - id: https://doi.org/10.1016/j.humpath.2005.11.006
+        doi: 10.1016/j.humpath.2005.11.006
+        pubmed_id: 'PMID: 16613326'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002620
+        label: skin fibroblast
+        preferred_name: Fibroblast
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3541
+        label: F3
+        preferred_name: Factor XIIIa
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/12692
+        label: VIM
+        preferred_name: vimentin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34 molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/3541
+        label: F3
+        preferred_name: Factor XIIIa
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/12692
+        label: VIM
+        preferred_name: vimentin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34 molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/j.tcb.2014.10.001
+        doi: 10.1016/j.tcb.2014.10.001
+        pubmed_id: 'PMID: 25455110.'
+      - id: https://doi.org/10.1111/j.1365-2133.1989.tb15509.x
+        doi: 10.1111/j.1365-2133.1989.tb15509.x
+        pubmed_id: 'PMID: 2576222'
+      - id: https://doi.org/10.1074/jbc.M701586200
+        doi: 10.1074/jbc.M701586200
+        pubmed_id: 'PMID: 17567584'
+      - id: https://doi.org/10.1097/00000372-199606000-00008
+        doi: 10.1097/00000372-199606000-00008
+        pubmed_id: 'PMID: 8806963'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000235
+        label: macrophage
+        preferred_name: Macrophage
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1693
+        label: CD68
+        preferred_name: CD68 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1631
+        label: CD163
+        preferred_name: CD163 molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1693
+        label: CD68
+        preferred_name: CD68 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1631
+        label: CD163
+        preferred_name: CD163 molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1038/nri2622
+        doi: 10.1038/nri2622
+        pubmed_id: 'PMID: 19763149'
+      - id: https://doi.org/10.1038/labinvest.2016.116
+        doi: 10.1038/labinvest.2016.116
+        pubmed_id: 'PMID: 27869795'
+      - id: https://doi.org/10.1038/jid.2010.165
+        doi: 10.1038/jid.2010.165
+        pubmed_id: 'PMID: 20555352'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000097
+        label: mast cell
+        preferred_name: Mast cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3358
+        label: ENPP3
+        preferred_name: CD203c
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: KIT proto-oncogene, receptor tyrosine kinase
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1604
+        label: CCR3
+        preferred_name: C-C motif chemokine receptor 3
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/3358
+        label: ENPP3
+        preferred_name: CD203c
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: KIT proto-oncogene, receptor tyrosine kinase
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1604
+        label: CCR3
+        preferred_name: C-C motif chemokine receptor 3
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/S1081-1206(10)62853-0
+        doi: 10.1016/S1081-1206(10)62853-0
+        pubmed_id: 'PMID: 10582733.'
+      - id: https://doi.org/10.1111/imr.12639.
+        doi: 10.1111/imr.12639.
+        pubmed_id: 'PMID: 29431209.'
+      - id: https://doi.org/10.1159/000053694
+        doi: 10.1159/000053694
+        pubmed_id: 'PMID: 11306952'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000545
+        label: T-helper 1 cell
+        preferred_name: T helper
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4 molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4 molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1111/1523-1747.ep12470172
+        doi: 10.1111/1523-1747.ep12470172
+        pubmed_id: 'PMID: 3494791'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000910
+        label: cytotoxic T cell
+        preferred_name: T killer
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8a molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8a molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1111/1523-1747.ep12470172
+        doi: 10.1111/1523-1747.ep12470172
+        pubmed_id: 'PMID: 3494791'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000815
+        label: regulatory T cell
+        preferred_name: T reg
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6106
+        label: FOXP3
+        preferred_name: forkhead box P3
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1673
+        label: CD3D
+        preferred_name: CD3d molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6106
+        label: FOXP3
+        preferred_name: forkhead box P3
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1111/1523-1747.ep12470172
+        doi: 10.1111/1523-1747.ep12470172
+        pubmed_id: 'PMID: 3494791'
+      - id: https://doi.org/10.1111/imm.12791
+        doi: 10.1111/imm.12791
+        pubmed_id: 'PMID: 28699278'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000236
+        label: B cell
+        preferred_name: B cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7315
+        label: MS4A1
+        preferred_name: membrane spanning 4-domains A1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1698
+        label: CD79A
+        preferred_name: CD79a molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7315
+        label: MS4A1
+        preferred_name: membrane spanning 4-domains A1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1698
+        label: CD79A
+        preferred_name: CD79a molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.4049/jimmunol.1801211
+        doi: 10.4049/jimmunol.1801211
+        pubmed_id: 'PMID: 30833422'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000775
+        label: neutrophil
+        preferred_name: Neutrophil
+    biomarkers:
+      - id: http://identifiers.org/hgnc/7218
+        label: MPO
+        preferred_name: myeloperoxidase
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11249
+        label: SPN
+        preferred_name: sialophorin/p43
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/7218
+        label: MPO
+        preferred_name: myeloperoxidase
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11249
+        label: SPN
+        preferred_name: sialophorin/p43
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1172/JCI124616
+        doi: 10.1172/JCI124616
+        pubmed_id: 'PMID: 31205028'
+      - id: https://doi.org/10.1111/1523-1747.ep12506462
+        doi: 10.1111/1523-1747.ep12506462
+        pubmed_id: 'PMID: 6276474.'
+      - id: https://doi.org/10.4049/jimmunol.181.5.3628
+        doi: 10.4049/jimmunol.181.5.3628
+        pubmed_id: 'PMID: 18714037'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000771
+        label: eosinophil
+        preferred_name: Eosinophil
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1709
+        label: CD9
+        preferred_name: CD9 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7218
+        label: MPO
+        preferred_name: myeloperoxidase
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1709
+        label: CD9
+        preferred_name: CD9 molecule
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7218
+        label: MPO
+        preferred_name: myeloperoxidase
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/j.jaip.2018.06.002
+        doi: 10.1016/j.jaip.2018.06.002
+        pubmed_id: 'PMID: 29902530.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+      - id: http://purl.obolibrary.org/obo/UBERON_0007121
+        label: skin nerve field
+        preferred_name: nerve
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+    biomarkers:
+      - id: http://identifiers.org/hgnc/7738
+        label: NEFHP1
+        preferred_name: neurofilament heavy pseudogene 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/12513
+        label: UCHL1
+        preferred_name: ubiquitin C-terminal hydrolase L1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/17888
+        label: CGRP receptor component
+        preferred_name: CRCP
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/7738
+        label: NEFHP1
+        preferred_name: neurofilament heavy pseudogene 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/12513
+        label: UCHL1
+        preferred_name: ubiquitin C-terminal hydrolase L1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/17888
+        label: CGRP receptor component
+        preferred_name: CRCP
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.14670/HH-11-610
+        doi: 10.14670/HH-11-610
+        pubmed_id: 'PMID: 25799052'
+      - id: https://doi.org/10.1212/WNL.0000000000001773
+        doi: 10.1212/WNL.0000000000001773
+        pubmed_id: 'PMID: 26109717'
+      - id: https://doi.org/10.1016/j.pneurobio.2009.10.020
+        doi: 10.1016/j.pneurobio.2009.10.020
+        pubmed_id: 'PMID: 19879917'
+      - id: https://doi.org/10.1016/S0065-1281(97)80024-4
+        doi: 10.1016/S0065-1281(97)80024-4
+        pubmed_id: 'PMID: 9381913.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002573
+        label: Schwann cell
+        preferred_name: Schwann cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/10492
+        label: S100A2
+        preferred_name: S100 calcium binding protein A2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7809
+        label: NGFR
+        preferred_name: nerve growth factor receptor
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/10492
+        label: S100A2
+        preferred_name: S100 calcium binding protein A2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7809
+        label: NGFR
+        preferred_name: nerve growth factor receptor
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1111/wrr.12647
+        doi: 10.1111/wrr.12647
+        pubmed_id: 'PMID: 30098299'
+      - id: https://doi.org/10.1111/j.1365-4362.1984.tb05661.x
+        doi: 10.1111/j.1365-4362.1984.tb05661.x
+        pubmed_id: 'PMID: 6373634.'
+      - id: https://doi.org/10.1093/brain/awm199
+        doi: 10.1093/brain/awm199
+        pubmed_id: 'PMID: 17898011.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/7508
+        label: MUC1
+        preferred_name: Epidermal membrane Antigen
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34 molecule
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/7508
+        label: MUC1
+        preferred_name: Epidermal membrane Antigen
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34 molecule
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1007/BF00687077
+        doi: 10.1007/BF00687077
+        pubmed_id: 'PMID: 3434224.'
+      - id: https://doi.org/10.1097/01.MP.0000062654.83617.B7
+        doi: 10.1097/01.MP.0000062654.83617.B7
+        pubmed_id: 'PMID: 12692193.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+      - id: http://purl.obolibrary.org/obo/UBERON_0035549
+        label: vasculature of integument
+        preferred_name: Blood vessels
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000115
+        label: endothelial cell
+        preferred_name: Endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/8823
+        label: PECAM
+        preferred_name: platelet and endothelial cell adhesion molecule 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3446
+        label: ERG
+        preferred_name: ETS transcription factor ERG
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/8823
+        label: PECAM
+        preferred_name: platelet and endothelial cell adhesion molecule 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3446
+        label: ERG
+        preferred_name: ETS transcription factor ERG
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1111/1523-1747.ep12512516
+        doi: 10.1111/1523-1747.ep12512516
+        pubmed_id: 'PMID: 778283'
+      - id: https://doi.org/10.1152/ajpcell.00524.2001
+        doi: 10.1152/ajpcell.00524.2001
+        pubmed_id: 'PMID: 11940533.'
+      - id: https://doi.org/10.1016/j.vph.2016.05.003
+        doi: 10.1016/j.vph.2016.05.003
+        pubmed_id: 'PMID: 27208692'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000359
+        label: smooth muscle cell
+        preferred_name: Perivascular smooth muscle cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/130
+        label: ACTA2
+        preferred_name: actin alpha 2, smooth muscle
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2155
+        label: CNN1
+        preferred_name: calponin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1441
+        label: CALD1
+        preferred_name: caldesmon 1
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/130
+        label: ACTA2
+        preferred_name: actin alpha 2, smooth muscle
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2155
+        label: CNN1
+        preferred_name: calponin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1441
+        label: CALD1
+        preferred_name: caldesmon 1
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1002/biot.201200199
+        doi: 10.1002/biot.201200199
+        pubmed_id: 'PMID: 23554249'
+      - id: NoDOI
+        doi: NoDOI
+        pubmed_id: 'PMID: 8006064.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002097
+        label: skin of body
+        preferred_name: skin
+      - id: http://purl.obolibrary.org/obo/UBERON_0002072
+        label: hypodermis
+        preferred_name: Subcutaneous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002292
+        label: type I cell of carotid body
+        preferred_name: Glomus cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/130
+        label: ACTA2
+        preferred_name: actin alpha 2, smooth muscle
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3023
+        label: DRD2
+        preferred_name: dopamine receptor D2
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/130
+        label: ACTA2
+        preferred_name: actin alpha 2, smooth muscle
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3023
+        label: DRD2
+        preferred_name: dopamine receptor D2
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/j.cmet.2015.09.004
+        doi: 10.1016/j.cmet.2015.09.004
+        pubmed_id: 'PMID: 26437605.'
+      - id: NoDOI
+        doi: NoDOI
+        pubmed_id: 'PMID: 2158236'
+      - id: https://doi.org/10.1016/j.acthis.2015.07.007
+        doi: 10.1016/j.acthis.2015.07.007
+        pubmed_id: 'PMID: 26272445'

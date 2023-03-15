@@ -1,0 +1,585 @@
+metadata:
+  type: asct-b
+  name: prostate
+  version: v1.0
+  title: >-
+    Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for
+    Prostate
+  description: >-
+    [Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B)
+    tables](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html)
+    aim to capture the nested *part_of* structure of anatomical human body
+    parts, the typology of cells, and biomarkers used to identify cell types.
+    The tables are authored and reviewed by an international team of experts.
+  creators:
+    - fullName: Douglas Strand
+      firstName: Douglas
+      lastName: Strand
+      orcid: 0000-0002-0746-927X
+    - fullName: Chad Vezina
+      firstName: Chad
+      lastName: Vezina
+      orcid: 0000-0001-7058-5399
+  project_leads:
+    - fullName: Katy Börner
+      firstName: Katy
+      lastName: Börner
+      orcid: 0000-0002-3321-6137
+  reviewers:
+    - fullName: Ellen M. Quardokus
+      firstName: Ellen
+      lastName: Quardokus
+      orcid: 0000-0001-7655-4833
+  externalReviewers: []
+  creation_date: '2021-12-01'
+  license: >-
+    Creative Commons Attribution 4.0 International ([CC BY
+    4.0](https://creativecommons.org/licenses/by/4.0/))
+  publisher: HuBMAP
+  funders:
+    - funder: National Institutes of Health
+      awardNumber: OT2OD026671
+  hubmapId: HBM835.WCGP.479
+  doi: https://doi.org/10.48539/HBM835.WCGP.479
+  citation: >-
+    Douglas Strand; Chad Vezina, HuBMAP ASCT+B Tables. Prostate v1.0
+    [https://doi.org/10.48539/HBM835.WCGP.479](https://doi.org/10.48539/HBM835.WCGP.479)
+  citationOverall: >-
+    Quardokus, Ellen, Bruce W. Herr II, Lisel Record, Katy Börner. 2021.
+    [*HuBMAP ASCT+B
+    Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
+    Accessed on Dec 1, 2021.
+  datatable:
+    - ASCT-B_VH_Prostate.csv
+data:
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002367
+        label: prostate gland
+        preferred_name: prostate gland
+      - id: http://purl.obolibrary.org/obo/UBERON_0000428
+        label: prostate epithelium
+        preferred_name: prostate epithelium
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002340
+        label: luminal cell of prostate epithelium
+        preferred_name: luminal epithelia
+    biomarkers:
+      - id: http://identifiers.org/hgnc/7372
+        label: microseminoprotein beta
+        preferred_name: MSMB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6364
+        label: kallikrein related peptidase 3
+        preferred_name: KLK3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/125
+        label: acid phosphatase 3
+        preferred_name: ACPP
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/7372
+        label: microseminoprotein beta
+        preferred_name: MSMB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6364
+        label: kallikrein related peptidase 3
+        preferred_name: KLK3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/125
+        label: acid phosphatase 3
+        preferred_name: ACPP
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1002/path.5751
+        doi: 10.1002/path.5751
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002367
+        label: prostate gland
+        preferred_name: prostate gland
+      - id: http://purl.obolibrary.org/obo/UBERON_0000428
+        label: prostate epithelium
+        preferred_name: prostate epithelium
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002341
+        label: basal cell of prostate epithelium
+        preferred_name: basal epithelia
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6442
+        label: keratin 5
+        preferred_name: KRT5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6416
+        label: keratin 14
+        preferred_name: KRT14
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10492
+        label: S100 calcium binding protein A2
+        preferred_name: S100A2
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6442
+        label: keratin 5
+        preferred_name: KRT5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6416
+        label: keratin 14
+        preferred_name: KRT14
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10492
+        label: S100 calcium binding protein A2
+        preferred_name: S100A2
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1002/path.5751
+        doi: 10.1002/path.5751
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002367
+        label: prostate gland
+        preferred_name: prostate gland
+      - id: http://purl.obolibrary.org/obo/UBERON_0000428
+        label: prostate epithelium
+        preferred_name: prostate epithelium
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002313
+        label: endocrine-paracrine cell of prostate gland
+        preferred_name: neuroendocrine epithelia
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1929
+        label: chromogranin A
+        preferred_name: CHGA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4605
+        label: gastrin releasing peptide
+        preferred_name: GRP
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10575
+        label: secretogranin II
+        preferred_name: SCG2
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1929
+        label: chromogranin A
+        preferred_name: CHGA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4605
+        label: gastrin releasing peptide
+        preferred_name: GRP
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10575
+        label: secretogranin II
+        preferred_name: SCG2
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1002/path.5751
+        doi: 10.1002/path.5751
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002367
+        label: prostate gland
+        preferred_name: prostate gland
+      - id: http://purl.obolibrary.org/obo/UBERON_0004184
+        label: prostate gland stroma
+        preferred_name: prostate stroma
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_1000487
+        label: smooth muscle cell of prostate
+        preferred_name: prostate smooth muscle
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/145
+        label: actin gamma 2, smooth muscle
+        preferred_name: ACTG2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/145
+        label: actin gamma 2, smooth muscle
+        preferred_name: ACTG2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1002/path.5751
+        doi: 10.1002/path.5751
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002367
+        label: prostate gland
+        preferred_name: prostate gland
+      - id: http://purl.obolibrary.org/obo/UBERON_0004184
+        label: prostate gland stroma
+        preferred_name: prostate stroma
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_2000059
+        label: prostate gland microvascular endothelial cell
+        preferred_name: endothelia
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2047
+        label: claudin 5
+        preferred_name: CLDN5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10718
+        label: selectin E
+        preferred_name: SELE
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2047
+        label: claudin 5
+        preferred_name: CLDN5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10718
+        label: selectin E
+        preferred_name: SELE
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1002/path.5751
+        doi: 10.1002/path.5751
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002367
+        label: prostate gland
+        preferred_name: prostate gland
+      - id: http://purl.obolibrary.org/obo/UBERON_0004184
+        label: prostate gland stroma
+        preferred_name: prostate stroma
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/612
+        label: apolipoprotein D
+        preferred_name: APOD
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9592
+        label: prostaglandin D2 synthase
+        preferred_name: PTGDS
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2705
+        label: decorin
+        preferred_name: DCN
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/612
+        label: apolipoprotein D
+        preferred_name: APOD
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9592
+        label: prostaglandin D2 synthase
+        preferred_name: PTGDS
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2705
+        label: decorin
+        preferred_name: DCN
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1002/path.5751
+        doi: 10.1002/path.5751
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002367
+        label: prostate gland
+        preferred_name: prostate gland
+      - id: http://purl.obolibrary.org/obo/UBERON_0004184
+        label: prostate gland stroma
+        preferred_name: prostate stroma
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1346
+        label: complement C7
+        preferred_name: C7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7035
+        label: microfibril associated protein 4
+        preferred_name: MFAP4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2705
+        label: decorin
+        preferred_name: DCN
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1346
+        label: complement C7
+        preferred_name: C7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7035
+        label: microfibril associated protein 4
+        preferred_name: MFAP4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2705
+        label: decorin
+        preferred_name: DCN
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1002/path.5751
+        doi: 10.1002/path.5751
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002367
+        label: prostate gland
+        preferred_name: prostate gland
+      - id: http://purl.obolibrary.org/obo/UBERON_0004184
+        label: prostate gland stroma
+        preferred_name: prostate stroma
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1663
+        label: CD36 molecule
+        preferred_name: CD36
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1663
+        label: CD36 molecule
+        preferred_name: CD36
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1002/path.5751
+        doi: 10.1002/path.5751
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002367
+        label: prostate gland
+        preferred_name: prostate gland
+      - id: http://purl.obolibrary.org/obo/UBERON_0004184
+        label: prostate gland stroma
+        preferred_name: prostate stroma
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/29836
+        label: NDUFA4 mitochondrial complex associated like 2
+        preferred_name: NDUFA4L2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4278
+        label: gap junction protein alpha 4
+        preferred_name: GJA4
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/29836
+        label: NDUFA4 mitochondrial complex associated like 2
+        preferred_name: NDUFA4L2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4278
+        label: gap junction protein alpha 4
+        preferred_name: GJA4
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1002/path.5751
+        doi: 10.1002/path.5751
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002367
+        label: prostate gland
+        preferred_name: prostate gland
+      - id: http://purl.obolibrary.org/obo/UBERON_0001335
+        label: prostatic urethra
+        preferred_name: prostatic urethra
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6442
+        label: keratin 5
+        preferred_name: KRT5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10492
+        label: S100 calcium binding protein A2
+        preferred_name: S100A2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6421
+        label: keratin 15
+        preferred_name: KRT15
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6442
+        label: keratin 5
+        preferred_name: KRT5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10492
+        label: S100 calcium binding protein A2
+        preferred_name: S100A2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6421
+        label: keratin 15
+        preferred_name: KRT15
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1002/path.5751
+        doi: 10.1002/path.5751
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002367
+        label: prostate gland
+        preferred_name: prostate gland
+      - id: http://purl.obolibrary.org/obo/UBERON_0001335
+        label: prostatic urethra
+        preferred_name: prostatic urethra
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/18384
+        label: secretoglobin family 3A member 1
+        preferred_name: SCGB3A1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12523
+        label: secretoglobin family 1A member 1
+        preferred_name: SCGB1A1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9500
+        label: prostate stem cell antigen
+        preferred_name: PSCA
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/18384
+        label: secretoglobin family 3A member 1
+        preferred_name: SCGB3A1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12523
+        label: secretoglobin family 1A member 1
+        preferred_name: SCGB1A1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9500
+        label: prostate stem cell antigen
+        preferred_name: PSCA
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1002/path.5751
+        doi: 10.1002/path.5751
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002367
+        label: prostate gland
+        preferred_name: prostate gland
+      - id: http://purl.obolibrary.org/obo/UBERON_0001335
+        label: prostatic urethra
+        preferred_name: prostatic urethra
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6415
+        label: keratin 13
+        preferred_name: KRT13
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24880
+        label: LY6/PLAUR domain containing 3
+        preferred_name: LYPD3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/384
+        label: aldo-keto reductase family 1 member C1
+        preferred_name: AKR1C1
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6415
+        label: keratin 13
+        preferred_name: KRT13
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24880
+        label: LY6/PLAUR domain containing 3
+        preferred_name: LYPD3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/384
+        label: aldo-keto reductase family 1 member C1
+        preferred_name: AKR1C1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1002/path.5751
+        doi: 10.1002/path.5751
+        pubmed_id: ''

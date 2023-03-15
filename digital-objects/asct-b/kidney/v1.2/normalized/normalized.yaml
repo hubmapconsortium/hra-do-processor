@@ -1,7 +1,8 @@
 metadata:
-  title: kidney
-  version: v1.2
   type: asct-b
+  name: kidney
+  version: v1.2
+  title: Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for Kidney
   description: >-
     [Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B)
     tables](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html)
@@ -20,25 +21,61 @@ metadata:
     type annotation with higher granularity and as spatial validation approaches
     become more robust we will be accordingly revising these.
   creators:
-    - 0000-0003-2804-127X
-    - 0000-0001-8143-9231
-    - 0000-0001-9189-9661
+    - fullName: Sanjay Jain
+      firstName: Sanjay
+      lastName: Jain
+      orcid: 0000-0003-2804-127X
+    - fullName: M. Todd Valerius
+      firstName: M.
+      lastName: Valerius
+      orcid: 0000-0001-8143-9231
+    - fullName: Yongqun He
+      firstName: Yongqun
+      lastName: He
+      orcid: 0000-0001-9189-9661
   project_leads:
-    - 0000-0002-3321-6137
+    - fullName: Katy Börner
+      firstName: Katy
+      lastName: Börner
+      orcid: 0000-0002-3321-6137
   reviewers:
-    - 0000-0002-8637-9044
-    - 0000-0001-7565-4904
-    - 0000-0002-0864-7007
-    - 0000-0001-7655-4833
-  creation_date: 2022-05-06T00:00:00.000Z
-  license: CC BY 4.0
+    - fullName: Blue Lake
+      firstName: Blue
+      lastName: Lake
+      orcid: 0000-0002-8637-9044
+    - fullName: Becky Steck
+      firstName: Becky
+      lastName: Steck
+      orcid: 0000-0001-7565-4904
+    - fullName: Rachel Dull
+      firstName: Rachel
+      lastName: Dull
+      orcid: 0000-0002-0864-7007
+    - fullName: Ellen M. Quardokus
+      firstName: Ellen
+      lastName: Quardokus
+      orcid: 0000-0001-7655-4833
+  externalReviewers: []
+  creation_date: '2022-05-06'
+  license: >-
+    Creative Commons Attribution 4.0 International ([CC BY
+    4.0](https://creativecommons.org/licenses/by/4.0/))
   publisher: HuBMAP
-  funder: National Institutes of Health
-  award_number: OT2OD026671
-  hubmap_id: HBM248.CBJV.556
-  datatable: >-
-    https://docs.google.com/spreadsheets/d/1NMfu1bEGNFcTYTFT-jCao_lSbFD8n0ti630iIpRj-hw/edit#gid=949267305
+  funders:
+    - funder: National Institutes of Health
+      awardNumber: OT2OD026671
+  hubmapId: HBM248.CBJV.556
   doi: https://doi.org/10.48539/HBM248.CBJV.556
+  citation: >-
+    Sanjay Jain; M. Todd Valerius; Yongqun He, HuBMAP ASCT+B Tables. Kidney v1.2
+    [https://doi.org/10.48539/HBM248.CBJV.556](https://doi.org/10.48539/HBM248.CBJV.556)
+  citationOverall: >-
+    Quardokus, Ellen, Bruce W. Herr II, Lisel Record, Katy Börner. 2022.
+    [*HuBMAP ASCT+B
+    Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
+    Accessed on May 6, 2022.
+  datatable:
+    - ASCT-B_VH_Kidney.csv
 data:
   - anatomical_structures:
       - id: http://purl.obolibrary.org/obo/UBERON_0002113

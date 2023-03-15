@@ -1,0 +1,5735 @@
+metadata:
+  type: asct-b
+  name: vh-bonemarrow-pelvis
+  version: v1.3
+  title: >-
+    Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for Bone
+    Marrow/Pelvis
+  description: >-
+    [Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B)
+    tables](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html)
+    aim to capture the nested *part_of* structure of anatomical human body
+    parts, the typology of cells, and biomarkers used to identify cell types.
+    The tables are authored and reviewed by an international team of experts.
+  creators:
+    - fullName: Muzlifah A. Haniffa
+      firstName: Muzlifah
+      lastName: Haniffa
+      orcid: 0000-0002-3927-2084
+    - fullName: Laura Jardine
+      firstName: Laura
+      lastName: Jardine
+      orcid: 0000-0003-4495-8205
+    - fullName: Sarah A. Teichmann
+      firstName: Sarah
+      lastName: Teichmann
+      orcid: 0000-0002-6294-6366
+  project_leads:
+    - fullName: Katy Börner
+      firstName: Katy
+      lastName: Börner
+      orcid: 0000-0002-3321-6137
+  reviewers:
+    - fullName: Elisa Laurenti
+      firstName: Elisa
+      lastName: Laurenti
+      orcid: 0000-0002-9917-9092
+    - fullName: Bertie Gottgens
+      firstName: Bertie
+      lastName: Gottgens
+      orcid: 0000-0001-6302-5705
+    - fullName: Andrea J. Radtke
+      firstName: Andrea
+      lastName: Radtke
+      orcid: 0000-0003-4379-8967
+    - fullName: Rebecca T. Beuschel
+      firstName: Rebecca
+      lastName: Beuschel
+      orcid: 0000-0002-3882-457X
+    - fullName: Ellen M. Quardokus
+      firstName: Ellen
+      lastName: Quardokus
+      orcid: 0000-0001-7655-4833
+  externalReviewers: []
+  creation_date: '2021-12-15'
+  license: >-
+    Creative Commons Attribution 4.0 International ([CC BY
+    4.0](https://creativecommons.org/licenses/by/4.0/))
+  publisher: HuBMAP
+  funders:
+    - funder: National Institutes of Health
+      awardNumber: OT2OD026671
+  hubmapId: HBM846.XXGG.898
+  doi: https://doi.org/10.48539/HBM846.XXGG.898
+  citation: >-
+    Muzlifah A. Haniffa; Laura Jardine; Sarah A. Teichmann. HuBMAP ASCT+B
+    Tables. Bone marrow/Pelvis v1.3, https://doi.org/10.48539/HBM846.XXGG.898,
+    Accessed on December 15, 2022.
+  citationOverall: >-
+    Quardokus, Ellen M., Bruce W. Herr II, Lisel Record, Katy Börner. 2022.
+    [*HuBMAP ASCT+B
+    Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
+    Accessed on December 15, 2022.
+  datatable:
+    - asct-b-vh-bonemarrow-pelvis.csv
+data:
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000945
+        label: lymphocyte of B lineage
+        preferred_name: B lineage
+      - id: http://purl.obolibrary.org/obo/CL_0000817
+        label: precursor B cell
+        preferred_name: precursor B cell (pre B cell)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1633
+        label: ''
+        preferred_name: CD19
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8619
+        label: ''
+        preferred_name: PAX5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5541
+        label: ''
+        preferred_name: IGHM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5480
+        label: ''
+        preferred_name: IGHD
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6024
+        label: IL7R
+        preferred_name: CD127
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7154
+        label: MME
+        preferred_name: CD10
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6024
+        label: IL7R
+        preferred_name: CD127
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7154
+        label: MME
+        preferred_name: CD10
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1633
+        label: ''
+        preferred_name: CD19
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8619
+        label: ''
+        preferred_name: PAX5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5541
+        label: ''
+        preferred_name: IGHM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5480
+        label: ''
+        preferred_name: IGHD
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/j.exphem.2018.09.004
+        doi: 10.1016/j.exphem.2018.09.004
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000945
+        label: lymphocyte of B lineage
+        preferred_name: B lineage
+      - id: http://purl.obolibrary.org/obo/CL_0000816
+        label: immature B cell
+        preferred_name: immature B cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1633
+        label: ''
+        preferred_name: CD19
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8619
+        label: ''
+        preferred_name: PAX5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5541
+        label: ''
+        preferred_name: IGHM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7315
+        label: ''
+        preferred_name: MS4A1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2336
+        label: CR2
+        preferred_name: CD21
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1643
+        label: CD22
+        preferred_name: CD22
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11922
+        label: CD27
+        preferred_name: CD27
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/5480
+        label: IGHD
+        preferred_name: IgD+/
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7315
+        label: MS4A1
+        preferred_name: CD20
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2336
+        label: CR2
+        preferred_name: CD21
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1643
+        label: CD22
+        preferred_name: CD22
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11922
+        label: CD27
+        preferred_name: CD27
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/5541
+        label: IGHM
+        preferred_name: IgM+/
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/5480
+        label: IGHD
+        preferred_name: IgD+/
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1633
+        label: ''
+        preferred_name: CD19
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8619
+        label: ''
+        preferred_name: PAX5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5541
+        label: ''
+        preferred_name: IGHM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7315
+        label: ''
+        preferred_name: MS4A1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.3389/fimmu.2012.00302
+        doi: 10.3389/fimmu.2012.00302
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000945
+        label: lymphocyte of B lineage
+        preferred_name: B lineage
+      - id: http://purl.obolibrary.org/obo/CL_0000787
+        label: memory B cell
+        preferred_name: memory B cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1633
+        label: ''
+        preferred_name: CD19
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7315
+        label: ''
+        preferred_name: MS4A1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5478
+        label: ''
+        preferred_name: IGHA1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5525
+        label: ''
+        preferred_name: IGHG1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6210
+        label: ''
+        preferred_name: CD82
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10720
+        label: ''
+        preferred_name: SELL
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11922
+        label: ''
+        preferred_name: CD27
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2336
+        label: CR2
+        preferred_name: CD21
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/5480
+        label: IGHD
+        preferred_name: IgD
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7154
+        label: MME
+        preferred_name: CD10
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38+/lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1645
+        label: CD24
+        preferred_name: CD24+/lo
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7315
+        label: MS4A1
+        preferred_name: CD20
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2336
+        label: CR2
+        preferred_name: CD21
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/5480
+        label: IGHD
+        preferred_name: IgD
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11922
+        label: CD27
+        preferred_name: CD27
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7154
+        label: MME
+        preferred_name: CD10
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38+/lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1645
+        label: CD24
+        preferred_name: CD24+/lo
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1633
+        label: ''
+        preferred_name: CD19
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7315
+        label: ''
+        preferred_name: MS4A1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5478
+        label: ''
+        preferred_name: IGHA1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5525
+        label: ''
+        preferred_name: IGHG1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6210
+        label: ''
+        preferred_name: CD82
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10720
+        label: ''
+        preferred_name: SELL
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11922
+        label: ''
+        preferred_name: CD27
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1002/jcla.20001
+        doi: 10.1002/jcla.20001
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000945
+        label: lymphocyte of B lineage
+        preferred_name: B lineage
+      - id: http://purl.obolibrary.org/obo/CL_0000788
+        label: naive B cell
+        preferred_name: naive B cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1633
+        label: ''
+        preferred_name: CD19
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8619
+        label: ''
+        preferred_name: PAX5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5541
+        label: ''
+        preferred_name: IGHM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7315
+        label: ''
+        preferred_name: MS4A1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11919
+        label: ''
+        preferred_name: CD40
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3612
+        label: ''
+        preferred_name: FCER2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2336
+        label: CR2
+        preferred_name: CD21
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1645
+        label: CD24
+        preferred_name: CD24
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/5480
+        label: IGHD
+        preferred_name: IgD
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11922
+        label: CD27
+        preferred_name: CD27hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10658
+        label: SDC1
+        preferred_name: CD138
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2336
+        label: CR2
+        preferred_name: CD21
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1645
+        label: CD24
+        preferred_name: CD24
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/5480
+        label: IGHD
+        preferred_name: IgD
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11922
+        label: CD27
+        preferred_name: CD27hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10658
+        label: SDC1
+        preferred_name: CD138
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1633
+        label: ''
+        preferred_name: CD19
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8619
+        label: ''
+        preferred_name: PAX5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5541
+        label: ''
+        preferred_name: IGHM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7315
+        label: ''
+        preferred_name: MS4A1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11919
+        label: ''
+        preferred_name: CD40
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3612
+        label: ''
+        preferred_name: FCER2
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1038/s41467-019-12464-3
+        doi: 10.1038/s41467-019-12464-3
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000945
+        label: lymphocyte of B lineage
+        preferred_name: B lineage
+      - id: http://purl.obolibrary.org/obo/CL_0000786
+        label: plasma cell
+        preferred_name: plasma cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/10658
+        label: ''
+        preferred_name: SDC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/14236
+        label: ''
+        preferred_name: DERL3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/30125
+        label: ''
+        preferred_name: MZB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5716
+        label: ''
+        preferred_name: IGKC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/23400
+        label: ''
+        preferred_name: SEC11C
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5525
+        label: ''
+        preferred_name: IGHG1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5478
+        label: ''
+        preferred_name: IGHA1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11913
+        label: ''
+        preferred_name: TNFRSF17
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2336
+        label: CR2
+        preferred_name: CD21
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1645
+        label: CD24
+        preferred_name: CD24
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/5480
+        label: IGHD
+        preferred_name: IgD
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11922
+        label: CD27
+        preferred_name: CD27hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38hi
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2336
+        label: CR2
+        preferred_name: CD21
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1645
+        label: CD24
+        preferred_name: CD24
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/5480
+        label: IGHD
+        preferred_name: IgD
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11922
+        label: CD27
+        preferred_name: CD27hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10658
+        label: SDC1
+        preferred_name: CD138
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/10658
+        label: ''
+        preferred_name: SDC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/14236
+        label: ''
+        preferred_name: DERL3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/30125
+        label: ''
+        preferred_name: MZB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5716
+        label: ''
+        preferred_name: IGKC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/23400
+        label: ''
+        preferred_name: SEC11C
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5525
+        label: ''
+        preferred_name: IGHG1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5478
+        label: ''
+        preferred_name: IGHA1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11913
+        label: ''
+        preferred_name: TNFRSF17
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1073/pnas.172384399
+        doi: 10.1073/pnas.172384399
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000945
+        label: lymphocyte of B lineage
+        preferred_name: B lineage
+      - id: http://purl.obolibrary.org/obo/CL_0000826
+        label: pro-B cell
+        preferred_name: pro B progenitor
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2983
+        label: ''
+        preferred_name: DNTT
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7154
+        label: ''
+        preferred_name: MME
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12709
+        label: ''
+        preferred_name: VPREB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9831
+        label: ''
+        preferred_name: RAG1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6024
+        label: IL7R
+        preferred_name: CD127+/
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6024
+        label: IL7R
+        preferred_name: CD127+/
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7154
+        label: MME
+        preferred_name: CD10+/
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2983
+        label: ''
+        preferred_name: DNTT
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7154
+        label: ''
+        preferred_name: MME
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12709
+        label: ''
+        preferred_name: VPREB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9831
+        label: ''
+        preferred_name: RAG1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1073/pnas.172384399
+        doi: 10.1073/pnas.172384399
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000945
+        label: lymphocyte of B lineage
+        preferred_name: B lineage
+      - id: http://purl.obolibrary.org/obo/CL_0000818
+        label: transitional stage B cell
+        preferred_name: transitional B cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/38476
+        label: ''
+        preferred_name: IGLL5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11200
+        label: ''
+        preferred_name: SOX4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1004
+        label: ''
+        preferred_name: BCL7A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11648
+        label: ''
+        preferred_name: TCL1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/18504
+        label: ''
+        preferred_name: FCRLA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1645
+        label: ''
+        preferred_name: CD24
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6152
+        label: ITGAX
+        preferred_name: CD11c+/lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11784
+        label: THBD
+        preferred_name: CD141hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/26705
+        label: CLEC9A
+        preferred_name: CLEC9A
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1636
+        label: CD1C
+        preferred_name: CD1c-/lo
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6152
+        label: ITGAX
+        preferred_name: CD11c+/lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11784
+        label: THBD
+        preferred_name: CD141hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/26705
+        label: CLEC9A
+        preferred_name: CLEC9A
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1636
+        label: CD1C
+        preferred_name: CD1c-/lo
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/38476
+        label: ''
+        preferred_name: IGLL5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11200
+        label: ''
+        preferred_name: SOX4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1004
+        label: ''
+        preferred_name: BCL7A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11648
+        label: ''
+        preferred_name: TCL1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/18504
+        label: ''
+        preferred_name: FCRLA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1645
+        label: ''
+        preferred_name: CD24
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1073/pnas.172384399
+        doi: 10.1073/pnas.172384399
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0001056
+        label: dendritic cell, human
+        preferred_name: dendritic cell (DC)
+      - id: http://purl.obolibrary.org/obo/CL_0000990
+        label: conventional dendritic cell
+        preferred_name: dendritic cell type 1 (DC1)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/26705
+        label: ''
+        preferred_name: CLEC9A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5951
+        label: ''
+        preferred_name: CADM1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1625
+        label: ''
+        preferred_name: XCR1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6152
+        label: ITGAX
+        preferred_name: CD11c+/lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11784
+        label: THBD
+        preferred_name: CD141
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1636
+        label: CD1C
+        preferred_name: CD1c
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6152
+        label: ITGAX
+        preferred_name: CD11c+/lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11784
+        label: THBD
+        preferred_name: CD141
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1636
+        label: CD1C
+        preferred_name: CD1c
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/26705
+        label: ''
+        preferred_name: CLEC9A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5951
+        label: ''
+        preferred_name: CADM1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1625
+        label: ''
+        preferred_name: XCR1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.3109/10428194.2013.781167
+        doi: 10.3109/10428194.2013.781167
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0001056
+        label: dendritic cell, human
+        preferred_name: dendritic cell (DC)
+      - id: http://purl.obolibrary.org/obo/CL_0000990
+        label: conventional dendritic cell
+        preferred_name: dendritic cell type 2 (DC2)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1636
+        label: ''
+        preferred_name: CD1C
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3609
+        label: ''
+        preferred_name: FCER1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/16916
+        label: ''
+        preferred_name: CLEC10A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4943
+        label: ''
+        preferred_name: HLA-DQA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4940
+        label: ''
+        preferred_name: HLA-DPB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3618
+        label: ''
+        preferred_name: FCGR2B
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14-/lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6152
+        label: ITGAX
+        preferred_name: CD11c+/lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11784
+        label: THBD
+        preferred_name: CD141
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14-/lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6152
+        label: ITGAX
+        preferred_name: CD11c+/lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11784
+        label: THBD
+        preferred_name: CD141
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1636
+        label: CD1C
+        preferred_name: CD1c
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1636
+        label: ''
+        preferred_name: CD1C
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3609
+        label: ''
+        preferred_name: FCER1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/16916
+        label: ''
+        preferred_name: CLEC10A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4943
+        label: ''
+        preferred_name: HLA-DQA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4940
+        label: ''
+        preferred_name: HLA-DPB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3618
+        label: ''
+        preferred_name: FCGR2B
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/j.immuni.2017.04.019
+        doi: 10.1016/j.immuni.2017.04.019
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0001056
+        label: dendritic cell, human
+        preferred_name: dendritic cell (DC)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1636
+        label: ''
+        preferred_name: CD1C
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3609
+        label: ''
+        preferred_name: FCER1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/16916
+        label: ''
+        preferred_name: CLEC10A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10498
+        label: ''
+        preferred_name: S100A8
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10499
+        label: ''
+        preferred_name: S100A9
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1663
+        label: ''
+        preferred_name: CD36
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1631
+        label: ''
+        preferred_name: CD163
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6152
+        label: ITGAX
+        preferred_name: CD11c
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/13258
+        label: CLEC4C
+        preferred_name: CD303
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6152
+        label: ITGAX
+        preferred_name: CD11c
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/13258
+        label: CLEC4C
+        preferred_name: CD303
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1636
+        label: ''
+        preferred_name: CD1C
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3609
+        label: ''
+        preferred_name: FCER1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/16916
+        label: ''
+        preferred_name: CLEC10A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10498
+        label: ''
+        preferred_name: S100A8
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10499
+        label: ''
+        preferred_name: S100A9
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1663
+        label: ''
+        preferred_name: CD36
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1631
+        label: ''
+        preferred_name: CD163
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1002/cyto.a.23724
+        doi: 10.1002/cyto.a.23724
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0001056
+        label: dendritic cell, human
+        preferred_name: dendritic cell (DC)
+      - id: http://purl.obolibrary.org/obo/CL_0001058
+        label: plasmacytoid dendritic cell, human
+        preferred_name: Plasmacytoid Dendritic Cell (pDC)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4709
+        label: ''
+        preferred_name: GZMB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5713
+        label: ''
+        preferred_name: JCHAIN
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8824
+        label: ''
+        preferred_name: SERPINF1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6152
+        label: ITGAX
+        preferred_name: CD11c-/
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/905
+        label: AXL
+        preferred_name: AXL
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10875
+        label: SIGLEC6
+        preferred_name: Siglec6
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6152
+        label: ITGAX
+        preferred_name: CD11c-/
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/905
+        label: AXL
+        preferred_name: AXL
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10875
+        label: SIGLEC6
+        preferred_name: Siglec6
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/4709
+        label: ''
+        preferred_name: GZMB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5713
+        label: ''
+        preferred_name: JCHAIN
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8824
+        label: ''
+        preferred_name: SERPINF1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1111/bjh.14467
+        doi: 10.1111/bjh.14467
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0001056
+        label: dendritic cell, human
+        preferred_name: dendritic cell (DC)
+      - id: http://purl.obolibrary.org/obo/CL_0000840
+        label: immature conventional dendritic cell
+        preferred_name: transitional Dendritic Cell (tDC)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/905
+        label: ''
+        preferred_name: AXL
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10875
+        label: ''
+        preferred_name: SIGLEC6
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1643
+        label: ''
+        preferred_name: CD22
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11763
+        label: TFRC
+        preferred_name: CD71
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1663
+        label: CD36
+        preferred_name: CD36
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: CD117
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3349
+        label: ENG
+        preferred_name: CD105
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4702
+        label: GYPA
+        preferred_name: CD235alo
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11763
+        label: TFRC
+        preferred_name: CD71
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1663
+        label: CD36
+        preferred_name: CD36
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: CD117
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3349
+        label: ENG
+        preferred_name: CD105
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4702
+        label: GYPA
+        preferred_name: CD235alo
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/905
+        label: ''
+        preferred_name: AXL
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10875
+        label: ''
+        preferred_name: SIGLEC6
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1643
+        label: ''
+        preferred_name: CD22
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1182/blood-2004-02-0769
+        doi: 10.1182/blood-2004-02-0769
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000764
+        label: erythroid lineage cell
+        preferred_name: erythroid
+    biomarkers:
+      - id: http://identifiers.org/hgnc/7553
+        label: ''
+        preferred_name: MYC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/607
+        label: ''
+        preferred_name: APOC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/31397
+        label: ''
+        preferred_name: PRSS57
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6251
+        label: ''
+        preferred_name: KCNH2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11529
+        label: ''
+        preferred_name: EPCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1663
+        label: ''
+        preferred_name: CD36
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6345
+        label: ''
+        preferred_name: KLF1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4170
+        label: ''
+        preferred_name: GATA1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11763
+        label: TFRC
+        preferred_name: CD71
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: CD117
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3349
+        label: ENG
+        preferred_name: CD105
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4702
+        label: GYPA
+        preferred_name: CD235alo
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11763
+        label: TFRC
+        preferred_name: CD71
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1663
+        label: CD36
+        preferred_name: CD36
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: CD117
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3349
+        label: ENG
+        preferred_name: CD105
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4702
+        label: GYPA
+        preferred_name: CD235alo
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/7553
+        label: ''
+        preferred_name: MYC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/607
+        label: ''
+        preferred_name: APOC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/31397
+        label: ''
+        preferred_name: PRSS57
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6251
+        label: ''
+        preferred_name: KCNH2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11529
+        label: ''
+        preferred_name: EPCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1663
+        label: ''
+        preferred_name: CD36
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6345
+        label: ''
+        preferred_name: KLF1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4170
+        label: ''
+        preferred_name: GATA1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1371/journal.pone.0162209
+        doi: 10.1371/journal.pone.0162209
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000764
+        label: erythroid lineage cell
+        preferred_name: erythroid
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1663
+        label: ''
+        preferred_name: CD36
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6345
+        label: ''
+        preferred_name: KLF1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/21256
+        label: ''
+        preferred_name: TSPO2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10006
+        label: ''
+        preferred_name: RHAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10008
+        label: ''
+        preferred_name: RHCE
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11272
+        label: ''
+        preferred_name: SPTA1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11763
+        label: TFRC
+        preferred_name: CD71
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: CD117
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3349
+        label: ENG
+        preferred_name: CD105
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4702
+        label: GYPA
+        preferred_name: CD235a
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11763
+        label: TFRC
+        preferred_name: CD71
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1663
+        label: CD36
+        preferred_name: CD36
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: CD117
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3349
+        label: ENG
+        preferred_name: CD105
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4702
+        label: GYPA
+        preferred_name: CD235a
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1663
+        label: ''
+        preferred_name: CD36
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6345
+        label: ''
+        preferred_name: KLF1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/21256
+        label: ''
+        preferred_name: TSPO2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10006
+        label: ''
+        preferred_name: RHAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10008
+        label: ''
+        preferred_name: RHCE
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11272
+        label: ''
+        preferred_name: SPTA1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000764
+        label: erythroid lineage cell
+        preferred_name: erythroid
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4827
+        label: ''
+        preferred_name: HBB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/397
+        label: ''
+        preferred_name: ALAS2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1093
+        label: ''
+        preferred_name: BPGM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4824
+        label: ''
+        preferred_name: HBA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4831
+        label: ''
+        preferred_name: HBG1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19911
+        label: ''
+        preferred_name: DCAF12
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24040
+        label: ''
+        preferred_name: ADIPOR1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11763
+        label: TFRC
+        preferred_name: CD71
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1663
+        label: CD36
+        preferred_name: CD36lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: CD117
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3349
+        label: ENG
+        preferred_name: CD105
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4702
+        label: GYPA
+        preferred_name: CD235ahi
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11763
+        label: TFRC
+        preferred_name: CD71
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1663
+        label: CD36
+        preferred_name: CD36lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: CD117
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3349
+        label: ENG
+        preferred_name: CD105
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4702
+        label: GYPA
+        preferred_name: CD235ahi
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/4827
+        label: ''
+        preferred_name: HBB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/397
+        label: ''
+        preferred_name: ALAS2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1093
+        label: ''
+        preferred_name: BPGM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4824
+        label: ''
+        preferred_name: HBA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4831
+        label: ''
+        preferred_name: HBG1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19911
+        label: ''
+        preferred_name: DCAF12
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24040
+        label: ''
+        preferred_name: ADIPOR1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000556
+        label: Megakaryocyte
+        preferred_name: Megakaryocyte (MK)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4444
+        label: ''
+        preferred_name: GP9
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10690
+        label: ''
+        preferred_name: CAVIN2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9240
+        label: ''
+        preferred_name: PPBP
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/18874
+        label: ''
+        preferred_name: LAT
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8861
+        label: ''
+        preferred_name: PF4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24356
+        label: ''
+        preferred_name: CLEC1B
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6138
+        label: ''
+        preferred_name: ITGA2B
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3618
+        label: FCGR2B
+        preferred_name: CD32
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4439
+        label: GP1BA
+        preferred_name: CD42b
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6156
+        label: ITGB3
+        preferred_name: CD61
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/8861
+        label: PF4
+        preferred_name: CXCL4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3618
+        label: FCGR2B
+        preferred_name: CD32
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4439
+        label: GP1BA
+        preferred_name: CD42b
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6138
+        label: ITGA2B
+        preferred_name: CD41
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6156
+        label: ITGB3
+        preferred_name: CD61
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/4444
+        label: ''
+        preferred_name: GP9
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10690
+        label: ''
+        preferred_name: CAVIN2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9240
+        label: ''
+        preferred_name: PPBP
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/18874
+        label: ''
+        preferred_name: LAT
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8861
+        label: ''
+        preferred_name: PF4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24356
+        label: ''
+        preferred_name: CLEC1B
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6138
+        label: ''
+        preferred_name: ITGA2B
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000556
+        label: Megakaryocyte
+        preferred_name: Megakaryocyte (MK)
+      - id: http://purl.obolibrary.org/obo/CL_0000553
+        label: megakaryocyte progenitor cell
+        preferred_name: early Megakaryocyte (MK)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4171
+        label: ''
+        preferred_name: GATA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3609
+        label: ''
+        preferred_name: FCER1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9070
+        label: ''
+        preferred_name: PLEK
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10690
+        label: ''
+        preferred_name: CAVIN2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2067
+        label: ''
+        preferred_name: PDLIM1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8861
+        label: PF4
+        preferred_name: CXCL4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3618
+        label: FCGR2B
+        preferred_name: CD32lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4439
+        label: GP1BA
+        preferred_name: CD42b
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6138
+        label: ITGA2B
+        preferred_name: CD41lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6156
+        label: ITGB3
+        preferred_name: CD61
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/8861
+        label: PF4
+        preferred_name: CXCL4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3618
+        label: FCGR2B
+        preferred_name: CD32lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4439
+        label: GP1BA
+        preferred_name: CD42b
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6138
+        label: ITGA2B
+        preferred_name: CD41lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6156
+        label: ITGB3
+        preferred_name: CD61
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/4171
+        label: ''
+        preferred_name: GATA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3609
+        label: ''
+        preferred_name: FCER1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9070
+        label: ''
+        preferred_name: PLEK
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10690
+        label: ''
+        preferred_name: CAVIN2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2067
+        label: ''
+        preferred_name: PDLIM1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000837
+        label: hematopoietic multipotent progenitor cell
+        preferred_name: hemopoietic stem cell/multipotent progenitor (HSC/MPP)
+      - id: http://purl.obolibrary.org/obo/CL_0000050
+        label: megakaryocyte-erythroid progenitor cell
+        preferred_name: megakaryocyte-erythroid-mast cell progenitor (MEMP)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1662
+        label: ''
+        preferred_name: CD34
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11245
+        label: ''
+        preferred_name: SPINK2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/31397
+        label: ''
+        preferred_name: PRSS57
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4171
+        label: ''
+        preferred_name: GATA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/29109
+        label: ''
+        preferred_name: TESPA1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5992
+        label: ''
+        preferred_name: IL1B
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/15879
+        label: ''
+        preferred_name: CTNNBL1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4170
+        label: ''
+        preferred_name: GATA1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3765
+        label: FLT3
+        preferred_name: CD135
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3765
+        label: FLT3
+        preferred_name: CD135
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1662
+        label: ''
+        preferred_name: CD34
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11245
+        label: ''
+        preferred_name: SPINK2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/31397
+        label: ''
+        preferred_name: PRSS57
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4171
+        label: ''
+        preferred_name: GATA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/29109
+        label: ''
+        preferred_name: TESPA1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5992
+        label: ''
+        preferred_name: IL1B
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/15879
+        label: ''
+        preferred_name: CTNNBL1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4170
+        label: ''
+        preferred_name: GATA1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1038/ni.1889
+        doi: 10.1038/ni.1889
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000837
+        label: hematopoietic multipotent progenitor cell
+        preferred_name: hemopoietic stem cell/multipotent progenitor (HSC/MPP)
+      - id: http://purl.obolibrary.org/obo/CL_0000051
+        label: common lymphoid progenitor
+        preferred_name: common lymphoid progenitor (CLP)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/16505
+        label: ''
+        preferred_name: CYGB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/186
+        label: ''
+        preferred_name: ADA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9352
+        label: ''
+        preferred_name: PRDX1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12749
+        label: ''
+        preferred_name: LAT2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12560
+        label: ''
+        preferred_name: UMODL1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7203
+        label: ''
+        preferred_name: CD200
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6024
+        label: IL7R
+        preferred_name: CD127
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6024
+        label: IL7R
+        preferred_name: CD127
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/16505
+        label: ''
+        preferred_name: CYGB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/186
+        label: ''
+        preferred_name: ADA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9352
+        label: ''
+        preferred_name: PRDX1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12749
+        label: ''
+        preferred_name: LAT2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12560
+        label: ''
+        preferred_name: UMODL1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7203
+        label: ''
+        preferred_name: CD200
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000837
+        label: hematopoietic multipotent progenitor cell
+        preferred_name: hemopoietic stem cell/multipotent progenitor (HSC/MPP)
+      - id: http://purl.obolibrary.org/obo/CL_0000049
+        label: common myeloid progenitor
+        preferred_name: common myeloid progenitor (CMP)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/5154
+        label: ''
+        preferred_name: HPGDS
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4171
+        label: ''
+        preferred_name: GATA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24435
+        label: ''
+        preferred_name: CYTL1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3311
+        label: ''
+        preferred_name: SERPINB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7028
+        label: ''
+        preferred_name: MEST
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3765
+        label: FLT3
+        preferred_name: CD135
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3765
+        label: FLT3
+        preferred_name: CD135
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/5154
+        label: ''
+        preferred_name: HPGDS
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4171
+        label: ''
+        preferred_name: GATA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24435
+        label: ''
+        preferred_name: CYTL1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3311
+        label: ''
+        preferred_name: SERPINB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7028
+        label: ''
+        preferred_name: MEST
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1038/ni.1889
+        doi: 10.1038/ni.1889
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000837
+        label: hematopoietic multipotent progenitor cell
+        preferred_name: hemopoietic stem cell/multipotent progenitor (HSC/MPP)
+      - id: http://purl.obolibrary.org/obo/CL_0000557
+        label: granulocyte monocyte progenitor cell
+        preferred_name: granulocyte-macrophage progenitor cell (GMP)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1662
+        label: ''
+        preferred_name: CD34
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1455
+        label: ''
+        preferred_name: CALR
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10576
+        label: ''
+        preferred_name: CLEC11A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7218
+        label: ''
+        preferred_name: MPO
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/913
+        label: ''
+        preferred_name: AZU1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3765
+        label: FLT3
+        preferred_name: CD135
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3765
+        label: FLT3
+        preferred_name: CD135
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1662
+        label: ''
+        preferred_name: CD34
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1455
+        label: ''
+        preferred_name: CALR
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10576
+        label: ''
+        preferred_name: CLEC11A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7218
+        label: ''
+        preferred_name: MPO
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/913
+        label: ''
+        preferred_name: AZU1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1038/ni.1889
+        doi: 10.1038/ni.1889
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000837
+        label: hematopoietic multipotent progenitor cell
+        preferred_name: hemopoietic stem cell/multipotent progenitor (HSC/MPP)
+      - id: http://purl.obolibrary.org/obo/CL_0000037
+        label: hemopoietic stem cell
+        preferred_name: hemopoietic stem cell (HSC)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/894
+        label: ''
+        preferred_name: AVP
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2356
+        label: ''
+        preferred_name: CRHBP
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7945
+        label: ''
+        preferred_name: NPR3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1036
+        label: ''
+        preferred_name: BEX1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9454
+        label: ''
+        preferred_name: PROM1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4977
+        label: ''
+        preferred_name: CD34
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7136
+        label: ''
+        preferred_name: MLLT3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1639
+        label: CD2
+        preferred_name: CD2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4702
+        label: GYPA
+        preferred_name: CD235a
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11801
+        label: THY1
+        preferred_name: CD90
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1639
+        label: CD2
+        preferred_name: CD2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4702
+        label: GYPA
+        preferred_name: CD235a
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11801
+        label: THY1
+        preferred_name: CD90
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/894
+        label: ''
+        preferred_name: AVP
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2356
+        label: ''
+        preferred_name: CRHBP
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7945
+        label: ''
+        preferred_name: NPR3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1036
+        label: ''
+        preferred_name: BEX1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9454
+        label: ''
+        preferred_name: PROM1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4977
+        label: ''
+        preferred_name: CD34
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7136
+        label: ''
+        preferred_name: MLLT3
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000837
+        label: hematopoietic multipotent progenitor cell
+        preferred_name: hemopoietic stem cell/multipotent progenitor (HSC/MPP)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1662
+        label: ''
+        preferred_name: CD34
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/13221
+        label: ''
+        preferred_name: BCL11A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6010
+        label: ''
+        preferred_name: IL2RG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5713
+        label: ''
+        preferred_name: JCHAIN
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11200
+        label: ''
+        preferred_name: SOX4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11491
+        label: ''
+        preferred_name: SYK
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1639
+        label: CD2
+        preferred_name: CD2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4702
+        label: GYPA
+        preferred_name: CD235a
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1639
+        label: CD2
+        preferred_name: CD2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4702
+        label: GYPA
+        preferred_name: CD235a
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1662
+        label: ''
+        preferred_name: CD34
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/13221
+        label: ''
+        preferred_name: BCL11A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6010
+        label: ''
+        preferred_name: IL2RG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5713
+        label: ''
+        preferred_name: JCHAIN
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11200
+        label: ''
+        preferred_name: SOX4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11491
+        label: ''
+        preferred_name: SYK
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1038/ni.1889
+        doi: 10.1038/ni.1889
+        pubmed_id: ''
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000837
+        label: hematopoietic multipotent progenitor cell
+        preferred_name: hemopoietic stem cell/multipotent progenitor (HSC/MPP)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1662
+        label: ''
+        preferred_name: CD34
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11245
+        label: ''
+        preferred_name: SPINK2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3765
+        label: ''
+        preferred_name: FLT3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1639
+        label: CD2
+        preferred_name: CD2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4702
+        label: GYPA
+        preferred_name: CD235a
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11801
+        label: THY1
+        preferred_name: CD90
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1639
+        label: CD2
+        preferred_name: CD2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4702
+        label: GYPA
+        preferred_name: CD235a
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11801
+        label: THY1
+        preferred_name: CD90
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1662
+        label: ''
+        preferred_name: CD34
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11245
+        label: ''
+        preferred_name: SPINK2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3765
+        label: ''
+        preferred_name: FLT3
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000576
+        label: monocyte
+        preferred_name: monocyte
+      - id: http://purl.obolibrary.org/obo/CL_0001054
+        label: CD14-positive monocyte
+        preferred_name: CD14 monocyte
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2464
+        label: ''
+        preferred_name: VCAN
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2475
+        label: ''
+        preferred_name: CST3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1628
+        label: ''
+        preferred_name: CD14
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10498
+        label: ''
+        preferred_name: S100A8
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10499
+        label: ''
+        preferred_name: S100A9
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3623
+        label: ''
+        preferred_name: FCN1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2558
+        label: CX3CR1
+        preferred_name: CX3CR1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2561
+        label: CXCR4
+        preferred_name: CXCR4
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14-/lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2558
+        label: CX3CR1
+        preferred_name: CX3CR1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2561
+        label: CXCR4
+        preferred_name: CXCR4
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2464
+        label: ''
+        preferred_name: VCAN
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2475
+        label: ''
+        preferred_name: CST3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1628
+        label: ''
+        preferred_name: CD14
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10498
+        label: ''
+        preferred_name: S100A8
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10499
+        label: ''
+        preferred_name: S100A9
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3623
+        label: ''
+        preferred_name: FCN1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000576
+        label: monocyte
+        preferred_name: monocyte
+      - id: http://purl.obolibrary.org/obo/CL_0002396
+        label: CD14-low, CD16-positive monocyte
+        preferred_name: CD16 monocyte
+    biomarkers:
+      - id: http://identifiers.org/hgnc/24149
+        label: ''
+        preferred_name: HES4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/13378
+        label: ''
+        preferred_name: MS4A7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5414
+        label: ''
+        preferred_name: IFITM3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3619
+        label: ''
+        preferred_name: FCGR3A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/16642
+        label: ''
+        preferred_name: CXCL16
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/14189
+        label: ''
+        preferred_name: LST1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7154
+        label: MME
+        preferred_name: CD10
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: CD117
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/31713
+        label: CLEC12A
+        preferred_name: CLEC12Ahi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3613
+        label: FCGR1A
+        preferred_name: CD64hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/28874
+        label: CD300E
+        preferred_name: CD300E
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7154
+        label: MME
+        preferred_name: CD10
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: CD117
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/31713
+        label: CLEC12A
+        preferred_name: CLEC12Ahi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3613
+        label: FCGR1A
+        preferred_name: CD64hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/28874
+        label: CD300E
+        preferred_name: CD300E
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/24149
+        label: ''
+        preferred_name: HES4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/13378
+        label: ''
+        preferred_name: MS4A7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5414
+        label: ''
+        preferred_name: IFITM3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3619
+        label: ''
+        preferred_name: FCGR3A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/16642
+        label: ''
+        preferred_name: CXCL16
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/14189
+        label: ''
+        preferred_name: LST1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000576
+        label: monocyte
+        preferred_name: monocyte
+      - id: http://purl.obolibrary.org/obo/CL_0000559
+        label: promonocyte
+        preferred_name: promonocyte
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2558
+        label: ''
+        preferred_name: CX3CR1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1603
+        label: ''
+        preferred_name: CCR2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10494
+        label: ''
+        preferred_name: S100A4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10496
+        label: ''
+        preferred_name: S100A6
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2475
+        label: ''
+        preferred_name: CST3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7154
+        label: MME
+        preferred_name: CD10
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: CD117
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/31713
+        label: CLEC12A
+        preferred_name: CLEC12Ahi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3613
+        label: FCGR1A
+        preferred_name: CD64hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/28874
+        label: CD300E
+        preferred_name: CD300E
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7154
+        label: MME
+        preferred_name: CD10
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6342
+        label: KIT
+        preferred_name: CD117
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/31713
+        label: CLEC12A
+        preferred_name: CLEC12Ahi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3613
+        label: FCGR1A
+        preferred_name: CD64hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1628
+        label: CD14
+        preferred_name: CD14
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/28874
+        label: CD300E
+        preferred_name: CD300E
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2558
+        label: ''
+        preferred_name: CX3CR1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1603
+        label: ''
+        preferred_name: CCR2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10494
+        label: ''
+        preferred_name: S100A4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10496
+        label: ''
+        preferred_name: S100A6
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2475
+        label: ''
+        preferred_name: CST3
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000576
+        label: monocyte
+        preferred_name: monocyte
+    biomarkers:
+      - id: http://identifiers.org/hgnc/11241
+        label: ''
+        preferred_name: SPI1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5358
+        label: ''
+        preferred_name: IRF8
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1834
+        label: ''
+        preferred_name: CEBPB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6348
+        label: ''
+        preferred_name: KLF4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7154
+        label: MME
+        preferred_name: CD10
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3765
+        label: FLT3
+        preferred_name: CD135
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/31713
+        label: CLEC12A
+        preferred_name: CLEC12Ahi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3613
+        label: FCGR1A
+        preferred_name: CD64hi
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662
+        label: CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7154
+        label: MME
+        preferred_name: CD10
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123lo
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3765
+        label: FLT3
+        preferred_name: CD135
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/31713
+        label: CLEC12A
+        preferred_name: CLEC12Ahi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3613
+        label: FCGR1A
+        preferred_name: CD64hi
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/11241
+        label: ''
+        preferred_name: SPI1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5358
+        label: ''
+        preferred_name: IRF8
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1834
+        label: ''
+        preferred_name: CEBPB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6348
+        label: ''
+        preferred_name: KLF4
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000775
+        label: neutrophil
+        preferred_name: neutrophilic granulocyte
+      - id: http://purl.obolibrary.org/obo/CL_0002193
+        label: myelocyte
+        preferred_name: myelocyte
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6526
+        label: ''
+        preferred_name: LCN2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1472
+        label: ''
+        preferred_name: CAMP
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6720
+        label: ''
+        preferred_name: LTF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3383
+        label: ''
+        preferred_name: STOM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1820
+        label: ''
+        preferred_name: CEACAM8
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/500
+        label: ANPEP
+        preferred_name: CD13
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4015
+        label: FUT4
+        preferred_name: CD15
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11249
+        label: SPN
+        preferred_name: CD43
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6140
+        label: ITGA4
+        preferred_name: CD49d
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1645
+        label: CD24
+        preferred_name: CD24
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6149
+        label: ITGAM
+        preferred_name: CD11b
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/500
+        label: ANPEP
+        preferred_name: CD13
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4015
+        label: FUT4
+        preferred_name: CD15
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11249
+        label: SPN
+        preferred_name: CD43
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1820
+        label: CEACAM8
+        preferred_name: CD66b
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6140
+        label: ITGA4
+        preferred_name: CD49d
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1645
+        label: CD24
+        preferred_name: CD24
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6149
+        label: ITGAM
+        preferred_name: CD11b
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6526
+        label: ''
+        preferred_name: LCN2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1472
+        label: ''
+        preferred_name: CAMP
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6720
+        label: ''
+        preferred_name: LTF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3383
+        label: ''
+        preferred_name: STOM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1820
+        label: ''
+        preferred_name: CEACAM8
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000775
+        label: neutrophil
+        preferred_name: neutrophilic granulocyte
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6149
+        label: ''
+        preferred_name: ITGAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7176
+        label: ''
+        preferred_name: MMP9
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8904
+        label: ''
+        preferred_name: PGLYRP1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8498
+        label: ''
+        preferred_name: ORM1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10489
+        label: ''
+        preferred_name: S100A12
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3623
+        label: ''
+        preferred_name: FCN1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/500
+        label: ANPEP
+        preferred_name: CD13
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4015
+        label: FUT4
+        preferred_name: CD15
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11249
+        label: SPN
+        preferred_name: CD43
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1820
+        label: CEACAM8
+        preferred_name: CD66b
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6140
+        label: ITGA4
+        preferred_name: CD49d
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2334
+        label: CR1
+        preferred_name: CD35
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9053
+        label: PLAUR
+        preferred_name: CD87
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3613
+        label: FCGR1A
+        preferred_name: CD64
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/500
+        label: ANPEP
+        preferred_name: CD13
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4015
+        label: FUT4
+        preferred_name: CD15
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11249
+        label: SPN
+        preferred_name: CD43
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1820
+        label: CEACAM8
+        preferred_name: CD66b
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6140
+        label: ITGA4
+        preferred_name: CD49d
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6149
+        label: ITGAM
+        preferred_name: CD11b
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2334
+        label: CR1
+        preferred_name: CD35
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9053
+        label: PLAUR
+        preferred_name: CD87
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3613
+        label: FCGR1A
+        preferred_name: CD64
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6149
+        label: ''
+        preferred_name: ITGAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7176
+        label: ''
+        preferred_name: MMP9
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8904
+        label: ''
+        preferred_name: PGLYRP1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8498
+        label: ''
+        preferred_name: ORM1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10489
+        label: ''
+        preferred_name: S100A12
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3623
+        label: ''
+        preferred_name: FCN1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000775
+        label: neutrophil
+        preferred_name: neutrophilic granulocyte
+      - id: http://purl.obolibrary.org/obo/CL_0000836
+        label: promyelocyte
+        preferred_name: promyelocyte
+    biomarkers:
+      - id: http://identifiers.org/hgnc/7218
+        label: ''
+        preferred_name: MPO
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3309
+        label: ''
+        preferred_name: ELANE
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2532
+        label: ''
+        preferred_name: CTSG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9495
+        label: ''
+        preferred_name: PRTN3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/913
+        label: ''
+        preferred_name: AZU1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/500
+        label: ANPEP
+        preferred_name: CD13
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4015
+        label: FUT4
+        preferred_name: CD15
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11249
+        label: SPN
+        preferred_name: CD43
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1820
+        label: CEACAM8
+        preferred_name: CD66b
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6140
+        label: ITGA4
+        preferred_name: CD49d
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6149
+        label: ITGAM
+        preferred_name: CD11b
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2334
+        label: CR1
+        preferred_name: CD35
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9053
+        label: PLAUR
+        preferred_name: CD87
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3613
+        label: FCGR1A
+        preferred_name: CD64
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/500
+        label: ANPEP
+        preferred_name: CD13
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4015
+        label: FUT4
+        preferred_name: CD15
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11249
+        label: SPN
+        preferred_name: CD43
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1820
+        label: CEACAM8
+        preferred_name: CD66b
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6140
+        label: ITGA4
+        preferred_name: CD49d
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6149
+        label: ITGAM
+        preferred_name: CD11b
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2334
+        label: CR1
+        preferred_name: CD35
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9053
+        label: PLAUR
+        preferred_name: CD87
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3613
+        label: FCGR1A
+        preferred_name: CD64
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/7218
+        label: ''
+        preferred_name: MPO
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3309
+        label: ''
+        preferred_name: ELANE
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2532
+        label: ''
+        preferred_name: CTSG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9495
+        label: ''
+        preferred_name: PRTN3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/913
+        label: ''
+        preferred_name: AZU1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000094
+        label: granulocyte
+        preferred_name: granulocyte
+      - id: http://purl.obolibrary.org/obo/CL_0000771
+        label: eosinophil
+        preferred_name: eosinophil
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4855
+        label: ''
+        preferred_name: HDC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2014
+        label: ''
+        preferred_name: CLC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2298
+        label: ''
+        preferred_name: CPA3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6017
+        label: ''
+        preferred_name: IL5RA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4171
+        label: ''
+        preferred_name: GATA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7317
+        label: ''
+        preferred_name: MS4A3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/17890
+        label: ''
+        preferred_name: HPGDS
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1604
+        label: CCR3
+        preferred_name: CCR3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3609
+        label: FCER1A
+        preferred_name: FcER1A
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/6012
+        label: IL3RA
+        preferred_name: CD123
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6017
+        label: IL5RA
+        preferred_name: CD125
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1604
+        label: CCR3
+        preferred_name: CCR3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3609
+        label: FCER1A
+        preferred_name: FcER1A
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/4855
+        label: ''
+        preferred_name: HDC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2014
+        label: ''
+        preferred_name: CLC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2298
+        label: ''
+        preferred_name: CPA3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6017
+        label: ''
+        preferred_name: IL5RA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4171
+        label: ''
+        preferred_name: GATA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7317
+        label: ''
+        preferred_name: MS4A3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/17890
+        label: ''
+        preferred_name: HPGDS
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000094
+        label: granulocyte
+        preferred_name: granulocyte
+      - id: http://purl.obolibrary.org/obo/CL_0000767
+        label: basophil
+        preferred_name: basophil
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4855
+        label: ''
+        preferred_name: HDC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2014
+        label: ''
+        preferred_name: CLC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2298
+        label: ''
+        preferred_name: CPA3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6017
+        label: ''
+        preferred_name: IL5RA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4171
+        label: ''
+        preferred_name: GATA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7317
+        label: ''
+        preferred_name: MS4A3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6012
+        label: ''
+        preferred_name: IL3RA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6024
+        label: IL7R
+        preferred_name: CD127hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3609
+        label: FCER1A
+        preferred_name: FcER1A
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/6017
+        label: IL5RA
+        preferred_name: CD125
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6024
+        label: IL7R
+        preferred_name: CD127hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3609
+        label: FCER1A
+        preferred_name: FcER1A
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/4855
+        label: ''
+        preferred_name: HDC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2014
+        label: ''
+        preferred_name: CLC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2298
+        label: ''
+        preferred_name: CPA3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6017
+        label: ''
+        preferred_name: IL5RA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4171
+        label: ''
+        preferred_name: GATA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7317
+        label: ''
+        preferred_name: MS4A3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6012
+        label: ''
+        preferred_name: IL3RA
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000094
+        label: granulocyte
+        preferred_name: granulocyte
+      - id: http://purl.obolibrary.org/obo/CL_0000097
+        label: mast cell
+        preferred_name: mast cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4855
+        label: ''
+        preferred_name: HDC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2014
+        label: ''
+        preferred_name: CLC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2298
+        label: ''
+        preferred_name: CPA3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6017
+        label: ''
+        preferred_name: IL5RA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4171
+        label: ''
+        preferred_name: GATA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7317
+        label: ''
+        preferred_name: MS4A3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/17890
+        label: ''
+        preferred_name: HPGDS
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12019
+        label: ''
+        preferred_name: TPSAB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6342
+        label: ''
+        preferred_name: KIT
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6024
+        label: IL7R
+        preferred_name: CD127hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3609
+        label: FCER1A
+        preferred_name: FcER1A
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/6017
+        label: IL5RA
+        preferred_name: CD125
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6024
+        label: IL7R
+        preferred_name: CD127hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3609
+        label: FCER1A
+        preferred_name: FcER1A
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/4855
+        label: ''
+        preferred_name: HDC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2014
+        label: ''
+        preferred_name: CLC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2298
+        label: ''
+        preferred_name: CPA3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6017
+        label: ''
+        preferred_name: IL5RA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4171
+        label: ''
+        preferred_name: GATA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7317
+        label: ''
+        preferred_name: MS4A3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/17890
+        label: ''
+        preferred_name: HPGDS
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12019
+        label: ''
+        preferred_name: TPSAB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6342
+        label: ''
+        preferred_name: KIT
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000084
+        label: T cell
+        preferred_name: T lymphocytes
+      - id: http://purl.obolibrary.org/obo/CL_0000895
+        label: naive thymus-derived CD4-positive, alpha-beta T cell
+        preferred_name: CD4 naive
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: ''
+        preferred_name: CD3D
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12156
+        label: ''
+        preferred_name: TRBC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6024
+        label: ''
+        preferred_name: IL7R
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/30698
+        label: ''
+        preferred_name: TRAT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6711
+        label: ''
+        preferred_name: LTB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/636
+        label: ''
+        preferred_name: AQP3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11935
+        label: ''
+        preferred_name: CD40LG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1673
+        label: ''
+        preferred_name: CD3D
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12156
+        label: ''
+        preferred_name: TRBC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6024
+        label: ''
+        preferred_name: IL7R
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/30698
+        label: ''
+        preferred_name: TRAT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6711
+        label: ''
+        preferred_name: LTB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/636
+        label: ''
+        preferred_name: AQP3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11935
+        label: ''
+        preferred_name: CD40LG
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000084
+        label: T cell
+        preferred_name: T lymphocytes
+      - id: http://purl.obolibrary.org/obo/CL_0000897
+        label: CD4-positive, alpha-beta memory T cell
+        preferred_name: CD4 T cell memory
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: ''
+        preferred_name: CD3D
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4054
+        label: ''
+        preferred_name: IFI6
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6563
+        label: ''
+        preferred_name: LGALS3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/26974
+        label: ''
+        preferred_name: PDZD8
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/537
+        label: ''
+        preferred_name: ANXA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2360
+        label: ''
+        preferred_name: CRIP1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1673
+        label: ''
+        preferred_name: CD3D
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4054
+        label: ''
+        preferred_name: IFI6
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6563
+        label: ''
+        preferred_name: LGALS3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/26974
+        label: ''
+        preferred_name: PDZD8
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/537
+        label: ''
+        preferred_name: ANXA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2360
+        label: ''
+        preferred_name: CRIP1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000084
+        label: T cell
+        preferred_name: T lymphocytes
+      - id: http://purl.obolibrary.org/obo/CL_0000897
+        label: CD4-positive, alpha-beta memory T cell
+        preferred_name: CD4 T cell memory
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: ''
+        preferred_name: CD3D
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6015
+        label: ''
+        preferred_name: IL4R
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11362
+        label: ''
+        preferred_name: STAT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6817
+        label: ''
+        preferred_name: MAL
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19383
+        label: ''
+        preferred_name: SOCS1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6001
+        label: ''
+        preferred_name: IL2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8109
+        label: ''
+        preferred_name: ODC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19129
+        label: ''
+        preferred_name: PSAT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12729
+        label: ''
+        preferred_name: WARS
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9721
+        label: ''
+        preferred_name: PYCR1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11892
+        label: ''
+        preferred_name: TNF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7849
+        label: ''
+        preferred_name: NME1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1673
+        label: ''
+        preferred_name: CD3D
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6015
+        label: ''
+        preferred_name: IL4R
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11362
+        label: ''
+        preferred_name: STAT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6817
+        label: ''
+        preferred_name: MAL
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19383
+        label: ''
+        preferred_name: SOCS1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6001
+        label: ''
+        preferred_name: IL2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8109
+        label: ''
+        preferred_name: ODC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19129
+        label: ''
+        preferred_name: PSAT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12729
+        label: ''
+        preferred_name: WARS
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9721
+        label: ''
+        preferred_name: PYCR1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11892
+        label: ''
+        preferred_name: TNF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7849
+        label: ''
+        preferred_name: NME1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000084
+        label: T cell
+        preferred_name: T lymphocytes
+      - id: http://purl.obolibrary.org/obo/CL_0001087
+        label: >-
+          effector memory CD4-positive, alpha-beta T cell, terminally
+          differentiated
+        preferred_name: CD4 T cell effector memory CD45RA
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: ''
+        preferred_name: CD3D
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6015
+        label: ''
+        preferred_name: IL4R
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11362
+        label: ''
+        preferred_name: STAT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6817
+        label: ''
+        preferred_name: MAL
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19383
+        label: ''
+        preferred_name: SOCS1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6001
+        label: ''
+        preferred_name: IL2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8109
+        label: ''
+        preferred_name: ODC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19129
+        label: ''
+        preferred_name: PSAT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12729
+        label: ''
+        preferred_name: WARS
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9721
+        label: ''
+        preferred_name: PYCR1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11892
+        label: ''
+        preferred_name: TNF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7849
+        label: ''
+        preferred_name: NME1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1673
+        label: ''
+        preferred_name: CD3D
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6015
+        label: ''
+        preferred_name: IL4R
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11362
+        label: ''
+        preferred_name: STAT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6817
+        label: ''
+        preferred_name: MAL
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19383
+        label: ''
+        preferred_name: SOCS1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6001
+        label: ''
+        preferred_name: IL2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8109
+        label: ''
+        preferred_name: ODC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19129
+        label: ''
+        preferred_name: PSAT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12729
+        label: ''
+        preferred_name: WARS
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9721
+        label: ''
+        preferred_name: PYCR1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11892
+        label: ''
+        preferred_name: TNF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7849
+        label: ''
+        preferred_name: NME1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000084
+        label: T cell
+        preferred_name: T lymphocytes
+      - id: http://purl.obolibrary.org/obo/CL_0000900
+        label: naive thymus-derived CD8-positive, alpha-beta T cell
+        preferred_name: CD8 naive
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: ''
+        preferred_name: CD3D
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/636
+        label: ''
+        preferred_name: AQP3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6024
+        label: ''
+        preferred_name: IL7R
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1673
+        label: ''
+        preferred_name: CD3D
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/636
+        label: ''
+        preferred_name: AQP3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6024
+        label: ''
+        preferred_name: IL7R
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000084
+        label: T cell
+        preferred_name: T lymphocytes
+      - id: http://purl.obolibrary.org/obo/CL_0000909
+        label: CD8-positive, alpha-beta memory T cell
+        preferred_name: CD8 T cell memory
+    biomarkers:
+      - id: http://identifiers.org/hgnc/26974
+        label: ''
+        preferred_name: PDZD8
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/16647
+        label: ''
+        preferred_name: CXCR6
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9360
+        label: ''
+        preferred_name: PRF1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2360
+        label: ''
+        preferred_name: CRIP1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6134
+        label: ''
+        preferred_name: ITGA1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4709
+        label: ''
+        preferred_name: GZMB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/26974
+        label: ''
+        preferred_name: PDZD8
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/16647
+        label: ''
+        preferred_name: CXCR6
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9360
+        label: ''
+        preferred_name: PRF1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2360
+        label: ''
+        preferred_name: CRIP1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6134
+        label: ''
+        preferred_name: ITGA1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4709
+        label: ''
+        preferred_name: GZMB
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000084
+        label: T cell
+        preferred_name: T lymphocytes
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: ''
+        preferred_name: CD3D
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10627
+        label: ''
+        preferred_name: CCL3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10630
+        label: ''
+        preferred_name: CCL4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24961
+        label: ''
+        preferred_name: HOPX
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4709
+        label: ''
+        preferred_name: GZMB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1673
+        label: ''
+        preferred_name: CD3D
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10627
+        label: ''
+        preferred_name: CCL3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10630
+        label: ''
+        preferred_name: CCL4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24961
+        label: ''
+        preferred_name: HOPX
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4709
+        label: ''
+        preferred_name: GZMB
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000084
+        label: T cell
+        preferred_name: T lymphocytes
+      - id: http://purl.obolibrary.org/obo/CL_0001062
+        label: >-
+          effector memory CD8-positive, alpha-beta T cell, terminally
+          differentiated
+        preferred_name: CD8 T cell effector memory CD45RA
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1673
+        label: ''
+        preferred_name: CD3D
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9360
+        label: ''
+        preferred_name: PRF1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24961
+        label: ''
+        preferred_name: HOPX
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7830
+        label: ''
+        preferred_name: NKG7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4414
+        label: ''
+        preferred_name: GNLY
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5411
+        label: ''
+        preferred_name: IFIT3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6378
+        label: ''
+        preferred_name: KLRD1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10632
+        label: ''
+        preferred_name: CCL5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11922
+        label: CD27
+        preferred_name: CD27+/
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA+/
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10720
+        label: SELL
+        preferred_name: CD62L+/
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7+/
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11922
+        label: CD27
+        preferred_name: CD27+/
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1667
+        label: CD38
+        preferred_name: CD38
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9666
+        label: PTPRC
+        preferred_name: CD45RA+/
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10720
+        label: SELL
+        preferred_name: CD62L+/
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1608
+        label: CCR7
+        preferred_name: CCR7+/
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1673
+        label: ''
+        preferred_name: CD3D
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9360
+        label: ''
+        preferred_name: PRF1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24961
+        label: ''
+        preferred_name: HOPX
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7830
+        label: ''
+        preferred_name: NKG7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4414
+        label: ''
+        preferred_name: GNLY
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5411
+        label: ''
+        preferred_name: IFIT3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6378
+        label: ''
+        preferred_name: KLRD1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10632
+        label: ''
+        preferred_name: CCL5
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000084
+        label: T cell
+        preferred_name: T lymphocytes
+    biomarkers:
+      - id: http://identifiers.org/hgnc/10632
+        label: ''
+        preferred_name: CCL5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4710
+        label: ''
+        preferred_name: GZMH
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/16830
+        label: ''
+        preferred_name: IL32
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1706
+        label: ''
+        preferred_name: CD8A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3068
+        label: ''
+        preferred_name: DUSP2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6380
+        label: ''
+        preferred_name: KLRG1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12276
+        label: ''
+        preferred_name: TRGC2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4711
+        label: ''
+        preferred_name: GZMK
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7315
+        label: MS4A1
+        preferred_name: CD20
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7315
+        label: MS4A1
+        preferred_name: CD20
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56hi
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/10632
+        label: ''
+        preferred_name: CCL5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4710
+        label: ''
+        preferred_name: GZMH
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/16830
+        label: ''
+        preferred_name: IL32
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1706
+        label: ''
+        preferred_name: CD8A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3068
+        label: ''
+        preferred_name: DUSP2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6380
+        label: ''
+        preferred_name: KLRG1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12276
+        label: ''
+        preferred_name: TRGC2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4711
+        label: ''
+        preferred_name: GZMK
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000814
+        label: mature NK T cell
+        preferred_name: NK lymphocytes
+      - id: http://purl.obolibrary.org/obo/CL_0000938
+        label: CD16-negative, CD56-bright natural killer cell
+        preferred_name: CD56 bright Natural Killer
+    biomarkers:
+      - id: http://identifiers.org/hgnc/12253
+        label: ''
+        preferred_name: TRDC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6373
+        label: ''
+        preferred_name: KLRB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2064
+        label: ''
+        preferred_name: CLIC3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2479
+        label: ''
+        preferred_name: CST7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10645
+        label: ''
+        preferred_name: XCL1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4711
+        label: ''
+        preferred_name: GZMK
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7315
+        label: MS4A1
+        preferred_name: CD20
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/921
+        label: B3GAT1
+        preferred_name: CD57+/
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1633
+        label: CD19
+        preferred_name: CD19
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7315
+        label: MS4A1
+        preferred_name: CD20
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7656
+        label: NCAM1
+        preferred_name: CD56
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/3619
+        label: FCGR3A
+        preferred_name: CD16
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/921
+        label: B3GAT1
+        preferred_name: CD57+/
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/12253
+        label: ''
+        preferred_name: TRDC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6373
+        label: ''
+        preferred_name: KLRB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2064
+        label: ''
+        preferred_name: CLIC3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2479
+        label: ''
+        preferred_name: CST7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10645
+        label: ''
+        preferred_name: XCL1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4711
+        label: ''
+        preferred_name: GZMK
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000814
+        label: mature NK T cell
+        preferred_name: NK lymphocytes
+      - id: http://purl.obolibrary.org/obo/CL_0000824
+        label: mature natural killer cell
+        preferred_name: mature Natural killer
+    biomarkers:
+      - id: http://identifiers.org/hgnc/12253
+        label: ''
+        preferred_name: TRDC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6373
+        label: ''
+        preferred_name: KLRB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2064
+        label: ''
+        preferred_name: CLIC3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2479
+        label: ''
+        preferred_name: CST7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4708
+        label: ''
+        preferred_name: GZMA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4709
+        label: ''
+        preferred_name: GZMB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9360
+        label: ''
+        preferred_name: PRF1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3619
+        label: ''
+        preferred_name: FCGR3A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4+/
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8+/
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6008
+        label: IL2RA
+        preferred_name: CD25
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6106
+        label: FOXP3
+        preferred_name: FOXP3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2505
+        label: CTLA4
+        preferred_name: CTLA4
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1674
+        label: CD3E
+        preferred_name: CD3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1678
+        label: CD4
+        preferred_name: CD4+/
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8A
+        preferred_name: CD8+/
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6008
+        label: IL2RA
+        preferred_name: CD25
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6106
+        label: FOXP3
+        preferred_name: FOXP3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/2505
+        label: CTLA4
+        preferred_name: CTLA4
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/12253
+        label: ''
+        preferred_name: TRDC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6373
+        label: ''
+        preferred_name: KLRB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2064
+        label: ''
+        preferred_name: CLIC3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2479
+        label: ''
+        preferred_name: CST7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4708
+        label: ''
+        preferred_name: GZMA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4709
+        label: ''
+        preferred_name: GZMB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9360
+        label: ''
+        preferred_name: PRF1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3619
+        label: ''
+        preferred_name: FCGR3A
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0002371
+        label: Bone marrow
+        preferred_name: Bone marrow
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000084
+        label: T cell
+        preferred_name: T lymphocytes
+      - id: http://purl.obolibrary.org/obo/CL_0000815
+        label: regulatory T cell
+        preferred_name: T regulatory
+    biomarkers:
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12156
+        label: ''
+        preferred_name: TRBC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6024
+        label: ''
+        preferred_name: IL7R
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/30698
+        label: ''
+        preferred_name: TRAT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6711
+        label: ''
+        preferred_name: LTB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/636
+        label: ''
+        preferred_name: AQP3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6106
+        label: ''
+        preferred_name: FOXP3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11910
+        label: ''
+        preferred_name: TNFRSF25
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/26838
+        label: ''
+        preferred_name: TIGIT
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1607
+        label: ''
+        preferred_name: CCR6
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11918
+        label: ''
+        preferred_name: TNFRSF4
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/12029
+        label: ''
+        preferred_name: TRAC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12156
+        label: ''
+        preferred_name: TRBC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6024
+        label: ''
+        preferred_name: IL7R
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/30698
+        label: ''
+        preferred_name: TRAT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6711
+        label: ''
+        preferred_name: LTB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/636
+        label: ''
+        preferred_name: AQP3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6106
+        label: ''
+        preferred_name: FOXP3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11910
+        label: ''
+        preferred_name: TNFRSF25
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/26838
+        label: ''
+        preferred_name: TIGIT
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1607
+        label: ''
+        preferred_name: CCR6
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11918
+        label: ''
+        preferred_name: TNFRSF4
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []

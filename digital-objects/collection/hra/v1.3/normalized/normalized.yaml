@@ -36,8 +36,30 @@ metadata:
   funder: National Institutes of Health
   award_number: OT2OD026671
   hubmap_id: HBM248.CBJV.556
-  datatable: release-4.yaml
+  datatable: digital-objects.yaml
   doi: https://doi.org/10.48539/HBM248.CBJV.556
 data:
   - asct-b/kidney/v1.2
-  - ref-organ/vh-female-united/v1.3
+  - asct-b/knee/v1.1
+  - asct-b/liver/v1.1
+  - asct-b/lung/v1.2
+  - asct-b/lymph-node/v1.2
+  - asct-b/peripheral-nervous-system/v1.0
+  - asct-b/placenta-full-term/v1.0
+  - asct-b/prostate/v1.0
+  - asct-b/skin/v1.2
+  - asct-b/ureter/v1.0
+  - asct-b/urinary-bladder/v1.0
+  - asct-b/uterus/v1.1
+  - asct-b/vh-blood-pelvis/v1.3
+  - asct-b/vh-blood-vasculature/v1.3
+  - asct-b/vh-bonemarrow-pelvis/v1.3
+  - asct-b/vh-eye/v1.2
+  - asct-b/vh-heart/v1.2
+  - asct-b/vh-large-intestine/v1.3
+  - asct-b/vh-lymph-vasculature/v1.2
+  - asct-b/vh-ovary/v1.2
+  - asct-b/vh-pancreas/v1.2
+  - asct-b/vh-small-intestine/v1.1
+  - asct-b/vh-spleen/v1.3
+  - asct-b/vh-thymus/v1.3

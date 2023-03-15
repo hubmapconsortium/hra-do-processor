@@ -1,0 +1,3407 @@
+metadata:
+  type: asct-b
+  name: placenta-full-term
+  version: v1.0
+  title: >-
+    Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for
+    Placenta Full Term
+  description: >-
+    [Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B)
+    tables](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html)
+    aim to capture the nested *part_of* structure of anatomical human body
+    parts, the typology of cells, and biomarkers used to identify cell types.
+    The tables are authored and reviewed by an international team of experts.
+    The Placenta ASCT+B table represents terms related to the full term human
+    placenta. These include both macroscopic and microscopic anatomical
+    structures, major cell types, and protein and lipid biomarkers specific for
+    each cell type listed. This table was generated based on published placental
+    histopathologic nomenclature, as well as published literature on cell-type
+    specific biomarkers.  Most of the markers listed are observed in more than 1
+    study or orthogonally validated.  Note that these are predicted markers and
+    a single marker to annotate a cell type is not likely sufficient or
+    specific. Where more refined cell types are not available in the ontologies,
+    the closest general term is used. For example, there are likely multiple
+    types of placental stromal cells; however, further characterization is
+    needed to distinguish between these cell types. Where cells of similar type
+    occur in different locations, the closest and highest level of resolution
+    available is used. For example, vascular endothelial cells (CL0000071) occur
+    in multiple different contexts within the placenta, including the umbilical
+    vessels, chorionic plate vessels, chorionic stem villous vessels and
+    capillaries, and decidual vessels; similarly, vascular smooth muscle cells
+    (CL0000359) occur in umbilical vessels, chorionic plate vessels, and
+    chorionic stem villous vessels.
+  creators:
+    - fullName: Louise Laurent
+      firstName: Louise
+      lastName: Laurent
+      orcid: 0000-0002-2095-7534
+    - fullName: Mana Parast
+      firstName: Mana
+      lastName: Parast
+      orcid: 000-0001-5963-2246
+    - fullName: Kathleen Fisch
+      firstName: Kathleen
+      lastName: Fisch
+      orcid: 0000-0002-0117-7444
+  project_leads:
+    - fullName: Katy Börner
+      firstName: Katy
+      lastName: Börner
+      orcid: 0000-0002-3321-6137
+  reviewers:
+    - fullName: Drucilla Roberts
+      firstName: Drucilla
+      lastName: Roberts
+      orcid: 0000-0002-9104-6674
+  externalReviewers: []
+  creation_date: '2022-05-06'
+  license: >-
+    Creative Commons Attribution 4.0 International ([CC BY
+    4.0](https://creativecommons.org/licenses/by/4.0/))
+  publisher: HuBMAP
+  funders:
+    - funder: National Institutes of Health
+      awardNumber: OT2OD026671
+  hubmapId: HBM446.WGLG.755
+  doi: https://doi.org/10.48539/HBM446.WGLG.755
+  citation: >-
+    Louise Laurent; Mana Parast; Kathleen Fisch, HuBMAP ASCT+B Tables. Placenta
+    Full Term v1.0.
+    [https://doi.org/10.48539/HBM446.WGLG.755](https://doi.org/10.48539/HBM446.WGLG.755)
+  citationOverall: >-
+    Quardokus, Ellen, Bruce W. Herr II, Lisel Record, Katy Börner. 2022.
+    [*HuBMAP ASCT+B Tables*.](
+    https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html)
+    Accessed on May 6, 2022.
+  datatable:
+    - ASCT-B_VH_Placenta_Full_Term.csv
+data:
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002331
+        label: umbilical cord
+        preferred_name: umbilical cord
+      - id: http://purl.obolibrary.org/obo/UBERON_0002066
+        label: umbilical vein
+        preferred_name: umbilical vein
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000071
+        label: blood vessel endothelial cell
+        preferred_name: vascular endothelial cells
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12726
+        label: von Willebrand factor
+        preferred_name: VWF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12726
+        label: von Willebrand factor
+        preferred_name: VWF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: PMID:8804361
+        doi: PMID:8804361
+        pubmed_id: 'PMID: 8804361'
+      - id: doi:10.1155/2021/6662201
+        doi: doi:10.1155/2021/6662201
+        pubmed_id: 'doi: 10.1155/2021/6662201'
+      - id: doi:10.1093/humrep/dem265
+        doi: doi:10.1093/humrep/dem265
+        pubmed_id: 'doi: 10.1093/humrep/dem265'
+      - id: doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2
+        doi: doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2
+        pubmed_id: 'doi: 10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2'
+      - id: https://doi.org/10.1093/oxfordjournals.humrep.a136040
+        doi: 10.1093/oxfordjournals.humrep.a136040
+        pubmed_id: 'DOI: 10.1093/oxfordjournals.humrep.a136040'
+      - id: doi.org/10.1371/journal.pone.0169849
+        doi: doi.org/10.1371/journal.pone.0169849
+        pubmed_id: doi.org/10.1371/journal.pone.0169849
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002331
+        label: umbilical cord
+        preferred_name: umbilical cord
+      - id: http://purl.obolibrary.org/obo/UBERON_0002066
+        label: umbilical vein
+        preferred_name: umbilical vein
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000669
+        label: pericyte cell
+        preferred_name: pericytes
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8804
+        label: platelet derived growth factor receptor beta
+        preferred_name: PDGFRB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2466
+        label: chondroitin sulfate proteoglycan 4
+        preferred_name: CSPG4
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8804
+        label: platelet derived growth factor receptor beta
+        preferred_name: PDGFRB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2466
+        label: chondroitin sulfate proteoglycan 4
+        preferred_name: CSPG4
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/0014-4800(90)90037-e
+        doi: 10.1016/0014-4800(90)90037-e
+        pubmed_id: 'DOI: 10.1016/0014-4800(90)90037-e'
+      - id: https://doi.org/10.1007/s00441-003-0745-x
+        doi: 10.1007/s00441-003-0745-x
+        pubmed_id: 'DOI: 10.1007/s00441-003-0745-x'
+      - id: doi:10.1038/ng.2007.6.
+        doi: doi:10.1038/ng.2007.6.
+        pubmed_id: 'doi: 10.1038/ng.2007.6.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002331
+        label: umbilical cord
+        preferred_name: umbilical cord
+      - id: http://purl.obolibrary.org/obo/UBERON_0002066
+        label: umbilical vein
+        preferred_name: umbilical vein
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000359
+        label: vascular associated smooth muscle cell
+        preferred_name: vascular smooth muscle cells
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/0014-4800(90)90037-e
+        doi: 10.1016/0014-4800(90)90037-e
+        pubmed_id: 'DOI: 10.1016/0014-4800(90)90037-e'
+      - id: https://doi.org/10.1007/s00441-003-0745-x
+        doi: 10.1007/s00441-003-0745-x
+        pubmed_id: 'DOI: 10.1007/s00441-003-0745-x'
+      - id: doi:10.1038/ng.2007.6.
+        doi: doi:10.1038/ng.2007.6.
+        pubmed_id: 'doi: 10.1038/ng.2007.6.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002331
+        label: umbilical cord
+        preferred_name: umbilical cord
+      - id: http://purl.obolibrary.org/obo/UBERON_0001310
+        label: umbilical artery
+        preferred_name: umbilical arteries
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000071
+        label: blood vessel endothelial cell
+        preferred_name: vascular endothelial cells
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12726
+        label: von Willebrand factor
+        preferred_name: VWF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12726
+        label: von Willebrand factor
+        preferred_name: VWF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: PMID:8804361
+        doi: PMID:8804361
+        pubmed_id: 'PMID: 8804361'
+      - id: doi:10.1155/2021/6662201
+        doi: doi:10.1155/2021/6662201
+        pubmed_id: 'doi: 10.1155/2021/6662201'
+      - id: doi:10.1093/humrep/dem265
+        doi: doi:10.1093/humrep/dem265
+        pubmed_id: 'doi: 10.1093/humrep/dem265'
+      - id: doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2
+        doi: doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2
+        pubmed_id: 'doi: 10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2'
+      - id: https://doi.org/10.1093/oxfordjournals.humrep.a136040
+        doi: 10.1093/oxfordjournals.humrep.a136040
+        pubmed_id: 'DOI: 10.1093/oxfordjournals.humrep.a136040'
+      - id: doi.org/10.1371/journal.pone.0169849
+        doi: doi.org/10.1371/journal.pone.0169849
+        pubmed_id: doi.org/10.1371/journal.pone.0169849
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002331
+        label: umbilical cord
+        preferred_name: umbilical cord
+      - id: http://purl.obolibrary.org/obo/UBERON_0001310
+        label: umbilical artery
+        preferred_name: umbilical arteries
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000669
+        label: pericyte cell
+        preferred_name: pericytes
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8804
+        label: platelet derived growth factor receptor beta
+        preferred_name: PDGFRB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2466
+        label: chondroitin sulfate proteoglycan 4
+        preferred_name: CSPG4
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8804
+        label: platelet derived growth factor receptor beta
+        preferred_name: PDGFRB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2466
+        label: chondroitin sulfate proteoglycan 4
+        preferred_name: CSPG4
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/0014-4800(90)90037-e
+        doi: 10.1016/0014-4800(90)90037-e
+        pubmed_id: 'DOI: 10.1016/0014-4800(90)90037-e'
+      - id: https://doi.org/10.1007/s00441-003-0745-x
+        doi: 10.1007/s00441-003-0745-x
+        pubmed_id: 'DOI: 10.1007/s00441-003-0745-x'
+      - id: doi:10.1038/ng.2007.6.
+        doi: doi:10.1038/ng.2007.6.
+        pubmed_id: 'doi: 10.1038/ng.2007.6.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002331
+        label: umbilical cord
+        preferred_name: umbilical cord
+      - id: http://purl.obolibrary.org/obo/UBERON_0001310
+        label: umbilical artery
+        preferred_name: umbilical arteries
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000359
+        label: vascular associated smooth muscle cell
+        preferred_name: vascular smooth muscle cells
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/0014-4800(90)90037-e
+        doi: 10.1016/0014-4800(90)90037-e
+        pubmed_id: 'DOI: 10.1016/0014-4800(90)90037-e'
+      - id: https://doi.org/10.1007/s00441-003-0745-x
+        doi: 10.1007/s00441-003-0745-x
+        pubmed_id: 'DOI: 10.1007/s00441-003-0745-x'
+      - id: doi:10.1038/ng.2007.6.
+        doi: doi:10.1038/ng.2007.6.
+        pubmed_id: 'doi: 10.1038/ng.2007.6.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002331
+        label: umbilical cord
+        preferred_name: umbilical cord
+      - id: http://purl.obolibrary.org/obo/UBERON_0003422
+        label: mesenchyme of umbilical cord
+        preferred_name: mesenchyme of umbilical cord (Wharton's jelly)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002568
+        label: mesenchymal stem cell of Wharton's jelly
+        preferred_name: mesenchymal stromal cell of Wharton's jelly
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8021
+        label: 5'-nucleotidase ecto
+        preferred_name: NT5E
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8021
+        label: 5'-nucleotidase ecto
+        preferred_name: NT5E
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi:10.3390/cells1041061
+        doi: doi:10.3390/cells1041061
+        pubmed_id: 'doi: 10.3390/cells1041061'
+      - id: doi:10.1016/j.jcyt.2017.03.001
+        doi: doi:10.1016/j.jcyt.2017.03.001
+        pubmed_id: 'doi: 10.1016/j.jcyt.2017.03.001'
+      - id: doi:10.1186/s13287-017-0757-1
+        doi: doi:10.1186/s13287-017-0757-1
+        pubmed_id: 'doi: 10.1186/s13287-017-0757-1'
+      - id: https://doi.org/10.1095/biolreprod51.4.739
+        doi: 10.1095/biolreprod51.4.739
+        pubmed_id: 'DOI: 10.1095/biolreprod51.4.739'
+      - id: https://doi.org/10.1095/biolreprod.108.075226
+        doi: 10.1095/biolreprod.108.075226
+        pubmed_id: 'DOI: 10.1095/biolreprod.108.075226'
+      - id: doi.org/10.1182/blood.V74.2.751.751
+        doi: doi.org/10.1182/blood.V74.2.751.751
+        pubmed_id: doi.org/10.1182/blood.V74.2.751.751
+      - id: doi:10.5966/sctm.2015-0022
+        doi: doi:10.5966/sctm.2015-0022
+        pubmed_id: 'doi: 10.5966/sctm.2015-0022'
+      - id: doi:10.3346/jkms.2012.27.8.857
+        doi: doi:10.3346/jkms.2012.27.8.857
+        pubmed_id: 'doi: 10.3346/jkms.2012.27.8.857'
+      - id: https://doi.org/10.1093/humrep/den051
+        doi: 10.1093/humrep/den051
+        pubmed_id: 'DOI: 10.1093/humrep/den051'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0008036
+        label: extravillous trophoblast
+        preferred_name: extravillous trophoblast (interstitial)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4964
+        label: major histocompatibility complex, class I, G
+        preferred_name: HLAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19254
+        label: placenta associated 8
+        preferred_name: PLAC8
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/4964
+        label: major histocompatibility complex, class I, G
+        preferred_name: HLAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19254
+        label: placenta associated 8
+        preferred_name: PLAC8
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi.org/10.1016/0198-8859(93)90138-Q
+        doi: doi.org/10.1016/0198-8859(93)90138-Q
+        pubmed_id: doi.org/10.1016/0198-8859(93)90138-Q
+      - id: https://doi.org/10.1016/j.jim.2003.03.001
+        doi: 10.1016/j.jim.2003.03.001
+        pubmed_id: 'DOI: 10.1016/j.jim.2003.03.001'
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi.org/10.1095/biolreprod.106.055244
+        doi: doi.org/10.1095/biolreprod.106.055244
+        pubmed_id: doi.org/10.1095/biolreprod.106.055244
+      - id: PMID:8804361
+        doi: PMID:8804361
+        pubmed_id: 'PMID: 8804361'
+      - id: doi:10.1155/2021/6662201
+        doi: doi:10.1155/2021/6662201
+        pubmed_id: 'doi: 10.1155/2021/6662201'
+      - id: doi:10.1093/humrep/dem265
+        doi: doi:10.1093/humrep/dem265
+        pubmed_id: 'doi: 10.1093/humrep/dem265'
+      - id: https://doi.org/10.1242/dev.148932
+        doi: 10.1242/dev.148932
+        pubmed_id: 'DOI: 10.1242/dev.148932'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002331
+        label: umbilical cord
+        preferred_name: umbilical cord
+      - id: http://purl.obolibrary.org/obo/UBERON_0000305
+        label: amnion
+        preferred_name: amnion
+      - id: http://purl.obolibrary.org/obo/UBERON_0003254
+        label: amnion epithelium
+        preferred_name: amniotic ectoderm
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002536
+        label: epithelial cell of amnion
+        preferred_name: amnion epithelial cell (AEC)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9221
+        label: POU class 5 homeobox 1
+        preferred_name: POU5F1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11195
+        label: SRY-box transcription factor 2
+        preferred_name: SOX2
+        biomarker_type: gene
+      - id: LM:LMSP0502AE00
+        label: Stage-specific embryonic antigen-3
+        preferred_name: SSEA3
+        biomarker_type: lipids
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9221
+        label: POU class 5 homeobox 1
+        preferred_name: POU5F1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11195
+        label: SRY-box transcription factor 2
+        preferred_name: SOX2
+        biomarker_type: gene
+    biomarkers_lipids:
+      - id: LM:LMSP0502AE00
+        label: Stage-specific embryonic antigen-3
+        preferred_name: SSEA3
+        biomarker_type: lipids
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/j.jim.2003.03.001
+        doi: 10.1016/j.jim.2003.03.001
+        pubmed_id: 'DOI: 10.1016/j.jim.2003.03.001'
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi.org/10.1095/biolreprod.106.055244
+        doi: doi.org/10.1095/biolreprod.106.055244
+        pubmed_id: doi.org/10.1095/biolreprod.106.055244
+      - id: doi:10.1016/j.jri.2009.02.007
+        doi: doi:10.1016/j.jri.2009.02.007
+        pubmed_id: 'doi: 10.1016/j.jri.2009.02.007'
+      - id: doi:10.1371/journal.pone.0146082
+        doi: doi:10.1371/journal.pone.0146082
+        pubmed_id: doi:10.1371/journal.pone.0146082
+      - id: doi:10.17772/gp/1673
+        doi: doi:10.17772/gp/1673
+        pubmed_id: doi:10.17772/gp/1673
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002331
+        label: umbilical cord
+        preferred_name: umbilical cord
+      - id: http://purl.obolibrary.org/obo/UBERON_0000305
+        label: amnion
+        preferred_name: amnion
+      - id: http://purl.obolibrary.org/obo/UBERON_0003262
+        label: amniotic mesoderm
+        preferred_name: amniotic mesoderm
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8021
+        label: 5'-nucleotidase ecto
+        preferred_name: NT5E
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8021
+        label: 5'-nucleotidase ecto
+        preferred_name: NT5E
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi:10.3390/cells1041061
+        doi: doi:10.3390/cells1041061
+        pubmed_id: 'doi: 10.3390/cells1041061'
+      - id: doi:10.1016/j.jcyt.2017.03.001
+        doi: doi:10.1016/j.jcyt.2017.03.001
+        pubmed_id: 'doi: 10.1016/j.jcyt.2017.03.001'
+      - id: doi:10.1186/s13287-017-0757-1
+        doi: doi:10.1186/s13287-017-0757-1
+        pubmed_id: 'doi: 10.1186/s13287-017-0757-1'
+      - id: https://doi.org/10.1095/biolreprod51.4.739
+        doi: 10.1095/biolreprod51.4.739
+        pubmed_id: 'DOI: 10.1095/biolreprod51.4.739'
+      - id: https://doi.org/10.1095/biolreprod.108.075226
+        doi: 10.1095/biolreprod.108.075226
+        pubmed_id: 'DOI: 10.1095/biolreprod.108.075226'
+      - id: doi.org/10.1182/blood.V74.2.751.751
+        doi: doi.org/10.1182/blood.V74.2.751.751
+        pubmed_id: doi.org/10.1182/blood.V74.2.751.751
+      - id: doi:10.5966/sctm.2015-0022
+        doi: doi:10.5966/sctm.2015-0022
+        pubmed_id: 'doi: 10.5966/sctm.2015-0022'
+      - id: doi:10.3346/jkms.2012.27.8.857
+        doi: doi:10.3346/jkms.2012.27.8.857
+        pubmed_id: 'doi: 10.3346/jkms.2012.27.8.857'
+      - id: https://doi.org/10.1093/humrep/den051
+        doi: 10.1093/humrep/den051
+        pubmed_id: 'DOI: 10.1093/humrep/den051'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0004027
+        label: chorionic plate
+        preferred_name: chorionic plate
+      - id: http://purl.obolibrary.org/obo/UBERON_0003254
+        label: amnion epithelium
+        preferred_name: amniotic ectoderm
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002536
+        label: epithelial cell of amnion
+        preferred_name: amnion epithelial cell (AEC)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9221
+        label: POU class 5 homeobox 1
+        preferred_name: POU5F1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11195
+        label: SRY-box transcription factor 2
+        preferred_name: SOX2
+        biomarker_type: gene
+      - id: LM:LMSP0502AE00
+        label: Stage-specific embryonic antigen-3
+        preferred_name: SSEA3
+        biomarker_type: lipids
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9221
+        label: POU class 5 homeobox 1
+        preferred_name: POU5F1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11195
+        label: SRY-box transcription factor 2
+        preferred_name: SOX2
+        biomarker_type: gene
+    biomarkers_lipids:
+      - id: LM:LMSP0502AE00
+        label: Stage-specific embryonic antigen-3
+        preferred_name: SSEA3
+        biomarker_type: lipids
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/j.jim.2003.03.001
+        doi: 10.1016/j.jim.2003.03.001
+        pubmed_id: 'DOI: 10.1016/j.jim.2003.03.001'
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi.org/10.1095/biolreprod.106.055244
+        doi: doi.org/10.1095/biolreprod.106.055244
+        pubmed_id: doi.org/10.1095/biolreprod.106.055244
+      - id: doi:10.1016/j.jri.2009.02.007
+        doi: doi:10.1016/j.jri.2009.02.007
+        pubmed_id: 'doi: 10.1016/j.jri.2009.02.007'
+      - id: doi:10.1371/journal.pone.0146082
+        doi: doi:10.1371/journal.pone.0146082
+        pubmed_id: doi:10.1371/journal.pone.0146082
+      - id: doi:10.17772/gp/1673
+        doi: doi:10.17772/gp/1673
+        pubmed_id: doi:10.17772/gp/1673
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0004027
+        label: chorionic plate
+        preferred_name: chorionic plate
+      - id: http://purl.obolibrary.org/obo/UBERON_0003262
+        label: amniotic mesoderm
+        preferred_name: amniotic mesoderm
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8021
+        label: 5'-nucleotidase ecto
+        preferred_name: NT5E
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8021
+        label: 5'-nucleotidase ecto
+        preferred_name: NT5E
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi:10.3390/cells1041061
+        doi: doi:10.3390/cells1041061
+        pubmed_id: 'doi: 10.3390/cells1041061'
+      - id: doi:10.1016/j.jcyt.2017.03.001
+        doi: doi:10.1016/j.jcyt.2017.03.001
+        pubmed_id: 'doi: 10.1016/j.jcyt.2017.03.001'
+      - id: doi:10.1186/s13287-017-0757-1
+        doi: doi:10.1186/s13287-017-0757-1
+        pubmed_id: 'doi: 10.1186/s13287-017-0757-1'
+      - id: https://doi.org/10.1095/biolreprod51.4.739
+        doi: 10.1095/biolreprod51.4.739
+        pubmed_id: 'DOI: 10.1095/biolreprod51.4.739'
+      - id: https://doi.org/10.1095/biolreprod.108.075226
+        doi: 10.1095/biolreprod.108.075226
+        pubmed_id: 'DOI: 10.1095/biolreprod.108.075226'
+      - id: doi.org/10.1182/blood.V74.2.751.751
+        doi: doi.org/10.1182/blood.V74.2.751.751
+        pubmed_id: doi.org/10.1182/blood.V74.2.751.751
+      - id: doi:10.5966/sctm.2015-0022
+        doi: doi:10.5966/sctm.2015-0022
+        pubmed_id: 'doi: 10.5966/sctm.2015-0022'
+      - id: doi:10.3346/jkms.2012.27.8.857
+        doi: doi:10.3346/jkms.2012.27.8.857
+        pubmed_id: 'doi: 10.3346/jkms.2012.27.8.857'
+      - id: https://doi.org/10.1093/humrep/den051
+        doi: 10.1093/humrep/den051
+        pubmed_id: 'DOI: 10.1093/humrep/den051'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0003124
+        label: chorion membrane
+        preferred_name: chorion membrane
+      - id: http://purl.obolibrary.org/obo/UBERON_0003265
+        label: chorionic mesenchyme
+        preferred_name: chorionic mesoderm
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8021
+        label: 5'-nucleotidase ecto
+        preferred_name: NT5E
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7656
+        label: neural cell adhesion molecule 1
+        preferred_name: NCAM1
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8021
+        label: 5'-nucleotidase ecto
+        preferred_name: NT5E
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7656
+        label: neural cell adhesion molecule 1
+        preferred_name: NCAM1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi:10.3390/cells1041061
+        doi: doi:10.3390/cells1041061
+        pubmed_id: 'doi: 10.3390/cells1041061'
+      - id: doi:10.1016/j.jcyt.2017.03.001
+        doi: doi:10.1016/j.jcyt.2017.03.001
+        pubmed_id: 'doi: 10.1016/j.jcyt.2017.03.001'
+      - id: doi:10.1186/s13287-017-0757-1
+        doi: doi:10.1186/s13287-017-0757-1
+        pubmed_id: 'doi: 10.1186/s13287-017-0757-1'
+      - id: https://doi.org/10.1095/biolreprod51.4.739
+        doi: 10.1095/biolreprod51.4.739
+        pubmed_id: 'DOI: 10.1095/biolreprod51.4.739'
+      - id: https://doi.org/10.1095/biolreprod.108.075226
+        doi: 10.1095/biolreprod.108.075226
+        pubmed_id: 'DOI: 10.1095/biolreprod.108.075226'
+      - id: doi.org/10.1182/blood.V74.2.751.751
+        doi: doi.org/10.1182/blood.V74.2.751.751
+        pubmed_id: doi.org/10.1182/blood.V74.2.751.751
+      - id: doi:10.5966/sctm.2015-0022
+        doi: doi:10.5966/sctm.2015-0022
+        pubmed_id: 'doi: 10.5966/sctm.2015-0022'
+      - id: doi:10.3346/jkms.2012.27.8.857
+        doi: doi:10.3346/jkms.2012.27.8.857
+        pubmed_id: 'doi: 10.3346/jkms.2012.27.8.857'
+      - id: https://doi.org/10.1093/humrep/den051
+        doi: 10.1093/humrep/den051
+        pubmed_id: 'DOI: 10.1093/humrep/den051'
+      - id: PMID:1697563
+        doi: PMID:1697563
+        pubmed_id: 'PMID: 1697563'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0003124
+        label: chorion membrane
+        preferred_name: chorion membrane
+      - id: http://purl.obolibrary.org/obo/UBERON_0000088
+        label: trophoblast
+        preferred_name: chorionic ectoderm (from chorion membrane)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000523
+        label: cytotrophoblast
+        preferred_name: cytotrophoblast (CTB)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3236
+        label: epidermal growth factor receptor
+        preferred_name: EGFR
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/15979
+        label: tumor protein p63
+        preferred_name: TP63
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3236
+        label: epidermal growth factor receptor
+        preferred_name: EGFR
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/15979
+        label: tumor protein p63
+        preferred_name: TP63
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi.org/10.1016/S0143-4004(05)80438-2
+        doi: doi.org/10.1016/S0143-4004(05)80438-2
+        pubmed_id: doi.org/10.1016/S0143-4004(05)80438-2
+      - id: doi:10.1016/j.ajpath.2014.08.006
+        doi: doi:10.1016/j.ajpath.2014.08.006
+        pubmed_id: 'doi: 10.1016/j.ajpath.2014.08.006'
+      - id: https://doi.org/10.1016/j.jim.2003.03.001
+        doi: 10.1016/j.jim.2003.03.001
+        pubmed_id: 'DOI: 10.1016/j.jim.2003.03.001'
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi.org/10.1095/biolreprod.106.055244
+        doi: doi.org/10.1095/biolreprod.106.055244
+        pubmed_id: doi.org/10.1095/biolreprod.106.055244
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0003124
+        label: chorion membrane
+        preferred_name: chorion membrane
+      - id: http://purl.obolibrary.org/obo/UBERON_0000088
+        label: trophoblast
+        preferred_name: chorionic ectoderm (from chorion membrane)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0008036
+        label: extravillous trophoblast
+        preferred_name: extravillous trophoblast (EVT)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4964
+        label: major histocompatibility complex, class I, G
+        preferred_name: HLAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19254
+        label: placenta associated 8
+        preferred_name: PLAC8
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/4964
+        label: major histocompatibility complex, class I, G
+        preferred_name: HLAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19254
+        label: placenta associated 8
+        preferred_name: PLAC8
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi.org/10.1016/0198-8859(93)90138-Q
+        doi: doi.org/10.1016/0198-8859(93)90138-Q
+        pubmed_id: doi.org/10.1016/0198-8859(93)90138-Q
+      - id: https://doi.org/10.1016/j.jim.2003.03.001
+        doi: 10.1016/j.jim.2003.03.001
+        pubmed_id: 'DOI: 10.1016/j.jim.2003.03.001'
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi.org/10.1095/biolreprod.106.055244
+        doi: doi.org/10.1095/biolreprod.106.055244
+        pubmed_id: doi.org/10.1095/biolreprod.106.055244
+      - id: PMID:8804361
+        doi: PMID:8804361
+        pubmed_id: 'PMID: 8804361'
+      - id: doi:10.1155/2021/6662201
+        doi: doi:10.1155/2021/6662201
+        pubmed_id: 'doi: 10.1155/2021/6662201'
+      - id: doi:10.1093/humrep/dem265
+        doi: doi:10.1093/humrep/dem265
+        pubmed_id: 'doi: 10.1093/humrep/dem265'
+      - id: https://doi.org/10.1242/dev.148932
+        doi: 10.1242/dev.148932
+        pubmed_id: 'DOI: 10.1242/dev.148932'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0002451
+        label: endometrial gland
+        preferred_name: endometrial gland
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6427
+        label: keratin 18
+        preferred_name: KRT18
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6436
+        label: keratin 19
+        preferred_name: KRT19
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11529
+        label: epithelial cell adhesion molecule
+        preferred_name: EPCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4015
+        label: Fucosyltransferase 4
+        preferred_name: FUT4
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6427
+        label: keratin 18
+        preferred_name: KRT18
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6436
+        label: keratin 19
+        preferred_name: KRT19
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11529
+        label: epithelial cell adhesion molecule
+        preferred_name: EPCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4015
+        label: Fucosyltransferase 4
+        preferred_name: FUT4
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1177/1933719118756745
+        doi: 10.1177/1933719118756745
+        pubmed_id: 'DOI: 10.1177/1933719118756745'
+      - id: doi:10.1186/s13287-018-0962-6
+        doi: doi:10.1186/s13287-018-0962-6
+        pubmed_id: 'doi: 10.1186/s13287-018-0962-6'
+      - id: https://doi.org/10.1093/humrep/det285
+        doi: 10.1093/humrep/det285
+        pubmed_id: 'DOI: 10.1093/humrep/det285'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0002337
+        label: endometrial stroma
+        preferred_name: endometrial stroma
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002255
+        label: stromal cell of endometrium
+        preferred_name: endometrial stromal cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7154
+        label: membrane metalloendopeptidase
+        preferred_name: MME
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7154
+        label: membrane metalloendopeptidase
+        preferred_name: MME
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi:10.3390/cells1041061
+        doi: doi:10.3390/cells1041061
+        pubmed_id: 'doi: 10.3390/cells1041061'
+      - id: doi:10.1016/j.jcyt.2017.03.001
+        doi: doi:10.1016/j.jcyt.2017.03.001
+        pubmed_id: 'doi: 10.1016/j.jcyt.2017.03.001'
+      - id: doi:10.1186/s13287-017-0757-1
+        doi: doi:10.1186/s13287-017-0757-1
+        pubmed_id: 'doi: 10.1186/s13287-017-0757-1'
+      - id: https://doi.org/10.1095/biolreprod51.4.739
+        doi: 10.1095/biolreprod51.4.739
+        pubmed_id: 'DOI: 10.1095/biolreprod51.4.739'
+      - id: https://doi.org/10.1095/biolreprod.108.075226
+        doi: 10.1095/biolreprod.108.075226
+        pubmed_id: 'DOI: 10.1095/biolreprod.108.075226'
+      - id: doi.org/10.1182/blood.V74.2.751.751
+        doi: doi.org/10.1182/blood.V74.2.751.751
+        pubmed_id: doi.org/10.1182/blood.V74.2.751.751
+      - id: doi:10.5966/sctm.2015-0022
+        doi: doi:10.5966/sctm.2015-0022
+        pubmed_id: 'doi: 10.5966/sctm.2015-0022'
+      - id: doi:10.3346/jkms.2012.27.8.857
+        doi: doi:10.3346/jkms.2012.27.8.857
+        pubmed_id: 'doi: 10.3346/jkms.2012.27.8.857'
+      - id: https://doi.org/10.1093/humrep/den051
+        doi: 10.1093/humrep/den051
+        pubmed_id: 'DOI: 10.1093/humrep/den051'
+      - id: doi:10.1016/s1472-6483(10)61745-2
+        doi: doi:10.1016/s1472-6483(10)61745-2
+        pubmed_id: 'doi: 10.1016/s1472-6483(10)61745-2'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0002337
+        label: endometrial stroma
+        preferred_name: endometrial stroma
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/7656
+        label: neural cell adhesion molecule 1
+        preferred_name: NCAM1
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/7656
+        label: neural cell adhesion molecule 1
+        preferred_name: NCAM1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi:10.5966/sctm.2015-0022
+        doi: doi:10.5966/sctm.2015-0022
+        pubmed_id: 'doi: 10.5966/sctm.2015-0022'
+      - id: doi:10.1016/j.jcyt.2017.03.001
+        doi: doi:10.1016/j.jcyt.2017.03.001
+        pubmed_id: 'doi: 10.1016/j.jcyt.2017.03.001'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0002337
+        label: endometrial stroma
+        preferred_name: endometrial stroma
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1693
+        label: CD68 molecule
+        preferred_name: CD68
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6152
+        label: integrin subunit alpha X
+        preferred_name: ITGAX
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1641
+        label: CD209 molecule
+        preferred_name: CD209
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7228
+        label: mannose receptor C-type 1
+        preferred_name: MRC1
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1693
+        label: CD68 molecule
+        preferred_name: CD68
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6152
+        label: integrin subunit alpha X
+        preferred_name: ITGAX
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1641
+        label: CD209 molecule
+        preferred_name: CD209
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7228
+        label: mannose receptor C-type 1
+        preferred_name: MRC1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi:10.1038/s41423-018-0008-0
+        doi: doi:10.1038/s41423-018-0008-0
+        pubmed_id: 'doi: 10.1038/s41423-018-0008-0'
+      - id: doi:10.1371/journal.pone.0002078
+        doi: doi:10.1371/journal.pone.0002078
+        pubmed_id: 'doi: 10.1371/journal.pone.0002078'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0002337
+        label: endometrial stroma
+        preferred_name: endometrial stroma
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000815
+        label: regulatory T cell
+        preferred_name: regulatory T cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6106
+        label: forkhead box P3
+        preferred_name: FOXP3
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6106
+        label: forkhead box P3
+        preferred_name: FOXP3
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1038/ni904
+        doi: 10.1038/ni904
+        pubmed_id: 'DOI: 10.1038/ni904'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0002337
+        label: endometrial stroma
+        preferred_name: endometrial stroma
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000910
+        label: cytotoxic T cell
+        preferred_name: cytotoxic T cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8a molecule
+        preferred_name: CD8A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1653
+        label: CD28 molecule
+        preferred_name: CD28
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8a molecule
+        preferred_name: CD8A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1653
+        label: CD28 molecule
+        preferred_name: CD28
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: PMID:1672332
+        doi: PMID:1672332
+        pubmed_id: 'PMID: 1672332'
+      - id: PMID:7579453
+        doi: PMID:7579453
+        pubmed_id: 'PMID: 7579453'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0002337
+        label: endometrial stroma
+        preferred_name: endometrial stroma
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000236
+        label: B cell
+        preferred_name: B cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10658
+        label: syndecan 1
+        preferred_name: SDC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4947
+        label: Major Histocompatibility Complex, Class II, DR Alpha
+        preferred_name: HLA-DRA
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10658
+        label: syndecan 1
+        preferred_name: SDC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4947
+        label: Major Histocompatibility Complex, Class II, DR Alpha
+        preferred_name: HLA-DRA
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi:10.3390/cells1041061
+        doi: doi:10.3390/cells1041061
+        pubmed_id: 'doi: 10.3390/cells1041061'
+      - id: doi:10.1016/j.jcyt.2017.03.001
+        doi: doi:10.1016/j.jcyt.2017.03.001
+        pubmed_id: 'doi: 10.1016/j.jcyt.2017.03.001'
+      - id: doi:10.1186/s13287-017-0757-1
+        doi: doi:10.1186/s13287-017-0757-1
+        pubmed_id: 'doi: 10.1186/s13287-017-0757-1'
+      - id: https://doi.org/10.1095/biolreprod51.4.739
+        doi: 10.1095/biolreprod51.4.739
+        pubmed_id: 'DOI: 10.1095/biolreprod51.4.739'
+      - id: https://doi.org/10.1095/biolreprod.108.075226
+        doi: 10.1095/biolreprod.108.075226
+        pubmed_id: 'DOI: 10.1095/biolreprod.108.075226'
+      - id: doi.org/10.1182/blood.V74.2.751.751
+        doi: doi.org/10.1182/blood.V74.2.751.751
+        pubmed_id: doi.org/10.1182/blood.V74.2.751.751
+      - id: doi:10.1091/mbc.1.1.27
+        doi: doi:10.1091/mbc.1.1.27
+        pubmed_id: 'doi: 10.1091/mbc.1.1.27'
+      - id: doi:10.1093/intimm/7.7.1087
+        doi: doi:10.1093/intimm/7.7.1087
+        pubmed_id: doi:10.1093/intimm/7.7.1087
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0015172
+        label: endometrial blood vessel
+        preferred_name: decidual blood vessel
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_2000091
+        label: endometrial microvascular endothelial cells
+        preferred_name: endometrial microvascular endothelial cell (EMEC)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12726
+        label: von Willebrand factor
+        preferred_name: VWF
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12726
+        label: von Willebrand factor
+        preferred_name: VWF
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: PMID:8804361
+        doi: PMID:8804361
+        pubmed_id: 'PMID: 8804361'
+      - id: doi:10.1155/2021/6662201
+        doi: doi:10.1155/2021/6662201
+        pubmed_id: 'doi: 10.1155/2021/6662201'
+      - id: doi:10.1093/humrep/dem265
+        doi: doi:10.1093/humrep/dem265
+        pubmed_id: 'doi: 10.1093/humrep/dem265'
+      - id: doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2
+        doi: doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2
+        pubmed_id: 'doi: 10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2'
+      - id: https://doi.org/10.1093/oxfordjournals.humrep.a136040
+        doi: 10.1093/oxfordjournals.humrep.a136040
+        pubmed_id: 'DOI: 10.1093/oxfordjournals.humrep.a136040'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0015172
+        label: endometrial blood vessel
+        preferred_name: decidual blood vessel
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0008036
+        label: extravillous trophoblast
+        preferred_name: extravillous trophoblast (endovascular)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4964
+        label: major histocompatibility complex, class I, G
+        preferred_name: HLAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1764
+        label: cadherin 5
+        preferred_name: CDH5
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/4964
+        label: major histocompatibility complex, class I, G
+        preferred_name: HLAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1764
+        label: cadherin 5
+        preferred_name: CDH5
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi.org/10.1016/0198-8859(93)90138-Q
+        doi: doi.org/10.1016/0198-8859(93)90138-Q
+        pubmed_id: doi.org/10.1016/0198-8859(93)90138-Q
+      - id: https://doi.org/10.1016/j.jim.2003.03.001
+        doi: 10.1016/j.jim.2003.03.001
+        pubmed_id: 'DOI: 10.1016/j.jim.2003.03.001'
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi.org/10.1095/biolreprod.106.055244
+        doi: doi.org/10.1095/biolreprod.106.055244
+        pubmed_id: doi.org/10.1095/biolreprod.106.055244
+      - id: PMID:8804361
+        doi: PMID:8804361
+        pubmed_id: 'PMID: 8804361'
+      - id: doi:10.1155/2021/6662201
+        doi: doi:10.1155/2021/6662201
+        pubmed_id: 'doi: 10.1155/2021/6662201'
+      - id: doi:10.1093/humrep/dem265
+        doi: doi:10.1093/humrep/dem265
+        pubmed_id: 'doi: 10.1093/humrep/dem265'
+      - id: doi:10.1172/JCI119387
+        doi: doi:10.1172/JCI119387
+        pubmed_id: 'doi: 10.1172/JCI119387'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/29602
+        label: podoplanin
+        preferred_name: PDPN
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/29602
+        label: podoplanin
+        preferred_name: PDPN
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi.org/10.1371/journal.pone.0169849
+        doi: doi.org/10.1371/journal.pone.0169849
+        pubmed_id: doi.org/10.1371/journal.pone.0169849
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0000305
+        label: amnion
+        preferred_name: amnion
+      - id: http://purl.obolibrary.org/obo/UBERON_0003254
+        label: amnion epithelium
+        preferred_name: amniotic ectoderm
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002536
+        label: epithelial cell of amnion
+        preferred_name: amnion epithelial cell (AEC)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9221
+        label: POU class 5 homeobox 1
+        preferred_name: POU5F1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11195
+        label: SRY-box transcription factor 2
+        preferred_name: SOX2
+        biomarker_type: gene
+      - id: LM:LMSP0502AE00
+        label: Stage-specific embryonic antigen-3
+        preferred_name: SSEA3
+        biomarker_type: lipids
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9221
+        label: POU class 5 homeobox 1
+        preferred_name: POU5F1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11195
+        label: SRY-box transcription factor 2
+        preferred_name: SOX2
+        biomarker_type: gene
+    biomarkers_lipids:
+      - id: LM:LMSP0502AE00
+        label: Stage-specific embryonic antigen-3
+        preferred_name: SSEA3
+        biomarker_type: lipids
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/j.jim.2003.03.001
+        doi: 10.1016/j.jim.2003.03.001
+        pubmed_id: 'DOI: 10.1016/j.jim.2003.03.001'
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi.org/10.1095/biolreprod.106.055244
+        doi: doi.org/10.1095/biolreprod.106.055244
+        pubmed_id: doi.org/10.1095/biolreprod.106.055244
+      - id: doi:10.1016/j.jri.2009.02.007
+        doi: doi:10.1016/j.jri.2009.02.007
+        pubmed_id: 'doi: 10.1016/j.jri.2009.02.007'
+      - id: doi:10.1371/journal.pone.0146082
+        doi: doi:10.1371/journal.pone.0146082
+        pubmed_id: doi:10.1371/journal.pone.0146082
+      - id: doi:10.17772/gp/1673
+        doi: doi:10.17772/gp/1673
+        pubmed_id: doi:10.17772/gp/1673
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0000305
+        label: amnion
+        preferred_name: amnion
+      - id: http://purl.obolibrary.org/obo/UBERON_0003262
+        label: amniotic mesoderm
+        preferred_name: amniotic mesoderm
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8021
+        label: 5'-nucleotidase ecto
+        preferred_name: NT5E
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8021
+        label: 5'-nucleotidase ecto
+        preferred_name: NT5E
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi:10.3390/cells1041061
+        doi: doi:10.3390/cells1041061
+        pubmed_id: 'doi: 10.3390/cells1041061'
+      - id: doi:10.1016/j.jcyt.2017.03.001
+        doi: doi:10.1016/j.jcyt.2017.03.001
+        pubmed_id: 'doi: 10.1016/j.jcyt.2017.03.001'
+      - id: doi:10.1186/s13287-017-0757-1
+        doi: doi:10.1186/s13287-017-0757-1
+        pubmed_id: 'doi: 10.1186/s13287-017-0757-1'
+      - id: https://doi.org/10.1095/biolreprod51.4.739
+        doi: 10.1095/biolreprod51.4.739
+        pubmed_id: 'DOI: 10.1095/biolreprod51.4.739'
+      - id: https://doi.org/10.1095/biolreprod.108.075226
+        doi: 10.1095/biolreprod.108.075226
+        pubmed_id: 'DOI: 10.1095/biolreprod.108.075226'
+      - id: doi.org/10.1182/blood.V74.2.751.751
+        doi: doi.org/10.1182/blood.V74.2.751.751
+        pubmed_id: doi.org/10.1182/blood.V74.2.751.751
+      - id: doi:10.5966/sctm.2015-0022
+        doi: doi:10.5966/sctm.2015-0022
+        pubmed_id: 'doi: 10.5966/sctm.2015-0022'
+      - id: doi:10.3346/jkms.2012.27.8.857
+        doi: doi:10.3346/jkms.2012.27.8.857
+        pubmed_id: 'doi: 10.3346/jkms.2012.27.8.857'
+      - id: https://doi.org/10.1093/humrep/den051
+        doi: 10.1093/humrep/den051
+        pubmed_id: 'DOI: 10.1093/humrep/den051'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0004027
+        label: chorionic plate
+        preferred_name: chorionic plate
+      - id: http://purl.obolibrary.org/obo/UBERON_0000088
+        label: trophoblast
+        preferred_name: chorionic ectoderm (from chorionic plate)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000523
+        label: cytotrophoblast
+        preferred_name: cytotrophoblast (CTB)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3236
+        label: epidermal growth factor receptor
+        preferred_name: EGFR
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/15979
+        label: tumor protein p63
+        preferred_name: TP63
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3236
+        label: epidermal growth factor receptor
+        preferred_name: EGFR
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/15979
+        label: tumor protein p63
+        preferred_name: TP63
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi.org/10.1016/S0143-4004(05)80438-2
+        doi: doi.org/10.1016/S0143-4004(05)80438-2
+        pubmed_id: doi.org/10.1016/S0143-4004(05)80438-2
+      - id: doi:10.1016/j.ajpath.2014.08.006
+        doi: doi:10.1016/j.ajpath.2014.08.006
+        pubmed_id: 'doi: 10.1016/j.ajpath.2014.08.006'
+      - id: https://doi.org/10.1016/j.jim.2003.03.001
+        doi: 10.1016/j.jim.2003.03.001
+        pubmed_id: 'DOI: 10.1016/j.jim.2003.03.001'
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi.org/10.1095/biolreprod.106.055244
+        doi: doi.org/10.1095/biolreprod.106.055244
+        pubmed_id: doi.org/10.1095/biolreprod.106.055244
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0004027
+        label: chorionic plate
+        preferred_name: chorionic plate
+      - id: http://purl.obolibrary.org/obo/UBERON_0000088
+        label: trophoblast
+        preferred_name: chorionic ectoderm (from chorionic plate)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000525
+        label: syncytiotrophoblast
+        preferred_name: syncytiotrophoblast (STB)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1886
+        label: chorionic gonadotropin subunit beta 3
+        preferred_name: CGB3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2440
+        label: chorionic somatomammotropin hormone 1
+        preferred_name: CSH1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9521
+        label: pregnancy specific beta-1-glycoprotein 4
+        preferred_name: PSG4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3236
+        label: epidermal growth factor receptor
+        preferred_name: EGFR
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1886
+        label: chorionic gonadotropin subunit beta 3
+        preferred_name: CGB3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2440
+        label: chorionic somatomammotropin hormone 1
+        preferred_name: CSH1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9521
+        label: pregnancy specific beta-1-glycoprotein 4
+        preferred_name: PSG4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3236
+        label: epidermal growth factor receptor
+        preferred_name: EGFR
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1146/annurev.bi.50.070181.002341
+        doi: 10.1146/annurev.bi.50.070181.002341
+        pubmed_id: 'DOI: 10.1146/annurev.bi.50.070181.002341'
+      - id: doi:10.1056/NEJM197007232830408
+        doi: doi:10.1056/NEJM197007232830408
+        pubmed_id: 'doi: 10.1056/NEJM197007232830408'
+      - id: doi:10.1007/BF01628222
+        doi: doi:10.1007/BF01628222
+        pubmed_id: 'doi: 10.1007/BF01628222'
+      - id: https://doi.org/10.1016/j.jim.2003.03.001
+        doi: 10.1016/j.jim.2003.03.001
+        pubmed_id: 'DOI: 10.1016/j.jim.2003.03.001'
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi.org/10.1095/biolreprod.106.055244
+        doi: doi.org/10.1095/biolreprod.106.055244
+        pubmed_id: doi.org/10.1095/biolreprod.106.055244
+      - id: doi.org/10.1016/S0143-4004(05)80438-2
+        doi: doi.org/10.1016/S0143-4004(05)80438-2
+        pubmed_id: doi.org/10.1016/S0143-4004(05)80438-2
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0004027
+        label: chorionic plate
+        preferred_name: chorionic plate
+      - id: http://purl.obolibrary.org/obo/UBERON_0000088
+        label: trophoblast
+        preferred_name: chorionic ectoderm (from chorionic plate)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0008036
+        label: extravillous trophoblast
+        preferred_name: extravillous trophoblast (EVT)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4964
+        label: major histocompatibility complex, class I, G
+        preferred_name: HLAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19254
+        label: placenta associated 8
+        preferred_name: PLAC8
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/4964
+        label: major histocompatibility complex, class I, G
+        preferred_name: HLAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19254
+        label: placenta associated 8
+        preferred_name: PLAC8
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi.org/10.1016/0198-8859(93)90138-Q
+        doi: doi.org/10.1016/0198-8859(93)90138-Q
+        pubmed_id: doi.org/10.1016/0198-8859(93)90138-Q
+      - id: https://doi.org/10.1016/j.jim.2003.03.001
+        doi: 10.1016/j.jim.2003.03.001
+        pubmed_id: 'DOI: 10.1016/j.jim.2003.03.001'
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi.org/10.1095/biolreprod.106.055244
+        doi: doi.org/10.1095/biolreprod.106.055244
+        pubmed_id: doi.org/10.1095/biolreprod.106.055244
+      - id: PMID:8804361
+        doi: PMID:8804361
+        pubmed_id: 'PMID: 8804361'
+      - id: doi:10.1155/2021/6662201
+        doi: doi:10.1155/2021/6662201
+        pubmed_id: 'doi: 10.1155/2021/6662201'
+      - id: doi:10.1093/humrep/dem265
+        doi: doi:10.1093/humrep/dem265
+        pubmed_id: 'doi: 10.1093/humrep/dem265'
+      - id: https://doi.org/10.1242/dev.148932
+        doi: 10.1242/dev.148932
+        pubmed_id: 'DOI: 10.1242/dev.148932'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0004027
+        label: chorionic plate
+        preferred_name: chorionic plate
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000071
+        label: blood vessel endothelial cell
+        preferred_name: vascular endothelial cells
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12726
+        label: von Willebrand factor
+        preferred_name: VWF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12726
+        label: von Willebrand factor
+        preferred_name: VWF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: PMID:8804361
+        doi: PMID:8804361
+        pubmed_id: 'PMID: 8804361'
+      - id: doi:10.1155/2021/6662201
+        doi: doi:10.1155/2021/6662201
+        pubmed_id: 'doi: 10.1155/2021/6662201'
+      - id: doi:10.1093/humrep/dem265
+        doi: doi:10.1093/humrep/dem265
+        pubmed_id: 'doi: 10.1093/humrep/dem265'
+      - id: doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2
+        doi: doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2
+        pubmed_id: 'doi: 10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2'
+      - id: https://doi.org/10.1093/oxfordjournals.humrep.a136040
+        doi: 10.1093/oxfordjournals.humrep.a136040
+        pubmed_id: 'DOI: 10.1093/oxfordjournals.humrep.a136040'
+      - id: doi.org/10.1371/journal.pone.0169849
+        doi: doi.org/10.1371/journal.pone.0169849
+        pubmed_id: doi.org/10.1371/journal.pone.0169849
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0004027
+        label: chorionic plate
+        preferred_name: chorionic plate
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000669
+        label: pericyte cell
+        preferred_name: pericytes
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8804
+        label: platelet derived growth factor receptor beta
+        preferred_name: PDGFRB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2466
+        label: chondroitin sulfate proteoglycan 4
+        preferred_name: CSPG4
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8804
+        label: platelet derived growth factor receptor beta
+        preferred_name: PDGFRB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2466
+        label: chondroitin sulfate proteoglycan 4
+        preferred_name: CSPG4
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/0014-4800(90)90037-e
+        doi: 10.1016/0014-4800(90)90037-e
+        pubmed_id: 'DOI: 10.1016/0014-4800(90)90037-e'
+      - id: https://doi.org/10.1007/s00441-003-0745-x
+        doi: 10.1007/s00441-003-0745-x
+        pubmed_id: 'DOI: 10.1007/s00441-003-0745-x'
+      - id: doi:10.1038/ng.2007.6.
+        doi: doi:10.1038/ng.2007.6.
+        pubmed_id: 'doi: 10.1038/ng.2007.6.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0004027
+        label: chorionic plate
+        preferred_name: chorionic plate
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000359
+        label: vascular associated smooth muscle cell
+        preferred_name: vascular smooth muscle cells
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/0014-4800(90)90037-e
+        doi: 10.1016/0014-4800(90)90037-e
+        pubmed_id: 'DOI: 10.1016/0014-4800(90)90037-e'
+      - id: https://doi.org/10.1007/s00441-003-0745-x
+        doi: 10.1007/s00441-003-0745-x
+        pubmed_id: 'DOI: 10.1007/s00441-003-0745-x'
+      - id: doi:10.1038/ng.2007.6.
+        doi: doi:10.1038/ng.2007.6.
+        pubmed_id: 'doi: 10.1038/ng.2007.6.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0007106
+        label: chorionic villus
+        preferred_name: chorionic villous
+      - id: http://purl.obolibrary.org/obo/UBERON_0000088
+        label: trophoblast
+        preferred_name: chorionic ectoderm (from chorionic plate)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000523
+        label: cytotrophoblast
+        preferred_name: cytotrophoblast (CTB)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3236
+        label: epidermal growth factor receptor
+        preferred_name: EGFR
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/15979
+        label: tumor protein p63
+        preferred_name: TP63
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3236
+        label: epidermal growth factor receptor
+        preferred_name: EGFR
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/15979
+        label: tumor protein p63
+        preferred_name: TP63
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi.org/10.1016/S0143-4004(05)80438-2
+        doi: doi.org/10.1016/S0143-4004(05)80438-2
+        pubmed_id: doi.org/10.1016/S0143-4004(05)80438-2
+      - id: doi:10.1016/j.ajpath.2014.08.006
+        doi: doi:10.1016/j.ajpath.2014.08.006
+        pubmed_id: 'doi: 10.1016/j.ajpath.2014.08.006'
+      - id: https://doi.org/10.1016/j.jim.2003.03.001
+        doi: 10.1016/j.jim.2003.03.001
+        pubmed_id: 'DOI: 10.1016/j.jim.2003.03.001'
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi.org/10.1095/biolreprod.106.055244
+        doi: doi.org/10.1095/biolreprod.106.055244
+        pubmed_id: doi.org/10.1095/biolreprod.106.055244
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0007106
+        label: chorionic villus
+        preferred_name: chorionic villous
+      - id: http://purl.obolibrary.org/obo/UBERON_0000088
+        label: trophoblast
+        preferred_name: chorionic ectoderm (from chorionic plate)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000525
+        label: syncytiotrophoblast
+        preferred_name: syncytiotrophoblast (STB)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1886
+        label: chorionic gonadotropin subunit beta 3
+        preferred_name: CGB3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2440
+        label: chorionic somatomammotropin hormone 1
+        preferred_name: CSH1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9521
+        label: pregnancy specific beta-1-glycoprotein 4
+        preferred_name: PSG4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3236
+        label: epidermal growth factor receptor
+        preferred_name: EGFR
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1886
+        label: chorionic gonadotropin subunit beta 3
+        preferred_name: CGB3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2440
+        label: chorionic somatomammotropin hormone 1
+        preferred_name: CSH1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9521
+        label: pregnancy specific beta-1-glycoprotein 4
+        preferred_name: PSG4
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3236
+        label: epidermal growth factor receptor
+        preferred_name: EGFR
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1146/annurev.bi.50.070181.002341
+        doi: 10.1146/annurev.bi.50.070181.002341
+        pubmed_id: 'DOI: 10.1146/annurev.bi.50.070181.002341'
+      - id: doi:10.1056/NEJM197007232830408
+        doi: doi:10.1056/NEJM197007232830408
+        pubmed_id: 'doi: 10.1056/NEJM197007232830408'
+      - id: doi:10.1007/BF01628222
+        doi: doi:10.1007/BF01628222
+        pubmed_id: 'doi: 10.1007/BF01628222'
+      - id: https://doi.org/10.1016/j.jim.2003.03.001
+        doi: 10.1016/j.jim.2003.03.001
+        pubmed_id: 'DOI: 10.1016/j.jim.2003.03.001'
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi.org/10.1095/biolreprod.106.055244
+        doi: doi.org/10.1095/biolreprod.106.055244
+        pubmed_id: doi.org/10.1095/biolreprod.106.055244
+      - id: doi.org/10.1016/S0143-4004(05)80438-2
+        doi: doi.org/10.1016/S0143-4004(05)80438-2
+        pubmed_id: doi.org/10.1016/S0143-4004(05)80438-2
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0007106
+        label: chorionic villus
+        preferred_name: chorionic villous
+      - id: http://purl.obolibrary.org/obo/UBERON_0000088
+        label: trophoblast
+        preferred_name: chorionic ectoderm (from chorionic plate)
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0008036
+        label: extravillous trophoblast
+        preferred_name: extravillous trophoblast (EVT)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4964
+        label: major histocompatibility complex, class I, G
+        preferred_name: HLAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19254
+        label: placenta associated 8
+        preferred_name: PLAC8
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/4964
+        label: major histocompatibility complex, class I, G
+        preferred_name: HLAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/19254
+        label: placenta associated 8
+        preferred_name: PLAC8
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi.org/10.1016/0198-8859(93)90138-Q
+        doi: doi.org/10.1016/0198-8859(93)90138-Q
+        pubmed_id: doi.org/10.1016/0198-8859(93)90138-Q
+      - id: https://doi.org/10.1016/j.jim.2003.03.001
+        doi: 10.1016/j.jim.2003.03.001
+        pubmed_id: 'DOI: 10.1016/j.jim.2003.03.001'
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi.org/10.1095/biolreprod.106.055244
+        doi: doi.org/10.1095/biolreprod.106.055244
+        pubmed_id: doi.org/10.1095/biolreprod.106.055244
+      - id: PMID:8804361
+        doi: PMID:8804361
+        pubmed_id: 'PMID: 8804361'
+      - id: doi:10.1155/2021/6662201
+        doi: doi:10.1155/2021/6662201
+        pubmed_id: 'doi: 10.1155/2021/6662201'
+      - id: doi:10.1093/humrep/dem265
+        doi: doi:10.1093/humrep/dem265
+        pubmed_id: 'doi: 10.1093/humrep/dem265'
+      - id: https://doi.org/10.1242/dev.148932
+        doi: 10.1242/dev.148932
+        pubmed_id: 'DOI: 10.1242/dev.148932'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0007106
+        label: chorionic villus
+        preferred_name: chorionic villous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_3000001
+        label: Hofbauer cell
+        preferred_name: Hofbauer cell (HC)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1631
+        label: CD163 molecule
+        preferred_name: CD163
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3613
+        label: Fc gamma receptor Ia
+        preferred_name: FCGR1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1693
+        label: CD68 molecule
+        preferred_name: CD68
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1631
+        label: CD163 molecule
+        preferred_name: CD163
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3613
+        label: Fc gamma receptor Ia
+        preferred_name: FCGR1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1693
+        label: CD68 molecule
+        preferred_name: CD68
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi:10.1016/j.placenta.2007.11.003
+        doi: doi:10.1016/j.placenta.2007.11.003
+        pubmed_id: 'doi: 10.1016/j.placenta.2007.11.003'
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: PMID:8014121
+        doi: PMID:8014121
+        pubmed_id: 'PMID: 8014121'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0007106
+        label: chorionic villus
+        preferred_name: chorionic villous
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8021
+        label: 5'-nucleotidase ecto
+        preferred_name: NT5E
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8021
+        label: 5'-nucleotidase ecto
+        preferred_name: NT5E
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi:10.3390/cells1041061
+        doi: doi:10.3390/cells1041061
+        pubmed_id: 'doi: 10.3390/cells1041061'
+      - id: doi:10.1016/j.jcyt.2017.03.001
+        doi: doi:10.1016/j.jcyt.2017.03.001
+        pubmed_id: 'doi: 10.1016/j.jcyt.2017.03.001'
+      - id: doi:10.1186/s13287-017-0757-1
+        doi: doi:10.1186/s13287-017-0757-1
+        pubmed_id: 'doi: 10.1186/s13287-017-0757-1'
+      - id: https://doi.org/10.1095/biolreprod51.4.739
+        doi: 10.1095/biolreprod51.4.739
+        pubmed_id: 'DOI: 10.1095/biolreprod51.4.739'
+      - id: https://doi.org/10.1095/biolreprod.108.075226
+        doi: 10.1095/biolreprod.108.075226
+        pubmed_id: 'DOI: 10.1095/biolreprod.108.075226'
+      - id: doi.org/10.1182/blood.V74.2.751.751
+        doi: doi.org/10.1182/blood.V74.2.751.751
+        pubmed_id: doi.org/10.1182/blood.V74.2.751.751
+      - id: doi:10.5966/sctm.2015-0022
+        doi: doi:10.5966/sctm.2015-0022
+        pubmed_id: 'doi: 10.5966/sctm.2015-0022'
+      - id: doi:10.3346/jkms.2012.27.8.857
+        doi: doi:10.3346/jkms.2012.27.8.857
+        pubmed_id: 'doi: 10.3346/jkms.2012.27.8.857'
+      - id: https://doi.org/10.1093/humrep/den051
+        doi: 10.1093/humrep/den051
+        pubmed_id: 'DOI: 10.1093/humrep/den051'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0007106
+        label: chorionic villus
+        preferred_name: chorionic villous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000071
+        label: blood vessel endothelial cell
+        preferred_name: vascular endothelial cells
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12726
+        label: von Willebrand factor
+        preferred_name: VWF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12726
+        label: von Willebrand factor
+        preferred_name: VWF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: PMID:8804361
+        doi: PMID:8804361
+        pubmed_id: 'PMID: 8804361'
+      - id: doi:10.1155/2021/6662201
+        doi: doi:10.1155/2021/6662201
+        pubmed_id: 'doi: 10.1155/2021/6662201'
+      - id: doi:10.1093/humrep/dem265
+        doi: doi:10.1093/humrep/dem265
+        pubmed_id: 'doi: 10.1093/humrep/dem265'
+      - id: doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2
+        doi: doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2
+        pubmed_id: 'doi: 10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2'
+      - id: https://doi.org/10.1093/oxfordjournals.humrep.a136040
+        doi: 10.1093/oxfordjournals.humrep.a136040
+        pubmed_id: 'DOI: 10.1093/oxfordjournals.humrep.a136040'
+      - id: doi.org/10.1371/journal.pone.0169849
+        doi: doi.org/10.1371/journal.pone.0169849
+        pubmed_id: doi.org/10.1371/journal.pone.0169849
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0007106
+        label: chorionic villus
+        preferred_name: chorionic villous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000669
+        label: pericyte cell
+        preferred_name: pericytes
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8804
+        label: platelet derived growth factor receptor beta
+        preferred_name: PDGFRB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2466
+        label: chondroitin sulfate proteoglycan 4
+        preferred_name: CSPG4
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8804
+        label: platelet derived growth factor receptor beta
+        preferred_name: PDGFRB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2466
+        label: chondroitin sulfate proteoglycan 4
+        preferred_name: CSPG4
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/0014-4800(90)90037-e
+        doi: 10.1016/0014-4800(90)90037-e
+        pubmed_id: 'DOI: 10.1016/0014-4800(90)90037-e'
+      - id: https://doi.org/10.1007/s00441-003-0745-x
+        doi: 10.1007/s00441-003-0745-x
+        pubmed_id: 'DOI: 10.1007/s00441-003-0745-x'
+      - id: doi:10.1038/ng.2007.6.
+        doi: doi:10.1038/ng.2007.6.
+        pubmed_id: 'doi: 10.1038/ng.2007.6.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0007106
+        label: chorionic villus
+        preferred_name: chorionic villous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000359
+        label: vascular associated smooth muscle cell
+        preferred_name: vascular smooth muscle cells
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/0014-4800(90)90037-e
+        doi: 10.1016/0014-4800(90)90037-e
+        pubmed_id: 'DOI: 10.1016/0014-4800(90)90037-e'
+      - id: https://doi.org/10.1007/s00441-003-0745-x
+        doi: 10.1007/s00441-003-0745-x
+        pubmed_id: 'DOI: 10.1007/s00441-003-0745-x'
+      - id: doi:10.1038/ng.2007.6.
+        doi: doi:10.1038/ng.2007.6.
+        pubmed_id: 'doi: 10.1038/ng.2007.6.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0007106
+        label: chorionic villus
+        preferred_name: chorionic villous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_2000062
+        label: placental villous capillary endothelial cell
+        preferred_name: placental microvascular endothelial cells
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12726
+        label: von Willebrand factor
+        preferred_name: VWF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3468
+        label: estrogen receptor 2
+        preferred_name: ESR2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9864
+        label: retinoic acid receptor alpha
+        preferred_name: RARA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10477
+        label: retinoid X receptor alpha
+        preferred_name: RXRA
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12726
+        label: von Willebrand factor
+        preferred_name: VWF
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3468
+        label: estrogen receptor 2
+        preferred_name: ESR2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9864
+        label: retinoic acid receptor alpha
+        preferred_name: RARA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10477
+        label: retinoid X receptor alpha
+        preferred_name: RXRA
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: PMID:8804361
+        doi: PMID:8804361
+        pubmed_id: 'PMID: 8804361'
+      - id: doi:10.1155/2021/6662201
+        doi: doi:10.1155/2021/6662201
+        pubmed_id: 'doi: 10.1155/2021/6662201'
+      - id: doi:10.1093/humrep/dem265
+        doi: doi:10.1093/humrep/dem265
+        pubmed_id: 'doi: 10.1093/humrep/dem265'
+      - id: doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2
+        doi: doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2
+        pubmed_id: 'doi: 10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2'
+      - id: https://doi.org/10.1093/oxfordjournals.humrep.a136040
+        doi: 10.1093/oxfordjournals.humrep.a136040
+        pubmed_id: 'DOI: 10.1093/oxfordjournals.humrep.a136040'
+      - id: doi.org/10.1016/j.ajog.2009.01.025
+        doi: doi.org/10.1016/j.ajog.2009.01.025
+        pubmed_id: doi.org/10.1016/j.ajog.2009.01.025
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0007106
+        label: chorionic villus
+        preferred_name: chorionic villous
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000669
+        label: pericyte cell
+        preferred_name: pericytes
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8804
+        label: platelet derived growth factor receptor beta
+        preferred_name: PDGFRB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2466
+        label: chondroitin sulfate proteoglycan 4
+        preferred_name: CSPG4
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8804
+        label: platelet derived growth factor receptor beta
+        preferred_name: PDGFRB
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2466
+        label: chondroitin sulfate proteoglycan 4
+        preferred_name: CSPG4
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/0014-4800(90)90037-e
+        doi: 10.1016/0014-4800(90)90037-e
+        pubmed_id: 'DOI: 10.1016/0014-4800(90)90037-e'
+      - id: https://doi.org/10.1007/s00441-003-0745-x
+        doi: 10.1007/s00441-003-0745-x
+        pubmed_id: 'DOI: 10.1007/s00441-003-0745-x'
+      - id: doi:10.1038/ng.2007.6.
+        doi: doi:10.1038/ng.2007.6.
+        pubmed_id: 'doi: 10.1038/ng.2007.6.'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0002451
+        label: endometrial gland
+        preferred_name: endometrial gland
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6427
+        label: keratin 18
+        preferred_name: KRT18
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6436
+        label: keratin 19
+        preferred_name: KRT19
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11529
+        label: epithelial cell adhesion molecule
+        preferred_name: EPCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4015
+        label: Fucosyltransferase 4
+        preferred_name: FUT4
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6427
+        label: keratin 18
+        preferred_name: KRT18
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6436
+        label: keratin 19
+        preferred_name: KRT19
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11529
+        label: epithelial cell adhesion molecule
+        preferred_name: EPCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4015
+        label: Fucosyltransferase 4
+        preferred_name: FUT4
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1177/1933719118756745
+        doi: 10.1177/1933719118756745
+        pubmed_id: 'DOI: 10.1177/1933719118756745'
+      - id: doi:10.1186/s13287-018-0962-6
+        doi: doi:10.1186/s13287-018-0962-6
+        pubmed_id: 'doi: 10.1186/s13287-018-0962-6'
+      - id: https://doi.org/10.1093/humrep/det285
+        doi: 10.1093/humrep/det285
+        pubmed_id: 'DOI: 10.1093/humrep/det285'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0002337
+        label: endometrial stroma
+        preferred_name: endometrial stroma
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002255
+        label: stromal cell of endometrium
+        preferred_name: endometrial stromal cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7154
+        label: membrane metalloendopeptidase
+        preferred_name: MME
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/3349
+        label: endoglin
+        preferred_name: ENG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7154
+        label: membrane metalloendopeptidase
+        preferred_name: MME
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi:10.3390/cells1041061
+        doi: doi:10.3390/cells1041061
+        pubmed_id: 'doi: 10.3390/cells1041061'
+      - id: doi:10.1016/j.jcyt.2017.03.001
+        doi: doi:10.1016/j.jcyt.2017.03.001
+        pubmed_id: 'doi: 10.1016/j.jcyt.2017.03.001'
+      - id: doi:10.1186/s13287-017-0757-1
+        doi: doi:10.1186/s13287-017-0757-1
+        pubmed_id: 'doi: 10.1186/s13287-017-0757-1'
+      - id: https://doi.org/10.1095/biolreprod51.4.739
+        doi: 10.1095/biolreprod51.4.739
+        pubmed_id: 'DOI: 10.1095/biolreprod51.4.739'
+      - id: https://doi.org/10.1095/biolreprod.108.075226
+        doi: 10.1095/biolreprod.108.075226
+        pubmed_id: 'DOI: 10.1095/biolreprod.108.075226'
+      - id: doi.org/10.1182/blood.V74.2.751.751
+        doi: doi.org/10.1182/blood.V74.2.751.751
+        pubmed_id: doi.org/10.1182/blood.V74.2.751.751
+      - id: doi:10.5966/sctm.2015-0022
+        doi: doi:10.5966/sctm.2015-0022
+        pubmed_id: 'doi: 10.5966/sctm.2015-0022'
+      - id: doi:10.3346/jkms.2012.27.8.857
+        doi: doi:10.3346/jkms.2012.27.8.857
+        pubmed_id: 'doi: 10.3346/jkms.2012.27.8.857'
+      - id: https://doi.org/10.1093/humrep/den051
+        doi: 10.1093/humrep/den051
+        pubmed_id: 'DOI: 10.1093/humrep/den051'
+      - id: doi:10.1016/s1472-6483(10)61745-2
+        doi: doi:10.1016/s1472-6483(10)61745-2
+        pubmed_id: 'doi: 10.1016/s1472-6483(10)61745-2'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0002337
+        label: endometrial stroma
+        preferred_name: endometrial stroma
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/7656
+        label: neural cell adhesion molecule 1
+        preferred_name: NCAM1
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/7656
+        label: neural cell adhesion molecule 1
+        preferred_name: NCAM1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi:10.5966/sctm.2015-0022
+        doi: doi:10.5966/sctm.2015-0022
+        pubmed_id: 'doi: 10.5966/sctm.2015-0022'
+      - id: doi:10.1016/j.jcyt.2017.03.001
+        doi: doi:10.1016/j.jcyt.2017.03.001
+        pubmed_id: 'doi: 10.1016/j.jcyt.2017.03.001'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0002337
+        label: endometrial stroma
+        preferred_name: endometrial stroma
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1693
+        label: CD68 molecule
+        preferred_name: CD68
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6152
+        label: integrin subunit alpha X
+        preferred_name: ITGAX
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1641
+        label: CD209 molecule
+        preferred_name: CD209
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7228
+        label: mannose receptor C-type 1
+        preferred_name: MRC1
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1693
+        label: CD68 molecule
+        preferred_name: CD68
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6152
+        label: integrin subunit alpha X
+        preferred_name: ITGAX
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1641
+        label: CD209 molecule
+        preferred_name: CD209
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7228
+        label: mannose receptor C-type 1
+        preferred_name: MRC1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi:10.1038/s41423-018-0008-0
+        doi: doi:10.1038/s41423-018-0008-0
+        pubmed_id: 'doi: 10.1038/s41423-018-0008-0'
+      - id: doi:10.1371/journal.pone.0002078
+        doi: doi:10.1371/journal.pone.0002078
+        pubmed_id: 'doi: 10.1371/journal.pone.0002078'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0002337
+        label: endometrial stroma
+        preferred_name: endometrial stroma
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000815
+        label: regulatory T cell
+        preferred_name: regulatory T cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6106
+        label: forkhead box P3
+        preferred_name: FOXP3
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6106
+        label: forkhead box P3
+        preferred_name: FOXP3
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1038/ni904
+        doi: 10.1038/ni904
+        pubmed_id: 'DOI: 10.1038/ni904'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0002337
+        label: endometrial stroma
+        preferred_name: endometrial stroma
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000910
+        label: cytotoxic T cell
+        preferred_name: cytotoxic T cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8a molecule
+        preferred_name: CD8A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1653
+        label: CD28 molecule
+        preferred_name: CD28
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1706
+        label: CD8a molecule
+        preferred_name: CD8A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1653
+        label: CD28 molecule
+        preferred_name: CD28
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: PMID:1672332
+        doi: PMID:1672332
+        pubmed_id: 'PMID: 1672332'
+      - id: PMID:7579453
+        doi: PMID:7579453
+        pubmed_id: 'PMID: 7579453'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0002337
+        label: endometrial stroma
+        preferred_name: endometrial stroma
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000236
+        label: B cell
+        preferred_name: B cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10658
+        label: syndecan 1
+        preferred_name: SDC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4947
+        label: Major Histocompatibility Complex, Class II, DR Alpha
+        preferred_name: HLA-DRA
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1681
+        label: CD44 molecule (Indian blood group)
+        preferred_name: CD44
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10658
+        label: syndecan 1
+        preferred_name: SDC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4947
+        label: Major Histocompatibility Complex, Class II, DR Alpha
+        preferred_name: HLA-DRA
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi:10.3390/cells1041061
+        doi: doi:10.3390/cells1041061
+        pubmed_id: 'doi: 10.3390/cells1041061'
+      - id: doi:10.1016/j.jcyt.2017.03.001
+        doi: doi:10.1016/j.jcyt.2017.03.001
+        pubmed_id: 'doi: 10.1016/j.jcyt.2017.03.001'
+      - id: doi:10.1186/s13287-017-0757-1
+        doi: doi:10.1186/s13287-017-0757-1
+        pubmed_id: 'doi: 10.1186/s13287-017-0757-1'
+      - id: https://doi.org/10.1095/biolreprod51.4.739
+        doi: 10.1095/biolreprod51.4.739
+        pubmed_id: 'DOI: 10.1095/biolreprod51.4.739'
+      - id: https://doi.org/10.1095/biolreprod.108.075226
+        doi: 10.1095/biolreprod.108.075226
+        pubmed_id: 'DOI: 10.1095/biolreprod.108.075226'
+      - id: doi.org/10.1182/blood.V74.2.751.751
+        doi: doi.org/10.1182/blood.V74.2.751.751
+        pubmed_id: doi.org/10.1182/blood.V74.2.751.751
+      - id: doi:10.1091/mbc.1.1.27
+        doi: doi:10.1091/mbc.1.1.27
+        pubmed_id: 'doi: 10.1091/mbc.1.1.27'
+      - id: doi:10.1093/intimm/7.7.1087
+        doi: doi:10.1093/intimm/7.7.1087
+        pubmed_id: doi:10.1093/intimm/7.7.1087
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0015172
+        label: endometrial blood vessel
+        preferred_name: decidual blood vessel
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_2000091
+        label: endometrial microvascular endothelial cells
+        preferred_name: endometrial microvascular endothelial cell (EMEC)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12726
+        label: von Willebrand factor
+        preferred_name: VWF
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12726
+        label: von Willebrand factor
+        preferred_name: VWF
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: PMID:8804361
+        doi: PMID:8804361
+        pubmed_id: 'PMID: 8804361'
+      - id: doi:10.1155/2021/6662201
+        doi: doi:10.1155/2021/6662201
+        pubmed_id: 'doi: 10.1155/2021/6662201'
+      - id: doi:10.1093/humrep/dem265
+        doi: doi:10.1093/humrep/dem265
+        pubmed_id: 'doi: 10.1093/humrep/dem265'
+      - id: doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2
+        doi: doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2
+        pubmed_id: 'doi: 10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2'
+      - id: https://doi.org/10.1093/oxfordjournals.humrep.a136040
+        doi: 10.1093/oxfordjournals.humrep.a136040
+        pubmed_id: 'DOI: 10.1093/oxfordjournals.humrep.a136040'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+      - id: http://purl.obolibrary.org/obo/UBERON_0015172
+        label: endometrial blood vessel
+        preferred_name: decidual blood vessel
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0008036
+        label: extravillous trophoblast
+        preferred_name: extravillous trophoblast (endovascular)
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4964
+        label: major histocompatibility complex, class I, G
+        preferred_name: HLAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1764
+        label: cadherin 5
+        preferred_name: CDH5
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/4964
+        label: major histocompatibility complex, class I, G
+        preferred_name: HLAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6445
+        label: keratin 7
+        preferred_name: KRT7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1764
+        label: cadherin 5
+        preferred_name: CDH5
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi.org/10.1016/0198-8859(93)90138-Q
+        doi: doi.org/10.1016/0198-8859(93)90138-Q
+        pubmed_id: doi.org/10.1016/0198-8859(93)90138-Q
+      - id: https://doi.org/10.1016/j.jim.2003.03.001
+        doi: 10.1016/j.jim.2003.03.001
+        pubmed_id: 'DOI: 10.1016/j.jim.2003.03.001'
+      - id: https://doi.org/10.1053/plac.2000.0559
+        doi: 10.1053/plac.2000.0559
+        pubmed_id: 'DOI: 10.1053/plac.2000.0559'
+      - id: doi.org/10.1095/biolreprod.106.055244
+        doi: doi.org/10.1095/biolreprod.106.055244
+        pubmed_id: doi.org/10.1095/biolreprod.106.055244
+      - id: PMID:8804361
+        doi: PMID:8804361
+        pubmed_id: 'PMID: 8804361'
+      - id: doi:10.1155/2021/6662201
+        doi: doi:10.1155/2021/6662201
+        pubmed_id: 'doi: 10.1155/2021/6662201'
+      - id: doi:10.1093/humrep/dem265
+        doi: doi:10.1093/humrep/dem265
+        pubmed_id: 'doi: 10.1093/humrep/dem265'
+      - id: doi:10.1172/JCI119387
+        doi: doi:10.1172/JCI119387
+        pubmed_id: 'doi: 10.1172/JCI119387'
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0001987
+        label: placenta
+        preferred_name: Placenta
+      - id: http://purl.obolibrary.org/obo/UBERON_0002450
+        label: decidua
+        preferred_name: decidua
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/29602
+        label: podoplanin
+        preferred_name: PDPN
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/29602
+        label: podoplanin
+        preferred_name: PDPN
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: doi.org/10.1371/journal.pone.0169849
+        doi: doi.org/10.1371/journal.pone.0169849
+        pubmed_id: doi.org/10.1371/journal.pone.0169849

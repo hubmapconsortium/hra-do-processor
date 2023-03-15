@@ -1,0 +1,3123 @@
+metadata:
+  type: asct-b
+  name: vh-eye
+  version: v1.2
+  title: Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for Eye
+  description: >-
+    The Eye ASCT+B table v1.1 focused on representing key ocular anatomical
+    structures including the neural retina, lens, cornea, iris, and ciliary body
+    with a focus on vascular, epithelial, and neural cell types. Version 1.2
+    expands upon v1.1 with the addition of anatomical structures including the
+    fovea and macula and cell types such as immune and endothelial.
+  creators:
+    - fullName: Angela Kruse
+      firstName: Angela
+      lastName: Kruse
+      orcid: 0000-0001-8776-2769
+    - fullName: Kevin Schey
+      firstName: Kevin
+      lastName: Schey
+      orcid: 0000-0001-9769-1538
+    - fullName: Christine Curcio
+      firstName: Christine
+      lastName: Curcio
+      orcid: 0000-0002-3959-1712
+  project_leads:
+    - fullName: Katy Börner
+      firstName: Katy
+      lastName: Börner
+      orcid: 0000-0002-3321-6137
+  reviewers:
+    - fullName: Jeffrey Spraggins
+      firstName: Jeffrey
+      lastName: Spraggins
+      orcid: 000-0001-9198-5498
+    - fullName: David Anderson
+      firstName: David
+      lastName: Anderson
+      orcid: 0000-0002-3866-0923
+    - fullName: Ellen M. Quardokus
+      firstName: Ellen
+      lastName: Quardokus
+      orcid: 0000-0001-7655-4833
+  externalReviewers: []
+  creation_date: '2022-12-15'
+  license: >-
+    Creative Commons Attribution 4.0 International ([CC BY
+    4.0](https://creativecommons.org/licenses/by/4.0/))
+  publisher: HuBMAP
+  funders:
+    - funder: National Institutes of Health
+      awardNumber: OT2OD026671
+  hubmapId: HBM762.WRRQ.394
+  doi: https://doi.org/10.48539/HBM762.WRRQ.394
+  citation: >-
+    Angela Kruse; Kevin Schey; Christine Curcio, HuBMAP ASCT+B Tables. Eye v1.2,
+    https://doi.org/10.48539/HBM762.WRRQ.394, Accessed on December 15, 2022.
+  citationOverall: >-
+    Quardokus, Ellen, Bruce W. Herr II, Lisel Record, Katy Börner. 2022.
+    [*HuBMAP ASCT+B
+    Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
+    Accessed on December 15, 2022.
+  datatable:
+    - asct-b-vh-eye.csv
+data:
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000099
+        label: Interneuron
+        preferred_name: Interneuron
+      - id: http://purl.obolibrary.org/obo/CL_0000561
+        label: Amacrine Cell
+        preferred_name: Amacrine Cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/11742
+        label: transcription factor AP-2 alpha
+        preferred_name: TFAP2A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11743
+        label: transcription factor AP-2 beta
+        preferred_name: TFAP2B
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11744
+        label: transcription factor AP-2 gamma
+        preferred_name: TFAP2C
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4092
+        label: glutamate decarboxylase 1
+        preferred_name: GAD1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4093
+        label: glutamate decarboxylase 2
+        preferred_name: GAD2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11056
+        label: solute carrier family 6 member 9
+        preferred_name: SLC6A9
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24182
+        label: complement C1q like 1
+        preferred_name: C1QL1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24181
+        label: complement C1q like 2
+        preferred_name: C1QL2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1434
+        label: calbindin 1
+        preferred_name: calbindin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/16941
+        label: secretagogin, EF-hand calcium binding protein
+        preferred_name: secretagogin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1434
+        label: calbindin 1
+        preferred_name: calbindin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/16941
+        label: secretagogin, EF-hand calcium binding protein
+        preferred_name: secretagogin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4092
+        label: glutamate decarboxylase 1
+        preferred_name: glutamate decarboxylase 1
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/11742
+        label: transcription factor AP-2 alpha
+        preferred_name: TFAP2A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11743
+        label: transcription factor AP-2 beta
+        preferred_name: TFAP2B
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11744
+        label: transcription factor AP-2 gamma
+        preferred_name: TFAP2C
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4092
+        label: glutamate decarboxylase 1
+        preferred_name: GAD1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4093
+        label: glutamate decarboxylase 2
+        preferred_name: GAD2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11056
+        label: solute carrier family 6 member 9
+        preferred_name: SLC6A9
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24182
+        label: complement C1q like 1
+        preferred_name: C1QL1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/24181
+        label: complement C1q like 2
+        preferred_name: C1QL2
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.cell.2019.01.004
+        doi: 10.1016/j.cell.2019.01.004
+        pubmed_id: >-
+          Yi-Rong Peng, Karthik Shekhar, Wenjun Yan, Dustin Herrmann, Anna
+          Sappington, Gregory S. Bryman, Tav√© van Zyl, Michael Tri. H. Do, Aviv
+          Regev, Joshua R. Sanes,
+           Molecular Classification and Comparative Taxonomics of Foveal and Peripheral cell in Primate retina
+      - id: https://doi.org/10.1016/j.preteyeres.2020.100844
+        doi: 10.1016/j.preteyeres.2020.100844
+        pubmed_id: >-
+          Ulrike Gr√ºnert, Paul R. Martin, Cell types and cell circuits in human
+          and non-human primate retina.
+      - id: https://doi.org/10.1002/cne.23821
+        doi: 10.1002/cne.23821
+        pubmed_id: >-
+          Lee, S.C., Weltzien, F., Madigan, M.C., Martin, P.R. and Gr√ºnert, U.
+          (2016), Identification of A‚Ö° amacrine, displaced amacrine, and
+          bistratified ganglion cell types in human retina with antibodies
+          against calretinin. J. Comp. Neurol., 524: 39-53.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000099
+        label: Interneuron
+        preferred_name: Interneuron
+      - id: http://purl.obolibrary.org/obo/CL_0000561
+        label: Amacrine Cell
+        preferred_name: Amacrine cell
+      - id: http://purl.obolibrary.org/obo/CL_0011005
+        label: GABAergic interneuron
+        preferred_name: GABAergic interneuron
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4093
+        label: glutamate decarboxylase 2
+        preferred_name: glutamic acid decarboxylase 65
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10575
+        label: secretogranin II
+        preferred_name: secretogranin II
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11782
+        label: Tyrosine hydroxylase
+        preferred_name: TH
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11329
+        label: Somatostatin
+        preferred_name: SST
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1912
+        label: Choline O-Acetyltransferase
+        preferred_name: CHAT
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9726
+        label: glycogen phosphorylase, muscle associated
+        preferred_name: PYGM
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/12693
+        label: vasoactive intestinal polypeptide
+        preferred_name: vasoactive intestinal polypeptide
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/16941
+        label: secretagogin, EF-hand calcium binding protein
+        preferred_name: secretagogin, EF-hand calcium binding protein
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7955
+        label: neuropeptide Y
+        preferred_name: neuropeptide Y
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11526
+        label: tachykinin receptor 1
+        preferred_name: tachykinin receptor 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11528
+        label: tachykinin receptor 3
+        preferred_name: tachykinin receptor 3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/24323
+        label: CART prepropeptide
+        preferred_name: Cocaine- and amphetamine-regulated transcript protein
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/4093
+        label: glutamate decarboxylase 2
+        preferred_name: glutamic acid decarboxylase 65
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10575
+        label: secretogranin II
+        preferred_name: secretogranin II
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11782
+        label: Tyrosine hydroxylase
+        preferred_name: TH
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11329
+        label: Somatostatin
+        preferred_name: SST
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1912
+        label: Choline O-Acetyltransferase
+        preferred_name: CHAT
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9726
+        label: glycogen phosphorylase, muscle associated
+        preferred_name: PYGM
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/12693
+        label: vasoactive intestinal polypeptide
+        preferred_name: vasoactive intestinal polypeptide
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/16941
+        label: secretagogin, EF-hand calcium binding protein
+        preferred_name: secretagogin, EF-hand calcium binding protein
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7955
+        label: neuropeptide Y
+        preferred_name: neuropeptide Y
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11526
+        label: tachykinin receptor 1
+        preferred_name: tachykinin receptor 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11528
+        label: tachykinin receptor 3
+        preferred_name: tachykinin receptor 3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/24323
+        label: CART prepropeptide
+        preferred_name: Cocaine- and amphetamine-regulated transcript protein
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.preteyeres.2020.100844
+        doi: 10.1016/j.preteyeres.2020.100844
+        pubmed_id: >-
+          Ulrike Gr√ºnert, Paul R. Martin, Cell types and cell circuits in human
+          and non-human primate retina.
+      - id: >-
+          https://doi.org/10.1002/(SICI)1096-9861(19990816)411:1<19::AID-CNE3>3.0.CO;2-4
+        doi: 10.1002/(SICI)1096-9861(19990816)411:1<19::AID-CNE3>3.0.CO;2-4
+        pubmed_id: >-
+          Mills, S.L. and Massey, S.C. (1999), AII amacrine cell limit scotopic
+          acuity in central macaque retina: A confocal analysis of calretinin
+          labeling. J. Comp. Neurol., 411: 19-34.
+      - id: https://doi.org/10.1002/cne.902760106
+        doi: 10.1002/cne.902760106
+        pubmed_id: >-
+          Mariani, A.P. and Hokoc, J.N. (1988), Two types of tyrosine
+          hydroxylase-immunoreactive amacrine cell in the rhesus monkey retina.
+          J. Comp. Neurol., 276: 81-91. https://doi.org/10.1002/cne.902760106
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000099
+        label: Interneuron
+        preferred_name: Interneuron
+      - id: http://purl.obolibrary.org/obo/CL_0000561
+        label: Amacrine Cell
+        preferred_name: Amacrine cell
+      - id: http://purl.org/sig/ont/fma/fma62362
+        label: Glycinergic amacrine cell of retina
+        preferred_name: Glycinergic Amacrine Cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/11510
+        label: Synaptotagmin-2
+        preferred_name: SYT2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1435
+        label: calbindin 2
+        preferred_name: calbindin 2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/20151
+        label: solute carrier family 17 member 8
+        preferred_name: Vesicular glutamate transporter 3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9704
+        label: parvalbumin
+        preferred_name: parvalbumin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/21637
+        label: SATB homeobox 2
+        preferred_name: SATB2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/19087
+        label: EBF transcription factor 3
+        preferred_name: EBF3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9723
+        label: glycogen phosphorylase B
+        preferred_name: glycogen phosphorylase B
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/11510
+        label: Synaptotagmin-2
+        preferred_name: SYT2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1435
+        label: calbindin 2
+        preferred_name: calbindin 2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/20151
+        label: solute carrier family 17 member 8
+        preferred_name: Vesicular glutamate transporter 3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9704
+        label: parvalbumin
+        preferred_name: parvalbumin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/21637
+        label: SATB homeobox 2
+        preferred_name: SATB2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/19087
+        label: EBF transcription factor 3
+        preferred_name: EBF3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9723
+        label: glycogen phosphorylase B
+        preferred_name: glycogen phosphorylase B
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1002/cne.10985
+        doi: 10.1002/cne.10985
+        pubmed_id: >-
+          Ghosh, K.K., Bujan, S., Haverkamp, S., Feigenspan, A. and W√§ssle, H.
+          (2004), Types of bipolar cell in the mouse retina. J. Comp. Neurol.,
+          469: 70-82.
+      - id: https://doi.org/10.1016/j.preteyeres.2020.100844
+        doi: 10.1016/j.preteyeres.2020.100844
+        pubmed_id: >-
+          Ulrike Gr√ºnert, Paul R. Martin, Cell types and cell circuits in human
+          and non-human primate retina.
+      - id: https://doi.org/10.1523/JNEUROSCI.0907-11.2011
+        doi: 10.1523/JNEUROSCI.0907-11.2011
+        pubmed_id: >-
+          Jeremy N. Kay, Irina De la Huerta, In-Jung Kim, Yifeng Zhang, Masahito
+          Yamagata, Monica W. Chu, Markus Meister, Joshua R. Sanes. retinal
+          Ganglion cell with Distinct Directional Preferences Differ in
+          Molecular Identity, Structure, and Central Projections. Journal of
+          Neuroscience 25 May 2011, 31 (21) 7753-7762
+      - id: https://doi.org/10.1017/S0952523809090075
+        doi: 10.1017/S0952523809090075
+        pubmed_id: >-
+          KLUMP, K., ZHANG, A., WU, S., & MARSHAK, D. (2009).
+          Parvalbumin-immunoreactive amacrine cell of macaque retina. Visual
+          Neuroscience, 26(3), 287-296.
+      - id: https://doi.org/10.1002/cne.21666
+        doi: 10.1002/cne.21666
+        pubmed_id: >-
+          Majumdar, S., W√§ssle, H., Jusuf, P.R. and Haverkamp, S. (2008),
+          Mirror-symmetrical populations of wide-field amacrine cell of the
+          macaque monkey retina. J. Comp. Neurol., 508: 13-27.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000099
+        label: Interneuron
+        preferred_name: Interneuron
+      - id: http://purl.obolibrary.org/obo/CL_0000561
+        label: Amacrine Cell
+        preferred_name: Amacrine cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/787
+        label: nitric oxide synthase 1
+        preferred_name: nitric oxide synthase
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/12693
+        label: vasoactive intestinal peptide
+        preferred_name: vasoactive intestinal polypeptide
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10575
+        label: secretogranin II
+        preferred_name: secretogranin II
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9723
+        label: glycogen phosphorylase B
+        preferred_name: glycogen phosphorylase
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/787
+        label: nitric oxide synthase 1
+        preferred_name: nitric oxide synthase
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/12693
+        label: vasoactive intestinal peptide
+        preferred_name: vasoactive intestinal polypeptide
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10575
+        label: secretogranin II
+        preferred_name: secretogranin II
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9723
+        label: glycogen phosphorylase B
+        preferred_name: glycogen phosphorylase
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.preteyeres.2020.100844
+        doi: 10.1016/j.preteyeres.2020.100844
+        pubmed_id: >-
+          Ulrike Gr√ºnert, Paul R. Martin, Cell types and cell circuits in human
+          and non-human primate retina.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000099
+        label: Interneuron
+        preferred_name: Interneuron
+      - id: http://purl.obolibrary.org/obo/CL_0000561
+        label: Amacrine Cell
+        preferred_name: Amacrine cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/7955
+        label: neuropeptide Y
+        preferred_name: neuropeptide Y
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/7955
+        label: neuropeptide Y
+        preferred_name: neuropeptide Y
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.preteyeres.2020.100844
+        doi: 10.1016/j.preteyeres.2020.100844
+        pubmed_id: >-
+          Ulrike Gr√ºnert, Paul R. Martin, Cell types and cell circuits in human
+          and non-human primate retina.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000099
+        label: Interneuron
+        preferred_name: Interneuron
+      - id: http://purl.obolibrary.org/obo/CL_0000561
+        label: Amacrine Cell
+        preferred_name: Amacrine cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1569
+        label: cholecystokinin
+        preferred_name: cholecystokinin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1569
+        label: cholecystokinin
+        preferred_name: cholecystokinin
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.preteyeres.2020.100844
+        doi: 10.1016/j.preteyeres.2020.100844
+        pubmed_id: >-
+          Ulrike Gr√ºnert, Paul R. Martin, Cell types and cell circuits in human
+          and non-human primate retina.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000099
+        label: Interneuron
+        preferred_name: Interneuron
+      - id: http://purl.obolibrary.org/obo/CL_0000561
+        label: Amacrine Cell
+        preferred_name: Amacrine cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1435
+        label: calbindin 2
+        preferred_name: Calretinin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1435
+        label: calbindin 2
+        preferred_name: Calretinin
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.preteyeres.2020.100844
+        doi: 10.1016/j.preteyeres.2020.100844
+        pubmed_id: >-
+          Ulrike Gr√ºnert, Paul R. Martin, Cell types and cell circuits in human
+          and non-human primate retina.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000099
+        label: Interneuron
+        preferred_name: Interneuron
+      - id: http://purl.obolibrary.org/obo/CL_0000561
+        label: Amacrine Cell
+        preferred_name: Amacrine cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1912
+        label: choline O-acetyltransferase
+        preferred_name: choline O-acetyltransferase
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1912
+        label: choline O-acetyltransferase
+        preferred_name: choline O-acetyltransferase
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.preteyeres.2020.100844
+        doi: 10.1016/j.preteyeres.2020.100844
+        pubmed_id: >-
+          Ulrike Gr√ºnert, Paul R. Martin, Cell types and cell circuits in human
+          and non-human primate retina.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000748
+        label: retinal bipolar neuron
+        preferred_name: Bipolar Cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1975
+        label: Visual system homeobox 2
+        preferred_name: VSX2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12723
+        label: Visual system homeobox 1
+        preferred_name: VSX1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/13714
+        label: calcium binding protein 5
+        preferred_name: CABP5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8522
+        label: orthodenticle homeobox 2
+        preferred_name: OTX2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4598
+        label: glutamate metabotropic receptor 6
+        preferred_name: GRM6
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9393
+        label: protein kinase C alpha
+        preferred_name: PRKCA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7146
+        label: transient receptor potential cation channel subfamily M member 1
+        preferred_name: TRPM1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4579
+        label: glutamate ionotropic receptor kainate type subunit 1
+        preferred_name: GRIK1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4389
+        label: G protein subunit alpha o1
+        preferred_name: G protein subunit alpha o1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6132
+        label: ISL LIM homeobox 1
+        preferred_name: Islet-1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7103
+        label: major intrinsic protein of lens fiber
+        preferred_name: Aquaporin 0
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9937
+        label: recoverin
+        preferred_name: recoverin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1975
+        label: visual system homeobox 2
+        preferred_name: visual system homeobox 2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4389
+        label: G protein subunit alpha o1
+        preferred_name: G protein subunit alpha o1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6132
+        label: ISL LIM homeobox 1
+        preferred_name: Islet-1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7103
+        label: major intrinsic protein of lens fiber
+        preferred_name: Aquaporin 0
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9937
+        label: recoverin
+        preferred_name: recoverin
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1975
+        label: Visual system homeobox 2
+        preferred_name: VSX2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12723
+        label: Visual system homeobox 1
+        preferred_name: VSX1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/13714
+        label: calcium binding protein 5
+        preferred_name: CABP5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8522
+        label: orthodenticle homeobox 2
+        preferred_name: OTX2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4598
+        label: glutamate metabotropic receptor 6
+        preferred_name: GRM6
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9393
+        label: protein kinase C alpha
+        preferred_name: PRKCA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7146
+        label: transient receptor potential cation channel subfamily M member 1
+        preferred_name: TRPM1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4579
+        label: glutamate ionotropic receptor kainate type subunit 1
+        preferred_name: GRIK1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.cell.2019.01.004
+        doi: 10.1016/j.cell.2019.01.004
+        pubmed_id: >-
+          Yi-Rong Peng, Karthik Shekhar, Wenjun Yan, Dustin Herrmann, Anna
+          Sappington, Gregory S. Bryman, Tav√© van Zyl, Michael Tri. H. Do, Aviv
+          Regev, Joshua R. Sanes,
+           Molecular Classification and Comparative Taxonomics of Foveal and Peripheral cell in Primate retina
+      - id: https://doi.org/10.1016/j.brainres.2007.06.007
+        doi: 10.1016/j.brainres.2007.06.007
+        pubmed_id: >-
+          Anna M. Clark, Sanghee Yun, Eric S. Veien, Yuan Y. Wu, Robert L. Chow,
+          Richard I. Dorsky, Edward M. Levine, Negative regulation of Vsx1 by
+          its paralog Chx10/Vsx2 is conserved in the vertebrate retina, Brain
+          Research, Volume 1192
+           2008, Pages 99-113
+      - id: https://doi.org/10.1016/j.exer.2016.01.002
+        doi: 10.1016/j.exer.2016.01.002
+        pubmed_id: >-
+          Clairton F. de Souza, Lisa Nivison-Smith, David L. Christie, Phillip
+          Polkinghorne, Charles McGhee, Michael Kalloniatis, Monica L. Acosta,
+          Macromolecular markers in normal human retina and applications to
+          human retinal disease, Experimental eye Research, Volume 150, 2016,
+          Pages 135-148,
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000748
+        label: retinal bipolar neuron
+        preferred_name: Bipolar cell
+      - id: http://purl.obolibrary.org/obo/CL_0000749
+        label: ON-bipolar cell
+        preferred_name: ON Bipolar cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1569
+        label: Cholecystokinin
+        preferred_name: Cholecystokinin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1569
+        label: Cholecystokinin
+        preferred_name: Cholecystokinin
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.preteyeres.2020.100844
+        doi: 10.1016/j.preteyeres.2020.100844
+        pubmed_id: >-
+          Ulrike Gr√ºnert, Paul R. Martin, Cell types and cell circuits in human
+          and non-human primate retina.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000748
+        label: retinal bipolar neuron
+        preferred_name: Bipolar cell
+      - id: http://purl.obolibrary.org/obo/CL_0000750
+        label: OFF-bipolar cell
+        preferred_name: OFF Bipolar cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/16941
+        label: secretagogin
+        preferred_name: Secretagogin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/16941
+        label: secretagogin
+        preferred_name: Secretagogin
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1002/cne.22756
+        doi: 10.1002/cne.22756
+        pubmed_id: >-
+          Puthussery, T., Gayet-Primo, J., Taylor, W.R. and Haverkamp, S.
+          (2011), Immunohistochemical identification and synaptic inputs to the
+          diffuse bipolar cell type DB1 in macaque retina. J. Comp. Neurol.,
+          519: 3640-3656.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000748
+        label: retinal bipolar neuron
+        preferred_name: Bipolar cell
+      - id: http://purl.obolibrary.org/obo/CL_0000750
+        label: OFF-bipolar cell
+        preferred_name: OFF Bipolar cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/10940
+        label: solute carrier family 1 member 2
+        preferred_name: solute carrier family 1 member 2
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/10940
+        label: solute carrier family 1 member 2
+        preferred_name: solute carrier family 1 member 2
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1002/cne.903480410
+        doi: 10.1002/cne.903480410
+        pubmed_id: >-
+          Gr√ºnert, U., Martin, P.R. and W√§ssle, H. (1994), Immunocytochemical
+          analysis of bipolar cell in the macaque monkey retina. J. Comp.
+          Neurol., 348: 607-627.
+      - id: >-
+          https://doi.org/10.1002/(SICI)1096-9861(20000103)416:1<19::AID-CNE3>3.0.CO;2-H
+        doi: 10.1002/(SICI)1096-9861(20000103)416:1<19::AID-CNE3>3.0.CO;2-H
+        pubmed_id: >-
+          Synaptic connections of DB3 diffuse bipolar cell axons in macaque
+          retina
+      - id: https://doi.org/10.1002/cne.10491
+        doi: 10.1002/cne.10491
+        pubmed_id: >-
+          Haverkamp, S., Ghosh, K.K., Hirano, A.A. and W√§ssle, H. (2003),
+          Immunocytochemical description of five bipolar cell types of the mouse
+          retina. J. Comp. Neurol., 455: 463-476
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000748
+        label: retinal bipolar neuron
+        preferred_name: Bipolar cell
+      - id: http://purl.obolibrary.org/obo/CL_0000750
+        label: OFF-bipolar cell
+        preferred_name: OFF Bipolar cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1434
+        label: calbindin 1
+        preferred_name: calbindin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1384
+        label: calcium binding protein 1
+        preferred_name: calcium binding protein 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4845
+        label: >-
+          hyperpolarization activated cyclic nucleotide gated potassium channel
+          1
+        preferred_name: HCN1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10585
+        label: sodium voltage-gated channel alpha subunit 1
+        preferred_name: sodium voltage-gated channel alpha subunit 1
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1434
+        label: calbindin 1
+        preferred_name: calbindin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1384
+        label: calcium binding protein 1
+        preferred_name: calcium binding protein 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4845
+        label: >-
+          hyperpolarization activated cyclic nucleotide gated potassium channel
+          1
+        preferred_name: HCN1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10585
+        label: sodium voltage-gated channel alpha subunit 1
+        preferred_name: sodium voltage-gated channel alpha subunit 1
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.preteyeres.2020.100844
+        doi: 10.1016/j.preteyeres.2020.100844
+        pubmed_id: >-
+          Ulrike Gr√ºnert, Paul R. Martin, Cell types and cell circuits in human
+          and non-human primate retina.
+      - id: https://doi.org/10.1002/cne.10491
+        doi: 10.1002/cne.10491
+        pubmed_id: >-
+          Haverkamp, S., Ghosh, K.K., Hirano, A.A. and W√§ssle, H. (2003),
+          Immunocytochemical description of five bipolar cell types of the mouse
+          retina. J. Comp. Neurol., 455: 463-476.
+      - id: https://doi.org/10.1523/JNEUROSCI.1249-13.2013
+        doi: 10.1523/JNEUROSCI.1249-13.2013
+        pubmed_id: >-
+          NaV1.1 Channels in Axon Initial Segments of Bipolar cell Augment Input
+          to Magnocellular Visual Pathways in the Primate retina. Theresa
+          Puthussery, Sowmya Venkataramani, Jacqueline Gayet-Primo, Robert G.
+          Smith and W. Rowland Taylor. Journal of Neuroscience 9 October 2013,
+          33 (41) 16045-16059
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000748
+        label: retinal bipolar neuron
+        preferred_name: Bipolar cell
+      - id: http://purl.obolibrary.org/obo/CL_0000750
+        label: OFF-bipolar cell
+        preferred_name: OFF Bipolar cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4845
+        label: >-
+          hyperpolarization activated cyclic nucleotide gated potassium channel
+          1
+        preferred_name: HCN1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1394
+        label: calcium voltage-gated channel subunit alpha1 G
+        preferred_name: calcium voltage-gated channel subunit alpha1 G
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/4845
+        label: >-
+          hyperpolarization activated cyclic nucleotide gated potassium channel
+          1
+        preferred_name: HCN1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1394
+        label: calcium voltage-gated channel subunit alpha1 G
+        preferred_name: calcium voltage-gated channel subunit alpha1 G
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1017/s0952523800011391
+        doi: 10.1017/s0952523800011391
+        pubmed_id: >-
+          Andressen C, Mai JK. Localization of the CD15 carbohydrate epitope in
+          the vertebrate retina. Vis Neurosci. 1997 Mar-Apr;14(2):253-62.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000748
+        label: retinal bipolar neuron
+        preferred_name: Bipolar cell
+      - id: http://purl.obolibrary.org/obo/CL_0000749
+        label: ON-bipolar cell
+        preferred_name: ON Bipolar cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/9393
+        label: protein kinase C alpha
+        preferred_name: protein kinase C alpha
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4845
+        label: >-
+          hyperpolarization activated cyclic nucleotide gated potassium channel
+          1
+        preferred_name: >-
+          hyperpolarization activated cyclic nucleotide gated potassium channel
+          1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1394
+        label: calcium voltage-gated channel subunit alpha1 G
+        preferred_name: calcium voltage-gated channel subunit alpha1 G
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10585
+        label: sodium voltage-gated channel alpha subunit 1
+        preferred_name: sodium voltage-gated channel alpha subunit 1
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/9393
+        label: protein kinase C alpha
+        preferred_name: protein kinase C alpha
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4845
+        label: >-
+          hyperpolarization activated cyclic nucleotide gated potassium channel
+          1
+        preferred_name: >-
+          hyperpolarization activated cyclic nucleotide gated potassium channel
+          1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1394
+        label: calcium voltage-gated channel subunit alpha1 G
+        preferred_name: calcium voltage-gated channel subunit alpha1 G
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10585
+        label: sodium voltage-gated channel alpha subunit 1
+        preferred_name: sodium voltage-gated channel alpha subunit 1
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1002/cne.22756
+        doi: 10.1002/cne.22756
+        pubmed_id: >-
+          Puthussery, T., Gayet-Primo, J., Taylor, W.R. and Haverkamp, S.
+          (2011), Immunohistochemical identification and synaptic inputs to the
+          diffuse bipolar cell type DB1 in macaque retina. J. Comp. Neurol.,
+          519: 3640-3656.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000748
+        label: retinal bipolar neuron
+        preferred_name: Bipolar cell
+      - id: http://purl.obolibrary.org/obo/CL_0000749
+        label: ON-bipolar cell
+        preferred_name: ON Bipolar cell
+    biomarkers: []
+    biomarkers_protein: []
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1002/cne.22756
+        doi: 10.1002/cne.22756
+        pubmed_id: >-
+          Puthussery, T., Gayet-Primo, J., Taylor, W.R. and Haverkamp, S.
+          (2011), Immunohistochemical identification and synaptic inputs to the
+          diffuse bipolar cell type DB1 in macaque retina. J. Comp. Neurol.,
+          519: 3640-3656.
+      - id: https://doi.org/10.1017/s0952523800011391
+        doi: 10.1017/s0952523800011391
+        pubmed_id: >-
+          Andressen C, Mai JK. Localization of the CD15 carbohydrate epitope in
+          the vertebrate retina. Vis Neurosci. 1997 Mar-Apr;14(2):253-62.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000748
+        label: retinal bipolar neuron
+        preferred_name: Bipolar cell
+      - id: http://purl.obolibrary.org/obo/CL_0000750
+        label: OFF-bipolar cell
+        preferred_name: OFF Bipolar cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/9937
+        label: recoverin
+        preferred_name: Recoverin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/26483
+        label: glycosyltransferase 1 domain containing 1
+        preferred_name: glycosyltransferase 1 domain containing 1
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/9937
+        label: recoverin
+        preferred_name: Recoverin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/26483
+        label: glycosyltransferase 1 domain containing 1
+        preferred_name: glycosyltransferase 1 domain containing 1
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.preteyeres.2020.100844
+        doi: 10.1016/j.preteyeres.2020.100844
+        pubmed_id: >-
+          Ulrike Gr√ºnert, Paul R. Martin, Cell types and cell circuits in human
+          and non-human primate retina.
+      - id: https://doi.org/10.1002/cne.10491
+        doi: 10.1002/cne.10491
+        pubmed_id: >-
+          Haverkamp, S., Ghosh, K.K., Hirano, A.A. and W√§ssle, H. (2003),
+          Immunocytochemical description of five bipolar cell types of the mouse
+          retina. J. Comp. Neurol., 455: 463-476.
+      - id: NoDOI
+        doi: NoDOI
+        pubmed_id: >-
+          A H Milam, J C Saari, S G Jacobson, W P Lubinski, L G Feun, K R
+          Alexander; Autoantibodies against retinal bipolar cell in cutaneous
+          melanoma-associated retinopathy. Invest. Ophthalmol. Vis. Sci.
+          1993;34(1):91-100.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000748
+        label: retinal bipolar neuron
+        preferred_name: Bipolar cell
+      - id: http://purl.obolibrary.org/obo/CL_0000749
+        label: ON-bipolar cell
+        preferred_name: ON Bipolar cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1569
+        label: cholecystokinin
+        preferred_name: cholecystokinin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1569
+        label: cholecystokinin
+        preferred_name: cholecystokinin
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1002/cne.22756
+        doi: 10.1002/cne.22756
+        pubmed_id: >-
+          Puthussery, T., Gayet-Primo, J., Taylor, W.R. and Haverkamp, S.
+          (2011), Immunohistochemical identification and synaptic inputs to the
+          diffuse bipolar cell type DB1 in macaque retina. J. Comp. Neurol.,
+          519: 3640-3656.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000748
+        label: retinal bipolar neuron
+        preferred_name: Bipolar cell
+      - id: http://purl.obolibrary.org/obo/CL_0000749
+        label: ON-bipolar cell
+        preferred_name: ON Bipolar cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/4400
+        label: G protein subunit beta 3
+        preferred_name: Guanine nucleotide-binding protein G(I)/G(S)/G(T) subunit beta-3
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/4400
+        label: G protein subunit beta 3
+        preferred_name: Guanine nucleotide-binding protein G(I)/G(S)/G(T) subunit beta-3
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.ophtha.2017.09.016
+        doi: 10.1016/j.ophtha.2017.09.016
+        pubmed_id: >-
+          Nicol√°s Cuenca, Isabel Ortu√±o-Lizar√°n, Isabel Pinilla,Cellular
+          Characterization of OCT and Outer retinal Bands Using Specific
+          Immunohistochemistry Markers and Clinical Implications, Ophthalmology,
+          Volume 125, Issue 3, 2018,Pages 407-422
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000748
+        label: retinal bipolar neuron
+        preferred_name: Bipolar cell
+      - id: http://purl.obolibrary.org/obo/CL_0000749
+        label: ON-bipolar cell
+        preferred_name: ON Bipolar cell
+      - id: http://purl.obolibrary.org/obo/CL_0000751
+        label: rod bipolar cell
+        preferred_name: rod bipolar cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/9393
+        label: protein kinase C alpha
+        preferred_name: protein kinase C alpha
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/9393
+        label: protein kinase C alpha
+        preferred_name: protein kinase C alpha
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1002/cne.10491
+        doi: 10.1002/cne.10491
+        pubmed_id: >-
+          Haverkamp, S., Ghosh, K.K., Hirano, A.A. and W√§ssle, H. (2003),
+          Immunocytochemical description of five bipolar cell types of the mouse
+          retina. J. Comp. Neurol., 455: 463-476.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0002203
+        label: vasculature of eye
+        preferred_name: vasculature of eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0001776
+        label: optic choroid
+        preferred_name: optic choroid
+      - id: http://purl.obolibrary.org/obo/UBERON_0005336
+        label: capillary layer of choroid
+        preferred_name: Choriocapillaris
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/13635
+        label: plasmalemma vesicle-associated protein
+        preferred_name: PLVAP
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1375
+        label: carbonic anhydrase 4
+        preferred_name: Carbonic anhydrase 4
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/13635
+        label: plasmalemma vesicle-associated protein
+        preferred_name: PLVAP
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1375
+        label: carbonic anhydrase 4
+        preferred_name: Carbonic anhydrase 4
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1172/jci.insight.126747
+        doi: 10.1172/jci.insight.126747
+        pubmed_id: >-
+          Elena Ivanova, Nazia M. Alam, Glen T. Prusky, Botir T. Sagdullaev.
+          Blood-retina barrier failure and vision loss in neuron-specific
+          degeneration. JCI Insight. 2019;4(8):e126747
+      - id: https://doi.org/10.1167/iovs.08-2614
+        doi: 10.1167/iovs.08-2614
+        pubmed_id: >-
+          Takayuki Baba, Rhonda Grebe, Takuya Hasegawa, Imran Bhutto, Carol
+          Merges, D. Scott McLeod, Gerard A. Lutty; Maturation of the Fetal
+          Human Choriocapillaris. Invest. Ophthalmol. Vis. Sci.
+          2009;50(7):3503-3511.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001789
+        label: outer nuclear layer of retina
+        preferred_name: outer nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: Neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000287
+        label: eye photoreceptor cell
+        preferred_name: photoreceptor
+      - id: http://purl.obolibrary.org/obo/CL_0000573
+        label: retinal cone cell
+        preferred_name: retinal cone cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/710
+        label: arrestin 3
+        preferred_name: ARR3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9937
+        label: recoverin
+        preferred_name: RCVRN
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4394
+        label: G protein subunit alpha transducin 2
+        preferred_name: GNAT2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4412
+        label: G protein subunit gamma transducin 2
+        preferred_name: GNGT2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9936
+        label: opsin 1, long wave sensitive
+        preferred_name: OPN1LW
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8790
+        label: phosphodiesterase 6H
+        preferred_name: PDE6H
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4678
+        label: guanylate cyclase activator 1A
+        preferred_name: GUCA1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1012
+        label: opsin 1, short wave sensitive
+        preferred_name: OPN1SW
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4206
+        label: opsin 1, medium wave sensitive
+        preferred_name: OPN1MW
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4400
+        label: G protein subunit beta 3
+        preferred_name: Guanine nucleotide-binding protein G(I)/G(S)/G(T) subunit beta-3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/8759
+        label: phosducin
+        preferred_name: phosducin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/4400
+        label: G protein subunit beta 3
+        preferred_name: Guanine nucleotide-binding protein G(I)/G(S)/G(T) subunit beta-3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/710
+        label: arrestin 3
+        preferred_name: Arrestin-C
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/8759
+        label: phosducin
+        preferred_name: phosducin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1012
+        label: opsin 1, short wave sensitive
+        preferred_name: opsin 1, short wave sensitive
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/9936
+        label: opsin 1, long wave sensitive
+        preferred_name: opsin 1, long wave sensitive
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4206
+        label: opsin 1, medium wave sensitive
+        preferred_name: opsin 1, medium wave sensitive
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/710
+        label: arrestin 3
+        preferred_name: ARR3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9937
+        label: recoverin
+        preferred_name: RCVRN
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4394
+        label: G protein subunit alpha transducin 2
+        preferred_name: GNAT2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4412
+        label: G protein subunit gamma transducin 2
+        preferred_name: GNGT2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9936
+        label: opsin 1, long wave sensitive
+        preferred_name: OPN1LW
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8790
+        label: phosphodiesterase 6H
+        preferred_name: PDE6H
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4678
+        label: guanylate cyclase activator 1A
+        preferred_name: GUCA1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1012
+        label: opsin 1, short wave sensitive
+        preferred_name: OPN1SW
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4206
+        label: opsin 1, medium wave sensitive
+        preferred_name: OPN1MW
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.ophtha.2017.09.016
+        doi: 10.1016/j.ophtha.2017.09.016
+        pubmed_id: >-
+          Nicol√°s Cuenca, Isabel Ortu√±o-Lizar√°n, Isabel Pinilla,Cellular
+          Characterization of OCT and Outer retinal Bands Using Specific
+          Immunohistochemistry Markers and Clinical Implications, Ophthalmology,
+          Volume 125, Issue 3, 2018,Pages 407-422
+      - id: https://doi.org/10.1016/j.exer.2016.01.002
+        doi: 10.1016/j.exer.2016.01.002
+        pubmed_id: >-
+          Clairton F. de Souza, Lisa Nivison-Smith, David L. Christie, Phillip
+          Polkinghorne, Charles McGhee, Michael Kalloniatis, Monica L. Acosta,
+          Macromolecular markers in normal human retina and applications to
+          human retinal disease, Experimental eye Research, Volume 150, 2016,
+          Pages 135-148,
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0004864
+        label: retinal vasculature
+        preferred_name: vasculature
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002585
+        label: retinal blood vessel endothelial cell
+        preferred_name: Endothelial Cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2047
+        label: claudin 5
+        preferred_name: CLDN5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5476
+        label: insulin like growth factor binding protein 7
+        preferred_name: IGFBP7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2202
+        label: collagen type IV alpha 1 chain
+        preferred_name: COL4A1
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2047
+        label: claudin 5
+        preferred_name: CLDN5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5476
+        label: insulin like growth factor binding protein 7
+        preferred_name: IGFBP7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2202
+        label: collagen type IV alpha 1 chain
+        preferred_name: COL4A1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001792
+        label: ganglionic layer of retina
+        preferred_name: retinal ganglion cell layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000740
+        label: retinal ganglion cell
+        preferred_name: Ganglion cell
+      - id: http://purl.org/sig/ont/fma/fma62360
+        label: Midget ganglion cell of retina
+        preferred_name: Midget cell
+    biomarkers: []
+    biomarkers_protein: []
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001792
+        label: ganglionic layer of retina
+        preferred_name: retinal ganglion cell layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000740
+        label: retinal ganglion cell
+        preferred_name: Ganglion cell
+      - id: http://purl.org/sig/ont/fma/fma67916
+        label: Parasol ganglion cell of retina
+        preferred_name: Parasol cell
+    biomarkers: []
+    biomarkers_protein: []
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001792
+        label: ganglionic layer of retina
+        preferred_name: retinal ganglion cell layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000740
+        label: retinal ganglion cell
+        preferred_name: Ganglion cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/19097
+        label: RNA binding protein, mRNA processing factor
+        preferred_name: RBPMS
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9218
+        label: POU class 4 homeobox 1
+        preferred_name: POU4F1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/16703
+        label: solute carrier family 17 member 6
+        preferred_name: SLC17A6
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7739
+        label: neurofilament light chain
+        preferred_name: NEFL
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7734
+        label: neurofilament medium chain
+        preferred_name: NEFM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9219
+        label: POU class 4 homeobox 2
+        preferred_name: POU4F2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9220
+        label: POU class 4 homeobox 3
+        preferred_name: POU4F3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11141
+        label: synuclein gamma
+        preferred_name: SNCG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/20778
+        label: tubulin beta class I
+        preferred_name: Œ≤ tubulin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/14449
+        label: opsin 4
+        preferred_name: melanopsin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/20778
+        label: tubulin beta class I
+        preferred_name: Œ≤ tubulin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/14449
+        label: opsin 4
+        preferred_name: melanopsin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: Thy-1 cell surface antigen
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/19097
+        label: RNA binding protein, mRNA processing factor
+        preferred_name: RNA binding protein, mRNA processing factor
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/19097
+        label: RNA binding protein, mRNA processing factor
+        preferred_name: RBPMS
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9218
+        label: POU class 4 homeobox 1
+        preferred_name: POU4F1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11801
+        label: Thy-1 cell surface antigen
+        preferred_name: THY1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/16703
+        label: solute carrier family 17 member 6
+        preferred_name: SLC17A6
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7739
+        label: neurofilament light chain
+        preferred_name: NEFL
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7734
+        label: neurofilament medium chain
+        preferred_name: NEFM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9219
+        label: POU class 4 homeobox 2
+        preferred_name: POU4F2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9220
+        label: POU class 4 homeobox 3
+        preferred_name: POU4F3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11141
+        label: synuclein gamma
+        preferred_name: SNCG
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1017/S0952523819000087
+        doi: 10.1017/S0952523819000087
+        pubmed_id: >-
+          Chandra, A., Lee, S., & Gr√ºnert, U. (2019). Melanopsin and calbindin
+          immunoreactivity in the inner retina of humans and marmosets. Visual
+          Neuroscience, 36,
+          E009¬†¬†¬†Template_Update_06_20_202111eye_v1.09Fallopian_Tube_v1.01Lymph_Vasculature_v1.05Knee_v1.07Liver_v1.0Peripheral_Nervous_System_v1.02Pancreas_v1.0Prostate_v1.01Ovary_v1.0Small_Intestine_v1.0Ureter_v1.02Urinary_Bladder_v1.011Brain_v1.13Uterus_v1.0Bone_Marrow_v1.1Blood_v1.1Heart_v1.13Lymph_Node_v1.1Lung_v1.12Large_Intestine_v1.11Kidney_v1.12Skin_v1.11Spleen_v1.1Blood_Vasculature_v1.1Thymus_v1.1Bone
+          Marrow_Blood_v14Brain_v1Heart_v1Kidney_v14Large_Intestine_v11Lung_v11Lymph_Node_v1Skin_v1Spleen_v12Thymus_v1Vasculature_v1¬†¬†¬†Explore19
+      - id: https://doi.org/10.1016/j.cell.2019.01.004
+        doi: 10.1016/j.cell.2019.01.004
+        pubmed_id: >-
+          Yi-Rong Peng, Karthik Shekhar, Wenjun Yan, Dustin Herrmann, Anna
+          Sappington, Gregory S. Bryman, Tav√© van Zyl, Michael Tri. H. Do, Aviv
+          Regev, Joshua R. Sanes,
+           Molecular Classification and Comparative Taxonomics of Foveal and Peripheral cell in Primate retina
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000965
+        label: lens
+        preferred_name: lens
+      - id: http://purl.obolibrary.org/obo/UBERON_0002444
+        label: lens fiber
+        preferred_name: lens Fibers
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0011004
+        label: lens fiber cell
+        preferred_name: lens fiber cell
+      - id: http://purl.obolibrary.org/obo/CL_0002228
+        label: primary lens fiber
+        preferred_name: primary lens fiber
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1041
+        label: beaded filament structural protein 2
+        preferred_name: Phakinin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1041
+        label: beaded filament structural protein 2
+        preferred_name: Phakinin
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000745
+        label: retina horizontal cell
+        preferred_name: Horizontal Cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6593
+        label: LIM homeobox 1
+        preferred_name: LHX1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8138
+        label: one cut homeobox 1
+        preferred_name: ONECUT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1434
+        label: calbindin 1
+        preferred_name: CALB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8139
+        label: one cut homeobox 2
+        preferred_name: ONECUT2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/9704
+        label: parvalbumin
+        preferred_name: parvalbumin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/9704
+        label: parvalbumin
+        preferred_name: parvalbumin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1434
+        label: calbindin 1
+        preferred_name: calbindin 1
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6593
+        label: LIM homeobox 1
+        preferred_name: LHX1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8138
+        label: one cut homeobox 1
+        preferred_name: ONECUT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1434
+        label: calbindin 1
+        preferred_name: CALB1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8139
+        label: one cut homeobox 2
+        preferred_name: ONECUT2
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/j.preteyeres.2020.100844
+        doi: 10.1016/j.preteyeres.2020.100844
+        pubmed_id: >-
+          Ulrike Gr√ºnert, Paul R. Martin, Cell types and cell circuits in human
+          and non-human primate retina.
+      - id: https://doi.org/10.1016/j.exer.2016.01.002
+        doi: 10.1016/j.exer.2016.01.002
+        pubmed_id: >-
+          Clairton F. de Souza, Lisa Nivison-Smith, David L. Christie, Phillip
+          Polkinghorne, Charles McGhee, Michael Kalloniatis, Monica L. Acosta,
+          Macromolecular markers in normal human retina and applications to
+          human retinal disease, Experimental eye Research, Volume 150, 2016,
+          Pages 135-148,
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000965
+        label: lens
+        preferred_name: lens
+      - id: http://purl.obolibrary.org/obo/UBERON_0001803
+        label: epithelium of lens
+        preferred_name: epithelial layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002224
+        label: lens epithelial cell
+        preferred_name: lens epithelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1748
+        label: cadherin 1
+        preferred_name: E-cadherin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1748
+        label: cadherin 1
+        preferred_name: E-cadherin
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000965
+        label: lens
+        preferred_name: lens
+      - id: http://purl.obolibrary.org/obo/UBERON_0002444
+        label: lens fiber
+        preferred_name: lens Fibers
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0011004
+        label: lens fiber cell
+        preferred_name: lens fiber cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/7103
+        label: major intrinsic protein of lens fiber
+        preferred_name: Aquaporin 0
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/7103
+        label: major intrinsic protein of lens fiber
+        preferred_name: Aquaporin 0
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000965
+        label: lens
+        preferred_name: lens
+      - id: http://purl.obolibrary.org/obo/UBERON_0000390
+        label: lens nucleus
+        preferred_name: Embryonic nucleus
+    cell_types: []
+    biomarkers: []
+    biomarkers_protein: []
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000965
+        label: lens
+        preferred_name: lens
+      - id: http://purl.obolibrary.org/obo/UBERON_0000390
+        label: lens nucleus
+        preferred_name: Juvenile nucleus
+    cell_types: []
+    biomarkers: []
+    biomarkers_protein: []
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/j.exer.2020.108134
+        doi: 10.1016/j.exer.2020.108134
+        pubmed_id: >-
+          Localization of the lens intermediate filament switch by imaging mass
+          spectrometry
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000965
+        label: lens
+        preferred_name: lens
+      - id: http://purl.obolibrary.org/obo/UBERON_0000390
+        label: lens nucleus
+        preferred_name: Fetal nucleus
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0011004
+        label: lens fiber cell
+        preferred_name: lens fiber cell
+      - id: http://purl.obolibrary.org/obo/CL_0002225
+        label: secondary lens fiber
+        preferred_name: mature fiber cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/17494
+        label: gap junction protein gamma 2
+        preferred_name: connexin 46
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/17494
+        label: gap junction protein gamma 2
+        preferred_name: connexin 46
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000965
+        label: lens
+        preferred_name: lens
+      - id: http://purl.obolibrary.org/obo/UBERON_0000390
+        label: lens nucleus
+        preferred_name: Adult nucleus
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0011004
+        label: lens fiber cell
+        preferred_name: lens fiber cell
+    biomarkers: []
+    biomarkers_protein: []
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/j.exer.2020.108134
+        doi: 10.1016/j.exer.2020.108134
+        pubmed_id: >-
+          Localization of the lens intermediate filament switch by imaging mass
+          spectrometry
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000965
+        label: lens
+        preferred_name: lens
+      - id: http://purl.obolibrary.org/obo/UBERON_0000389
+        label: lens cortex
+        preferred_name: cortex
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0011004
+        label: lens fiber cell
+        preferred_name: lens fiber cell
+    biomarkers: []
+    biomarkers_protein: []
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000965
+        label: lens
+        preferred_name: lens
+      - id: http://purl.obolibrary.org/obo/UBERON_0000389
+        label: lens cortex
+        preferred_name: cortex
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0011004
+        label: lens fiber cell
+        preferred_name: lens fiber cell
+    biomarkers: []
+    biomarkers_protein: []
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000129
+        label: microglial cell
+        preferred_name: microglial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/352
+        label: allograft inflammatory factor 1
+        preferred_name: allograft inflammatory factor 1
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/352
+        label: allograft inflammatory factor 1
+        preferred_name: allograft inflammatory factor 1
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001791
+        label: inner nuclear layer of retina
+        preferred_name: inner nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000636
+        label: Mueller cell
+        preferred_name: Muller glia
+    biomarkers:
+      - id: http://identifiers.org/hgnc/10024
+        label: retinaldehyde binding protein 1
+        preferred_name: RLBP1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4341
+        label: glutamate-ammonia ligase
+        preferred_name: GLUL
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/613
+        label: apolipoprotein E
+        preferred_name: APOE
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2338
+        label: cellular retinoic acid binding protein 1
+        preferred_name: CRABP1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2095
+        label: clusterin
+        preferred_name: CLU
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10941
+        label: solute carrier family 1 member 3
+        preferred_name: SLC1A3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2893
+        label: dickkopf WNT signaling pathway inhibitor 3
+        preferred_name: DKK3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2418
+        label: crystallin mu
+        preferred_name: CRYM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4235
+        label: glial fibrillary acidic protein
+        preferred_name: GFAP
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/10024
+        label: retinaldehyde binding protein 1
+        preferred_name: cellular retinaldehyde-binding protein
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/4235
+        label: glial fibrillary acidic protein
+        preferred_name: GFAP
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/10024
+        label: retinaldehyde binding protein 1
+        preferred_name: RLBP1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4341
+        label: glutamate-ammonia ligase
+        preferred_name: GLUL
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/613
+        label: apolipoprotein E
+        preferred_name: APOE
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2338
+        label: cellular retinoic acid binding protein 1
+        preferred_name: CRABP1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2095
+        label: clusterin
+        preferred_name: CLU
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10941
+        label: solute carrier family 1 member 3
+        preferred_name: SLC1A3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2893
+        label: dickkopf WNT signaling pathway inhibitor 3
+        preferred_name: DKK3
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2418
+        label: crystallin mu
+        preferred_name: CRYM
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: NoDOI
+        doi: NoDOI
+        pubmed_id: >-
+          Immunostaining using commercial Sigma anti-GFAP ab in: Deeg et al.
+          2007 CRALBP is a Highly Prevalent Autoantigen for Human Autoimmune
+          Uveitis
+      - id: https://doi.org/10.1016/j.ophtha.2017.09.016
+        doi: 10.1016/j.ophtha.2017.09.016
+        pubmed_id: >-
+          Nicol√°s Cuenca, Isabel Ortu√±o-Lizar√°n, Isabel Pinilla,Cellular
+          Characterization of OCT and Outer retinal Bands Using Specific
+          Immunohistochemistry Markers and Clinical Implications, Ophthalmology,
+          Volume 125, Issue 3, 2018,Pages 407-422
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0004864
+        label: retinal vasculature
+        preferred_name: vasculature
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0008034
+        label: mural cell
+        preferred_name: Mural Cell
+      - id: http://purl.obolibrary.org/obo/CL_0000669
+        label: pericyte cell
+        preferred_name: Pericyte
+    biomarkers:
+      - id: http://identifiers.org/hgnc/7060
+        label: matrix Gla protein
+        preferred_name: MGP
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6269
+        label: potassium inwardly rectifying channel subfamily J member 8
+        preferred_name: KCNJ8
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/15754
+        label: myosin light chain 9
+        preferred_name: MYL9
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2202
+        label: collagen type IV alpha 1 chain
+        preferred_name: COL4A1
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/7060
+        label: matrix Gla protein
+        preferred_name: MGP
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6269
+        label: potassium inwardly rectifying channel subfamily J member 8
+        preferred_name: KCNJ8
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/15754
+        label: myosin light chain 9
+        preferred_name: MYL9
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2202
+        label: collagen type IV alpha 1 chain
+        preferred_name: COL4A1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.cell.2019.01.004
+        doi: 10.1016/j.cell.2019.01.004
+        pubmed_id: >-
+          Yi-Rong Peng, Karthik Shekhar, Wenjun Yan, Dustin Herrmann, Anna
+          Sappington, Gregory S. Bryman, Tav√© van Zyl, Michael Tri. H. Do, Aviv
+          Regev, Joshua R. Sanes,
+           Molecular Classification and Comparative Taxonomics of Foveal and Peripheral cell in Primate retina
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001789
+        label: outer nuclear layer of retina
+        preferred_name: outer nuclear layer
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000540
+        label: neuron
+        preferred_name: Neuron
+      - id: http://purl.obolibrary.org/obo/CL_0000287
+        label: eye photoreceptor cell
+        preferred_name: Photoreceptor
+      - id: http://purl.obolibrary.org/obo/CL_0000604
+        label: retinal rod cell
+        preferred_name: retinal rod cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/10012
+        label: rhodopsin
+        preferred_name: RHO
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8759
+        label: phosducin
+        preferred_name: PDC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8002
+        label: neural retina leucine zipper
+        preferred_name: NRL
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10521
+        label: S-antigen visual arrestin
+        preferred_name: SAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4393
+        label: G protein subunit alpha transducin 1
+        preferred_name: GNAT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4411
+        label: G protein subunit gamma transducin 1
+        preferred_name: GNGT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7974
+        label: nuclear receptor subfamily 2 group E member 3
+        preferred_name: NR2E3
+        biomarker_type: gene
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/10012
+        label: rhodopsin
+        preferred_name: rhodopsin
+        biomarker_type: protein
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/10012
+        label: rhodopsin
+        preferred_name: RHO
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8759
+        label: phosducin
+        preferred_name: PDC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/8002
+        label: neural retina leucine zipper
+        preferred_name: NRL
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10521
+        label: S-antigen visual arrestin
+        preferred_name: SAG
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4393
+        label: G protein subunit alpha transducin 1
+        preferred_name: GNAT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/4411
+        label: G protein subunit gamma transducin 1
+        preferred_name: GNGT1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7974
+        label: nuclear receptor subfamily 2 group E member 3
+        preferred_name: NR2E3
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.cell.2019.01.004
+        doi: 10.1016/j.cell.2019.01.004
+        pubmed_id: >-
+          Yi-Rong Peng, Karthik Shekhar, Wenjun Yan, Dustin Herrmann, Anna
+          Sappington, Gregory S. Bryman, Tav√© van Zyl, Michael Tri. H. Do, Aviv
+          Regev, Joshua R. Sanes,
+           Molecular Classification and Comparative Taxonomics of Foveal and Peripheral cell in Primate retina
+      - id: https://doi.org/10.1016/j.exer.2016.01.002
+        doi: 10.1016/j.exer.2016.01.002
+        pubmed_id: >-
+          Clairton F. de Souza, Lisa Nivison-Smith, David L. Christie, Phillip
+          Polkinghorne, Charles McGhee, Michael Kalloniatis, Monica L. Acosta,
+          Macromolecular markers in normal human retina and applications to
+          human retinal disease, Experimental eye Research, Volume 150, 2016,
+          Pages 135-148,
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0001782
+        label: retinal pigmented epithelium
+        preferred_name: retinal pigmented epithelium
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002586
+        label: retinal pigment epithelial cell
+        preferred_name: retinal pigmented epithelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/10024
+        label: retinaldehyde binding protein 1
+        preferred_name: cellular retinaldehyde-binding protein
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10294
+        label: retinoid isomerohydrolase RPE65
+        preferred_name: RPE65
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/12691
+        label: ezrin
+        preferred_name: ezrin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/10024
+        label: retinaldehyde binding protein 1
+        preferred_name: cellular retinaldehyde-binding protein
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/10294
+        label: retinoid isomerohydrolase RPE65
+        preferred_name: RPE65
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/12691
+        label: ezrin
+        preferred_name: ezrin
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.ophtha.2017.09.016
+        doi: 10.1016/j.ophtha.2017.09.016
+        pubmed_id: >-
+          Nicol√°s Cuenca, Isabel Ortu√±o-Lizar√°n, Isabel Pinilla,Cellular
+          Characterization of OCT and Outer retinal Bands Using Specific
+          Immunohistochemistry Markers and Clinical Implications, Ophthalmology,
+          Volume 125, Issue 3, 2018,Pages 407-422
+      - id: https://doi.org/10.1083/jcb.147.7.1533
+        doi: 10.1083/jcb.147.7.1533
+        pubmed_id: >-
+          Bonilha VL, Finnemann SC, Rodriguez-Boulan E (1999) Ezrin promotes
+          morphogenesis of apical microvilli and basal infoldings in retinal
+          pigment epithelium. J Cell Biol 147:1533‚Äì1547
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000965
+        label: lens
+        preferred_name: lens
+      - id: http://purl.obolibrary.org/obo/UBERON_0000389
+        label: lens Cortex
+        preferred_name: lens Cortex
+      - id: http://purl.obolibrary.org/obo/UBERON_0002444
+        label: lens Fiber
+        preferred_name: lens Fiber
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0011004
+        label: lens fiber cell
+        preferred_name: lens fiber cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/12692
+        label: vimentin
+        preferred_name: Vimentin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/12692
+        label: vimentin
+        preferred_name: Vimentin
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1167/iovs.15-18117
+        doi: 10.1167/iovs.15-18117
+        pubmed_id: >-
+          Jamie L. Wenke, Kristie L. Rose, Jeffrey M. Spraggins, Kevin L. Schey;
+          MALDI Imaging Mass Spectrometry Spatially Maps Age-Related Deamidation
+          and Truncation of Human lens Aquaporin-0. Invest. Ophthalmol. Vis.
+          Sci. 2015;56(12):7398-7405.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+      - id: http://purl.obolibrary.org/obo/UBERON_0004864
+        label: retinal vasculature
+        preferred_name: vasculature
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: CD31
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662P28906
+        label: Hematopoietic progenitor cell antigen CD34
+        preferred_name: CD34
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: CD31
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/1662P28906
+        label: Hematopoietic progenitor cell antigen CD34
+        preferred_name: CD34
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000966
+        label: retina
+        preferred_name: retina
+    references:
+      - id: https://doi.org/10.1016/j.cell.2019.01.004
+        doi: 10.1016/j.cell.2019.01.004
+        pubmed_id: >-
+          Yi-Rong Peng, Karthik Shekhar, Wenjun Yan, Dustin Herrmann, Anna
+          Sappington, Gregory S. Bryman, Tav√© van Zyl, Michael Tri. H. Do, Aviv
+          Regev, Joshua R. Sanes,
+           Molecular Classification and Comparative Taxonomics of Foveal and Peripheral cell in Primate retina
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000964
+        label: Cornea
+        preferred_name: Cornea
+      - id: http://purl.obolibrary.org/obo/UBERON_0001985
+        label: corneal endothelium
+        preferred_name: corneal endothelium
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000132
+        label: corneal endothelial cell
+        preferred_name: corneal endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1759
+        label: cadherin 2
+        preferred_name: N-cadherin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1759
+        label: cadherin 2
+        preferred_name: N-cadherin
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1038/srep29047
+        doi: 10.1038/srep29047
+        pubmed_id: >-
+          He, Z., Forest, F., Gain, P. et al. 3D map of the human corneal
+          endothelial cell. Sci Rep 6, 29047 (2016).
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000964
+        label: Cornea
+        preferred_name: Cornea
+      - id: http://purl.obolibrary.org/obo/UBERON_0003952
+        label: anterior stroma of cornea
+        preferred_name: anterior stroma of cornea
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002363
+        label: keratocyte
+        preferred_name: keratocyte
+    biomarkers:
+      - id: P28906
+        label: Hematopoietic progenitor cell antigen CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/8803
+        label: Platelet-derived growth factor receptor alpha
+        preferred_name: PDGFRa
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: P28906
+        label: Hematopoietic progenitor cell antigen CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/8803
+        label: Platelet-derived growth factor receptor alpha
+        preferred_name: PDGFRa
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1111/jcmm.13270
+        doi: 10.1111/jcmm.13270
+        pubmed_id: Marini et al., J. Cell. Mol. Med. Vol 21, No 12, 2017 pp. 3602-3611
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000964
+        label: Cornea
+        preferred_name: Cornea
+      - id: http://purl.obolibrary.org/obo/UBERON_0003952
+        label: anterior stroma of cornea
+        preferred_name: anterior stroma of cornea
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0017004
+        label: telocyte
+        preferred_name: telocyte
+    biomarkers:
+      - id: P28906
+        label: Hematopoietic progenitor cell antigen CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/8803
+        label: Platelet-derived growth factor receptor alpha
+        preferred_name: PDGFRa
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: P28906
+        label: Hematopoietic progenitor cell antigen CD34
+        preferred_name: CD34
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/8803
+        label: Platelet-derived growth factor receptor alpha
+        preferred_name: PDGFRa
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1111/jcmm.13270
+        doi: 10.1111/jcmm.13270
+        pubmed_id: Marini et al., J. Cell. Mol. Med. Vol 21, No 12, 2017 pp. 3602-3611
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000964
+        label: Cornea
+        preferred_name: Cornea
+      - id: http://purl.obolibrary.org/obo/UBERON_0001772
+        label: corneal epithelium
+        preferred_name: corneal epithelium
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000575
+        label: corneal epithelial cell
+        preferred_name: corneal epithelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1748
+        label: cadherin 1
+        preferred_name: E-cadherin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6440
+        label: keratin 3
+        preferred_name: cytokeratin 3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6414
+        label: keratin 12
+        preferred_name: cytokeratin 12
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7756
+        label: nestin
+        preferred_name: nestin
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/1748
+        label: cadherin 1
+        preferred_name: E-cadherin
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6440
+        label: keratin 3
+        preferred_name: cytokeratin 3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6414
+        label: keratin 12
+        preferred_name: cytokeratin 12
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/7756
+        label: nestin
+        preferred_name: nestin
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1634/stemcell.22-3-355
+        doi: 10.1634/stemcell.22-3-355
+        pubmed_id: >-
+          Chen, Z., de Paiva, C.S., Luo, L., Kretzer, F.L., Pflugfelder, S.C.
+          and Li, D.-Q. (2004), Characterization of Putative Stem Cell Phenotype
+          in Human Limbal Epithelia. STEM cell, 22: 355-366.
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0000965
+        label: lens
+        preferred_name: lens
+      - id: http://purl.obolibrary.org/obo/UBERON_0006762
+        label: suspensory ligament of lens
+        preferred_name: ciliary zonules
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3603
+        label: Fibrillin 1
+        preferred_name: Fibrillin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6440
+        label: Fibrillin-2
+        preferred_name: Fibrillin-2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/18794
+        label: fibrillin 3
+        preferred_name: Fibrillin-3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6715
+        label: latent transforming growth factor beta binding protein 2
+        preferred_name: latent transforming growth factor beta binding protein 2
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/3603
+        label: Fibrillin 1
+        preferred_name: Fibrillin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6440
+        label: Fibrillin-2
+        preferred_name: Fibrillin-2
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/18794
+        label: fibrillin 3
+        preferred_name: Fibrillin-3
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/6715
+        label: latent transforming growth factor beta binding protein 2
+        preferred_name: latent transforming growth factor beta binding protein 2
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.1016/j.preteyeres.2020.100902
+        doi: 10.1016/j.preteyeres.2020.100902
+        pubmed_id: >-
+          Steven Bassnett, Zinn's zonule, Progress in retinal and eye Research,
+          Volume 82, 2021
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0001775
+        label: ciliary body
+        preferred_name: ciliary body
+      - id: http://purl.obolibrary.org/obo/UBERON_0001778
+        label: ciliary epithelium
+        preferred_name: ciliary epithelium
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002304
+        label: non-pigmented ciliary epithelial cell
+        preferred_name: non-pigmented ciliary epithelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/633
+        label: aquaporin 1
+        preferred_name: aquaporin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/637
+        label: aquaporin 4
+        preferred_name: Aquaporin 4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/800
+        label: ATPase Na+/K+ transporting subunit alpha 2
+        preferred_name: Na/K ATPasea2
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/633
+        label: aquaporin 1
+        preferred_name: aquaporin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/637
+        label: aquaporin 4
+        preferred_name: Aquaporin 4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/800
+        label: ATPase Na+/K+ transporting subunit alpha 2
+        preferred_name: Na/K ATPasea2
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.3390/cell7110210
+        doi: 10.3390/cell7110210
+        pubmed_id: Gonzalez-Marrero et al., cell 2018, 7(11), 210
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0001769
+        label: iris
+        preferred_name: iris
+      - id: http://purl.obolibrary.org/obo/UBERON_0002506
+        label: iris epithelium
+        preferred_name: iris epithelium
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0000066
+        label: epithelial cell
+        preferred_name: epithelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/633
+        label: aquaporin 1
+        preferred_name: aquaporin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/637
+        label: aquaporin 4
+        preferred_name: Aquaporin 4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/800
+        label: ATPase Na+/K+ transporting subunit alpha 2
+        preferred_name: Na/K ATPasea2
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/633
+        label: aquaporin 1
+        preferred_name: aquaporin 1
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/637
+        label: aquaporin 4
+        preferred_name: Aquaporin 4
+        biomarker_type: protein
+      - id: http://identifiers.org/hgnc/800
+        label: ATPase Na+/K+ transporting subunit alpha 2
+        preferred_name: Na/K ATPasea2
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.3390/cell7110210
+        doi: 10.3390/cell7110210
+        pubmed_id: Gonzalez-Marrero et al., cell 2018, 7(11), 210
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0001769
+        label: iris
+        preferred_name: iris
+      - id: http://purl.obolibrary.org/obo/UBERON_0002506
+        label: iris epithelium
+        preferred_name: iris epithelium
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002565
+        label: iris pigment epithelial cell
+        preferred_name: iris pigment epithelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/799
+        label: ATPase Na+/K+ transporting subunit alpha 1
+        preferred_name: ATPase Na+/K+ transporting subunit alpha 1
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/799
+        label: ATPase Na+/K+ transporting subunit alpha 1
+        preferred_name: ATPase Na+/K+ transporting subunit alpha 1
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.3390/cell7110210
+        doi: 10.3390/cell7110210
+        pubmed_id: Gonzalez-Marrero et al., cell 2018, 7(11), 210
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000970
+        label: eye
+        preferred_name: eye
+      - id: http://purl.obolibrary.org/obo/UBERON_0001775
+        label: ciliary body
+        preferred_name: ciliary body
+      - id: http://purl.obolibrary.org/obo/UBERON_0001778
+        label: ciliary epithelium
+        preferred_name: ciliary epithelium
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002303
+        label: pigmented ciliary epithelial cell
+        preferred_name: pigmented ciliary epithelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/799
+        label: ATPase Na+/K+ transporting subunit alpha 1
+        preferred_name: ATPase Na+/K+ transporting subunit alpha 1
+        biomarker_type: protein
+    biomarkers_protein:
+      - id: http://identifiers.org/hgnc/799
+        label: ATPase Na+/K+ transporting subunit alpha 1
+        preferred_name: ATPase Na+/K+ transporting subunit alpha 1
+        biomarker_type: protein
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references:
+      - id: https://doi.org/10.3390/cell7110210
+        doi: 10.3390/cell7110210
+        pubmed_id: Gonzalez-Marrero et al., cell 2018, 7(11), 210

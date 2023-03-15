@@ -1,0 +1,1375 @@
+metadata:
+  type: asct-b
+  name: vh-lymph-vasculature
+  version: v1.2
+  title: >-
+    Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for Lymph
+    Vasculature
+  description: >-
+    The lymph vasculature table focuses on major central lymphatic structures.
+    The primary source is Rouviere H. Anatomie des Lymphatiques de l'Homme.
+    Masson et Cie: Paris, 1932. This release adds the medial and lateral
+    lymphatic pathways of the upper arm. Additional lymphatic structures of the
+    arm will be included in the next release. Currently, “lymphatic endothelial
+    cell” and “FLT4 (VEGFR-3)” are the only cell types and biomarkers included
+    in the table.
+  creators:
+    - fullName: Dhruv Singhal
+      firstName: Dhruv
+      lastName: Singhal
+      orcid: 0000-0002-6300-1647
+    - fullName: Maxim Itkin
+      firstName: Maxim
+      lastName: Itkin
+      orcid: 0000-0003-1361-7109
+    - fullName: Avinash Boppana
+      firstName: Avinash
+      lastName: Boppana
+      orcid: 0000-0003-0834-8274
+  project_leads:
+    - fullName: Katy Börner
+      firstName: Katy
+      lastName: Börner
+      orcid: 0000-0002-3321-6137
+  reviewers:
+    - fullName: Robin Wang
+      firstName: Robin
+      lastName: Wang
+      orcid: 0000-0001-7369-0602
+    - fullName: Valeria Bustos
+      firstName: Valeria
+      lastName: Bustos
+      orcid: 0000-0001-6682-4246
+    - fullName: Griffin Weber
+      firstName: Griffin
+      lastName: Weber
+      orcid: 0000-0002-2597-881X
+    - fullName: Ellen Quardokus
+      firstName: Ellen
+      lastName: Quardokus
+      orcid: 0000-0001-7655-4833
+  externalReviewers: []
+  creation_date: '2022-12-15'
+  license: >-
+    Creative Commons Attribution 4.0 International ([CC BY
+    4.0](https://creativecommons.org/licenses/by/4.0/))
+  publisher: HuBMAP
+  funders:
+    - funder: National Institutes of Health
+      awardNumber: OT2OD026671
+  hubmapId: HBM469.NHVB.448
+  doi: https://doi.org/10.48539/HBM469.NHVB.448
+  citation: >-
+    Dhruv Singhal; Maxim Itkin; Avinash Boppana, HuBMAP ASCT+B Tables. Lymph
+    Vasculature v1.2,https://doi.org/10.48539/HBM469.NHVB.448. Accessed on
+    December 15, 2022.
+  citationOverall: >-
+    Quardokus, Ellen, Bruce W. Herr II, Lisel Record, Katy Börner. 2022.
+    [*HuBMAP ASCT+B
+    Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
+    Accessed on December 15, 2022.
+  datatable:
+    - asct-b-vh-lymph-vasculature.csv
+data:
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.org/sig/ont/fma/fma5832
+        label: Right lymphatic duct
+        preferred_name: right lymphatic duct
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.org/sig/ont/fma/fma5832
+        label: Right lymphatic duct
+        preferred_name: right lymphatic duct
+      - id: http://purl.org/sig/ont/fma/fma5831
+        label: Right bronchomediastinal lymphatic trunk
+        preferred_name: right bronchomediastinal lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.org/sig/ont/fma/fma5832
+        label: Right lymphatic duct
+        preferred_name: right lymphatic duct
+      - id: http://purl.org/sig/ont/fma/fma12251
+        label: Right jugular lymphatic trunk
+        preferred_name: right jugular lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.org/sig/ont/fma/fma5832
+        label: Right lymphatic duct
+        preferred_name: right lymphatic duct
+      - id: http://purl.org/sig/ont/fma/fma5830
+        label: Right subclavian lymphatic trunk
+        preferred_name: right subclavian lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.org/sig/ont/fma/fma9585
+        label: Bronchomediastinal lymphatic trunk
+        preferred_name: bronchomediastinal lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma5841
+        label: Left lumbar lymphatic trunk
+        preferred_name: left lumbar lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma5842
+        label: Intestinal lymphatic trunk
+        preferred_name: intestinal lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma5842
+        label: Intestinal lymphatic trunk
+        preferred_name: intestinal lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma323951
+        label: Pre-aortic thoracic lymph node group
+        preferred_name: preaortic lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma5842
+        label: Intestinal lymphatic trunk
+        preferred_name: intestinal lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma323951
+        label: Pre-aortic thoracic lymph node group
+        preferred_name: preaortic lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0002508
+        label: celiac lymph node
+        preferred_name: celiac lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma5842
+        label: Intestinal lymphatic trunk
+        preferred_name: intestinal lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma323951
+        label: Pre-aortic thoracic lymph node group
+        preferred_name: preaortic lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0016378
+        label: ileocolic lymph node
+        preferred_name: ileocolic lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma5842
+        label: Intestinal lymphatic trunk
+        preferred_name: intestinal lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma323951
+        label: Pre-aortic thoracic lymph node group
+        preferred_name: preaortic lymph node
+      - id: http://purl.org/sig/ont/fma/fma71813
+        label: Inferior mesenteric lymph node group
+        preferred_name: inferior mesenteric lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma5842
+        label: Intestinal lymphatic trunk
+        preferred_name: intestinal lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma323951
+        label: Pre-aortic thoracic lymph node group
+        preferred_name: preaortic lymph node
+      - id: http://purl.org/sig/ont/fma/fma71813
+        label: Inferior mesenteric lymph node group
+        preferred_name: inferior mesenteric lymph node
+      - id: http://purl.org/sig/ont/fma/fma71841
+        label: Pararectal lymph node group
+        preferred_name: pararectal lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma5842
+        label: Intestinal lymphatic trunk
+        preferred_name: intestinal lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma323951
+        label: Pre-aortic thoracic lymph node group
+        preferred_name: preaortic lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0002509
+        label: mesenteric lymph node
+        preferred_name: mesenteric lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma5842
+        label: Intestinal lymphatic trunk
+        preferred_name: intestinal lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma323951
+        label: Pre-aortic thoracic lymph node group
+        preferred_name: preaortic lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0016402
+        label: mesocolic lymph node
+        preferred_name: mesocolic lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+      - id: http://purl.obolibrary.org/obo/UBERON_0016386
+        label: paraaortic lymph node
+        preferred_name: paraaortic lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+      - id: http://purl.obolibrary.org/obo/UBERON_0016386
+        label: paraaortic lymph node
+        preferred_name: paraaortic lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0015878
+        label: common iliac lymph node
+        preferred_name: common iliac lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+      - id: http://purl.obolibrary.org/obo/UBERON_0016386
+        label: paraaortic lymph node
+        preferred_name: paraaortic lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0015878
+        label: common iliac lymph node
+        preferred_name: common iliac lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0015880
+        label: external iliac lymph node
+        preferred_name: external iliac lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+      - id: http://purl.obolibrary.org/obo/UBERON_0016386
+        label: paraaortic lymph node
+        preferred_name: paraaortic lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0015878
+        label: common iliac lymph node
+        preferred_name: common iliac lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0015880
+        label: external iliac lymph node
+        preferred_name: external iliac lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0009006
+        label: deep inguinal lymph node
+        preferred_name: deep inguinal lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+      - id: http://purl.obolibrary.org/obo/UBERON_0016386
+        label: paraaortic lymph node
+        preferred_name: paraaortic lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0015878
+        label: common iliac lymph node
+        preferred_name: common iliac lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0015880
+        label: external iliac lymph node
+        preferred_name: external iliac lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0009006
+        label: deep inguinal lymph node
+        preferred_name: deep inguinal lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0001543
+        label: popliteal lymph node
+        preferred_name: popliteal lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+      - id: http://purl.obolibrary.org/obo/UBERON_0016386
+        label: paraaortic lymph node
+        preferred_name: paraaortic lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0015878
+        label: common iliac lymph node
+        preferred_name: common iliac lymph node
+      - id: http://purl.obolibrary.org/obo/UBERON_0015881
+        label: internal iliac lymph node
+        preferred_name: internal iliac lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma12765
+        label: Lumbar lymphatic trunk
+        preferred_name: lumbar lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma233577
+        label: Retro-aortic lymph node group
+        preferred_name: retroaortic lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.obolibrary.org/obo/UBERON_0005435
+        label: upper part of cisterna chyli
+        preferred_name: cisterna chyli
+      - id: http://purl.org/sig/ont/fma/fma5840
+        label: Right lumbar lymphatic trunk
+        preferred_name: right lumbar lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.org/sig/ont/fma/fma12250
+        label: Jugular lymphatic trunk
+        preferred_name: jugular lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.org/sig/ont/fma/fma5834
+        label: Left bronchomediastinal lymphatic trunk
+        preferred_name: left bronchomediastinal lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.org/sig/ont/fma/fma5032
+        label: Left jugular lymphatic trunk
+        preferred_name: left jugular lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.org/sig/ont/fma/fma5033
+        label: Left subclavian lymphatic trunk
+        preferred_name: left subclavian lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.org/sig/ont/fma/fma12252
+        label: Subclavian lymphatic trunk
+        preferred_name: subclavian lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.org/sig/ont/fma/fma12252
+        label: Subclavian lymphatic trunk
+        preferred_name: subclavian lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma71749
+        label: Central axillary lymph node group
+        preferred_name: central axillary lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.org/sig/ont/fma/fma12252
+        label: Subclavian lymphatic trunk
+        preferred_name: subclavian lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma71749
+        label: Central axillary lymph node group
+        preferred_name: central axillary lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.org/sig/ont/fma/fma12252
+        label: Subclavian lymphatic trunk
+        preferred_name: subclavian lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma234912
+        label: Supraclavicular lymphatic vessel
+        preferred_name: supraclavicular lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.org/sig/ont/fma/fma12252
+        label: Subclavian lymphatic trunk
+        preferred_name: subclavian lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma234912
+        label: Supraclavicular lymphatic vessel
+        preferred_name: supraclavicular lymph trunk
+      - id: http://purl.obolibrary.org/obo/UBERON_0035279
+        label: supraclavicular lymph node
+        preferred_name: supraclavicular lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.org/sig/ont/fma/fma12252
+        label: Subclavian lymphatic trunk
+        preferred_name: subclavian lymph trunk
+      - id: http://purl.org/sig/ont/fma/fma234912
+        label: Supraclavicular lymphatic vessel
+        preferred_name: supraclavicular lymph trunk
+      - id: http://purl.obolibrary.org/obo/UBERON_0035279
+        label: supraclavicular lymph node
+        preferred_name: supraclavicular lymph node
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.org/sig/ont/fma/fma12252
+        label: Subclavian lymphatic trunk
+        preferred_name: subclavian lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0004536
+        label: lymph vasculature
+        preferred_name: lymph vasculature
+      - id: http://purl.obolibrary.org/obo/UBERON_0001631
+        label: thoracic duct
+        preferred_name: thoracic duct
+      - id: http://purl.org/sig/ont/fma/fma12252
+        label: Subclavian lymphatic trunk
+        preferred_name: subclavian lymph trunk
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_0002138
+        label: endothelial cell of lymphatic vessel
+        preferred_name: lymphatic endothelial cell
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3767
+        label: FLT4
+        preferred_name: FLT4 (VEGFR-3)
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []

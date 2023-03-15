@@ -1,0 +1,7 @@
+warnings:
+  - 'WARNING: unmapped array found TRANSCRIPTOMICS'
+  - 'WARNING: unmapped metadata found Author Names:'
+  - 'WARNING: unmapped metadata found Author ORCIDs:'
+  - 'WARNING: unmapped metadata found Reviewers:'
+  - 'WARNING: unmapped metadata found Reviewer ORCIDs:'
+  - 'WARNING: unmapped metadata found General Publications:'

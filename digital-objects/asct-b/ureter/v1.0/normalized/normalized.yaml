@@ -1,0 +1,571 @@
+metadata:
+  type: asct-b
+  name: ureter
+  version: v1.0
+  title: Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for Ureter
+  description: >-
+    [Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B)
+    tables](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html)
+    aim to capture the nested *part_of* structure of anatomical human body
+    parts, the typology of cells, and biomarkers used to identify cell types.
+    The tables are authored and reviewed by an international team of experts.
+  creators:
+    - fullName: Douglas Strand
+      firstName: Douglas
+      lastName: Strand
+      orcid: 0000-0002-0746-927X
+    - fullName: Sanjay Jain
+      firstName: Sanjay
+      lastName: Jain
+      orcid: 0000-0003-2804-127X
+  project_leads:
+    - fullName: Katy Börner
+      firstName: Katy
+      lastName: Börner
+      orcid: 0000-0002-3321-6137
+  reviewers:
+    - fullName: Ellen M. Quardokus
+      firstName: Ellen
+      lastName: Quardokus
+      orcid: 0000-0001-7655-4833
+  externalReviewers: []
+  creation_date: '2021-12-01'
+  license: >-
+    Creative Commons Attribution 4.0 International ([CC BY
+    4.0](https://creativecommons.org/licenses/by/4.0/))
+  publisher: HuBMAP
+  funders:
+    - funder: National Institutes of Health
+      awardNumber: OT2OD026671
+  hubmapId: HBM882.LRSF.394
+  doi: https://doi.org/10.48539/HBM882.LRSF.394
+  citation: >-
+    Douglas Strand; Sanjay Jain, HuBMAP ASCT+B Tables. Ureter v1.0
+    [https://doi.org/10.48539/HBM882.LRSF.394](https://doi.org/10.48539/HBM882.LRSF.394)
+  citationOverall: >-
+    Quardokus, Ellen, Bruce W. Herr II, Lisel Record, Katy Börner. 2021.
+    [*HuBMAP ASCT+B
+    Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
+    Accessed on Dec 1, 2021.
+  datatable:
+    - ASCT-B_VH_Ureter.csv
+data:
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000056
+        label: ureter
+        preferred_name: ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0005005
+        label: mucosa of left ureter
+        preferred_name: mucosa of left ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0001254
+        label: urothelium of ureter
+        preferred_name: urothelium of ureter
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_1001428
+        label: ureter urothelial cell
+        preferred_name: urothelium
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6442
+        label: keratin 5
+        preferred_name: KRT5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10492
+        label: S100 calcium binding protein A2
+        preferred_name: S100A2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2891
+        label: dickkopf WNT signaling pathway inhibitor 1
+        preferred_name: DKK1
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6442
+        label: keratin 5
+        preferred_name: KRT5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10492
+        label: S100 calcium binding protein A2
+        preferred_name: S100A2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2891
+        label: dickkopf WNT signaling pathway inhibitor 1
+        preferred_name: DKK1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000056
+        label: ureter
+        preferred_name: ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0005005
+        label: mucosa of left ureter
+        preferred_name: mucosa of left ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0001254
+        label: urothelium of ureter
+        preferred_name: urothelium of ureter
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_1001428
+        label: ureter urothelial cell
+        preferred_name: urothelium
+    biomarkers:
+      - id: http://identifiers.org/hgnc/15979
+        label: tumor protein p63
+        preferred_name: TP63
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6415
+        label: keratin 13
+        preferred_name: KRT13
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/384
+        label: aldo-keto reductase family 1 member C1
+        preferred_name: AKR1C1
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/15979
+        label: tumor protein p63
+        preferred_name: TP63
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/6415
+        label: keratin 13
+        preferred_name: KRT13
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/384
+        label: aldo-keto reductase family 1 member C1
+        preferred_name: AKR1C1
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000056
+        label: ureter
+        preferred_name: ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0005005
+        label: mucosa of left ureter
+        preferred_name: mucosa of left ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0001254
+        label: urothelium of ureter
+        preferred_name: urothelium of ureter
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_1001428
+        label: ureter urothelial cell
+        preferred_name: urothelium
+    biomarkers:
+      - id: http://identifiers.org/hgnc/12577
+        label: uroplakin 1A
+        preferred_name: UPK1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12580
+        label: uroplakin 3A
+        preferred_name: UPK3A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12578
+        label: uroplakin 1B
+        preferred_name: UPK1B
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/12577
+        label: uroplakin 1A
+        preferred_name: UPK1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12580
+        label: uroplakin 3A
+        preferred_name: UPK3A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/12578
+        label: uroplakin 1B
+        preferred_name: UPK1B
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000056
+        label: ureter
+        preferred_name: ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0036376
+        label: wall of left ureter
+        preferred_name: wall of left ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0009919
+        label: ureter detrusor smooth muscle
+        preferred_name: ureter detrusor smooth muscle
+    cell_types: []
+    biomarkers:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/145
+        label: actin gamma 2, smooth muscle
+        preferred_name: ACTG2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/2770
+        label: desmin
+        preferred_name: DES
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/145
+        label: actin gamma 2, smooth muscle
+        preferred_name: ACTG2
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000056
+        label: ureter
+        preferred_name: ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0036376
+        label: wall of left ureter
+        preferred_name: wall of left ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0001253
+        label: lamina propria of ureter
+        preferred_name: lamina propria of ureter
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_1000708
+        label: ureter adventitial cell
+        preferred_name: myofibroblast
+    biomarkers:
+      - id: http://identifiers.org/hgnc/11373
+        label: stanniocalcin 1
+        preferred_name: STC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5318
+        label: tenascin C
+        preferred_name: TNC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7035
+        label: microfibril associated protein 4
+        preferred_name: MFAP4
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/11373
+        label: stanniocalcin 1
+        preferred_name: STC1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/5318
+        label: tenascin C
+        preferred_name: TNC
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/7035
+        label: microfibril associated protein 4
+        preferred_name: MFAP4
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000056
+        label: ureter
+        preferred_name: ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0036376
+        label: wall of left ureter
+        preferred_name: wall of left ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0001253
+        label: lamina propria of ureter
+        preferred_name: lamina propria of ureter
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_1000308
+        label: fibrocyte of adventitia of ureter
+        preferred_name: fibroblast
+    biomarkers:
+      - id: http://identifiers.org/hgnc/21245
+        label: peptidase inhibitor 16
+        preferred_name: PI16
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/29673
+        label: microfibril associated protein 5
+        preferred_name: MFAP5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2705
+        label: decorin
+        preferred_name: DCN
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/21245
+        label: peptidase inhibitor 16
+        preferred_name: PI16
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/29673
+        label: microfibril associated protein 5
+        preferred_name: MFAP5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2705
+        label: decorin
+        preferred_name: DCN
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000056
+        label: ureter
+        preferred_name: ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0036376
+        label: wall of left ureter
+        preferred_name: wall of left ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0001253
+        label: lamina propria of ureter
+        preferred_name: lamina propria of ureter
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_1000308
+        label: fibrocyte of adventitia of ureter
+        preferred_name: fibroblast
+    biomarkers:
+      - id: http://identifiers.org/hgnc/3011
+        label: dermatopontin
+        preferred_name: DPT
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1346
+        label: complement C7
+        preferred_name: C7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2705
+        label: decorin
+        preferred_name: DCN
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/3011
+        label: dermatopontin
+        preferred_name: DPT
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/1346
+        label: complement C7
+        preferred_name: C7
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2705
+        label: decorin
+        preferred_name: DCN
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000056
+        label: ureter
+        preferred_name: ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0036376
+        label: wall of left ureter
+        preferred_name: wall of left ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0001253
+        label: lamina propria of ureter
+        preferred_name: lamina propria of ureter
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_1000708
+        label: ureter adventitial cell
+        preferred_name: fibroblast
+    biomarkers:
+      - id: http://identifiers.org/hgnc/20396
+        label: paired immunoglobin like type 2 receptor alpha
+        preferred_name: PILRA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11092
+        label: secretory leukocyte peptidase inhibitor
+        preferred_name: SLPI
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/613
+        label: apolipoprotein E
+        preferred_name: APOE
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/20396
+        label: paired immunoglobin like type 2 receptor alpha
+        preferred_name: PILRA
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/11092
+        label: secretory leukocyte peptidase inhibitor
+        preferred_name: SLPI
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/613
+        label: apolipoprotein E
+        preferred_name: APOE
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000056
+        label: ureter
+        preferred_name: ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0036376
+        label: wall of left ureter
+        preferred_name: wall of left ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0001253
+        label: lamina propria of ureter
+        preferred_name: lamina propria of ureter
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_1000708
+        label: ureter adventitial cell
+        preferred_name: endothelium
+    biomarkers:
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2047
+        label: claudin 5
+        preferred_name: CLDN5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10718
+        label: selectin E
+        preferred_name: SELE
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/8823
+        label: platelet and endothelial cell adhesion molecule 1
+        preferred_name: PECAM1
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/2047
+        label: claudin 5
+        preferred_name: CLDN5
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/10718
+        label: selectin E
+        preferred_name: SELE
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000056
+        label: ureter
+        preferred_name: ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0036376
+        label: wall of left ureter
+        preferred_name: wall of left ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0001253
+        label: lamina propria of ureter
+        preferred_name: lamina propria of ureter
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_1000708
+        label: ureter adventitial cell
+        preferred_name: smooth muscle
+    biomarkers:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/281
+        label: adrenoceptor alpha 2A
+        preferred_name: ADRA2A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/6934
+        label: melanoma cell adhesion molecule
+        preferred_name: MCAM
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/281
+        label: adrenoceptor alpha 2A
+        preferred_name: ADRA2A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000056
+        label: ureter
+        preferred_name: ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0036376
+        label: wall of left ureter
+        preferred_name: wall of left ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0001253
+        label: lamina propria of ureter
+        preferred_name: lamina propria of ureter
+    cell_types:
+      - id: http://purl.obolibrary.org/obo/CL_1000708
+        label: ureter adventitial cell
+        preferred_name: smooth muscle
+    biomarkers:
+      - id: http://identifiers.org/hgnc/1663
+        label: CD36 molecule
+        preferred_name: CD36
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/895
+        label: arginine vasopressin receptor 1A
+        preferred_name: AVPR1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_protein: []
+    biomarkers_gene:
+      - id: http://identifiers.org/hgnc/1663
+        label: CD36 molecule
+        preferred_name: CD36
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/895
+        label: arginine vasopressin receptor 1A
+        preferred_name: AVPR1A
+        biomarker_type: gene
+      - id: http://identifiers.org/hgnc/130
+        label: actin alpha 2, smooth muscle
+        preferred_name: ACTA2
+        biomarker_type: gene
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
+  - anatomical_structures:
+      - id: http://purl.obolibrary.org/obo/UBERON_0000056
+        label: ureter
+        preferred_name: ureter
+      - id: http://purl.obolibrary.org/obo/UBERON_0036376
+        label: wall of left ureter
+        preferred_name: wall of left ureter
+    cell_types: []
+    biomarkers: []
+    biomarkers_protein: []
+    biomarkers_gene: []
+    biomarkers_lipids: []
+    biomarkers_meta: []
+    biomarkers_prot: []
+    ftu_types: []
+    references: []
