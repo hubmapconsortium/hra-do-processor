@@ -26,6 +26,13 @@ if [ -e "$ENV/bin/activate" ]; then
     python -m pip install -r "$ROOT_DIR/requirements.txt"
     python -m pip install "cwltool"
 
+    # Install Robot
+    if [ ! -e "$ENV/bin/robot" ]; then
+        curl https://raw.githubusercontent.com/ontodev/robot/master/bin/robot -o $ENV/bin/robot
+        chmod +x $ENV/bin/robot
+        curl -L https://github.com/ontodev/robot/releases/download/v1.9.3/robot.jar -o $ENV/bin/robot.jar
+    fi
+
     # Install node (latest LTS version)
     if [ ! -e "$ENV/bin/node" ]; then
         nodeenv --python-virtualenv --node lts

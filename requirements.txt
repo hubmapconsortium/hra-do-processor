@@ -4,3 +4,4 @@ check-jsonschema
 # cwltool # Causes problems when installed all at once, so this is installed in the setup-environment.sh script
 asctb2ccf @ git+https://github.com/hubmapconsortium/asctb2ccf
 spatial2ccf @ git+https://github.com/hubmapconsortium/spatial2ccf
+linkml-owl @ git+https://github.com/linkml/linkml-owl
