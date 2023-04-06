@@ -16,15 +16,9 @@ default_prefix: dcat
 default_range: string
 
 imports:
-  - core
+  - linkml:types
 
 classes:
-  AsctbMetadata:
-    is_a: NamedThing
-    class_uri: dcat:Dataset
-    slots:
-      - type
-      - name
   Person:
     class_uri: foaf:Person
     slots:
@@ -37,20 +31,35 @@ classes:
     slots:
       - funder
       - awardNumber
+  AsctbMetadata:
+    class_uri: dcat:Dataset
+    slots:
+      - type
+      - name
+      - version
+      - title
+      - description
+      - creators
+      - project_leads
+      - reviewers
+      - externalReviewers
+      - creation_date
+      - license
+      - publisher
+      - funders
+      - hubmapId
+      - doi
+      - citation
+      - citationOverall
+      - datatable
 
 slots:
   type:
     required: false
-    slot_uri: schema:about
-    annotations:
-      owl.template: |-
-        AnnotationAssertion( schema:about {{id}} "{{type}}" )
+    slot_uri: schema:about    
   name:
     required: false
     slot_uri: schema:name
-    annotations:
-      owl.template: |-
-        AnnotationAssertion( schema:name http://test.org/test "{{name}}" )
   version:
     required: true
     slot_uri: schema:version
@@ -71,7 +80,7 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: Person
-    slot_uri: schema:accountablePerson
+    slot_uri: ccf:project_lead
   reviewers:
     required: false
     multivalued: true
@@ -83,7 +92,7 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: Person    
-    slot_uri: schema:reviewedBy
+    slot_uri: ccf:externallyReviewedBy
   creation_date:
     required: true
     slot_uri: schema:dateCreated
@@ -111,7 +120,7 @@ slots:
     slot_uri: schema:citation
   citationOverall:
     required: false
-    slot_uri: schema:citation
+    slot_uri: ccf:citation_overall
   datatable:
     required: false
     multivalued: true
@@ -134,4 +143,3 @@ slots:
   awardNumber:
     required: false
     slot_uri: schema:identifier
-  

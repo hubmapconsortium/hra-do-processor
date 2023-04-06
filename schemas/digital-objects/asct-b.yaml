@@ -18,10 +18,22 @@ default_prefix: ccf
 default_range: string
 
 imports:
-  - core
-  - metadata
+  - linkml:types
 
 classes:
+  Thing:
+    abstract: true
+    description: Root node for all metaclasses.
+  NamedThing:
+    is_a: Thing
+    abstract: true
+    description: |-
+      Generic grouping for classes, relations, individuals, and other named entities.
+    attributes:
+      id:
+        required: true
+        identifier: true
+        range: uriorcurie
   AsctbConcept:
     is_a: NamedThing
     abstract: true
@@ -73,13 +85,6 @@ classes:
       - anatomical_structures
       - cell_types
       - biomarkers
-  Container:
-    tree_root: true
-    attributes:
-      metadata:
-        range: AsctbMetadata
-      data:
-        range: AsctbDataset
 
 slots:
   class_type:
@@ -106,6 +111,8 @@ slots:
     required: false
     range: BiomarkerSet
     multivalued: true
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
   ccf_pref_label:
     required: true
     slot_uri: ccf:ccf_pref_label
