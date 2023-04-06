@@ -10,6 +10,7 @@ const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
 
 export async function normalizeAsctb(context) {
   const obj = context.selectedDigitalObject;
+  const id = `http://purl.humanatlas.io/${context.selectedDigitalObject.doString}`
   const metadata = readMetadata(obj);
 
   const dataUrl = Array.isArray(metadata.datatable) ? metadata.datatable[0] : metadata.datatable;
@@ -35,7 +36,7 @@ export async function normalizeAsctb(context) {
   }
   const normalizedData = normalizeAsctbApiResponse(data.data);
 
-  writeNormalized(obj, metadata, normalizedData);
+  writeNormalized(obj, id, metadata, normalizedData);
   validateNormalized(context);
 
   // If warnings are found in the response, save for reference.

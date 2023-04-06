@@ -7,12 +7,13 @@ export function readMetadata(obj) {
   return load(readFileSync(resolve(obj.path, 'raw/metadata.yaml')));
 }
 
-export function writeNormalized(obj, metadata, data) {
+export function writeNormalized(obj, id, metadata, data) {
   sh.mkdir('-p', resolve(obj.path, 'normalized'));
   const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
   writeFileSync(
     normalizedPath,
     dump({
+      id,
       metadata,
       data,
     })
