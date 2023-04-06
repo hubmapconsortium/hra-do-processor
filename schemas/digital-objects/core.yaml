@@ -1,0 +1,31 @@
+id: http://purl.humanatlas.io/specs/core
+name: core
+prefixes:
+  owl: http://www.w3.org/2002/07/owl#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  linkml: https://w3id.org/linkml/
+
+default_prefix: owl
+default_range: string
+
+imports:
+  - linkml:types
+  
+classes:
+  Thing:
+    abstract: true
+    description: Root node for all metaclasses.
+  NamedThing:
+    is_a: Thing
+    abstract: true
+    description: |-
+      Generic grouping for classes, relations, individuals, and other named entities.
+    slots:
+      - id
+
+slots:
+  id:
+    required: true
+    identifier: true
+    range: uriorcurie

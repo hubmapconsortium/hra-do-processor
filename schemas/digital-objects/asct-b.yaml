@@ -3,8 +3,6 @@ name: asct-b
 prefixes:
   ccf: http://purl.org/ccf/
   owl: http://www.w3.org/2002/07/owl#
-  dcterms: http://purl.org/dc/terms/
-  pav: http://purl.org/pav/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   xsd: http://www.w3.org/2001/XMLSchema#
   linkml: https://w3id.org/linkml/
@@ -15,36 +13,23 @@ prefixes:
   FMA: http://purl.org/sig/ont/fma/fma
   HGNC: http://identifiers.org/hgnc/
   ASCTB-TEMP: http://purl.org/ccf/ASCTB-TEMP_
-imports:
-  - linkml:types
+
 default_prefix: ccf
 default_range: string
 
+imports:
+  - core
+  - metadata
+
 classes:
-  Thing:
-    abstract: true
-    description: Root node for all metaclasses.
-  NamedThing:
-    is_a: Thing
-    abstract: true
-    description: |-
-      Generic grouping for classes, relations, individuals, 
-      and other named entities.
-    slots:
-      - id
   AsctbConcept:
     is_a: NamedThing
     abstract: true
     slots:
-      - type
+      - class_type
       - ccf_pref_label
       - ccf_asctb_type
       - ccf_is_provisional
-  AsctbDataset:
-    slots:
-      - anatomical_structures
-      - cell_types
-      - biomarkers
   AnatomicalStructure:
     is_a: AsctbConcept
     slots:
@@ -83,19 +68,21 @@ classes:
   BiomarkerSet:
     slots:
       - members
+  AsctbDataset:
+    slots:
+      - anatomical_structures
+      - cell_types
+      - biomarkers
   Container:
     tree_root: true
     attributes:
       metadata:
+        range: AsctbMetadata
       data:
         range: AsctbDataset
 
 slots:
-  id:
-    required: true
-    identifier: true
-    range: uriorcurie
-  type:
+  class_type:
     required: true
     designates_type: true
   anatomical_structures:

@@ -4,179 +4,134 @@ prefixes:
   ccf: http://purl.org/ccf/
   dcterms: http://purl.org/dc/terms/
   pav: http://purl.org/pav/
+  dcat: http://www.w3.org/ns/dcat#
+  dct: http://purl.org/dc/terms/
+  foaf: http://xmlns.com/foaf/0.1/
+  schema: http://schema.org/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   xsd: http://www.w3.org/2001/XMLSchema#
-  obo: http://purl.obolibrary.org/obo/
   linkml: https://w3id.org/linkml/
-imports:
-  - linkml:types
-default_prefix: ccf
+
+default_prefix: dcat
 default_range: string
 
+imports:
+  - core
+
 classes:
-  AsctbRecord:
-    class_uri: ccf:AsctbRecord
+  AsctbMetadata:
+    is_a: NamedThing
+    class_uri: dcat:Dataset
     slots:
-      - anatomical_structures
-      - cell_types
-      - biomarkers
-      - biomarkers_protein
-      - biomarkers_gene
-      - biomarkers_lipids
-      - biomarkers_meta
-      - biomarkers_prot
-      - ftu_types
-      - references
-  AnatomicalStructure:
-    class_uri: ccf:AnatomicalStructure
+      - type
+      - name
+  Person:
+    class_uri: foaf:Person
     slots:
-      - id
-      - label
-      - preferred_name
-  CellType:
-    class_uri: ccf:CellType
+      - fullName
+      - firstName
+      - lastName
+      - orcid      
+  Grant:
+    class_uri: schema:Grant
     slots:
-      - id
-      - label
-      - preferred_name
-  Biomarker:
-    class_uri: ccf:Biomarker
-    slots:
-      - id
-      - label
-      - preferred_name
-      - biomarker_type
-  ProteinBiomarker:
-    class_uri: ccf:ProteinBiomarker
-    slots:
-      - id
-      - label
-      - preferred_name
-      - biomarker_type
-  GeneBiomarker:
-    class_uri: ccf:GeneBiomarker
-    slots:
-      - id
-      - label
-      - preferred_name
-      - biomarker_type
-  LipidBiomarker:
-    class_uri: ccf:LipidBiomarker
-    slots:
-      - id
-      - label
-      - preferred_name
-      - biomarker_type
-  MetaBiomarker:
-    class_uri: ccf:MetaBiomarker
-    slots:
-      - id
-      - label
-      - preferred_name
-      - biomarker_type
-  ProtBiomarker:
-    class_uri: ccf:ProtBiomarker
-    slots:
-      - id
-      - label
-      - preferred_name
-      - biomarker_type
-  FtuType:
-    class_uri: ccf:FtuType
-    slots:
-      - id
-      - label
-      - preferred_name
-  StudyReference:
-    class_uri: ccf:StudyReference
-    slots:
-      - id
-      - doi
-      - pubmed_id
-  Container:
-    tree_root: true
-    attributes:
-      data:
-        multivalued: true
-        inlined_as_list: true
-        range: AsctbRecord
+      - funder
+      - awardNumber
 
 slots:
-  id:
+  type:
+    required: false
+    slot_uri: schema:about
+    annotations:
+      owl.template: |-
+        AnnotationAssertion( schema:about {{id}} "{{type}}" )
+  name:
+    required: false
+    slot_uri: schema:name
+    annotations:
+      owl.template: |-
+        AnnotationAssertion( schema:name http://test.org/test "{{name}}" )
+  version:
     required: true
-    identifier: true
-  anatomical_structures:
+    slot_uri: schema:version
+  title:
     required: true
-    slot_uri: ccf:contains_anatomical_structures
-    range: AnatomicalStructure
-    multivalued: true
-    inlined_as_list: true
-  cell_types:
-    required: false
-    slot_uri: ccf:contains_cell_types
-    range: CellType
-    multivalued: true
-    inlined_as_list: true
-  biomarkers:
-    required: false
-    slot_uri: ccf:contains_biomarkers
-    range: Biomarker
-    multivalued: true
-    inlined_as_list: true
-  biomarkers_protein:
-    required: false
-    slot_uri: ccf:contains_protein_biomarkers
-    range: ProteinBiomarker
-    multivalued: true
-    inlined_as_list: true
-  biomarkers_gene:
-    required: false
-    slot_uri: ccf:contains_gene_biomarkers
-    range: GeneBiomarker
-    multivalued: true
-    inlined_as_list: true
-  biomarkers_lipids:
-    required: false
-    slot_uri: ccf:contains_lipid_biomarkers
-    range: LipidBiomarker
-    multivalued: true
-    inlined_as_list: true
-  biomarkers_meta:
-    required: false
-    slot_uri: ccf:contains_meta_biomarkers
-    range: MetaBiomarker
-    multivalued: true
-    inlined_as_list: true
-  biomarkers_prot:
-    required: false
-    slot_uri: ccf:contains_prot_biomarkers
-    range: ProtBiomarker
-    multivalued: true
-    inlined_as_list: true
-  ftu_types:
-    required: false
-    slot_uri: ccf:ftu_types
-    range: FtuType
-    multivalued: true
-    inlined_as_list: true
-  references:
-    required: false
-    slot_uri: ccf:contains_references
-    range: StudyReference
-    multivalued: true
-    inlined_as_list: true
-  label:
+    slot_uri: dct:title
+  description:
     required: true
-    slot_uri: rdfs:label
-  preferred_name:
+    slot_uri: dct:description
+  creators:
+    required: true
+    multivalued: true
+    inlined_as_list: true
+    range: Person
+    slot_uri: dct:creator
+  project_leads:
     required: false
-    slot_uri: ccf:pref_label
-  biomarker_type:
+    multivalued: true
+    inlined_as_list: true
+    range: Person
+    slot_uri: schema:accountablePerson
+  reviewers:
     required: false
-    slot_uri: ccf:biomarker_type
+    multivalued: true
+    inlined_as_list: true
+    range: Person    
+    slot_uri: schema:reviewedBy
+  externalReviewers:
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: Person    
+    slot_uri: schema:reviewedBy
+  creation_date:
+    required: true
+    slot_uri: schema:dateCreated
+  license:
+    required: true
+    slot_uri: dct:license
+  publisher:
+    required: false
+    slot_uri: dct:publisher
+  funders:
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: Grant
+    slot_uri: schema:funding
+  hubmapId:
+    required: false
+    slot_uri: ccf:hubmap_id
   doi:
     required: false
-    slot_uri: dcterms:references
-  pubmed_id:
+    range: uriorcurie
+    slot_uri: ccf:doi
+  citation:
     required: false
-    slot_uri: ccf:pubmed_id
+    slot_uri: schema:citation
+  citationOverall:
+    required: false
+    slot_uri: schema:citation
+  datatable:
+    required: false
+    multivalued: true
+    slot_uri: ccf:data_table
+  fullName:
+    required: true
+    slot_uri: foaf:name
+  firstName:
+    required: true
+    slot_uri: foaf:firstName
+  lastName:
+    required: true
+    slot_uri: foaf:surname
+  orcid:
+    required: true    
+    slot_uri: schema:identifier
+  funder:
+    required: true
+    slot_uri: schema:funder
+  awardNumber:
+    required: false
+    slot_uri: schema:identifier
+  

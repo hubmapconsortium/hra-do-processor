@@ -58,7 +58,7 @@ function normalizeAsctbApiResponse(data) {
       return collector;
     }, [{
       id: 'UBERON:0013702',
-      type: 'AnatomicalStructure',
+      class_type: 'AnatomicalStructure',
       ccf_pref_label: 'body proper',
       ccf_asctb_type: 'AS',
       ccf_is_provisional: false,
@@ -78,7 +78,7 @@ function normalizeAsctbApiResponse(data) {
       return collector;
     }, [{
       id: 'CL:0000000',
-      type: 'CellType',
+      class_type: 'CellType',
       ccf_pref_label: 'cell type',
       ccf_asctb_type: 'CT',
       ccf_is_provisional: false,
@@ -106,7 +106,7 @@ function normalizeASData(accumulator, {id, name}, index, array) {
     else {
       accumulator.push({
         id: generateIdWhenEmpty(id, name),
-        type: "AnatomicalStructure",
+        class_type: "AnatomicalStructure",
         ccf_pref_label: name,
         ccf_asctb_type: "AS",
         ccf_is_provisional: !checkNotEmpty(id),
@@ -139,7 +139,7 @@ function normalizeCTData(accumulator, {id, name}, index, array) {
     else {
       accumulator.push({
         id: generateIdWhenEmpty(id, name),
-        type: "CellType",
+        class_type: "CellType",
         ccf_pref_label: name,
         ccf_asctb_type: "CT",
         ccf_is_provisional: !checkNotEmpty(id),
@@ -166,7 +166,7 @@ function normalizeBMData(accumulator, {id, name, b_type}, index, array) {
     if (!foundEntity) {
       accumulator.push({
         id: generateIdWhenEmpty(id, name),
-        type: "Biomarker",
+        class_type: "Biomarker",
         ccf_pref_label: name,
         ccf_asctb_type: "BM",
         ccf_biomarker_type: b_type,
