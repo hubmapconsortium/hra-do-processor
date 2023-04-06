@@ -1,4 +1,4 @@
-id: http://purl.humanatlas.io/asct-b/kidney
+id: http://purl.humanatlas.io/asct-b/kidney/v1.2
 name: asct-b-kidney
 prefixes:
   ccf: http://purl.org/ccf/
