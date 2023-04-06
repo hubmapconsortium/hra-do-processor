@@ -1,3 +1,4 @@
+id: http://purl.humanatlas.io/asct-b/kidney/v1.2
 metadata:
   type: asct-b
   name: kidney
@@ -79,40 +80,40 @@ metadata:
 data:
   anatomical_structures:
     - id: UBERON:0013702
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: body proper
       ccf_asctb_type: AS
       ccf_is_provisional: false
     - id: UBERON:0002113
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: kidney
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0013702
     - id: UBERON:0002015
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: kidney capsule
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0002113
     - id: UBERON:0001225
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: cortex of kidney
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0002113
     - id: UBERON:0002189
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: outer cortex of kidney
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001225
     - id: UBERON:0004188
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Glomerular Epithelium
       ccf_asctb_type: AS
       ccf_is_provisional: false
@@ -122,28 +123,28 @@ data:
         - UBERON:0001284
         - UBERON:0001229
     - id: UBERON:0006852
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: visceral epithelial layer
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0004188
     - id: UBERON:0005271
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: juxtamedullary cortex
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001225
     - id: UBERON:0009883
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: medullary ray
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001225
     - id: UBERON:0004203
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Collecting Duct (Cortex)
       ccf_asctb_type: AS
       ccf_is_provisional: false
@@ -151,21 +152,21 @@ data:
         - UBERON:0009883
         - UBERON:0001232
     - id: UBERON:0000362
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: renal medulla
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0002113
     - id: UBERON:0004202
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: kidney outer medulla outer stripe
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0000362
     - id: UBERON:0001291
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Loop of Henle (Thick Limb/Medulla)
       ccf_asctb_type: AS
       ccf_is_provisional: false
@@ -173,14 +174,14 @@ data:
         - UBERON:0004202
         - UBERON:0001231
     - id: UBERON:0004201
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: kidney outer medulla inner stripe
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0000362
     - id: UBERON:0001289
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Loop of Henle (Thin Limb)
       ccf_asctb_type: AS
       ccf_is_provisional: false
@@ -188,21 +189,21 @@ data:
         - UBERON:0004201
         - UBERON:0001231
     - id: ASCTB-TEMP:descending-thin-limb-of-loop-of-henle-2
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: descending thin limb of loop of Henle 2
       ccf_asctb_type: AS
       ccf_is_provisional: true
       ccf_part_of:
         - UBERON:0001289
     - id: UBERON:0001294
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: inner medulla of kidney
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0000362
     - id: UBERON:0009202
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Descending Vasa Recta
       ccf_asctb_type: AS
       ccf_is_provisional: false
@@ -211,7 +212,7 @@ data:
         - UBERON:0004200
         - ASCTB-TEMP:endothelium-non-glomerular-
     - id: UBERON:0001228
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: renal papilla
       ccf_asctb_type: AS
       ccf_is_provisional: false
@@ -219,168 +220,168 @@ data:
         - UBERON:0001294
         - UBERON:0002113
     - id: UBERON:0009095
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: papillary tip
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001228
     - id: UBERON:0001284
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: renal column
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001225
     - id: UBERON:0004200
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: renal pyramid
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0000362
     - id: UBERON:0001285
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: nephron
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0002113
     - id: UBERON:0001229
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Renal Corpuscle
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001285
     - id: UBERON:0005750
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: parietal epithelial layer
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0004188
     - id: UBERON:0004190
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Glomerulus Vasculature
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001229
     - id: UBERON:0004294
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: glomerular capillary endothelium
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0004190
     - id: UBERON:0002319
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Mesangium
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001229
     - id: UBERON:0002320
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: glomerular mesangium
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0002319
     - id: UBERON:0001231
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Tubules
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001285
     - id: UBERON:0004134
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Proximal Tubule
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001231
     - id: UBERON:0004196
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: proximal convoluted tubule segment 1
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0004134
     - id: UBERON:0004197
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: proximal convoluted tubule segment 2
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0004134
     - id: UBERON:0001290
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: proximal straight tubule segment 3
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0004134
     - id: UBERON:0005096
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: descending thin limb of loop of Henle
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001289
     - id: ASCTB-TEMP:descending-thin-limb-of-loop-of-henle-1
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: descending thin limb of loop of Henle 1
       ccf_asctb_type: AS
       ccf_is_provisional: true
       ccf_part_of:
         - UBERON:0001289
     - id: ASCTB-TEMP:descending-thin-limb-of-loop-of-henle-3
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: descending thin limb of loop of Henle 3
       ccf_asctb_type: AS
       ccf_is_provisional: true
       ccf_part_of:
         - UBERON:0001289
     - id: UBERON:0004193
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Loop of Henle (Thin Limb)
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001231
     - id: UBERON:0002335
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Macula Densa
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001291
     - id: UBERON:0001292
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Distal Convolution
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001231
     - id: UBERON:0005097
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Connecting Tubule
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001231
     - id: UBERON:0004100
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: renal collecting system
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0002113
     - id: UBERON:0001232
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Tubules
       ccf_asctb_type: AS
       ccf_is_provisional: false
@@ -388,112 +389,112 @@ data:
         - UBERON:0004100
         - UBERON:0001232
     - id: UBERON:0004204
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Collecting Duct (Outer Medulla)
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001232
     - id: UBERON:0004205
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Collecting Duct (Inner Medulla)
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001232
     - id: UBERON:0006544
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Vessels
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0002113
     - id: UBERON:0001986
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Endothelium (non glomerular)
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0006544
     - id: ASCTB-TEMP:endothelium-juxtaglomerular-apparatus
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Endothelium/Juxtaglomerular apparatus
       ccf_asctb_type: AS
       ccf_is_provisional: true
       ccf_part_of:
         - UBERON:0006544
     - id: UBERON:0004639
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Afferent Arteriole
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - ASCTB-TEMP:endothelium-juxtaglomerular-apparatus
     - id: UBERON:0004640
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Efferent Arteriole
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - ASCTB-TEMP:endothelium-juxtaglomerular-apparatus
     - id: UBERON:0005272
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Peritubular Capillary
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0006544
     - id: UBERON:0012441
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Endothelium (non glomerular)
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0005272
     - id: ASCTB-TEMP:endothelium-non-glomerular-
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Endothelium (non glomerular)
       ccf_asctb_type: AS
       ccf_is_provisional: true
       ccf_part_of:
         - UBERON:0006544
     - id: UBERON:0009091
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Ascending Vasa Recta
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - ASCTB-TEMP:endothelium-non-glomerular-
     - id: UBERON:0002042
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: lymphatics
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - ASCTB-TEMP:endothelium-non-glomerular-
     - id: UBERON:0005215
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Interstitium
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0002113
     - id: UBERON:0003918
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Stroma (non glomerular)
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0005215
     - id: ASCTB-TEMP:immune
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Immune
       ccf_asctb_type: AS
       ccf_is_provisional: true
       ccf_part_of:
         - UBERON:0005215
     - id: ASCTB-TEMP:papillary-tip-epithelium
-      type: AnatomicalStructure
+      class_type: AnatomicalStructure
       ccf_pref_label: Papillary Tip Epithelium
       ccf_asctb_type: AS
       ccf_is_provisional: true
@@ -501,12 +502,12 @@ data:
         - UBERON:0009095
   cell_types:
     - id: CL:0000000
-      type: CellType
+      class_type: CellType
       ccf_pref_label: cell type
       ccf_asctb_type: CT
       ccf_is_provisional: false
     - id: ASCTB-TEMP:capsule-mesenchymal-stromal-cell
-      type: CellType
+      class_type: CellType
       ccf_pref_label: capsule mesenchymal stromal cell
       ccf_asctb_type: CT
       ccf_is_provisional: true
@@ -519,7 +520,7 @@ data:
             - HGNC:3802
             - HGNC:1975
     - id: CL:0000653
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Podocyte
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -541,7 +542,7 @@ data:
             - ASCTB-TEMP:ntng1
             - ASCTB-TEMP:clic5
     - id: CL:1000714
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Cortical Collecting Duct Principal Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -561,7 +562,7 @@ data:
             - HGNC:10602
             - HGNC:4172
     - id: CL:1001108
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Medullary Thick Ascending Limb Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -581,7 +582,7 @@ data:
             - HGNC:9858
             - HGNC:9459
     - id: ASCTB-TEMP:descending-thin-limb-cell-type-2
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Descending Thin Limb Cell Type 2
       ccf_asctb_type: CT
       ccf_is_provisional: true
@@ -597,7 +598,7 @@ data:
             - HGNC:633
             - HGNC:11073
     - id: CL:1001285
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Descending Vasa Recta Endothelial Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -619,7 +620,7 @@ data:
             - HGNC:15846
             - HGNC:222
     - id: CL:1000718
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Inner Medullary Collecting Duct Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -633,7 +634,7 @@ data:
             - HGNC:634
             - HGNC:10919
     - id: CL:1000452
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Parietal Epithelial Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -649,7 +650,7 @@ data:
             - HGNC:18688
             - ASCTB-TEMP:aldh1a2
     - id: CL:1001005
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Glomerular Capillary Endothelial Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -666,7 +667,7 @@ data:
             - HGNC:633
             - HGNC:9051
     - id: CL:1000742
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Mesangial Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -683,7 +684,7 @@ data:
             - HGNC:8804
             - HGNC:17732
     - id: CL:0002306
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Proximal Tubule Epithelial Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -699,7 +700,7 @@ data:
             - HGNC:417
             - HGNC:4175
     - id: CL:4030009
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Proximal Tubule Epithelial Cell Segment 1
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -716,7 +717,7 @@ data:
             - HGNC:10972
             - HGNC:9453
     - id: CL:4030010
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Proximal Tubule Epithelial Cell Segment 2
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -733,7 +734,7 @@ data:
             - HGNC:10972
             - HGNC:32017
     - id: CL:4030011
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Proximal Tubule Cell Epithelial Segment 3
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -750,7 +751,7 @@ data:
             - HGNC:18210
             - HGNC:23091
     - id: CL:1001111
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Descending Thin Limb Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -766,7 +767,7 @@ data:
             - HGNC:12663
             - ASCTB-TEMP:slc44a5
     - id: CL:4030012
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Descending Thin Limb Cell Type 1
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -785,7 +786,7 @@ data:
             - HGNC:2303
             - HGNC:6188
     - id: CL:4030013
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Descending Thin Limb Cell Type 2
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -801,7 +802,7 @@ data:
             - HGNC:633
             - ASCTB-TEMP:slc9a3
     - id: CL:4030014
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Descending Thin Limb Cell Type 3
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -819,7 +820,7 @@ data:
             - HGNC:16438
             - HGNC:2303
     - id: CL:1001107
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Ascending Thin Limb Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -836,7 +837,7 @@ data:
             - HGNC:9459
             - HGNC:2026
     - id: CL:1001106
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Thick Ascending Limb Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -850,7 +851,7 @@ data:
             - HGNC:12559
             - HGNC:1514
     - id: CL:1001109
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Cortical Thick Ascending Limb Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -866,7 +867,7 @@ data:
             - HGNC:33705
             - HGNC:2037
     - id: CL:1000850
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Macula Densa cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -880,7 +881,7 @@ data:
             - HGNC:7872
             - HGNC:10250
     - id: CL:1000849
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Distal Convoluted Tubule Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -895,7 +896,7 @@ data:
             - HGNC:1434
             - HGNC:10527
     - id: CL:4030016
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Distal Convoluted Tubule Cell Type 1
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -908,7 +909,7 @@ data:
             - HGNC:10912
             - HGNC:17995
     - id: CL:4030017
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Distal Convoluted Tubule Cell Type 2
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -925,7 +926,7 @@ data:
             - HGNC:10602
             - HGNC:3145
     - id: CL:1000768
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Connecting Tubule Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -943,7 +944,7 @@ data:
             - HGNC:10602
             - ASCTB-TEMP:scn2a
     - id: CL:4030018
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Connecting Tubule Principal Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -958,7 +959,7 @@ data:
             - HGNC:4028
             - HGNC:10602
     - id: CL:4030019
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Connecting Tubule Intercalated Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -972,7 +973,7 @@ data:
             - HGNC:18266
             - HGNC:11068
     - id: CL:4030020
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Connecting Tubule Intercalated Cell Type A
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -988,7 +989,7 @@ data:
             - HGNC:639
             - ASCTB-TEMP:nxph2
     - id: CL:4030021
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Intercalated Cell Type B
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1004,7 +1005,7 @@ data:
             - ASCTB-TEMP:insrr
             - ASCTB-TEMP:slc35f3
     - id: CL:1000454
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Collecting Duct Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1016,7 +1017,7 @@ data:
         - members:
             - HGNC:4172
     - id: CL:1001431
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Collecting Duct Principal Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1032,7 +1033,7 @@ data:
             - HGNC:10602
             - HGNC:4172
     - id: CL:1000716
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Outer Medullary Collecting Duct Principal Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1048,7 +1049,7 @@ data:
             - HGNC:10602
             - HGNC:4172
     - id: ASCTB-TEMP:transitional-principal-intercalated-cell
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Transitional principal-intercalated cell
       ccf_asctb_type: CT
       ccf_is_provisional: true
@@ -1062,7 +1063,7 @@ data:
             - HGNC:11035
             - HGNC:14467
     - id: CL:1001432
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Collecting Duct Intercalated Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1075,7 +1076,7 @@ data:
             - HGNC:1373
             - HGNC:18266
     - id: CL:4030015
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Collecting Duct Intercalated Cell Type A
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1091,7 +1092,7 @@ data:
             - HGNC:6342
             - HGNC:639
     - id: CL:1000715
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Cortical Collecting Duct Intercalated Cell Type A
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1109,7 +1110,7 @@ data:
             - HGNC:11035
             - HGNC:8818
     - id: CL:1000717
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Outer Medullary Collecting Duct Intercalated Cell Type A
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1124,7 +1125,7 @@ data:
             - HGNC:6342
             - HGNC:1437
     - id: CL:0002201
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Intercalated Cell Type B
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1138,7 +1139,7 @@ data:
             - HGNC:8818
             - HGNC:8031
     - id: CL:0000115
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Endothelial Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1152,7 +1153,7 @@ data:
             - HGNC:8823
             - HGNC:3763
     - id: CL:1001096
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Afferent Arteriole Endothelial Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1169,7 +1170,7 @@ data:
             - HGNC:10918
             - HGNC:18122
     - id: CL:1001099
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Efferent Arteriole Endothelial cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1186,7 +1187,7 @@ data:
             - HGNC:10918
             - HGNC:18122
     - id: CL:1001033
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Peritubular Capillary Endothelial Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1200,7 +1201,7 @@ data:
             - HGNC:13635
             - HGNC:2959
     - id: CL:1001131
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Ascending Vasa Recta Endothelial Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1215,7 +1216,7 @@ data:
             - HGNC:13635
             - HGNC:2959
     - id: CL:0002138
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Lymphatic Endothelial Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1229,7 +1230,7 @@ data:
             - HGNC:9459
             - HGNC:11592
     - id: CL:1001318
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Vascular Smooth Muscle Cell/Pericyte (general)
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1246,7 +1247,7 @@ data:
             - HGNC:234
             - HGNC:26295
     - id: ASCTB-TEMP:vascular-smooth-muscle-cell
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Vascular Smooth Muscle Cell
       ccf_asctb_type: CT
       ccf_is_provisional: true
@@ -1263,7 +1264,7 @@ data:
             - ASCTB-TEMP:ldb3
             - HGNC:6934
     - id: CL:0000648
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Juxtaglomerular granular cell (Renin positive)
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1275,7 +1276,7 @@ data:
         - members:
             - HGNC:9958
     - id: CL:1000692
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Fibroblast
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1292,7 +1293,7 @@ data:
             - HGNC:2197
             - HGNC:2198
     - id: CL:4030022
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Medullary Fibroblast
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1309,7 +1310,7 @@ data:
             - HGNC:5318
             - HGNC:6277
     - id: CL:1000691
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Myofibroblast
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1326,7 +1327,7 @@ data:
             - HGNC:2193
             - HGNC:2209
     - id: CL:1000698
-      type: CellType
+      class_type: CellType
       ccf_pref_label: M2-Macrophage
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1340,7 +1341,7 @@ data:
             - HGNC:6024
             - HGNC:1628
     - id: CL:0000875
-      type: CellType
+      class_type: CellType
       ccf_pref_label: non Classical Monocyte
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1354,7 +1355,7 @@ data:
             - ASCTB-TEMP:lilrb2
             - HGNC:3619
     - id: CL:0000623
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Natural Killer Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1369,7 +1370,7 @@ data:
             - HGNC:4708
             - HGNC:10473
     - id: CL:0000814
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Natural Killer T Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1386,7 +1387,7 @@ data:
             - HGNC:16892
             - HGNC:1677
     - id: CL:0001056
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Dendritic Cell (general)
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1401,7 +1402,7 @@ data:
             - HGNC:1638
             - HGNC:3609
     - id: CL:0000990
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Dendritic Cell (classical)
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1415,7 +1416,7 @@ data:
             - HGNC:3765
             - HGNC:26705
     - id: CL:0001058
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Dendritic Cell (plasmatoid)
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1428,7 +1429,7 @@ data:
             - HGNC:6012
             - HGNC:3765
     - id: CL:0000576
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Monocyte
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1441,7 +1442,7 @@ data:
             - HGNC:1241
             - HGNC:4947
     - id: ASCTB-TEMP:monocyte-derived-cell
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Monocyte Derived Cell
       ccf_asctb_type: CT
       ccf_is_provisional: true
@@ -1459,7 +1460,7 @@ data:
             - ASCTB-TEMP:cd14
             - ASCTB-TEMP:trpm2
     - id: CL:0000084
-      type: CellType
+      class_type: CellType
       ccf_pref_label: T Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1475,7 +1476,7 @@ data:
             - HGNC:11935
             - HGNC:1677
     - id: CL:0000910
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Cytotoxic T Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1489,7 +1490,7 @@ data:
             - HGNC:10630
             - HGNC:10632
     - id: CL:0000236
-      type: CellType
+      class_type: CellType
       ccf_pref_label: B cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1503,7 +1504,7 @@ data:
             - HGNC:1698
             - HGNC:7315
     - id: CL:0000786
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Plasma cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1518,7 +1519,7 @@ data:
             - HGNC:5713
             - HGNC:5716
     - id: CL:0000775
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Neutrophil
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1533,7 +1534,7 @@ data:
             - HGNC:3620
             - HGNC:2439
     - id: CL:0000097
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Mast cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1547,7 +1548,7 @@ data:
             - HGNC:2298
             - HGNC:7316
     - id: CL:1000597
-      type: CellType
+      class_type: CellType
       ccf_pref_label: Papillary Tip Epithelial Cell
       ccf_asctb_type: CT
       ccf_is_provisional: false
@@ -1563,1117 +1564,1117 @@ data:
             - ASCTB-TEMP:tactd2
   biomarkers:
     - id: HGNC:3802
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: Foxd1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:1975
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: VSX2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:13394
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: NPHS2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:9171
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: PODXL
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:7908
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: NPHS1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: ASCTB-TEMP:ptprq
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: PTPRQ
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: HGNC:634
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: AQP2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:636
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: AQP3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: ASCTB-TEMP:fxyd4
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: FXYD4
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: HGNC:10910
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC12A1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:12559
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: UMOD
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:1514
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CASR
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:2389
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CRYAB
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:20862
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC39A8
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:11530
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: TACSTD2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:633
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: AQP1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:11073
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC9A3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:8951
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SERPINE2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:11853
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: TM4SF1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:15846
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: PALMD
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:222
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ADAMTS6
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10919
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC14A2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:12663
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: VCAM1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:2032
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CLDN1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:4883
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CFH
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:18688
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CRB2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: ASCTB-TEMP:aldh1a2
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ALDH1A2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: ASCTB-TEMP:ntng1
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: NTNG1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: ASCTB-TEMP:clic5
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CLIC5
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: HGNC:3244
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: EHD3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:16041
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: EMCN
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:29853
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: HECW2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:3763
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: FLT1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:9051
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: PLAT
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:16953
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: POSTN
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:26270
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: PIEZO2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10249
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ROBO1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:6144
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ITGA8
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:8804
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: PDGFRB
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:17732
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SYNPO2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:2548
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CUBN
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:6694
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: LRP2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10916
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC13A1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:417
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ALDOB
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:4175
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: GATM
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:28750
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC5A12
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:11037
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC5A2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:11019
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC34A1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10970
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC22A6
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10972
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC22A8
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:9453
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: PRODH2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:23091
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC5A11
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:14430
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC13A3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:32017
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ACSM2A
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10971
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC22A7
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10929
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC17A1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:21637
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SATB2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:18210
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: MOGAT1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:11255
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SPP1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: ASCTB-TEMP:slc44a5
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC44A5
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: HGNC:5360
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ID1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:2303
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CPE
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:6188
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: JAG1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: ASCTB-TEMP:slc9a3
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC9A3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10832
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SH3GL3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:16438
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC4A11
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:2045
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CLDN3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:9459
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: PROX1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:2026
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CLCNKA
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:33705
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: TMEM207
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:2037
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CLDN16
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:9858
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: RAP1GAP
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:7872
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: NOS1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10250
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ROBO2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10912
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC12A3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:17995
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: TRPM6
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:1434
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CALB1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10527
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SALL3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:11068
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC8A1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:5209
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: HSD11B2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10602
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SCNN1G
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:3145
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: TRPV5
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:4172
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: GATA3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: ASCTB-TEMP:scn2a
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SCN2A
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: HGNC:4028
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: FXYD4
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:1373
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CA2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:18266
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ATP6V0D2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:11027
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC4A1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:14467
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC26A7
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:639
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: AQP6
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: ASCTB-TEMP:nxph2
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: NXPH2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: HGNC:8818
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC26A4
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:11035
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC4A9
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: ASCTB-TEMP:tldc2
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: TLDC2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: ASCTB-TEMP:insrr
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: INSRR
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: ASCTB-TEMP:slc35f3
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC35F3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: HGNC:27220
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: TMEM213
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:6342
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: KIT
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:1437
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CALCA
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:8031
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: NTRK1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:8823
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: PECAM1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10918
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SLC14A1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:18122
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SOX17
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:9845
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: RAMP3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:13635
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: PLVAP
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:2959
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: DNASE1L3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:26183
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: MCTP1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:7976
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: NR2F2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:4460
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: GPM6A
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:7178
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: MMRN1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:11592
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: TBX1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:11553
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: TAGLN
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:130
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ACTA2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:7569
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: MYH11
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:8033
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: NTRK3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:234
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ADCY3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:26295
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CCDC102B
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: ASCTB-TEMP:rg56
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: RG56
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: ASCTB-TEMP:adra1a
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ADRA1A
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: ASCTB-TEMP:ldb3
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: LDB3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: HGNC:6934
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: MCAM
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:9958
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: REN
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:2705
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: DCN
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:14881
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ZEB2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:1346
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: C7
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:6724
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: LUM
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:2197
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: COL1A1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:2198
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: COL1A2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:11509
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SYT1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:24039
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CLMP
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:7656
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: NCAM1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:5318
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: TNC
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:6277
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: KCNK2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:20391
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: SULF1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:2193
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: COL16A1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:2209
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: COL5A1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:1631
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CD163
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:6024
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: IL7R
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:1628
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CD14
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: ASCTB-TEMP:itgal
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ITGAL
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: ASCTB-TEMP:lilrb2
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: LILRB2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:3619
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: FCGR3A
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:7830
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: NKG7
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:4414
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: GNLY
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:4708
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: GZMA
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10473
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: RUNX3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:16892
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CD96
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:1677
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CD247
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:613
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: APOE
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:1636
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CD1C
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:1638
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CD1E
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:3609
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: FCER1A
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:6152
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ITGAX
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:3765
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: FLT3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:26705
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CLEC9A
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:6012
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: IL3RA
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:1241
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: C1QA
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:4947
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: HLA-DRA
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: ASCTB-TEMP:msr1
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: MSR1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: ASCTB-TEMP:itgax
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: ITGAX
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: ASCTB-TEMP:hla-dqa1
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: HLA-DQA1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: ASCTB-TEMP:hladrb1
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: HLA_DRB1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: ASCTB-TEMP:csf2ra
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CSF2RA
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: ASCTB-TEMP:cd14
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CD14
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: ASCTB-TEMP:trpm2
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: TRPM2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: HGNC:1673
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CD3D
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:1675
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CD3G
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:11935
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CD40LG
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10630
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CCL4
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10632
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CCL5
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:5713
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: JCHAIN
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:1698
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CD79A
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:7315
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: MS4A1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:30125
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: MZB1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:18508
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: FCRL5
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:5716
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: IGKC
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10499
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: S100A9
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:10498
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: S100A8
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:3620
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: FCGR3B
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:2439
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CSF3R
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:2298
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: CPA3
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: HGNC:7316
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: MS4A2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: ASCTB-TEMP:krt5
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: KRT5
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: ASCTB-TEMP:tp63
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: TP63
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: ASCTB-TEMP:gpx2
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: GPX2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: true
     - id: ASCTB-TEMP:tactd2
-      type: Biomarker
+      class_type: Biomarker
       ccf_pref_label: TACTD2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
