@@ -20,7 +20,7 @@ export function convertNormalized(context) {
   return success;
 }
 
-export function convertOwlNormalized(context) {
+export function convertNormalizedToOwl(context) {
   const { selectedDigitalObject: obj, processorHome, skipValidation } = context;
 
   const schema = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml`);
