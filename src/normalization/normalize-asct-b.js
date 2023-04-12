@@ -73,8 +73,9 @@ function normalizeAsctbApiResponse(data) {
       addLocatedIn(collector, last_as, last_ct);
 
       // Add has_biomarker relationship between CT and BM
-      const biomarkers = row.biomarkers.filter(({id, name}) => checkIfValid({id, name}))
-      addCharacterizingBiomarkers(collector, last_ct, biomarkers);
+      const biomarkers = row.biomarkers.filter(({id, name}) => checkIfValid({id, name}));
+      const references = row.references.filter(({doi}) => checkNotEmpty(doi));
+      addCharacterizingBiomarkers(collector, last_ct, biomarkers, references);
 
       return collector;
     }, [{
@@ -192,7 +193,7 @@ function addLocatedIn(array, {id: as_id, name: as_name}, {id: ct_id, name: ct_na
   }
 }
 
-function addCharacterizingBiomarkers(array, {id: ct_id, name: ct_name}, biomarkers) {
+function addCharacterizingBiomarkers(array, {id: ct_id, name: ct_name}, biomarkers, references) {
   const foundEntity = array.find(
     (entity) => entity.id === generateIdWhenEmpty(ct_id, ct_name)
   );
@@ -203,6 +204,9 @@ function addCharacterizingBiomarkers(array, {id: ct_id, name: ct_name}, biomarke
       { 
         members: removeDuplicates(biomarkers.map(
           ({id: bm_id, name: bm_name}) => generateIdWhenEmpty(bm_id, bm_name)
+        )),
+        references: removeDuplicates(references.map(
+          ({doi}) => normalizeDoi(doi)
         ))
       }
     ];
@@ -239,8 +243,8 @@ function expandId(id) {
     .replace(/\s+/g, '');
 }
 
-function printDoi(doi) {
-  return doi.replace(/^DOI:/, '').replace(/\s+/g, '');
+function normalizeDoi(doi) {
+  return doi.replace(/\s+/g, '');
 }
 
 function removeDuplicates(array) {

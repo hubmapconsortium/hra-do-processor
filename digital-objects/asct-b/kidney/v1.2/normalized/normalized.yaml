@@ -519,6 +519,8 @@ data:
         - members:
             - HGNC:3802
             - HGNC:1975
+          references:
+            - DOI:10.1371/journal.pone.0187118
     - id: CL:0000653
       class_type: CellType
       ccf_pref_label: Podocyte
@@ -534,6 +536,7 @@ data:
             - HGNC:9171
             - HGNC:7908
             - ASCTB-TEMP:ptprq
+          references: []
         - members:
             - HGNC:13394
             - HGNC:9171
@@ -541,6 +544,11 @@ data:
             - ASCTB-TEMP:ptprq
             - ASCTB-TEMP:ntng1
             - ASCTB-TEMP:clic5
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1073/pnas.2005477117
     - id: CL:1000714
       class_type: CellType
       ccf_pref_label: Cortical Collecting Duct Principal Cell
@@ -555,12 +563,17 @@ data:
             - HGNC:634
             - HGNC:636
             - ASCTB-TEMP:fxyd4
+          references: []
         - members:
             - HGNC:634
             - HGNC:636
             - HGNC:4028
             - HGNC:10602
             - HGNC:4172
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1172/jci.insight.133267
     - id: CL:1001108
       class_type: CellType
       ccf_pref_label: Medullary Thick Ascending Limb Cell
@@ -575,12 +588,18 @@ data:
             - HGNC:10910
             - HGNC:12559
             - HGNC:1514
+          references: []
         - members:
             - HGNC:10910
             - HGNC:12559
             - HGNC:1514
             - HGNC:9858
             - HGNC:9459
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1681/ASN.2020010071
     - id: ASCTB-TEMP:descending-thin-limb-cell-type-2
       class_type: CellType
       ccf_pref_label: Descending Thin Limb Cell Type 2
@@ -597,6 +616,7 @@ data:
             - HGNC:11530
             - HGNC:633
             - HGNC:11073
+          references: []
     - id: CL:1001285
       class_type: CellType
       ccf_pref_label: Descending Vasa Recta Endothelial Cell
@@ -612,6 +632,7 @@ data:
             - HGNC:11853
             - HGNC:15846
             - HGNC:222
+          references: []
         - members:
             - HGNC:26183
             - HGNC:10918
@@ -619,6 +640,10 @@ data:
             - HGNC:11853
             - HGNC:15846
             - HGNC:222
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1101/2021.07.28.454201
+            - DOI:10.1038/s41467-019-12872-5
     - id: CL:1000718
       class_type: CellType
       ccf_pref_label: Inner Medullary Collecting Duct Cell
@@ -633,6 +658,15 @@ data:
         - members:
             - HGNC:634
             - HGNC:10919
+          references: []
+        - members:
+            - HGNC:634
+            - HGNC:10919
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1101/2021.07.28.454201
+            - DOI:10.1681/ASN.2020010071
     - id: CL:1000452
       class_type: CellType
       ccf_pref_label: Parietal Epithelial Cell
@@ -649,6 +683,9 @@ data:
             - HGNC:4883
             - HGNC:18688
             - ASCTB-TEMP:aldh1a2
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
     - id: CL:1001005
       class_type: CellType
       ccf_pref_label: Glomerular Capillary Endothelial Cell
@@ -666,6 +703,11 @@ data:
             - HGNC:3763
             - HGNC:633
             - HGNC:9051
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1038/s41467-019-12872-5
     - id: CL:1000742
       class_type: CellType
       ccf_pref_label: Mesangial Cell
@@ -683,6 +725,12 @@ data:
             - HGNC:6144
             - HGNC:8804
             - HGNC:17732
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1073/pnas.2005477117
+            - DOI:10.1681/ASN.2020010071
     - id: CL:0002306
       class_type: CellType
       ccf_pref_label: Proximal Tubule Epithelial Cell
@@ -699,6 +747,12 @@ data:
             - HGNC:10916
             - HGNC:417
             - HGNC:4175
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1073/pnas.2005477117
+            - DOI:10.1681/ASN.2020010071
     - id: CL:4030009
       class_type: CellType
       ccf_pref_label: Proximal Tubule Epithelial Cell Segment 1
@@ -716,6 +770,13 @@ data:
             - HGNC:10970
             - HGNC:10972
             - HGNC:9453
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1073/pnas.2005477117
+            - DOI:10.1681/ASN.2020010071
     - id: CL:4030010
       class_type: CellType
       ccf_pref_label: Proximal Tubule Epithelial Cell Segment 2
@@ -733,6 +794,12 @@ data:
             - HGNC:10970
             - HGNC:10972
             - HGNC:32017
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1073/pnas.2005477117
+            - DOI:10.1681/ASN.2020010071
     - id: CL:4030011
       class_type: CellType
       ccf_pref_label: Proximal Tubule Cell Epithelial Segment 3
@@ -750,6 +817,12 @@ data:
             - HGNC:21637
             - HGNC:18210
             - HGNC:23091
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1073/pnas.2005477117
+            - DOI:10.1681/ASN.2020010071
     - id: CL:1001111
       class_type: CellType
       ccf_pref_label: Descending Thin Limb Cell
@@ -766,6 +839,10 @@ data:
             - HGNC:21637
             - HGNC:12663
             - ASCTB-TEMP:slc44a5
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1681/ASN.2020010071
     - id: CL:4030012
       class_type: CellType
       ccf_pref_label: Descending Thin Limb Cell Type 1
@@ -785,6 +862,11 @@ data:
             - HGNC:5360
             - HGNC:2303
             - HGNC:6188
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1152/ajprenal.2000.278.1.F52
+            - DOI:10.1681/ASN.2020010071
     - id: CL:4030013
       class_type: CellType
       ccf_pref_label: Descending Thin Limb Cell Type 2
@@ -801,6 +883,12 @@ data:
             - HGNC:11530
             - HGNC:633
             - ASCTB-TEMP:slc9a3
+          references:
+            - DOI:10.1101/2021.07.28.454201
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1681/ASN.2020010071
+            - DOI:10.1152/ajprenal.2000.278.1.F52
     - id: CL:4030014
       class_type: CellType
       ccf_pref_label: Descending Thin Limb Cell Type 3
@@ -819,6 +907,13 @@ data:
             - HGNC:10832
             - HGNC:16438
             - HGNC:2303
+          references:
+            - DOI:10.1101/2021.07.28.454201
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1152/ajprenal.2000.278.2.F202
+            - DOI:10.1152/ajprenal.2000.278.1.F52
+            - DOI:10.1681/ASN.2020010071
     - id: CL:1001107
       class_type: CellType
       ccf_pref_label: Ascending Thin Limb Cell
@@ -836,6 +931,9 @@ data:
             - HGNC:10832
             - HGNC:9459
             - HGNC:2026
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1016/j.devcel.2019.10.005
     - id: CL:1001106
       class_type: CellType
       ccf_pref_label: Thick Ascending Limb Cell
@@ -850,6 +948,12 @@ data:
             - HGNC:10910
             - HGNC:12559
             - HGNC:1514
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1681/ASN.2020010071
     - id: CL:1001109
       class_type: CellType
       ccf_pref_label: Cortical Thick Ascending Limb Cell
@@ -866,6 +970,10 @@ data:
             - HGNC:1514
             - HGNC:33705
             - HGNC:2037
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1681/ASN.2020010071
     - id: CL:1000850
       class_type: CellType
       ccf_pref_label: Macula Densa cell
@@ -880,6 +988,10 @@ data:
             - HGNC:10910
             - HGNC:7872
             - HGNC:10250
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1681/ASN.2020010071
     - id: CL:1000849
       class_type: CellType
       ccf_pref_label: Distal Convoluted Tubule Cell
@@ -895,6 +1007,9 @@ data:
             - HGNC:17995
             - HGNC:1434
             - HGNC:10527
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1681/ASN.2020010071
     - id: CL:4030016
       class_type: CellType
       ccf_pref_label: Distal Convoluted Tubule Cell Type 1
@@ -908,6 +1023,9 @@ data:
         - members:
             - HGNC:10912
             - HGNC:17995
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1681/ASN.2020010071
     - id: CL:4030017
       class_type: CellType
       ccf_pref_label: Distal Convoluted Tubule Cell Type 2
@@ -925,6 +1043,9 @@ data:
             - HGNC:1434
             - HGNC:10602
             - HGNC:3145
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1681/ASN.2020010071
     - id: CL:1000768
       class_type: CellType
       ccf_pref_label: Connecting Tubule Cell
@@ -943,6 +1064,9 @@ data:
             - HGNC:5209
             - HGNC:10602
             - ASCTB-TEMP:scn2a
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1681/ASN.2020010071
     - id: CL:4030018
       class_type: CellType
       ccf_pref_label: Connecting Tubule Principal Cell
@@ -958,6 +1082,10 @@ data:
             - HGNC:636
             - HGNC:4028
             - HGNC:10602
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1681/ASN.2020010071
+            - DOI:10.1038/s41586-020-2941-1
     - id: CL:4030019
       class_type: CellType
       ccf_pref_label: Connecting Tubule Intercalated Cell
@@ -972,6 +1100,10 @@ data:
             - HGNC:1373
             - HGNC:18266
             - HGNC:11068
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1681/ASN.2020010071
+            - DOI:10.1038/s41586-020-2941-1
     - id: CL:4030020
       class_type: CellType
       ccf_pref_label: Connecting Tubule Intercalated Cell Type A
@@ -988,6 +1120,9 @@ data:
             - HGNC:11068
             - HGNC:639
             - ASCTB-TEMP:nxph2
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1681/ASN.2020010071
     - id: CL:4030021
       class_type: CellType
       ccf_pref_label: Intercalated Cell Type B
@@ -1004,6 +1139,9 @@ data:
             - ASCTB-TEMP:tldc2
             - ASCTB-TEMP:insrr
             - ASCTB-TEMP:slc35f3
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1681/ASN.2020010071
     - id: CL:1000454
       class_type: CellType
       ccf_pref_label: Collecting Duct Cell
@@ -1016,6 +1154,10 @@ data:
       ccf_has_biomarker_set:
         - members:
             - HGNC:4172
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1681/ASN.2020010071
     - id: CL:1001431
       class_type: CellType
       ccf_pref_label: Collecting Duct Principal Cell
@@ -1032,6 +1174,11 @@ data:
             - HGNC:4028
             - HGNC:10602
             - HGNC:4172
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1038/s41586-020-2941-1
     - id: CL:1000716
       class_type: CellType
       ccf_pref_label: Outer Medullary Collecting Duct Principal Cell
@@ -1048,6 +1195,10 @@ data:
             - HGNC:4028
             - HGNC:10602
             - HGNC:4172
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1172/jci.insight.133267
     - id: ASCTB-TEMP:transitional-principal-intercalated-cell
       class_type: CellType
       ccf_pref_label: Transitional principal-intercalated cell
@@ -1062,6 +1213,9 @@ data:
             - HGNC:4028
             - HGNC:11035
             - HGNC:14467
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
     - id: CL:1001432
       class_type: CellType
       ccf_pref_label: Collecting Duct Intercalated Cell
@@ -1075,6 +1229,11 @@ data:
         - members:
             - HGNC:1373
             - HGNC:18266
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1038/s41586-020-2941-1
     - id: CL:4030015
       class_type: CellType
       ccf_pref_label: Collecting Duct Intercalated Cell Type A
@@ -1091,6 +1250,10 @@ data:
             - HGNC:27220
             - HGNC:6342
             - HGNC:639
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1172/jci.insight.133267
     - id: CL:1000715
       class_type: CellType
       ccf_pref_label: Cortical Collecting Duct Intercalated Cell Type A
@@ -1106,9 +1269,18 @@ data:
             - HGNC:11027
             - HGNC:6342
             - HGNC:639
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1172/jci.insight.133267
         - members:
             - HGNC:11035
             - HGNC:8818
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1126/science.aat1699
     - id: CL:1000717
       class_type: CellType
       ccf_pref_label: Outer Medullary Collecting Duct Intercalated Cell Type A
@@ -1124,6 +1296,9 @@ data:
             - HGNC:11027
             - HGNC:6342
             - HGNC:1437
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1126/science.aat1699
     - id: CL:0002201
       class_type: CellType
       ccf_pref_label: Intercalated Cell Type B
@@ -1138,6 +1313,11 @@ data:
             - HGNC:11035
             - HGNC:8818
             - HGNC:8031
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1016/j.devcel.2019.10.005
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1126/science.aat1699
     - id: CL:0000115
       class_type: CellType
       ccf_pref_label: Endothelial Cell
@@ -1152,6 +1332,9 @@ data:
             - HGNC:16041
             - HGNC:8823
             - HGNC:3763
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
     - id: CL:1001096
       class_type: CellType
       ccf_pref_label: Afferent Arteriole Endothelial Cell
@@ -1169,6 +1352,9 @@ data:
             - HGNC:222
             - HGNC:10918
             - HGNC:18122
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
     - id: CL:1001099
       class_type: CellType
       ccf_pref_label: Efferent Arteriole Endothelial cell
@@ -1186,6 +1372,9 @@ data:
             - HGNC:222
             - HGNC:10918
             - HGNC:18122
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
     - id: CL:1001033
       class_type: CellType
       ccf_pref_label: Peritubular Capillary Endothelial Cell
@@ -1200,6 +1389,10 @@ data:
             - HGNC:9845
             - HGNC:13635
             - HGNC:2959
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1038/s41467-019-12872-5
     - id: CL:1001131
       class_type: CellType
       ccf_pref_label: Ascending Vasa Recta Endothelial Cell
@@ -1215,6 +1408,11 @@ data:
             - HGNC:4460
             - HGNC:13635
             - HGNC:2959
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1101/2021.07.28.454201
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1038/s41467-019-12872-5
     - id: CL:0002138
       class_type: CellType
       ccf_pref_label: Lymphatic Endothelial Cell
@@ -1229,6 +1427,11 @@ data:
             - HGNC:7178
             - HGNC:9459
             - HGNC:11592
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1038/s41467-019-12872-5
     - id: CL:1001318
       class_type: CellType
       ccf_pref_label: Vascular Smooth Muscle Cell/Pericyte (general)
@@ -1246,6 +1449,11 @@ data:
             - HGNC:8033
             - HGNC:234
             - HGNC:26295
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1073/pnas.2005477117
+            - DOI:10.1038/s41586-020-2941-1
     - id: ASCTB-TEMP:vascular-smooth-muscle-cell
       class_type: CellType
       ccf_pref_label: Vascular Smooth Muscle Cell
@@ -1263,6 +1471,7 @@ data:
             - HGNC:8033
             - ASCTB-TEMP:ldb3
             - HGNC:6934
+          references: []
     - id: CL:0000648
       class_type: CellType
       ccf_pref_label: Juxtaglomerular granular cell (Renin positive)
@@ -1275,6 +1484,9 @@ data:
       ccf_has_biomarker_set:
         - members:
             - HGNC:9958
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1073/pnas.2005477117
     - id: CL:1000692
       class_type: CellType
       ccf_pref_label: Fibroblast
@@ -1292,6 +1504,9 @@ data:
             - HGNC:6724
             - HGNC:2197
             - HGNC:2198
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
     - id: CL:4030022
       class_type: CellType
       ccf_pref_label: Medullary Fibroblast
@@ -1309,6 +1524,8 @@ data:
             - HGNC:7656
             - HGNC:5318
             - HGNC:6277
+          references:
+            - DOI:10.1101/2021.07.28.454201
     - id: CL:1000691
       class_type: CellType
       ccf_pref_label: Myofibroblast
@@ -1326,6 +1543,9 @@ data:
             - HGNC:20391
             - HGNC:2193
             - HGNC:2209
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1038/s41586-020-2941-1
     - id: CL:1000698
       class_type: CellType
       ccf_pref_label: M2-Macrophage
@@ -1340,6 +1560,10 @@ data:
             - HGNC:1631
             - HGNC:6024
             - HGNC:1628
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1126/science.aat5031
     - id: CL:0000875
       class_type: CellType
       ccf_pref_label: non Classical Monocyte
@@ -1354,6 +1578,11 @@ data:
             - ASCTB-TEMP:itgal
             - ASCTB-TEMP:lilrb2
             - HGNC:3619
+          references:
+            - DOI:10.1101/2021.07.28.454201
+            - DOI:10.3389/fimmu.2019.02035
+            - DOI:10.1126/science.aat5031
+            - DOI:10.1172/jci.insight.133267
     - id: CL:0000623
       class_type: CellType
       ccf_pref_label: Natural Killer Cell
@@ -1369,6 +1598,11 @@ data:
             - HGNC:4414
             - HGNC:4708
             - HGNC:10473
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1126/science.aat5031
     - id: CL:0000814
       class_type: CellType
       ccf_pref_label: Natural Killer T Cell
@@ -1386,6 +1620,10 @@ data:
             - HGNC:10473
             - HGNC:16892
             - HGNC:1677
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1172/jci.insight.133267
     - id: CL:0001056
       class_type: CellType
       ccf_pref_label: Dendritic Cell (general)
@@ -1401,6 +1639,10 @@ data:
             - HGNC:1636
             - HGNC:1638
             - HGNC:3609
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1126/science.aat5031
     - id: CL:0000990
       class_type: CellType
       ccf_pref_label: Dendritic Cell (classical)
@@ -1415,6 +1657,10 @@ data:
             - HGNC:6152
             - HGNC:3765
             - HGNC:26705
+          references:
+            - DOI:10.1101/2021.07.28.454201
+            - DOI:10.1084/jem.20030323
+            - DOI:10.1126/science.aat5031
     - id: CL:0001058
       class_type: CellType
       ccf_pref_label: Dendritic Cell (plasmatoid)
@@ -1428,6 +1674,9 @@ data:
         - members:
             - HGNC:6012
             - HGNC:3765
+          references:
+            - DOI:10.1101/2021.07.28.454201
+            - DOI:10.1038/s41467-019-10861-2
     - id: CL:0000576
       class_type: CellType
       ccf_pref_label: Monocyte
@@ -1441,6 +1690,10 @@ data:
         - members:
             - HGNC:1241
             - HGNC:4947
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1126/science.aat5031
     - id: ASCTB-TEMP:monocyte-derived-cell
       class_type: CellType
       ccf_pref_label: Monocyte Derived Cell
@@ -1459,6 +1712,7 @@ data:
             - ASCTB-TEMP:csf2ra
             - ASCTB-TEMP:cd14
             - ASCTB-TEMP:trpm2
+          references: []
     - id: CL:0000084
       class_type: CellType
       ccf_pref_label: T Cell
@@ -1475,6 +1729,11 @@ data:
             - HGNC:1675
             - HGNC:11935
             - HGNC:1677
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1126/science.aat5031
     - id: CL:0000910
       class_type: CellType
       ccf_pref_label: Cytotoxic T Cell
@@ -1489,6 +1748,9 @@ data:
             - HGNC:4708
             - HGNC:10630
             - HGNC:10632
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1172/jci.insight.133267
     - id: CL:0000236
       class_type: CellType
       ccf_pref_label: B cell
@@ -1503,6 +1765,11 @@ data:
             - HGNC:5713
             - HGNC:1698
             - HGNC:7315
+          references:
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1126/science.aat5031
     - id: CL:0000786
       class_type: CellType
       ccf_pref_label: Plasma cell
@@ -1518,6 +1785,12 @@ data:
             - HGNC:18508
             - HGNC:5713
             - HGNC:5716
+          references:
+            - DOI:10.1101/2021.07.28.454201
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1126/science.aat5031
     - id: CL:0000775
       class_type: CellType
       ccf_pref_label: Neutrophil
@@ -1533,6 +1806,12 @@ data:
             - HGNC:10498
             - HGNC:3620
             - HGNC:2439
+          references:
+            - DOI:10.1101/2021.07.28.454201
+            - DOI:10.1016/j.exphem.2016.10.008
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1172/jci.insight.133267
+            - DOI:10.1126/science.aat5031
     - id: CL:0000097
       class_type: CellType
       ccf_pref_label: Mast cell
@@ -1547,6 +1826,11 @@ data:
             - HGNC:6342
             - HGNC:2298
             - HGNC:7316
+          references:
+            - DOI:10.1101/2021.07.28.454201
+            - DOI:10.1038/s41467-019-10861-2
+            - DOI:10.1038/s41586-020-2941-1
+            - DOI:10.1172/jci.insight.133267
     - id: CL:1000597
       class_type: CellType
       ccf_pref_label: Papillary Tip Epithelial Cell
@@ -1562,6 +1846,7 @@ data:
             - ASCTB-TEMP:tp63
             - ASCTB-TEMP:gpx2
             - ASCTB-TEMP:tactd2
+          references: []
   biomarkers:
     - id: HGNC:3802
       class_type: Biomarker
