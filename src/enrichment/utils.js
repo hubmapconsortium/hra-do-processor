@@ -5,7 +5,7 @@ import sh from 'shelljs';
 export function convertNormalized(context) {
   const { selectedDigitalObject: obj, processorHome, skipValidation } = context;
 
-  const schema = resolve(processorHome, 'schemas/digital-objects', `${obj.type}.yaml`);
+  const schema = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml`);
   const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
   const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
 
@@ -23,17 +23,12 @@ export function convertNormalized(context) {
 export function convertOwlNormalized(context) {
   const { selectedDigitalObject: obj, processorHome, skipValidation } = context;
 
-  const schema = resolve(processorHome, 'schemas/digital-objects', `${obj.type}-${obj.name}.yaml`);
-  sh.exec(
-    `gen-linkml -f yaml --no-materialize-attributes ${schema} > /tmp/${obj.type}-${obj.name}-merged.yaml`
-  );
-  const mergedSchema = resolve(processorHome, 'schemas/digital-objects', `/tmp/${obj.type}-${obj.name}-merged.yaml`);
-
+  const schema = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml`);
   const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
   const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
 
   const results = sh.exec(
-    `linkml-data2owl --output-type ttl --schema ${mergedSchema} ${normalizedPath} -o ${enrichedPath}`
+    `linkml-data2owl --output-type ttl --schema ${schema} ${normalizedPath} -o ${enrichedPath}`
   );
   const success = results.code !== 1;
   if (!success) {
