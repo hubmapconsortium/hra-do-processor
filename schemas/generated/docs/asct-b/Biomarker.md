@@ -7,29 +7,34 @@
 URI: [ccf:Biomarker](http://purl.org/ccf/Biomarker)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[AsctbRecord]++-%20biomarkers%200..*>[Biomarker&#124;id:string;label:string;preferred_name:string%20%3F;biomarker_type:string%20%3F],[AsctbRecord])](https://yuml.me/diagram/nofunky;dir:TB/class/[AsctbRecord]++-%20biomarkers%200..*>[Biomarker&#124;id:string;label:string;preferred_name:string%20%3F;biomarker_type:string%20%3F],[AsctbRecord])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[AsctbDataset]++-%20biomarkers%200..*>[Biomarker&#124;ccf_biomarker_type:string;id(i):uriorcurie;class_type(i):string;ccf_pref_label(i):string;ccf_asctb_type(i):string;ccf_is_provisional(i):boolean],[BiomarkerSet]-%20members%200..*>[Biomarker],[AsctbConcept]^-[Biomarker],[BiomarkerSet],[AsctbDataset],[AsctbConcept])](https://yuml.me/diagram/nofunky;dir:TB/class/[AsctbDataset]++-%20biomarkers%200..*>[Biomarker&#124;ccf_biomarker_type:string;id(i):uriorcurie;class_type(i):string;ccf_pref_label(i):string;ccf_asctb_type(i):string;ccf_is_provisional(i):boolean],[BiomarkerSet]-%20members%200..*>[Biomarker],[AsctbConcept]^-[Biomarker],[BiomarkerSet],[AsctbDataset],[AsctbConcept])
+
+## Parents
+
+ *  is_a: [AsctbConcept](AsctbConcept.md)
 
 ## Referenced by Class
 
  *  **None** *[biomarkers](biomarkers.md)*  <sub>0..\*</sub>  **[Biomarker](Biomarker.md)**
+ *  **None** *[members](members.md)*  <sub>0..\*</sub>  **[Biomarker](Biomarker.md)**
 
 ## Attributes
 
 
 ### Own
 
+ * [Biomarker➞ccf_biomarker_type](Biomarker_ccf_biomarker_type.md)  <sub>1..1</sub>
+     * Range: [String](types/String.md)
+
+### Inherited from AsctbConcept:
+
  * [id](id.md)  <sub>1..1</sub>
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+ * [class_type](class_type.md)  <sub>1..1</sub>
      * Range: [String](types/String.md)
- * [label](label.md)  <sub>1..1</sub>
+ * [AsctbConcept➞ccf_pref_label](AsctbConcept_ccf_pref_label.md)  <sub>1..1</sub>
      * Range: [String](types/String.md)
- * [preferred_name](preferred_name.md)  <sub>0..1</sub>
+ * [AsctbConcept➞ccf_asctb_type](AsctbConcept_ccf_asctb_type.md)  <sub>1..1</sub>
      * Range: [String](types/String.md)
- * [biomarker_type](biomarker_type.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | ccf:Biomarker |
-
+ * [AsctbConcept➞ccf_is_provisional](AsctbConcept_ccf_is_provisional.md)  <sub>1..1</sub>
+     * Range: [Boolean](types/Boolean.md)

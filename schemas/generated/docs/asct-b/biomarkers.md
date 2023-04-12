@@ -19,11 +19,4 @@ None &#8594;  <sub>0..\*</sub> [Biomarker](Biomarker.md)
 
 ## Used by
 
- * [AsctbRecord](AsctbRecord.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | ccf:contains_biomarkers |
-
+ * [AsctbDataset](AsctbDataset.md)

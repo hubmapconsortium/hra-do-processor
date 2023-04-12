@@ -19,11 +19,4 @@ None &#8594;  <sub>0..\*</sub> [CellType](CellType.md)
 
 ## Used by
 
- * [AsctbRecord](AsctbRecord.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | ccf:contains_cell_types |
-
+ * [AsctbDataset](AsctbDataset.md)

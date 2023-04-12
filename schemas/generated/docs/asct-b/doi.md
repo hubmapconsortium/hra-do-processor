@@ -9,7 +9,7 @@ URI: [ccf:doi](http://purl.org/ccf/doi)
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
+None &#8594;  <sub>0..1</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Parents
 
@@ -19,11 +19,11 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Used by
 
- * [StudyReference](StudyReference.md)
+ * [AsctbMetadata](AsctbMetadata.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | dcterms:references |
+| **Mappings:** | | ccf:doi |
 

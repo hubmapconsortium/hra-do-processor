@@ -9,7 +9,7 @@ URI: [ccf:anatomical_structures](http://purl.org/ccf/anatomical_structures)
 
 ## Domain and Range
 
-None &#8594;  <sub>1..\*</sub> [AnatomicalStructure](AnatomicalStructure.md)
+None &#8594;  <sub>0..\*</sub> [AnatomicalStructure](AnatomicalStructure.md)
 
 ## Parents
 
@@ -19,11 +19,4 @@ None &#8594;  <sub>1..\*</sub> [AnatomicalStructure](AnatomicalStructure.md)
 
 ## Used by
 
- * [AsctbRecord](AsctbRecord.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | ccf:contains_anatomical_structures |
-
+ * [AsctbDataset](AsctbDataset.md)

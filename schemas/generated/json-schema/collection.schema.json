@@ -1,334 +1,331 @@
 {
-   "$defs": {
-      "AnatomicalStructure": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "id": {
-               "type": "string"
+    "$defs": {
+        "AnatomicalStructure": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "preferred_name": {
+                    "type": "string"
+                }
             },
-            "label": {
-               "type": "string"
+            "required": [
+                "id",
+                "label"
+            ],
+            "title": "AnatomicalStructure",
+            "type": "object"
+        },
+        "AsctbRecord": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "anatomical_structures": {
+                    "items": {
+                        "$ref": "#/$defs/AnatomicalStructure"
+                    },
+                    "type": "array"
+                },
+                "biomarkers": {
+                    "items": {
+                        "$ref": "#/$defs/Biomarker"
+                    },
+                    "type": "array"
+                },
+                "biomarkers_gene": {
+                    "items": {
+                        "$ref": "#/$defs/GeneBiomarker"
+                    },
+                    "type": "array"
+                },
+                "biomarkers_lipids": {
+                    "items": {
+                        "$ref": "#/$defs/LipidBiomarker"
+                    },
+                    "type": "array"
+                },
+                "biomarkers_meta": {
+                    "items": {
+                        "$ref": "#/$defs/MetaBiomarker"
+                    },
+                    "type": "array"
+                },
+                "biomarkers_prot": {
+                    "items": {
+                        "$ref": "#/$defs/ProtBiomarker"
+                    },
+                    "type": "array"
+                },
+                "biomarkers_protein": {
+                    "items": {
+                        "$ref": "#/$defs/ProteinBiomarker"
+                    },
+                    "type": "array"
+                },
+                "cell_types": {
+                    "items": {
+                        "$ref": "#/$defs/CellType"
+                    },
+                    "type": "array"
+                },
+                "ftu_types": {
+                    "items": {
+                        "$ref": "#/$defs/FtuType"
+                    },
+                    "type": "array"
+                },
+                "references": {
+                    "items": {
+                        "$ref": "#/$defs/StudyReference"
+                    },
+                    "type": "array"
+                }
             },
-            "preferred_name": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "label"
-         ],
-         "title": "AnatomicalStructure",
-         "type": "object"
-      },
-      "AsctbRecord": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "anatomical_structures": {
-               "items": {
-                  "$ref": "#/$defs/AnatomicalStructure"
-               },
-               "type": "array"
+            "required": [
+                "anatomical_structures"
+            ],
+            "title": "AsctbRecord",
+            "type": "object"
+        },
+        "Biomarker": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "biomarker_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "preferred_name": {
+                    "type": "string"
+                }
             },
-            "biomarkers": {
-               "items": {
-                  "$ref": "#/$defs/Biomarker"
-               },
-               "type": "array"
+            "required": [
+                "id",
+                "label"
+            ],
+            "title": "Biomarker",
+            "type": "object"
+        },
+        "CellType": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "preferred_name": {
+                    "type": "string"
+                }
             },
-            "biomarkers_gene": {
-               "items": {
-                  "$ref": "#/$defs/GeneBiomarker"
-               },
-               "type": "array"
+            "required": [
+                "id",
+                "label"
+            ],
+            "title": "CellType",
+            "type": "object"
+        },
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "data": {
+                    "items": {
+                        "$ref": "#/$defs/AsctbRecord"
+                    },
+                    "type": "array"
+                }
             },
-            "biomarkers_lipids": {
-               "items": {
-                  "$ref": "#/$defs/LipidBiomarker"
-               },
-               "type": "array"
+            "title": "Container",
+            "type": "object"
+        },
+        "FtuType": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "preferred_name": {
+                    "type": "string"
+                }
             },
-            "biomarkers_meta": {
-               "items": {
-                  "$ref": "#/$defs/MetaBiomarker"
-               },
-               "type": "array"
+            "required": [
+                "id",
+                "label"
+            ],
+            "title": "FtuType",
+            "type": "object"
+        },
+        "GeneBiomarker": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "biomarker_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "preferred_name": {
+                    "type": "string"
+                }
             },
-            "biomarkers_prot": {
-               "items": {
-                  "$ref": "#/$defs/ProtBiomarker"
-               },
-               "type": "array"
+            "required": [
+                "id",
+                "label"
+            ],
+            "title": "GeneBiomarker",
+            "type": "object"
+        },
+        "LipidBiomarker": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "biomarker_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "preferred_name": {
+                    "type": "string"
+                }
             },
-            "biomarkers_protein": {
-               "items": {
-                  "$ref": "#/$defs/ProteinBiomarker"
-               },
-               "type": "array"
+            "required": [
+                "id",
+                "label"
+            ],
+            "title": "LipidBiomarker",
+            "type": "object"
+        },
+        "MetaBiomarker": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "biomarker_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "preferred_name": {
+                    "type": "string"
+                }
             },
-            "cell_types": {
-               "items": {
-                  "$ref": "#/$defs/CellType"
-               },
-               "type": "array"
+            "required": [
+                "id",
+                "label"
+            ],
+            "title": "MetaBiomarker",
+            "type": "object"
+        },
+        "ProtBiomarker": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "biomarker_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "preferred_name": {
+                    "type": "string"
+                }
             },
-            "ftu_types": {
-               "items": {
-                  "$ref": "#/$defs/FtuType"
-               },
-               "type": "array"
+            "required": [
+                "id",
+                "label"
+            ],
+            "title": "ProtBiomarker",
+            "type": "object"
+        },
+        "ProteinBiomarker": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "biomarker_type": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "preferred_name": {
+                    "type": "string"
+                }
             },
-            "references": {
-               "items": {
-                  "$ref": "#/$defs/StudyReference"
-               },
-               "type": "array"
-            }
-         },
-         "required": [
-            "anatomical_structures"
-         ],
-         "title": "AsctbRecord",
-         "type": "object"
-      },
-      "Biomarker": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "biomarker_type": {
-               "type": "string"
+            "required": [
+                "id",
+                "label"
+            ],
+            "title": "ProteinBiomarker",
+            "type": "object"
+        },
+        "StudyReference": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "doi": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "pubmed_id": {
+                    "type": "string"
+                }
             },
-            "id": {
-               "type": "string"
+            "required": [
+                "id"
+            ],
+            "title": "StudyReference",
+            "type": "object"
+        }
+    },
+    "$id": "http://purl.humanatlas.io/specs/collection",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "data": {
+            "items": {
+                "$ref": "#/$defs/AsctbRecord"
             },
-            "label": {
-               "type": "string"
-            },
-            "preferred_name": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "label"
-         ],
-         "title": "Biomarker",
-         "type": "object"
-      },
-      "CellType": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "id": {
-               "type": "string"
-            },
-            "label": {
-               "type": "string"
-            },
-            "preferred_name": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "label"
-         ],
-         "title": "CellType",
-         "type": "object"
-      },
-      "Container": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "data": {
-               "items": {
-                  "$ref": "#/$defs/AsctbRecord"
-               },
-               "type": "array"
-            }
-         },
-         "required": [],
-         "title": "Container",
-         "type": "object"
-      },
-      "FtuType": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "id": {
-               "type": "string"
-            },
-            "label": {
-               "type": "string"
-            },
-            "preferred_name": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "label"
-         ],
-         "title": "FtuType",
-         "type": "object"
-      },
-      "GeneBiomarker": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "biomarker_type": {
-               "type": "string"
-            },
-            "id": {
-               "type": "string"
-            },
-            "label": {
-               "type": "string"
-            },
-            "preferred_name": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "label"
-         ],
-         "title": "GeneBiomarker",
-         "type": "object"
-      },
-      "LipidBiomarker": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "biomarker_type": {
-               "type": "string"
-            },
-            "id": {
-               "type": "string"
-            },
-            "label": {
-               "type": "string"
-            },
-            "preferred_name": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "label"
-         ],
-         "title": "LipidBiomarker",
-         "type": "object"
-      },
-      "MetaBiomarker": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "biomarker_type": {
-               "type": "string"
-            },
-            "id": {
-               "type": "string"
-            },
-            "label": {
-               "type": "string"
-            },
-            "preferred_name": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "label"
-         ],
-         "title": "MetaBiomarker",
-         "type": "object"
-      },
-      "ProtBiomarker": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "biomarker_type": {
-               "type": "string"
-            },
-            "id": {
-               "type": "string"
-            },
-            "label": {
-               "type": "string"
-            },
-            "preferred_name": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "label"
-         ],
-         "title": "ProtBiomarker",
-         "type": "object"
-      },
-      "ProteinBiomarker": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "biomarker_type": {
-               "type": "string"
-            },
-            "id": {
-               "type": "string"
-            },
-            "label": {
-               "type": "string"
-            },
-            "preferred_name": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id",
-            "label"
-         ],
-         "title": "ProteinBiomarker",
-         "type": "object"
-      },
-      "StudyReference": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {
-            "doi": {
-               "type": "string"
-            },
-            "id": {
-               "type": "string"
-            },
-            "pubmed_id": {
-               "type": "string"
-            }
-         },
-         "required": [
-            "id"
-         ],
-         "title": "StudyReference",
-         "type": "object"
-      }
-   },
-   "$id": "http://purl.humanatlas.io/specs/collection",
-   "$schema": "http://json-schema.org/draft-07/schema#",
-   "additionalProperties": true,
-   "metamodel_version": "1.7.0",
-   "properties": {
-      "data": {
-         "items": {
-            "$ref": "#/$defs/AsctbRecord"
-         },
-         "type": "array"
-      }
-   },
-   "required": [],
-   "title": "collection",
-   "type": "object",
-   "version": null
+            "type": "array"
+        }
+    },
+    "title": "collection",
+    "type": "object",
+    "version": null
 }
-

@@ -9,7 +9,7 @@ URI: [ccf:id](http://purl.org/ccf/id)
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [String](types/String.md)
+None &#8594;  <sub>1..1</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Parents
 
@@ -20,12 +20,7 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 ## Used by
 
  * [AnatomicalStructure](AnatomicalStructure.md)
+ * [AsctbConcept](AsctbConcept.md)
  * [Biomarker](Biomarker.md)
  * [CellType](CellType.md)
- * [FtuType](FtuType.md)
- * [GeneBiomarker](GeneBiomarker.md)
- * [LipidBiomarker](LipidBiomarker.md)
- * [MetaBiomarker](MetaBiomarker.md)
- * [ProtBiomarker](ProtBiomarker.md)
- * [ProteinBiomarker](ProteinBiomarker.md)
- * [StudyReference](StudyReference.md)
+ * [Container](Container.md)

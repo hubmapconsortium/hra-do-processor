@@ -1,0 +1,674 @@
+name: asct-b
+id: http://purl.humanatlas.io/specs/asct-b
+prefixes:
+  ccf:
+    prefix_prefix: ccf
+    prefix_reference: http://purl.org/ccf/
+  owl:
+    prefix_prefix: owl
+    prefix_reference: http://www.w3.org/2002/07/owl#
+  rdfs:
+    prefix_prefix: rdfs
+    prefix_reference: http://www.w3.org/2000/01/rdf-schema#
+  xsd:
+    prefix_prefix: xsd
+    prefix_reference: http://www.w3.org/2001/XMLSchema#
+  dct:
+    prefix_prefix: dct
+    prefix_reference: http://purl.org/dc/terms/
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  DOI:
+    prefix_prefix: DOI
+    prefix_reference: https://doi.org/
+  UBERON:
+    prefix_prefix: UBERON
+    prefix_reference: http://purl.obolibrary.org/obo/UBERON_
+  CL:
+    prefix_prefix: CL
+    prefix_reference: http://purl.obolibrary.org/obo/CL_
+  SO:
+    prefix_prefix: SO
+    prefix_reference: http://purl.obolibrary.org/obo/SO_
+  RO:
+    prefix_prefix: RO
+    prefix_reference: http://purl.obolibrary.org/obo/RO_
+  FMA:
+    prefix_prefix: FMA
+    prefix_reference: http://purl.org/sig/ont/fma/fma
+  HGNC:
+    prefix_prefix: HGNC
+    prefix_reference: http://identifiers.org/hgnc/
+  ASCTB-TEMP:
+    prefix_prefix: ASCTB-TEMP
+    prefix_reference: http://purl.org/ccf/ASCTB-TEMP_
+  pav:
+    prefix_prefix: pav
+    prefix_reference: http://purl.org/pav/
+  dcat:
+    prefix_prefix: dcat
+    prefix_reference: http://www.w3.org/ns/dcat#
+  foaf:
+    prefix_prefix: foaf
+    prefix_reference: http://xmlns.com/foaf/0.1/
+  schema:
+    prefix_prefix: schema
+    prefix_reference: http://schema.org/
+  shex:
+    prefix_prefix: shex
+    prefix_reference: http://www.w3.org/ns/shex#
+default_prefix: ccf
+default_range: string
+types:
+  string:
+    name: string
+    description: A character string
+    from_schema: https://w3id.org/linkml/types
+    exact_mappings:
+    - schema:Text
+    base: str
+    uri: xsd:string
+  integer:
+    name: integer
+    description: An integer
+    from_schema: https://w3id.org/linkml/types
+    exact_mappings:
+    - schema:Integer
+    base: int
+    uri: xsd:integer
+  boolean:
+    name: boolean
+    description: A binary (true or false) value
+    from_schema: https://w3id.org/linkml/types
+    exact_mappings:
+    - schema:Boolean
+    base: Bool
+    uri: xsd:boolean
+    repr: bool
+  float:
+    name: float
+    description: A real number that conforms to the xsd:float specification
+    from_schema: https://w3id.org/linkml/types
+    exact_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:float
+  double:
+    name: double
+    description: A real number that conforms to the xsd:double specification
+    from_schema: https://w3id.org/linkml/types
+    close_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:double
+  decimal:
+    name: decimal
+    description: A real number with arbitrary precision that conforms to the xsd:decimal
+      specification
+    from_schema: https://w3id.org/linkml/types
+    broad_mappings:
+    - schema:Number
+    base: Decimal
+    uri: xsd:decimal
+  time:
+    name: time
+    description: A time object represents a (local) time of day, independent of any
+      particular day
+    notes:
+    - URI is dateTime because OWL reasoners do not work with straight date or time
+    from_schema: https://w3id.org/linkml/types
+    exact_mappings:
+    - schema:Time
+    base: XSDTime
+    uri: xsd:dateTime
+    repr: str
+  date:
+    name: date
+    description: a date (year, month and day) in an idealized calendar
+    notes:
+    - URI is dateTime because OWL reasoners don't work with straight date or time
+    from_schema: https://w3id.org/linkml/types
+    exact_mappings:
+    - schema:Date
+    base: XSDDate
+    uri: xsd:date
+    repr: str
+  datetime:
+    name: datetime
+    description: The combination of a date and time
+    from_schema: https://w3id.org/linkml/types
+    exact_mappings:
+    - schema:DateTime
+    base: XSDDateTime
+    uri: xsd:dateTime
+    repr: str
+  date_or_datetime:
+    name: date_or_datetime
+    description: Either a date or a datetime
+    from_schema: https://w3id.org/linkml/types
+    base: str
+    uri: linkml:DateOrDatetime
+    repr: str
+  uriorcurie:
+    name: uriorcurie
+    description: a URI or a CURIE
+    from_schema: https://w3id.org/linkml/types
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
+  curie:
+    name: curie
+    conforms_to: https://www.w3.org/TR/curie/
+    description: a compact URI
+    comments:
+    - in RDF serializations this MUST be expanded to a URI
+    - in non-RDF serializations MAY be serialized as the compact representation
+    from_schema: https://w3id.org/linkml/types
+    base: Curie
+    uri: xsd:string
+    repr: str
+  uri:
+    name: uri
+    conforms_to: https://www.ietf.org/rfc/rfc3987.txt
+    description: a complete URI
+    comments:
+    - in RDF serializations a slot with range of uri is treated as a literal or type
+      xsd:anyURI unless it is an identifier or a reference to an identifier, in which
+      case it is translated directly to a node
+    from_schema: https://w3id.org/linkml/types
+    close_mappings:
+    - schema:URL
+    base: URI
+    uri: xsd:anyURI
+    repr: str
+  ncname:
+    name: ncname
+    description: Prefix part of CURIE
+    from_schema: https://w3id.org/linkml/types
+    base: NCName
+    uri: xsd:string
+    repr: str
+  objectidentifier:
+    name: objectidentifier
+    description: A URI or CURIE that represents an object in the model.
+    comments:
+    - Used for inheritence and type checking
+    from_schema: https://w3id.org/linkml/types
+    base: ElementIdentifier
+    uri: shex:iri
+    repr: str
+  nodeidentifier:
+    name: nodeidentifier
+    description: A URI, CURIE or BNODE that represents a node in a model.
+    from_schema: https://w3id.org/linkml/types
+    base: NodeIdentifier
+    uri: shex:nonLiteral
+    repr: str
+slots:
+  id:
+    name: id
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    identifier: true
+    range: uriorcurie
+    required: true
+  class_type:
+    name: class_type
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    designates_type: true
+    required: true
+  anatomical_structures:
+    name: anatomical_structures
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    multivalued: true
+    range: AnatomicalStructure
+    inlined_as_list: true
+  cell_types:
+    name: cell_types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    multivalued: true
+    range: CellType
+    inlined_as_list: true
+  biomarkers:
+    name: biomarkers
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    multivalued: true
+    range: Biomarker
+    inlined_as_list: true
+  members:
+    name: members
+    annotations:
+      owl:
+        tag: owl
+        value: SomeValuesFrom
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    multivalued: true
+    range: Biomarker
+  references:
+    name: references
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    slot_uri: dct:reference
+    multivalued: true
+    range: uriorcurie
+  ccf_has_biomarker_set:
+    name: ccf_has_biomarker_set
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    multivalued: true
+    range: BiomarkerSet
+    required: false
+  ccf_pref_label:
+    name: ccf_pref_label
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    slot_uri: ccf:ccf_pref_label
+    required: true
+  ccf_asctb_type:
+    name: ccf_asctb_type
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    slot_uri: ccf:ccf_asctb_type
+    required: true
+  ccf_is_provisional:
+    name: ccf_is_provisional
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    slot_uri: ccf:ccf_is_provisional
+    range: boolean
+    required: true
+  ccf_part_of:
+    name: ccf_part_of
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    slot_uri: ccf:ccf_part_of
+    multivalued: true
+    range: AnatomicalStructure
+    required: false
+  ccf_located_in:
+    name: ccf_located_in
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    slot_uri: ccf:ccf_located_in
+    multivalued: true
+    range: AnatomicalStructure
+    required: false
+  ccf_ct_isa:
+    name: ccf_ct_isa
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    slot_uri: ccf:ccf_ct_isa
+    multivalued: true
+    range: CellType
+    required: false
+  ccf_biomarker_type:
+    name: ccf_biomarker_type
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    slot_uri: ccf:ccf_biomarker_type
+    required: true
+  type:
+    name: type
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: schema:about
+    required: false
+  name:
+    name: name
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: schema:name
+    required: false
+  version:
+    name: version
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: schema:version
+    required: true
+  title:
+    name: title
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: dct:title
+    required: true
+  description:
+    name: description
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: dct:description
+    required: true
+  creators:
+    name: creators
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: dct:creator
+    multivalued: true
+    range: Person
+    required: true
+    inlined_as_list: true
+  project_leads:
+    name: project_leads
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: ccf:project_lead
+    multivalued: true
+    range: Person
+    required: false
+    inlined_as_list: true
+  reviewers:
+    name: reviewers
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: schema:reviewedBy
+    multivalued: true
+    range: Person
+    required: false
+    inlined_as_list: true
+  externalReviewers:
+    name: externalReviewers
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: ccf:externallyReviewedBy
+    multivalued: true
+    range: Person
+    required: false
+    inlined_as_list: true
+  creation_date:
+    name: creation_date
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: schema:dateCreated
+    required: true
+  license:
+    name: license
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: dct:license
+    required: true
+  publisher:
+    name: publisher
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: dct:publisher
+    required: false
+  funders:
+    name: funders
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: schema:funding
+    multivalued: true
+    range: Grant
+    required: false
+    inlined_as_list: true
+  hubmapId:
+    name: hubmapId
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: ccf:hubmap_id
+    required: false
+  doi:
+    name: doi
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: ccf:doi
+    range: uriorcurie
+    required: false
+  citation:
+    name: citation
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: schema:citation
+    required: false
+  citationOverall:
+    name: citationOverall
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: ccf:citation_overall
+    required: false
+  datatable:
+    name: datatable
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: ccf:data_table
+    multivalued: true
+    required: false
+  fullName:
+    name: fullName
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: foaf:name
+    required: true
+  firstName:
+    name: firstName
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: foaf:firstName
+    required: true
+  lastName:
+    name: lastName
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: foaf:surname
+    required: true
+  orcid:
+    name: orcid
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: schema:identifier
+    required: true
+  funder:
+    name: funder
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: schema:funder
+    required: true
+  awardNumber:
+    name: awardNumber
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slot_uri: schema:award
+    required: false
+classes:
+  AsctbConcept:
+    name: AsctbConcept
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    abstract: true
+    slots:
+    - id
+    - class_type
+    - ccf_pref_label
+    - ccf_asctb_type
+    - ccf_is_provisional
+    slot_usage:
+      ccf_pref_label:
+        name: ccf_pref_label
+        annotations:
+          owl:
+            tag: owl
+            value: AnnotationAssertion, AnnotationProperty
+      ccf_asctb_type:
+        name: ccf_asctb_type
+        annotations:
+          owl:
+            tag: owl
+            value: AnnotationAssertion, AnnotationProperty
+      ccf_is_provisional:
+        name: ccf_is_provisional
+        annotations:
+          owl:
+            tag: owl
+            value: AnnotationAssertion, AnnotationProperty
+  AnatomicalStructure:
+    name: AnatomicalStructure
+    annotations:
+      owl:
+        tag: owl
+        value: Class
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    is_a: AsctbConcept
+    slots:
+    - ccf_part_of
+    slot_usage:
+      ccf_part_of:
+        name: ccf_part_of
+        annotations:
+          owl:
+            tag: owl
+            value: AnnotationAssertion, AnnotationProperty
+  CellType:
+    name: CellType
+    annotations:
+      owl:
+        tag: owl
+        value: Class
+      owl.template:
+        tag: owl.template
+        value: "{% for s in ccf_has_biomarker_set %}\nSubClassOf(\n  {% for r in s.references\
+          \ %}\n    Annotation(dct:reference {{r}})\n  {% endfor %}\n  {{id}}\n  ObjectSomeValuesFrom(\n\
+          \    RO:0015004\n    ObjectIntersectionOf(\n      SO:0001260\n      {% for\
+          \ m in s.members %}\n        ObjectSomeValuesFrom(ccf:has_marker_component\
+          \ {{m}})\n      {% endfor %}\n    )\n  )\n)\n{% endfor %} "
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    is_a: AsctbConcept
+    slots:
+    - ccf_ct_isa
+    - ccf_located_in
+    - ccf_has_biomarker_set
+    slot_usage:
+      ccf_ct_isa:
+        name: ccf_ct_isa
+        annotations:
+          owl:
+            tag: owl
+            value: AnnotationAssertion, AnnotationProperty
+      ccf_located_in:
+        name: ccf_located_in
+        annotations:
+          owl:
+            tag: owl
+            value: AnnotationAssertion, AnnotationProperty
+      ccf_has_biomarker_set:
+        name: ccf_has_biomarker_set
+        annotations:
+          owl:
+            tag: owl
+            value: AnnotationAssertion, AnnotationProperty
+  Biomarker:
+    name: Biomarker
+    annotations:
+      owl:
+        tag: owl
+        value: Class
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    is_a: AsctbConcept
+    slots:
+    - ccf_biomarker_type
+    slot_usage:
+      ccf_biomarker_type:
+        name: ccf_biomarker_type
+        annotations:
+          owl:
+            tag: owl
+            value: AnnotationAssertion, AnnotationProperty
+  BiomarkerSet:
+    name: BiomarkerSet
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    slots:
+    - members
+    - references
+  AsctbDataset:
+    name: AsctbDataset
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    slots:
+    - anatomical_structures
+    - cell_types
+    - biomarkers
+  AsctbMetadata:
+    name: AsctbMetadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    slots:
+    - type
+    - name
+    - version
+    - title
+    - description
+    - creators
+    - project_leads
+    - reviewers
+    - externalReviewers
+    - creation_date
+    - license
+    - publisher
+    - funders
+    - hubmapId
+    - doi
+    - citation
+    - citationOverall
+    - datatable
+    class_uri: dcat:Dataset
+  Container:
+    name: Container
+    annotations:
+      owl.template:
+        tag: owl.template
+        value: 'AnnotationAssertion( schema:about {{id}} "{{metadata.type}}" )
+
+          AnnotationAssertion( schema:name {{id}} "{{metadata.name}}" )
+
+          AnnotationAssertion( schema:version {{id}} "{{metadata.version}}" )
+
+          AnnotationAssertion( dct:title {{id}} "{{metadata.title}}" )
+
+          AnnotationAssertion( dct:description {{id}} "{{metadata.description}}" )
+
+          {% for c in metadata.creators %}
+
+          AnnotationAssertion( dct:creator {{id}} "{{c.fullName}} ({{c.orcid}})" )
+
+          {% endfor %}
+
+          {% for l in metadata.project_leads %}
+
+          AnnotationAssertion( ccf:project_lead {{id}} "{{l.fullName}} ({{l.orcid}})"
+          )
+
+          {% endfor %}
+
+          {% for r in metadata.reviewers %}
+
+          AnnotationAssertion( schema:reviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})"
+          )
+
+          {% endfor %}
+
+          {% for r in metadata.externalReviewers %}
+
+          AnnotationAssertion( ccf:externallyReviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})"
+          )
+
+          {% endfor %}
+
+          AnnotationAssertion( schema:dateCreated {{id}} "{{metadata.creation_date}}"
+          )
+
+          AnnotationAssertion( dct:license {{id}} "{{metadata.license}}" )
+
+          AnnotationAssertion( dct:publisher {{id}} "{{metadata.publisher}}" )
+
+          {% for f in metadata.funders %}
+
+          AnnotationAssertion( schema:funding {{id}} "Award number {{f.awardNumber}}
+          from {{f.funder}}" )
+
+          {% endfor %}
+
+          AnnotationAssertion( ccf:hubmap_id {{id}} "{{metadata.hubmapId}}" )
+
+          AnnotationAssertion( schema:citation {{id}} "{{metadata.citation}}" )
+
+          AnnotationAssertion( ccf:citation_overall {{id}} "{{metadata.citationOverall}}"
+          )
+
+          {% for d in metadata.datatable %}
+
+          AnnotationAssertion( ccf:data_table {{id}} "{{d}}" )
+
+          {% endfor %}'
+    from_schema: http://purl.humanatlas.io/specs/asct-b
+    slots:
+    - id
+    attributes:
+      metadata:
+        name: metadata
+        from_schema: http://purl.humanatlas.io/specs/asct-b
+        range: AsctbMetadata
+      data:
+        name: data
+        from_schema: http://purl.humanatlas.io/specs/asct-b
+        range: AsctbDataset
+    tree_root: true
+  Person:
+    name: Person
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slots:
+    - fullName
+    - firstName
+    - lastName
+    - orcid
+    class_uri: foaf:Person
+  Grant:
+    name: Grant
+    from_schema: http://purl.humanatlas.io/specs/metadata
+    slots:
+    - funder
+    - awardNumber
+    class_uri: schema:Grant
+source_file: schemas/src/digital-objects/asct-b.yaml
+

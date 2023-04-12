@@ -9,7 +9,7 @@ URI: [ccf:references](http://purl.org/ccf/references)
 
 ## Domain and Range
 
-None &#8594;  <sub>0..\*</sub> [StudyReference](StudyReference.md)
+None &#8594;  <sub>0..\*</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Parents
 
@@ -19,11 +19,11 @@ None &#8594;  <sub>0..\*</sub> [StudyReference](StudyReference.md)
 
 ## Used by
 
- * [AsctbRecord](AsctbRecord.md)
+ * [BiomarkerSet](BiomarkerSet.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | ccf:contains_references |
+| **Mappings:** | | dct:reference |
 
