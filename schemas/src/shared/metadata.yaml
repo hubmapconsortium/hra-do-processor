@@ -2,7 +2,6 @@ id: http://purl.humanatlas.io/specs/metadata
 name: metadata
 prefixes:
   ccf: http://purl.org/ccf/
-  dcterms: http://purl.org/dc/terms/
   pav: http://purl.org/pav/
   dcat: http://www.w3.org/ns/dcat#
   dct: http://purl.org/dc/terms/
@@ -31,27 +30,6 @@ classes:
     slots:
       - funder
       - awardNumber
-  AsctbMetadata:
-    class_uri: dcat:Dataset
-    slots:
-      - type
-      - name
-      - version
-      - title
-      - description
-      - creators
-      - project_leads
-      - reviewers
-      - externalReviewers
-      - creation_date
-      - license
-      - publisher
-      - funders
-      - hubmapId
-      - doi
-      - citation
-      - citationOverall
-      - datatable
 
 slots:
   type:
@@ -142,4 +120,4 @@ slots:
     slot_uri: schema:funder
   awardNumber:
     required: false
-    slot_uri: schema:identifier
+    slot_uri: schema:award

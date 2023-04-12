@@ -1,0 +1,232 @@
+id: http://purl.humanatlas.io/specs/asct-b
+name: asct-b
+prefixes:
+  ccf: http://purl.org/ccf/
+  owl: http://www.w3.org/2002/07/owl#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  dct: http://purl.org/dc/terms/
+  linkml: https://w3id.org/linkml/
+  DOI: https://doi.org/
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  CL: http://purl.obolibrary.org/obo/CL_
+  SO: http://purl.obolibrary.org/obo/SO_
+  RO: http://purl.obolibrary.org/obo/RO_
+  FMA: http://purl.org/sig/ont/fma/fma
+  HGNC: http://identifiers.org/hgnc/
+  ASCTB-TEMP: http://purl.org/ccf/ASCTB-TEMP_
+
+default_prefix: ccf
+default_range: string
+
+imports:
+  - linkml:types
+  - ../shared/metadata
+
+classes:
+  AsctbConcept:
+    abstract: true
+    slots:
+      - id
+      - class_type
+      - ccf_pref_label
+      - ccf_asctb_type
+      - ccf_is_provisional
+    slot_usage:
+      ccf_pref_label:
+        annotations:
+          owl: AnnotationAssertion, AnnotationProperty
+      ccf_asctb_type:
+        annotations:
+          owl: AnnotationAssertion, AnnotationProperty
+      ccf_is_provisional:
+        annotations:
+          owl: AnnotationAssertion, AnnotationProperty
+  AnatomicalStructure:
+    is_a: AsctbConcept
+    slots:
+      - ccf_part_of
+    slot_usage:
+      ccf_part_of:
+        annotations:
+          owl: AnnotationAssertion, AnnotationProperty
+    annotations:
+      owl: Class
+  CellType:
+    is_a: AsctbConcept
+    slots:
+      - ccf_ct_isa
+      - ccf_located_in
+      - ccf_has_biomarker_set
+    slot_usage:
+      ccf_ct_isa:
+        annotations:
+          owl: AnnotationAssertion, AnnotationProperty
+      ccf_located_in:
+        annotations:
+          owl: AnnotationAssertion, AnnotationProperty
+      ccf_has_biomarker_set:
+        annotations:
+          owl: AnnotationAssertion, AnnotationProperty
+    annotations:
+      owl: Class
+      owl.template: |-
+        {% for s in ccf_has_biomarker_set %}
+        SubClassOf(
+          {% for r in s.references %}
+            Annotation(dct:reference {{r}})
+          {% endfor %}
+          {{id}}
+          ObjectSomeValuesFrom(
+            RO:0015004
+            ObjectIntersectionOf(
+              SO:0001260
+              {% for m in s.members %}
+                ObjectSomeValuesFrom(ccf:has_marker_component {{m}})
+              {% endfor %}
+            )
+          )
+        )
+        {% endfor %} 
+  Biomarker:
+    is_a: AsctbConcept
+    slots:
+      - ccf_biomarker_type
+    slot_usage:
+      ccf_biomarker_type:
+        annotations:
+          owl: AnnotationAssertion, AnnotationProperty
+    annotations:
+      owl: Class
+  BiomarkerSet:
+    slots:
+      - members
+      - references
+  AsctbDataset:
+    slots:
+      - anatomical_structures
+      - cell_types
+      - biomarkers
+  AsctbMetadata:
+    class_uri: dcat:Dataset
+    slots:
+      - type
+      - name
+      - version
+      - title
+      - description
+      - creators
+      - project_leads
+      - reviewers
+      - externalReviewers
+      - creation_date
+      - license
+      - publisher
+      - funders
+      - hubmapId
+      - doi
+      - citation
+      - citationOverall
+      - datatable
+  Container:
+    tree_root: true
+    slots:
+      - id
+    attributes:
+      metadata:
+        range: AsctbMetadata
+      data:
+        range: AsctbDataset
+    annotations:
+      owl.template: |-
+        AnnotationAssertion( schema:about {{id}} "{{metadata.type}}" )
+        AnnotationAssertion( schema:name {{id}} "{{metadata.name}}" )
+        AnnotationAssertion( schema:version {{id}} "{{metadata.version}}" )
+        AnnotationAssertion( dct:title {{id}} "{{metadata.title}}" )
+        AnnotationAssertion( dct:description {{id}} "{{metadata.description}}" )
+        {% for c in metadata.creators %}
+        AnnotationAssertion( dct:creator {{id}} "{{c.fullName}} ({{c.orcid}})" )
+        {% endfor %}
+        {% for l in metadata.project_leads %}
+        AnnotationAssertion( ccf:project_lead {{id}} "{{l.fullName}} ({{l.orcid}})" )
+        {% endfor %}
+        {% for r in metadata.reviewers %}
+        AnnotationAssertion( schema:reviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})" )
+        {% endfor %}
+        {% for r in metadata.externalReviewers %}
+        AnnotationAssertion( ccf:externallyReviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})" )
+        {% endfor %}
+        AnnotationAssertion( schema:dateCreated {{id}} "{{metadata.creation_date}}" )
+        AnnotationAssertion( dct:license {{id}} "{{metadata.license}}" )
+        AnnotationAssertion( dct:publisher {{id}} "{{metadata.publisher}}" )
+        {% for f in metadata.funders %}
+        AnnotationAssertion( schema:funding {{id}} "Award number {{f.awardNumber}} from {{f.funder}}" )
+        {% endfor %}
+        AnnotationAssertion( ccf:hubmap_id {{id}} "{{metadata.hubmapId}}" )
+        AnnotationAssertion( schema:citation {{id}} "{{metadata.citation}}" )
+        AnnotationAssertion( ccf:citation_overall {{id}} "{{metadata.citationOverall}}" )
+        {% for d in metadata.datatable %}
+        AnnotationAssertion( ccf:data_table {{id}} "{{d}}" )
+        {% endfor %}
+
+slots:
+  id:
+    required: true
+    identifier: true
+    range: uriorcurie  
+  class_type:
+    required: true
+    designates_type: true
+  anatomical_structures:
+    multivalued: true
+    inlined_as_list: true
+    range: AnatomicalStructure
+  cell_types:
+    multivalued: true
+    inlined_as_list: true
+    range: CellType    
+  biomarkers:
+    multivalued: true
+    inlined_as_list: true
+    range: Biomarker
+  members:
+    multivalued: true
+    range: Biomarker
+    annotations:
+      owl: SomeValuesFrom
+  references:
+    multivalued: true
+    range: uriorcurie
+    slot_uri: dct:reference
+  ccf_has_biomarker_set:
+    required: false
+    range: BiomarkerSet
+    multivalued: true
+  ccf_pref_label:
+    required: true
+    slot_uri: ccf:ccf_pref_label
+  ccf_asctb_type:
+    required: true
+    slot_uri: ccf:ccf_asctb_type
+  ccf_is_provisional:
+    required: true
+    slot_uri: ccf:ccf_is_provisional
+    range: boolean
+  ccf_part_of:
+    required: false
+    slot_uri: ccf:ccf_part_of
+    range: AnatomicalStructure
+    multivalued: true
+  ccf_located_in:
+    required: false
+    slot_uri: ccf:ccf_located_in
+    range: AnatomicalStructure
+    multivalued: true
+  ccf_ct_isa:
+    required: false
+    slot_uri: ccf:ccf_ct_isa
+    range: CellType
+    multivalued: true
+  ccf_biomarker_type:
+    required: true
+    slot_uri: ccf:ccf_biomarker_type
