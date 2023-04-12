@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ev
 
-for schemaFile in schemas/digital-objects/*.yaml; do
+for schemaFile in schemas/src/digital-objects/*.yaml; do
   type=$(basename ${schemaFile%.yaml})
   echo $type $schemaFile
 
@@ -20,4 +20,8 @@ for schemaFile in schemas/digital-objects/*.yaml; do
   # Generate OWL schema definitions
   mkdir -p schemas/generated/owl
   gen-owl $schemaFile > schemas/generated/owl/${type}.owl.ttl
+
+  # Generate resolved LinkML schema definitions
+  mkdir -p schemas/generated/linkml
+  gen-linkml -f yaml --no-materialize-attributes $schemaFile > schemas/generated/linkml/${type}.yaml
 done
