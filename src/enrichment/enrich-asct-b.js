@@ -7,11 +7,13 @@ export function enrichAsctb(context) {
   // TODO: do more than a straight conversion to rdf
   overrideSchemaId(context);
   convertNormalizedToOwl(context);
+  revertChanges(context);
+
   extractClassHierarchy(context, "uberon");
   extractClassHierarchy(context, "cl");
   extractClassHierarchy(context, "hgnc");
   mergeOntologies(context, ["uberon", "cl", "hgnc"]);
-  revertChanges(context);
+  cleanTemporaryFiles(context);
 }
 
 function overrideSchemaId(context) {
@@ -26,4 +28,10 @@ function revertChanges(context) {
   const originalSchema = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml.bak`);
   const schema = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml`);
   sh.exec(`mv ${originalSchema} ${schema}`);
+}
+
+function cleanTemporaryFiles(context) {
+  const { selectedDigitalObject: obj } = context;
+  const enrichedPath = resolve(obj.path, "enriched/");
+  sh.exec(`find ${enrichedPath} ! -name 'enriched.ttl' -type f -exec rm -f {} +`);
 }
