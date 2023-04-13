@@ -1,6 +1,5 @@
-import chalk from 'chalk';
 import { resolve } from 'path';
-import sh from 'shelljs';
+import { throwOnError } from '../utils/sh-exec.js';
 
 export function convertNormalized(context) {
   const { selectedDigitalObject: obj, processorHome, skipValidation } = context;
@@ -9,14 +8,10 @@ export function convertNormalized(context) {
   const input = resolve(obj.path, 'normalized/normalized.yaml');
   const output = resolve(obj.path, 'enriched/enriched.ttl');
 
-  const results = sh.exec(
-    `linkml-convert ${skipValidation ? '--no-validate' : ''} --schema ${schema} ${input} -o ${output}`
+  throwOnError(
+    `linkml-convert ${skipValidation ? '--no-validate' : ''} --schema ${schema} ${input} -o ${output}`,
+    'Enrichment failed. See errors above.'
   );
-  const success = results.code !== 1;
-  if (!success) {
-    console.log(chalk.red('Enrichment failed. See errors above.'));
-    exit();
-  }
 }
 
 export function convertNormalizedToOwl(context) {
@@ -26,12 +21,8 @@ export function convertNormalizedToOwl(context) {
   const input = resolve(obj.path, 'normalized/normalized.yaml');
   const output = resolve(obj.path, 'enriched/enriched.ttl');
 
-  const results = sh.exec(
-    `linkml-data2owl --output-type ttl --schema ${schema} ${input} -o ${output}`
+  throwOnError(
+    `linkml-data2owl --output-type ttl --schema ${schema} ${input} -o ${output}`,
+    'Enrichment failed. See errors above.'
   );
-  const success = results.code !== 1;
-  if (!success) {
-    console.log(chalk.red('Enrichment failed. See errors above.'));
-    exit();
-  }
 }

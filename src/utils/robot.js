@@ -1,6 +1,5 @@
-import chalk from 'chalk';
 import { resolve } from 'path';
-import sh from 'shelljs';
+import { throwOnError } from './sh-exec.js';
 
 export function extractClassHierarchy(context, ontology) {
   const { selectedDigitalObject: obj, processorHome } = context;
@@ -12,19 +11,15 @@ export function extractClassHierarchy(context, ontology) {
   const termList = resolve(obj.path, `enriched/${ontology}-terms.csv`);
   const output = resolve(obj.path, `enriched/${ontology}-extract.ttl`);
 
-  const response = sh.exec(
+  throwOnError(
     `robot query -i ${input} --query ${query} ${termList} && \
      sed -i '1d' ${termList} && \
      robot extract -i ${inputOntology} \
               --method subset \
               --term-file ${termList} \
-           convert --format ttl -o ${output}`
+           convert --format ttl -o ${output}`,
+    'Class hierarchy extraction failed. See errors above.'
   );
-  const success = response.code !== 1;
-  if (!success) {
-    console.log(chalk.red('Class hierarchy extraction failed. See errors above.'));
-    exit();
-  }
 }
 
 export function mergeOntologies(context, ontologies=[]) {
@@ -40,14 +35,10 @@ export function mergeOntologies(context, ontologies=[]) {
   const merged = resolve(obj.path, `enriched/enriched-merged.ttl`);
   const output = resolve(obj.path, `enriched/enriched.ttl`);
 
-  const response = sh.exec(
+  throwOnError(
     `robot merge ${inputParams} \
            convert --format ttl -o ${merged} && \
-     mv ${merged} ${output}`
+     mv ${merged} ${output}`,
+     'Merge ontologies failed. See errors above.'
   );
-  const success = response.code !== 1;
-  if (!success) {
-    console.log(chalk.red('Merge ontologies failed. See errors above.'));
-    exit();
-  }
 }
