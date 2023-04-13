@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import sh from 'shelljs';
 import { convertNormalizedToOwl } from './utils.js';
-import { extractClassHierarchy } from '../utils/robot.js';
+import { extractClassHierarchy, mergeOntologies } from '../utils/robot.js';
 
 export function enrichAsctb(context) {
   // TODO: do more than a straight conversion to rdf
@@ -10,6 +10,7 @@ export function enrichAsctb(context) {
   extractClassHierarchy(context, "uberon");
   extractClassHierarchy(context, "cl");
   extractClassHierarchy(context, "hgnc");
+  mergeOntologies(context, ["uberon", "cl", "hgnc"]);
   revertChanges(context);
 }
 
