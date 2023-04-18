@@ -20,17 +20,17 @@ export function extractClassHierarchy(context, ontology) {
            convert --format ttl -o ${output}`,
     'Class hierarchy extraction failed. See errors above.'
   );
+
+  return output;
 }
 
-export function mergeOntologies(context, ontologies=[]) {
+export function mergeOntologies(context, ontologyPaths=[]) {
   const { selectedDigitalObject: obj } = context;
 
   const input = resolve(obj.path, `enriched/enriched.ttl`);
 
-  const inputParams = ontologies.reduce((collector, ontology) => {
-    const inputOntology = resolve(obj.path, `enriched/${ontology}-extract.ttl`);
-    return `${collector} --input ${inputOntology}`;
-  }, `--input ${input}`)
+  const inputParams = ontologyPaths.reduce(
+    (collector, ontologyPath) => (`${collector} --input ${ontologyPath}`), "");
 
   const merged = resolve(obj.path, `enriched/enriched-merged.ttl`);
   const output = resolve(obj.path, `enriched/enriched.ttl`);
@@ -41,4 +41,6 @@ export function mergeOntologies(context, ontologies=[]) {
      mv ${merged} ${output}`,
      'Merge ontologies failed. See errors above.'
   );
+
+  return output;
 }

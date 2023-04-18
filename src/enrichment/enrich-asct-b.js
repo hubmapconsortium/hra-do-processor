@@ -8,14 +8,16 @@ export function enrichAsctb(context) {
   try {
     // Convert normalized data to graph data (.ttl)
     overrideSchemaId(context);
-    convertNormalizedToOwl(context);
+    const enrichedData = convertNormalizedToOwl(context);
     revertChanges(context);
 
-    // Use the reference ontologies to enrich the graph data
-    extractClassHierarchy(context, "uberon");
-    extractClassHierarchy(context, "cl");
-    extractClassHierarchy(context, "hgnc");
-    mergeOntologies(context, ["uberon", "cl", "hgnc"]);
+    // Include assertions from the reference ontologies to enrich the graph data
+    const uberonExtract = extractClassHierarchy(context, "uberon");
+    const clExtract = extractClassHierarchy(context, "cl");
+    const hgncExtract = extractClassHierarchy(context, "hgnc");
+    
+    // Merge all the resources
+    mergeOntologies(context, [enrichedData, uberonExtract, clExtract, hgncExtract]);
 
     // Clean up
     cleanTemporaryFiles(context);

@@ -12,6 +12,8 @@ export function convertNormalized(context) {
     `linkml-convert ${skipValidation ? '--no-validate' : ''} --schema ${schema} ${input} -o ${output}`,
     'Enrichment failed. See errors above.'
   );
+
+  return output;
 }
 
 export function convertNormalizedToOwl(context) {
@@ -25,4 +27,6 @@ export function convertNormalizedToOwl(context) {
     `linkml-data2owl --output-type ttl --schema ${schema} ${input} -o ${output}`,
     'Enrichment failed. See errors above.'
   );
+
+  return output;
 }
