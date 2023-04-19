@@ -24,6 +24,7 @@ export function enrichAsctb(context) {
 
     // Include assertions from the reference ontologies to enrich the graph data
     const uberonExtract = extractClassHierarchy(context, "uberon", validatedData);
+    const fmaExtract = extractClassHierarchy(context, "fma", validatedData);
     const clExtract = extractClassHierarchy(context, "cl", validatedData);
     const hgncExtract = extractClassHierarchy(context, "hgnc", validatedData);
 
@@ -31,6 +32,7 @@ export function enrichAsctb(context) {
     mergeOntologies(context, [
       validatedData,
       uberonExtract,
+      fmaExtract,
       clExtract,
       hgncExtract
     ]);

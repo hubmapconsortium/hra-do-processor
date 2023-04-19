@@ -1,0 +1,22 @@
+SELECT DISTINCT ?entity
+WHERE {
+   {
+      SELECT (?s AS ?entity) WHERE { 
+         ?s ?p ?o .
+         FILTER(STRSTARTS(STR(?s),"http://purl.org/sig/ont/fma/fma"))
+      }
+   }
+   UNION
+   {
+      SELECT (?o AS ?entity) WHERE {
+         ?s ?p ?o .
+         FILTER(STRSTARTS(STR(?o),"http://purl.org/sig/ont/fma/fma"))
+      }
+   }
+   UNION
+   {
+      SELECT ?entity WHERE {
+         BIND("http://purl.org/sig/ont/fma/fma62955" AS ?entity)
+      }
+   }
+}
