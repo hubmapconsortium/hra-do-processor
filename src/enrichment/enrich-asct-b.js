@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import { resolve } from 'path';
-import { convertNormalizedToOwl } from './utils.js';
+import { convertNormalizedToOwl, downloadValidationResult } from './utils.js';
 import { extractClassHierarchy, mergeOntologies } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
 
@@ -16,8 +16,19 @@ export function enrichAsctb(context) {
     const clExtract = extractClassHierarchy(context, "cl");
     const hgncExtract = extractClassHierarchy(context, "hgnc");
     
+    // Include asssertions from the CCF validation tool to enrich the graph data
+    const mainResults = downloadValidationResult(context, "main");
+    const extendedResults = downloadValidationResult(context, "extended");
+
     // Merge all the resources
-    mergeOntologies(context, [enrichedData, uberonExtract, clExtract, hgncExtract]);
+    mergeOntologies(context, [
+      enrichedData,
+      uberonExtract,
+      clExtract,
+      hgncExtract, 
+      mainResults, 
+      extendedResults
+    ]);
 
     // Clean up
     cleanTemporaryFiles(context);
