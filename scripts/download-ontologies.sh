@@ -18,6 +18,17 @@ robot convert -i "$MIRROR_DIR/uberon.owl" \
      -o "$MIRROR_DIR/uberon.ttl" && \
 rm -rf "$MIRROR_DIR/uberon.owl"
 
+# Download the latest FMA ontology
+curl -L "http://sig.biostr.washington.edu/share/downloads/fma/release/latest/fma.zip" \
+     --create-dirs -o "$MIRROR_DIR/fma.zip" \
+     --retry 4 \
+     --max-time 200 && \
+unzip $MIRROR_DIR/fma.zip -x license.txt pun_fma.owl README.txt -d $MIRROR_DIR && \
+robot convert -i "$MIRROR_DIR/fma.owl" \
+     --format ttl \
+     -o "$MIRROR_DIR/fma.ttl" && \
+rm -rf $MIRROR_DIR/fma.owl $MIRROR_DIR/fma.zip
+
 # Download the latest CL ontology
 curl -L "$OBO_BASE_URL/cl/cl-base.owl" \
      --create-dirs -o "$MIRROR_DIR/cl.owl" \
