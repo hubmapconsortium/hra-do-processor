@@ -1,18 +1,17 @@
 import { resolve } from 'path';
 import { throwOnError } from './sh-exec.js';
 
-export function extractClassHierarchy(context, ontology) {
+export function extractClassHierarchy(context, ontology, seed) {
   const { selectedDigitalObject: obj, processorHome } = context;
 
   const inputOntology = resolve(processorHome, `mirrors/${ontology}.ttl`);
   const query = resolve(processorHome, `src/utils/get-${ontology}-terms.sparql`);
 
-  const input = resolve(obj.path, `enriched/enriched.ttl`);
   const termList = resolve(obj.path, `enriched/${ontology}-terms.csv`);
   const output = resolve(obj.path, `enriched/${ontology}-extract.ttl`);
 
   throwOnError(
-    `robot query -i ${input} --query ${query} ${termList} && \
+    `robot query -i ${seed} --query ${query} ${termList} && \
      sed -i '1d' ${termList} && \
      robot extract -i ${inputOntology} \
               --method subset \

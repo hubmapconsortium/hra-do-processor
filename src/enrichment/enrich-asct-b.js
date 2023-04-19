@@ -10,24 +10,29 @@ export function enrichAsctb(context) {
     overrideSchemaId(context);
     const enrichedData = convertNormalizedToOwl(context);
     revertChanges(context);
-
-    // Include assertions from the reference ontologies to enrich the graph data
-    const uberonExtract = extractClassHierarchy(context, "uberon");
-    const clExtract = extractClassHierarchy(context, "cl");
-    const hgncExtract = extractClassHierarchy(context, "hgnc");
     
     // Include asssertions from the CCF validation tool to enrich the graph data
     const mainResults = downloadValidationResult(context, "main");
     const extendedResults = downloadValidationResult(context, "extended");
 
     // Merge all the resources
-    mergeOntologies(context, [
+    const validatedData = mergeOntologies(context, [
       enrichedData,
-      uberonExtract,
-      clExtract,
-      hgncExtract, 
       mainResults, 
       extendedResults
+    ]);
+
+    // Include assertions from the reference ontologies to enrich the graph data
+    const uberonExtract = extractClassHierarchy(context, "uberon", validatedData);
+    const clExtract = extractClassHierarchy(context, "cl", validatedData);
+    const hgncExtract = extractClassHierarchy(context, "hgnc", validatedData);
+
+    // Merge all the resources
+    mergeOntologies(context, [
+      validatedData,
+      uberonExtract,
+      clExtract,
+      hgncExtract
     ]);
 
     // Clean up
