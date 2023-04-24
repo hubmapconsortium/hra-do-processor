@@ -1,2 +1,415 @@
 warnings:
-  - 'WARNING: unmapped field found: CT/1/ABBR'
+  - >-
+    WARNING: Invalid Header found at column: S, row: 11 where Header Value:
+    CT/1/ABBR (Code 3)
+  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 12 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1975 at Column: Z, Row: 12 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:9171 at Column: Z, Row: 13 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:7908 at Column: AD, Row: 13 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AI, Row: 13 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:9171 at Column: Z, Row: 14 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:7908 at Column: AD, Row: 14 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AI, Row: 14 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:636 at Column: Z, Row: 15 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AE, Row: 15 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:12559 at Column: Z, Row: 16 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1514 at Column: AD, Row: 16 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: O, Row: 17 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 17 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:20862 at Column: Z, Row: 17 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:11530 at Column: AD, Row: 17 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:633 at Column: AH, Row: 17 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:11073 at Column: AK, Row: 17 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:11853 at Column: Z, Row: 18 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:15846 at Column: AD, Row: 18 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:222 at Column: AH, Row: 18 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:10919 at Column: Z, Row: 19 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:9171 at Column: Z, Row: 20 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:7908 at Column: AD, Row: 20 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AI, Row: 20 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:11853 at Column: Z, Row: 21 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:15846 at Column: AD, Row: 21 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:222 at Column: AH, Row: 21 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:2032 at Column: Z, Row: 22 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:4883 at Column: AD, Row: 22 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:18688 at Column: AH, Row: 22 (Code
+    6)
+  - 'WARNING: Missing Uberon/CL ID at Column: AL, Row: 22 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:9171 at Column: Z, Row: 23 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:7908 at Column: AD, Row: 23 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AI, Row: 23 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AL, Row: 23 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AO, Row: 23 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:16041 at Column: Z, Row: 24 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:29853 at Column: AD, Row: 24 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:3763 at Column: AH, Row: 24 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:633 at Column: AK, Row: 24 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:9051 at Column: AN, Row: 24 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:26270 at Column: Z, Row: 25 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10249 at Column: AD, Row: 25 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:6144 at Column: AH, Row: 25 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:8804 at Column: AK, Row: 25 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:17732 at Column: AN, Row: 25 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:6694 at Column: Z, Row: 26 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10916 at Column: AD, Row: 26 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:417 at Column: AH, Row: 26 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:4175 at Column: AK, Row: 26 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:11037 at Column: Z, Row: 27 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:11019 at Column: AD, Row: 27 (Code
+    6)
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10970 at Column: AH, Row: 27 (Code
+    6)
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10972 at Column: AK, Row: 27 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:9453 at Column: AN, Row: 27 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:14430 at Column: Z, Row: 28 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:11019 at Column: AD, Row: 28 (Code
+    6)
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10970 at Column: AH, Row: 28 (Code
+    6)
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10972 at Column: AK, Row: 28 (Code
+    6)
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:32017 at Column: AN, Row: 28 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:10929 at Column: Z, Row: 29 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:633 at Column: AD, Row: 29 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:21637 at Column: AH, Row: 29 (Code
+    6)
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:18210 at Column: AK, Row: 29 (Code
+    6)
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:23091 at Column: AN, Row: 29 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:11255 at Column: Z, Row: 30 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:21637 at Column: AD, Row: 30 (Code
+    6)
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:12663 at Column: AH, Row: 30 (Code
+    6)
+  - 'WARNING: Missing Uberon/CL ID at Column: AL, Row: 30 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: O, Row: 31 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:11255 at Column: Z, Row: 31 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10919 at Column: AD, Row: 31 (Code
+    6)
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:21637 at Column: AH, Row: 31 (Code
+    6)
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:11530 at Column: AK, Row: 31 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:5360 at Column: AN, Row: 31 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:2303 at Column: AQ, Row: 31 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:6188 at Column: AT, Row: 31 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: O, Row: 32 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:20862 at Column: Z, Row: 32 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:11530 at Column: AD, Row: 32 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:633 at Column: AH, Row: 32 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID SLC4A11 at Column: AK, Row: 32 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: O, Row: 33 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:10919 at Column: Z, Row: 33 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:11530 at Column: AD, Row: 33 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:2032 at Column: AH, Row: 33 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10832 at Column: AK, Row: 33 (Code
+    6)
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:16438 at Column: AN, Row: 33 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:2303 at Column: AQ, Row: 33 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:11530 at Column: Z, Row: 34 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:2045 at Column: AD, Row: 34 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10832 at Column: AH, Row: 34 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:9459 at Column: AK, Row: 34 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:2026 at Column: AN, Row: 34 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:12559 at Column: Z, Row: 35 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1514 at Column: AD, Row: 35 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:12559 at Column: Z, Row: 36 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1514 at Column: AD, Row: 36 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:33705 at Column: AH, Row: 36 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:2037 at Column: AK, Row: 36 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:12559 at Column: Z, Row: 37 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1514 at Column: AD, Row: 37 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:9858 at Column: AH, Row: 37 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:9459 at Column: AK, Row: 37 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:7872 at Column: Z, Row: 38 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10250 at Column: AD, Row: 38 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:17995 at Column: Z, Row: 39 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1434 at Column: AD, Row: 39 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10527 at Column: AH, Row: 39 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:17995 at Column: Z, Row: 40 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:11068 at Column: Z, Row: 41 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:5209 at Column: AD, Row: 41 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1434 at Column: AH, Row: 41 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10602 at Column: AK, Row: 41 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:3145 at Column: AN, Row: 41 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1434 at Column: Z, Row: 42 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:3145 at Column: AD, Row: 42 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:4172 at Column: AH, Row: 42 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:5209 at Column: AK, Row: 42 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10602 at Column: AN, Row: 42 (Code
+    6)
+  - 'WARNING: Missing Uberon/CL ID at Column: AR, Row: 42 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:636 at Column: Z, Row: 43 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:4028 at Column: AD, Row: 43 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10602 at Column: AH, Row: 43 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:18266 at Column: Z, Row: 44 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:11068 at Column: AD, Row: 44 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:14467 at Column: Z, Row: 45 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:11068 at Column: AD, Row: 45 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:639 at Column: AH, Row: 45 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AL, Row: 45 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:11035 at Column: Z, Row: 46 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AE, Row: 46 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AI, Row: 46 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AL, Row: 46 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:636 at Column: Z, Row: 48 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:4028 at Column: AD, Row: 48 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10602 at Column: AH, Row: 48 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:4172 at Column: AK, Row: 48 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:636 at Column: Z, Row: 49 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:4028 at Column: AD, Row: 49 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10602 at Column: AH, Row: 49 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:4172 at Column: AK, Row: 49 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:636 at Column: Z, Row: 50 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:4028 at Column: AD, Row: 50 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10602 at Column: AH, Row: 50 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:4172 at Column: AK, Row: 50 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:10919 at Column: Z, Row: 51 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 52 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:11035 at Column: Z, Row: 52 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:14467 at Column: AD, Row: 52 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:18266 at Column: Z, Row: 53 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:14467 at Column: Z, Row: 54 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:27220 at Column: AD, Row: 54 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:6342 at Column: AH, Row: 54 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:639 at Column: AK, Row: 54 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:11027 at Column: Z, Row: 55 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:6342 at Column: AD, Row: 55 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:639 at Column: AH, Row: 55 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:11027 at Column: Z, Row: 56 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:6342 at Column: AD, Row: 56 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1437 at Column: AH, Row: 56 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:11035 at Column: V, Row: 57 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:8818 at Column: Z, Row: 57 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:8031 at Column: AD, Row: 57 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:11035 at Column: V, Row: 58 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:8818 at Column: Z, Row: 58 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:16041 at Column: V, Row: 59 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:8823 at Column: Z, Row: 59 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:3763 at Column: AD, Row: 59 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 60 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:8951 at Column: V, Row: 60 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:11853 at Column: Z, Row: 60 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:15846 at Column: AD, Row: 60 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:222 at Column: AH, Row: 60 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 61 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:8951 at Column: V, Row: 61 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:11853 at Column: Z, Row: 61 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:15846 at Column: AD, Row: 61 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:222 at Column: AH, Row: 61 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:13635 at Column: Z, Row: 62 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:2959 at Column: AD, Row: 62 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 63 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:8951 at Column: AD, Row: 63 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:11853 at Column: AH, Row: 63 (Code
+    6)
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:15846 at Column: AK, Row: 63 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:222 at Column: AN, Row: 63 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 64 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:13635 at Column: AH, Row: 64 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:2959 at Column: AK, Row: 64 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 65 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:7178 at Column: V, Row: 65 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:9459 at Column: Z, Row: 65 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:11592 at Column: AD, Row: 65 (Code
+    6)
+  - 'WARNING: Missing RDFS Label for ID HGNC:11553 at Column: V, Row: 66 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:130 at Column: Z, Row: 66 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:7569 at Column: AD, Row: 66 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:8033 at Column: AH, Row: 66 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 67 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:7569 at Column: V, Row: 67 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AA, Row: 67 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AE, Row: 67 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:8033 at Column: AH, Row: 67 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AL, Row: 67 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:6934 at Column: AN, Row: 67 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:9958 at Column: V, Row: 68 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:2705 at Column: V, Row: 69 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:14881 at Column: Z, Row: 69 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1346 at Column: AD, Row: 69 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:6724 at Column: AH, Row: 69 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:2197 at Column: AK, Row: 69 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:2198 at Column: AN, Row: 69 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:2705 at Column: V, Row: 70 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:11553 at Column: V, Row: 71 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:130 at Column: Z, Row: 71 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:2197 at Column: AD, Row: 71 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 72 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1631 at Column: V, Row: 72 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:6024 at Column: Z, Row: 72 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1628 at Column: AD, Row: 72 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 73 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC: at Column: V, Row: 73 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC: at Column: Z, Row: 73 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:3619 at Column: AD, Row: 73 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 74 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:7830 at Column: V, Row: 74 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:4414 at Column: Z, Row: 74 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:4708 at Column: AD, Row: 74 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10473 at Column: AH, Row: 74 (Code
+    6)
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 75 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:7830 at Column: V, Row: 75 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:4414 at Column: Z, Row: 75 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:4708 at Column: AD, Row: 75 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10473 at Column: AH, Row: 75 (Code
+    6)
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:16892 at Column: AK, Row: 75 (Code
+    6)
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC: 1677 at Column: AN, Row: 75 (Code
+    6)
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 76 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:613 at Column: V, Row: 76 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1636 at Column: Z, Row: 76 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1638 at Column: AD, Row: 76 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:3609 at Column: AH, Row: 76 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 77 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:6152 at Column: V, Row: 77 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:3765 at Column: Z, Row: 77 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:26705 at Column: AD, Row: 77 (Code
+    6)
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 78 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:6012 at Column: V, Row: 78 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:3765 at Column: Z, Row: 78 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 79 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1241 at Column: V, Row: 79 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:4947 at Column: Z, Row: 79 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 80 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 80 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: W, Row: 80 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AA, Row: 80 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AE, Row: 80 (Code 6)'
+  - >-
+    WARNING: Invalid characters in data cell at column: AG row: 80 where data
+    cell: HLA_DRB1 (Code 5)
+  - 'WARNING: Missing Uberon/CL ID at Column: AI, Row: 80 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AL, Row: 80 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AO, Row: 80 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AR, Row: 80 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 81 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:16892 at Column: V, Row: 81 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1673 at Column: Z, Row: 81 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1675 at Column: AD, Row: 81 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:11935 at Column: AH, Row: 81 (Code
+    6)
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC: 1677 at Column: AK, Row: 81 (Code
+    6)
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 82 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:4708 at Column: V, Row: 82 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:10630 at Column: Z, Row: 82 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC:10632 at Column: AD, Row: 82 (Code
+    6)
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 83 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:5713 at Column: V, Row: 83 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:1698 at Column: Z, Row: 83 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:7315 at Column: AD, Row: 83 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 84 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:30125 at Column: V, Row: 84 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:18508 at Column: Z, Row: 84 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:5713 at Column: AD, Row: 84 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:5716 at Column: AH, Row: 84 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 85 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:10499 at Column: V, Row: 85 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:10498 at Column: Z, Row: 85 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:3620 at Column: AD, Row: 85 (Code 6)'
+  - >-
+    WARNING: Missing RDFS Label for ID HGNC: 2439 at Column: AH, Row: 85 (Code
+    6)
+  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 86 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:6342 at Column: V, Row: 86 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:2298 at Column: Z, Row: 86 (Code 6)'
+  - 'WARNING: Missing RDFS Label for ID HGNC:7316 at Column: AD, Row: 86 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: L, Row: 87 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: W, Row: 87 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AA, Row: 87 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AE, Row: 87 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AI, Row: 87 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AL, Row: 87 (Code 6)'

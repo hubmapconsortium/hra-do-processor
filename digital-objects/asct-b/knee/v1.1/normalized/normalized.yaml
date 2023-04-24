@@ -1,3 +1,4 @@
+id: http://purl.humanatlas.io/asct-b/knee/v1.1
 metadata:
   type: asct-b
   name: knee
@@ -46,858 +47,608 @@ metadata:
   datatable:
     - ASCT-B_VH_Knee.csv
 data:
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0004098
-        label: tibial plateaux
-        preferred_name: Tibial Plateau
-      - id: http://purl.obolibrary.org/obo/UBERON_0009989
-        label: condyle of tibia
-        preferred_name: condyle of tibia
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0008775
-        label: proximal epiphysis of fibula
-        preferred_name: head of fibula
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0002446
-        label: patella
-        preferred_name: Patella
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0014848
-        label: tendon of quadriceps femoris
-        preferred_name: Patellar Tendon
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0003676
-        label: patellar ligament
-        preferred_name: Patella Ligament
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0000387
-        label: meniscus
-        preferred_name: Meniscus
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0003671
-        label: anterior cruciate ligament of knee joint
-        preferred_name: ACL
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0003680
-        label: posterior cruciate ligament of knee joint
-        preferred_name: PCL
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0011088
-        label: ligament of knee joint
-        preferred_name: Collateral Ligaments
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0002018
-        label: synovial membrane of synovial joint
-        preferred_name: Synovial membrane
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0003668
-        label: synovial bursa
-        preferred_name: Synovial Bursa
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0016400
-        label: infrapatellar fat pad
-        preferred_name: Infrapatellar fat pad
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-      - id: http://purl.obolibrary.org/obo/UBERON_0009984
-        label: medial condyle of femur
-        preferred_name: Medial Condyles
-      - id: http://purl.obolibrary.org/obo/UBERON_0010996
-        label: Superior Articular Cartilage
-        preferred_name: Articular cartilage of a joint
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_1001607
-        label: articular chondrocyte
-        preferred_name: articular chondrocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/9364
-        label: 'PRG4: proteoglycan 4'
-        preferred_name: Lubricin
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/9364
-        label: 'PRG4: proteoglycan 4'
-        preferred_name: Lubricin
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_1001607
-        label: articular chondrocyte
-        preferred_name: articular chondrocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/14872
-        label: 'ASPN: asporin proteoglycan'
-        preferred_name: Asporin proteoglycan
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/14872
-        label: 'ASPN: asporin proteoglycan'
-        preferred_name: Asporin proteoglycan
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_1001607
-        label: articular chondrocyte
-        preferred_name: articular chondrocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/2200
-        label: 'COL2A1: collagen type II alpha 1 chain'
-        preferred_name: Type II Collagen
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2201
-        label: 'COL3A1: collagen type III alpha 1 chain'
-        preferred_name: Type III Collagen
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/2200
-        label: 'COL2A1: collagen type II alpha 1 chain'
-        preferred_name: Type II Collagen
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2201
-        label: 'COL3A1: collagen type III alpha 1 chain'
-        preferred_name: Type III Collagen
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000744
-        label: columnar chondrocyte
-        preferred_name: Columnar Chondrocytes
-      - id: http://purl.obolibrary.org/obo/CL_1001607
-        label: articular chondrocyte
-        preferred_name: articular chondrocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/2200
-        label: 'COL2A1: collagen type II alpha 1 chain'
-        preferred_name: Type II Collagen
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2186
-        label: 'COL11A1: collagen type XI alpha 1 chain'
-        preferred_name: Type XI Collagen
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/2200
-        label: 'COL2A1: collagen type II alpha 1 chain'
-        preferred_name: Type II Collagen
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2186
-        label: 'COL11A1: collagen type XI alpha 1 chain'
-        preferred_name: Type XI Collagen
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000743
-        label: hypertrophic chondrocyte
-        preferred_name: hypertrophic chondrocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/2185
-        label: 'COL10A1: collagen type X alpha 1 chain'
-        preferred_name: Type X Collagen
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/438
-        label: 'ALPL: alkaline phosphatase, biomineralization associated'
-        preferred_name: Alkaline Phosphatase
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/2185
-        label: 'COL10A1: collagen type X alpha 1 chain'
-        preferred_name: Type X Collagen
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/438
-        label: 'ALPL: alkaline phosphatase, biomineralization associated'
-        preferred_name: Alkaline Phosphatase
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-      - id: http://purl.obolibrary.org/obo/UBERON_4000088
-        label: mineralized cartilage tissue
-        preferred_name: Mineralized Cartilage
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000743
-        label: hypertrophic chondrocyte
-        preferred_name: Hypertrophic Chondrocytes
-    biomarkers:
-      - id: http://identifiers.org/hgnc/2185
-        label: 'COL10A1: collagen type X alpha 1 chain'
-        preferred_name: Type X Collagen
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/5341
-        label: 'IBSP: integrin binding sialoprotein'
-        preferred_name: Bone Sialoprotein
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/2185
-        label: 'COL10A1: collagen type X alpha 1 chain'
-        preferred_name: Type X Collagen
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/5341
-        label: 'IBSP: integrin binding sialoprotein'
-        preferred_name: Bone Sialoprotein
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-      - id: http://purl.obolibrary.org/obo/UBERON_0001437
-        label: epiphysis
-        preferred_name: Epiphyseal Bone
-    cell_types: []
-    biomarkers:
-      - id: http://identifiers.org/hgnc/2185
-        label: 'COL10A1: collagen type X alpha 1 chain'
-        preferred_name: 'COL10A1: collagen type X alpha 1 chain'
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/2185
-        label: 'COL10A1: collagen type X alpha 1 chain'
-        preferred_name: 'COL10A1: collagen type X alpha 1 chain'
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000137
-        label: osteocyte
-        preferred_name: Osteocytes
-    biomarkers:
-      - id: http://identifiers.org/hgnc/2197
-        label: 'COL1A1: collagen type I alpha 1 chain'
-        preferred_name: 'COL1A1: collagen type I alpha 1 chain'
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2932
-        label: 'DMP1: dentin matrix acidic phosphoprotein 1'
-        preferred_name: 'DMP1: dentin matrix acidic phosphoprotein 1'
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/2197
-        label: 'COL1A1: collagen type I alpha 1 chain'
-        preferred_name: 'COL1A1: collagen type I alpha 1 chain'
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2932
-        label: 'DMP1: dentin matrix acidic phosphoprotein 1'
-        preferred_name: 'DMP1: dentin matrix acidic phosphoprotein 1'
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000062
-        label: osteoblast
-        preferred_name: Osteoblasts
-    biomarkers:
-      - id: http://identifiers.org/hgnc/2197
-        label: 'COL1A1: collagen type I alpha 1 chain'
-        preferred_name: 'COL1A1: collagen type I alpha 1 chain'
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/5341
-        label: 'IBSP: integrin binding sialoprotein'
-        preferred_name: 'IBSP: integrin binding sialoprotein'
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/2197
-        label: 'COL1A1: collagen type I alpha 1 chain'
-        preferred_name: 'COL1A1: collagen type I alpha 1 chain'
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/5341
-        label: 'IBSP: integrin binding sialoprotein'
-        preferred_name: 'IBSP: integrin binding sialoprotein'
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000092
-        label: osteoclast
-        preferred_name: Osteoclasts
-      - id: http://purl.obolibrary.org/obo/CL_0000779
-        label: multinuclear osteoclast
-        preferred_name: multinuclear osteoclast
-    biomarkers:
-      - id: http://identifiers.org/hgnc/124
-        label: 'TRAP: ACP5: acid phosphatase 5, tartrate resistant'
-        preferred_name: 'TRAP: ACP5: acid phosphatase 5, tartrate resistant'
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2536
-        label: 'CTSK: cathepsin K'
-        preferred_name: 'CTSK: cathepsin K'
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/124
-        label: 'TRAP: ACP5: acid phosphatase 5, tartrate resistant'
-        preferred_name: 'TRAP: ACP5: acid phosphatase 5, tartrate resistant'
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2536
-        label: 'CTSK: cathepsin K'
-        preferred_name: 'CTSK: cathepsin K'
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000778
-        label: mononuclear osteoclast
-        preferred_name: mononuclear osteoclast
-    biomarkers:
-      - id: http://identifiers.org/hgnc/124
-        label: 'TRAP: ACP5: acid phosphatase 5, tartrate resistant'
-        preferred_name: 'TRAP: ACP5: acid phosphatase 5, tartrate resistant'
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/124
-        label: 'TRAP: ACP5: acid phosphatase 5, tartrate resistant'
-        preferred_name: 'TRAP: ACP5: acid phosphatase 5, tartrate resistant'
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-      - id: http://purl.obolibrary.org/obo/UBERON_0002483
-        label: trabecular bone tissue
-        preferred_name: trabecular bone
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-      - id: http://purl.obolibrary.org/obo/UBERON_0002371
-        label: bone marrow
-        preferred_name: Bone Marrow
-      - id: http://purl.obolibrary.org/obo/UBERON_0007195
-        label: stroma of bone marrow
-        preferred_name: Bone Marrow Stroma
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_2000008
-        label: microvascular endothelial cell
-        preferred_name: microvascular endothelial cell
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000669
-        label: pericyte cell
-        preferred_name: pericyte cell
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0007010
-        label: preosteoblast
-        preferred_name: Preosteoblast
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002262
-        label: endothelial cell of sinusoid
-        preferred_name: endothelial cell of sinusoid
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-      - id: http://purl.obolibrary.org/obo/UBERON_0006136
-        label: unmyelinated nerve fiber
-        preferred_name: unmyelinated nerve fiber
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000136
-        label: fat cell
-        preferred_name: fat cell
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-      - id: http://purl.obolibrary.org/obo/UBERON_0002371
-        label: bone marrow
-        preferred_name: Marrow elements
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001465
-        label: knee
-        preferred_name: knee
-      - id: http://purl.obolibrary.org/obo/UBERON_0001485
-        label: knee joint
-        preferred_name: knee joint
-      - id: http://purl.obolibrary.org/obo/UBERON_0009980
-        label: condyle of femur
-        preferred_name: Distal Femur
-      - id: http://purl.obolibrary.org/obo/UBERON_0009985
-        label: lateral condyle of femur
-        preferred_name: Lateral Condyle
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
+  anatomical_structures:
+    - id: UBERON:0013702
+      class_type: AnatomicalStructure
+      ccf_pref_label: body proper
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+    - id: UBERON:0001465
+      class_type: AnatomicalStructure
+      ccf_pref_label: knee
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0013702
+    - id: UBERON:0001485
+      class_type: AnatomicalStructure
+      ccf_pref_label: knee joint
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001465
+    - id: ASCTB-TEMP:proximal-tibia
+      class_type: AnatomicalStructure
+      ccf_pref_label: proximal tibia
+      ccf_asctb_type: AS
+      ccf_is_provisional: true
+      ccf_part_of:
+        - UBERON:0001485
+    - id: UBERON:0004098
+      class_type: AnatomicalStructure
+      ccf_pref_label: Tibial Plateau
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - ASCTB-TEMP:proximal-tibia
+    - id: UBERON:0009989
+      class_type: AnatomicalStructure
+      ccf_pref_label: condyle of tibia
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0004098
+    - id: ASCTB-TEMP:proximal-fibula
+      class_type: AnatomicalStructure
+      ccf_pref_label: proximal fibula
+      ccf_asctb_type: AS
+      ccf_is_provisional: true
+      ccf_part_of:
+        - UBERON:0001485
+    - id: UBERON:0008775
+      class_type: AnatomicalStructure
+      ccf_pref_label: head of fibula
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - ASCTB-TEMP:proximal-fibula
+    - id: UBERON:0002446
+      class_type: AnatomicalStructure
+      ccf_pref_label: Patella
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001485
+    - id: UBERON:0014848
+      class_type: AnatomicalStructure
+      ccf_pref_label: Patellar Tendon
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001485
+    - id: UBERON:0003676
+      class_type: AnatomicalStructure
+      ccf_pref_label: Patella Ligament
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001485
+    - id: UBERON:0000387
+      class_type: AnatomicalStructure
+      ccf_pref_label: Meniscus
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001485
+    - id: UBERON:0003671
+      class_type: AnatomicalStructure
+      ccf_pref_label: ACL
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001485
+    - id: UBERON:0003680
+      class_type: AnatomicalStructure
+      ccf_pref_label: PCL
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001485
+    - id: UBERON:0011088
+      class_type: AnatomicalStructure
+      ccf_pref_label: Collateral Ligaments
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001485
+    - id: UBERON:0002018
+      class_type: AnatomicalStructure
+      ccf_pref_label: Synovial membrane
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001485
+    - id: UBERON:0003668
+      class_type: AnatomicalStructure
+      ccf_pref_label: Synovial Bursa
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001485
+    - id: UBERON:0016400
+      class_type: AnatomicalStructure
+      ccf_pref_label: Infrapatellar fat pad
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001485
+    - id: UBERON:0009980
+      class_type: AnatomicalStructure
+      ccf_pref_label: Distal Femur
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001485
+    - id: UBERON:0009984
+      class_type: AnatomicalStructure
+      ccf_pref_label: Medial Condyles
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0009980
+    - id: UBERON:0010996
+      class_type: AnatomicalStructure
+      ccf_pref_label: Articular cartilage of a joint
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0009984
+    - id: ASCTB-TEMP:superficial-zone
+      class_type: AnatomicalStructure
+      ccf_pref_label: Superficial Zone
+      ccf_asctb_type: AS
+      ccf_is_provisional: true
+      ccf_part_of:
+        - UBERON:0010996
+    - id: ASCTB-TEMP:transitional-zone
+      class_type: AnatomicalStructure
+      ccf_pref_label: Transitional Zone
+      ccf_asctb_type: AS
+      ccf_is_provisional: true
+      ccf_part_of:
+        - UBERON:0009980
+    - id: ASCTB-TEMP:deep-zone
+      class_type: AnatomicalStructure
+      ccf_pref_label: Deep Zone
+      ccf_asctb_type: AS
+      ccf_is_provisional: true
+      ccf_part_of:
+        - UBERON:0009980
+    - id: ASCTB-TEMP:tidemark
+      class_type: AnatomicalStructure
+      ccf_pref_label: Tidemark
+      ccf_asctb_type: AS
+      ccf_is_provisional: true
+      ccf_part_of:
+        - UBERON:0009980
+    - id: UBERON:4000088
+      class_type: AnatomicalStructure
+      ccf_pref_label: Mineralized Cartilage
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0009980
+    - id: UBERON:0001437
+      class_type: AnatomicalStructure
+      ccf_pref_label: Epiphyseal Bone
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0009980
+    - id: ASCTB-TEMP:subchondral-bone
+      class_type: AnatomicalStructure
+      ccf_pref_label: Subchondral Bone
+      ccf_asctb_type: AS
+      ccf_is_provisional: true
+      ccf_part_of:
+        - UBERON:0001437
+    - id: UBERON:0002483
+      class_type: AnatomicalStructure
+      ccf_pref_label: trabecular bone
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0009980
+    - id: UBERON:0002371
+      class_type: AnatomicalStructure
+      ccf_pref_label: Bone Marrow
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0009980
+    - id: UBERON:0007195
+      class_type: AnatomicalStructure
+      ccf_pref_label: Bone Marrow Stroma
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0002371
+    - id: UBERON:0006136
+      class_type: AnatomicalStructure
+      ccf_pref_label: unmyelinated nerve fiber
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0009980
+    - id: UBERON:0009985
+      class_type: AnatomicalStructure
+      ccf_pref_label: Lateral Condyle
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0009980
+  cell_types:
+    - id: CL:0000000
+      class_type: CellType
+      ccf_pref_label: cell type
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+    - id: CL:1001607
+      class_type: CellType
+      ccf_pref_label: articular chondrocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+        - ASCTB-TEMP:deep-superficial
+        - ASCTB-TEMP:rounded-chondrocytes
+        - CL:0000744
+      ccf_located_in:
+        - ASCTB-TEMP:superficial-zone
+        - ASCTB-TEMP:transitional-zone
+        - UBERON:0009980
+        - ASCTB-TEMP:deep-zone
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:9364
+          references: []
+        - members:
+            - HGNC:14872
+          references: []
+        - members:
+            - HGNC:2200
+            - HGNC:2201
+          references: []
+        - members:
+            - HGNC:2200
+            - HGNC:2186
+          references: []
+    - id: ASCTB-TEMP:deep-superficial
+      class_type: CellType
+      ccf_pref_label: Deep Superficial
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: ASCTB-TEMP:rounded-chondrocytes
+      class_type: CellType
+      ccf_pref_label: Rounded Chondrocytes
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000744
+      class_type: CellType
+      ccf_pref_label: Columnar Chondrocytes
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: ASCTB-TEMP:prehypertrophic-chondrocytes
+      class_type: CellType
+      ccf_pref_label: Prehypertrophic Chondrocytes
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000743
+      class_type: CellType
+      ccf_pref_label: hypertrophic chondrocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - ASCTB-TEMP:prehypertrophic-chondrocytes
+        - CL:0000000
+        - CL:0000743
+      ccf_located_in:
+        - ASCTB-TEMP:tidemark
+        - UBERON:4000088
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:2185
+            - HGNC:438
+          references: []
+        - members:
+            - HGNC:2185
+            - HGNC:5341
+          references: []
+    - id: ASCTB-TEMP:residual-hypertrophic-chondrocytes
+      class_type: CellType
+      ccf_pref_label: Residual Hypertrophic Chondrocytes
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:subchondral-bone
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:2185
+          references: []
+    - id: CL:0000137
+      class_type: CellType
+      ccf_pref_label: Osteocytes
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+        - CL:0000137
+      ccf_located_in:
+        - UBERON:0009980
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:2197
+            - HGNC:2932
+          references: []
+    - id: CL:0000062
+      class_type: CellType
+      ccf_pref_label: Osteoblasts
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+        - CL:0000062
+      ccf_located_in:
+        - UBERON:0009980
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:2197
+            - HGNC:5341
+          references: []
+    - id: ASCTB-TEMP:bone-lining-cells
+      class_type: CellType
+      ccf_pref_label: Bone lIning Cells
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0009980
+      ccf_has_biomarker_set:
+        - members: []
+          references: []
+    - id: CL:0000092
+      class_type: CellType
+      ccf_pref_label: Osteoclasts
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000779
+      class_type: CellType
+      ccf_pref_label: multinuclear osteoclast
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000092
+      ccf_located_in:
+        - UBERON:0009980
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:124
+            - HGNC:2536
+          references: []
+    - id: ASCTB-TEMP:preosteoclasts
+      class_type: CellType
+      ccf_pref_label: Preosteoclasts
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000778
+      class_type: CellType
+      ccf_pref_label: mononuclear osteoclast
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - ASCTB-TEMP:preosteoclasts
+      ccf_located_in:
+        - UBERON:0009980
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:124
+          references: []
+    - id: ASCTB-TEMP:vascular-endothelial-cells
+      class_type: CellType
+      ccf_pref_label: vascular endothelial cells
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:2000008
+      class_type: CellType
+      ccf_pref_label: microvascular endothelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - ASCTB-TEMP:vascular-endothelial-cells
+      ccf_located_in:
+        - UBERON:0007195
+      ccf_has_biomarker_set:
+        - members: []
+          references: []
+    - id: ASCTB-TEMP:perivascular-cells
+      class_type: CellType
+      ccf_pref_label: perivascular cells
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000669
+      class_type: CellType
+      ccf_pref_label: pericyte cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - ASCTB-TEMP:perivascular-cells
+      ccf_located_in:
+        - UBERON:0009980
+      ccf_has_biomarker_set:
+        - members: []
+          references: []
+    - id: CL:0007010
+      class_type: CellType
+      ccf_pref_label: Preosteoblast
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+        - CL:0007010
+      ccf_located_in:
+        - UBERON:0009980
+      ccf_has_biomarker_set:
+        - members: []
+          references: []
+    - id: ASCTB-TEMP:sinusoidal-cells
+      class_type: CellType
+      ccf_pref_label: sinusoidal cells
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0002262
+      class_type: CellType
+      ccf_pref_label: endothelial cell of sinusoid
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - ASCTB-TEMP:sinusoidal-cells
+      ccf_located_in:
+        - UBERON:0009980
+      ccf_has_biomarker_set:
+        - members: []
+          references: []
+    - id: ASCTB-TEMP:autonomic-neuronal-cells
+      class_type: CellType
+      ccf_pref_label: autonomic neuronal cells
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0006136
+      ccf_has_biomarker_set:
+        - members: []
+          references: []
+    - id: ASCTB-TEMP:marrow-adipocytes
+      class_type: CellType
+      ccf_pref_label: Marrow Adipocytes
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000136
+      class_type: CellType
+      ccf_pref_label: fat cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - ASCTB-TEMP:marrow-adipocytes
+      ccf_located_in:
+        - UBERON:0009980
+      ccf_has_biomarker_set:
+        - members: []
+          references: []
+  biomarkers:
+    - id: HGNC:9364
+      class_type: Biomarker
+      ccf_pref_label: Lubricin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:14872
+      class_type: Biomarker
+      ccf_pref_label: Asporin proteoglycan
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:2200
+      class_type: Biomarker
+      ccf_pref_label: Type II Collagen
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:2201
+      class_type: Biomarker
+      ccf_pref_label: Type III Collagen
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:2186
+      class_type: Biomarker
+      ccf_pref_label: Type XI Collagen
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:2185
+      class_type: Biomarker
+      ccf_pref_label: Type X Collagen
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:438
+      class_type: Biomarker
+      ccf_pref_label: Alkaline Phosphatase
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:5341
+      class_type: Biomarker
+      ccf_pref_label: Bone Sialoprotein
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:2197
+      class_type: Biomarker
+      ccf_pref_label: 'COL1A1: collagen type I alpha 1 chain'
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:2932
+      class_type: Biomarker
+      ccf_pref_label: 'DMP1: dentin matrix acidic phosphoprotein 1'
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:124
+      class_type: Biomarker
+      ccf_pref_label: 'TRAP: ACP5: acid phosphatase 5, tartrate resistant'
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:2536
+      class_type: Biomarker
+      ccf_pref_label: 'CTSK: cathepsin K'
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false

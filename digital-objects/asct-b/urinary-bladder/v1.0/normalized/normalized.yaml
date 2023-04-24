@@ -1,3 +1,4 @@
+id: http://purl.humanatlas.io/asct-b/urinary-bladder/v1.0
 metadata:
   type: asct-b
   name: urinary-bladder
@@ -52,637 +53,509 @@ metadata:
   datatable:
     - ASCT-B_VH_Urinary_Bladder.csv
 data:
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001256
-        label: wall of urinary bladder
-        preferred_name: wall of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001259
-        label: mucosa of urinary bladder
-        preferred_name: mucosa of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0004645
-        label: urinary bladder urothelium
-        preferred_name: urinary bladder urothelium
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_1001428
-        label: bladder urothelial cell
-        preferred_name: urothelium
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6442
-        label: keratin 5
-        preferred_name: KRT5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10492
-        label: S100 calcium binding protein A2
-        preferred_name: S100A2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2891
-        label: dickkopf WNT signaling pathway inhibitor 1
-        preferred_name: DKK1
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/6442
-        label: keratin 5
-        preferred_name: KRT5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10492
-        label: S100 calcium binding protein A2
-        preferred_name: S100A2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2891
-        label: dickkopf WNT signaling pathway inhibitor 1
-        preferred_name: DKK1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001256
-        label: wall of urinary bladder
-        preferred_name: wall of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001259
-        label: mucosa of urinary bladder
-        preferred_name: mucosa of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0004645
-        label: urinary bladder urothelium
-        preferred_name: urinary bladder urothelium
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_1001428
-        label: bladder urothelial cell
-        preferred_name: urothelium
-    biomarkers:
-      - id: http://identifiers.org/hgnc/15979
-        label: tumor protein p63
-        preferred_name: TP63
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6415
-        label: keratin 13
-        preferred_name: KRT13
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/384
-        label: aldo-keto reductase family 1 member C1
-        preferred_name: AKR1C1
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/15979
-        label: tumor protein p63
-        preferred_name: TP63
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6415
-        label: keratin 13
-        preferred_name: KRT13
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/384
-        label: aldo-keto reductase family 1 member C1
-        preferred_name: AKR1C1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001256
-        label: wall of urinary bladder
-        preferred_name: wall of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001259
-        label: mucosa of urinary bladder
-        preferred_name: mucosa of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0004645
-        label: urinary bladder urothelium
-        preferred_name: urinary bladder urothelium
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_1001428
-        label: bladder urothelial cell
-        preferred_name: urothelium
-    biomarkers:
-      - id: http://identifiers.org/hgnc/40603
-        label: UPK1A antisense RNA 1
-        preferred_name: UPK1A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12580
-        label: uroplakin 3A
-        preferred_name: UPK3A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12578
-        label: uroplakin 1B
-        preferred_name: UPK1B
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/40603
-        label: UPK1A antisense RNA 1
-        preferred_name: UPK1A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12580
-        label: uroplakin 3A
-        preferred_name: UPK3A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12578
-        label: uroplakin 1B
-        preferred_name: UPK1B
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001256
-        label: wall of urinary bladder
-        preferred_name: wall of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0012378
-        label: muscle layer of urinary bladder
-        preferred_name: muscle layer of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0000381
-        label: urinary bladder detrusor smooth muscle
-        preferred_name: urinary bladder detrusor smooth muscle
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002597
-        label: smooth muscle cell of bladder
-        preferred_name: smooth muscle
-    biomarkers:
-      - id: http://identifiers.org/hgnc/2770
-        label: desmin
-        preferred_name: DES
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/145
-        label: actin gamma 2, smooth muscle
-        preferred_name: ACTG2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/45169
-        label: ACTA2 antisense RNA 1
-        preferred_name: ACTA2-AS1
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/2770
-        label: desmin
-        preferred_name: DES
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/145
-        label: actin gamma 2, smooth muscle
-        preferred_name: ACTG2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/45169
-        label: ACTA2 antisense RNA 1
-        preferred_name: ACTA2-AS1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001256
-        label: wall of urinary bladder
-        preferred_name: wall of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0004943
-        label: submucosa of urinary bladder
-        preferred_name: submucosa of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001261
-        label: lamina propria of urinary bladder
-        preferred_name: lamina propria of urinary bladder
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_1001319
-        label: bladder cell
-        preferred_name: myofibroblast
-    biomarkers:
-      - id: http://identifiers.org/hgnc/11373
-        label: stanniocalcin 1
-        preferred_name: STC1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5318
-        label: tenascin C
-        preferred_name: TNC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7035
-        label: microfibril associated protein 4
-        preferred_name: MFAP4
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/11373
-        label: stanniocalcin 1
-        preferred_name: STC1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5318
-        label: tenascin C
-        preferred_name: TNC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7035
-        label: microfibril associated protein 4
-        preferred_name: MFAP4
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001256
-        label: wall of urinary bladder
-        preferred_name: wall of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0004943
-        label: submucosa of urinary bladder
-        preferred_name: submucosa of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001261
-        label: lamina propria of urinary bladder
-        preferred_name: lamina propria of urinary bladder
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_1001319
-        label: bladder cell
-        preferred_name: fibroblast
-    biomarkers:
-      - id: http://identifiers.org/hgnc/21245
-        label: peptidase inhibitor 16
-        preferred_name: PI16
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/29673
-        label: microfibril associated protein 5
-        preferred_name: MFAP5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2705
-        label: decorin
-        preferred_name: DCN
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/21245
-        label: peptidase inhibitor 16
-        preferred_name: PI16
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/29673
-        label: microfibril associated protein 5
-        preferred_name: MFAP5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2705
-        label: decorin
-        preferred_name: DCN
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001256
-        label: wall of urinary bladder
-        preferred_name: wall of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0004943
-        label: submucosa of urinary bladder
-        preferred_name: submucosa of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001261
-        label: lamina propria of urinary bladder
-        preferred_name: lamina propria of urinary bladder
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_1001319
-        label: bladder cell
-        preferred_name: fibroblast
-    biomarkers:
-      - id: http://identifiers.org/hgnc/3011
-        label: dermatopontin
-        preferred_name: DPT
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1346
-        label: complement C7
-        preferred_name: C7
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2705
-        label: decorin
-        preferred_name: DCN
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/3011
-        label: dermatopontin
-        preferred_name: DPT
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1346
-        label: complement C7
-        preferred_name: C7
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2705
-        label: decorin
-        preferred_name: DCN
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001256
-        label: wall of urinary bladder
-        preferred_name: wall of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0004943
-        label: submucosa of urinary bladder
-        preferred_name: submucosa of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001261
-        label: lamina propria of urinary bladder
-        preferred_name: lamina propria of urinary bladder
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_1001319
-        label: bladder cell
-        preferred_name: fibroblast
-    biomarkers:
-      - id: http://identifiers.org/hgnc/20396
-        label: paired immunoglobin like type 2 receptor alpha
-        preferred_name: PILRA
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11092
-        label: secretory leukocyte peptidase inhibitor
-        preferred_name: SLPI
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/613
-        label: apolipoprotein E
-        preferred_name: APOE
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/20396
-        label: paired immunoglobin like type 2 receptor alpha
-        preferred_name: PILRA
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11092
-        label: secretory leukocyte peptidase inhibitor
-        preferred_name: SLPI
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/613
-        label: apolipoprotein E
-        preferred_name: APOE
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001256
-        label: wall of urinary bladder
-        preferred_name: wall of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0012239
-        label: urinary bladder vasculature
-        preferred_name: urinary bladder vasculature
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_2000040
-        label: bladder microvascular endothelial cell
-        preferred_name: endothelium
-    biomarkers:
-      - id: http://identifiers.org/hgnc/8823
-        label: platelet and endothelial cell adhesion molecule 1
-        preferred_name: PECAM1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2047
-        label: claudin 5
-        preferred_name: CLDN5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10718
-        label: selectin E
-        preferred_name: SELE
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/8823
-        label: platelet and endothelial cell adhesion molecule 1
-        preferred_name: PECAM1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2047
-        label: claudin 5
-        preferred_name: CLDN5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10718
-        label: selectin E
-        preferred_name: SELE
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001256
-        label: wall of urinary bladder
-        preferred_name: wall of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0012239
-        label: urinary bladder vasculature
-        preferred_name: urinary bladder vasculature
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002597
-        label: smooth muscle cell of bladder
-        preferred_name: smooth muscle
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6934
-        label: melanoma cell adhesion molecule
-        preferred_name: MCAM
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/281
-        label: adrenoceptor alpha 2A
-        preferred_name: ADRA2A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/45169
-        label: ACTA2 antisense RNA 1
-        preferred_name: ACTA2
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/6934
-        label: melanoma cell adhesion molecule
-        preferred_name: MCAM
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/281
-        label: adrenoceptor alpha 2A
-        preferred_name: ADRA2A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/45169
-        label: ACTA2 antisense RNA 1
-        preferred_name: ACTA2
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001256
-        label: wall of urinary bladder
-        preferred_name: wall of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0012239
-        label: urinary bladder vasculature
-        preferred_name: urinary bladder vasculature
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002597
-        label: smooth muscle cell of bladder
-        preferred_name: smooth muscle
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1663
-        label: CD36 molecule
-        preferred_name: CD36
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/895
-        label: arginine vasopressin receptor 1A
-        preferred_name: AVPR1A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/45169
-        label: ACTA2 antisense RNA 1
-        preferred_name: ACTA2
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1663
-        label: CD36 molecule
-        preferred_name: CD36
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/895
-        label: arginine vasopressin receptor 1A
-        preferred_name: AVPR1A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/45169
-        label: ACTA2 antisense RNA 1
-        preferred_name: ACTA2
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0006082
-        label: fundus of urinary bladder
-        preferred_name: fundus of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0016500
-        label: muscularis mucosa of fundus of urinary bladder
-        preferred_name: muscularis mucosa of fundus of urinary bladder
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0006082
-        label: fundus of urinary bladder
-        preferred_name: fundus of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001257
-        label: trigone of urinary bladder
-        preferred_name: trigone of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0005009
-        label: mucosa of trigone of urinary bladder
-        preferred_name: mucosa of trigone of urinary bladder
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0006082
-        label: fundus of urinary bladder
-        preferred_name: fundus of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001257
-        label: trigone of urinary bladder
-        preferred_name: trigone of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0004944
-        label: submucosa of trigone of urinary bladder
-        preferred_name: submucosa of trigone of urinary bladder
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0006082
-        label: fundus of urinary bladder
-        preferred_name: fundus of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0001257
-        label: trigone of urinary bladder
-        preferred_name: trigone of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0004229
-        label: urinary bladder trigone smooth muscle
-        preferred_name: urinary bladder trigone smooth muscle
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001255
-        label: urinary bladder
-        preferred_name: urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0006082
-        label: fundus of urinary bladder
-        preferred_name: fundus of urinary bladder
-      - id: http://purl.obolibrary.org/obo/UBERON_0012303
-        label: ureteral orifice
-        preferred_name: ureteral orifice
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
+  anatomical_structures:
+    - id: UBERON:0013702
+      class_type: AnatomicalStructure
+      ccf_pref_label: body proper
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+    - id: UBERON:0001255
+      class_type: AnatomicalStructure
+      ccf_pref_label: urinary bladder
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0013702
+    - id: UBERON:0001256
+      class_type: AnatomicalStructure
+      ccf_pref_label: wall of urinary bladder
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001255
+    - id: UBERON:0001259
+      class_type: AnatomicalStructure
+      ccf_pref_label: mucosa of urinary bladder
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001256
+    - id: UBERON:0004645
+      class_type: AnatomicalStructure
+      ccf_pref_label: urinary bladder urothelium
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001259
+    - id: UBERON:0012378
+      class_type: AnatomicalStructure
+      ccf_pref_label: muscle layer of urinary bladder
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001256
+    - id: UBERON:0000381
+      class_type: AnatomicalStructure
+      ccf_pref_label: urinary bladder detrusor smooth muscle
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0012378
+    - id: UBERON:0004943
+      class_type: AnatomicalStructure
+      ccf_pref_label: submucosa of urinary bladder
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001256
+    - id: UBERON:0001261
+      class_type: AnatomicalStructure
+      ccf_pref_label: lamina propria of urinary bladder
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0004943
+    - id: UBERON:0012239
+      class_type: AnatomicalStructure
+      ccf_pref_label: urinary bladder vasculature
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001256
+    - id: UBERON:0006082
+      class_type: AnatomicalStructure
+      ccf_pref_label: fundus of urinary bladder
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001255
+    - id: UBERON:0016500
+      class_type: AnatomicalStructure
+      ccf_pref_label: muscularis mucosa of fundus of urinary bladder
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0006082
+    - id: UBERON:0001257
+      class_type: AnatomicalStructure
+      ccf_pref_label: trigone of urinary bladder
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0006082
+    - id: UBERON:0005009
+      class_type: AnatomicalStructure
+      ccf_pref_label: mucosa of trigone of urinary bladder
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001257
+    - id: UBERON:0004944
+      class_type: AnatomicalStructure
+      ccf_pref_label: submucosa of trigone of urinary bladder
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001257
+    - id: UBERON:0004229
+      class_type: AnatomicalStructure
+      ccf_pref_label: urinary bladder trigone smooth muscle
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001257
+    - id: UBERON:0012303
+      class_type: AnatomicalStructure
+      ccf_pref_label: ureteral orifice
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0006082
+  cell_types:
+    - id: CL:0000000
+      class_type: CellType
+      ccf_pref_label: cell type
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+    - id: CL:1001428
+      class_type: CellType
+      ccf_pref_label: urothelium
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: ASCTB-TEMP:basal-cell-of-bladder-urothelium
+      class_type: CellType
+      ccf_pref_label: basal cell of bladder urothelium
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:1001428
+      ccf_located_in:
+        - UBERON:0004645
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:6442
+            - HGNC:10492
+            - HGNC:2891
+          references: []
+    - id: ASCTB-TEMP:intermediate-cell-of-bladder-urothelium
+      class_type: CellType
+      ccf_pref_label: intermediate cell of bladder urothelium
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:1001428
+      ccf_located_in:
+        - UBERON:0004645
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:15979
+            - HGNC:6415
+            - HGNC:384
+          references: []
+    - id: ASCTB-TEMP:superficial-cell-of-bladder-urothelium
+      class_type: CellType
+      ccf_pref_label: superficial cell of bladder urothelium
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:1001428
+      ccf_located_in:
+        - UBERON:0004645
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:40603
+            - HGNC:12580
+            - HGNC:12578
+          references: []
+    - id: CL:0002597
+      class_type: CellType
+      ccf_pref_label: smooth muscle
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: ASCTB-TEMP:detrusor-smooth-muscle-cell-of-bladder
+      class_type: CellType
+      ccf_pref_label: detrusor smooth muscle cell of bladder
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0002597
+      ccf_located_in:
+        - UBERON:0000381
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:2770
+            - HGNC:145
+            - HGNC:45169
+          references: []
+    - id: CL:1001319
+      class_type: CellType
+      ccf_pref_label: myofibroblast
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: ASCTB-TEMP:myofibroblast-cell-of-bladder
+      class_type: CellType
+      ccf_pref_label: myofibroblast cell of bladder
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:1001319
+      ccf_located_in:
+        - UBERON:0001261
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:11373
+            - HGNC:5318
+            - HGNC:7035
+          references: []
+    - id: ASCTB-TEMP:pi16-fibroblast-cell-of-bladder
+      class_type: CellType
+      ccf_pref_label: PI16+ fibroblast cell of bladder
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:1001319
+      ccf_located_in:
+        - UBERON:0001261
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:21245
+            - HGNC:29673
+            - HGNC:2705
+          references: []
+    - id: ASCTB-TEMP:dpt-fibroblast-cell-of-bladder
+      class_type: CellType
+      ccf_pref_label: DPT+ fibroblast cell of bladder
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:1001319
+      ccf_located_in:
+        - UBERON:0001261
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:3011
+            - HGNC:1346
+            - HGNC:2705
+          references: []
+    - id: ASCTB-TEMP:lipofibroblast-cell-of-bladder
+      class_type: CellType
+      ccf_pref_label: lipofibroblast cell of bladder
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:1001319
+      ccf_located_in:
+        - UBERON:0001261
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:20396
+            - HGNC:11092
+            - HGNC:613
+          references: []
+    - id: CL:2000040
+      class_type: CellType
+      ccf_pref_label: endothelium
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: ASCTB-TEMP:endothelial-cell-of-bladder
+      class_type: CellType
+      ccf_pref_label: endothelial cell of bladder
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:2000040
+      ccf_located_in:
+        - UBERON:0012239
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:8823
+            - HGNC:2047
+            - HGNC:10718
+          references: []
+    - id: ASCTB-TEMP:vascular-smooth-muscle-cell-of-bladder
+      class_type: CellType
+      ccf_pref_label: vascular smooth muscle cell of bladder
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0002597
+      ccf_located_in:
+        - UBERON:0012239
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:6934
+            - HGNC:281
+            - HGNC:45169
+          references: []
+    - id: ASCTB-TEMP:pericyte-cell-of-bladder
+      class_type: CellType
+      ccf_pref_label: pericyte cell of bladder
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0002597
+      ccf_located_in:
+        - UBERON:0012239
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1663
+            - HGNC:895
+            - HGNC:45169
+          references: []
+  biomarkers:
+    - id: HGNC:6442
+      class_type: Biomarker
+      ccf_pref_label: KRT5
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:10492
+      class_type: Biomarker
+      ccf_pref_label: S100A2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2891
+      class_type: Biomarker
+      ccf_pref_label: DKK1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:15979
+      class_type: Biomarker
+      ccf_pref_label: TP63
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6415
+      class_type: Biomarker
+      ccf_pref_label: KRT13
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:384
+      class_type: Biomarker
+      ccf_pref_label: AKR1C1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:40603
+      class_type: Biomarker
+      ccf_pref_label: UPK1A
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:12580
+      class_type: Biomarker
+      ccf_pref_label: UPK3A
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:12578
+      class_type: Biomarker
+      ccf_pref_label: UPK1B
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2770
+      class_type: Biomarker
+      ccf_pref_label: DES
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:145
+      class_type: Biomarker
+      ccf_pref_label: ACTG2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:45169
+      class_type: Biomarker
+      ccf_pref_label: ACTA2-AS1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11373
+      class_type: Biomarker
+      ccf_pref_label: STC1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:5318
+      class_type: Biomarker
+      ccf_pref_label: TNC
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7035
+      class_type: Biomarker
+      ccf_pref_label: MFAP4
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:21245
+      class_type: Biomarker
+      ccf_pref_label: PI16
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:29673
+      class_type: Biomarker
+      ccf_pref_label: MFAP5
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2705
+      class_type: Biomarker
+      ccf_pref_label: DCN
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:3011
+      class_type: Biomarker
+      ccf_pref_label: DPT
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1346
+      class_type: Biomarker
+      ccf_pref_label: C7
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:20396
+      class_type: Biomarker
+      ccf_pref_label: PILRA
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11092
+      class_type: Biomarker
+      ccf_pref_label: SLPI
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:613
+      class_type: Biomarker
+      ccf_pref_label: APOE
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:8823
+      class_type: Biomarker
+      ccf_pref_label: PECAM1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2047
+      class_type: Biomarker
+      ccf_pref_label: CLDN5
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:10718
+      class_type: Biomarker
+      ccf_pref_label: SELE
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6934
+      class_type: Biomarker
+      ccf_pref_label: MCAM
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:281
+      class_type: Biomarker
+      ccf_pref_label: ADRA2A
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1663
+      class_type: Biomarker
+      ccf_pref_label: CD36
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:895
+      class_type: Biomarker
+      ccf_pref_label: AVPR1A
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false

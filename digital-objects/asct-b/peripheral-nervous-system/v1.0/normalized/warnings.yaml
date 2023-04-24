@@ -1,6 +1,14 @@
 warnings:
-  - 'WARNING: unmapped array found BPROTEIN10'
-  - 'WARNING: blank field found: BPROTEIN/11/'
+  - >-
+    WARNING: Invalid Header found at column: CT, row: 10 where Header Value:
+    BPROTEIN10/LABEL (Code 3)
+  - >-
+    WARNING: Invalid Header found at column: CU, row: 10 where Header Value:
+    BPROTEIN10/ID (Code 3)
+  - >-
+    WARNING: Invalid Header found at column: CV, row: 10 where Header Value:
+    BPROTEIN/11/ (Code 3)
+  - 'WARNING: unmapped array found BPROTEIN10 (Code 7)'
   - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 10'
   - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 10'
   - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 11'

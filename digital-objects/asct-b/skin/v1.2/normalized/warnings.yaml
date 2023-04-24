@@ -1,0 +1,7 @@
+warnings:
+  - 'WARNING: Missing Uberon/CL ID at Column: L, Row: 22 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: S, Row: 26 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: L, Row: 48 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AH, Row: 66 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: L, Row: 68 (Code 6)'
+  - 'WARNING: Missing Uberon/CL ID at Column: AH, Row: 69 (Code 6)'

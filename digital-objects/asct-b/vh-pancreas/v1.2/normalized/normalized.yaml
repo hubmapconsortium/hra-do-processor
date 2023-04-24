@@ -1,3 +1,4 @@
+id: http://purl.humanatlas.io/asct-b/vh-pancreas/v1.2
 metadata:
   type: asct-b
   name: vh-pancreas
@@ -73,3572 +74,1059 @@ metadata:
   datatable:
     - asct-b-vh-pancreas.csv
 data:
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001263
-        label: Pancreatic acinus
-        preferred_name: Pancreatic acinus
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_1001599
-        label: pancreas exocrine glandular cell
-        preferred_name: Pancreas exocrine glandular cell
-      - id: http://purl.obolibrary.org/obo/CL_0002064
-        label: pancreatic acinar cell
-        preferred_name: Acinar cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/477
-        label: AMY2A
-        preferred_name: Pancreatic alpha-amylase
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9475
-        label: PRSS1
-        preferred_name: Serine protease 1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2521
-        label: CTRB1
-        preferred_name: Chymotrypsinogen B1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/15944
-        label: CELA3A
-        preferred_name: Chymotrypsin like elastase 3A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6430
-        label: KRT18
-        preferred_name: Keratin 18
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6446
-        label: KRT8
-        preferred_name: Keratin 8
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/477
-        label: AMY2A
-        preferred_name: Pancreatic alpha-amylase
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9475
-        label: PRSS1
-        preferred_name: Serine protease 1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2521
-        label: CTRB1
-        preferred_name: Chymotrypsinogen B1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/15944
-        label: CELA3A
-        preferred_name: Chymotrypsin like elastase 3A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6430
-        label: KRT18
-        preferred_name: Keratin 18
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6446
-        label: KRT8
-        preferred_name: Keratin 8
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0004915
-        label: sphincter of hepatopancreatic ampulla
-        preferred_name: Hepatopancreatic sphincter (Sphincter of Oddi)
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000192
-        label: smooth muscle cell
-        preferred_name: Smooth muscle cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/130
-        label: ACTA2
-        preferred_name: Actin, smooth muscle
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/130
-        label: ACTA2
-        preferred_name: Actin, smooth muscle
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0012271
-        label: major duodenal papilla
-        preferred_name: Major duodenal papilla
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002079
-        label: pancreatic ductal cell
-        preferred_name: Ductal cell
-      - id: http://purl.obolibrary.org/obo/CL_1001433
-        label: epithelial cell of exocrine pancreas
-        preferred_name: Ductal epithelial cell
-      - id: http://purl.obolibrary.org/obo/CL_0000146
-        label: simple columnar epithelial cell
-        preferred_name: Simple columnar epithelial cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1884
-        label: CFTR
-        preferred_name: CFTR
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6436
-        label: KRT19
-        preferred_name: Keratin 19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6445
-        label: KRT7
-        preferred_name: Keratin 7
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6107
-        label: PDX1
-        preferred_name: PDX1
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1884
-        label: CFTR
-        preferred_name: CFTR
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6436
-        label: KRT19
-        preferred_name: Keratin 19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6445
-        label: KRT7
-        preferred_name: Keratin 7
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6107
-        label: PDX1
-        preferred_name: PDX1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0012271
-        label: major duodenal papilla
-        preferred_name: Major duodenal papilla
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002079
-        label: pancreatic ductal cell
-        preferred_name: Ductal cell
-      - id: http://purl.obolibrary.org/obo/CL_1001433
-        label: epithelial cell of exocrine pancreas
-        preferred_name: Ductal epithelial cell
-      - id: http://purl.obolibrary.org/obo/CL_0000146
-        label: simple columnar epithelial cell
-        preferred_name: Simple columnar epithelial cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6436
-        label: KRT19
-        preferred_name: Keratin 19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6107
-        label: PDX1
-        preferred_name: PDX1
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/6436
-        label: KRT19
-        preferred_name: Keratin 19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6107
-        label: PDX1
-        preferred_name: PDX1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0004913
-        label: hepatopancreatic ampulla
-        preferred_name: Hepatopancreatic ampulla
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002079
-        label: pancreatic ductal cell
-        preferred_name: Ductal cell
-      - id: http://purl.obolibrary.org/obo/CL_1001433
-        label: epithelial cell of exocrine pancreas
-        preferred_name: Ductal epithelial cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6436
-        label: KRT19
-        preferred_name: Keratin 19
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/6436
-        label: KRT19
-        preferred_name: Keratin 19
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0014716
-        label: interlobular duct
-        preferred_name: Interlobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014719
-        label: intralobular duct
-        preferred_name: Intralobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014726
-        label: intercalated duct of pancreas
-        preferred_name: Intercalated duct
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002079
-        label: pancreatic ductal cell
-        preferred_name: Ductal cell
-      - id: http://purl.obolibrary.org/obo/CL_1001433
-        label: epithelial cell of exocrine pancreas
-        preferred_name: Ductal epithelial cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6436
-        label: KRT19
-        preferred_name: Keratin 19
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/6436
-        label: KRT19
-        preferred_name: Keratin 19
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0014716
-        label: interlobular duct
-        preferred_name: Interlobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014719
-        label: intralobular duct
-        preferred_name: Intralobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014726
-        label: intercalated duct of pancreas
-        preferred_name: Intercalated duct
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002079
-        label: pancreatic ductal cell
-        preferred_name: Ductal cell
-      - id: http://purl.obolibrary.org/obo/CL_1001433
-        label: epithelial cell of exocrine pancreas
-        preferred_name: Ductal epithelial cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6436
-        label: KRT19
-        preferred_name: Keratin 19
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/6436
-        label: KRT19
-        preferred_name: Keratin 19
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0014716
-        label: interlobular duct
-        preferred_name: Interlobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014719
-        label: intralobular duct
-        preferred_name: Intralobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014726
-        label: intercalated duct of pancreas
-        preferred_name: Intercalated duct
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002079
-        label: pancreatic ductal cell
-        preferred_name: Ductal cell
-      - id: http://purl.obolibrary.org/obo/CL_0002080
-        label: pancreatic centro-acinar cell
-        preferred_name: Centroacinar cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1373
-        label: CA2
-        preferred_name: Carbonic anhydrase 2
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1373
-        label: CA2
-        preferred_name: Carbonic anhydrase 2
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0014716
-        label: interlobular duct
-        preferred_name: Interlobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014719
-        label: intralobular duct
-        preferred_name: Intralobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014726
-        label: intercalated duct of pancreas
-        preferred_name: Intercalated duct
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002079
-        label: pancreatic ductal cell
-        preferred_name: Ductal cell
-      - id: http://purl.obolibrary.org/obo/CL_1000322
-        label: pancreatic goblet cell
-        preferred_name: Pancreatic goblet cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/7512
-        label: MUC2
-        preferred_name: Mucin 2
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/7512
-        label: MUC2
-        preferred_name: Mucin 2
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0014716
-        label: interlobular duct
-        preferred_name: Interlobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014719
-        label: intralobular duct
-        preferred_name: Intralobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014726
-        label: intercalated duct of pancreas
-        preferred_name: Intercalated duct
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002079
-        label: pancreatic ductal cell
-        preferred_name: Ductal cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/14188
-        label: AVIL
-        preferred_name: Advillin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/17890
-        label: HPGDS
-        preferred_name: HPGDS
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/14188
-        label: AVIL
-        preferred_name: Advillin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/17890
-        label: HPGDS
-        preferred_name: HPGDS
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0014716
-        label: interlobular duct
-        preferred_name: Interlobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014719
-        label: intralobular duct
-        preferred_name: Intralobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014726
-        label: intercalated duct of pancreas
-        preferred_name: Intercalated duct
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002079
-        label: pancreatic ductal cell
-        preferred_name: Ductal cell
-      - id: http://purl.obolibrary.org/obo/CL_0000577
-        label: type EC enteroendocrine cell
-        preferred_name: Enterochromaffin cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/12008
-        label: TPH1
-        preferred_name: Tryptophan hydroxylase 1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1929
-        label: CHGA
-        preferred_name: Chromogranin A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11506
-        label: SYP
-        preferred_name: Synaptophysin
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/12008
-        label: TPH1
-        preferred_name: Tryptophan hydroxylase 1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1929
-        label: CHGA
-        preferred_name: Chromogranin A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11506
-        label: SYP
-        preferred_name: Synaptophysin
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0005429
-        label: Dorsal pancreatic duct
-        preferred_name: Accessory pancreatic duct (Duct of Santorini)
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000192
-        label: smooth muscle cell
-        preferred_name: Smooth muscle cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/130
-        label: ACTA2
-        preferred_name: Actin, smooth muscle
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/130
-        label: ACTA2
-        preferred_name: Actin, smooth muscle
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_2005346
-        label: extrapancreatic duct
-        preferred_name: Extrapancreatic duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0001174
-        label: common bile duct
-        preferred_name: Common bile duct
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002079
-        label: pancreatic ductal cell
-        preferred_name: Ductal cell
-      - id: http://purl.obolibrary.org/obo/CL_1001433
-        label: epithelial cell of exocrine pancreas
-        preferred_name: Ductal epithelial cell
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000542
-        label: lymphocyte
-        preferred_name: Lymphocyte
-      - id: http://purl.obolibrary.org/obo/CL_0000236
-        label: B cell
-        preferred_name: B lymphocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/7315
-        label: MS4A1
-        preferred_name: CD20
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/7315
-        label: MS4A1
-        preferred_name: CD20
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000542
-        label: lymphocyte
-        preferred_name: Lymphocyte
-      - id: http://purl.obolibrary.org/obo/CL_0000084
-        label: T cell
-        preferred_name: T lymphocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000094
-        label: granulocyte
-        preferred_name: Granulocyte
-      - id: http://purl.obolibrary.org/obo/CL_0000775
-        label: neutrophil
-        preferred_name: Neutrophil
-    biomarkers:
-      - id: http://identifiers.org/hgnc/3309
-        label: Elastase, neutrophil
-        preferred_name: ELANE
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7218
-        label: Myeloperoxidase
-        preferred_name: MPO
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/3309
-        label: Elastase, neutrophil
-        preferred_name: ELANE
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7218
-        label: Myeloperoxidase
-        preferred_name: MPO
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000235
-        label: macrophage
-        preferred_name: Macrophage
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1693
-        label: CD68
-        preferred_name: CD68
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/352
-        label: AIF1
-        preferred_name: IBA1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1631
-        label: CD163
-        preferred_name: CD163
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7228
-        label: MRC1
-        preferred_name: CD206
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1693
-        label: CD68
-        preferred_name: CD68
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/352
-        label: AIF1
-        preferred_name: IBA1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1631
-        label: CD163
-        preferred_name: CD163
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7228
-        label: MRC1
-        preferred_name: CD206
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000451
-        label: dendritic cell
-        preferred_name: Dendritic cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0008024
-        label: pancreatic endocrine cell
-        preferred_name: Endocrine cell
-      - id: http://purl.obolibrary.org/obo/CL_0000171
-        label: pancreatic A cell
-        preferred_name: Alpha cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/4191
-        label: GCG
-        preferred_name: Glucagon
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/18060
-        label: ARX
-        preferred_name: ARX
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/14359
-        label: IRX2
-        preferred_name: IRX2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1929
-        label: CHGA
-        preferred_name: Chromogranin A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11506
-        label: SYP
-        preferred_name: Synaptophysin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12513
-        label: UCHL1
-        preferred_name: PGP9.5
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/4191
-        label: GCG
-        preferred_name: Glucagon
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/18060
-        label: ARX
-        preferred_name: ARX
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/14359
-        label: IRX2
-        preferred_name: IRX2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1929
-        label: CHGA
-        preferred_name: Chromogranin A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11506
-        label: SYP
-        preferred_name: Synaptophysin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12513
-        label: UCHL1
-        preferred_name: PGP9.5
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0008024
-        label: pancreatic endocrine cell
-        preferred_name: Endocrine cell
-      - id: http://purl.obolibrary.org/obo/CL_0000169
-        label: type B pancreatic cell
-        preferred_name: Beta cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6081
-        label: INS
-        preferred_name: Insulin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3365
-        label: ENTPD3
-        preferred_name: NTPDase3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6107
-        label: PDX1
-        preferred_name: PDX1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/23145
-        label: MAFA
-        preferred_name: MAFA
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1929
-        label: CHGA
-        preferred_name: Chromogranin A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11506
-        label: SYP
-        preferred_name: Synaptophysin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12513
-        label: UCHL1
-        preferred_name: PGP9.5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7839
-        label: NKX6-1
-        preferred_name: NKX6-1
-        biomarker_type: gene
-      - id: P01308
-        label: INS
-        preferred_name: Insulin
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: P01308
-        label: INS
-        preferred_name: Insulin
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/6081
-        label: INS
-        preferred_name: Insulin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3365
-        label: ENTPD3
-        preferred_name: NTPDase3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6107
-        label: PDX1
-        preferred_name: PDX1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/23145
-        label: MAFA
-        preferred_name: MAFA
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1929
-        label: CHGA
-        preferred_name: Chromogranin A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11506
-        label: SYP
-        preferred_name: Synaptophysin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12513
-        label: UCHL1
-        preferred_name: PGP9.5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7839
-        label: NKX6-1
-        preferred_name: NKX6-1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot:
-      - id: P01308
-        label: INS
-        preferred_name: Insulin
-        biomarker_type: proteoforms
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0008024
-        label: pancreatic endocrine cell
-        preferred_name: Endocrine cell
-      - id: http://purl.obolibrary.org/obo/CL_0000173
-        label: pancreatic D cell
-        preferred_name: Delta cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/11329
-        label: SST
-        preferred_name: Somatostatin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4901
-        label: HHEX
-        preferred_name: HHEX
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1929
-        label: CHGA
-        preferred_name: Chromogranin A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11506
-        label: SYP
-        preferred_name: Synaptophysin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12513
-        label: UCHL1
-        preferred_name: PGP9.5
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/11329
-        label: SST
-        preferred_name: Somatostatin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4901
-        label: HHEX
-        preferred_name: HHEX
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1929
-        label: CHGA
-        preferred_name: Chromogranin A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11506
-        label: SYP
-        preferred_name: Synaptophysin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12513
-        label: UCHL1
-        preferred_name: PGP9.5
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0008024
-        label: pancreatic endocrine cell
-        preferred_name: Endocrine cell
-      - id: http://purl.obolibrary.org/obo/CL_0002275
-        label: pancreatic PP cell
-        preferred_name: PP cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/9327
-        label: PPY
-        preferred_name: Pancreatic polypeptide
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1929
-        label: CHGA
-        preferred_name: Chromogranin A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11506
-        label: SYP
-        preferred_name: Synaptophysin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12513
-        label: UCHL1
-        preferred_name: PGP9.5
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/9327
-        label: PPY
-        preferred_name: Pancreatic polypeptide
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1929
-        label: CHGA
-        preferred_name: Chromogranin A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11506
-        label: SYP
-        preferred_name: Synaptophysin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12513
-        label: UCHL1
-        preferred_name: PGP9.5
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0008024
-        label: pancreatic endocrine cell
-        preferred_name: Endocrine cell
-      - id: http://purl.obolibrary.org/obo/CL_0005019
-        label: pancreatic epsilon cell
-        preferred_name: Epsilon cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/18129
-        label: GHRL
-        preferred_name: Ghrelin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1929
-        label: CHGA
-        preferred_name: Chromogranin A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11506
-        label: SYP
-        preferred_name: Synaptophysin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12513
-        label: UCHL1
-        preferred_name: PGP9.5
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/18129
-        label: GHRL
-        preferred_name: Ghrelin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1929
-        label: CHGA
-        preferred_name: Chromogranin A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11506
-        label: SYP
-        preferred_name: Synaptophysin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12513
-        label: UCHL1
-        preferred_name: PGP9.5
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0008024
-        label: pancreatic endocrine cell
-        preferred_name: Endocrine cell
-      - id: http://purl.obolibrary.org/obo/CL_0000509
-        label: gastrin secreting cell
-        preferred_name: Gastrin cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/4164
-        label: GAST
-        preferred_name: Gastrin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1929
-        label: CHGA
-        preferred_name: Chromogranin A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11506
-        label: SYP
-        preferred_name: Synaptophysin
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/4164
-        label: GAST
-        preferred_name: Gastrin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1929
-        label: CHGA
-        preferred_name: Chromogranin A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11506
-        label: SYP
-        preferred_name: Synaptophysin
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000542
-        label: lymphocyte
-        preferred_name: Lymphocyte
-      - id: http://purl.obolibrary.org/obo/CL_0000236
-        label: B cell
-        preferred_name: B lymphocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/7315
-        label: MS4A1
-        preferred_name: CD20
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/7315
-        label: MS4A1
-        preferred_name: CD20
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000542
-        label: lymphocyte
-        preferred_name: Lymphocyte
-      - id: http://purl.obolibrary.org/obo/CL_0000084
-        label: T cell
-        preferred_name: T lymphocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000235
-        label: macrophage
-        preferred_name: Macrophage
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1693
-        label: CD68
-        preferred_name: CD68
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/352
-        label: AIF1
-        preferred_name: IBA1
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1693
-        label: CD68
-        preferred_name: CD68
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/352
-        label: AIF1
-        preferred_name: IBA1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000235
-        label: macrophage
-        preferred_name: Macrophage
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1693
-        label: CD68
-        preferred_name: CD68
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/352
-        label: AIF1
-        preferred_name: IBA1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1631
-        label: CD163
-        preferred_name: CD163
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7228
-        label: MRC1
-        preferred_name: CD206
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1693
-        label: CD68
-        preferred_name: CD68
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/352
-        label: AIF1
-        preferred_name: IBA1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1631
-        label: CD163
-        preferred_name: CD163
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7228
-        label: MRC1
-        preferred_name: CD206
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000451
-        label: dendritic cell
-        preferred_name: Dendritic cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002574
-        label: stromal cell of pancreas
-        preferred_name: Stromal cell
-      - id: http://purl.obolibrary.org/obo/CL_0000057
-        label: fibroblast
-        preferred_name: Fibroblast
-      - id: http://purl.obolibrary.org/obo/CL_0002410
-        label: pancreatic stellate cell
-        preferred_name: Pancreatic stellate cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/130
-        label: ACTA2
-        preferred_name: Actin, smooth muscle
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6482
-        label: LAMA2
-        preferred_name: Laminin, subunit alpha 2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5129
-        label: HOXC8
-        preferred_name: HOXC8
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5130
-        label: HOXC9
-        preferred_name: HOXC9
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/130
-        label: ACTA2
-        preferred_name: Actin, smooth muscle
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6482
-        label: LAMA2
-        preferred_name: Laminin, subunit alpha 2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5129
-        label: HOXC8
-        preferred_name: HOXC8
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5130
-        label: HOXC9
-        preferred_name: HOXC9
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002574
-        label: stromal cell of pancreas
-        preferred_name: Stromal cell
-      - id: http://purl.obolibrary.org/obo/CL_0000057
-        label: fibroblast
-        preferred_name: Fibroblast
-      - id: http://purl.obolibrary.org/obo/CL_0002410
-        label: pancreatic stellate cell
-        preferred_name: Pancreatic stellate cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/8804
-        label: PDGFRB
-        preferred_name: Platelet derived growth factor receptor beta
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/8804
-        label: PDGFRB
-        preferred_name: Platelet derived growth factor receptor beta
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000136
-        label: fat cell
-        preferred_name: Adipocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6621
-        label: LIPE
-        preferred_name: Lipase E
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3559
-        label: FABP4
-        preferred_name: Fatty acid binding protein 4
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9155
-        label: PNLIP
-        preferred_name: Pancreatic lipase
-        biomarker_type: gene
-      - id: Q8N9N2
-        label: |
-          Asc-1
-        preferred_name: Asc-type amino acid transporter 1
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: Q8N9N2
-        label: |
-          Asc-1
-        preferred_name: Asc-type amino acid transporter 1
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/6621
-        label: LIPE
-        preferred_name: Lipase E
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3559
-        label: FABP4
-        preferred_name: Fatty acid binding protein 4
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9155
-        label: PNLIP
-        preferred_name: Pancreatic lipase
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009752
-        label: pancreas mesenchyme
-        preferred_name: Connective tissue
-      - id: http://purl.obolibrary.org/obo/UBERON_0000482
-        label: basal lamina of epithelium
-        preferred_name: Basal lamina
-      - id: GO:0031012
-        label: extracellular matrix
-        preferred_name: Extracellular matrix
-    cell_types: []
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6487
-        label: LAMB2
-        preferred_name: Laminin, subunit beta 2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2202
-        label: COL4A1
-        preferred_name: Collagen IV
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/6487
-        label: LAMB2
-        preferred_name: Laminin, subunit beta 2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2202
-        label: COL4A1
-        preferred_name: Collagen IV
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009752
-        label: pancreas mesenchyme
-        preferred_name: Connective tissue
-      - id: http://purl.obolibrary.org/obo/UBERON_0002384
-        label: |
-          connective tissue
-        preferred_name: Interlobular connective tissue
-      - id: GO:0031012
-        label: extracellular matrix
-        preferred_name: Extracellular matrix
-    cell_types: []
-    biomarkers:
-      - id: http://identifiers.org/hgnc/20296
-        label: FNDC3A
-        preferred_name: Fibronectin
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/20296
-        label: FNDC3A
-        preferred_name: Fibronectin
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.org/sig/ont/fma/fma14517
-        label: neck of pancreas
-        preferred_name: Neck of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001263
-        label: Pancreatic acinus
-        preferred_name: Pancreatic acinus
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.org/sig/ont/fma/fma14517
-        label: neck of pancreas
-        preferred_name: Neck of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0004915
-        label: sphincter of hepatopancreatic ampulla
-        preferred_name: Hepatopancreatic sphincter (Sphincter of Oddi)
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.org/sig/ont/fma/fma14517
-        label: neck of pancreas
-        preferred_name: Neck of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0012271
-        label: major duodenal papilla
-        preferred_name: Major duodenal papilla
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.org/sig/ont/fma/fma14517
-        label: neck of pancreas
-        preferred_name: Neck of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0004913
-        label: hepatopancreatic ampulla
-        preferred_name: Hepatopancreatic ampulla
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.org/sig/ont/fma/fma14517
-        label: neck of pancreas
-        preferred_name: Neck of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0014716
-        label: interlobular duct
-        preferred_name: Interlobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014719
-        label: intralobular duct
-        preferred_name: Intralobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014726
-        label: intercalated duct of pancreas
-        preferred_name: Intercalated duct
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.org/sig/ont/fma/fma14517
-        label: neck of pancreas
-        preferred_name: Neck of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0005429
-        label: Dorsal pancreatic duct
-        preferred_name: Accessory pancreatic duct (Duct of Santorini)
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.org/sig/ont/fma/fma14517
-        label: neck of pancreas
-        preferred_name: Neck of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_2005346
-        label: extrapancreatic duct
-        preferred_name: Extrapancreatic duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0001174
-        label: common bile duct
-        preferred_name: Common bile duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0012271
-        label: major duodenal papilla
-        preferred_name: Major duodenal papilla
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.org/sig/ont/fma/fma14517
-        label: neck of pancreas
-        preferred_name: Neck of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.org/sig/ont/fma/fma14517
-        label: neck of pancreas
-        preferred_name: Neck of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.org/sig/ont/fma/fma14517
-        label: neck of pancreas
-        preferred_name: Neck of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009752
-        label: pancreas mesenchyme
-        preferred_name: Connective tissue
-      - id: http://purl.obolibrary.org/obo/UBERON_0000482
-        label: basal lamina of epithelium
-        preferred_name: Basal lamina
-      - id: GO:0031012
-        label: extracellular matrix
-        preferred_name: Extracellular matrix
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.org/sig/ont/fma/fma14517
-        label: neck of pancreas
-        preferred_name: Neck of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009752
-        label: pancreas mesenchyme
-        preferred_name: Connective tissue
-      - id: http://purl.obolibrary.org/obo/UBERON_0002384
-        label: |
-          connective tissue
-        preferred_name: Interlobular connective tissue
-      - id: GO:0031012
-        label: extracellular matrix
-        preferred_name: Extracellular matrix
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001263
-        label: Pancreatic acinus
-        preferred_name: Pancreatic acinus
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0004915
-        label: sphincter of hepatopancreatic ampulla
-        preferred_name: Hepatopancreatic sphincter (Sphincter of Oddi)
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0012271
-        label: major duodenal papilla
-        preferred_name: Major duodenal papilla
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0004913
-        label: hepatopancreatic ampulla
-        preferred_name: Hepatopancreatic ampulla
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0014716
-        label: interlobular duct
-        preferred_name: Interlobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014719
-        label: intralobular duct
-        preferred_name: Intralobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014726
-        label: intercalated duct of pancreas
-        preferred_name: Intercalated duct
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009752
-        label: pancreas mesenchyme
-        preferred_name: Connective tissue
-      - id: http://purl.obolibrary.org/obo/UBERON_0000482
-        label: basal lamina of epithelium
-        preferred_name: Basal lamina
-      - id: GO:0031012
-        label: extracellular matrix
-        preferred_name: Extracellular matrix
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009752
-        label: pancreas mesenchyme
-        preferred_name: Connective tissue
-      - id: http://purl.obolibrary.org/obo/UBERON_0002384
-        label: |
-          connective tissue
-        preferred_name: Interlobular connective tissue
-      - id: GO:0031012
-        label: extracellular matrix
-        preferred_name: Extracellular matrix
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0010373
-        label: uncinate process of pancreas
-        preferred_name: Uncinate process of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001263
-        label: Pancreatic acinus
-        preferred_name: Pancreatic acinus
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0010373
-        label: uncinate process of pancreas
-        preferred_name: Uncinate process of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0004915
-        label: sphincter of hepatopancreatic ampulla
-        preferred_name: Hepatopancreatic sphincter (Sphincter of Oddi)
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0010373
-        label: uncinate process of pancreas
-        preferred_name: Uncinate process of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0012271
-        label: major duodenal papilla
-        preferred_name: Major duodenal papilla
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0010373
-        label: uncinate process of pancreas
-        preferred_name: Uncinate process of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0004913
-        label: hepatopancreatic ampulla
-        preferred_name: Hepatopancreatic ampulla
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0010373
-        label: uncinate process of pancreas
-        preferred_name: Uncinate process of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0014716
-        label: interlobular duct
-        preferred_name: Interlobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014719
-        label: intralobular duct
-        preferred_name: Intralobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014726
-        label: intercalated duct of pancreas
-        preferred_name: Intercalated duct
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0010373
-        label: uncinate process of pancreas
-        preferred_name: Uncinate process of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0010373
-        label: uncinate process of pancreas
-        preferred_name: Uncinate process of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0010373
-        label: uncinate process of pancreas
-        preferred_name: Uncinate process of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0010373
-        label: uncinate process of pancreas
-        preferred_name: Uncinate process of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009752
-        label: pancreas mesenchyme
-        preferred_name: Connective tissue
-      - id: http://purl.obolibrary.org/obo/UBERON_0000482
-        label: basal lamina of epithelium
-        preferred_name: Basal lamina
-      - id: GO:0031012
-        label: extracellular matrix
-        preferred_name: Extracellular matrix
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009709
-        label: ventral pancreas
-        preferred_name: Ventral pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001069
-        label: head of pancreas
-        preferred_name: Head of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0010373
-        label: uncinate process of pancreas
-        preferred_name: Uncinate process of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009752
-        label: pancreas mesenchyme
-        preferred_name: Connective tissue
-      - id: http://purl.obolibrary.org/obo/UBERON_0002384
-        label: |
-          connective tissue
-        preferred_name: Interlobular connective tissue
-      - id: GO:0031012
-        label: extracellular matrix
-        preferred_name: Extracellular matrix
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001150
-        label: body of pancreas
-        preferred_name: Body of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001263
-        label: Pancreatic acinus
-        preferred_name: Pancreatic acinus
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001150
-        label: body of pancreas
-        preferred_name: Body of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0014716
-        label: interlobular duct
-        preferred_name: Interlobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014719
-        label: intralobular duct
-        preferred_name: Intralobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014726
-        label: intercalated duct of pancreas
-        preferred_name: Intercalated duct
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001150
-        label: body of pancreas
-        preferred_name: Body of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001150
-        label: body of pancreas
-        preferred_name: Body of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001150
-        label: body of pancreas
-        preferred_name: Body of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009752
-        label: pancreas mesenchyme
-        preferred_name: Connective tissue
-      - id: http://purl.obolibrary.org/obo/UBERON_0000482
-        label: basal lamina of epithelium
-        preferred_name: Basal lamina
-      - id: GO:0031012
-        label: extracellular matrix
-        preferred_name: Extracellular matrix
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001150
-        label: body of pancreas
-        preferred_name: Body of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009752
-        label: pancreas mesenchyme
-        preferred_name: Connective tissue
-      - id: http://purl.obolibrary.org/obo/UBERON_0002384
-        label: |
-          connective tissue
-        preferred_name: Interlobular connective tissue
-      - id: GO:0031012
-        label: extracellular matrix
-        preferred_name: Extracellular matrix
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001151
-        label: tail of pancreas
-        preferred_name: Tail of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001263
-        label: Pancreatic acinus
-        preferred_name: Pancreatic acinus
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001151
-        label: tail of pancreas
-        preferred_name: Tail of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000017
-        label: exocrine pancreas
-        preferred_name: Exocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007329
-        label: pancreatic duct
-        preferred_name: Pancreatic ductal tree
-      - id: http://purl.obolibrary.org/obo/UBERON_0001064
-        label: Ventral pancreatic duct
-        preferred_name: Main pancreatic duct (Duct of Wirsung)
-      - id: http://purl.obolibrary.org/obo/UBERON_0014716
-        label: interlobular duct
-        preferred_name: Interlobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014719
-        label: intralobular duct
-        preferred_name: Intralobular duct
-      - id: http://purl.obolibrary.org/obo/UBERON_0014726
-        label: intercalated duct of pancreas
-        preferred_name: Intercalated duct
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001151
-        label: tail of pancreas
-        preferred_name: Tail of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001978
-        label: parenchyma of pancreas
-        preferred_name: Parenchyma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000016
-        label: endocrine pancreas
-        preferred_name: Endocrine pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0000006
-        label: islet of Langerhans
-        preferred_name: Islet of Langerhans
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001151
-        label: tail of pancreas
-        preferred_name: Tail of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001151
-        label: tail of pancreas
-        preferred_name: Tail of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009752
-        label: pancreas mesenchyme
-        preferred_name: Connective tissue
-      - id: http://purl.obolibrary.org/obo/UBERON_0000482
-        label: basal lamina of epithelium
-        preferred_name: Basal lamina
-      - id: GO:0031012
-        label: extracellular matrix
-        preferred_name: Extracellular matrix
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0001264
-        label: Pancreas
-        preferred_name: Pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009708
-        label: dorsal pancreas
-        preferred_name: Dorsal pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0001151
-        label: tail of pancreas
-        preferred_name: Tail of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0007324
-        label: pancreatic lobule
-        preferred_name: Pancreas lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0018234
-        label: stroma of pancreas
-        preferred_name: Stroma of pancreas
-      - id: http://purl.obolibrary.org/obo/UBERON_0009752
-        label: pancreas mesenchyme
-        preferred_name: Connective tissue
-      - id: http://purl.obolibrary.org/obo/UBERON_0002384
-        label: |
-          connective tissue
-        preferred_name: Interlobular connective tissue
-      - id: GO:0031012
-        label: extracellular matrix
-        preferred_name: Extracellular matrix
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
+  anatomical_structures:
+    - id: UBERON:0013702
+      class_type: AnatomicalStructure
+      ccf_pref_label: body proper
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+    - id: UBERON:0001264
+      class_type: AnatomicalStructure
+      ccf_pref_label: Pancreas
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0013702
+    - id: UBERON:0009708
+      class_type: AnatomicalStructure
+      ccf_pref_label: Dorsal pancreas
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001264
+    - id: UBERON:0001069
+      class_type: AnatomicalStructure
+      ccf_pref_label: Head of pancreas
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0009708
+        - UBERON:0009709
+    - id: UBERON:0007324
+      class_type: AnatomicalStructure
+      ccf_pref_label: Pancreas lobule
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001069
+        - FMA:14517
+        - UBERON:0010373
+        - UBERON:0001150
+        - UBERON:0001151
+    - id: UBERON:0001978
+      class_type: AnatomicalStructure
+      ccf_pref_label: Parenchyma of pancreas
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0007324
+    - id: UBERON:0000017
+      class_type: AnatomicalStructure
+      ccf_pref_label: Exocrine pancreas
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001978
+    - id: UBERON:0001263
+      class_type: AnatomicalStructure
+      ccf_pref_label: Pancreatic acinus
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000017
+    - id: UBERON:0007329
+      class_type: AnatomicalStructure
+      ccf_pref_label: Pancreatic ductal tree
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000017
+    - id: UBERON:0001064
+      class_type: AnatomicalStructure
+      ccf_pref_label: Main pancreatic duct (Duct of Wirsung)
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0007329
+    - id: UBERON:0004915
+      class_type: AnatomicalStructure
+      ccf_pref_label: Hepatopancreatic sphincter (Sphincter of Oddi)
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001064
+    - id: UBERON:0012271
+      class_type: AnatomicalStructure
+      ccf_pref_label: Major duodenal papilla
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001064
+        - UBERON:0001174
+    - id: UBERON:0004913
+      class_type: AnatomicalStructure
+      ccf_pref_label: Hepatopancreatic ampulla
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001064
+    - id: UBERON:0014716
+      class_type: AnatomicalStructure
+      ccf_pref_label: Interlobular duct
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001064
+    - id: UBERON:0014719
+      class_type: AnatomicalStructure
+      ccf_pref_label: Intralobular duct
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0014716
+    - id: UBERON:0014726
+      class_type: AnatomicalStructure
+      ccf_pref_label: Intercalated duct
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0014719
+    - id: UBERON:0005429
+      class_type: AnatomicalStructure
+      ccf_pref_label: Accessory pancreatic duct (Duct of Santorini)
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0007329
+        - UBERON:0005429
+    - id: UBERON:2005346
+      class_type: AnatomicalStructure
+      ccf_pref_label: Extrapancreatic duct
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000017
+    - id: UBERON:0001174
+      class_type: AnatomicalStructure
+      ccf_pref_label: Common bile duct
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:2005346
+    - id: UBERON:0000016
+      class_type: AnatomicalStructure
+      ccf_pref_label: Endocrine pancreas
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001978
+    - id: UBERON:0000006
+      class_type: AnatomicalStructure
+      ccf_pref_label: Islet of Langerhans
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000016
+    - id: UBERON:0018234
+      class_type: AnatomicalStructure
+      ccf_pref_label: Stroma of pancreas
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0007324
+    - id: UBERON:0009752
+      class_type: AnatomicalStructure
+      ccf_pref_label: Connective tissue
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0018234
+    - id: UBERON:0000482
+      class_type: AnatomicalStructure
+      ccf_pref_label: Basal lamina
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0009752
+    - id: GO:0031012
+      class_type: AnatomicalStructure
+      ccf_pref_label: Extracellular matrix
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000482
+        - UBERON:0002384
+    - id: UBERON:0002384
+      class_type: AnatomicalStructure
+      ccf_pref_label: Interlobular connective tissue
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0009752
+    - id: FMA:14517
+      class_type: AnatomicalStructure
+      ccf_pref_label: Neck of pancreas
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001069
+    - id: UBERON:0009709
+      class_type: AnatomicalStructure
+      ccf_pref_label: Ventral pancreas
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001264
+    - id: UBERON:0010373
+      class_type: AnatomicalStructure
+      ccf_pref_label: Uncinate process of pancreas
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001069
+    - id: UBERON:0001150
+      class_type: AnatomicalStructure
+      ccf_pref_label: Body of pancreas
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0009708
+    - id: UBERON:0001151
+      class_type: AnatomicalStructure
+      ccf_pref_label: Tail of pancreas
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0009708
+  cell_types:
+    - id: CL:0000000
+      class_type: CellType
+      ccf_pref_label: cell type
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+    - id: CL:1001599
+      class_type: CellType
+      ccf_pref_label: Pancreas exocrine glandular cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0002064
+      class_type: CellType
+      ccf_pref_label: Acinar cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:1001599
+      ccf_located_in:
+        - UBERON:0001263
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:477
+            - HGNC:9475
+            - HGNC:2521
+            - HGNC:15944
+            - HGNC:6430
+            - HGNC:6446
+          references: []
+    - id: CL:0000192
+      class_type: CellType
+      ccf_pref_label: Smooth muscle cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0004915
+        - UBERON:0005429
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:130
+          references: []
+    - id: CL:0002079
+      class_type: CellType
+      ccf_pref_label: Ductal cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0014726
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:14188
+            - HGNC:17890
+          references: []
+    - id: CL:1001433
+      class_type: CellType
+      ccf_pref_label: Ductal epithelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0002079
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000146
+      class_type: CellType
+      ccf_pref_label: Simple columnar epithelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:1001433
+      ccf_located_in:
+        - UBERON:0012271
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1884
+            - HGNC:6436
+            - HGNC:6445
+            - HGNC:6107
+          references: []
+        - members:
+            - HGNC:6436
+            - HGNC:6107
+          references: []
+    - id: ASCTB-TEMP:low-columnar-epithelial-cell
+      class_type: CellType
+      ccf_pref_label: Low columnar epithelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:1001433
+      ccf_located_in:
+        - UBERON:0004913
+        - UBERON:0014726
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:6436
+          references: []
+    - id: ASCTB-TEMP:nonmucinous-cuboidal-epithelial-cell
+      class_type: CellType
+      ccf_pref_label: Nonmucinous cuboidal epithelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:1001433
+      ccf_located_in:
+        - UBERON:0014726
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:6436
+          references: []
+    - id: CL:0002080
+      class_type: CellType
+      ccf_pref_label: Centroacinar cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0002079
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: ASCTB-TEMP:flat-epithelial-cells
+      class_type: CellType
+      ccf_pref_label: Flat epithelial cells
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0002080
+      ccf_located_in:
+        - UBERON:0014726
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1373
+          references: []
+    - id: CL:1000322
+      class_type: CellType
+      ccf_pref_label: Pancreatic goblet cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0002079
+      ccf_located_in:
+        - UBERON:0014726
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:7512
+          references: []
+    - id: CL:0000577
+      class_type: CellType
+      ccf_pref_label: Enterochromaffin cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0002079
+      ccf_located_in:
+        - UBERON:0014726
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:12008
+            - HGNC:1929
+            - HGNC:11506
+          references: []
+    - id: ASCTB-TEMP:tall-columnar-epithelial-cell
+      class_type: CellType
+      ccf_pref_label: Tall columnar epithelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:1001433
+      ccf_located_in:
+        - UBERON:0001174
+      ccf_has_biomarker_set:
+        - members: []
+          references: []
+    - id: CL:0000542
+      class_type: CellType
+      ccf_pref_label: Lymphocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000236
+      class_type: CellType
+      ccf_pref_label: B lymphocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000542
+      ccf_located_in:
+        - UBERON:0000017
+        - UBERON:0000006
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:7315
+            - HGNC:1633
+            - HGNC:9666
+          references: []
+    - id: CL:0000084
+      class_type: CellType
+      ccf_pref_label: T lymphocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000542
+      ccf_located_in:
+        - UBERON:0000017
+        - UBERON:0000006
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1674
+            - HGNC:1706
+            - HGNC:1678
+            - HGNC:9666
+          references: []
+    - id: CL:0000094
+      class_type: CellType
+      ccf_pref_label: Granulocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000775
+      class_type: CellType
+      ccf_pref_label: Neutrophil
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000094
+      ccf_located_in:
+        - UBERON:0000017
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:3309
+            - HGNC:7218
+          references: []
+    - id: CL:0000235
+      class_type: CellType
+      ccf_pref_label: Macrophage
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0000017
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1693
+            - HGNC:352
+            - HGNC:1631
+            - HGNC:7228
+          references: []
+    - id: CL:0000451
+      class_type: CellType
+      ccf_pref_label: Dendritic cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0000017
+        - UBERON:0000006
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:6152
+          references: []
+    - id: CL:0008024
+      class_type: CellType
+      ccf_pref_label: Endocrine cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000171
+      class_type: CellType
+      ccf_pref_label: Alpha cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0008024
+      ccf_located_in:
+        - UBERON:0000006
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:4191
+            - HGNC:18060
+            - HGNC:14359
+            - HGNC:1929
+            - HGNC:11506
+            - HGNC:12513
+          references: []
+    - id: CL:0000169
+      class_type: CellType
+      ccf_pref_label: Beta cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0008024
+      ccf_located_in:
+        - UBERON:0000006
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:6081
+            - HGNC:3365
+            - HGNC:6107
+            - HGNC:23145
+            - HGNC:1929
+            - HGNC:11506
+            - HGNC:12513
+            - HGNC:7839
+            - ASCTB-TEMP:insulin
+            - ASCTB-TEMP:c-peptide
+          references: []
+    - id: CL:0000173
+      class_type: CellType
+      ccf_pref_label: Delta cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0008024
+      ccf_located_in:
+        - UBERON:0000006
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:11329
+            - HGNC:4901
+            - HGNC:1929
+            - HGNC:11506
+            - HGNC:12513
+          references: []
+    - id: CL:0002275
+      class_type: CellType
+      ccf_pref_label: PP cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0008024
+      ccf_located_in:
+        - UBERON:0000006
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:9327
+            - HGNC:1929
+            - HGNC:11506
+            - HGNC:12513
+          references: []
+    - id: CL:0005019
+      class_type: CellType
+      ccf_pref_label: Epsilon cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0008024
+      ccf_located_in:
+        - UBERON:0000006
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:18129
+            - HGNC:1929
+            - HGNC:11506
+            - HGNC:12513
+          references: []
+    - id: CL:0000509
+      class_type: CellType
+      ccf_pref_label: Gastrin cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0008024
+      ccf_located_in:
+        - UBERON:0000006
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:4164
+            - HGNC:1929
+            - HGNC:11506
+          references: []
+    - id: ASCTB-TEMP:m1-like-macrophage
+      class_type: CellType
+      ccf_pref_label: M1-like macrophage
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000235
+      ccf_located_in:
+        - UBERON:0000006
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1693
+            - HGNC:352
+          references: []
+    - id: ASCTB-TEMP:m2-like-macrophage
+      class_type: CellType
+      ccf_pref_label: M2-like macrophage
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000235
+      ccf_located_in:
+        - UBERON:0000006
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1693
+            - HGNC:352
+            - HGNC:1631
+            - HGNC:7228
+          references: []
+    - id: CL:0002574
+      class_type: CellType
+      ccf_pref_label: Stromal cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000057
+      class_type: CellType
+      ccf_pref_label: Fibroblast
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0002574
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0002410
+      class_type: CellType
+      ccf_pref_label: Pancreatic stellate cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000057
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: ASCTB-TEMP:activated-stellate-cell
+      class_type: CellType
+      ccf_pref_label: Activated stellate cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0002410
+      ccf_located_in:
+        - UBERON:0018234
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:130
+            - HGNC:6482
+            - HGNC:5129
+            - HGNC:5130
+          references: []
+    - id: ASCTB-TEMP:quiescent-stellate-cell
+      class_type: CellType
+      ccf_pref_label: Quiescent stellate cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0002410
+      ccf_located_in:
+        - UBERON:0018234
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:8804
+          references: []
+    - id: CL:0000136
+      class_type: CellType
+      ccf_pref_label: Adipocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0018234
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:6621
+            - HGNC:3559
+            - HGNC:9155
+            - ASCTB-TEMP:asc-type-amino-acid-transporter-1
+          references: []
+  biomarkers:
+    - id: HGNC:477
+      class_type: Biomarker
+      ccf_pref_label: Pancreatic alpha-amylase
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:9475
+      class_type: Biomarker
+      ccf_pref_label: Serine protease 1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2521
+      class_type: Biomarker
+      ccf_pref_label: Chymotrypsinogen B1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:15944
+      class_type: Biomarker
+      ccf_pref_label: Chymotrypsin like elastase 3A
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6430
+      class_type: Biomarker
+      ccf_pref_label: Keratin 18
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6446
+      class_type: Biomarker
+      ccf_pref_label: Keratin 8
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:130
+      class_type: Biomarker
+      ccf_pref_label: Actin, smooth muscle
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1884
+      class_type: Biomarker
+      ccf_pref_label: CFTR
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6436
+      class_type: Biomarker
+      ccf_pref_label: Keratin 19
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6445
+      class_type: Biomarker
+      ccf_pref_label: Keratin 7
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6107
+      class_type: Biomarker
+      ccf_pref_label: PDX1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1373
+      class_type: Biomarker
+      ccf_pref_label: Carbonic anhydrase 2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7512
+      class_type: Biomarker
+      ccf_pref_label: Mucin 2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:14188
+      class_type: Biomarker
+      ccf_pref_label: Advillin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:17890
+      class_type: Biomarker
+      ccf_pref_label: HPGDS
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:12008
+      class_type: Biomarker
+      ccf_pref_label: Tryptophan hydroxylase 1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1929
+      class_type: Biomarker
+      ccf_pref_label: Chromogranin A
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11506
+      class_type: Biomarker
+      ccf_pref_label: Synaptophysin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7315
+      class_type: Biomarker
+      ccf_pref_label: CD20
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1633
+      class_type: Biomarker
+      ccf_pref_label: CD19
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:9666
+      class_type: Biomarker
+      ccf_pref_label: CD45
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1674
+      class_type: Biomarker
+      ccf_pref_label: CD3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1706
+      class_type: Biomarker
+      ccf_pref_label: CD8
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1678
+      class_type: Biomarker
+      ccf_pref_label: CD4
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:3309
+      class_type: Biomarker
+      ccf_pref_label: ELANE
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7218
+      class_type: Biomarker
+      ccf_pref_label: MPO
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1693
+      class_type: Biomarker
+      ccf_pref_label: CD68
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:352
+      class_type: Biomarker
+      ccf_pref_label: IBA1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1631
+      class_type: Biomarker
+      ccf_pref_label: CD163
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7228
+      class_type: Biomarker
+      ccf_pref_label: CD206
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6152
+      class_type: Biomarker
+      ccf_pref_label: CD11c
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4191
+      class_type: Biomarker
+      ccf_pref_label: Glucagon
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:18060
+      class_type: Biomarker
+      ccf_pref_label: ARX
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:14359
+      class_type: Biomarker
+      ccf_pref_label: IRX2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:12513
+      class_type: Biomarker
+      ccf_pref_label: PGP9.5
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6081
+      class_type: Biomarker
+      ccf_pref_label: Insulin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:3365
+      class_type: Biomarker
+      ccf_pref_label: NTPDase3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:23145
+      class_type: Biomarker
+      ccf_pref_label: MAFA
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7839
+      class_type: Biomarker
+      ccf_pref_label: NKX6-1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:insulin
+      class_type: Biomarker
+      ccf_pref_label: Insulin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:c-peptide
+      class_type: Biomarker
+      ccf_pref_label: C-peptide
+      ccf_asctb_type: BM
+      ccf_biomarker_type: proteoforms
+      ccf_is_provisional: false
+    - id: HGNC:11329
+      class_type: Biomarker
+      ccf_pref_label: Somatostatin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4901
+      class_type: Biomarker
+      ccf_pref_label: HHEX
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:9327
+      class_type: Biomarker
+      ccf_pref_label: Pancreatic polypeptide
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:18129
+      class_type: Biomarker
+      ccf_pref_label: Ghrelin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4164
+      class_type: Biomarker
+      ccf_pref_label: Gastrin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6482
+      class_type: Biomarker
+      ccf_pref_label: Laminin, subunit alpha 2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:5129
+      class_type: Biomarker
+      ccf_pref_label: HOXC8
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:5130
+      class_type: Biomarker
+      ccf_pref_label: HOXC9
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:8804
+      class_type: Biomarker
+      ccf_pref_label: Platelet derived growth factor receptor beta
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6621
+      class_type: Biomarker
+      ccf_pref_label: Lipase E
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:3559
+      class_type: Biomarker
+      ccf_pref_label: Fatty acid binding protein 4
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:9155
+      class_type: Biomarker
+      ccf_pref_label: Pancreatic lipase
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:asc-type-amino-acid-transporter-1
+      class_type: Biomarker
+      ccf_pref_label: Asc-type amino acid transporter 1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:6487
+      class_type: Biomarker
+      ccf_pref_label: Laminin, subunit beta 2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2202
+      class_type: Biomarker
+      ccf_pref_label: Collagen IV
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:20296
+      class_type: Biomarker
+      ccf_pref_label: Fibronectin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false

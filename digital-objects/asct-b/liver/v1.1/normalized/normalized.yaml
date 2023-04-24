@@ -1,3 +1,4 @@
+id: http://purl.humanatlas.io/asct-b/liver/v1.1
 metadata:
   type: asct-b
   name: liver
@@ -67,1742 +68,1063 @@ metadata:
   datatable:
     - ASCT-B_VH_Liver.csv
 data:
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001281
-        label: hepatic sinusoid
-        preferred_name: hepatic sinusoid
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_1000398
-        label: endothelial cell of hepatic sinusoid
-        preferred_name: liver sinusoid endothelial cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/8823
-        label: PECAM1
-        preferred_name: CD31
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3349
-        label: endoglin
-        preferred_name: endoglin
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1662
-        label: CD34
-        preferred_name: CD34
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1662
-        label: CD34
-        preferred_name: CD34
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/8823
-        label: PECAM1
-        preferred_name: CD31
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3349
-        label: endoglin
-        preferred_name: CD105
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/8823
-        label: PECAM1
-        preferred_name: CD31
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3349
-        label: endoglin
-        preferred_name: endoglin
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.3748/wjg.v12.i34.5429
-        doi: 10.3748/wjg.v12.i34.5429
-        pubmed_id: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4088223/
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001281
-        label: hepatic sinusoid
-        preferred_name: hepatic sinusoid
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000091
-        label: Kupffer Cell
-        preferred_name: Kupffer cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1693
-        label: CD68
-        preferred_name: CD68
-        biomarker_type: gene
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1693
-        label: CD68
-        preferred_name: CD68
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1693
-        label: CD68
-        preferred_name: CD68
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1016/j.jhep.2010.04.037
-        doi: 10.1016/j.jhep.2010.04.037
-        pubmed_id: https://pubmed.ncbi.nlm.nih.gov/20739085/
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0006729
-        label: liver perisinusoidal space
-        preferred_name: Disse's space
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000632
-        label: hepatic stellate cell
-        preferred_name: quiescent hepatic stellate cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/8804
-        label: PDGFRB
-        preferred_name: PDGFRB
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4235
-        label: GFAP
-        preferred_name: GFAP
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2770
-        label: DES
-        preferred_name: DES
-        biomarker_type: gene
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/8804
-        label: PDGFRb
-        preferred_name: PDGFRb
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/4235
-        label: GFAP
-        preferred_name: ''
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2770
-        label: DES
-        preferred_name: desmin
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/8804
-        label: PDGFRB
-        preferred_name: PDGFRB
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4235
-        label: GFAP
-        preferred_name: GFAP
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2770
-        label: DES
-        preferred_name: DES
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1038/nm.3282
-        doi: 10.1038/nm.3282
-        pubmed_id: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3855865/
-      - id: https://doi.org/10.1136/gut.2005.078865
-        doi: 10.1136/gut.2005.078865
-        pubmed_id: https://gut.bmj.com/content/55/9/1276
-      - id: https://doi.org/10.1002/hep.1840040425
-        doi: 10.1002/hep.1840040425
-        pubmed_id: https://pubmed.ncbi.nlm.nih.gov/6204917/
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0006729
-        label: liver perisinusoidal space
-        preferred_name: Disse's space
-    cell_types: []
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1016/j.cub.2017.09.019
-        doi: 10.1016/j.cub.2017.09.019
-        pubmed_id: 'PMID: 29112863'
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0005452
-        label: hepatic cord
-        preferred_name: hepatic plate
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000182
-        label: hepatocyte
-        preferred_name: hepatocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/2625
-        label: CYP2D6
-        preferred_name: CYP2D6
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7154
-        label: MME
-        preferred_name: CD10
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/42
-        label: ABCB11
-        preferred_name: BSEP
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/2625
-        label: CYP2D6
-        preferred_name: CYP2D6
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7154
-        label: MME
-        preferred_name: CD10
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/42
-        label: ABCB11
-        preferred_name: BSEP
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1097/00000478-200110000-00011
-        doi: 10.1097/00000478-200110000-00011
-        pubmed_id: https://pubmed.ncbi.nlm.nih.gov/11688465/
-      - id: https://doi.org/10.1007/s00424-006-0152-8
-        doi: 10.1007/s00424-006-0152-8
-        pubmed_id: https://pubmed.ncbi.nlm.nih.gov/17051391/
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0005452
-        label: hepatic cord
-        preferred_name: hepatic plate
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0019026
-        label: periportal region hepatocyte
-        preferred_name: periportal hepatocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/4806
-        label: CFTR
-        preferred_name: CFTR
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2611
-        label: CYP2A7
-        preferred_name: CYP2A7
-        biomarker_type: gene
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/4806
-        label: HAL
-        preferred_name: HAL
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2611
-        label: CYP2A7
-        preferred_name: ''
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/4806
-        label: CFTR
-        preferred_name: CFTR
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2611
-        label: CYP2A7
-        preferred_name: CYP2A7
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1053/j.gastro.2009.02.063
-        doi: 10.1053/j.gastro.2009.02.063
-        pubmed_id: https://pubmed.ncbi.nlm.nih.gov/19268669/
-      - id: https://doi.org/10.1038/s42255-019-0109-9
-        doi: 10.1038/s42255-019-0109-9
-        pubmed_id: https://www.nature.com/articles/s42255-019-0109-9
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0005452
-        label: hepatic cord
-        preferred_name: hepatic plate
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0019029
-        label: centrilobular region hepatocyte
-        preferred_name: pericentral hepatocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/4341
-        label: GLUL
-        preferred_name: GLUL
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2637
-        label: CYP3A4
-        preferred_name: CYP3A4
-        biomarker_type: gene
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/4341
-        label: GLUL
-        preferred_name: GLUL
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2637
-        label: CYP3A4
-        preferred_name: ''
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/4341
-        label: GLUL
-        preferred_name: GLUL
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2637
-        label: CYP3A4
-        preferred_name: CYP3A4
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1053/j.gastro.2009.02.063
-        doi: 10.1053/j.gastro.2009.02.063
-        pubmed_id: https://pubmed.ncbi.nlm.nih.gov/19268669/
-      - id: https://doi.org/10.1038/ncb3337
-        doi: 10.1038/ncb3337
-        pubmed_id: https://pubmed.ncbi.nlm.nih.gov/27088858/
-      - id: https://doi.org/10.1038/nature14863
-        doi: 10.1038/nature14863
-        pubmed_id: https://pubmed.ncbi.nlm.nih.gov/26245375/
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0005452
-        label: hepatic cord
-        preferred_name: hepatic plate
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0019028
-        label: midzonal region hepatocyte
-        preferred_name: mid zone hepatocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/4806
-        label: HAL
-        preferred_name: HAL
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2611
-        label: CYP2A7
-        preferred_name: CYP2A7
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2637
-        label: CYP3A4
-        preferred_name: CYP3A4
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/4806
-        label: HAL
-        preferred_name: HAL
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2611
-        label: CYP2A7
-        preferred_name: CYP2A7
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2637
-        label: CYP3A4
-        preferred_name: CYP3A4
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0006841
-        label: central vein of liver
-        preferred_name: central vein
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002543
-        label: vein endothelial cell
-        preferred_name: endothelial cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/8823
-        label: PECAM1
-        preferred_name: PECAM1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1662
-        label: CD34
-        preferred_name: CD34
-        biomarker_type: gene
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/8823
-        label: PECAM1
-        preferred_name: PECAM1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1662
-        label: CD34
-        preferred_name: CD34
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/8823
-        label: PECAM1
-        preferred_name: PECAM1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1662
-        label: CD34
-        preferred_name: CD34
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1038/srep44356
-        doi: 10.1038/srep44356
-        pubmed_id: https://www.nature.com/articles/srep44356
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001279
-        label: portal triad
-        preferred_name: portal triad/tract
-      - id: http://purl.obolibrary.org/obo/UBERON_0004058
-        label: biliary ductule
-        preferred_name: bile duct/ule
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000241
-        label: stratified cuboidal epithelial cell
-        preferred_name: cuboidal cell (Small cholangiocytes are cuboidal)
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6436
-        label: KRT19
-        preferred_name: KRT19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6445
-        label: KRT7
-        preferred_name: KRT7
-        biomarker_type: gene
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/6436
-        label: KRT19
-        preferred_name: KRT19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6445
-        label: KRT7
-        preferred_name: KRT7
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/6436
-        label: KRT19
-        preferred_name: KRT19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6445
-        label: KRT7
-        preferred_name: KRT7
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1111/j.1365-2559.2009.03391.x
-        doi: 10.1111/j.1365-2559.2009.03391.x
-        pubmed_id: >-
-          https://onlinelibrary.wiley.com/doi/full/10.1111/j.1365-2559.2009.03391.x
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001279
-        label: portal triad
-        preferred_name: portal triad/tract
-      - id: http://purl.obolibrary.org/obo/UBERON_0004058
-        label: biliary ductule
-        preferred_name: bile duct/ule
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000075
-        label: columnar/cuboidal epithelial cell
-        preferred_name: columnar cell ( larger cholangiocytes are more columnar) has ciliae
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1884
-        label: CFTR
-        preferred_name: CFTR
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1884
-        label: CFTR
-        preferred_name: CFTR
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.3748/wjg.v12.i22.3523
-        doi: 10.3748/wjg.v12.i22.3523
-        pubmed_id: https://www.wjgnet.com/1007-9327/full/v12/i22/3523.htm
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001279
-        label: portal triad
-        preferred_name: portal triad/tract
-      - id: http://purl.obolibrary.org/obo/UBERON_0002017
-        label: portal vein
-        preferred_name: portal vein
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002543
-        label: vein endothelial cell
-        preferred_name: endothelial cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/10718
-        label: SELE
-        preferred_name: E-Selectin
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1662
-        label: CD34
-        preferred_name: CD34
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/12726
-        label: vWF
-        preferred_name: vWF
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/13635
-        label: Pal-E antigen
-        preferred_name: Pal-E antigen
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/10718
-        label: SELE
-        preferred_name: E-Selectin
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1662
-        label: CD34
-        preferred_name: CD34
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/12726
-        label: vWF
-        preferred_name: vWF
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/13635
-        label: Pal-E antigen
-        preferred_name: Pal-E antigen
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1038/srep44356
-        doi: 10.1038/srep44356
-        pubmed_id: https://www.nature.com/articles/srep44356
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001279
-        label: portal triad
-        preferred_name: portal triad/tract
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000526
-        label: afferent neuron cell
-        preferred_name: neuron cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/20772
-        label: TUBB3
-        preferred_name: TUBB3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12716
-        label: TRPV1
-        preferred_name: TRPV1
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/12716
-        label: TRPV1
-        preferred_name: TRPV1
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/20772
-        label: TUBB3
-        preferred_name: TUBB3
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.3748/wjg.v12.i22.3523
-        doi: 10.3748/wjg.v12.i22.3523
-        pubmed_id: 'PMID: 21262470'
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001279
-        label: portal triad
-        preferred_name: portal triad/tract
-      - id: http://purl.obolibrary.org/obo/UBERON_0001193
-        label: hepatic artery
-        preferred_name: hepatic artery
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_1000413
-        label: endothelial cell of artery
-        preferred_name: endothelial cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/8823
-        label: PECAM1
-        preferred_name: PECAM1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1662
-        label: CD34
-        preferred_name: CD34
-        biomarker_type: gene
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/8823
-        label: PECAM1
-        preferred_name: PECAM1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1662
-        label: CD34
-        preferred_name: CD34
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/8823
-        label: PECAM1
-        preferred_name: PECAM1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1662
-        label: CD34
-        preferred_name: CD34
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1038/srep44356
-        doi: 10.1038/srep44356
-        pubmed_id: https://www.nature.com/articles/srep44356
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001279
-        label: portal triad
-        preferred_name: portal triad/tract
-      - id: http://purl.obolibrary.org/obo/UBERON_0001193
-        label: hepatic artery
-        preferred_name: hepatic artery
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0019018
-        label: blood vessel smooth muscle cell
-        preferred_name: smooth muscle cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/130
-        label: ACTA2
-        preferred_name: ACTA2
-        biomarker_type: gene
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/130
-        label: ACTA2
-        preferred_name: ACTA2
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/130
-        label: ACTA2
-        preferred_name: ACTA2
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001279
-        label: portal triad
-        preferred_name: portal triad/tract
-      - id: http://purl.obolibrary.org/obo/UBERON_0005169
-        label: interstitial tissue
-        preferred_name: interstitial
-    cell_types: []
-    biomarkers:
-      - id: http://identifiers.org/hgnc/2500
-        label: CTGF
-        preferred_name: CTGF
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11801
-        label: THY1
-        preferred_name: THY1
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/11801
-        label: THY1
-        preferred_name: THY1
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/2500
-        label: CTGF
-        preferred_name: CTGF
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1007/s00441-007-0437-z
-        doi: 10.1007/s00441-007-0437-z
-        pubmed_id: https://pubmed.ncbi.nlm.nih.gov/17576600/
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001282
-        label: intralobular bile duct
-        preferred_name: Canals of Hering
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002196
-        label: Hepatic oval cell
-        preferred_name: 'hepatic oval cell '
-    biomarkers:
-      - id: http://identifiers.org/hgnc/11801
-        label: THY1
-        preferred_name: THY1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6342
-        label: KIT
-        preferred_name: KIT
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/11801
-        label: THY1
-        preferred_name: THY1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6342
-        label: KIT
-        preferred_name: KIT
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1136/gut.2007.143321
-        doi: 10.1136/gut.2007.143321
-        pubmed_id: https://pubmed.ncbi.nlm.nih.gov/18417531/
-      - id: https://doi.org/10.1053/gast.2001.21175
-        doi: 10.1053/gast.2001.21175
-        pubmed_id: https://pubmed.ncbi.nlm.nih.gov/11159894/
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0001282
-        label: intralobular bile duct
-        preferred_name: Canals of Hering
-    cell_types: []
-    biomarkers:
-      - id: http://identifiers.org/hgnc/4504
-        label: LGR5
-        preferred_name: LGR5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9454
-        label: PROM1
-        preferred_name: PROM1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8148
-        label: OPN1
-        preferred_name: OPN1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11204
-        label: SOx9
-        preferred_name: SOx9
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11529
-        label: EPCAM
-        preferred_name: EPCAM
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/11529
-        label: EPCAM
-        preferred_name: EPCAM
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/4504
-        label: LGR5
-        preferred_name: LGR5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9454
-        label: PROM1
-        preferred_name: PROM1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8148
-        label: OPN1
-        preferred_name: OPN1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11204
-        label: SOx9
-        preferred_name: SOx9
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1038/nature11826
-        doi: 10.1038/nature11826
-        pubmed_id: https://pubmed.ncbi.nlm.nih.gov/23354049/
-      - id: https://doi.org/10.1634/stemcells.2007-0176
-        doi: 10.1634/stemcells.2007-0176
-        pubmed_id: https://pubmed.ncbi.nlm.nih.gov/17585168/
-      - id: https://doi.org/10.1038/ng.722
-        doi: 10.1038/ng.722
-        pubmed_id: https://pubmed.ncbi.nlm.nih.gov/21113154/
-      - id: https://doi.org/10.1053/j.gastro.2012.08.024
-        doi: 10.1053/j.gastro.2012.08.024
-        pubmed_id: https://www.sciencedirect.com/science/article/pii/S0016508512012449
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002138
-        label: lymphatic endothelial cell
-        preferred_name: hepatic lymphatic endothelial cell
-    biomarkers: []
-    biomarkers_protein: []
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-      - id: http://purl.obolibrary.org/obo/UBERON_0016478
-        label: liver stroma
-        preferred_name: stroma
-      - id: http://purl.obolibrary.org/obo/UBERON_0002384
-        label: connective tissue
-        preferred_name: connective tissue
-    cell_types: []
-    biomarkers:
-      - id: http://identifiers.org/hgnc/2198
-        label: COL1A2
-        preferred_name: COL1A2
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2201
-        label: ''
-        preferred_name: COL3A1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2202
-        label: COL4A1
-        preferred_name: COL IV
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/2198
-        label: COL1A2
-        preferred_name: COL1A2
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2201
-        label: ''
-        preferred_name: COL3A1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2202
-        label: COL4A1
-        preferred_name: COL IV
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0001056
-        label: human Dendritic cell
-        preferred_name: conventional Dendritic cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: ITGAX
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1697
-        label: ''
-        preferred_name: CD74
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3765
-        label: FLT3
-        preferred_name: FLT3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3336
-        label: ADGRE1
-        preferred_name: ADGRE1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2433
-        label: CSF1R
-        preferred_name: CSF1R
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3613
-        label: FCGR1A
-        preferred_name: FCGR1A
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: ITGAX
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1697
-        label: ''
-        preferred_name: CD74
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3765
-        label: FLT3
-        preferred_name: FLT3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3336
-        label: ADGRE1
-        preferred_name: ADGRE1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2433
-        label: CSF1R
-        preferred_name: CSF1R
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3613
-        label: FCGR1A
-        preferred_name: FCGR1A
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1111/imm.12888
-        doi: 10.1111/imm.12888
-        pubmed_id: 'PMID: 29313948'
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000990
-        label: conventional dendritic cell
-        preferred_name: Conventional DC 1
-    biomarkers:
-      - id: http://identifiers.org/hgnc/11784
-        label: THBD
-        preferred_name: THBD
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/11784
-        label: THBD
-        preferred_name: THBD
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1111/imm.12888
-        doi: 10.1111/imm.12888
-        pubmed_id: 'PMID: 29313948'
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0002399
-        label: CD1c+ myeloid dendritic cell
-        preferred_name: Conventional DC 2
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1636
-        label: CD1C
-        preferred_name: CD1C
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1636
-        label: CD1C
-        preferred_name: CD1C
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1111/imm.12888
-        doi: 10.1111/imm.12888
-        pubmed_id: 'PMID: 29313948'
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000784
-        label: plasmacytoid dendritic cell
-        preferred_name: plasmacytoid Dendritic cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: ITGAX
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: ITGAX
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1111/imm.12888
-        doi: 10.1111/imm.12888
-        pubmed_id: 'PMID: 29313948'
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    cell_types: []
-    biomarkers:
-      - id: http://identifiers.org/hgnc/28495
-        label: HOBIT
-        preferred_name: HOBIT
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9346
-        label: PRDM1
-        preferred_name: ' BLIMP1'
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8A
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/12029
-        label: TRAC
-        preferred_name: TRAC
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1694
-        label: CD69
-        preferred_name: CD69
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6147
-        label: ITGAE
-        preferred_name: ITGAE
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8A
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/12029
-        label: TRAC
-        preferred_name: TRAC
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1694
-        label: CD69
-        preferred_name: CD69
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6147
-        label: ITGAE
-        preferred_name: ITGAE
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/28495
-        label: HOBIT
-        preferred_name: HOBIT
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9346
-        label: PRDM1
-        preferred_name: ' BLIMP1'
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000624
-        label: CD4 positive alpha beta
-        preferred_name: CD4+T cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/12029
-        label: TRAC
-        preferred_name: TRAC
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/12029
-        label: TRAC
-        preferred_name: TRAC
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000798
-        label: gamma delta T cell
-        preferred_name: gamma delta T cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/11922
-        label: CD27
-        preferred_name: CD27lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: CD45RA
-        preferred_name: CD45RAlo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/4540
-        label: CXCR3
-        preferred_name: CXCR3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/16647
-        label: CXCR6
-        preferred_name: CXCR6
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/11922
-        label: CD27
-        preferred_name: CD27lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: CD45RA
-        preferred_name: CD45RAlo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/4540
-        label: CXCR3
-        preferred_name: CXCR3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/16647
-        label: CXCR6
-        preferred_name: CXCR6
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0001203
-        label: CD8 positiver alpha beta memory T cell CD45RO +
-        preferred_name: CD8+ Liver-Resident Memory T cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/4540
-        label: CXCR3
-        preferred_name: CXCR3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/16647
-        label: CXCR6
-        preferred_name: CXCR6
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/10720
-        label: SELL
-        preferred_name: SELL
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6347
-        label: KLF2
-        preferred_name: KLF2
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3165
-        label: S1PR1
-        preferred_name: S1PR1
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/4540
-        label: CXCR3
-        preferred_name: CXCR3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/16647
-        label: CXCR6
-        preferred_name: CXCR6
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/10720
-        label: SELL
-        preferred_name: SELL
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6347
-        label: KLF2
-        preferred_name: KLF2
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3165
-        label: S1PR1
-        preferred_name: S1PR1
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000921
-        label: Type I NK T cell
-        preferred_name: iNKT
-    biomarkers:
-      - id: http://identifiers.org/hgnc/12053
-        label: TRAJ24
-        preferred_name: TRAJ24
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/12046
-        label: TRAJ18
-        preferred_name: TRAJ18
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/12104
-        label: TRAV11
-        preferred_name: TRAV11
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1637
-        label: CD1D
-        preferred_name: CD1D
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/16647
-        label: CXCR6
-        preferred_name: CXCR6
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/12053
-        label: TRAJ24
-        preferred_name: TRAJ24
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/12046
-        label: TRAJ18
-        preferred_name: TRAJ18
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/12104
-        label: TRAV11
-        preferred_name: TRAV11
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1637
-        label: CD1D
-        preferred_name: CD1D
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/16647
-        label: CXCR6
-        preferred_name: CXCR6
-        biomarker_type: protein
-    biomarkers_gene: []
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    cell_types: []
-    biomarkers:
-      - id: http://identifiers.org/hgnc/11599
-        label: TBX21
-        preferred_name: TBX21
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3372
-        label: eomes
-        preferred_name: eomes
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6134
-        label: ITGA1
-        preferred_name: ITGA1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: NCAM1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1694
-        label: CD69
-        preferred_name: CD69
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6147
-        label: ITGAE
-        preferred_name: ITGAE
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/16647
-        label: CXCR6
-        preferred_name: CXCR6
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/6134
-        label: ITGA1
-        preferred_name: ITGA1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: NCAM1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1694
-        label: CD69
-        preferred_name: CD69
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6147
-        label: ITGAE
-        preferred_name: ITGAE
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/16647
-        label: CXCR6
-        preferred_name: CXCR6
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/11599
-        label: TBX21
-        preferred_name: TBX21
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3372
-        label: eomes
-        preferred_name: eomes
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.1172/jci.insight.90063
-        doi: 10.1172/jci.insight.90063
-        pubmed_id: 'PMID: 28289707'
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    cell_types: []
-    biomarkers:
-      - id: http://identifiers.org/hgnc/11599
-        label: TBX21
-        preferred_name: TBX21
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3372
-        label: eomes
-        preferred_name: eomes
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: NCAM1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6134
-        label: ITGA1
-        preferred_name: ITGA1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1694
-        label: CD69
-        preferred_name: CD69
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6147
-        label: ITGAE
-        preferred_name: ITGAE
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/16647
-        label: CXCR6
-        preferred_name: CXCR6
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/3372
-        label: EOMES
-        preferred_name: EOMES
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: NCAM1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6134
-        label: ITGA1
-        preferred_name: ITGA1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1694
-        label: CD69
-        preferred_name: CD69
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6147
-        label: ITGAE
-        preferred_name: ITGAE
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/16647
-        label: CXCR6
-        preferred_name: CXCR6
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/11599
-        label: TBX21
-        preferred_name: TBX21
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3372
-        label: eomes
-        preferred_name: eomes
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.3389/fimmu.2019.01502
-        doi: 10.3389/fimmu.2019.01502
-        pubmed_id: 'PMID: 31333651 PMID: 28289707 PMID: 27798170'
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000623
-        label: Natural killer Cell
-        preferred_name: NK
-    biomarkers:
-      - id: http://identifiers.org/hgnc/11599
-        label: TBX21
-        preferred_name: TBX21
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3372
-        label: eomes
-        preferred_name: eomes
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6134
-        label: ITGA1
-        preferred_name: ITGA1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: NCAM1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1694
-        label: CD69
-        preferred_name: CD69
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/16647
-        label: CXCR6
-        preferred_name: CXCR6
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/6134
-        label: ITGA1
-        preferred_name: ITGA1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: NCAM1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1694
-        label: CD69
-        preferred_name: CD69
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/16647
-        label: CXCR6
-        preferred_name: CXCR6
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/11599
-        label: TBX21
-        preferred_name: TBX21
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3372
-        label: eomes
-        preferred_name: eomes
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references:
-      - id: https://doi.org/10.3389/fimmu.2019.01502
-        doi: 10.3389/fimmu.2019.01502
-        pubmed_id: 'PMID: 28289707 PMID: 27798170'
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0002107
-        label: liver
-        preferred_name: liver
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_2000054
-        label: hepatic Pit cell
-        preferred_name: Pit cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6134
-        label: ITGA1
-        preferred_name: ITGA1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11599
-        label: TBX21
-        preferred_name: TBX21
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3372
-        label: eomes
-        preferred_name: eomes
-        biomarker_type: gene
-    biomarkers_protein: []
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/6134
-        label: ITGA1
-        preferred_name: ITGA1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11599
-        label: TBX21
-        preferred_name: TBX21
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3372
-        label: eomes
-        preferred_name: eomes
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types:
-      - id: http://purl.obolibrary.org/obo/UBERON_0004647
-        label: liver lobule
-        preferred_name: hepatic Lobule
-    references: []
+  anatomical_structures:
+    - id: UBERON:0013702
+      class_type: AnatomicalStructure
+      ccf_pref_label: body proper
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+    - id: UBERON:0002107
+      class_type: AnatomicalStructure
+      ccf_pref_label: liver
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0013702
+    - id: UBERON:0004647
+      class_type: AnatomicalStructure
+      ccf_pref_label: hepatic Lobule
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0002107
+    - id: UBERON:0001281
+      class_type: AnatomicalStructure
+      ccf_pref_label: hepatic sinusoid
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0004647
+    - id: UBERON:0006729
+      class_type: AnatomicalStructure
+      ccf_pref_label: Disse's space
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0004647
+    - id: UBERON:0005452
+      class_type: AnatomicalStructure
+      ccf_pref_label: hepatic plate
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0004647
+    - id: UBERON:0006841
+      class_type: AnatomicalStructure
+      ccf_pref_label: central vein
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0004647
+    - id: UBERON:0001279
+      class_type: AnatomicalStructure
+      ccf_pref_label: portal triad/tract
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0004647
+    - id: UBERON:0004058
+      class_type: AnatomicalStructure
+      ccf_pref_label: bile duct/ule
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001279
+    - id: UBERON:0002017
+      class_type: AnatomicalStructure
+      ccf_pref_label: portal vein
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001279
+    - id: ASCTB-TEMP:nerve
+      class_type: AnatomicalStructure
+      ccf_pref_label: nerve
+      ccf_asctb_type: AS
+      ccf_is_provisional: true
+      ccf_part_of:
+        - UBERON:0001279
+    - id: UBERON:0001193
+      class_type: AnatomicalStructure
+      ccf_pref_label: hepatic artery
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001279
+    - id: UBERON:0005169
+      class_type: AnatomicalStructure
+      ccf_pref_label: interstitial
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001279
+    - id: UBERON:0001282
+      class_type: AnatomicalStructure
+      ccf_pref_label: Canals of Hering
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0004647
+    - id: ASCTB-TEMP:lymphatic-vessel
+      class_type: AnatomicalStructure
+      ccf_pref_label: lymphatic vessel
+      ccf_asctb_type: AS
+      ccf_is_provisional: true
+      ccf_part_of:
+        - UBERON:0004647
+    - id: UBERON:0016478
+      class_type: AnatomicalStructure
+      ccf_pref_label: stroma
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0004647
+    - id: UBERON:0002384
+      class_type: AnatomicalStructure
+      ccf_pref_label: connective tissue
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0016478
+    - id: ASCTB-TEMP:liver-immune-resident-component
+      class_type: AnatomicalStructure
+      ccf_pref_label: Liver immune resident component
+      ccf_asctb_type: AS
+      ccf_is_provisional: true
+      ccf_part_of:
+        - UBERON:0004647
+  cell_types:
+    - id: CL:0000000
+      class_type: CellType
+      ccf_pref_label: cell type
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+    - id: CL:1000398
+      class_type: CellType
+      ccf_pref_label: liver sinusoid endothelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0001281
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:8823
+            - HGNC:3349
+            - HGNC:1662
+          references:
+            - DOI:10.3748/wjg.v12.i34.5429
+    - id: CL:0000091
+      class_type: CellType
+      ccf_pref_label: Kupffer cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0001281
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1693
+            - ASCTB-TEMP:cd68
+          references:
+            - DOI:10.1016/j.jhep.2010.04.037
+    - id: CL:0000632
+      class_type: CellType
+      ccf_pref_label: quiescent hepatic stellate cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0006729
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:8804
+            - HGNC:4235
+            - HGNC:2770
+          references:
+            - DOI:10.1038/nm.3282
+            - DOI:10.1136/gut.2005.078865
+            - DOI:10.1002/hep.1840040425
+    - id: ASCTB-TEMP:immune-cell
+      class_type: CellType
+      ccf_pref_label: Immune cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0006729
+      ccf_has_biomarker_set:
+        - members: []
+          references:
+            - DOI:10.1016/j.cub.2017.09.019
+    - id: CL:0000182
+      class_type: CellType
+      ccf_pref_label: hepatocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0005452
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:2625
+            - HGNC:7154
+            - HGNC:42
+          references:
+            - DOI:10.1097/00000478-200110000-00011
+            - DOI:10.1007/s00424-006-0152-8
+    - id: CL:0019026
+      class_type: CellType
+      ccf_pref_label: periportal hepatocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0005452
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:4806
+            - HGNC:2611
+          references:
+            - DOI:10.1053/j.gastro.2009.02.063
+            - DOI:10.1038/s42255-019-0109-9
+    - id: CL:0019029
+      class_type: CellType
+      ccf_pref_label: pericentral hepatocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0005452
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:4341
+            - HGNC:2637
+          references:
+            - DOI:10.1053/j.gastro.2009.02.063
+            - DOI:10.1038/ncb3337
+            - DOI:10.1038/nature14863
+    - id: CL:0019028
+      class_type: CellType
+      ccf_pref_label: mid zone hepatocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0005452
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:4806
+            - HGNC:2611
+            - HGNC:2637
+          references: []
+    - id: CL:0002543
+      class_type: CellType
+      ccf_pref_label: endothelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0006841
+        - UBERON:0002017
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:8823
+            - HGNC:1662
+          references:
+            - DOI:10.1038/srep44356
+        - members:
+            - HGNC:10718
+            - HGNC:1662
+            - HGNC:12726
+            - HGNC:13635
+          references:
+            - DOI:10.1038/srep44356
+    - id: CL:0000241
+      class_type: CellType
+      ccf_pref_label: cuboidal cell (Small cholangiocytes are cuboidal)
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0004058
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:6436
+            - HGNC:6445
+          references:
+            - DOI:10.1111/j.1365-2559.2009.03391.x
+    - id: CL:0000075
+      class_type: CellType
+      ccf_pref_label: columnar cell ( larger cholangiocytes are more columnar) has ciliae
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0004058
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1884
+          references:
+            - DOI:10.3748/wjg.v12.i22.3523
+    - id: CL:0000526
+      class_type: CellType
+      ccf_pref_label: neuron cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:nerve
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:20772
+            - ASCTB-TEMP:s100
+            - HGNC:12716
+          references:
+            - DOI:10.3748/wjg.v12.i22.3523
+    - id: CL:1000413
+      class_type: CellType
+      ccf_pref_label: endothelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0001193
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:8823
+            - HGNC:1662
+          references:
+            - DOI:10.1038/srep44356
+    - id: CL:0019018
+      class_type: CellType
+      ccf_pref_label: smooth muscle cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0001193
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:130
+          references: []
+    - id: ASCTB-TEMP:portal-fibroblast
+      class_type: CellType
+      ccf_pref_label: portal fibroblast
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0005169
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:2500
+            - HGNC:11801
+          references:
+            - DOI:10.1007/s00441-007-0437-z
+    - id: CL:0002196
+      class_type: CellType
+      ccf_pref_label: 'hepatic oval cell '
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0001282
+      ccf_has_biomarker_set:
+        - members:
+            - ASCTB-TEMP:ov-6-antigen
+            - HGNC:11801
+            - HGNC:6342
+          references:
+            - DOI:10.1136/gut.2007.143321
+            - DOI:10.1053/gast.2001.21175
+    - id: ASCTB-TEMP:hepatic-progenitor-cell
+      class_type: CellType
+      ccf_pref_label: hepatic progenitor cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0001282
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:4504
+            - HGNC:9454
+            - HGNC:8148
+            - HGNC:11204
+            - HGNC:11529
+          references:
+            - DOI:10.1038/nature11826
+            - DOI:10.1634/stemcells.2007-0176
+            - DOI:10.1038/ng.722
+            - DOI:10.1053/j.gastro.2012.08.024
+    - id: CL:0002138
+      class_type: CellType
+      ccf_pref_label: hepatic lymphatic endothelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:lymphatic-vessel
+      ccf_has_biomarker_set:
+        - members: []
+          references: []
+    - id: CL:0001056
+      class_type: CellType
+      ccf_pref_label: conventional Dendritic cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:liver-immune-resident-component
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:6152
+            - HGNC:1697
+            - HGNC:3765
+            - HGNC:3336
+            - HGNC:2433
+            - HGNC:3613
+          references:
+            - DOI:10.1111/imm.12888
+    - id: CL:0000990
+      class_type: CellType
+      ccf_pref_label: Conventional DC 1
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:liver-immune-resident-component
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:11784
+          references:
+            - DOI:10.1111/imm.12888
+    - id: CL:0002399
+      class_type: CellType
+      ccf_pref_label: Conventional DC 2
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:liver-immune-resident-component
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1636
+          references:
+            - DOI:10.1111/imm.12888
+    - id: CL:0000784
+      class_type: CellType
+      ccf_pref_label: plasmacytoid Dendritic cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:liver-immune-resident-component
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:6152
+          references:
+            - DOI:10.1111/imm.12888
+    - id: ASCTB-TEMP:cd8-trm-residence-memory-
+      class_type: CellType
+      ccf_pref_label: CD8 TRm (residence memory)
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:liver-immune-resident-component
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:28495
+            - HGNC:9346
+            - HGNC:1706
+            - HGNC:12029
+            - HGNC:1694
+            - HGNC:6147
+          references: []
+    - id: CL:0000624
+      class_type: CellType
+      ccf_pref_label: CD4+T cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:liver-immune-resident-component
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1678
+            - HGNC:12029
+          references: []
+    - id: CL:0000798
+      class_type: CellType
+      ccf_pref_label: gamma delta T cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:liver-immune-resident-component
+      ccf_has_biomarker_set:
+        - members:
+            - ASCTB-TEMP:gamma-delta-tcr
+            - HGNC:11922
+            - HGNC:9666
+            - ASCTB-TEMP:cd69
+            - HGNC:4540
+            - HGNC:16647
+          references: []
+    - id: CL:0001203
+      class_type: CellType
+      ccf_pref_label: CD8+ Liver-Resident Memory T cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:liver-immune-resident-component
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:4540
+            - HGNC:16647
+            - HGNC:1608
+            - HGNC:10720
+            - HGNC:6347
+            - HGNC:3165
+          references: []
+    - id: CL:0000921
+      class_type: CellType
+      ccf_pref_label: iNKT
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:liver-immune-resident-component
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:12053
+            - HGNC:12046
+            - HGNC:12104
+            - HGNC:1637
+            - HGNC:16647
+          references: []
+    - id: ASCTB-TEMP:eomes-low-liver-nk-cell
+      class_type: CellType
+      ccf_pref_label: Eomes low Liver NK cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:liver-immune-resident-component
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:11599
+            - HGNC:3372
+            - HGNC:6134
+            - HGNC:7656
+            - HGNC:1694
+            - HGNC:6147
+            - HGNC:16647
+          references:
+            - DOI:10.1172/jci.insight.90063
+    - id: ASCTB-TEMP:tbet-low-liver-nk-cell
+      class_type: CellType
+      ccf_pref_label: TBet low Liver NK cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:liver-immune-resident-component
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:11599
+            - HGNC:3372
+            - HGNC:7656
+            - HGNC:6134
+            - HGNC:1694
+            - HGNC:6147
+            - HGNC:16647
+          references:
+            - DOI:10.3389/fimmu.2019.01502
+    - id: CL:0000623
+      class_type: CellType
+      ccf_pref_label: NK
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:liver-immune-resident-component
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:11599
+            - HGNC:3372
+            - HGNC:6134
+            - HGNC:7656
+            - HGNC:1694
+            - HGNC:16647
+          references:
+            - DOI:10.3389/fimmu.2019.01502
+    - id: CL:2000054
+      class_type: CellType
+      ccf_pref_label: Pit cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - ASCTB-TEMP:liver-immune-resident-component
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:6134
+            - HGNC:11599
+            - HGNC:3372
+          references: []
+  biomarkers:
+    - id: HGNC:8823
+      class_type: Biomarker
+      ccf_pref_label: CD31
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:3349
+      class_type: Biomarker
+      ccf_pref_label: endoglin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1662
+      class_type: Biomarker
+      ccf_pref_label: CD34
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1693
+      class_type: Biomarker
+      ccf_pref_label: CD68
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:cd68
+      class_type: Biomarker
+      ccf_pref_label: CD68
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: true
+    - id: HGNC:8804
+      class_type: Biomarker
+      ccf_pref_label: PDGFRB
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4235
+      class_type: Biomarker
+      ccf_pref_label: GFAP
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2770
+      class_type: Biomarker
+      ccf_pref_label: DES
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2625
+      class_type: Biomarker
+      ccf_pref_label: CYP2D6
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:7154
+      class_type: Biomarker
+      ccf_pref_label: CD10
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:42
+      class_type: Biomarker
+      ccf_pref_label: BSEP
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:4806
+      class_type: Biomarker
+      ccf_pref_label: CFTR
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2611
+      class_type: Biomarker
+      ccf_pref_label: CYP2A7
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4341
+      class_type: Biomarker
+      ccf_pref_label: GLUL
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2637
+      class_type: Biomarker
+      ccf_pref_label: CYP3A4
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6436
+      class_type: Biomarker
+      ccf_pref_label: KRT19
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6445
+      class_type: Biomarker
+      ccf_pref_label: KRT7
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1884
+      class_type: Biomarker
+      ccf_pref_label: CFTR
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:10718
+      class_type: Biomarker
+      ccf_pref_label: E-Selectin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:12726
+      class_type: Biomarker
+      ccf_pref_label: vWF
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:13635
+      class_type: Biomarker
+      ccf_pref_label: Pal-E antigen
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:20772
+      class_type: Biomarker
+      ccf_pref_label: TUBB3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:s100
+      class_type: Biomarker
+      ccf_pref_label: S100
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: true
+    - id: HGNC:12716
+      class_type: Biomarker
+      ccf_pref_label: TRPV1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:130
+      class_type: Biomarker
+      ccf_pref_label: ACTA2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2500
+      class_type: Biomarker
+      ccf_pref_label: CTGF
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11801
+      class_type: Biomarker
+      ccf_pref_label: THY1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:ov-6-antigen
+      class_type: Biomarker
+      ccf_pref_label: OV-6 ANTIGEN
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: true
+    - id: HGNC:6342
+      class_type: Biomarker
+      ccf_pref_label: KIT
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4504
+      class_type: Biomarker
+      ccf_pref_label: LGR5
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:9454
+      class_type: Biomarker
+      ccf_pref_label: PROM1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:8148
+      class_type: Biomarker
+      ccf_pref_label: OPN1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11204
+      class_type: Biomarker
+      ccf_pref_label: SOx9
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11529
+      class_type: Biomarker
+      ccf_pref_label: EPCAM
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:2198
+      class_type: Biomarker
+      ccf_pref_label: COL1A2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:2201
+      class_type: Biomarker
+      ccf_pref_label: COL3A1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:2202
+      class_type: Biomarker
+      ccf_pref_label: COL IV
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:6152
+      class_type: Biomarker
+      ccf_pref_label: ITGAX
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1697
+      class_type: Biomarker
+      ccf_pref_label: CD74
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:3765
+      class_type: Biomarker
+      ccf_pref_label: FLT3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:3336
+      class_type: Biomarker
+      ccf_pref_label: ADGRE1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:2433
+      class_type: Biomarker
+      ccf_pref_label: CSF1R
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:3613
+      class_type: Biomarker
+      ccf_pref_label: FCGR1A
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:11784
+      class_type: Biomarker
+      ccf_pref_label: THBD
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1636
+      class_type: Biomarker
+      ccf_pref_label: CD1C
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:28495
+      class_type: Biomarker
+      ccf_pref_label: HOBIT
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:9346
+      class_type: Biomarker
+      ccf_pref_label: ' BLIMP1'
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1706
+      class_type: Biomarker
+      ccf_pref_label: CD8A
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:12029
+      class_type: Biomarker
+      ccf_pref_label: TRAC
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1694
+      class_type: Biomarker
+      ccf_pref_label: CD69
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:6147
+      class_type: Biomarker
+      ccf_pref_label: ITGAE
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1678
+      class_type: Biomarker
+      ccf_pref_label: CD4
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:gamma-delta-tcr
+      class_type: Biomarker
+      ccf_pref_label: gamma delta TCR
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: true
+    - id: HGNC:11922
+      class_type: Biomarker
+      ccf_pref_label: CD27lo
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:9666
+      class_type: Biomarker
+      ccf_pref_label: CD45RAlo
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:cd69
+      class_type: Biomarker
+      ccf_pref_label: CD69
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: true
+    - id: HGNC:4540
+      class_type: Biomarker
+      ccf_pref_label: CXCR3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:16647
+      class_type: Biomarker
+      ccf_pref_label: CXCR6
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1608
+      class_type: Biomarker
+      ccf_pref_label: CCR7
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:10720
+      class_type: Biomarker
+      ccf_pref_label: SELL
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:6347
+      class_type: Biomarker
+      ccf_pref_label: KLF2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:3165
+      class_type: Biomarker
+      ccf_pref_label: S1PR1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:12053
+      class_type: Biomarker
+      ccf_pref_label: TRAJ24
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:12046
+      class_type: Biomarker
+      ccf_pref_label: TRAJ18
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:12104
+      class_type: Biomarker
+      ccf_pref_label: TRAV11
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1637
+      class_type: Biomarker
+      ccf_pref_label: CD1D
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:11599
+      class_type: Biomarker
+      ccf_pref_label: TBX21
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:3372
+      class_type: Biomarker
+      ccf_pref_label: eomes
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6134
+      class_type: Biomarker
+      ccf_pref_label: ITGA1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:7656
+      class_type: Biomarker
+      ccf_pref_label: NCAM1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false

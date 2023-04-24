@@ -1,3 +1,4 @@
+id: http://purl.humanatlas.io/asct-b/vh-blood-pelvis/v1.3
 metadata:
   type: asct-b
   name: vh-blood-pelvis
@@ -73,3217 +74,1533 @@ metadata:
   datatable:
     - asct-b-vh-blood-pelvis.csv
 data:
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000945
-        label: lymphocyte of B lineage
-        preferred_name: B lineage
-      - id: http://purl.obolibrary.org/obo/CL_0000816
-        label: immature B cell
-        preferred_name: immature B cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19 molecule
-        preferred_name: CD19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8619
-        label: paired box 5
-        preferred_name: PAX5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5541
-        label: immunoglobulin heavy constant mu
-        preferred_name: IGHM
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7315
-        label: membrane spanning 4-domains A1
-        preferred_name: MS4A1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7154
-        label: MME
-        preferred_name: CD10
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/5480
-        label: IGHD
-        preferred_name: IgD+/
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7154
-        label: MME
-        preferred_name: CD10
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7315
-        label: MS4A1
-        preferred_name: CD20
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/5541
-        label: IGHM
-        preferred_name: IgM+/
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/5480
-        label: IGHD
-        preferred_name: IgD+/
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19 molecule
-        preferred_name: CD19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8619
-        label: paired box 5
-        preferred_name: PAX5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5541
-        label: immunoglobulin heavy constant mu
-        preferred_name: IGHM
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7315
-        label: membrane spanning 4-domains A1
-        preferred_name: MS4A1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references:
-      - id: https://doi.org/10.3389/fimmu.2012.00302
-        doi: 10.3389/fimmu.2012.00302
-        pubmed_id: ''
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000945
-        label: lymphocyte of B lineage
-        preferred_name: B lineage
-      - id: http://purl.obolibrary.org/obo/CL_0000787
-        label: memory B cell
-        preferred_name: memory B cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19 molecule
-        preferred_name: CD19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7315
-        label: membrane spanning 4-domains A1
-        preferred_name: MS4A1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5478
-        label: immunoglobulin heavy constant alpha 1
-        preferred_name: IGHA1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5525
-        label: immunoglobulin heavy constant gamma 1 (G1m marker)
-        preferred_name: IGHG1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6210
-        label: CD82 molecule
-        preferred_name: CD82
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10720
-        label: selectin L
-        preferred_name: SELL
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11922
-        label: CD27 molecule
-        preferred_name: CD27
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2336
-        label: CR2
-        preferred_name: CD21
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1643
-        label: CD22
-        preferred_name: CD22
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/5541
-        label: IGHM
-        preferred_name: IgM+/
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/5480
-        label: IGHD
-        preferred_name: IgD+/
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7315
-        label: MS4A1
-        preferred_name: CD20
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2336
-        label: CR2
-        preferred_name: CD21
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1643
-        label: CD22
-        preferred_name: CD22
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/11922
-        label: CD27
-        preferred_name: CD27
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/5541
-        label: IGHM
-        preferred_name: IgM+/
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/5480
-        label: IGHD
-        preferred_name: IgD+/
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19 molecule
-        preferred_name: CD19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7315
-        label: membrane spanning 4-domains A1
-        preferred_name: MS4A1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5478
-        label: immunoglobulin heavy constant alpha 1
-        preferred_name: IGHA1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5525
-        label: immunoglobulin heavy constant gamma 1 (G1m marker)
-        preferred_name: IGHG1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6210
-        label: CD82 molecule
-        preferred_name: CD82
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10720
-        label: selectin L
-        preferred_name: SELL
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11922
-        label: CD27 molecule
-        preferred_name: CD27
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references:
-      - id: https://doi.org/10.1002/jcla.20001
-        doi: 10.1002/jcla.20001
-        pubmed_id: ''
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000945
-        label: lymphocyte of B lineage
-        preferred_name: B lineage
-      - id: http://purl.obolibrary.org/obo/CL_0000788
-        label: naive B cell
-        preferred_name: naive B cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19 molecule
-        preferred_name: CD19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8619
-        label: paired box 5
-        preferred_name: PAX5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5541
-        label: immunoglobulin heavy constant mu
-        preferred_name: IGHM
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7315
-        label: membrane spanning 4-domains A1
-        preferred_name: MS4A1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11919
-        label: CD40 molecule
-        preferred_name: CD40
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3612
-        label: Fc epsilon receptor II
-        preferred_name: FCER2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2336
-        label: CR2
-        preferred_name: CD21
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/5480
-        label: IGHD
-        preferred_name: IgD
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/11922
-        label: CD27
-        preferred_name: CD27
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7154
-        label: MME
-        preferred_name: CD10
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1667
-        label: CD38
-        preferred_name: CD38+/lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1645
-        label: CD24
-        preferred_name: CD24+/lo
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7315
-        label: MS4A1
-        preferred_name: CD20
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2336
-        label: CR2
-        preferred_name: CD21
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/5480
-        label: IGHD
-        preferred_name: IgD
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/11922
-        label: CD27
-        preferred_name: CD27
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7154
-        label: MME
-        preferred_name: CD10
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1667
-        label: CD38
-        preferred_name: CD38+/lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1645
-        label: CD24
-        preferred_name: CD24+/lo
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19 molecule
-        preferred_name: CD19
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8619
-        label: paired box 5
-        preferred_name: PAX5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5541
-        label: immunoglobulin heavy constant mu
-        preferred_name: IGHM
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7315
-        label: membrane spanning 4-domains A1
-        preferred_name: MS4A1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11919
-        label: CD40 molecule
-        preferred_name: CD40
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3612
-        label: Fc epsilon receptor II
-        preferred_name: FCER2
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references:
-      - id: https://doi.org/10.1038/s41467-019-12464-3
-        doi: 10.1038/s41467-019-12464-3
-        pubmed_id: ''
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000945
-        label: lymphocyte of B lineage
-        preferred_name: B lineage
-      - id: http://purl.obolibrary.org/obo/CL_0000818
-        label: transitional stage B cell
-        preferred_name: transitional B cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/38476
-        label: immunoglobulin lambda like polypeptide 5
-        preferred_name: IGLL5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11200
-        label: SRY-box transcription factor 4
-        preferred_name: SOX4
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1004
-        label: BAF chromatin remodeling complex subunit BCL7A
-        preferred_name: BCL7A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11648
-        label: TCL1 family AKT coactivator A
-        preferred_name: TCL1A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/18504
-        label: Fc receptor like A
-        preferred_name: FCRLA
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1645
-        label: CD24 molecule
-        preferred_name: CD24
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7315
-        label: MS4A1
-        preferred_name: CD20
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2336
-        label: CR2
-        preferred_name: CD21
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1643
-        label: CD22
-        preferred_name: CD22
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/5480
-        label: IGHD
-        preferred_name: IgD
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/11922
-        label: CD27
-        preferred_name: CD27
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7154
-        label: MME
-        preferred_name: CD10
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1667
-        label: CD38
-        preferred_name: CD38
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1685
-        label: CD5
-        preferred_name: CD5
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7315
-        label: MS4A1
-        preferred_name: CD20
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2336
-        label: CR2
-        preferred_name: CD21
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1643
-        label: CD22
-        preferred_name: CD22
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/5480
-        label: IGHD
-        preferred_name: IgD
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/11922
-        label: CD27
-        preferred_name: CD27
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7154
-        label: MME
-        preferred_name: CD10
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1667
-        label: CD38
-        preferred_name: CD38
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1645
-        label: CD24
-        preferred_name: CD24
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1685
-        label: CD5
-        preferred_name: CD5
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/38476
-        label: immunoglobulin lambda like polypeptide 5
-        preferred_name: IGLL5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11200
-        label: SRY-box transcription factor 4
-        preferred_name: SOX4
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1004
-        label: BAF chromatin remodeling complex subunit BCL7A
-        preferred_name: BCL7A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11648
-        label: TCL1 family AKT coactivator A
-        preferred_name: TCL1A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/18504
-        label: Fc receptor like A
-        preferred_name: FCRLA
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1645
-        label: CD24 molecule
-        preferred_name: CD24
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references:
-      - id: https://doi.org/10.1073/pnas.172384399
-        doi: 10.1073/pnas.172384399
-        pubmed_id: ''
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0001056
-        label: dendritic cell, human
-        preferred_name: dendritic cell (DC)
-      - id: http://purl.obolibrary.org/obo/CL_0002394
-        label: CD141-positive myeloid dendritic cell
-        preferred_name: dendritic cell type 1 (DC1)
-    biomarkers:
-      - id: http://identifiers.org/hgnc/26705
-        label: C-type lectin domain containing 9A
-        preferred_name: CLEC9A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5951
-        label: cell adhesion molecule 1
-        preferred_name: CADM1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1625
-        label: X-C motif chemokine receptor 1
-        preferred_name: XCR1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1628
-        label: CD14
-        preferred_name: CD14
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c+/lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6012
-        label: IL3RA
-        preferred_name: CD123
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/11784
-        label: THBD
-        preferred_name: CD141hi
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1636
-        label: CD1C
-        preferred_name: CD1c-/lo
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1628
-        label: CD14
-        preferred_name: CD14
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c+/lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6012
-        label: IL3RA
-        preferred_name: CD123
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/11784
-        label: THBD
-        preferred_name: CD141hi
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/26705
-        label: CLEC9A
-        preferred_name: CLEC9A
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1636
-        label: CD1C
-        preferred_name: CD1c-/lo
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/26705
-        label: C-type lectin domain containing 9A
-        preferred_name: CLEC9A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5951
-        label: cell adhesion molecule 1
-        preferred_name: CADM1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1625
-        label: X-C motif chemokine receptor 1
-        preferred_name: XCR1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references:
-      - id: https://doi.org/10.3109/10428194.2013.781167
-        doi: 10.3109/10428194.2013.781167
-        pubmed_id: ''
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0001056
-        label: dendritic cell, human
-        preferred_name: dendritic cell (DC)
-      - id: http://purl.obolibrary.org/obo/CL_0002399
-        label: CD1c-positive myeloid dendritic cell
-        preferred_name: dendritic cell type 2 (DC2)
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1636
-        label: CD1c molecule
-        preferred_name: CD1C
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3609
-        label: Fc epsilon receptor Ia
-        preferred_name: FCER1A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/16916
-        label: C-type lectin domain containing 10A
-        preferred_name: CLEC10A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4943
-        label: major histocompatibility complex, class II, DQ alpha 2
-        preferred_name: HLA-DQA2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4940
-        label: major histocompatibility complex, class II, DP beta 1
-        preferred_name: HLA-DPB1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3618
-        label: Fc gamma receptor IIb
-        preferred_name: FCGR2B
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1628
-        label: CD14
-        preferred_name: CD14
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c+/lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6012
-        label: IL3RA
-        preferred_name: CD123
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/11784
-        label: THBD
-        preferred_name: CD141
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1628
-        label: CD14
-        preferred_name: CD14
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c+/lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6012
-        label: IL3RA
-        preferred_name: CD123
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/11784
-        label: THBD
-        preferred_name: CD141
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1636
-        label: CD1C
-        preferred_name: CD1c
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1636
-        label: CD1c molecule
-        preferred_name: CD1C
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3609
-        label: Fc epsilon receptor Ia
-        preferred_name: FCER1A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/16916
-        label: C-type lectin domain containing 10A
-        preferred_name: CLEC10A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4943
-        label: major histocompatibility complex, class II, DQ alpha 2
-        preferred_name: HLA-DQA2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4940
-        label: major histocompatibility complex, class II, DP beta 1
-        preferred_name: HLA-DPB1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3618
-        label: Fc gamma receptor IIb
-        preferred_name: FCGR2B
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references:
-      - id: https://doi.org/10.1016/j.immuni.2017.04.019
-        doi: 10.1016/j.immuni.2017.04.019
-        pubmed_id: ''
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0001056
-        label: dendritic cell, human
-        preferred_name: dendritic cell (DC)
-      - id: http://purl.obolibrary.org/obo/CL_0002399
-        label: CD1c-positive myeloid dendritic cell
-        preferred_name: dendritic cell type 3 (DC3)
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1636
-        label: CD1c molecule
-        preferred_name: CD1C
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3609
-        label: Fc epsilon receptor Ia
-        preferred_name: FCER1A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/16916
-        label: C-type lectin domain containing 10A
-        preferred_name: CLEC10A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10498
-        label: S100 calcium binding protein A8
-        preferred_name: S100A8
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10499
-        label: S100 calcium binding protein A9
-        preferred_name: S100A9
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1663
-        label: CD36 molecule
-        preferred_name: CD36
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1631
-        label: CD163 molecule
-        preferred_name: CD163
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1628
-        label: CD14
-        preferred_name: CD14-/lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c+/lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6012
-        label: IL3RA
-        preferred_name: CD123
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/11784
-        label: THBD
-        preferred_name: CD141
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1628
-        label: CD14
-        preferred_name: CD14-/lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c+/lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6012
-        label: IL3RA
-        preferred_name: CD123
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/11784
-        label: THBD
-        preferred_name: CD141
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1636
-        label: CD1C
-        preferred_name: CD1c
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1636
-        label: CD1c molecule
-        preferred_name: CD1C
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3609
-        label: Fc epsilon receptor Ia
-        preferred_name: FCER1A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/16916
-        label: C-type lectin domain containing 10A
-        preferred_name: CLEC10A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10498
-        label: S100 calcium binding protein A8
-        preferred_name: S100A8
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10499
-        label: S100 calcium binding protein A9
-        preferred_name: S100A9
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1663
-        label: CD36 molecule
-        preferred_name: CD36
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1631
-        label: CD163 molecule
-        preferred_name: CD163
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references:
-      - id: https://doi.org/10.1002/cyto.a.23724
-        doi: 10.1002/cyto.a.23724
-        pubmed_id: ''
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0001056
-        label: dendritic cell, human
-        preferred_name: dendritic cell (DC)
-      - id: http://purl.obolibrary.org/obo/CL_0001058
-        label: plasmacytoid dendritic cell, human
-        preferred_name: Plasmacytoid Dendritic Cell (pDC)
-    biomarkers:
-      - id: http://identifiers.org/hgnc/4709
-        label: granzyme B
-        preferred_name: GZMB
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5713
-        label: joining chain of multimeric IgA and IgM
-        preferred_name: JCHAIN
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8824
-        label: serpin family F member 1
-        preferred_name: SERPINF1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1628
-        label: CD14
-        preferred_name: CD14
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6012
-        label: IL3RA
-        preferred_name: CD123
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/13258
-        label: CLEC4C
-        preferred_name: CD303
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1628
-        label: CD14
-        preferred_name: CD14
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6012
-        label: IL3RA
-        preferred_name: CD123
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/13258
-        label: CLEC4C
-        preferred_name: CD303
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/4709
-        label: granzyme B
-        preferred_name: GZMB
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5713
-        label: joining chain of multimeric IgA and IgM
-        preferred_name: JCHAIN
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8824
-        label: serpin family F member 1
-        preferred_name: SERPINF1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references:
-      - id: https://doi.org/10.1111/bjh.14467
-        doi: 10.1111/bjh.14467
-        pubmed_id: ''
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0001056
-        label: dendritic cell, human
-        preferred_name: dendritic cell (DC)
-      - id: http://purl.obolibrary.org/obo/CL_0000840
-        label: immature conventional dendritic cell
-        preferred_name: transitional Dendritic Cell (tDC)
-    biomarkers:
-      - id: http://identifiers.org/hgnc/905
-        label: AXL receptor tyrosine kinase
-        preferred_name: AXL
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10875
-        label: sialic acid binding Ig like lectin 6
-        preferred_name: SIGLEC6
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1643
-        label: CD22 molecule
-        preferred_name: CD22
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1628
-        label: CD14
-        preferred_name: CD14
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c-/
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6012
-        label: IL3RA
-        preferred_name: CD123
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1628
-        label: CD14
-        preferred_name: CD14
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c-/
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6012
-        label: IL3RA
-        preferred_name: CD123
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/905
-        label: AXL
-        preferred_name: AXL
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/10875
-        label: SIGLEC6
-        preferred_name: Siglec6
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/905
-        label: AXL receptor tyrosine kinase
-        preferred_name: AXL
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10875
-        label: sialic acid binding Ig like lectin 6
-        preferred_name: SIGLEC6
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1643
-        label: CD22 molecule
-        preferred_name: CD22
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references:
-      - id: https://doi.org/10.1182/blood-2004-02-0769
-        doi: 10.1182/blood-2004-02-0769
-        pubmed_id: ''
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000576
-        label: monocyte
-        preferred_name: monocyte
-      - id: http://purl.obolibrary.org/obo/CL_0001054
-        label: CD14-positive monocyte
-        preferred_name: CD14 monocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/2464
-        label: versican
-        preferred_name: VCAN
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2475
-        label: cystatin C
-        preferred_name: CST3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1628
-        label: CD14 molecule
-        preferred_name: CD14
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10498
-        label: S100 calcium binding protein A8
-        preferred_name: S100A8
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10499
-        label: S100 calcium binding protein A9
-        preferred_name: S100A9
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3623
-        label: ficolin 1
-        preferred_name: FCN1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16-/lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3613
-        label: FCGR1A
-        preferred_name: CD64
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/10720
-        label: SELL
-        preferred_name: CD62L
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1603
-        label: CCR2
-        preferred_name: CCR2
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1663
-        label: CD36
-        preferred_name: CD36
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1628
-        label: CD14
-        preferred_name: CD14
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16-/lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6152
-        label: ITGAX
-        preferred_name: CD11c
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3613
-        label: FCGR1A
-        preferred_name: CD64
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/10720
-        label: SELL
-        preferred_name: CD62L
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1603
-        label: CCR2
-        preferred_name: CCR2
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1663
-        label: CD36
-        preferred_name: CD36
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/2464
-        label: versican
-        preferred_name: VCAN
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2475
-        label: cystatin C
-        preferred_name: CST3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1628
-        label: CD14 molecule
-        preferred_name: CD14
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10498
-        label: S100 calcium binding protein A8
-        preferred_name: S100A8
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10499
-        label: S100 calcium binding protein A9
-        preferred_name: S100A9
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3623
-        label: ficolin 1
-        preferred_name: FCN1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000576
-        label: monocyte
-        preferred_name: monocyte
-      - id: http://purl.obolibrary.org/obo/CL_0002396
-        label: CD14-low, CD16-positive monocyte
-        preferred_name: CD16 monocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/24149
-        label: hes family bHLH transcription factor 4
-        preferred_name: HES4
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/13378
-        label: membrane spanning 4-domains A7
-        preferred_name: MS4A7
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5414
-        label: interferon induced transmembrane protein 3
-        preferred_name: IFITM3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3619
-        label: Fc gamma receptor IIIa
-        preferred_name: FCGR3A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/16642
-        label: C-X-C motif chemokine ligand 16
-        preferred_name: CXCL16
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/14189
-        label: leukocyte specific transcript 1
-        preferred_name: LST1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1628
-        label: CD14
-        preferred_name: CD14-/lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2558
-        label: CX3CR1
-        preferred_name: CX3CR1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2561
-        label: CXCR4
-        preferred_name: CXCR4
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1628
-        label: CD14
-        preferred_name: CD14-/lo
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2558
-        label: CX3CR1
-        preferred_name: CX3CR1
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2561
-        label: CXCR4
-        preferred_name: CXCR4
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/24149
-        label: hes family bHLH transcription factor 4
-        preferred_name: HES4
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/13378
-        label: membrane spanning 4-domains A7
-        preferred_name: MS4A7
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5414
-        label: interferon induced transmembrane protein 3
-        preferred_name: IFITM3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3619
-        label: Fc gamma receptor IIIa
-        preferred_name: FCGR3A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/16642
-        label: C-X-C motif chemokine ligand 16
-        preferred_name: CXCL16
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/14189
-        label: leukocyte specific transcript 1
-        preferred_name: LST1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000775
-        label: neutrophil
-        preferred_name: neutrophilic granulocyte
-    biomarkers:
-      - id: http://identifiers.org/hgnc/6149
-        label: integrin subunit alpha M
-        preferred_name: ITGAM
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7176
-        label: matrix metallopeptidase 9
-        preferred_name: MMP9
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8904
-        label: peptidoglycan recognition protein 1
-        preferred_name: PGLYRP1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8498
-        label: orosomucoid 1
-        preferred_name: ORM1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10489
-        label: S100 calcium binding protein A12
-        preferred_name: S100A12
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3623
-        label: ficolin 1
-        preferred_name: FCN1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/500
-        label: ANPEP
-        preferred_name: CD13
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/4015
-        label: FUT4
-        preferred_name: CD15
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/11249
-        label: SPN
-        preferred_name: CD43
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1820
-        label: CEACAM8
-        preferred_name: CD66b
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6140
-        label: ITGA4
-        preferred_name: CD49d
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1645
-        label: CD24
-        preferred_name: CD24
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/500
-        label: ANPEP
-        preferred_name: CD13
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/4015
-        label: FUT4
-        preferred_name: CD15
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/11249
-        label: SPN
-        preferred_name: CD43
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1820
-        label: CEACAM8
-        preferred_name: CD66b
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6140
-        label: ITGA4
-        preferred_name: CD49d
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6149
-        label: ITGAM
-        preferred_name: CD11b
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1645
-        label: CD24
-        preferred_name: CD24
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/6149
-        label: integrin subunit alpha M
-        preferred_name: ITGAM
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7176
-        label: matrix metallopeptidase 9
-        preferred_name: MMP9
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8904
-        label: peptidoglycan recognition protein 1
-        preferred_name: PGLYRP1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8498
-        label: orosomucoid 1
-        preferred_name: ORM1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10489
-        label: S100 calcium binding protein A12
-        preferred_name: S100A12
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3623
-        label: ficolin 1
-        preferred_name: FCN1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000094
-        label: granulocyte
-        preferred_name: granulocyte
-      - id: http://purl.obolibrary.org/obo/CL_0000771
-        label: eosinophil
-        preferred_name: eosinophil
-    biomarkers:
-      - id: http://identifiers.org/hgnc/4855
-        label: histidine decarboxylase
-        preferred_name: HDC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2014
-        label: Charcot-Leyden crystal galectin
-        preferred_name: CLC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2298
-        label: carboxypeptidase A3
-        preferred_name: CPA3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6017
-        label: interleukin 5 receptor subunit alpha
-        preferred_name: IL5RA
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4171
-        label: GATA binding protein 2
-        preferred_name: GATA2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7317
-        label: membrane spanning 4-domains A3
-        preferred_name: MS4A3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/17890
-        label: hematopoietic prostaglandin D synthase
-        preferred_name: HPGDS
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4015
-        label: FUT4
-        preferred_name: CD15
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3609
-        label: FCER1A
-        preferred_name: FcER1A
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/4015
-        label: FUT4
-        preferred_name: CD15
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6017
-        label: IL5RA
-        preferred_name: CD125
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3609
-        label: FCER1A
-        preferred_name: FcER1A
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/4855
-        label: histidine decarboxylase
-        preferred_name: HDC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2014
-        label: Charcot-Leyden crystal galectin
-        preferred_name: CLC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2298
-        label: carboxypeptidase A3
-        preferred_name: CPA3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6017
-        label: interleukin 5 receptor subunit alpha
-        preferred_name: IL5RA
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4171
-        label: GATA binding protein 2
-        preferred_name: GATA2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7317
-        label: membrane spanning 4-domains A3
-        preferred_name: MS4A3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/17890
-        label: hematopoietic prostaglandin D synthase
-        preferred_name: HPGDS
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000094
-        label: granulocyte
-        preferred_name: granulocyte
-      - id: http://purl.obolibrary.org/obo/CL_0000767
-        label: basophil
-        preferred_name: basophil
-    biomarkers:
-      - id: http://identifiers.org/hgnc/4855
-        label: histidine decarboxylase
-        preferred_name: HDC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2014
-        label: Charcot-Leyden crystal galectin
-        preferred_name: CLC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2298
-        label: carboxypeptidase A3
-        preferred_name: CPA3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6017
-        label: interleukin 5 receptor subunit alpha
-        preferred_name: IL5RA
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4171
-        label: GATA binding protein 2
-        preferred_name: GATA2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7317
-        label: membrane spanning 4-domains A3
-        preferred_name: MS4A3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6012
-        label: interleukin 3 receptor subunit alpha
-        preferred_name: IL3RA
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1604
-        label: CCR3
-        preferred_name: CCR3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3609
-        label: FCER1A
-        preferred_name: FcER1A
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/6012
-        label: IL3RA
-        preferred_name: CD123
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6017
-        label: IL5RA
-        preferred_name: CD125
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1604
-        label: CCR3
-        preferred_name: CCR3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3609
-        label: FCER1A
-        preferred_name: FcER1A
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/4855
-        label: histidine decarboxylase
-        preferred_name: HDC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2014
-        label: Charcot-Leyden crystal galectin
-        preferred_name: CLC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2298
-        label: carboxypeptidase A3
-        preferred_name: CPA3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6017
-        label: interleukin 5 receptor subunit alpha
-        preferred_name: IL5RA
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4171
-        label: GATA binding protein 2
-        preferred_name: GATA2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7317
-        label: membrane spanning 4-domains A3
-        preferred_name: MS4A3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6012
-        label: interleukin 3 receptor subunit alpha
-        preferred_name: IL3RA
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000084
-        label: T cell
-        preferred_name: T lymphocytes
-      - id: http://purl.obolibrary.org/obo/CL_0000895
-        label: naive thymus-derived CD4-positive, alpha-beta T cell
-        preferred_name: CD4 naive
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1673
-        label: CD3d molecule
-        preferred_name: CD3D
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12156
-        label: T cell receptor beta constant 1
-        preferred_name: TRBC1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6024
-        label: interleukin 7 receptor
-        preferred_name: IL7R
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/30698
-        label: T cell receptor associated transmembrane adaptor 1
-        preferred_name: TRAT1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6711
-        label: lymphotoxin beta
-        preferred_name: LTB
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/636
-        label: aquaporin 3 (Gill blood group)
-        preferred_name: AQP3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11935
-        label: CD40 ligand
-        preferred_name: CD40LG
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1673
-        label: CD3d molecule
-        preferred_name: CD3D
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12156
-        label: T cell receptor beta constant 1
-        preferred_name: TRBC1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6024
-        label: interleukin 7 receptor
-        preferred_name: IL7R
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/30698
-        label: T cell receptor associated transmembrane adaptor 1
-        preferred_name: TRAT1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6711
-        label: lymphotoxin beta
-        preferred_name: LTB
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/636
-        label: aquaporin 3 (Gill blood group)
-        preferred_name: AQP3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11935
-        label: CD40 ligand
-        preferred_name: CD40LG
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000084
-        label: T cell
-        preferred_name: T lymphocytes
-      - id: http://purl.obolibrary.org/obo/CL_0000897
-        label: CD4-positive, alpha-beta memory T cell
-        preferred_name: CD4 T cell memory
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1673
-        label: CD3d molecule
-        preferred_name: CD3D
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4054
-        label: interferon alpha inducible protein 6
-        preferred_name: IFI6
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6563
-        label: galectin 3
-        preferred_name: LGALS3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/26974
-        label: PDZ domain containing 8
-        preferred_name: PDZD8
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/537
-        label: annexin A2
-        preferred_name: ANXA2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2360
-        label: cysteine rich protein 1
-        preferred_name: CRIP1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1673
-        label: CD3d molecule
-        preferred_name: CD3D
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4054
-        label: interferon alpha inducible protein 6
-        preferred_name: IFI6
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6563
-        label: galectin 3
-        preferred_name: LGALS3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/26974
-        label: PDZ domain containing 8
-        preferred_name: PDZD8
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/537
-        label: annexin A2
-        preferred_name: ANXA2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2360
-        label: cysteine rich protein 1
-        preferred_name: CRIP1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000084
-        label: T cell
-        preferred_name: T lymphocytes
-      - id: http://purl.obolibrary.org/obo/CL_0000897
-        label: CD4-positive, alpha-beta memory T cell
-        preferred_name: CD4 T cell memory
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1673
-        label: CD3d molecule
-        preferred_name: CD3D
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6015
-        label: interleukin 4 receptor
-        preferred_name: IL4R
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11362
-        label: signal transducer and activator of transcription 1
-        preferred_name: STAT1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6817
-        label: mal, T cell differentiation protein
-        preferred_name: MAL
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/19383
-        label: suppressor of cytokine signaling 1
-        preferred_name: SOCS1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6001
-        label: interleukin 2
-        preferred_name: IL2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8109
-        label: ornithine decarboxylase 1
-        preferred_name: ODC1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/19129
-        label: phosphoserine aminotransferase 1
-        preferred_name: PSAT1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12729
-        label: tryptophanyl-tRNA synthetase 1
-        preferred_name: WARS
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9721
-        label: pyrroline-5-carboxylate reductase 1
-        preferred_name: PYCR1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11892
-        label: tumor necrosis factor
-        preferred_name: TNF
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7849
-        label: NME/NM23 nucleoside diphosphate kinase 1
-        preferred_name: NME1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1673
-        label: CD3d molecule
-        preferred_name: CD3D
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6015
-        label: interleukin 4 receptor
-        preferred_name: IL4R
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11362
-        label: signal transducer and activator of transcription 1
-        preferred_name: STAT1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6817
-        label: mal, T cell differentiation protein
-        preferred_name: MAL
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/19383
-        label: suppressor of cytokine signaling 1
-        preferred_name: SOCS1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6001
-        label: interleukin 2
-        preferred_name: IL2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8109
-        label: ornithine decarboxylase 1
-        preferred_name: ODC1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/19129
-        label: phosphoserine aminotransferase 1
-        preferred_name: PSAT1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12729
-        label: tryptophanyl-tRNA synthetase 1
-        preferred_name: WARS
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9721
-        label: pyrroline-5-carboxylate reductase 1
-        preferred_name: PYCR1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11892
-        label: tumor necrosis factor
-        preferred_name: TNF
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7849
-        label: NME/NM23 nucleoside diphosphate kinase 1
-        preferred_name: NME1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000084
-        label: T cell
-        preferred_name: T lymphocytes
-      - id: http://purl.obolibrary.org/obo/CL_0001087
-        label: >-
-          effector memory CD4-positive, alpha-beta T cell, terminally
-          differentiated
-        preferred_name: CD4 T cell effector memory CD45RA
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1673
-        label: CD3d molecule
-        preferred_name: CD3D
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6015
-        label: interleukin 4 receptor
-        preferred_name: IL4R
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11362
-        label: signal transducer and activator of transcription 1
-        preferred_name: STAT1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6817
-        label: mal, T cell differentiation protein
-        preferred_name: MAL
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/19383
-        label: suppressor of cytokine signaling 1
-        preferred_name: SOCS1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6001
-        label: interleukin 2
-        preferred_name: IL2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8109
-        label: ornithine decarboxylase 1
-        preferred_name: ODC1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/19129
-        label: phosphoserine aminotransferase 1
-        preferred_name: PSAT1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12729
-        label: tryptophanyl-tRNA synthetase 1
-        preferred_name: WARS
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9721
-        label: pyrroline-5-carboxylate reductase 1
-        preferred_name: PYCR1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11892
-        label: tumor necrosis factor
-        preferred_name: TNF
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7849
-        label: NME/NM23 nucleoside diphosphate kinase 1
-        preferred_name: NME1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1673
-        label: CD3d molecule
-        preferred_name: CD3D
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6015
-        label: interleukin 4 receptor
-        preferred_name: IL4R
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11362
-        label: signal transducer and activator of transcription 1
-        preferred_name: STAT1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6817
-        label: mal, T cell differentiation protein
-        preferred_name: MAL
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/19383
-        label: suppressor of cytokine signaling 1
-        preferred_name: SOCS1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6001
-        label: interleukin 2
-        preferred_name: IL2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/8109
-        label: ornithine decarboxylase 1
-        preferred_name: ODC1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/19129
-        label: phosphoserine aminotransferase 1
-        preferred_name: PSAT1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12729
-        label: tryptophanyl-tRNA synthetase 1
-        preferred_name: WARS
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9721
-        label: pyrroline-5-carboxylate reductase 1
-        preferred_name: PYCR1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11892
-        label: tumor necrosis factor
-        preferred_name: TNF
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7849
-        label: NME/NM23 nucleoside diphosphate kinase 1
-        preferred_name: NME1
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000084
-        label: T cell
-        preferred_name: T lymphocytes
-      - id: http://purl.obolibrary.org/obo/CL_0000900
-        label: naive thymus-derived CD8-positive, alpha-beta T cell
-        preferred_name: CD8 naive
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1673
-        label: CD3d molecule
-        preferred_name: CD3D
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/636
-        label: aquaporin 3 (Gill blood group)
-        preferred_name: AQP3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6024
-        label: interleukin 7 receptor
-        preferred_name: IL7R
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1673
-        label: CD3d molecule
-        preferred_name: CD3D
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/636
-        label: aquaporin 3 (Gill blood group)
-        preferred_name: AQP3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6024
-        label: interleukin 7 receptor
-        preferred_name: IL7R
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000084
-        label: T cell
-        preferred_name: T lymphocytes
-      - id: http://purl.obolibrary.org/obo/CL_0000897
-        label: CD4-positive, alpha-beta memory T cell
-        preferred_name: CD4 T cell memory
-    biomarkers:
-      - id: http://identifiers.org/hgnc/26974
-        label: PDZ domain containing 8
-        preferred_name: PDZD8
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/16647
-        label: C-X-C motif chemokine receptor 6
-        preferred_name: CXCR6
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9360
-        label: perforin 1
-        preferred_name: PRF1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2360
-        label: cysteine rich protein 1
-        preferred_name: CRIP1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6134
-        label: integrin subunit alpha 1
-        preferred_name: ITGA1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4709
-        label: granzyme B
-        preferred_name: GZMB
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/26974
-        label: PDZ domain containing 8
-        preferred_name: PDZD8
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/16647
-        label: C-X-C motif chemokine receptor 6
-        preferred_name: CXCR6
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9360
-        label: perforin 1
-        preferred_name: PRF1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2360
-        label: cysteine rich protein 1
-        preferred_name: CRIP1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6134
-        label: integrin subunit alpha 1
-        preferred_name: ITGA1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4709
-        label: granzyme B
-        preferred_name: GZMB
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000084
-        label: T cell
-        preferred_name: T lymphocytes
-      - id: http://purl.obolibrary.org/obo/CL_0001050
-        label: effector CD8-positive, alpha-beta T cell
-        preferred_name: CD8 T cell effector memory
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1673
-        label: CD3d molecule
-        preferred_name: CD3D
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10627
-        label: C-C motif chemokine ligand 3
-        preferred_name: CCL3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10630
-        label: C-C motif chemokine ligand 4
-        preferred_name: CCL4
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/24961
-        label: HOP homeobox
-        preferred_name: HOPX
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4709
-        label: granzyme B
-        preferred_name: GZMB
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1673
-        label: CD3d molecule
-        preferred_name: CD3D
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10627
-        label: C-C motif chemokine ligand 3
-        preferred_name: CCL3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10630
-        label: C-C motif chemokine ligand 4
-        preferred_name: CCL4
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/24961
-        label: HOP homeobox
-        preferred_name: HOPX
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4709
-        label: granzyme B
-        preferred_name: GZMB
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000084
-        label: T cell
-        preferred_name: T lymphocytes
-      - id: http://purl.obolibrary.org/obo/CL_0001062
-        label: >-
-          effector memory CD8-positive, alpha-beta T cell, terminally
-          differentiated
-        preferred_name: CD8 T cell effector memory CD45RA
-    biomarkers:
-      - id: http://identifiers.org/hgnc/1673
-        label: CD3d molecule
-        preferred_name: CD3D
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9360
-        label: perforin 1
-        preferred_name: PRF1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/24961
-        label: HOP homeobox
-        preferred_name: HOPX
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7830
-        label: natural killer cell granule protein 7
-        preferred_name: NKG7
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4414
-        label: granulysin
-        preferred_name: GNLY
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5411
-        label: interferon induced protein with tetratricopeptide repeats 3
-        preferred_name: IFIT3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6378
-        label: killer cell lectin like receptor D1
-        preferred_name: KLRD1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10632
-        label: C-C motif chemokine ligand 5
-        preferred_name: CCL5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/1673
-        label: CD3d molecule
-        preferred_name: CD3D
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9360
-        label: perforin 1
-        preferred_name: PRF1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/24961
-        label: HOP homeobox
-        preferred_name: HOPX
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/7830
-        label: natural killer cell granule protein 7
-        preferred_name: NKG7
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4414
-        label: granulysin
-        preferred_name: GNLY
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/5411
-        label: interferon induced protein with tetratricopeptide repeats 3
-        preferred_name: IFIT3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6378
-        label: killer cell lectin like receptor D1
-        preferred_name: KLRD1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10632
-        label: C-C motif chemokine ligand 5
-        preferred_name: CCL5
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000084
-        label: T cell
-        preferred_name: T lymphocytes
-      - id: http://purl.obolibrary.org/obo/CL_0002437
-        label: mature CD8 single-positive thymocyte
-        preferred_name: mature CD8 T cell
-    biomarkers:
-      - id: http://identifiers.org/hgnc/10632
-        label: C-C motif chemokine ligand 5
-        preferred_name: CCL5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4710
-        label: granzyme H
-        preferred_name: GZMH
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/16830
-        label: interleukin 32
-        preferred_name: IL32
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8a molecule
-        preferred_name: CD8A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3068
-        label: dual specificity phosphatase 2
-        preferred_name: DUSP2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6380
-        label: killer cell lectin like receptor G1
-        preferred_name: KLRG1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12276
-        label: T cell receptor gamma constant 2
-        preferred_name: TRGC2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4711
-        label: granzyme K
-        preferred_name: GZMK
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/11922
-        label: CD27
-        preferred_name: CD27+/
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1667
-        label: CD38
-        preferred_name: CD38
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA+/
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/10720
-        label: SELL
-        preferred_name: CD62L+/
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7+/
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/11922
-        label: CD27
-        preferred_name: CD27+/
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1667
-        label: CD38
-        preferred_name: CD38
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/9666
-        label: PTPRC
-        preferred_name: CD45RA+/
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/10720
-        label: SELL
-        preferred_name: CD62L+/
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1608
-        label: CCR7
-        preferred_name: CCR7+/
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/10632
-        label: C-C motif chemokine ligand 5
-        preferred_name: CCL5
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4710
-        label: granzyme H
-        preferred_name: GZMH
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/16830
-        label: interleukin 32
-        preferred_name: IL32
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8a molecule
-        preferred_name: CD8A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3068
-        label: dual specificity phosphatase 2
-        preferred_name: DUSP2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6380
-        label: killer cell lectin like receptor G1
-        preferred_name: KLRG1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12276
-        label: T cell receptor gamma constant 2
-        preferred_name: TRGC2
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4711
-        label: granzyme K
-        preferred_name: GZMK
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000814
-        label: mature NK T cell
-        preferred_name: NK lymphocytes
-      - id: http://purl.obolibrary.org/obo/CL_0000938
-        label: CD16-negative, CD56-bright natural killer cell, human
-        preferred_name: CD56 bright Natural killer
-    biomarkers:
-      - id: http://identifiers.org/hgnc/12253
-        label: T cell receptor delta constant
-        preferred_name: TRDC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6373
-        label: killer cell lectin like receptor B1
-        preferred_name: KLRB1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2064
-        label: chloride intracellular channel 3
-        preferred_name: CLIC3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2479
-        label: cystatin F
-        preferred_name: CST7
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10645
-        label: X-C motif chemokine ligand 1
-        preferred_name: XCL1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4711
-        label: granzyme K
-        preferred_name: GZMK
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7315
-        label: MS4A1
-        preferred_name: CD20
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56hi
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7315
-        label: MS4A1
-        preferred_name: CD20
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56hi
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/12253
-        label: T cell receptor delta constant
-        preferred_name: TRDC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6373
-        label: killer cell lectin like receptor B1
-        preferred_name: KLRB1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2064
-        label: chloride intracellular channel 3
-        preferred_name: CLIC3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2479
-        label: cystatin F
-        preferred_name: CST7
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/10645
-        label: X-C motif chemokine ligand 1
-        preferred_name: XCL1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4711
-        label: granzyme K
-        preferred_name: GZMK
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000814
-        label: mature NK T cell
-        preferred_name: NK lymphocytes
-      - id: http://purl.obolibrary.org/obo/CL_0000824
-        label: mature natural killer cell
-        preferred_name: mature Natural killer
-    biomarkers:
-      - id: http://identifiers.org/hgnc/12253
-        label: T cell receptor delta constant
-        preferred_name: TRDC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6373
-        label: killer cell lectin like receptor B1
-        preferred_name: KLRB1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2064
-        label: chloride intracellular channel 3
-        preferred_name: CLIC3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2479
-        label: cystatin F
-        preferred_name: CST7
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4708
-        label: granzyme A
-        preferred_name: GZMA
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4709
-        label: granzyme B
-        preferred_name: GZMB
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9360
-        label: perforin 1
-        preferred_name: PRF1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3619
-        label: Fc gamma receptor IIIa
-        preferred_name: FCGR3A
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7315
-        label: MS4A1
-        preferred_name: CD20
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/921
-        label: B3GAT1
-        preferred_name: CD57+/
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1633
-        label: CD19
-        preferred_name: CD19
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7315
-        label: MS4A1
-        preferred_name: CD20
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/7656
-        label: NCAM1
-        preferred_name: CD56
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/3619
-        label: FCGR3A
-        preferred_name: CD16
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/921
-        label: B3GAT1
-        preferred_name: CD57+/
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/12253
-        label: T cell receptor delta constant
-        preferred_name: TRDC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6373
-        label: killer cell lectin like receptor B1
-        preferred_name: KLRB1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2064
-        label: chloride intracellular channel 3
-        preferred_name: CLIC3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/2479
-        label: cystatin F
-        preferred_name: CST7
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4708
-        label: granzyme A
-        preferred_name: GZMA
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/4709
-        label: granzyme B
-        preferred_name: GZMB
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/9360
-        label: perforin 1
-        preferred_name: PRF1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/3619
-        label: Fc gamma receptor IIIa
-        preferred_name: FCGR3A
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
-  - anatomical_structures:
-      - id: http://purl.obolibrary.org/obo/UBERON_0000178
-        label: Blood
-        preferred_name: Blood
-    cell_types:
-      - id: http://purl.obolibrary.org/obo/CL_0000084
-        label: T cell
-        preferred_name: T lymphocytes
-      - id: http://purl.obolibrary.org/obo/CL_0000815
-        label: regulatory T cell
-        preferred_name: T regulatory
-    biomarkers:
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12156
-        label: T cell receptor beta constant 1
-        preferred_name: TRBC1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6024
-        label: interleukin 7 receptor
-        preferred_name: IL7R
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/30698
-        label: T cell receptor associated transmembrane adaptor 1
-        preferred_name: TRAT1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6711
-        label: lymphotoxin beta
-        preferred_name: LTB
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/636
-        label: aquaporin 3 (Gill blood group)
-        preferred_name: AQP3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6106
-        label: forkhead box P3
-        preferred_name: FOXP3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11910
-        label: TNF receptor superfamily member 25
-        preferred_name: TNFRSF25
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/26838
-        label: T cell immunoreceptor with Ig and ITIM domains
-        preferred_name: TIGIT
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1607
-        label: C-C motif chemokine receptor 6
-        preferred_name: CCR6
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11918
-        label: TNF receptor superfamily member 4
-        preferred_name: TNFRSF4
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4+/
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8+/
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6008
-        label: IL2RA
-        preferred_name: CD25
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2505
-        label: CTLA4
-        preferred_name: CTLA4
-        biomarker_type: protein
-    biomarkers_protein:
-      - id: http://identifiers.org/hgnc/1674
-        label: CD3E
-        preferred_name: CD3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1678
-        label: CD4
-        preferred_name: CD4+/
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/1706
-        label: CD8A
-        preferred_name: CD8+/
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6008
-        label: IL2RA
-        preferred_name: CD25
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/6106
-        label: FOXP3
-        preferred_name: FOXP3
-        biomarker_type: protein
-      - id: http://identifiers.org/hgnc/2505
-        label: CTLA4
-        preferred_name: CTLA4
-        biomarker_type: protein
-    biomarkers_gene:
-      - id: http://identifiers.org/hgnc/12029
-        label: T cell receptor alpha constant
-        preferred_name: TRAC
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/12156
-        label: T cell receptor beta constant 1
-        preferred_name: TRBC1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6024
-        label: interleukin 7 receptor
-        preferred_name: IL7R
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/30698
-        label: T cell receptor associated transmembrane adaptor 1
-        preferred_name: TRAT1
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6711
-        label: lymphotoxin beta
-        preferred_name: LTB
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/636
-        label: aquaporin 3 (Gill blood group)
-        preferred_name: AQP3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/6106
-        label: forkhead box P3
-        preferred_name: FOXP3
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11910
-        label: TNF receptor superfamily member 25
-        preferred_name: TNFRSF25
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/26838
-        label: T cell immunoreceptor with Ig and ITIM domains
-        preferred_name: TIGIT
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/1607
-        label: C-C motif chemokine receptor 6
-        preferred_name: CCR6
-        biomarker_type: gene
-      - id: http://identifiers.org/hgnc/11918
-        label: TNF receptor superfamily member 4
-        preferred_name: TNFRSF4
-        biomarker_type: gene
-    biomarkers_lipids: []
-    biomarkers_meta: []
-    biomarkers_prot: []
-    ftu_types: []
-    references: []
+  anatomical_structures:
+    - id: UBERON:0013702
+      class_type: AnatomicalStructure
+      ccf_pref_label: body proper
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+    - id: UBERON:0000178
+      class_type: AnatomicalStructure
+      ccf_pref_label: Blood
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0013702
+  cell_types:
+    - id: CL:0000000
+      class_type: CellType
+      ccf_pref_label: cell type
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+    - id: CL:0000945
+      class_type: CellType
+      ccf_pref_label: B lineage
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000816
+      class_type: CellType
+      ccf_pref_label: immature B cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000945
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1633
+            - HGNC:8619
+            - HGNC:5541
+            - HGNC:7315
+            - HGNC:7154
+            - HGNC:5480
+          references:
+            - DOI:10.3389/fimmu.2012.00302
+    - id: CL:0000787
+      class_type: CellType
+      ccf_pref_label: memory B cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000945
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1633
+            - HGNC:7315
+            - HGNC:5478
+            - HGNC:5525
+            - HGNC:6210
+            - HGNC:10720
+            - HGNC:11922
+            - HGNC:2336
+            - HGNC:1643
+            - HGNC:5541
+            - HGNC:5480
+          references:
+            - DOI:10.1002/jcla.20001
+    - id: CL:0000788
+      class_type: CellType
+      ccf_pref_label: naive B cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000945
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1633
+            - HGNC:8619
+            - HGNC:5541
+            - HGNC:7315
+            - HGNC:11919
+            - HGNC:3612
+            - HGNC:2336
+            - HGNC:5480
+            - HGNC:11922
+            - HGNC:7154
+            - HGNC:1667
+            - HGNC:1645
+          references:
+            - DOI:10.1038/s41467-019-12464-3
+    - id: CL:0000818
+      class_type: CellType
+      ccf_pref_label: transitional B cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000945
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:38476
+            - HGNC:11200
+            - HGNC:1004
+            - HGNC:11648
+            - HGNC:18504
+            - HGNC:1645
+            - HGNC:1633
+            - HGNC:7315
+            - HGNC:2336
+            - HGNC:1643
+            - HGNC:5480
+            - HGNC:11922
+            - HGNC:7154
+            - HGNC:1667
+            - HGNC:1685
+          references:
+            - DOI:10.1073/pnas.172384399
+    - id: CL:0001056
+      class_type: CellType
+      ccf_pref_label: dendritic cell (DC)
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0002394
+      class_type: CellType
+      ccf_pref_label: dendritic cell type 1 (DC1)
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0001056
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:26705
+            - HGNC:5951
+            - HGNC:1625
+            - HGNC:1674
+            - HGNC:1633
+            - HGNC:1628
+            - HGNC:3619
+            - HGNC:7656
+            - ASCTB-TEMP:hla-dr
+            - HGNC:6152
+            - HGNC:6012
+            - HGNC:11784
+            - HGNC:1636
+          references:
+            - DOI:10.3109/10428194.2013.781167
+    - id: CL:0002399
+      class_type: CellType
+      ccf_pref_label: dendritic cell type 2 (DC2)
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0001056
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1636
+            - HGNC:3609
+            - HGNC:16916
+            - HGNC:4943
+            - HGNC:4940
+            - HGNC:3618
+            - HGNC:1674
+            - HGNC:1633
+            - HGNC:1628
+            - HGNC:3619
+            - HGNC:7656
+            - ASCTB-TEMP:hla-dr
+            - HGNC:6152
+            - HGNC:6012
+            - HGNC:11784
+          references:
+            - DOI:10.1016/j.immuni.2017.04.019
+        - members:
+            - HGNC:1636
+            - HGNC:3609
+            - HGNC:16916
+            - HGNC:10498
+            - HGNC:10499
+            - HGNC:1663
+            - HGNC:1631
+            - HGNC:1674
+            - HGNC:1633
+            - HGNC:1628
+            - HGNC:3619
+            - HGNC:7656
+            - ASCTB-TEMP:hla-dr
+            - HGNC:6152
+            - HGNC:6012
+            - HGNC:11784
+          references:
+            - DOI:10.1002/cyto.a.23724
+    - id: CL:0001058
+      class_type: CellType
+      ccf_pref_label: Plasmacytoid Dendritic Cell (pDC)
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0001056
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:4709
+            - HGNC:5713
+            - HGNC:8824
+            - HGNC:1674
+            - HGNC:1633
+            - HGNC:1628
+            - HGNC:3619
+            - HGNC:7656
+            - ASCTB-TEMP:hla-dr
+            - HGNC:6152
+            - HGNC:6012
+            - HGNC:13258
+          references:
+            - DOI:10.1111/bjh.14467
+    - id: CL:0000840
+      class_type: CellType
+      ccf_pref_label: transitional Dendritic Cell (tDC)
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0001056
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:905
+            - HGNC:10875
+            - HGNC:1643
+            - HGNC:1674
+            - HGNC:1633
+            - HGNC:1628
+            - HGNC:3619
+            - HGNC:7656
+            - ASCTB-TEMP:hla-dr
+            - HGNC:6152
+            - HGNC:6012
+          references:
+            - DOI:10.1182/blood-2004-02-0769
+    - id: CL:0000576
+      class_type: CellType
+      ccf_pref_label: monocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0001054
+      class_type: CellType
+      ccf_pref_label: CD14 monocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000576
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:2464
+            - HGNC:2475
+            - HGNC:1628
+            - HGNC:10498
+            - HGNC:10499
+            - HGNC:3623
+            - HGNC:1674
+            - HGNC:1633
+            - HGNC:7656
+            - HGNC:3619
+            - HGNC:6152
+            - HGNC:3613
+            - HGNC:10720
+            - HGNC:1603
+            - HGNC:1663
+          references: []
+    - id: CL:0002396
+      class_type: CellType
+      ccf_pref_label: CD16 monocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000576
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:24149
+            - HGNC:13378
+            - HGNC:5414
+            - HGNC:3619
+            - HGNC:16642
+            - HGNC:14189
+            - HGNC:1674
+            - HGNC:1633
+            - HGNC:7656
+            - HGNC:1628
+            - HGNC:2558
+            - HGNC:2561
+          references: []
+    - id: CL:0000775
+      class_type: CellType
+      ccf_pref_label: neutrophilic granulocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+        - CL:0000775
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:6149
+            - HGNC:7176
+            - HGNC:8904
+            - HGNC:8498
+            - HGNC:10489
+            - HGNC:3623
+            - HGNC:500
+            - HGNC:4015
+            - HGNC:11249
+            - HGNC:1820
+            - HGNC:6140
+            - HGNC:1645
+            - HGNC:3619
+          references: []
+    - id: CL:0000094
+      class_type: CellType
+      ccf_pref_label: granulocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000771
+      class_type: CellType
+      ccf_pref_label: eosinophil
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000094
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:4855
+            - HGNC:2014
+            - HGNC:2298
+            - HGNC:6017
+            - HGNC:4171
+            - HGNC:7317
+            - HGNC:17890
+            - HGNC:4015
+            - HGNC:3609
+          references: []
+    - id: CL:0000767
+      class_type: CellType
+      ccf_pref_label: basophil
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000094
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:4855
+            - HGNC:2014
+            - HGNC:2298
+            - HGNC:6017
+            - HGNC:4171
+            - HGNC:7317
+            - HGNC:6012
+            - HGNC:1604
+            - HGNC:3609
+          references: []
+    - id: CL:0000084
+      class_type: CellType
+      ccf_pref_label: T lymphocytes
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000895
+      class_type: CellType
+      ccf_pref_label: CD4 naive
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000084
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1673
+            - HGNC:12029
+            - HGNC:12156
+            - HGNC:6024
+            - HGNC:30698
+            - HGNC:6711
+            - HGNC:636
+            - HGNC:11935
+            - HGNC:1674
+            - HGNC:1678
+            - HGNC:1706
+            - HGNC:9666
+            - HGNC:1608
+          references: []
+    - id: CL:0000897
+      class_type: CellType
+      ccf_pref_label: CD4 T cell memory
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000084
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1673
+            - HGNC:12029
+            - HGNC:4054
+            - HGNC:6563
+            - HGNC:26974
+            - HGNC:537
+            - HGNC:2360
+            - HGNC:1674
+            - HGNC:1678
+            - HGNC:1706
+            - HGNC:9666
+            - HGNC:1608
+          references: []
+        - members:
+            - HGNC:1673
+            - HGNC:12029
+            - HGNC:6015
+            - HGNC:11362
+            - HGNC:6817
+            - HGNC:19383
+            - HGNC:6001
+            - HGNC:8109
+            - HGNC:19129
+            - HGNC:12729
+            - HGNC:9721
+            - HGNC:11892
+            - HGNC:7849
+            - HGNC:1674
+            - HGNC:1678
+            - HGNC:1706
+            - HGNC:9666
+            - HGNC:1608
+          references: []
+        - members:
+            - HGNC:26974
+            - HGNC:16647
+            - HGNC:9360
+            - HGNC:2360
+            - HGNC:6134
+            - HGNC:4709
+            - HGNC:1674
+            - HGNC:1678
+            - HGNC:1706
+            - HGNC:9666
+            - HGNC:1608
+          references: []
+    - id: CL:0001087
+      class_type: CellType
+      ccf_pref_label: CD4 T cell effector memory CD45RA
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000084
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1673
+            - HGNC:12029
+            - HGNC:6015
+            - HGNC:11362
+            - HGNC:6817
+            - HGNC:19383
+            - HGNC:6001
+            - HGNC:8109
+            - HGNC:19129
+            - HGNC:12729
+            - HGNC:9721
+            - HGNC:11892
+            - HGNC:7849
+            - HGNC:1674
+            - HGNC:1678
+            - HGNC:1706
+            - HGNC:9666
+            - HGNC:1608
+          references: []
+    - id: CL:0000900
+      class_type: CellType
+      ccf_pref_label: CD8 naive
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000084
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1673
+            - HGNC:12029
+            - HGNC:636
+            - HGNC:6024
+            - HGNC:1674
+            - HGNC:1678
+            - HGNC:1706
+            - HGNC:9666
+            - HGNC:1608
+          references: []
+    - id: CL:0001050
+      class_type: CellType
+      ccf_pref_label: CD8 T cell effector memory
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000084
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1673
+            - HGNC:12029
+            - HGNC:10627
+            - HGNC:10630
+            - HGNC:24961
+            - HGNC:4709
+            - HGNC:1674
+            - HGNC:1678
+            - HGNC:1706
+            - HGNC:9666
+            - HGNC:1608
+          references: []
+    - id: CL:0001062
+      class_type: CellType
+      ccf_pref_label: CD8 T cell effector memory CD45RA
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000084
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1673
+            - HGNC:12029
+            - HGNC:9360
+            - HGNC:24961
+            - HGNC:7830
+            - HGNC:4414
+            - HGNC:5411
+            - HGNC:6378
+            - HGNC:10632
+            - HGNC:1674
+            - HGNC:1678
+            - HGNC:1706
+            - HGNC:9666
+            - HGNC:1608
+          references: []
+    - id: CL:0002437
+      class_type: CellType
+      ccf_pref_label: mature CD8 T cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000084
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:10632
+            - HGNC:4710
+            - HGNC:16830
+            - HGNC:1706
+            - HGNC:3068
+            - HGNC:6380
+            - HGNC:12276
+            - HGNC:4711
+            - HGNC:1674
+            - HGNC:1678
+            - HGNC:11922
+            - HGNC:1667
+            - HGNC:9666
+            - HGNC:10720
+            - HGNC:1608
+          references: []
+    - id: CL:0000814
+      class_type: CellType
+      ccf_pref_label: NK lymphocytes
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000938
+      class_type: CellType
+      ccf_pref_label: CD56 bright Natural killer
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000814
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:12253
+            - HGNC:6373
+            - HGNC:2064
+            - HGNC:2479
+            - HGNC:10645
+            - HGNC:4711
+            - HGNC:1674
+            - HGNC:1633
+            - HGNC:7315
+            - HGNC:7656
+            - HGNC:3619
+          references: []
+    - id: CL:0000824
+      class_type: CellType
+      ccf_pref_label: mature Natural killer
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000814
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:12253
+            - HGNC:6373
+            - HGNC:2064
+            - HGNC:2479
+            - HGNC:4708
+            - HGNC:4709
+            - HGNC:9360
+            - HGNC:3619
+            - HGNC:1674
+            - HGNC:1633
+            - HGNC:7315
+            - HGNC:7656
+            - HGNC:921
+          references: []
+    - id: CL:0000815
+      class_type: CellType
+      ccf_pref_label: T regulatory
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000084
+      ccf_located_in:
+        - UBERON:0000178
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:12029
+            - HGNC:12156
+            - HGNC:6024
+            - HGNC:30698
+            - HGNC:6711
+            - HGNC:636
+            - HGNC:6106
+            - HGNC:11910
+            - HGNC:26838
+            - HGNC:1607
+            - HGNC:11918
+            - HGNC:1674
+            - HGNC:1678
+            - HGNC:1706
+            - HGNC:6008
+            - HGNC:2505
+          references: []
+  biomarkers:
+    - id: HGNC:1633
+      class_type: Biomarker
+      ccf_pref_label: CD19
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:8619
+      class_type: Biomarker
+      ccf_pref_label: PAX5
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:5541
+      class_type: Biomarker
+      ccf_pref_label: IGHM
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7315
+      class_type: Biomarker
+      ccf_pref_label: MS4A1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7154
+      class_type: Biomarker
+      ccf_pref_label: CD10
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:5480
+      class_type: Biomarker
+      ccf_pref_label: IgD+/
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:5478
+      class_type: Biomarker
+      ccf_pref_label: IGHA1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:5525
+      class_type: Biomarker
+      ccf_pref_label: IGHG1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6210
+      class_type: Biomarker
+      ccf_pref_label: CD82
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:10720
+      class_type: Biomarker
+      ccf_pref_label: SELL
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11922
+      class_type: Biomarker
+      ccf_pref_label: CD27
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2336
+      class_type: Biomarker
+      ccf_pref_label: CD21
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1643
+      class_type: Biomarker
+      ccf_pref_label: CD22
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:11919
+      class_type: Biomarker
+      ccf_pref_label: CD40
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:3612
+      class_type: Biomarker
+      ccf_pref_label: FCER2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1667
+      class_type: Biomarker
+      ccf_pref_label: CD38+/lo
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1645
+      class_type: Biomarker
+      ccf_pref_label: CD24+/lo
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:38476
+      class_type: Biomarker
+      ccf_pref_label: IGLL5
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11200
+      class_type: Biomarker
+      ccf_pref_label: SOX4
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1004
+      class_type: Biomarker
+      ccf_pref_label: BCL7A
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11648
+      class_type: Biomarker
+      ccf_pref_label: TCL1A
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:18504
+      class_type: Biomarker
+      ccf_pref_label: FCRLA
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1685
+      class_type: Biomarker
+      ccf_pref_label: CD5
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:26705
+      class_type: Biomarker
+      ccf_pref_label: CLEC9A
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:5951
+      class_type: Biomarker
+      ccf_pref_label: CADM1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1625
+      class_type: Biomarker
+      ccf_pref_label: XCR1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1674
+      class_type: Biomarker
+      ccf_pref_label: CD3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1628
+      class_type: Biomarker
+      ccf_pref_label: CD14
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:3619
+      class_type: Biomarker
+      ccf_pref_label: CD16
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:7656
+      class_type: Biomarker
+      ccf_pref_label: CD56
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:hla-dr
+      class_type: Biomarker
+      ccf_pref_label: HLA-DR
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: true
+    - id: HGNC:6152
+      class_type: Biomarker
+      ccf_pref_label: CD11c+/lo
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:6012
+      class_type: Biomarker
+      ccf_pref_label: CD123
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:11784
+      class_type: Biomarker
+      ccf_pref_label: CD141hi
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1636
+      class_type: Biomarker
+      ccf_pref_label: CD1c-/lo
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:3609
+      class_type: Biomarker
+      ccf_pref_label: FCER1A
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:16916
+      class_type: Biomarker
+      ccf_pref_label: CLEC10A
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4943
+      class_type: Biomarker
+      ccf_pref_label: HLA-DQA2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4940
+      class_type: Biomarker
+      ccf_pref_label: HLA-DPB1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:3618
+      class_type: Biomarker
+      ccf_pref_label: FCGR2B
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:10498
+      class_type: Biomarker
+      ccf_pref_label: S100A8
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:10499
+      class_type: Biomarker
+      ccf_pref_label: S100A9
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1663
+      class_type: Biomarker
+      ccf_pref_label: CD36
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1631
+      class_type: Biomarker
+      ccf_pref_label: CD163
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4709
+      class_type: Biomarker
+      ccf_pref_label: GZMB
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:5713
+      class_type: Biomarker
+      ccf_pref_label: JCHAIN
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:8824
+      class_type: Biomarker
+      ccf_pref_label: SERPINF1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:13258
+      class_type: Biomarker
+      ccf_pref_label: CD303
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:905
+      class_type: Biomarker
+      ccf_pref_label: AXL
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:10875
+      class_type: Biomarker
+      ccf_pref_label: SIGLEC6
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2464
+      class_type: Biomarker
+      ccf_pref_label: VCAN
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2475
+      class_type: Biomarker
+      ccf_pref_label: CST3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:3623
+      class_type: Biomarker
+      ccf_pref_label: FCN1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:3613
+      class_type: Biomarker
+      ccf_pref_label: CD64
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1603
+      class_type: Biomarker
+      ccf_pref_label: CCR2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:24149
+      class_type: Biomarker
+      ccf_pref_label: HES4
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:13378
+      class_type: Biomarker
+      ccf_pref_label: MS4A7
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:5414
+      class_type: Biomarker
+      ccf_pref_label: IFITM3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:16642
+      class_type: Biomarker
+      ccf_pref_label: CXCL16
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:14189
+      class_type: Biomarker
+      ccf_pref_label: LST1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2558
+      class_type: Biomarker
+      ccf_pref_label: CX3CR1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:2561
+      class_type: Biomarker
+      ccf_pref_label: CXCR4
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:6149
+      class_type: Biomarker
+      ccf_pref_label: ITGAM
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7176
+      class_type: Biomarker
+      ccf_pref_label: MMP9
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:8904
+      class_type: Biomarker
+      ccf_pref_label: PGLYRP1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:8498
+      class_type: Biomarker
+      ccf_pref_label: ORM1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:10489
+      class_type: Biomarker
+      ccf_pref_label: S100A12
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:500
+      class_type: Biomarker
+      ccf_pref_label: CD13
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:4015
+      class_type: Biomarker
+      ccf_pref_label: CD15
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:11249
+      class_type: Biomarker
+      ccf_pref_label: CD43
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1820
+      class_type: Biomarker
+      ccf_pref_label: CD66b
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:6140
+      class_type: Biomarker
+      ccf_pref_label: CD49d
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:4855
+      class_type: Biomarker
+      ccf_pref_label: HDC
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2014
+      class_type: Biomarker
+      ccf_pref_label: CLC
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2298
+      class_type: Biomarker
+      ccf_pref_label: CPA3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6017
+      class_type: Biomarker
+      ccf_pref_label: IL5RA
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4171
+      class_type: Biomarker
+      ccf_pref_label: GATA2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7317
+      class_type: Biomarker
+      ccf_pref_label: MS4A3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:17890
+      class_type: Biomarker
+      ccf_pref_label: HPGDS
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1604
+      class_type: Biomarker
+      ccf_pref_label: CCR3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1673
+      class_type: Biomarker
+      ccf_pref_label: CD3D
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:12029
+      class_type: Biomarker
+      ccf_pref_label: TRAC
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:12156
+      class_type: Biomarker
+      ccf_pref_label: TRBC1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6024
+      class_type: Biomarker
+      ccf_pref_label: IL7R
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:30698
+      class_type: Biomarker
+      ccf_pref_label: TRAT1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6711
+      class_type: Biomarker
+      ccf_pref_label: LTB
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:636
+      class_type: Biomarker
+      ccf_pref_label: AQP3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11935
+      class_type: Biomarker
+      ccf_pref_label: CD40LG
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1678
+      class_type: Biomarker
+      ccf_pref_label: CD4
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1706
+      class_type: Biomarker
+      ccf_pref_label: CD8
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:9666
+      class_type: Biomarker
+      ccf_pref_label: CD45RA
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1608
+      class_type: Biomarker
+      ccf_pref_label: CCR7
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:4054
+      class_type: Biomarker
+      ccf_pref_label: IFI6
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6563
+      class_type: Biomarker
+      ccf_pref_label: LGALS3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:26974
+      class_type: Biomarker
+      ccf_pref_label: PDZD8
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:537
+      class_type: Biomarker
+      ccf_pref_label: ANXA2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2360
+      class_type: Biomarker
+      ccf_pref_label: CRIP1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6015
+      class_type: Biomarker
+      ccf_pref_label: IL4R
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11362
+      class_type: Biomarker
+      ccf_pref_label: STAT1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6817
+      class_type: Biomarker
+      ccf_pref_label: MAL
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:19383
+      class_type: Biomarker
+      ccf_pref_label: SOCS1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6001
+      class_type: Biomarker
+      ccf_pref_label: IL2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:8109
+      class_type: Biomarker
+      ccf_pref_label: ODC1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:19129
+      class_type: Biomarker
+      ccf_pref_label: PSAT1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:12729
+      class_type: Biomarker
+      ccf_pref_label: WARS
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:9721
+      class_type: Biomarker
+      ccf_pref_label: PYCR1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11892
+      class_type: Biomarker
+      ccf_pref_label: TNF
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7849
+      class_type: Biomarker
+      ccf_pref_label: NME1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:16647
+      class_type: Biomarker
+      ccf_pref_label: CXCR6
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:9360
+      class_type: Biomarker
+      ccf_pref_label: PRF1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6134
+      class_type: Biomarker
+      ccf_pref_label: ITGA1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:10627
+      class_type: Biomarker
+      ccf_pref_label: CCL3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:10630
+      class_type: Biomarker
+      ccf_pref_label: CCL4
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:24961
+      class_type: Biomarker
+      ccf_pref_label: HOPX
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7830
+      class_type: Biomarker
+      ccf_pref_label: NKG7
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4414
+      class_type: Biomarker
+      ccf_pref_label: GNLY
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:5411
+      class_type: Biomarker
+      ccf_pref_label: IFIT3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6378
+      class_type: Biomarker
+      ccf_pref_label: KLRD1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:10632
+      class_type: Biomarker
+      ccf_pref_label: CCL5
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4710
+      class_type: Biomarker
+      ccf_pref_label: GZMH
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:16830
+      class_type: Biomarker
+      ccf_pref_label: IL32
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:3068
+      class_type: Biomarker
+      ccf_pref_label: DUSP2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6380
+      class_type: Biomarker
+      ccf_pref_label: KLRG1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:12276
+      class_type: Biomarker
+      ccf_pref_label: TRGC2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4711
+      class_type: Biomarker
+      ccf_pref_label: GZMK
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:12253
+      class_type: Biomarker
+      ccf_pref_label: TRDC
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6373
+      class_type: Biomarker
+      ccf_pref_label: KLRB1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2064
+      class_type: Biomarker
+      ccf_pref_label: CLIC3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2479
+      class_type: Biomarker
+      ccf_pref_label: CST7
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:10645
+      class_type: Biomarker
+      ccf_pref_label: XCL1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4708
+      class_type: Biomarker
+      ccf_pref_label: GZMA
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:921
+      class_type: Biomarker
+      ccf_pref_label: CD57+/
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:6106
+      class_type: Biomarker
+      ccf_pref_label: FOXP3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11910
+      class_type: Biomarker
+      ccf_pref_label: TNFRSF25
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:26838
+      class_type: Biomarker
+      ccf_pref_label: TIGIT
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1607
+      class_type: Biomarker
+      ccf_pref_label: CCR6
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11918
+      class_type: Biomarker
+      ccf_pref_label: TNFRSF4
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6008
+      class_type: Biomarker
+      ccf_pref_label: CD25
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:2505
+      class_type: Biomarker
+      ccf_pref_label: CTLA4
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
