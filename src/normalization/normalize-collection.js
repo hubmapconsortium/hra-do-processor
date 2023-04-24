@@ -6,12 +6,13 @@ import { readMetadata, writeNormalized } from './utils.js';
 
 export function normalizeCollection(context) {
   const obj = context.selectedDigitalObject;
+  const id = `http://purl.humanatlas.io/${obj.doString}`;
   const metadata = readMetadata(obj);
 
   const dataPath = resolve(obj.path, 'raw', metadata.datatable);
   const data = load(readFileSync(dataPath))['digital-objects'];
 
-  writeNormalized(obj, metadata, data);
+  writeNormalized(obj, id, metadata, data);
   validateCollection(context, data);
 }
 
