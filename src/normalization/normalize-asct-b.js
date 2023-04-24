@@ -70,13 +70,15 @@ function normalizeAsctbApiResponse(data) {
       // Add ccf_located_in relationship that is between AS and CT
       const last_as = row.anatomical_structures.pop();
       const last_ct = row.cell_types.pop();
-      addLocatedIn(collector, last_as, last_ct);
-
+      if (last_ct) {
+        addLocatedIn(collector, last_as, last_ct);
+      }
       // Add has_biomarker relationship between CT and BM
       const biomarkers = row.biomarkers.filter(({id, name}) => checkIfValid({id, name}));
       const references = row.references.filter(({doi}) => checkNotEmpty(doi));
-      addCharacterizingBiomarkers(collector, last_ct, biomarkers, references);
-
+      if (last_ct) {
+        addCharacterizingBiomarkers(collector, last_ct, biomarkers, references);
+      }
       return collector;
     }, [{
       id: 'CL:0000000',
