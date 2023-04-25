@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import { resolve } from 'path';
 import { convertNormalizedToOwl, downloadValidationResult } from './utils.js';
-import { extractClassHierarchy, mergeOntologies } from '../utils/robot.js';
+import { collectEntities, extractClassHierarchy, mergeOntologies } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
 
 export function enrichAsctb(context) {
@@ -21,10 +21,21 @@ export function enrichAsctb(context) {
     ]);
 
     // Include assertions from the reference ontologies to enrich the graph data
-    const uberonExtract = extractClassHierarchy(context, "uberon", validatedData);
-    const fmaExtract = extractClassHierarchy(context, "fma", validatedData);
-    const clExtract = extractClassHierarchy(context, "cl", validatedData);
-    const hgncExtract = extractClassHierarchy(context, "hgnc", validatedData);
+    const uberonEntities = collectEntities(context, "uberon", validatedData);
+    const uberonExtract = extractClassHierarchy(context, "uberon",
+      "http://purl.obolibrary.org/obo/UBERON_0001062", uberonEntities);
+    
+    const fmaEntities = collectEntities(context, "fma", validatedData);
+    const fmaExtract = extractClassHierarchy(context, "fma", 
+      "http://purl.org/sig/ont/fma/fma62955", fmaEntities);
+
+    const clEntities = collectEntities(context, "cl", validatedData);
+    const clExtract = extractClassHierarchy(context, "cl",
+      "http://purl.obolibrary.org/obo/CL_0000000", clEntities);
+
+    const hgncEntities = collectEntities(context, "hgnc", validatedData);
+    const hgncExtract = extractClassHierarchy(context, "hgnc", 
+      "http://purl.bioontology.org/ontology/HGNC/gene", hgncEntities);
 
     // Merge all the resources
     mergeOntologies(context, [

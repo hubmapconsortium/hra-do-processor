@@ -1,21 +1,33 @@
 import { resolve } from 'path';
 import { throwOnError } from './sh-exec.js';
 
-export function extractClassHierarchy(context, ontology, seed) {
+export function collectEntities(context, ontology, graphData) {
+  const { selectedDigitalObject: obj, processorHome } = context;
+
+  const query = resolve(processorHome, `src/utils/get-${ontology}-terms.sparql`);
+  const output = resolve(obj.path, `enriched/${ontology}-terms.csv`);
+
+  throwOnError(
+    `robot query -i ${graphData} --query ${query} ${output} && \
+     sed -i '1d' ${output}`,
+    'Collect entities failed. See errors above.'
+  );
+
+  return output;
+}
+
+export function extractClassHierarchy(context, ontology, upperTerm, lowerTerms) {
   const { selectedDigitalObject: obj, processorHome } = context;
 
   const inputOntology = resolve(processorHome, `mirrors/${ontology}.ttl`);
-  const query = resolve(processorHome, `src/utils/get-${ontology}-terms.sparql`);
-
-  const termList = resolve(obj.path, `enriched/${ontology}-terms.csv`);
   const output = resolve(obj.path, `enriched/${ontology}-extract.ttl`);
 
   throwOnError(
-    `robot query -i ${seed} --query ${query} ${termList} && \
-     sed -i '1d' ${termList} && \
-     robot extract -i ${inputOntology} \
-              --method subset \
-              --term-file ${termList} \
+    `robot extract -i ${inputOntology} \
+              --method MIREOT \
+              --upper-term ${upperTerm} \
+              --lower-terms ${lowerTerms} \
+              --intermediates minimal \
            convert --format ttl -o ${output}`,
     'Class hierarchy extraction failed. See errors above.'
   );
