@@ -1,0 +1,3758 @@
+@prefix ASCTB-TEMP: <http://purl.org/ccf/ASCTB-TEMP_> .
+@prefix CL: <http://purl.obolibrary.org/obo/CL_> .
+@prefix HGNC: <http://identifiers.org/hgnc/> .
+@prefix RO: <http://purl.obolibrary.org/obo/RO_> .
+@prefix SO: <http://purl.obolibrary.org/obo/SO_> .
+@prefix UBERON: <http://purl.obolibrary.org/obo/UBERON_> .
+@prefix ccf: <http://purl.org/ccf/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.humanatlas.io/asct-b/bonemarrow-pelvis/v1.3> a owl:Ontology ;
+    ccf:citation_overall "Quardokus, Ellen M., Bruce W. Herr II, Lisel Record, Katy Börner. 2022. [*HuBMAP ASCT+B Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html). Accessed on December 15, 2022." ;
+    ccf:data_table "asct-b-vh-bonemarrow-pelvis.csv" ;
+    ccf:hubmap_id "HBM846.XXGG.898" ;
+    ccf:project_lead "Katy Börner (0000-0002-3321-6137)" ;
+    dct:creator "Laura Jardine (0000-0003-4495-8205)",
+        "Muzlifah A. Haniffa (0000-0002-3927-2084)",
+        "Sarah A. Teichmann (0000-0002-6294-6366)" ;
+    dct:description "[Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) tables](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html) aim to capture the nested *part_of* structure of anatomical human body parts, the typology of cells, and biomarkers used to identify cell types. The tables are authored and reviewed by an international team of experts." ;
+    dct:license "Creative Commons Attribution 4.0 International ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/))" ;
+    dct:publisher "HuBMAP" ;
+    dct:title "Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for Bone Marrow/Pelvis" ;
+    schema:about "asct-b" ;
+    schema:citation "Muzlifah A. Haniffa; Laura Jardine; Sarah A. Teichmann. HuBMAP ASCT+B Tables. Bone marrow/Pelvis v1.3, https://doi.org/10.48539/HBM846.XXGG.898, Accessed on December 15, 2022." ;
+    schema:dateCreated "2021-12-15" ;
+    schema:funding "Award number OT2OD026671 from National Institutes of Health" ;
+    schema:name "vh-bonemarrow-pelvis" ;
+    schema:reviewedBy "Andrea J. Radtke (0000-0003-4379-8967)",
+        "Bertie Gottgens (0000-0001-6302-5705)",
+        "Elisa Laurenti (0000-0002-9917-9092)",
+        "Ellen M. Quardokus (0000-0001-7655-4833)",
+        "Rebecca T. Beuschel (0000-0002-3882-457X)" ;
+    schema:version "v1.3" .
+
+CL:0000037 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000837 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "hemopoietic stem cell (HSC)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:894 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2356 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7945 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1036 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9454 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4977 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7136 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1639 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4702 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11801 ] ) ] ] .
+
+CL:0000051 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000837 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "common lymphoid progenitor (CLP)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:16505 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:186 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9352 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12749 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12560 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7203 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6024 ] ) ] ] .
+
+CL:0000097 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000094 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "mast cell" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4855 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2014 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2298 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6017 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4171 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7317 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:17890 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12019 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6342 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6024 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3609 ] ) ] ] .
+
+CL:0000553 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000556 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "early Megakaryocyte (MK)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4171 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3609 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9070 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10690 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2067 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:8861 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3618 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4439 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6138 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6156 ] ) ] ] .
+
+CL:0000559 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000576 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "promonocyte" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2558 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1603 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10494 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10496 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2475 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7154 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6342 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:31713 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3613 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:28874 ] ) ] ] .
+
+CL:0000767 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000094 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "basophil" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4855 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2014 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2298 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6017 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4171 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7317 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6024 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3609 ] ) ] ] .
+
+CL:0000771 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000094 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "eosinophil" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4855 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2014 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2298 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6017 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4171 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7317 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:17890 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1604 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3609 ] ) ] ] .
+
+CL:0000815 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000084 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "T regulatory" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12029 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12156 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6024 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:30698 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6711 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:636 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6106 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11910 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:26838 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1607 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11918 ] ) ] ] .
+
+CL:0000824 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000814 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "mature Natural killer" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12253 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6373 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2064 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2479 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4708 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4709 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9360 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1678 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1706 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6008 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6106 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2505 ] ) ] ] .
+
+CL:0000836 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000775 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "promyelocyte" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7218 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3309 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2532 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9495 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:913 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:500 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4015 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11249 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1820 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6140 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6149 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2334 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9053 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3613 ] ) ] ] .
+
+CL:0000895 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000084 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "CD4 naive" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1673 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12029 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12156 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6024 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:30698 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6711 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:636 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11935 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1678 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1706 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1608 ] ) ] ] .
+
+CL:0000897 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000084 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "CD4 T cell memory" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1673 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12029 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6015 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11362 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6817 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:19383 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6001 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:8109 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:19129 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12729 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9721 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11892 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7849 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1678 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1706 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1608 ] ) ] ],
+        [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1673 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12029 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4054 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6563 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:26974 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:537 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2360 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1678 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1706 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1608 ] ) ] ] .
+
+CL:0000900 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000084 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "CD8 naive" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1673 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12029 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:636 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6024 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1678 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1706 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1608 ] ) ] ] .
+
+CL:0000909 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000084 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "CD8 T cell memory" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:26974 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:16647 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9360 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2360 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6134 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4709 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1678 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1706 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1608 ] ) ] ] .
+
+CL:0000938 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000814 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "CD56 bright Natural Killer" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12253 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6373 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2064 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2479 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10645 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4711 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7315 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:921 ] ) ] ] .
+
+CL:0001054 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000576 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "CD14 monocyte" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2464 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2475 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10498 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10499 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3623 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2558 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2561 ] ) ] ] .
+
+CL:0001062 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000084 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "CD8 T cell effector memory CD45RA" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1673 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12029 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9360 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:24961 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7830 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4414 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5411 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6378 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10632 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1706 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1678 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11922 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10720 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1608 ] ) ] ] .
+
+CL:0001087 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000084 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "CD4 T cell effector memory CD45RA" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1673 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12029 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6015 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11362 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6817 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:19383 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6001 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:8109 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:19129 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12729 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9721 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11892 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7849 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1678 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1706 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1608 ] ) ] ] .
+
+CL:0002193 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000775 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "myelocyte" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6526 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1472 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6720 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3383 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1820 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:500 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4015 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11249 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6140 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1645 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6149 ] ) ] ] .
+
+CL:0002396 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000576 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "CD16 monocyte" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:24149 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:13378 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5414 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:16642 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:14189 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7154 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6342 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:31713 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3613 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:28874 ] ) ] ] .
+
+ASCTB-TEMP:cd8-t-cell-effector-memory a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000084 ;
+    ccf:ccf_is_provisional true ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "CD8 T cell effector memory" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1673 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12029 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10627 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10630 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:24961 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4709 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1678 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1706 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1608 ] ) ] ] .
+
+ASCTB-TEMP:mature-cd8-t-cell a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000084 ;
+    ccf:ccf_is_provisional true ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "mature CD8 T cell" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10632 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4710 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:16830 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1706 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3068 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6380 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12276 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4711 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7315 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] ) ] ] .
+
+ASCTB-TEMP:myeloid-progenitor-mop- a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000576 ;
+    ccf:ccf_is_provisional true ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "Myeloid progenitor (MOP)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11241 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5358 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1834 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6348 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7154 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3765 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:31713 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3613 ] ) ] ] .
+
+ccf:ccf_asctb_type a owl:AnnotationProperty .
+
+ccf:ccf_biomarker_type a owl:AnnotationProperty .
+
+ccf:ccf_ct_isa a owl:AnnotationProperty .
+
+ccf:ccf_is_provisional a owl:AnnotationProperty .
+
+ccf:ccf_located_in a owl:AnnotationProperty .
+
+ccf:ccf_part_of a owl:AnnotationProperty .
+
+ccf:ccf_pref_label a owl:AnnotationProperty .
+
+ccf:citation_overall a owl:AnnotationProperty .
+
+ccf:data_table a owl:AnnotationProperty .
+
+ccf:hubmap_id a owl:AnnotationProperty .
+
+ccf:project_lead a owl:AnnotationProperty .
+
+dct:creator a owl:AnnotationProperty .
+
+dct:description a owl:AnnotationProperty .
+
+dct:license a owl:AnnotationProperty .
+
+dct:publisher a owl:AnnotationProperty .
+
+dct:reference a owl:AnnotationProperty .
+
+dct:title a owl:AnnotationProperty .
+
+schema:about a owl:AnnotationProperty .
+
+schema:citation a owl:AnnotationProperty .
+
+schema:dateCreated a owl:AnnotationProperty .
+
+schema:funding a owl:AnnotationProperty .
+
+schema:name a owl:AnnotationProperty .
+
+schema:reviewedBy a owl:AnnotationProperty .
+
+schema:version a owl:AnnotationProperty .
+
+HGNC:10006 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "RHAG" .
+
+HGNC:10008 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "RHCE" .
+
+HGNC:1036 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "BEX1" .
+
+HGNC:10489 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "S100A12" .
+
+HGNC:10494 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "S100A4" .
+
+HGNC:10496 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "S100A6" .
+
+HGNC:10627 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CCL3" .
+
+HGNC:10630 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CCL4" .
+
+HGNC:10645 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "XCL1" .
+
+HGNC:1093 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "BPGM" .
+
+HGNC:11241 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "SPI1" .
+
+HGNC:11272 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "SPTA1" .
+
+HGNC:11910 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "TNFRSF25" .
+
+HGNC:11918 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "TNFRSF4" .
+
+HGNC:11935 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD40LG" .
+
+HGNC:12019 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "TPSAB1" .
+
+HGNC:12276 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "TRGC2" .
+
+HGNC:12560 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "UMODL1" .
+
+HGNC:12749 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "LAT2" .
+
+HGNC:13378 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "MS4A7" .
+
+HGNC:14189 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "LST1" .
+
+HGNC:1472 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CAMP" .
+
+HGNC:1603 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CCR2" .
+
+HGNC:1604 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CCR3" .
+
+HGNC:1607 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CCR6" .
+
+HGNC:16505 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CYGB" .
+
+HGNC:16642 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CXCL16" .
+
+HGNC:16647 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CXCR6" .
+
+HGNC:16830 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IL32" .
+
+HGNC:1834 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CEBPB" .
+
+HGNC:186 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "ADA" .
+
+HGNC:18874 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "LAT" .
+
+HGNC:19911 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "DCAF12" .
+
+HGNC:2067 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "PDLIM1" .
+
+HGNC:21256 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "TSPO2" .
+
+HGNC:2356 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CRHBP" .
+
+HGNC:24040 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "ADIPOR1" .
+
+HGNC:24149 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "HES4" .
+
+HGNC:24356 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CLEC1B" .
+
+HGNC:2464 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "VCAN" .
+
+HGNC:2505 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CTLA4" .
+
+HGNC:2532 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CTSG" .
+
+HGNC:2561 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CXCR4" .
+
+HGNC:26838 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "TIGIT" .
+
+HGNC:3068 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "DUSP2" .
+
+HGNC:3309 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "ELANE" .
+
+HGNC:3383 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "STOM" .
+
+HGNC:397 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "ALAS2" .
+
+HGNC:4054 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IFI6" .
+
+HGNC:4414 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "GNLY" .
+
+HGNC:4444 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "GP9" .
+
+HGNC:4708 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "GZMA" .
+
+HGNC:4710 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "GZMH" .
+
+HGNC:4824 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "HBA2" .
+
+HGNC:4827 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "HBB" .
+
+HGNC:4831 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "HBG1" .
+
+HGNC:4977 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD34" .
+
+HGNC:5358 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IRF8" .
+
+HGNC:537 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "ANXA2" .
+
+HGNC:5411 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IFIT3" .
+
+HGNC:5414 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IFITM3" .
+
+HGNC:6008 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD25" .
+
+HGNC:6134 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "ITGA1" .
+
+HGNC:6348 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "KLF4" .
+
+HGNC:6378 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "KLRD1" .
+
+HGNC:6380 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "KLRG1" .
+
+HGNC:6526 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "LCN2" .
+
+HGNC:6563 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "LGALS3" .
+
+HGNC:6720 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "LTF" .
+
+HGNC:7136 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "MLLT3" .
+
+HGNC:7176 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "MMP9" .
+
+HGNC:7203 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD200" .
+
+HGNC:7830 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "NKG7" .
+
+HGNC:7945 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "NPR3" .
+
+HGNC:8498 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "ORM1" .
+
+HGNC:8904 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "PGLYRP1" .
+
+HGNC:894 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "AVP" .
+
+HGNC:9070 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "PLEK" .
+
+HGNC:921 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD57+/" .
+
+HGNC:9240 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "PPBP" .
+
+HGNC:9352 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "PRDX1" .
+
+HGNC:9454 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "PROM1" .
+
+HGNC:9495 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "PRTN3" .
+
+CL:0000049 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000837 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "common myeloid progenitor (CMP)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5154 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4171 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:24435 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3311 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7028 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3765 ] ) ] ] .
+
+CL:0000050 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000837 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "megakaryocyte-erythroid-mast cell progenitor (MEMP)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11245 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:31397 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4171 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:29109 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5992 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:15879 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4170 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3765 ] ) ] ] .
+
+CL:0000557 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000837 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "granulocyte-macrophage progenitor cell (GMP)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1455 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10576 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7218 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:913 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3765 ] ) ] ] .
+
+CL:0000786 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000945 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "plasma cell" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10658 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:14236 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:30125 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5716 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:23400 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5525 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5478 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11913 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2336 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1645 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5480 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11922 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] ) ] ] .
+
+CL:0000787 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000945 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "memory B cell" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7315 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5478 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5525 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6210 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10720 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11922 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2336 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5480 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7154 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1645 ] ) ] ] .
+
+CL:0000788 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000945 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "naive B cell" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:8619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5541 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7315 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11919 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3612 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2336 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1645 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5480 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11922 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10658 ] ) ] ] .
+
+CL:0000816 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000945 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "immature B cell" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:8619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5541 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7315 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2336 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1643 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11922 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5480 ] ) ] ] .
+
+CL:0000817 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000945 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "precursor B cell (pre B cell)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:8619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5541 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5480 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6024 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7154 ] ) ] ] .
+
+CL:0000818 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000945 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "transitional B cell" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:38476 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11200 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1004 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11648 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:18504 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1645 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom ASCTB-TEMP:hla-dr ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6152 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11784 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:26705 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1636 ] ) ] ] .
+
+CL:0000826 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000945 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "pro B progenitor" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2983 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7154 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12709 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9831 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6024 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] ) ] ] .
+
+CL:0000840 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0001056 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "transitional Dendritic Cell (tDC)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:905 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10875 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1643 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11763 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1663 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6342 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3349 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4702 ] ) ] ] .
+
+CL:0001058 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0001056 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "Plasmacytoid Dendritic Cell (pDC)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4709 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5713 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:8824 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom ASCTB-TEMP:hla-dr ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6152 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:905 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10875 ] ) ] ] .
+
+UBERON:0013702 a owl:Class ;
+    ccf:ccf_asctb_type "AS" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "body proper" .
+
+ASCTB-TEMP:lympho-myeloid-progenitor-cell-lmpp- a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000837 ;
+    ccf:ccf_is_provisional true ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "lympho-myeloid progenitor cell (LMPP)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:13221 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6010 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5713 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11200 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11491 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1639 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4702 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] ) ] ] .
+
+HGNC:1004 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "BCL7A" .
+
+HGNC:10576 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CLEC11A" .
+
+HGNC:10632 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CCL5" .
+
+HGNC:10690 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CAVIN2" .
+
+HGNC:11362 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "STAT1" .
+
+HGNC:11491 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "SYK" .
+
+HGNC:11529 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "EPCAM" .
+
+HGNC:11648 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "TCL1A" .
+
+HGNC:11801 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD90" .
+
+HGNC:11892 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "TNF" .
+
+HGNC:11913 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "TNFRSF17" .
+
+HGNC:11919 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD40" .
+
+HGNC:12156 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "TRBC1" .
+
+HGNC:12253 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "TRDC" .
+
+HGNC:12709 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "VPREB1" .
+
+HGNC:12729 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "WARS" .
+
+HGNC:13221 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "BCL11A" .
+
+HGNC:13258 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD303" .
+
+HGNC:14236 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "DERL3" .
+
+HGNC:1455 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CALR" .
+
+HGNC:15879 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CTNNBL1" .
+
+HGNC:1625 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "XCR1" .
+
+HGNC:1631 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD163" .
+
+HGNC:17890 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "HPGDS" .
+
+HGNC:18504 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "FCRLA" .
+
+HGNC:19129 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "PSAT1" .
+
+HGNC:19383 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "SOCS1" .
+
+HGNC:2064 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CLIC3" .
+
+HGNC:2334 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD35" .
+
+HGNC:23400 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "SEC11C" .
+
+HGNC:2360 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CRIP1" .
+
+HGNC:24435 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CYTL1" .
+
+HGNC:2475 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CST3" .
+
+HGNC:2479 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CST7" .
+
+HGNC:24961 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "HOPX" .
+
+HGNC:2558 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CX3CR1" .
+
+HGNC:26974 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "PDZD8" .
+
+HGNC:28874 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD300E" .
+
+HGNC:29109 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "TESPA1" .
+
+HGNC:2983 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "DNTT" .
+
+HGNC:30125 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "MZB1" .
+
+HGNC:30698 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "TRAT1" .
+
+HGNC:3311 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "SERPINB1" .
+
+HGNC:3612 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "FCER2" .
+
+HGNC:3623 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "FCN1" .
+
+HGNC:38476 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IGLL5" .
+
+HGNC:4439 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD42b" .
+
+HGNC:4711 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "GZMK" .
+
+HGNC:4940 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "HLA-DPB1" .
+
+HGNC:4943 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "HLA-DQA2" .
+
+HGNC:5154 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "HPGDS" .
+
+HGNC:5716 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IGKC" .
+
+HGNC:5951 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CADM1" .
+
+HGNC:5992 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IL1B" .
+
+HGNC:6001 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IL2" .
+
+HGNC:6010 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IL2RG" .
+
+HGNC:6015 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IL4R" .
+
+HGNC:607 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "APOC1" .
+
+HGNC:6106 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "FOXP3" .
+
+HGNC:6138 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "ITGA2B" .
+
+HGNC:6156 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD61" .
+
+HGNC:6210 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD82" .
+
+HGNC:6251 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "KCNH2" .
+
+HGNC:6373 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "KLRB1" .
+
+HGNC:6711 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "LTB" .
+
+HGNC:6817 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "MAL" .
+
+HGNC:7028 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "MEST" .
+
+HGNC:7553 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "MYC" .
+
+HGNC:7849 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "NME1" .
+
+HGNC:8109 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "ODC1" .
+
+HGNC:8824 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "SERPINF1" .
+
+HGNC:8861 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "PF4" .
+
+HGNC:9053 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD87" .
+
+HGNC:9721 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "PYCR1" .
+
+HGNC:9831 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "RAG1" .
+
+CL:0000556 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000000,
+        CL:0000556 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "Megakaryocyte (MK)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4444 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10690 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9240 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:18874 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:8861 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:24356 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6138 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3618 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4439 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6156 ] ) ] ] .
+
+CL:0000764 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000000,
+        CL:0000764 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "erythroid" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1663 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6345 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:21256 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10006 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10008 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11272 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11763 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6342 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3349 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4702 ] ) ] ],
+        [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7553 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:607 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:31397 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6251 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11529 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1663 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6345 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4170 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11763 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6342 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3349 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4702 ] ) ] ],
+        [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4827 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:397 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1093 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4824 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4831 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:19911 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:24040 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11763 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1663 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6342 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3349 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4702 ] ) ] ] .
+
+CL:0000814 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000000 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "NK lymphocytes" .
+
+CL:0000990 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0001056 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "dendritic cell type 1 (DC1)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:26705 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5951 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1625 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom ASCTB-TEMP:hla-dr ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6152 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11784 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1636 ] ) ] ],
+        [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1636 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3609 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:16916 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4943 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4940 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3618 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom ASCTB-TEMP:hla-dr ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6152 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11784 ] ) ] ] .
+
+HGNC:10498 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "S100A8" .
+
+HGNC:10499 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "S100A9" .
+
+HGNC:10720 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "SELL" .
+
+HGNC:11245 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "SPINK2" .
+
+HGNC:11249 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD43" .
+
+HGNC:1820 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CEACAM8" .
+
+HGNC:2014 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CLC" .
+
+HGNC:2298 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CPA3" .
+
+HGNC:31713 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CLEC12Ahi" .
+
+HGNC:4015 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD15" .
+
+HGNC:4855 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "HDC" .
+
+HGNC:500 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD13" .
+
+HGNC:6017 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IL5RA" .
+
+HGNC:6140 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD49d" .
+
+HGNC:6149 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD11b" .
+
+HGNC:6345 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "KLF1" .
+
+HGNC:636 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "AQP3" .
+
+HGNC:7218 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "MPO" .
+
+HGNC:7317 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "MS4A3" .
+
+HGNC:913 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "AZU1" .
+
+HGNC:9360 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "PRF1" .
+
+CL:0000094 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000000 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "granulocyte" .
+
+CL:0000775 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000000,
+        CL:0000775 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "neutrophilic granulocyte" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6149 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7176 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:8904 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:8498 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10489 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3623 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:500 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4015 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11249 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1820 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6140 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2334 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9053 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3613 ] ) ] ] .
+
+HGNC:10658 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD138" .
+
+HGNC:10875 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "Siglec6" .
+
+HGNC:11200 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "SOX4" .
+
+HGNC:1639 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD2" .
+
+HGNC:1643 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD22" .
+
+HGNC:16916 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CLEC10A" .
+
+HGNC:26705 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CLEC9A" .
+
+HGNC:31397 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "PRSS57" .
+
+HGNC:3618 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "FCGR2B" .
+
+HGNC:4170 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "GATA1" .
+
+HGNC:5478 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IGHA1" .
+
+HGNC:5525 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IGHG1" .
+
+HGNC:5713 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "JCHAIN" .
+
+HGNC:905 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "AXL" .
+
+CL:0000576 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000000 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "monocyte" .
+
+HGNC:3613 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD64hi" .
+
+HGNC:4709 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "GZMB" .
+
+CL:0001056 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000000,
+        CL:0001056 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "dendritic cell (DC)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1636 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3609 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:16916 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10498 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10499 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1663 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1631 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom ASCTB-TEMP:hla-dr ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6152 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:13258 ] ) ] ] .
+
+HGNC:11763 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD71" .
+
+HGNC:11784 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD141hi" .
+
+HGNC:3349 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD105" .
+
+HGNC:5541 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IGHM" .
+
+HGNC:8619 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "PAX5" .
+
+HGNC:1673 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD3D" .
+
+CL:0000837 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000000,
+        CL:0000837 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_located_in UBERON:0002371 ;
+    ccf:ccf_pref_label "hemopoietic stem cell/multipotent progenitor (HSC/MPP)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11245 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3765 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1639 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4702 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11801 ] ) ] ] .
+
+CL:0000945 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000000 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "B lineage" .
+
+HGNC:12029 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "TRAC" .
+
+HGNC:1608 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CCR7" .
+
+HGNC:1636 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD1c-/lo" .
+
+HGNC:1663 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD36" .
+
+HGNC:2336 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD21" .
+
+HGNC:3609 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "FCER1A" .
+
+HGNC:3765 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD135" .
+
+HGNC:4171 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "GATA2" .
+
+HGNC:7315 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "MS4A1" .
+
+HGNC:11922 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD27" .
+
+HGNC:1645 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD24+/lo" .
+
+HGNC:1678 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD4" .
+
+HGNC:6342 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD117" .
+
+HGNC:7154 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD10" .
+
+CL:0000084 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_ct_isa CL:0000000 ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "T lymphocytes" .
+
+HGNC:1706 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD8" .
+
+HGNC:4702 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD235alo" .
+
+HGNC:5480 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "IGHD" .
+
+HGNC:6024 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD127" .
+
+HGNC:6152 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD11c+/lo" .
+
+CL:0000000 a owl:Class ;
+    ccf:ccf_asctb_type "CT" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "cell type" .
+
+ASCTB-TEMP:hla-dr a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional true ;
+    ccf:ccf_pref_label "HLA-DR" .
+
+HGNC:1662 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD34" .
+
+HGNC:1667 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD38+/lo" .
+
+HGNC:6012 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD123" .
+
+HGNC:1628 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD14" .
+
+HGNC:7656 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD56" .
+
+HGNC:9666 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD45lo" .
+
+HGNC:3619 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD16" .
+
+HGNC:1633 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "gene" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD19" .
+
+HGNC:1674 a owl:Class ;
+    ccf:ccf_asctb_type "BM" ;
+    ccf:ccf_biomarker_type "protein" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_pref_label "CD3" .
+
+UBERON:0002371 a owl:Class ;
+    ccf:ccf_asctb_type "AS" ;
+    ccf:ccf_is_provisional false ;
+    ccf:ccf_part_of UBERON:0013702 ;
+    ccf:ccf_pref_label "Bone marrow" .
+
+RO:0015004 a owl:ObjectProperty .
+
+SO:0001260 a owl:Class .
+
+ccf:has_marker_component a owl:ObjectProperty .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.3109/10428194.2013.781167> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0000990 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:26705 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5951 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1625 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom ASCTB-TEMP:hla-dr ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6152 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11784 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1636 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.1073/pnas.172384399> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0000818 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:38476 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11200 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1004 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11648 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:18504 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1645 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom ASCTB-TEMP:hla-dr ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6152 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11784 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:26705 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1636 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.1182/blood-2004-02-0769> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0000840 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:905 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10875 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1643 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11763 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1663 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6342 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3349 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4702 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.1002/cyto.a.23724> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0001056 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1636 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3609 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:16916 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10498 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10499 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1663 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1631 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom ASCTB-TEMP:hla-dr ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6152 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:13258 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.1038/ni.1889> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ASCTB-TEMP:lympho-myeloid-progenitor-cell-lmpp- ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:13221 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6010 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5713 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11200 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11491 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1639 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4702 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.1111/bjh.14467> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0001058 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4709 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5713 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:8824 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom ASCTB-TEMP:hla-dr ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6152 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:905 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10875 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.1016/j.exphem.2018.09.004> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0000817 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:8619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5541 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5480 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6024 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7154 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.1073/pnas.172384399> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0000826 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2983 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7154 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:12709 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9831 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6024 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.1038/ni.1889> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0000049 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5154 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4171 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:24435 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3311 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7028 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3765 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.1371/journal.pone.0162209> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0000764 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7553 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:607 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:31397 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6251 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11529 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1663 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6345 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4170 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11763 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6342 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3349 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4702 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.1038/ni.1889> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0000557 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1455 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10576 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7218 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:913 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3765 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.1038/s41467-019-12464-3> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0000788 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:8619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5541 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7315 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11919 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3612 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2336 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1645 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5480 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11922 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10658 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.1073/pnas.172384399> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0000786 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10658 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:14236 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:30125 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5716 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:23400 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5525 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5478 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11913 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2336 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1645 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5480 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11922 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.1038/ni.1889> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0000050 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1662 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11245 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:31397 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4171 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:29109 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5992 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:15879 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4170 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:9666 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3765 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.3389/fimmu.2012.00302> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0000816 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:8619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5541 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7315 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2336 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1643 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11922 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5480 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.1016/j.immuni.2017.04.019> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0000990 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1636 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3609 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:16916 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4943 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:4940 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3618 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1674 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1628 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:3619 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7656 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom ASCTB-TEMP:hla-dr ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6152 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6012 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11784 ] ) ] ] .
+
+[] a owl:Axiom ;
+    dct:reference <DOI:10.1002/jcla.20001> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource CL:0000787 ;
+    owl:annotatedTarget [ a owl:Restriction ;
+            owl:onProperty RO:0015004 ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( SO:0001260 [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1633 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7315 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5478 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5525 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:6210 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:10720 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:11922 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:2336 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:5480 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:7154 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1667 ] [ a owl:Restriction ;
+                                owl:onProperty ccf:has_marker_component ;
+                                owl:someValuesFrom HGNC:1645 ] ) ] ] .
+
