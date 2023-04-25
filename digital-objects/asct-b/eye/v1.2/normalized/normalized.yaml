@@ -1,0 +1,1837 @@
+id: http://purl.humanatlas.io/asct-b/eye/v1.2
+metadata:
+  type: asct-b
+  name: vh-eye
+  version: v1.2
+  title: Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for Eye
+  description: >-
+    The Eye ASCT+B table v1.1 focused on representing key ocular anatomical
+    structures including the neural retina, lens, cornea, iris, and ciliary body
+    with a focus on vascular, epithelial, and neural cell types. Version 1.2
+    expands upon v1.1 with the addition of anatomical structures including the
+    fovea and macula and cell types such as immune and endothelial.
+  creators:
+    - fullName: Angela Kruse
+      firstName: Angela
+      lastName: Kruse
+      orcid: 0000-0001-8776-2769
+    - fullName: Kevin Schey
+      firstName: Kevin
+      lastName: Schey
+      orcid: 0000-0001-9769-1538
+    - fullName: Christine Curcio
+      firstName: Christine
+      lastName: Curcio
+      orcid: 0000-0002-3959-1712
+  project_leads:
+    - fullName: Katy Börner
+      firstName: Katy
+      lastName: Börner
+      orcid: 0000-0002-3321-6137
+  reviewers:
+    - fullName: Jeffrey Spraggins
+      firstName: Jeffrey
+      lastName: Spraggins
+      orcid: 000-0001-9198-5498
+    - fullName: David Anderson
+      firstName: David
+      lastName: Anderson
+      orcid: 0000-0002-3866-0923
+    - fullName: Ellen M. Quardokus
+      firstName: Ellen
+      lastName: Quardokus
+      orcid: 0000-0001-7655-4833
+  externalReviewers: []
+  creation_date: '2022-12-15'
+  license: >-
+    Creative Commons Attribution 4.0 International ([CC BY
+    4.0](https://creativecommons.org/licenses/by/4.0/))
+  publisher: HuBMAP
+  funders:
+    - funder: National Institutes of Health
+      awardNumber: OT2OD026671
+  hubmapId: HBM762.WRRQ.394
+  doi: https://doi.org/10.48539/HBM762.WRRQ.394
+  citation: >-
+    Angela Kruse; Kevin Schey; Christine Curcio, HuBMAP ASCT+B Tables. Eye v1.2,
+    https://doi.org/10.48539/HBM762.WRRQ.394, Accessed on December 15, 2022.
+  citationOverall: >-
+    Quardokus, Ellen, Bruce W. Herr II, Lisel Record, Katy Börner. 2022.
+    [*HuBMAP ASCT+B
+    Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
+    Accessed on December 15, 2022.
+  datatable:
+    - asct-b-vh-eye.csv
+data:
+  anatomical_structures:
+    - id: UBERON:0013702
+      class_type: AnatomicalStructure
+      ccf_pref_label: body proper
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+    - id: UBERON:0000970
+      class_type: AnatomicalStructure
+      ccf_pref_label: eye
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0013702
+    - id: UBERON:0000966
+      class_type: AnatomicalStructure
+      ccf_pref_label: retina
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000970
+    - id: UBERON:0001791
+      class_type: AnatomicalStructure
+      ccf_pref_label: inner nuclear layer
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000966
+    - id: UBERON:0002203
+      class_type: AnatomicalStructure
+      ccf_pref_label: vasculature of eye
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000966
+    - id: UBERON:0001776
+      class_type: AnatomicalStructure
+      ccf_pref_label: optic choroid
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0002203
+    - id: UBERON:0005336
+      class_type: AnatomicalStructure
+      ccf_pref_label: Choriocapillaris
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001776
+    - id: UBERON:0001789
+      class_type: AnatomicalStructure
+      ccf_pref_label: outer nuclear layer
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000966
+    - id: UBERON:0004864
+      class_type: AnatomicalStructure
+      ccf_pref_label: vasculature
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000966
+    - id: UBERON:0001792
+      class_type: AnatomicalStructure
+      ccf_pref_label: retinal ganglion cell layer
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000966
+    - id: UBERON:0000965
+      class_type: AnatomicalStructure
+      ccf_pref_label: lens
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000970
+    - id: UBERON:0002444
+      class_type: AnatomicalStructure
+      ccf_pref_label: lens Fibers
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000965
+        - ASCTB-TEMP:outer-cortex
+    - id: UBERON:0001803
+      class_type: AnatomicalStructure
+      ccf_pref_label: epithelial layer
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000965
+    - id: UBERON:0000390
+      class_type: AnatomicalStructure
+      ccf_pref_label: Embryonic nucleus
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000965
+    - id: UBERON:0000389
+      class_type: AnatomicalStructure
+      ccf_pref_label: cortex
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000965
+    - id: ASCTB-TEMP:inner-cortex
+      class_type: AnatomicalStructure
+      ccf_pref_label: Inner cortex
+      ccf_asctb_type: AS
+      ccf_is_provisional: true
+      ccf_part_of:
+        - UBERON:0000389
+    - id: ASCTB-TEMP:outer-cortex
+      class_type: AnatomicalStructure
+      ccf_pref_label: Outer cortex
+      ccf_asctb_type: AS
+      ccf_is_provisional: true
+      ccf_part_of:
+        - UBERON:0000389
+    - id: UBERON:0001782
+      class_type: AnatomicalStructure
+      ccf_pref_label: retinal pigmented epithelium
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000966
+    - id: UBERON:0000964
+      class_type: AnatomicalStructure
+      ccf_pref_label: Cornea
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000970
+    - id: UBERON:0001985
+      class_type: AnatomicalStructure
+      ccf_pref_label: corneal endothelium
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000964
+    - id: UBERON:0003952
+      class_type: AnatomicalStructure
+      ccf_pref_label: anterior stroma of cornea
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000964
+    - id: UBERON:0001772
+      class_type: AnatomicalStructure
+      ccf_pref_label: corneal epithelium
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000964
+    - id: UBERON:0006762
+      class_type: AnatomicalStructure
+      ccf_pref_label: ciliary zonules
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000965
+    - id: UBERON:0001775
+      class_type: AnatomicalStructure
+      ccf_pref_label: ciliary body
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000970
+    - id: UBERON:0001778
+      class_type: AnatomicalStructure
+      ccf_pref_label: ciliary epithelium
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001775
+    - id: UBERON:0001769
+      class_type: AnatomicalStructure
+      ccf_pref_label: iris
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000970
+    - id: UBERON:0002506
+      class_type: AnatomicalStructure
+      ccf_pref_label: iris epithelium
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001769
+  cell_types:
+    - id: CL:0000000
+      class_type: CellType
+      ccf_pref_label: cell type
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+    - id: CL:0000540
+      class_type: CellType
+      ccf_pref_label: Neuron
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000099
+      class_type: CellType
+      ccf_pref_label: Interneuron
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000540
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000561
+      class_type: CellType
+      ccf_pref_label: Amacrine Cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000099
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:11742
+            - HGNC:11743
+            - HGNC:11744
+            - HGNC:4092
+            - HGNC:4093
+            - HGNC:11056
+            - HGNC:24182
+            - HGNC:24181
+            - HGNC:1434
+            - HGNC:16941
+          references:
+            - DOI:10.1016/j.cell.2019.01.004
+            - DOI:10.1016/j.preteyeres.2020.100844
+            - DOI:10.1002/cne.23821
+    - id: CL:0011005
+      class_type: CellType
+      ccf_pref_label: GABAergic interneuron
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000561
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: ASCTB-TEMP:glutamic-acid-decarboxylase-65-cell
+      class_type: CellType
+      ccf_pref_label: glutamic acid decarboxylase 65 cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0011005
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:4093
+            - HGNC:10575
+            - HGNC:11782
+            - HGNC:11329
+            - HGNC:1912
+            - HGNC:9726
+            - HGNC:12693
+            - HGNC:16941
+            - HGNC:7955
+            - HGNC:11526
+            - HGNC:11528
+            - HGNC:24323
+          references:
+            - DOI:10.1016/j.preteyeres.2020.100844
+            - DOI:10.1002/(SICI)1096-9861(19990816)411:1<19::AID-CNE3>3.0.CO;2-4
+            - DOI:10.1002/cne.902760106
+    - id: FMA:62362
+      class_type: CellType
+      ccf_pref_label: Glycinergic Amacrine Cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000561
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: ASCTB-TEMP:a8-bistratified-small-field-cell
+      class_type: CellType
+      ccf_pref_label: A8 bistratified small-field cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - FMA:62362
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:11510
+            - HGNC:1435
+            - HGNC:20151
+            - HGNC:9704
+            - HGNC:21637
+            - HGNC:19087
+            - HGNC:9723
+          references:
+            - DOI:10.1002/cne.10985
+            - DOI:10.1016/j.preteyeres.2020.100844
+            - DOI:10.1523/JNEUROSCI.0907-11.2011
+            - DOI:10.1017/S0952523809090075
+            - DOI:10.1002/cne.21666
+    - id: ASCTB-TEMP:medium-field-cell
+      class_type: CellType
+      ccf_pref_label: medium-field cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000561
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: ASCTB-TEMP:wide-field-cell
+      class_type: CellType
+      ccf_pref_label: wide field cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - ASCTB-TEMP:medium-field-cell
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:787
+            - HGNC:12693
+            - HGNC:10575
+            - HGNC:9723
+          references:
+            - DOI:10.1016/j.preteyeres.2020.100844
+    - id: ASCTB-TEMP:polyaxonal-amacrine-cell
+      class_type: CellType
+      ccf_pref_label: polyaxonal amacrine cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000561
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: ASCTB-TEMP:semilunar-type-1-cell
+      class_type: CellType
+      ccf_pref_label: semilunar type 1 cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - ASCTB-TEMP:polyaxonal-amacrine-cell
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:7955
+          references:
+            - DOI:10.1016/j.preteyeres.2020.100844
+    - id: ASCTB-TEMP:semilunar-type-3-cell
+      class_type: CellType
+      ccf_pref_label: semilunar type 3 cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - ASCTB-TEMP:polyaxonal-amacrine-cell
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1569
+          references:
+            - DOI:10.1016/j.preteyeres.2020.100844
+    - id: ASCTB-TEMP:a2-cell
+      class_type: CellType
+      ccf_pref_label: A2 cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - ASCTB-TEMP:polyaxonal-amacrine-cell
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: ASCTB-TEMP:semilunar-cell
+      class_type: CellType
+      ccf_pref_label: semilunar cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - ASCTB-TEMP:a2-cell
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1435
+          references:
+            - DOI:10.1016/j.preteyeres.2020.100844
+    - id: ASCTB-TEMP:starburst-amacrine-cell
+      class_type: CellType
+      ccf_pref_label: starburst amacrine cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000561
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1912
+          references:
+            - DOI:10.1016/j.preteyeres.2020.100844
+    - id: CL:0000748
+      class_type: CellType
+      ccf_pref_label: Bipolar Cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000540
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1975
+            - HGNC:12723
+            - HGNC:13714
+            - HGNC:8522
+            - HGNC:4598
+            - HGNC:9393
+            - HGNC:7146
+            - HGNC:4579
+            - HGNC:4389
+            - HGNC:6132
+            - HGNC:7103
+            - HGNC:9937
+          references:
+            - DOI:10.1016/j.cell.2019.01.004
+            - DOI:10.1016/j.brainres.2007.06.007
+            - DOI:10.1016/j.exer.2016.01.002
+    - id: CL:0000749
+      class_type: CellType
+      ccf_pref_label: ON Bipolar cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000748
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:4400
+          references:
+            - DOI:10.1016/j.ophtha.2017.09.016
+    - id: ASCTB-TEMP:blue-cone-bipolar-cell
+      class_type: CellType
+      ccf_pref_label: blue cone bipolar cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000749
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1569
+          references:
+            - DOI:10.1016/j.preteyeres.2020.100844
+    - id: CL:0000750
+      class_type: CellType
+      ccf_pref_label: OFF Bipolar cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000748
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: ASCTB-TEMP:diffuse-bipolar-1-db1-
+      class_type: CellType
+      ccf_pref_label: Diffuse bipolar 1 (DB1)
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000750
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:16941
+          references:
+            - DOI:10.1002/cne.22756
+    - id: ASCTB-TEMP:diffuse-bipolar-2-cell
+      class_type: CellType
+      ccf_pref_label: Diffuse bipolar 2 cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000750
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:10940
+          references:
+            - DOI:10.1002/cne.903480410
+            - DOI:10.1002/(SICI)1096-9861(20000103)416:1<19::AID-CNE3>3.0.CO;2-H
+            - DOI:10.1002/cne.10491
+    - id: ASCTB-TEMP:diffuse-bipolar-3a-cell
+      class_type: CellType
+      ccf_pref_label: Diffuse bipolar 3a cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000750
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1434
+            - HGNC:1384
+            - HGNC:4845
+            - HGNC:10585
+          references:
+            - DOI:10.1016/j.preteyeres.2020.100844
+            - DOI:10.1002/cne.10491
+            - DOI:10.1523/JNEUROSCI.1249-13.2013
+    - id: ASCTB-TEMP:diffuse-bipolar-3b-cell
+      class_type: CellType
+      ccf_pref_label: Diffuse bipolar 3b cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000750
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:4845
+            - HGNC:1394
+            - ASCTB-TEMP:carbohydrate-epitope-15-3-fucosyl-n-acetyl-lactosamine-
+          references:
+            - DOI:10.1017/s0952523800011391
+    - id: ASCTB-TEMP:diffuse-bipolar-4-cell
+      class_type: CellType
+      ccf_pref_label: Diffuse bipolar 4 cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000749
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:9393
+            - HGNC:4845
+            - HGNC:1394
+            - HGNC:10585
+          references:
+            - DOI:10.1002/cne.22756
+    - id: ASCTB-TEMP:diffuse-bipolar-6-cell
+      class_type: CellType
+      ccf_pref_label: Diffuse bipolar 6 cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000749
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - ASCTB-TEMP:carbohydrate-epitope-15-3-fucosyl-n-acetyl-lactosamine-
+          references:
+            - DOI:10.1002/cne.22756
+            - DOI:10.1017/s0952523800011391
+    - id: ASCTB-TEMP:flat-midget-bipolar-cell
+      class_type: CellType
+      ccf_pref_label: Flat midget bipolar cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000750
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:9937
+            - HGNC:26483
+          references:
+            - DOI:10.1016/j.preteyeres.2020.100844
+            - DOI:10.1002/cne.10491
+            - NoDOI
+    - id: ASCTB-TEMP:invaginating-bipolar-cell
+      class_type: CellType
+      ccf_pref_label: invaginating bipolar cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: true
+      ccf_ct_isa:
+        - CL:0000749
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1569
+          references:
+            - DOI:10.1002/cne.22756
+    - id: CL:0000751
+      class_type: CellType
+      ccf_pref_label: rod bipolar cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000749
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:9393
+          references:
+            - DOI:10.1002/cne.10491
+    - id: CL:0000287
+      class_type: CellType
+      ccf_pref_label: photoreceptor
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000540
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000573
+      class_type: CellType
+      ccf_pref_label: retinal cone cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000287
+      ccf_located_in:
+        - UBERON:0001789
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:710
+            - HGNC:9937
+            - HGNC:4394
+            - HGNC:4412
+            - HGNC:9936
+            - HGNC:8790
+            - HGNC:4678
+            - HGNC:1012
+            - HGNC:4206
+            - HGNC:4400
+            - HGNC:8759
+          references:
+            - DOI:10.1016/j.ophtha.2017.09.016
+            - DOI:10.1016/j.exer.2016.01.002
+    - id: CL:0002585
+      class_type: CellType
+      ccf_pref_label: Endothelial Cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0004864
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:2047
+            - HGNC:5476
+            - HGNC:2202
+          references: []
+    - id: CL:0000740
+      class_type: CellType
+      ccf_pref_label: Ganglion cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000540
+      ccf_located_in:
+        - UBERON:0001792
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:19097
+            - HGNC:9218
+            - HGNC:11801
+            - HGNC:16703
+            - HGNC:7739
+            - HGNC:7734
+            - HGNC:9219
+            - HGNC:9220
+            - HGNC:11141
+            - HGNC:20778
+            - HGNC:14449
+          references:
+            - DOI:10.1017/S0952523819000087
+            - DOI:10.1016/j.cell.2019.01.004
+    - id: FMA:62360
+      class_type: CellType
+      ccf_pref_label: Midget cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000740
+      ccf_located_in:
+        - UBERON:0001792
+      ccf_has_biomarker_set:
+        - members: []
+          references: []
+    - id: FMA:67916
+      class_type: CellType
+      ccf_pref_label: Parasol cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000740
+      ccf_located_in:
+        - UBERON:0001792
+      ccf_has_biomarker_set:
+        - members: []
+          references: []
+    - id: CL:0011004
+      class_type: CellType
+      ccf_pref_label: lens fiber cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0002444
+        - UBERON:0000390
+        - ASCTB-TEMP:inner-cortex
+        - ASCTB-TEMP:outer-cortex
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:7103
+          references: []
+        - members:
+            - ASCTB-TEMP:myristoylated-filensin
+          references:
+            - DOI:10.1016/j.exer.2020.108134
+        - members: []
+          references: []
+        - members:
+            - HGNC:12692
+            - ASCTB-TEMP:aqp0-residues-1-263-fatty-acyl
+          references:
+            - DOI:10.1167/iovs.15-18117
+    - id: CL:0002228
+      class_type: CellType
+      ccf_pref_label: primary lens fiber
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0011004
+      ccf_located_in:
+        - UBERON:0002444
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1041
+          references: []
+    - id: CL:0000745
+      class_type: CellType
+      ccf_pref_label: Horizontal Cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000540
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:6593
+            - HGNC:8138
+            - HGNC:1434
+            - HGNC:8139
+            - HGNC:9704
+          references:
+            - DOI:10.1016/j.preteyeres.2020.100844
+            - DOI:10.1016/j.exer.2016.01.002
+    - id: CL:0002224
+      class_type: CellType
+      ccf_pref_label: lens epithelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0001803
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1748
+          references: []
+    - id: CL:0002225
+      class_type: CellType
+      ccf_pref_label: mature fiber cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0011004
+      ccf_located_in:
+        - UBERON:0000390
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:17494
+            - ASCTB-TEMP:truncated-phosphorylated-forms-of-aqp0
+          references: []
+    - id: CL:0000129
+      class_type: CellType
+      ccf_pref_label: microglial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000540
+      ccf_located_in:
+        - UBERON:0000966
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:352
+          references: []
+    - id: CL:0000636
+      class_type: CellType
+      ccf_pref_label: Muller glia
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000540
+      ccf_located_in:
+        - UBERON:0001791
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:10024
+            - HGNC:4341
+            - HGNC:613
+            - HGNC:2338
+            - HGNC:2095
+            - HGNC:10941
+            - HGNC:2893
+            - HGNC:2418
+            - HGNC:4235
+          references:
+            - NoDOI
+            - DOI:10.1016/j.ophtha.2017.09.016
+    - id: CL:0008034
+      class_type: CellType
+      ccf_pref_label: Mural Cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in: []
+      ccf_has_biomarker_set: []
+    - id: CL:0000669
+      class_type: CellType
+      ccf_pref_label: Pericyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0008034
+      ccf_located_in:
+        - UBERON:0004864
+      ccf_has_biomarker_set:
+        - members:
+            - ASCTB-TEMP:rgc5
+            - HGNC:7060
+            - HGNC:6269
+            - HGNC:15754
+            - HGNC:2202
+          references:
+            - DOI:10.1016/j.cell.2019.01.004
+    - id: CL:0000604
+      class_type: CellType
+      ccf_pref_label: retinal rod cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000287
+      ccf_located_in:
+        - UBERON:0001789
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:10012
+            - HGNC:8759
+            - HGNC:8002
+            - HGNC:10521
+            - HGNC:4393
+            - HGNC:4411
+            - HGNC:7974
+            - ASCTB-TEMP:gnb1
+          references:
+            - DOI:10.1016/j.cell.2019.01.004
+            - DOI:10.1016/j.exer.2016.01.002
+    - id: CL:0002586
+      class_type: CellType
+      ccf_pref_label: retinal pigmented epithelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0001782
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:10024
+            - HGNC:10294
+            - HGNC:12691
+          references:
+            - DOI:10.1016/j.ophtha.2017.09.016
+            - DOI:10.1083/jcb.147.7.1533
+    - id: CL:0000132
+      class_type: CellType
+      ccf_pref_label: corneal endothelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0001985
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1759
+          references:
+            - DOI:10.1038/srep29047
+    - id: CL:0002363
+      class_type: CellType
+      ccf_pref_label: keratocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0003952
+      ccf_has_biomarker_set:
+        - members:
+            - ASCTB-TEMP:cd34
+            - HGNC:8803
+          references:
+            - DOI:10.1111/jcmm.13270
+    - id: CL:0017004
+      class_type: CellType
+      ccf_pref_label: telocyte
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0003952
+      ccf_has_biomarker_set:
+        - members:
+            - ASCTB-TEMP:cd34
+            - HGNC:8803
+          references:
+            - DOI:10.1111/jcmm.13270
+    - id: CL:0000575
+      class_type: CellType
+      ccf_pref_label: corneal epithelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0001772
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:1748
+            - HGNC:6440
+            - HGNC:6414
+            - HGNC:7756
+            - ASCTB-TEMP:connexin-43
+          references:
+            - DOI:10.1634/stemcell.22-3-355
+    - id: CL:0002304
+      class_type: CellType
+      ccf_pref_label: non-pigmented ciliary epithelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0001778
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:633
+            - HGNC:637
+            - HGNC:800
+          references:
+            - DOI:10.3390/cell7110210
+    - id: CL:0000066
+      class_type: CellType
+      ccf_pref_label: epithelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0002506
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:633
+            - HGNC:637
+            - HGNC:800
+          references:
+            - DOI:10.3390/cell7110210
+    - id: CL:0002565
+      class_type: CellType
+      ccf_pref_label: iris pigment epithelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0002506
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:799
+          references:
+            - DOI:10.3390/cell7110210
+    - id: CL:0002303
+      class_type: CellType
+      ccf_pref_label: pigmented ciliary epithelial cell
+      ccf_asctb_type: CT
+      ccf_is_provisional: false
+      ccf_ct_isa:
+        - CL:0000000
+      ccf_located_in:
+        - UBERON:0001778
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:799
+          references:
+            - DOI:10.3390/cell7110210
+  biomarkers:
+    - id: HGNC:11742
+      class_type: Biomarker
+      ccf_pref_label: TFAP2A
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11743
+      class_type: Biomarker
+      ccf_pref_label: TFAP2B
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11744
+      class_type: Biomarker
+      ccf_pref_label: TFAP2C
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4092
+      class_type: Biomarker
+      ccf_pref_label: GAD1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4093
+      class_type: Biomarker
+      ccf_pref_label: GAD2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11056
+      class_type: Biomarker
+      ccf_pref_label: SLC6A9
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:24182
+      class_type: Biomarker
+      ccf_pref_label: C1QL1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:24181
+      class_type: Biomarker
+      ccf_pref_label: C1QL2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1434
+      class_type: Biomarker
+      ccf_pref_label: calbindin 1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:16941
+      class_type: Biomarker
+      ccf_pref_label: secretagogin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:10575
+      class_type: Biomarker
+      ccf_pref_label: secretogranin II
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:11782
+      class_type: Biomarker
+      ccf_pref_label: TH
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:11329
+      class_type: Biomarker
+      ccf_pref_label: SST
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1912
+      class_type: Biomarker
+      ccf_pref_label: CHAT
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:9726
+      class_type: Biomarker
+      ccf_pref_label: PYGM
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:12693
+      class_type: Biomarker
+      ccf_pref_label: vasoactive intestinal polypeptide
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:7955
+      class_type: Biomarker
+      ccf_pref_label: neuropeptide Y
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:11526
+      class_type: Biomarker
+      ccf_pref_label: tachykinin receptor 1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:11528
+      class_type: Biomarker
+      ccf_pref_label: tachykinin receptor 3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:24323
+      class_type: Biomarker
+      ccf_pref_label: Cocaine- and amphetamine-regulated transcript protein
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:11510
+      class_type: Biomarker
+      ccf_pref_label: SYT2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1435
+      class_type: Biomarker
+      ccf_pref_label: calbindin 2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:20151
+      class_type: Biomarker
+      ccf_pref_label: Vesicular glutamate transporter 3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:9704
+      class_type: Biomarker
+      ccf_pref_label: parvalbumin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:21637
+      class_type: Biomarker
+      ccf_pref_label: SATB2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:19087
+      class_type: Biomarker
+      ccf_pref_label: EBF3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:9723
+      class_type: Biomarker
+      ccf_pref_label: glycogen phosphorylase B
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:787
+      class_type: Biomarker
+      ccf_pref_label: nitric oxide synthase
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1569
+      class_type: Biomarker
+      ccf_pref_label: cholecystokinin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1975
+      class_type: Biomarker
+      ccf_pref_label: VSX2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:12723
+      class_type: Biomarker
+      ccf_pref_label: VSX1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:13714
+      class_type: Biomarker
+      ccf_pref_label: CABP5
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:8522
+      class_type: Biomarker
+      ccf_pref_label: OTX2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4598
+      class_type: Biomarker
+      ccf_pref_label: GRM6
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:9393
+      class_type: Biomarker
+      ccf_pref_label: PRKCA
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7146
+      class_type: Biomarker
+      ccf_pref_label: TRPM1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4579
+      class_type: Biomarker
+      ccf_pref_label: GRIK1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4389
+      class_type: Biomarker
+      ccf_pref_label: G protein subunit alpha o1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:6132
+      class_type: Biomarker
+      ccf_pref_label: Islet-1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:7103
+      class_type: Biomarker
+      ccf_pref_label: Aquaporin 0
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:9937
+      class_type: Biomarker
+      ccf_pref_label: recoverin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:10940
+      class_type: Biomarker
+      ccf_pref_label: solute carrier family 1 member 2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1384
+      class_type: Biomarker
+      ccf_pref_label: calcium binding protein 1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:4845
+      class_type: Biomarker
+      ccf_pref_label: HCN1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:10585
+      class_type: Biomarker
+      ccf_pref_label: sodium voltage-gated channel alpha subunit 1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1394
+      class_type: Biomarker
+      ccf_pref_label: calcium voltage-gated channel subunit alpha1 G
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:carbohydrate-epitope-15-3-fucosyl-n-acetyl-lactosamine-
+      class_type: Biomarker
+      ccf_pref_label: carbohydrate epitope 15 (3-fucosyl-N-acetyl-lactosamine)
+      ccf_asctb_type: BM
+      ccf_biomarker_type: metabolites
+      ccf_is_provisional: true
+    - id: HGNC:26483
+      class_type: Biomarker
+      ccf_pref_label: glycosyltransferase 1 domain containing 1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:4400
+      class_type: Biomarker
+      ccf_pref_label: Guanine nucleotide-binding protein G(I)/G(S)/G(T) subunit beta-3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:13635
+      class_type: Biomarker
+      ccf_pref_label: PLVAP
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1375
+      class_type: Biomarker
+      ccf_pref_label: Carbonic anhydrase 4
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:710
+      class_type: Biomarker
+      ccf_pref_label: ARR3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4394
+      class_type: Biomarker
+      ccf_pref_label: GNAT2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4412
+      class_type: Biomarker
+      ccf_pref_label: GNGT2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:9936
+      class_type: Biomarker
+      ccf_pref_label: OPN1LW
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:8790
+      class_type: Biomarker
+      ccf_pref_label: PDE6H
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4678
+      class_type: Biomarker
+      ccf_pref_label: GUCA1A
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1012
+      class_type: Biomarker
+      ccf_pref_label: OPN1SW
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4206
+      class_type: Biomarker
+      ccf_pref_label: OPN1MW
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:8759
+      class_type: Biomarker
+      ccf_pref_label: phosducin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:2047
+      class_type: Biomarker
+      ccf_pref_label: CLDN5
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:5476
+      class_type: Biomarker
+      ccf_pref_label: IGFBP7
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2202
+      class_type: Biomarker
+      ccf_pref_label: COL4A1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:19097
+      class_type: Biomarker
+      ccf_pref_label: RBPMS
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:9218
+      class_type: Biomarker
+      ccf_pref_label: POU4F1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11801
+      class_type: Biomarker
+      ccf_pref_label: THY1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:16703
+      class_type: Biomarker
+      ccf_pref_label: SLC17A6
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7739
+      class_type: Biomarker
+      ccf_pref_label: NEFL
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7734
+      class_type: Biomarker
+      ccf_pref_label: NEFM
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:9219
+      class_type: Biomarker
+      ccf_pref_label: POU4F2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:9220
+      class_type: Biomarker
+      ccf_pref_label: POU4F3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:11141
+      class_type: Biomarker
+      ccf_pref_label: SNCG
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:20778
+      class_type: Biomarker
+      ccf_pref_label: Œ≤ tubulin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:14449
+      class_type: Biomarker
+      ccf_pref_label: melanopsin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1041
+      class_type: Biomarker
+      ccf_pref_label: Phakinin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:6593
+      class_type: Biomarker
+      ccf_pref_label: LHX1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:8138
+      class_type: Biomarker
+      ccf_pref_label: ONECUT1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:8139
+      class_type: Biomarker
+      ccf_pref_label: ONECUT2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:1748
+      class_type: Biomarker
+      ccf_pref_label: E-cadherin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:myristoylated-filensin
+      class_type: Biomarker
+      ccf_pref_label: myristoylated filensin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: proteoforms
+      ccf_is_provisional: true
+    - id: HGNC:17494
+      class_type: Biomarker
+      ccf_pref_label: connexin 46
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:truncated-phosphorylated-forms-of-aqp0
+      class_type: Biomarker
+      ccf_pref_label: truncated/phosphorylated forms of AQP0
+      ccf_asctb_type: BM
+      ccf_biomarker_type: proteoforms
+      ccf_is_provisional: true
+    - id: HGNC:352
+      class_type: Biomarker
+      ccf_pref_label: allograft inflammatory factor 1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:10024
+      class_type: Biomarker
+      ccf_pref_label: RLBP1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4341
+      class_type: Biomarker
+      ccf_pref_label: GLUL
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:613
+      class_type: Biomarker
+      ccf_pref_label: APOE
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2338
+      class_type: Biomarker
+      ccf_pref_label: CRABP1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2095
+      class_type: Biomarker
+      ccf_pref_label: CLU
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:10941
+      class_type: Biomarker
+      ccf_pref_label: SLC1A3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2893
+      class_type: Biomarker
+      ccf_pref_label: DKK3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:2418
+      class_type: Biomarker
+      ccf_pref_label: CRYM
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4235
+      class_type: Biomarker
+      ccf_pref_label: GFAP
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:rgc5
+      class_type: Biomarker
+      ccf_pref_label: RGC5
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: true
+    - id: HGNC:7060
+      class_type: Biomarker
+      ccf_pref_label: MGP
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:6269
+      class_type: Biomarker
+      ccf_pref_label: KCNJ8
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:15754
+      class_type: Biomarker
+      ccf_pref_label: MYL9
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:10012
+      class_type: Biomarker
+      ccf_pref_label: RHO
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:8002
+      class_type: Biomarker
+      ccf_pref_label: NRL
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:10521
+      class_type: Biomarker
+      ccf_pref_label: SAG
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4393
+      class_type: Biomarker
+      ccf_pref_label: GNAT1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:4411
+      class_type: Biomarker
+      ccf_pref_label: GNGT1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: HGNC:7974
+      class_type: Biomarker
+      ccf_pref_label: NR2E3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:gnb1
+      class_type: Biomarker
+      ccf_pref_label: GNB1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: gene
+      ccf_is_provisional: true
+    - id: HGNC:10294
+      class_type: Biomarker
+      ccf_pref_label: RPE65
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:12691
+      class_type: Biomarker
+      ccf_pref_label: ezrin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:12692
+      class_type: Biomarker
+      ccf_pref_label: Vimentin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:aqp0-residues-1-263-fatty-acyl
+      class_type: Biomarker
+      ccf_pref_label: AQP0 residues 1-263 +fatty acyl
+      ccf_asctb_type: BM
+      ccf_biomarker_type: proteoforms
+      ccf_is_provisional: true
+    - id: HGNC:8823
+      class_type: Biomarker
+      ccf_pref_label: CD31
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1662P28906
+      class_type: Biomarker
+      ccf_pref_label: CD34
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:1759
+      class_type: Biomarker
+      ccf_pref_label: N-cadherin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:cd34
+      class_type: Biomarker
+      ccf_pref_label: CD34
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:8803
+      class_type: Biomarker
+      ccf_pref_label: PDGFRa
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:6440
+      class_type: Biomarker
+      ccf_pref_label: cytokeratin 3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:6414
+      class_type: Biomarker
+      ccf_pref_label: cytokeratin 12
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:7756
+      class_type: Biomarker
+      ccf_pref_label: nestin
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:connexin-43
+      class_type: Biomarker
+      ccf_pref_label: connexin 43
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: true
+    - id: HGNC:3603
+      class_type: Biomarker
+      ccf_pref_label: Fibrillin 1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:18794
+      class_type: Biomarker
+      ccf_pref_label: Fibrillin-3
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:6715
+      class_type: Biomarker
+      ccf_pref_label: latent transforming growth factor beta binding protein 2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: ASCTB-TEMP:microfibril-associated-protein-2
+      class_type: Biomarker
+      ccf_pref_label: Microfibril associated protein 2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: true
+    - id: ASCTB-TEMP:elastin-microfibril-interface-located-protein-1
+      class_type: Biomarker
+      ccf_pref_label: Elastin microfibril interface located protein-1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: true
+    - id: HGNC:633
+      class_type: Biomarker
+      ccf_pref_label: aquaporin 1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:637
+      class_type: Biomarker
+      ccf_pref_label: Aquaporin 4
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:800
+      class_type: Biomarker
+      ccf_pref_label: Na/K ATPasea2
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
+    - id: HGNC:799
+      class_type: Biomarker
+      ccf_pref_label: ATPase Na+/K+ transporting subunit alpha 1
+      ccf_asctb_type: BM
+      ccf_biomarker_type: protein
+      ccf_is_provisional: false
