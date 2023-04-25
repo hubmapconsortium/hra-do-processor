@@ -31,19 +31,19 @@ export function convertNormalizedToOwl(context) {
   return output;
 }
 
-export function downloadValidationResult(context, outputType, useNightlyBuild=true) {
+export function downloadValidationResult(context, useNightlyBuild=true) {
   const { selectedDigitalObject: obj, processorHome } = context;
   
   const baseUrl = "https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl";
-  const organName = findOrganName(obj.name);
-  let input;
-  if (outputType === "main") {
-    input = `${baseUrl}/ccf_${organName}_classes.owl`;
-  } else if (outputType === "extended") {
-    input = `${baseUrl}/${organName}_extended.owl`;
+  if (!useNightlyBuild) {
+    baseUrl = `${baseUrl}/last_official_ASCTB_release`
   }
-  const download = resolve(obj.path, `enriched/${outputType}-${obj.name}-validation.owl`);
-  const output = resolve(obj.path, `enriched/${outputType}-${obj.name}-validation.ttl`);
+
+  const organName = findOrganName(obj.name);
+  const input = `${baseUrl}/${organName}_extended.owl`;
+
+  const download = resolve(obj.path, `enriched/${obj.name}-validation.owl`);
+  const output = resolve(obj.path, `enriched/${obj.name}-validation.ttl`);
 
   throwOnError(
     `wget -nc -nv -q ${input} -O ${download} && \

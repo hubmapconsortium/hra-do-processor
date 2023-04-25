@@ -12,14 +12,12 @@ export function enrichAsctb(context) {
     revertChanges(context);
     
     // Include asssertions from the CCF validation tool to enrich the graph data
-    const mainResults = downloadValidationResult(context, "main");
-    const extendedResults = downloadValidationResult(context, "extended");
+    const validationResults = downloadValidationResult(context);
 
     // Merge all the resources
     const validatedData = mergeOntologies(context, [
       enrichedData,
-      mainResults, 
-      extendedResults
+      validationResults
     ]);
 
     // Include assertions from the reference ontologies to enrich the graph data
