@@ -23,6 +23,10 @@ imports:
   - linkml:types
   - ../shared/metadata
 
+settings:
+  prefix: "\\w+:"
+  name: "\\w+"
+
 classes:
   AsctbConcept:
     abstract: true
@@ -130,9 +134,9 @@ classes:
       - datatable
   Container:
     tree_root: true
-    slots:
-      - id
     attributes:
+      id:
+        range: uriorcurie
       metadata:
         range: AsctbMetadata
       data:
@@ -173,7 +177,11 @@ slots:
   id:
     required: true
     identifier: true
-    range: uriorcurie  
+    range: string
+    structured_pattern:
+      syntax: "{prefix}{name}"
+      interpolated: true
+      partial_match: false
   class_type:
     required: true
     designates_type: true
@@ -196,7 +204,11 @@ slots:
       owl: SomeValuesFrom
   references:
     multivalued: true
-    range: uriorcurie
+    range: string
+    structured_pattern:
+      syntax: "{prefix}{name}"
+      interpolated: true
+      partial_match: false    
     slot_uri: dct:reference
   ccf_has_biomarker_set:
     required: false
