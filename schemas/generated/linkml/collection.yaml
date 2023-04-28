@@ -34,7 +34,7 @@ types:
   string:
     name: string
     description: A character string
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     exact_mappings:
     - schema:Text
     base: str
@@ -42,7 +42,7 @@ types:
   integer:
     name: integer
     description: An integer
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     exact_mappings:
     - schema:Integer
     base: int
@@ -50,7 +50,7 @@ types:
   boolean:
     name: boolean
     description: A binary (true or false) value
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     exact_mappings:
     - schema:Boolean
     base: Bool
@@ -59,7 +59,7 @@ types:
   float:
     name: float
     description: A real number that conforms to the xsd:float specification
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     exact_mappings:
     - schema:Float
     base: float
@@ -67,7 +67,7 @@ types:
   double:
     name: double
     description: A real number that conforms to the xsd:double specification
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     close_mappings:
     - schema:Float
     base: float
@@ -76,7 +76,7 @@ types:
     name: decimal
     description: A real number with arbitrary precision that conforms to the xsd:decimal
       specification
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     broad_mappings:
     - schema:Number
     base: Decimal
@@ -87,7 +87,7 @@ types:
       particular day
     notes:
     - URI is dateTime because OWL reasoners do not work with straight date or time
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     exact_mappings:
     - schema:Time
     base: XSDTime
@@ -98,7 +98,7 @@ types:
     description: a date (year, month and day) in an idealized calendar
     notes:
     - URI is dateTime because OWL reasoners don't work with straight date or time
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     exact_mappings:
     - schema:Date
     base: XSDDate
@@ -107,7 +107,7 @@ types:
   datetime:
     name: datetime
     description: The combination of a date and time
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     exact_mappings:
     - schema:DateTime
     base: XSDDateTime
@@ -116,14 +116,14 @@ types:
   date_or_datetime:
     name: date_or_datetime
     description: Either a date or a datetime
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     base: str
     uri: linkml:DateOrDatetime
     repr: str
   uriorcurie:
     name: uriorcurie
     description: a URI or a CURIE
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     base: URIorCURIE
     uri: xsd:anyURI
     repr: str
@@ -134,7 +134,7 @@ types:
     comments:
     - in RDF serializations this MUST be expanded to a URI
     - in non-RDF serializations MAY be serialized as the compact representation
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     base: Curie
     uri: xsd:string
     repr: str
@@ -146,7 +146,7 @@ types:
     - in RDF serializations a slot with range of uri is treated as a literal or type
       xsd:anyURI unless it is an identifier or a reference to an identifier, in which
       case it is translated directly to a node
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     close_mappings:
     - schema:URL
     base: URI
@@ -155,7 +155,7 @@ types:
   ncname:
     name: ncname
     description: Prefix part of CURIE
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     base: NCName
     uri: xsd:string
     repr: str
@@ -164,14 +164,14 @@ types:
     description: A URI or CURIE that represents an object in the model.
     comments:
     - Used for inheritence and type checking
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     base: ElementIdentifier
     uri: shex:iri
     repr: str
   nodeidentifier:
     name: nodeidentifier
     description: A URI, CURIE or BNODE that represents a node in a model.
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/collection
     base: NodeIdentifier
     uri: shex:nonLiteral
     repr: str

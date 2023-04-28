@@ -4,7 +4,7 @@
 
 a URI or a CURIE
 
-URI: [linkml:Uriorcurie](https://w3id.org/linkml/Uriorcurie)
+URI: [ccf:Uriorcurie](http://purl.org/ccf/Uriorcurie)
 
 |  |  |  |
 | --- | --- | --- |

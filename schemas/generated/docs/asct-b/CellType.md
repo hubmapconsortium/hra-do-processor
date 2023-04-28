@@ -7,7 +7,7 @@
 URI: [ccf:CellType](http://purl.org/ccf/CellType)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[BiomarkerSet]<ccf_has_biomarker_set%200..*-++[CellType&#124;id(i):uriorcurie;class_type(i):string;ccf_pref_label(i):string;ccf_asctb_type(i):string;ccf_is_provisional(i):boolean],[AnatomicalStructure]<ccf_located_in%200..*-%20[CellType],[CellType]<ccf_ct_isa%200..*-%20[CellType],[AsctbDataset]++-%20cell_types%200..*>[CellType],[AsctbConcept]^-[CellType],[BiomarkerSet],[AsctbDataset],[AsctbConcept],[AnatomicalStructure])](https://yuml.me/diagram/nofunky;dir:TB/class/[BiomarkerSet]<ccf_has_biomarker_set%200..*-++[CellType&#124;id(i):uriorcurie;class_type(i):string;ccf_pref_label(i):string;ccf_asctb_type(i):string;ccf_is_provisional(i):boolean],[AnatomicalStructure]<ccf_located_in%200..*-%20[CellType],[CellType]<ccf_ct_isa%200..*-%20[CellType],[AsctbDataset]++-%20cell_types%200..*>[CellType],[AsctbConcept]^-[CellType],[BiomarkerSet],[AsctbDataset],[AsctbConcept],[AnatomicalStructure])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[BiomarkerSet]<ccf_has_biomarker_set%200..*-++[CellType&#124;id(i):string;class_type(i):string;ccf_pref_label(i):string;ccf_asctb_type(i):string;ccf_is_provisional(i):boolean],[AnatomicalStructure]<ccf_located_in%200..*-%20[CellType],[CellType]<ccf_ct_isa%200..*-%20[CellType],[AsctbDataset]++-%20cell_types%200..*>[CellType],[AsctbConcept]^-[CellType],[BiomarkerSet],[AsctbDataset],[AsctbConcept],[AnatomicalStructure])](https://yuml.me/diagram/nofunky;dir:TB/class/[BiomarkerSet]<ccf_has_biomarker_set%200..*-++[CellType&#124;id(i):string;class_type(i):string;ccf_pref_label(i):string;ccf_asctb_type(i):string;ccf_is_provisional(i):boolean],[AnatomicalStructure]<ccf_located_in%200..*-%20[CellType],[CellType]<ccf_ct_isa%200..*-%20[CellType],[AsctbDataset]++-%20cell_types%200..*>[CellType],[AsctbConcept]^-[CellType],[BiomarkerSet],[AsctbDataset],[AsctbConcept],[AnatomicalStructure])
 
 ## Parents
 
@@ -34,7 +34,7 @@ URI: [ccf:CellType](http://purl.org/ccf/CellType)
 ### Inherited from AsctbConcept:
 
  * [id](id.md)  <sub>1..1</sub>
-     * Range: [Uriorcurie](types/Uriorcurie.md)
+     * Range: [String](types/String.md)
  * [class_type](class_type.md)  <sub>1..1</sub>
      * Range: [String](types/String.md)
  * [AsctbConcept➞ccf_pref_label](AsctbConcept_ccf_pref_label.md)  <sub>1..1</sub>

@@ -4,7 +4,7 @@
 
 Either a date or a datetime
 
-URI: [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime)
+URI: [ccf:DateOrDatetime](http://purl.org/ccf/DateOrDatetime)
 
 |  |  |  |
 | --- | --- | --- |

@@ -23,6 +23,7 @@
                     "type": "string"
                 },
                 "id": {
+                    "pattern": "\\w+:\\w+",
                     "type": "string"
                 }
             },
@@ -170,6 +171,7 @@
                     "type": "string"
                 },
                 "id": {
+                    "pattern": "\\w+:\\w+",
                     "type": "string"
                 }
             },
@@ -196,6 +198,7 @@
                 },
                 "references": {
                     "items": {
+                        "pattern": "\\w+:\\w+",
                         "type": "string"
                     },
                     "type": "array"
@@ -239,6 +242,7 @@
                     "type": "string"
                 },
                 "id": {
+                    "pattern": "\\w+:\\w+",
                     "type": "string"
                 }
             },
@@ -266,9 +270,6 @@
                     "$ref": "#/$defs/AsctbMetadata"
                 }
             },
-            "required": [
-                "id"
-            ],
             "title": "Container",
             "type": "object"
         },
@@ -331,9 +332,6 @@
             "$ref": "#/$defs/AsctbMetadata"
         }
     },
-    "required": [
-        "id"
-    ],
     "title": "asct-b",
     "type": "object",
     "version": null

@@ -4,7 +4,7 @@
 
 a compact URI
 
-URI: [linkml:Curie](https://w3id.org/linkml/Curie)
+URI: [ccf:Curie](http://purl.org/ccf/Curie)
 
 |  |  |  |
 | --- | --- | --- |

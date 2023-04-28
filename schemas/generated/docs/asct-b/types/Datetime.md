@@ -4,7 +4,7 @@
 
 The combination of a date and time
 
-URI: [linkml:Datetime](https://w3id.org/linkml/Datetime)
+URI: [ccf:Datetime](http://purl.org/ccf/Datetime)
 
 |  |  |  |
 | --- | --- | --- |

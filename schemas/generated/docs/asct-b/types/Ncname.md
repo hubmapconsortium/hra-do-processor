@@ -4,7 +4,7 @@
 
 Prefix part of CURIE
 
-URI: [linkml:Ncname](https://w3id.org/linkml/Ncname)
+URI: [ccf:Ncname](http://purl.org/ccf/Ncname)
 
 |  |  |  |
 | --- | --- | --- |

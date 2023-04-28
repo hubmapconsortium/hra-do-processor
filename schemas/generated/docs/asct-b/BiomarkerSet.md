@@ -7,7 +7,7 @@
 URI: [ccf:BiomarkerSet](http://purl.org/ccf/BiomarkerSet)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[CellType],[Biomarker]<members%200..*-%20[BiomarkerSet&#124;references:uriorcurie%20*],[CellType]++-%20ccf_has_biomarker_set%200..*>[BiomarkerSet],[CellType]++-%20ccf_has_biomarker_set(i)%200..*>[BiomarkerSet],[Biomarker])](https://yuml.me/diagram/nofunky;dir:TB/class/[CellType],[Biomarker]<members%200..*-%20[BiomarkerSet&#124;references:uriorcurie%20*],[CellType]++-%20ccf_has_biomarker_set%200..*>[BiomarkerSet],[CellType]++-%20ccf_has_biomarker_set(i)%200..*>[BiomarkerSet],[Biomarker])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[CellType],[Biomarker]<members%200..*-%20[BiomarkerSet&#124;references:string%20*],[CellType]++-%20ccf_has_biomarker_set%200..*>[BiomarkerSet],[CellType]++-%20ccf_has_biomarker_set(i)%200..*>[BiomarkerSet],[Biomarker])](https://yuml.me/diagram/nofunky;dir:TB/class/[CellType],[Biomarker]<members%200..*-%20[BiomarkerSet&#124;references:string%20*],[CellType]++-%20ccf_has_biomarker_set%200..*>[BiomarkerSet],[CellType]++-%20ccf_has_biomarker_set(i)%200..*>[BiomarkerSet],[Biomarker])
 
 ## Referenced by Class
 
@@ -22,4 +22,4 @@ URI: [ccf:BiomarkerSet](http://purl.org/ccf/BiomarkerSet)
  * [members](members.md)  <sub>0..\*</sub>
      * Range: [Biomarker](Biomarker.md)
  * [references](references.md)  <sub>0..\*</sub>
-     * Range: [Uriorcurie](types/Uriorcurie.md)
+     * Range: [String](types/String.md)

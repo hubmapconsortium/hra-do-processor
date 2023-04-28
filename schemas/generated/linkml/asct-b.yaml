@@ -64,7 +64,7 @@ types:
   string:
     name: string
     description: A character string
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     exact_mappings:
     - schema:Text
     base: str
@@ -72,7 +72,7 @@ types:
   integer:
     name: integer
     description: An integer
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     exact_mappings:
     - schema:Integer
     base: int
@@ -80,7 +80,7 @@ types:
   boolean:
     name: boolean
     description: A binary (true or false) value
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     exact_mappings:
     - schema:Boolean
     base: Bool
@@ -89,7 +89,7 @@ types:
   float:
     name: float
     description: A real number that conforms to the xsd:float specification
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     exact_mappings:
     - schema:Float
     base: float
@@ -97,7 +97,7 @@ types:
   double:
     name: double
     description: A real number that conforms to the xsd:double specification
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     close_mappings:
     - schema:Float
     base: float
@@ -106,7 +106,7 @@ types:
     name: decimal
     description: A real number with arbitrary precision that conforms to the xsd:decimal
       specification
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     broad_mappings:
     - schema:Number
     base: Decimal
@@ -117,7 +117,7 @@ types:
       particular day
     notes:
     - URI is dateTime because OWL reasoners do not work with straight date or time
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     exact_mappings:
     - schema:Time
     base: XSDTime
@@ -128,7 +128,7 @@ types:
     description: a date (year, month and day) in an idealized calendar
     notes:
     - URI is dateTime because OWL reasoners don't work with straight date or time
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     exact_mappings:
     - schema:Date
     base: XSDDate
@@ -137,7 +137,7 @@ types:
   datetime:
     name: datetime
     description: The combination of a date and time
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     exact_mappings:
     - schema:DateTime
     base: XSDDateTime
@@ -146,14 +146,14 @@ types:
   date_or_datetime:
     name: date_or_datetime
     description: Either a date or a datetime
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     base: str
     uri: linkml:DateOrDatetime
     repr: str
   uriorcurie:
     name: uriorcurie
     description: a URI or a CURIE
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     base: URIorCURIE
     uri: xsd:anyURI
     repr: str
@@ -164,7 +164,7 @@ types:
     comments:
     - in RDF serializations this MUST be expanded to a URI
     - in non-RDF serializations MAY be serialized as the compact representation
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     base: Curie
     uri: xsd:string
     repr: str
@@ -176,7 +176,7 @@ types:
     - in RDF serializations a slot with range of uri is treated as a literal or type
       xsd:anyURI unless it is an identifier or a reference to an identifier, in which
       case it is translated directly to a node
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     close_mappings:
     - schema:URL
     base: URI
@@ -185,7 +185,7 @@ types:
   ncname:
     name: ncname
     description: Prefix part of CURIE
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     base: NCName
     uri: xsd:string
     repr: str
@@ -194,14 +194,14 @@ types:
     description: A URI or CURIE that represents an object in the model.
     comments:
     - Used for inheritence and type checking
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     base: ElementIdentifier
     uri: shex:iri
     repr: str
   nodeidentifier:
     name: nodeidentifier
     description: A URI, CURIE or BNODE that represents a node in a model.
-    from_schema: https://w3id.org/linkml/types
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     base: NodeIdentifier
     uri: shex:nonLiteral
     repr: str
@@ -210,8 +210,13 @@ slots:
     name: id
     from_schema: http://purl.humanatlas.io/specs/asct-b
     identifier: true
-    range: uriorcurie
+    range: string
     required: true
+    pattern: \w+:\w+
+    structured_pattern:
+      syntax: '{prefix}{name}'
+      interpolated: true
+      partial_match: false
   class_type:
     name: class_type
     from_schema: http://purl.humanatlas.io/specs/asct-b
@@ -249,7 +254,12 @@ slots:
     from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: dct:reference
     multivalued: true
-    range: uriorcurie
+    range: string
+    pattern: \w+:\w+
+    structured_pattern:
+      syntax: '{prefix}{name}'
+      interpolated: true
+      partial_match: false
   ccf_has_biomarker_set:
     name: ccf_has_biomarker_set
     from_schema: http://purl.humanatlas.io/specs/asct-b
@@ -300,32 +310,32 @@ slots:
     required: true
   type:
     name: type
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: schema:about
     required: false
   name:
     name: name
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: schema:name
     required: false
   version:
     name: version
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: schema:version
     required: true
   title:
     name: title
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: dct:title
     required: true
   description:
     name: description
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: dct:description
     required: true
   creators:
     name: creators
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: dct:creator
     multivalued: true
     range: Person
@@ -333,7 +343,7 @@ slots:
     inlined_as_list: true
   project_leads:
     name: project_leads
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: ccf:project_lead
     multivalued: true
     range: Person
@@ -341,7 +351,7 @@ slots:
     inlined_as_list: true
   reviewers:
     name: reviewers
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: schema:reviewedBy
     multivalued: true
     range: Person
@@ -349,7 +359,7 @@ slots:
     inlined_as_list: true
   externalReviewers:
     name: externalReviewers
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: ccf:externallyReviewedBy
     multivalued: true
     range: Person
@@ -357,22 +367,22 @@ slots:
     inlined_as_list: true
   creation_date:
     name: creation_date
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: schema:dateCreated
     required: true
   license:
     name: license
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: dct:license
     required: true
   publisher:
     name: publisher
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: dct:publisher
     required: false
   funders:
     name: funders
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: schema:funding
     multivalued: true
     range: Grant
@@ -380,59 +390,59 @@ slots:
     inlined_as_list: true
   hubmapId:
     name: hubmapId
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: ccf:hubmap_id
     required: false
   doi:
     name: doi
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: ccf:doi
     range: uriorcurie
     required: false
   citation:
     name: citation
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: schema:citation
     required: false
   citationOverall:
     name: citationOverall
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: ccf:citation_overall
     required: false
   datatable:
     name: datatable
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: ccf:data_table
     multivalued: true
     required: false
   fullName:
     name: fullName
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: foaf:name
     required: true
   firstName:
     name: firstName
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: foaf:firstName
     required: true
   lastName:
     name: lastName
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: foaf:surname
     required: true
   orcid:
     name: orcid
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: schema:identifier
     required: true
   funder:
     name: funder
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: schema:funder
     required: true
   awardNumber:
     name: awardNumber
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slot_uri: schema:award
     required: false
 classes:
@@ -642,9 +652,11 @@ classes:
 
           {% endfor %}'
     from_schema: http://purl.humanatlas.io/specs/asct-b
-    slots:
-    - id
     attributes:
+      id:
+        name: id
+        from_schema: http://purl.humanatlas.io/specs/asct-b
+        range: uriorcurie
       metadata:
         name: metadata
         from_schema: http://purl.humanatlas.io/specs/asct-b
@@ -656,7 +668,7 @@ classes:
     tree_root: true
   Person:
     name: Person
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slots:
     - fullName
     - firstName
@@ -665,10 +677,17 @@ classes:
     class_uri: foaf:Person
   Grant:
     name: Grant
-    from_schema: http://purl.humanatlas.io/specs/metadata
+    from_schema: http://purl.humanatlas.io/specs/asct-b
     slots:
     - funder
     - awardNumber
     class_uri: schema:Grant
 source_file: schemas/src/digital-objects/asct-b.yaml
+settings:
+  prefix:
+    setting_key: prefix
+    setting_value: '\w+:'
+  name:
+    setting_key: name
+    setting_value: \w+
 

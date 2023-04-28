@@ -7,7 +7,7 @@
 URI: [ccf:Biomarker](http://purl.org/ccf/Biomarker)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[AsctbDataset]++-%20biomarkers%200..*>[Biomarker&#124;ccf_biomarker_type:string;id(i):uriorcurie;class_type(i):string;ccf_pref_label(i):string;ccf_asctb_type(i):string;ccf_is_provisional(i):boolean],[BiomarkerSet]-%20members%200..*>[Biomarker],[AsctbConcept]^-[Biomarker],[BiomarkerSet],[AsctbDataset],[AsctbConcept])](https://yuml.me/diagram/nofunky;dir:TB/class/[AsctbDataset]++-%20biomarkers%200..*>[Biomarker&#124;ccf_biomarker_type:string;id(i):uriorcurie;class_type(i):string;ccf_pref_label(i):string;ccf_asctb_type(i):string;ccf_is_provisional(i):boolean],[BiomarkerSet]-%20members%200..*>[Biomarker],[AsctbConcept]^-[Biomarker],[BiomarkerSet],[AsctbDataset],[AsctbConcept])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[AsctbDataset]++-%20biomarkers%200..*>[Biomarker&#124;ccf_biomarker_type:string;id(i):string;class_type(i):string;ccf_pref_label(i):string;ccf_asctb_type(i):string;ccf_is_provisional(i):boolean],[BiomarkerSet]-%20members%200..*>[Biomarker],[AsctbConcept]^-[Biomarker],[BiomarkerSet],[AsctbDataset],[AsctbConcept])](https://yuml.me/diagram/nofunky;dir:TB/class/[AsctbDataset]++-%20biomarkers%200..*>[Biomarker&#124;ccf_biomarker_type:string;id(i):string;class_type(i):string;ccf_pref_label(i):string;ccf_asctb_type(i):string;ccf_is_provisional(i):boolean],[BiomarkerSet]-%20members%200..*>[Biomarker],[AsctbConcept]^-[Biomarker],[BiomarkerSet],[AsctbDataset],[AsctbConcept])
 
 ## Parents
 
@@ -29,7 +29,7 @@ URI: [ccf:Biomarker](http://purl.org/ccf/Biomarker)
 ### Inherited from AsctbConcept:
 
  * [id](id.md)  <sub>1..1</sub>
-     * Range: [Uriorcurie](types/Uriorcurie.md)
+     * Range: [String](types/String.md)
  * [class_type](class_type.md)  <sub>1..1</sub>
      * Range: [String](types/String.md)
  * [AsctbConcept➞ccf_pref_label](AsctbConcept_ccf_pref_label.md)  <sub>1..1</sub>

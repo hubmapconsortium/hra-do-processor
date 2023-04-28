@@ -9,7 +9,7 @@ URI: [ccf:references](http://purl.org/ccf/references)
 
 ## Domain and Range
 
-None &#8594;  <sub>0..\*</sub> [Uriorcurie](types/Uriorcurie.md)
+None &#8594;  <sub>0..\*</sub> [String](types/String.md)
 
 ## Parents
 

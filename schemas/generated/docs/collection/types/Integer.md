@@ -4,7 +4,7 @@
 
 An integer
 
-URI: [linkml:Integer](https://w3id.org/linkml/Integer)
+URI: [ccf:Integer](http://purl.org/ccf/Integer)
 
 |  |  |  |
 | --- | --- | --- |
