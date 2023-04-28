@@ -1,27 +1,33 @@
 #!/bin/bash
 set -ev
 
+# Process the edit version of the LinkML schema
 for schemaFile in schemas/src/digital-objects/*.yaml; do
   type=$(basename ${schemaFile%.yaml})
   echo $type $schemaFile
 
+  # Generate resolved LinkML schema definitions
+  mkdir -p schemas/generated/linkml
+  gen-linkml -f yaml --no-materialize-attributes --materialize-patterns $schemaFile > schemas/generated/linkml/${type}.yaml
+done
+
+# Use the resolved LinkML schema to generate the other data schemas
+for genSchemaFile in schemas/generated/linkml/*.yaml; do
+  type=$(basename ${genSchemaFile%.yaml})
+
   # Generate JSON Schema for validation
   mkdir -p schemas/generated/json-schema
-  gen-json-schema $schemaFile > schemas/generated/json-schema/${type}.schema.json
+  gen-json-schema $genSchemaFile > schemas/generated/json-schema/${type}.schema.json
 
   # Generate JSON-LD Context
   mkdir -p schemas/generated/json-ld
-  gen-jsonld-context $schemaFile > schemas/generated/json-ld/${type}.context.jsonld
+  gen-jsonld-context $genSchemaFile > schemas/generated/json-ld/${type}.context.jsonld
 
   # Generate Markdown documentation
   mkdir -p schemas/generated/docs
-  gen-markdown $schemaFile -d schemas/generated/docs/${type}
+  gen-markdown $genSchemaFile -d schemas/generated/docs/${type}
 
   # Generate OWL schema definitions
   mkdir -p schemas/generated/owl
-  gen-owl $schemaFile > schemas/generated/owl/${type}.owl.ttl
-
-  # Generate resolved LinkML schema definitions
-  mkdir -p schemas/generated/linkml
-  gen-linkml -f yaml --no-materialize-attributes $schemaFile > schemas/generated/linkml/${type}.yaml
+  gen-owl $genSchemaFile > schemas/generated/owl/${type}.owl.ttl
 done
