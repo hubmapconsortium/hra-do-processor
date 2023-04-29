@@ -1,0 +1,13 @@
+status: fail
+errors:
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/kidney/v1.2/normalized/normalized.yaml
+    path: $.data.biomarkers[63].id
+    message: '''SLC4A11'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/kidney/v1.2/normalized/normalized.yaml
+    path: $.data.biomarkers[139].id
+    message: '''HGNC:'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+parse_errors: []

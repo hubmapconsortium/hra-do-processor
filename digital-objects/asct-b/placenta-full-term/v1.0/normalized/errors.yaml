@@ -1,0 +1,489 @@
+status: fail
+errors:
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.biomarkers[16].id
+    message: '''LM:LMSP0502AE00'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[1].ccf_has_biomarker_set[0].references[1]
+    message: '''doi:10.1155/2021/6662201'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[1].ccf_has_biomarker_set[0].references[2]
+    message: '''doi:10.1093/humrep/dem265'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[1].ccf_has_biomarker_set[0].references[3]
+    message: >-
+      'doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[1].ccf_has_biomarker_set[0].references[5]
+    message: >-
+      'doi.org/10.1371/journal.pone.0169849' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[0].references[2]
+    message: '''doi:10.1038/ng.2007.6.'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[3].ccf_has_biomarker_set[0].references[2]
+    message: '''doi:10.1038/ng.2007.6.'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[4].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.3390/cells1041061'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[4].ccf_has_biomarker_set[0].references[1]
+    message: >-
+      'doi:10.1016/j.jcyt.2017.03.001' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[4].ccf_has_biomarker_set[0].references[2]
+    message: >-
+      'doi:10.1186/s13287-017-0757-1' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[4].ccf_has_biomarker_set[0].references[5]
+    message: >-
+      'doi.org/10.1182/blood.V74.2.751.751' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[4].ccf_has_biomarker_set[0].references[6]
+    message: '''doi:10.5966/sctm.2015-0022'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[4].ccf_has_biomarker_set[0].references[7]
+    message: >-
+      'doi:10.3346/jkms.2012.27.8.857' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi.org/10.1016/0198-8859(93)90138-Q' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[0].references[3]
+    message: >-
+      'doi.org/10.1095/biolreprod.106.055244' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[0].references[5]
+    message: '''doi:10.1155/2021/6662201'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[0].references[6]
+    message: '''doi:10.1093/humrep/dem265'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[1].references[0]
+    message: >-
+      'doi.org/10.1016/0198-8859(93)90138-Q' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[1].references[3]
+    message: >-
+      'doi.org/10.1095/biolreprod.106.055244' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[1].references[5]
+    message: '''doi:10.1155/2021/6662201'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[1].references[6]
+    message: '''doi:10.1093/humrep/dem265'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[1].references[7]
+    message: '''doi:10.1172/JCI119387'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[0].references[2]
+    message: >-
+      'doi.org/10.1095/biolreprod.106.055244' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[0].references[3]
+    message: >-
+      'doi:10.1016/j.jri.2009.02.007' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[0].references[4]
+    message: >-
+      'doi:10.1371/journal.pone.0146082' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[0].references[5]
+    message: '''doi:10.17772/gp/1673'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.3390/cells1041061'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[0].references[1]
+    message: >-
+      'doi:10.1016/j.jcyt.2017.03.001' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[0].references[2]
+    message: >-
+      'doi:10.1186/s13287-017-0757-1' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[0].references[5]
+    message: >-
+      'doi.org/10.1182/blood.V74.2.751.751' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[0].references[6]
+    message: '''doi:10.5966/sctm.2015-0022'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[0].references[7]
+    message: >-
+      'doi:10.3346/jkms.2012.27.8.857' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[8].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.3390/cells1041061'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[8].ccf_has_biomarker_set[0].references[1]
+    message: >-
+      'doi:10.1016/j.jcyt.2017.03.001' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[8].ccf_has_biomarker_set[0].references[2]
+    message: >-
+      'doi:10.1186/s13287-017-0757-1' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[8].ccf_has_biomarker_set[0].references[5]
+    message: >-
+      'doi.org/10.1182/blood.V74.2.751.751' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[8].ccf_has_biomarker_set[0].references[6]
+    message: '''doi:10.5966/sctm.2015-0022'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[8].ccf_has_biomarker_set[0].references[7]
+    message: >-
+      'doi:10.3346/jkms.2012.27.8.857' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[9].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi.org/10.1016/S0143-4004(05)80438-2' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[9].ccf_has_biomarker_set[0].references[1]
+    message: >-
+      'doi:10.1016/j.ajpath.2014.08.006' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[9].ccf_has_biomarker_set[0].references[4]
+    message: >-
+      'doi.org/10.1095/biolreprod.106.055244' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[10].ccf_has_biomarker_set[0].references[1]
+    message: >-
+      'doi:10.1186/s13287-018-0962-6' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[11].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.3390/cells1041061'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[11].ccf_has_biomarker_set[0].references[1]
+    message: >-
+      'doi:10.1016/j.jcyt.2017.03.001' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[11].ccf_has_biomarker_set[0].references[2]
+    message: >-
+      'doi:10.1186/s13287-017-0757-1' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[11].ccf_has_biomarker_set[0].references[5]
+    message: >-
+      'doi.org/10.1182/blood.V74.2.751.751' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[11].ccf_has_biomarker_set[0].references[6]
+    message: '''doi:10.5966/sctm.2015-0022'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[11].ccf_has_biomarker_set[0].references[7]
+    message: >-
+      'doi:10.3346/jkms.2012.27.8.857' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[11].ccf_has_biomarker_set[0].references[9]
+    message: >-
+      'doi:10.1016/s1472-6483(10)61745-2' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[12].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.5966/sctm.2015-0022'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[12].ccf_has_biomarker_set[0].references[1]
+    message: >-
+      'doi:10.1016/j.jcyt.2017.03.001' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[13].ccf_has_biomarker_set[0].references[1]
+    message: >-
+      'doi:10.1038/s41423-018-0008-0' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[13].ccf_has_biomarker_set[0].references[2]
+    message: >-
+      'doi:10.1371/journal.pone.0002078' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[16].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.3390/cells1041061'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[16].ccf_has_biomarker_set[0].references[1]
+    message: >-
+      'doi:10.1016/j.jcyt.2017.03.001' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[16].ccf_has_biomarker_set[0].references[2]
+    message: >-
+      'doi:10.1186/s13287-017-0757-1' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[16].ccf_has_biomarker_set[0].references[5]
+    message: >-
+      'doi.org/10.1182/blood.V74.2.751.751' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[16].ccf_has_biomarker_set[0].references[6]
+    message: '''doi:10.1091/mbc.1.1.27'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[16].ccf_has_biomarker_set[0].references[7]
+    message: '''doi:10.1093/intimm/7.7.1087'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[17].ccf_has_biomarker_set[0].references[1]
+    message: '''doi:10.1155/2021/6662201'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[17].ccf_has_biomarker_set[0].references[2]
+    message: '''doi:10.1093/humrep/dem265'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[17].ccf_has_biomarker_set[0].references[3]
+    message: >-
+      'doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[18].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi.org/10.1371/journal.pone.0169849' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[19].ccf_has_biomarker_set[0].references[1]
+    message: >-
+      'doi:10.1056/NEJM197007232830408' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[19].ccf_has_biomarker_set[0].references[2]
+    message: '''doi:10.1007/BF01628222'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[19].ccf_has_biomarker_set[0].references[5]
+    message: >-
+      'doi.org/10.1095/biolreprod.106.055244' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[19].ccf_has_biomarker_set[0].references[6]
+    message: >-
+      'doi.org/10.1016/S0143-4004(05)80438-2' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[20].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1016/j.placenta.2007.11.003' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[21].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.3390/cells1041061'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[21].ccf_has_biomarker_set[0].references[1]
+    message: >-
+      'doi:10.1016/j.jcyt.2017.03.001' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[21].ccf_has_biomarker_set[0].references[2]
+    message: >-
+      'doi:10.1186/s13287-017-0757-1' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[21].ccf_has_biomarker_set[0].references[5]
+    message: >-
+      'doi.org/10.1182/blood.V74.2.751.751' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[21].ccf_has_biomarker_set[0].references[6]
+    message: '''doi:10.5966/sctm.2015-0022'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[21].ccf_has_biomarker_set[0].references[7]
+    message: >-
+      'doi:10.3346/jkms.2012.27.8.857' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[22].ccf_has_biomarker_set[0].references[1]
+    message: '''doi:10.1155/2021/6662201'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[22].ccf_has_biomarker_set[0].references[2]
+    message: '''doi:10.1093/humrep/dem265'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[22].ccf_has_biomarker_set[0].references[3]
+    message: >-
+      'doi:10.1290/1071-2690(2001)037<0408:IOECFH>2.0.CO;2' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+    path: $.data.cell_types[22].ccf_has_biomarker_set[0].references[5]
+    message: >-
+      'doi.org/10.1016/j.ajog.2009.01.025' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+parse_errors: []

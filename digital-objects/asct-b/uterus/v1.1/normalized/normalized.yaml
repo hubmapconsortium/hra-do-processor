@@ -45,7 +45,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed on May 06, 2022.
   datatable:
-    - ASCT-B_VH_Uterus.csv
+    - asct-b-uterus.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702

@@ -92,7 +92,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed on May 6, 2022.
   datatable:
-    - ASCT-B_NIH_Lymph_Node.csv
+    - asct-b-lymph-node.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702
@@ -1535,8 +1535,8 @@ data:
             - DOI:10.3389/fimmu.2011.00035
             - DOI:10.1016/j.jcyt.2017.01.010
         - members:
-            - ASCTB-TEMP:ccl19
-            - ASCTB-TEMP:ccl12
+            - CCL21
+            - IL7
             - ASCTB-TEMP:il7
             - HGNC:10617
             - HGNC:10620
@@ -2710,13 +2710,13 @@ data:
       ccf_asctb_type: BM
       ccf_biomarker_type: protein
       ccf_is_provisional: false
-    - id: ASCTB-TEMP:ccl19
+    - id: CCL21
       class_type: Biomarker
       ccf_pref_label: CCL19
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
-    - id: ASCTB-TEMP:ccl12
+    - id: IL7
       class_type: Biomarker
       ccf_pref_label: CCL12
       ccf_asctb_type: BM

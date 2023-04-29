@@ -1,7 +1,7 @@
 id: http://purl.humanatlas.io/asct-b/lymph-vasculature/v1.2
 metadata:
   type: asct-b
-  name: vh-lymph-vasculature
+  name: lymph-vasculature
   version: v1.2
   title: >-
     Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for Lymph
@@ -70,7 +70,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed on December 15, 2022.
   datatable:
-    - asct-b-vh-lymph-vasculature.csv
+    - asct-b-lymph-vasculature.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702

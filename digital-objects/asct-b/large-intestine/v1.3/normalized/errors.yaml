@@ -1,0 +1,238 @@
+status: fail
+errors:
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[14].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[16].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[17].ccf_has_biomarker_set[2].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[18].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[18].ccf_has_biomarker_set[4].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[20].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[21].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[21].ccf_has_biomarker_set[2].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[21].ccf_has_biomarker_set[4].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[22].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[25].ccf_has_biomarker_set[2].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[28].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[30].ccf_has_biomarker_set[2].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[31].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[32].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[33].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[36].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[37].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[38].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[39].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[40].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[40].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[41].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[41].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[42].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[42].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[43].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[43].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[44].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[45].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[46].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[47].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[48].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[49].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[49].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[50].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[50].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[51].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[51].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[52].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[52].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[53].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[54].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[55].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[56].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[57].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/large-intestine/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[58].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+parse_errors: []

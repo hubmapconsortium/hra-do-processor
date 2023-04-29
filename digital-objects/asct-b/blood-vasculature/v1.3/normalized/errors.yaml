@@ -1,0 +1,809 @@
+status: fail
+errors:
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[4].references[0]
+    message: '''10.3171/jns.1978.49.2.0204'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[5].references[0]
+    message: '''10.3171/jns.1978.49.2.0204'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[6].references[0]
+    message: '''10.3171/jns.1978.49.2.0204'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[7].references[0]
+    message: '''10.3171/jns.1978.49.2.0204'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[8].references[0]
+    message: '''10.1016/j.wneu.2018.12.071'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[9].references[0]
+    message: '''10.1016/j.wneu.2018.12.071'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[10].references[0]
+    message: '''10.1016/j.wneu.2018.12.071'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[11].references[0]
+    message: '''10.1016/j.wneu.2018.12.071'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[12].references[0]
+    message: >-
+      'https://doi.org/10.1006/rwei.1999.0557.' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[13].references[0]
+    message: >-
+      'https://doi.org/10.1006/rwei.1999.0557.' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[14].references[0]
+    message: >-
+      'https://doi.org/10.1006/rwei.1999.0557.' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[15].references[0]
+    message: >-
+      'https://doi.org/10.1006/rwei.1999.0557.' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[16].references[0]
+    message: '''10.15562/bmj.v9i2.1812'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[17].references[0]
+    message: '''10.15562/bmj.v9i2.1812'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[18].references[0]
+    message: '''10.15562/bmj.v9i2.1812'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[19].references[0]
+    message: '''10.15562/bmj.v9i2.1812'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[20].references[0]
+    message: '''10.1148/rg.2019180195'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[21].references[0]
+    message: '''10.1148/rg.2019180195'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[22].references[0]
+    message: '''10.1148/rg.2019180195'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[23].references[0]
+    message: '''10.1148/rg.2019180195'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[24].references[0]
+    message: >-
+      '10.1111/j.1469-7580.2009.01199.x' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[25].references[0]
+    message: >-
+      '10.1111/j.1469-7580.2009.01199.x' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[26].references[0]
+    message: >-
+      '10.1111/j.1469-7580.2009.01199.x' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[27].references[0]
+    message: >-
+      '10.1111/j.1469-7580.2009.01199.x' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[28].references[0]
+    message: >-
+      '10.1016/B978-0-12-803062-2.00002-4' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[29].references[0]
+    message: >-
+      '10.1016/B978-0-12-803062-2.00002-4' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[30].references[0]
+    message: >-
+      '10.1016/B978-0-12-803062-2.00002-4' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[31].references[0]
+    message: >-
+      '10.1016/B978-0-12-803062-2.00002-4' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[32].references[0]
+    message: >-
+      '10.1016/B978-0-12-803058-5.00078-3' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[33].references[0]
+    message: >-
+      '10.1016/B978-0-12-803058-5.00078-3' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[34].references[0]
+    message: >-
+      '10.1016/B978-0-12-803058-5.00078-3' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[35].references[0]
+    message: >-
+      '10.1016/B978-0-12-803058-5.00078-3' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[36].references[0]
+    message: '''10.1016/j.ejvs.2005.10.022'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[37].references[0]
+    message: '''10.1016/j.ejvs.2005.10.022'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[38].references[0]
+    message: '''10.1016/j.ejvs.2005.10.022'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[39].references[0]
+    message: '''10.1016/j.ejvs.2005.10.022'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[40].references[0]
+    message: '''10.3400/avd.AVDoa07004'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[41].references[0]
+    message: '''10.3400/avd.AVDoa07004'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[42].references[0]
+    message: '''10.3400/avd.AVDoa07004'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[43].references[0]
+    message: '''10.3400/avd.AVDoa07004'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[44].references[0]
+    message: '''10.12659/MSM.883201'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[45].references[0]
+    message: '''10.12659/MSM.883201'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[46].references[0]
+    message: '''10.12659/MSM.883201'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[47].references[0]
+    message: '''10.12659/MSM.883201'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[48].references[0]
+    message: '''10.2484/rcr.v5i3.394'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[49].references[0]
+    message: '''10.2484/rcr.v5i3.394'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[50].references[0]
+    message: '''10.2484/rcr.v5i3.394'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[51].references[0]
+    message: '''10.2484/rcr.v5i3.394'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[52].references[0]
+    message: '''10.1053/j.sult.2016.05.008'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[53].references[0]
+    message: '''10.1053/j.sult.2016.05.008'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[54].references[0]
+    message: '''10.1053/j.sult.2016.05.008'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[55].references[0]
+    message: '''10.1053/j.sult.2016.05.008'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[56].references[0]
+    message: '''10.17354/ijss/2016/337'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[57].references[0]
+    message: '''10.17354/ijss/2016/337'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[58].references[0]
+    message: '''10.17354/ijss/2016/337'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[59].references[0]
+    message: '''10.17354/ijss/2016/337'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[60].references[0]
+    message: '''10.1002/cphy.cp060142'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[61].references[0]
+    message: '''10.1002/cphy.cp060142'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[62].references[0]
+    message: '''10.1002/cphy.cp060142'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[63].references[0]
+    message: '''10.1002/cphy.cp060142'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[64].references[0]
+    message: '''10.1177/159101999600200307'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[65].references[0]
+    message: '''10.1177/159101999600200307'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[66].references[0]
+    message: '''10.1177/159101999600200307'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[67].references[0]
+    message: '''10.1177/159101999600200307'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[68].references[0]
+    message: >-
+      '10.1227/01.neu.0000303217.53607.d9' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[69].references[0]
+    message: >-
+      '10.1227/01.neu.0000303217.53607.d9' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[70].references[0]
+    message: >-
+      '10.1227/01.neu.0000303217.53607.d9' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[71].references[0]
+    message: >-
+      '10.1227/01.neu.0000303217.53607.d9' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[72].references[0]
+    message: '''10.21037/cdt.2018.01.04'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[73].references[0]
+    message: '''10.21037/cdt.2018.01.04'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[74].references[0]
+    message: '''10.21037/cdt.2018.01.04'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[75].references[0]
+    message: '''10.21037/cdt.2018.01.04'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[3].ccf_has_biomarker_set[1].references[0]
+    message: '''10.1016/j.ejvs.2005.10.022'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[3].ccf_has_biomarker_set[2].references[0]
+    message: '''10.3400/avd.AVDoa07004'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[3].ccf_has_biomarker_set[3].references[0]
+    message: '''10.12659/MSM.883201'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[3].ccf_has_biomarker_set[4].references[0]
+    message: '''10.2484/rcr.v5i3.394'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[3].ccf_has_biomarker_set[5].references[0]
+    message: >-
+      '10.1111/j.1469-7580.2009.01199.x' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[3].ccf_has_biomarker_set[6].references[0]
+    message: '''10.1053/j.sult.2016.05.008'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[3].ccf_has_biomarker_set[7].references[0]
+    message: '''10.17354/ijss/2016/337'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[3].ccf_has_biomarker_set[8].references[0]
+    message: '''10.1002/cphy.cp060142'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[3].ccf_has_biomarker_set[9].references[0]
+    message: >-
+      '10.1227/01.neu.0000303217.53607.d9' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[4].ccf_has_biomarker_set[1].references[0]
+    message: >-
+      '10.1111/j.1469-7580.2009.01199.x' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[1].references[0]
+    message: '''10.3171/jns.1978.49.2.0204'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[2].references[0]
+    message: '''10.1016/j.wneu.2018.12.071'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[3].references[0]
+    message: '''10.15562/bmj.v9i2.1812'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[4].references[0]
+    message: '''10.1148/rg.2019180195'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[5].references[0]
+    message: >-
+      '10.1111/j.1469-7580.2009.01199.x' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[6].references[0]
+    message: >-
+      '10.1016/B978-0-12-803062-2.00002-4' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[7].references[0]
+    message: >-
+      '10.1016/B978-0-12-803058-5.00078-3' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[8].references[0]
+    message: '''10.21037/cdt.2018.01.04'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[2].references[0]
+    message: '''10.3171/jns.1978.49.2.0204'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[3].references[0]
+    message: '''10.3171/jns.1978.49.2.0204'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[4].references[0]
+    message: '''10.1016/j.wneu.2018.12.071'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[5].references[0]
+    message: '''10.1016/j.wneu.2018.12.071'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[6].references[0]
+    message: '''10.15562/bmj.v9i2.1812'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[7].references[0]
+    message: '''10.15562/bmj.v9i2.1812'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[8].references[0]
+    message: '''10.1148/rg.2019180195'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[9].references[0]
+    message: '''10.1148/rg.2019180195'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[10].references[0]
+    message: >-
+      '10.1111/j.1469-7580.2009.01199.x' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[11].references[0]
+    message: >-
+      '10.1111/j.1469-7580.2009.01199.x' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[12].references[0]
+    message: >-
+      '10.1016/B978-0-12-803062-2.00002-4' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[13].references[0]
+    message: >-
+      '10.1016/B978-0-12-803062-2.00002-4' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[14].references[0]
+    message: >-
+      '10.1016/B978-0-12-803058-5.00078-3' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[15].references[0]
+    message: >-
+      '10.1016/B978-0-12-803058-5.00078-3' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[16].references[0]
+    message: '''10.21037/cdt.2018.01.04'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[17].references[0]
+    message: '''10.21037/cdt.2018.01.04'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[4].references[0]
+    message: '''10.3171/jns.1978.49.2.0204'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[5].references[0]
+    message: '''10.3171/jns.1978.49.2.0204'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[6].references[0]
+    message: '''10.3171/jns.1978.49.2.0204'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[7].references[0]
+    message: '''10.3171/jns.1978.49.2.0204'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[8].references[0]
+    message: '''10.1016/j.wneu.2018.12.071'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[9].references[0]
+    message: '''10.1016/j.wneu.2018.12.071'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[10].references[0]
+    message: '''10.1016/j.wneu.2018.12.071'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[11].references[0]
+    message: '''10.1016/j.wneu.2018.12.071'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[12].references[0]
+    message: '''10.15562/bmj.v9i2.1812'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[13].references[0]
+    message: '''10.15562/bmj.v9i2.1812'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[14].references[0]
+    message: '''10.15562/bmj.v9i2.1812'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[15].references[0]
+    message: '''10.15562/bmj.v9i2.1812'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[16].references[0]
+    message: '''10.1148/rg.2019180195'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[17].references[0]
+    message: '''10.1148/rg.2019180195'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[18].references[0]
+    message: '''10.1148/rg.2019180195'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[19].references[0]
+    message: '''10.1148/rg.2019180195'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[20].references[0]
+    message: >-
+      '10.1111/j.1469-7580.2009.01199.x' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[21].references[0]
+    message: >-
+      '10.1111/j.1469-7580.2009.01199.x' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[22].references[0]
+    message: >-
+      '10.1111/j.1469-7580.2009.01199.x' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[23].references[0]
+    message: >-
+      '10.1111/j.1469-7580.2009.01199.x' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[24].references[0]
+    message: >-
+      '10.1016/B978-0-12-803062-2.00002-4' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[25].references[0]
+    message: >-
+      '10.1016/B978-0-12-803062-2.00002-4' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[26].references[0]
+    message: >-
+      '10.1016/B978-0-12-803062-2.00002-4' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[27].references[0]
+    message: >-
+      '10.1016/B978-0-12-803062-2.00002-4' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[28].references[0]
+    message: >-
+      '10.1016/B978-0-12-803058-5.00078-3' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[29].references[0]
+    message: >-
+      '10.1016/B978-0-12-803058-5.00078-3' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[30].references[0]
+    message: >-
+      '10.1016/B978-0-12-803058-5.00078-3' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[31].references[0]
+    message: >-
+      '10.1016/B978-0-12-803058-5.00078-3' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[32].references[0]
+    message: '''10.21037/cdt.2018.01.04'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[33].references[0]
+    message: '''10.21037/cdt.2018.01.04'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[34].references[0]
+    message: '''10.21037/cdt.2018.01.04'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[35].references[0]
+    message: '''10.21037/cdt.2018.01.04'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[8].ccf_has_biomarker_set[1].references[0]
+    message: >-
+      'https://doi.org/10.1006/rwei.1999.0557.' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[8].ccf_has_biomarker_set[2].references[0]
+    message: >-
+      '10.1111/j.1469-7580.2009.01199.x' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[9].ccf_has_biomarker_set[1].references[0]
+    message: >-
+      '10.1111/j.1469-7580.2009.01199.x' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[10].ccf_has_biomarker_set[1].references[0]
+    message: >-
+      'https://doi.org/10.1006/rwei.1999.0557.' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+parse_errors: []

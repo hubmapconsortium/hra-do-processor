@@ -1,7 +1,7 @@
 id: http://purl.humanatlas.io/asct-b/spleen/v1.3
 metadata:
   type: asct-b
-  name: vh-spleen
+  name: spleen
   version: v1.3
   title: Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for Spleen
   description: >-
@@ -91,7 +91,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed on December 15, 2022.
   datatable:
-    - asct-b-vh-spleen.csv
+    - asct-b-spleen.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702
@@ -275,26 +275,21 @@ data:
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0004042
-    - id: ASCTB-TEMP:inner-mantle-zone
+    - id: ADDED
       class_type: AnatomicalStructure
       ccf_pref_label: Inner Mantle Zone
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0010421
-    - id: ASCTB-TEMP:superficial-mantle-zone
-      class_type: AnatomicalStructure
-      ccf_pref_label: Superficial Mantle Zone
-      ccf_asctb_type: AS
-      ccf_is_provisional: false
-      ccf_part_of:
-        - UBERON:0010421
+        - UBERON:1000023
     - id: UBERON:0001251
       class_type: AnatomicalStructure
       ccf_pref_label: Superficial Zone
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
+        - ADDED
         - ASCTB-TEMP:red-pulp-white-pulp-border
     - id: ASCTB-TEMP:inner-pals
       class_type: AnatomicalStructure
@@ -397,8 +392,7 @@ data:
         - UBERON:0003713
         - ASCTB-TEMP:splenic-venules
         - ASCTB-TEMP:central-arteries
-        - ASCTB-TEMP:inner-mantle-zone
-        - ASCTB-TEMP:superficial-mantle-zone
+        - ADDED
         - UBERON:0001251
         - ASCTB-TEMP:inner-pals
         - UBERON:0010399
@@ -509,7 +503,7 @@ data:
         - UBERON:0013132
         - ASCTB-TEMP:sheathed-capillary
         - UBERON:0004041
-        - ASCTB-TEMP:superficial-mantle-zone
+        - ADDED
       ccf_has_biomarker_set:
         - members:
             - HGNC:1633
@@ -558,7 +552,7 @@ data:
         - UBERON:0013132
         - ASCTB-TEMP:sheathed-capillary
         - UBERON:0004041
-        - ASCTB-TEMP:superficial-mantle-zone
+        - ADDED
         - UBERON:0001251
       ccf_has_biomarker_set:
         - members:
@@ -1378,8 +1372,7 @@ data:
       ccf_located_in:
         - UBERON:0004041
         - UBERON:0005196
-        - ASCTB-TEMP:inner-mantle-zone
-        - ASCTB-TEMP:superficial-mantle-zone
+        - ADDED
         - UBERON:0001251
       ccf_has_biomarker_set:
         - members:
@@ -1578,7 +1571,7 @@ data:
       ccf_ct_isa:
         - CL:0000000
       ccf_located_in:
-        - ASCTB-TEMP:inner-mantle-zone
+        - ADDED
       ccf_has_biomarker_set:
         - members:
             - HGNC:11922
@@ -1598,7 +1591,7 @@ data:
       ccf_ct_isa:
         - CL:0000000
       ccf_located_in:
-        - ASCTB-TEMP:inner-mantle-zone
+        - ADDED
         - UBERON:0001251
         - ASCTB-TEMP:outer-pals
       ccf_has_biomarker_set:
@@ -1649,8 +1642,7 @@ data:
       ccf_ct_isa:
         - CL:0000000
       ccf_located_in:
-        - ASCTB-TEMP:inner-mantle-zone
-        - ASCTB-TEMP:superficial-mantle-zone
+        - ADDED
       ccf_has_biomarker_set:
         - members:
             - HGNC:7809
@@ -1856,11 +1848,11 @@ data:
             - HGNC:6106
             - HGNC:6008
             - HGNC:1608
-            - ASCTB-TEMP:cd3
-            - ASCTB-TEMP:hgnc-1678
-            - ASCTB-TEMP:hgnc-6008
-            - ASCTB-TEMP:hgnc-9666
-            - ASCTB-TEMP:hgnc-6024
+            - CD4
+            - IL2RA
+            - PTPRC
+            - IL7R
+            - FOXP3
             - ASCTB-TEMP:hgnc-6106
           references:
             - DOI:10.1016/j.immuni.2012.09.020
@@ -2910,31 +2902,31 @@ data:
       ccf_asctb_type: BM
       ccf_biomarker_type: protein
       ccf_is_provisional: false
-    - id: ASCTB-TEMP:cd3
+    - id: CD4
       class_type: Biomarker
       ccf_pref_label: CD3
       ccf_asctb_type: BM
       ccf_biomarker_type: protein
       ccf_is_provisional: false
-    - id: ASCTB-TEMP:hgnc-1678
+    - id: IL2RA
       class_type: Biomarker
       ccf_pref_label: HGNC:1678
       ccf_asctb_type: BM
       ccf_biomarker_type: protein
       ccf_is_provisional: false
-    - id: ASCTB-TEMP:hgnc-6008
+    - id: PTPRC
       class_type: Biomarker
       ccf_pref_label: HGNC:6008
       ccf_asctb_type: BM
       ccf_biomarker_type: protein
       ccf_is_provisional: false
-    - id: ASCTB-TEMP:hgnc-9666
+    - id: IL7R
       class_type: Biomarker
       ccf_pref_label: HGNC:9666
       ccf_asctb_type: BM
       ccf_biomarker_type: protein
       ccf_is_provisional: false
-    - id: ASCTB-TEMP:hgnc-6024
+    - id: FOXP3
       class_type: Biomarker
       ccf_pref_label: HGNC:6024
       ccf_asctb_type: BM

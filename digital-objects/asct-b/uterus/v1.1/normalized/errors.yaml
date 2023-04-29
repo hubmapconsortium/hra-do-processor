@@ -1,0 +1,122 @@
+status: fail
+errors:
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[1].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://screening.iarc.fr/colpochap.php?lang=1' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[4].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[8].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[9].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[10].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[11].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[12].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[13].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[14].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[15].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[16].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[17].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+    path: $.data.cell_types[18].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'https://doi.org/10.1101/2021.01.02.425073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+parse_errors: []

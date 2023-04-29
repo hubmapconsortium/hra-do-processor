@@ -1,7 +1,7 @@
 id: http://purl.humanatlas.io/asct-b/blood-pelvis/v1.3
 metadata:
   type: asct-b
-  name: vh-blood-pelvis
+  name: blood-pelvis
   version: v1.3
   title: >-
     Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for
@@ -72,7 +72,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed December 15, 2022.
   datatable:
-    - asct-b-vh-blood-pelvis.csv
+    - asct-b-blood-pelvis.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702

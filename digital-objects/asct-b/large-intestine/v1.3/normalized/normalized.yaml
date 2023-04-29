@@ -1,7 +1,7 @@
 id: http://purl.humanatlas.io/asct-b/large-intestine/v1.3
 metadata:
   type: asct-b
-  name: vh-large-intestine
+  name: large-intestine
   version: v1.3
   title: >-
     Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for Large
@@ -64,7 +64,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed on December 15, 2022.
   datatable:
-    - asct-b-vh-large-intestine.csv
+    - asct-b-large-intestine.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702

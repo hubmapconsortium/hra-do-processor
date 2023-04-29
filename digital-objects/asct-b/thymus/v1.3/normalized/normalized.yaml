@@ -1,7 +1,7 @@
 id: http://purl.humanatlas.io/asct-b/thymus/v1.3
 metadata:
   type: asct-b
-  name: vh-thymus
+  name: thymus
   version: v1.3
   title: Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for Thymus
   description: >-
@@ -66,7 +66,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed on December 15, 2022.
   datatable:
-    - asct-b-vh-thymus.csv
+    - asct-b-thymus.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702

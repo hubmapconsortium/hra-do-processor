@@ -1,7 +1,7 @@
 id: http://purl.humanatlas.io/asct-b/heart/v1.2
 metadata:
   type: asct-b
-  name: vh-heart
+  name: heart
   version: v1.2
   title: Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for Heart
   description: >-
@@ -61,7 +61,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed on December 15, 2022.
   datatable:
-    - asct-b-vh-heart.csv
+    - asct-b-heart.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702
@@ -567,7 +567,7 @@ data:
           references: []
         - members:
             - HGNC:8803
-            - ASCTB-TEMP:gsn
+            - GSN
             - HGNC:2705
           references: []
     - id: CL:0000746
@@ -658,7 +658,7 @@ data:
           references: []
         - members:
             - HGNC:11190
-            - ASCTB-TEMP:s100
+            - MANY
           references: []
     - id: CL:0000097
       class_type: CellType
@@ -1260,7 +1260,7 @@ data:
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
-    - id: ASCTB-TEMP:gsn
+    - id: GSN
       class_type: Biomarker
       ccf_pref_label: GSN
       ccf_asctb_type: BM
@@ -1296,7 +1296,7 @@ data:
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
-    - id: ASCTB-TEMP:s100
+    - id: MANY
       class_type: Biomarker
       ccf_pref_label: S100
       ccf_asctb_type: BM

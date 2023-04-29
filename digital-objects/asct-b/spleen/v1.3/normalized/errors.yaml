@@ -1,0 +1,185 @@
+status: fail
+errors:
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.anatomical_structures[25].id
+    message: '''ADDED'' does not match ''(UBERON|FMA):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.biomarkers[146].id
+    message: '''CD4'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.biomarkers[147].id
+    message: '''IL2RA'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.biomarkers[148].id
+    message: '''PTPRC'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.biomarkers[149].id
+    message: '''IL7R'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.biomarkers[150].id
+    message: '''FOXP3'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[1].ccf_has_biomarker_set[0].references[3]
+    message: >-
+      'DOI10.1182/bloodadvances.2017015073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[1].ccf_has_biomarker_set[1].references[1]
+    message: >-
+      'DOI10.1182/bloodadvances.2017015073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[1].ccf_has_biomarker_set[2].references[1]
+    message: >-
+      'DOI10.1182/bloodadvances.2017015073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[1].ccf_has_biomarker_set[3].references[2]
+    message: >-
+      'DOI10.1182/bloodadvances.2017015073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[1].ccf_has_biomarker_set[4].references[2]
+    message: >-
+      'DOI10.1182/bloodadvances.2017015073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[1].ccf_has_biomarker_set[5].references[2]
+    message: >-
+      'DOI10.1182/bloodadvances.2017015073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[1].ccf_has_biomarker_set[6].references[3]
+    message: >-
+      'DOI10.1182/bloodadvances.2017015073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[11].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[13].ccf_has_biomarker_set[0].references[2]
+    message: >-
+      'DOI10.1182/bloodadvances.2017015073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[19].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[21].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[21].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[22].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[22].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[23].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[26].ccf_has_biomarker_set[2].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[28].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[34].ccf_has_biomarker_set[0].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[34].ccf_has_biomarker_set[1].references[0]
+    message: >-
+      'DOI:10.1369%2Fjhc.4A6514.2005' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[34].ccf_has_biomarker_set[1].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[35].ccf_has_biomarker_set[2].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[35].ccf_has_biomarker_set[3].references[2]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[57].ccf_has_biomarker_set[0].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[57].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[59].ccf_has_biomarker_set[0].references[2]
+    message: >-
+      'DOI10.1182/bloodadvances.2017015073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/spleen/v1.3/normalized/normalized.yaml
+    path: $.data.cell_types[60].ccf_has_biomarker_set[0].references[2]
+    message: >-
+      'DOI10.1182/bloodadvances.2017015073' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+parse_errors: []

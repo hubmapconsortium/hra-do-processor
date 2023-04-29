@@ -45,7 +45,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed on May 6, 2022.
   datatable:
-    - ASCT-B_VH_Knee.csv
+    - asct-b-knee.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702

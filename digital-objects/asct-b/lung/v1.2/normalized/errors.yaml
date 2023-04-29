@@ -1,0 +1,570 @@
+status: fail
+errors:
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.biomarkers[35].id
+    message: '''HGNCL2514'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[1].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1042/BST20191010.'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1038/s41385-020-00370-7' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[3].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1126/sciimmunol.aax7224' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[4].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1038/s41467-020-16239-z' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1126/science.aan8546'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[1].references[0]
+    message: '''doi:10.1126/science.aan8546'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1186/s12931-017-0640-8' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[6].ccf_has_biomarker_set[1].references[0]
+    message: >-
+      'doi:10.1186/s12931-017-0640-8' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[7].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1038/s41467-020-16239-z' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[7].id
+    message: '''LMHA:00142'' does not match ''(CL|PCL):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[8].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1038/s41467-020-16239-z' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[8].ccf_has_biomarker_set[1].references[0]
+    message: >-
+      'doi:10.1038/s41467-020-16239-z' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[8].id
+    message: '''LMHA:00087'' does not match ''(CL|PCL):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[9].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1038/s41467-020-16239-z' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[9].id
+    message: '''LMHA:00693'' does not match ''(CL|PCL):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[10].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1016/j.stem.2018.03.018' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[10].id
+    message: '''LMHA:00238'' does not match ''(CL|PCL):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[11].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1016/j.stem.2018.03.018' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[11].ccf_has_biomarker_set[1].references[0]
+    message: >-
+      'doi:10.1016/j.stem.2018.03.018' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[12].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1016/j.stem.2018.03.018' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[12].ccf_has_biomarker_set[1].references[0]
+    message: >-
+      'doi:10.1038/s41467-020-16239-z' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[13].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1101/2021.11.26.470108' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[13].ccf_has_biomarker_set[1].references[0]
+    message: >-
+      'doi:10.1101/2021.11.26.470108' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[14].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1161/CIRCULATIONAHA.120.052318.' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[15].ccf_has_biomarker_set[0].references[0]
+    message: '''10.1161/01.atv.17.7.1203'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[15].ccf_has_biomarker_set[1].references[0]
+    message: '''10.1161/01.atv.17.7.1203'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[16].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1161/CIRCULATIONAHA.120.052318.' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[16].ccf_has_biomarker_set[1].references[0]
+    message: >-
+      'doi:10.1161/CIRCULATIONAHA.120.052318.' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[16].ccf_has_biomarker_set[2].references[0]
+    message: >-
+      'doi:10.1161/CIRCULATIONAHA.120.052318.' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[16].ccf_has_biomarker_set[3].references[0]
+    message: >-
+      'doi:10.1161/CIRCULATIONAHA.120.052318.' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[17].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1101/2021.11.26.470108.' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[18].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1042/BST20191010.'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[18].ccf_has_biomarker_set[1].references[0]
+    message: '''doi:10.1042/BST20191010.'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[19].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1042/BST20191010.'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[19].ccf_has_biomarker_set[1].references[0]
+    message: '''doi:10.1042/BST20191010.'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[20].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1042/BST20191010.'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[21].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1042/BST20191010.'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[22].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1038/s41385-020-00370-7' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[23].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1126/sciimmunol.aax7224' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[24].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi.org/10.1038/s41586-018-0394-6' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[25].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1186/s12931-017-0640-8' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[26].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1161/CIRCULATIONAHA.120.052318.' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[27].ccf_has_biomarker_set[0].references[0]
+    message: '''10.1161/01.atv.17.7.1203'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[28].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.3978/j.issn.2072-1439.2015.02.19' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[29].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1038/s41525-021-00237-1' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[30].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1038/s41591-021-01332-7' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[31].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1186/s12931-017-0640-8' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[32].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1042/BST20191010.'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[33].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1042/BST20191010.'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[34].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1186/s12931-017-0640-8' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[35].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1038/s41586-022-04552-0' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[36].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1042/BST20191010.'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[37].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1165/rcmb.2016-0426PS'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[38].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1146/annurev.physiol.65.092101.142446' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[39].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1038/s41586-020-2922-4' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[40].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1038/s41586-020-2922-4' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[41].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1002/sctm.20-0526'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[42].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1002/cphy.c200027'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[43].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1038/s41586-020-2822-7' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[44].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1038/s41586-020-2822-7' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[45].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1164/rccm.201812-2312OC' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[46].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1038/s41598-021-88064-3' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[48].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.3389/fimmu.2019.01597'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[49].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.3389/fimmu.2019.01597'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[50].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.3389/fimmu.2019.01597'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[52].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1111/febs.15770'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[53].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1161/CIRCULATIONAHA.120.052318.' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[54].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.3390/vaccines9010024'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[55].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1111/imcb.12272'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[56].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1111/febs.15770'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[57].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.3389/fimmu.2020.624411' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[58].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1101/cshperspect.a037796' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[59].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1016/j.coi.2019.05.011' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[60].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'oi:10.1016/j.molimm.2020.12.017' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[61].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1186/s12967-020-02632-1;doi:10.1155/2019/1907807.' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[63].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1126/sciadv.aba1983'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[64].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1111/imm.13143'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[65].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1002/JLB.3RU0720-418R'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[65].id
+    message: '''LMHA:00213'' does not match ''(CL|PCL):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[66].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi.org/10.1016/j.cellimm.2018.01.005;doi:10.1164/rccm.201911-2105OC'
+      does not match 'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[67].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.3389/fimmu.2019.02035'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[68].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.3389/fimmu.2019.02035'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[69].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1111/imm.13143'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[70].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.1111/imm.13143'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[71].ccf_has_biomarker_set[0].references[0]
+    message: '''NA'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[72].ccf_has_biomarker_set[0].references[0]
+    message: '''NA'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[73].ccf_has_biomarker_set[0].references[0]
+    message: '''NA'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[74].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1007/s12016-020-08779-5' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[75].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1007/s12016-020-08779-5' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[76].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1016/j.lfs.2020.118973' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[77].ccf_has_biomarker_set[0].references[0]
+    message: '''doi:10.3390/ijms21030851'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lung/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[78].ccf_has_biomarker_set[0].references[0]
+    message: >-
+      'doi:10.1007/s12015-017-9747-z' does not match
+      'DOI:10\\.\\d+/.*|PMID:\\d+'
+    has_sub_errors: false
+parse_errors: []

@@ -1,7 +1,7 @@
 id: http://purl.humanatlas.io/asct-b/blood-vasculature/v1.3
 metadata:
   type: asct-b
-  name: vh-blood-vasculature
+  name: blood-vasculature
   version: v1.3
   title: >-
     Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for Blood
@@ -71,7 +71,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed on December 15, 2022.
   datatable:
-    - asct-b-vh-blood-vasculature.csv
+    - asct-b-blood-vasculature.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702

@@ -76,7 +76,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed on May 6, 2022.
   datatable:
-    - ASCT-B_VH_Kidney.csv
+    - asct-b-kidney.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702
@@ -882,7 +882,7 @@ data:
             - HGNC:20862
             - HGNC:11530
             - HGNC:633
-            - ASCTB-TEMP:slc9a3
+            - SLC4A11
           references:
             - DOI:10.1101/2021.07.28.454201
             - DOI:10.1016/j.devcel.2019.10.005
@@ -1575,8 +1575,7 @@ data:
         - ASCTB-TEMP:immune
       ccf_has_biomarker_set:
         - members:
-            - ASCTB-TEMP:itgal
-            - ASCTB-TEMP:lilrb2
+            - 'HGNC:'
             - HGNC:3619
           references:
             - DOI:10.1101/2021.07.28.454201
@@ -2226,7 +2225,7 @@ data:
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
-    - id: ASCTB-TEMP:slc9a3
+    - id: SLC4A11
       class_type: Biomarker
       ccf_pref_label: SLC9A3
       ccf_asctb_type: BM
@@ -2682,15 +2681,9 @@ data:
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
-    - id: ASCTB-TEMP:itgal
+    - id: 'HGNC:'
       class_type: Biomarker
       ccf_pref_label: ITGAL
-      ccf_asctb_type: BM
-      ccf_biomarker_type: gene
-      ccf_is_provisional: false
-    - id: ASCTB-TEMP:lilrb2
-      class_type: Biomarker
-      ccf_pref_label: LILRB2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false

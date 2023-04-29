@@ -1,7 +1,7 @@
 id: http://purl.humanatlas.io/asct-b/pancreas/v1.2
 metadata:
   type: asct-b
-  name: vh-pancreas
+  name: pancreas
   version: v1.2
   title: >-
     Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for
@@ -72,7 +72,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed on December 15, 2022.
   datatable:
-    - asct-b-vh-pancreas.csv
+    - asct-b-pancreas.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702
@@ -618,8 +618,7 @@ data:
             - HGNC:11506
             - HGNC:12513
             - HGNC:7839
-            - ASCTB-TEMP:insulin
-            - ASCTB-TEMP:c-peptide
+            - P01308
           references: []
     - id: CL:0000173
       class_type: CellType
@@ -785,7 +784,7 @@ data:
             - HGNC:6621
             - HGNC:3559
             - HGNC:9155
-            - ASCTB-TEMP:asc-type-amino-acid-transporter-1
+            - Q8N9N2
           references: []
   biomarkers:
     - id: HGNC:477
@@ -1022,17 +1021,11 @@ data:
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
-    - id: ASCTB-TEMP:insulin
+    - id: P01308
       class_type: Biomarker
       ccf_pref_label: Insulin
       ccf_asctb_type: BM
       ccf_biomarker_type: protein
-      ccf_is_provisional: false
-    - id: ASCTB-TEMP:c-peptide
-      class_type: Biomarker
-      ccf_pref_label: C-peptide
-      ccf_asctb_type: BM
-      ccf_biomarker_type: proteoforms
       ccf_is_provisional: false
     - id: HGNC:11329
       class_type: Biomarker
@@ -1106,7 +1099,7 @@ data:
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
-    - id: ASCTB-TEMP:asc-type-amino-acid-transporter-1
+    - id: Q8N9N2
       class_type: Biomarker
       ccf_pref_label: Asc-type amino acid transporter 1
       ccf_asctb_type: BM

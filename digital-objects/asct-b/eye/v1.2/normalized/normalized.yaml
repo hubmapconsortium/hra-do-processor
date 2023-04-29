@@ -1,7 +1,7 @@
 id: http://purl.humanatlas.io/asct-b/eye/v1.2
 metadata:
   type: asct-b
-  name: vh-eye
+  name: eye
   version: v1.2
   title: Anatomical Structures, Cell Types, plus Biomarkers (ASCT+B) table for Eye
   description: >-
@@ -61,7 +61,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed on December 15, 2022.
   datatable:
-    - asct-b-vh-eye.csv
+    - asct-b-eye.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702
@@ -987,7 +987,7 @@ data:
         - UBERON:0003952
       ccf_has_biomarker_set:
         - members:
-            - ASCTB-TEMP:cd34
+            - P28906
             - HGNC:8803
           references:
             - DOI:10.1111/jcmm.13270
@@ -1002,7 +1002,7 @@ data:
         - UBERON:0003952
       ccf_has_biomarker_set:
         - members:
-            - ASCTB-TEMP:cd34
+            - P28906
             - HGNC:8803
           references:
             - DOI:10.1111/jcmm.13270
@@ -1745,7 +1745,7 @@ data:
       ccf_asctb_type: BM
       ccf_biomarker_type: protein
       ccf_is_provisional: false
-    - id: ASCTB-TEMP:cd34
+    - id: P28906
       class_type: Biomarker
       ccf_pref_label: CD34
       ccf_asctb_type: BM

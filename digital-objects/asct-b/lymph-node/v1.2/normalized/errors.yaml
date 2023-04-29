@@ -1,0 +1,188 @@
+status: fail
+errors:
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.biomarkers[141].id
+    message: '''CCL21'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.biomarkers[142].id
+    message: '''IL7'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[1].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[1].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[0].references[2]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[2].ccf_has_biomarker_set[5].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[5].ccf_has_biomarker_set[1].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[12].ccf_has_biomarker_set[0].references[0]
+    message: '''NODOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[12].ccf_has_biomarker_set[0].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[12].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[13].ccf_has_biomarker_set[0].references[0]
+    message: '''NODOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[13].ccf_has_biomarker_set[0].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[13].ccf_has_biomarker_set[1].references[0]
+    message: '''NODOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[13].ccf_has_biomarker_set[1].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[15].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[19].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[19].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[20].ccf_has_biomarker_set[0].references[0]
+    message: '''NODOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[20].ccf_has_biomarker_set[0].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[21].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[22].ccf_has_biomarker_set[0].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[23].ccf_has_biomarker_set[0].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[24].ccf_has_biomarker_set[0].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[25].ccf_has_biomarker_set[0].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[26].ccf_has_biomarker_set[0].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[27].ccf_has_biomarker_set[0].references[1]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[28].ccf_has_biomarker_set[0].references[0]
+    message: '''NODOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[29].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[30].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[31].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[31].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[39].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[39].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[40].ccf_has_biomarker_set[0].references[0]
+    message: '''NODOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[41].ccf_has_biomarker_set[0].references[0]
+    message: '''NODOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[41].ccf_has_biomarker_set[1].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+  - filename: >-
+      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/lymph-node/v1.2/normalized/normalized.yaml
+    path: $.data.cell_types[43].ccf_has_biomarker_set[0].references[0]
+    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+    has_sub_errors: false
+parse_errors: []

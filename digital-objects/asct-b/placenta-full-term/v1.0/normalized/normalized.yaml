@@ -75,7 +75,7 @@ metadata:
     https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html)
     Accessed on May 6, 2022.
   datatable:
-    - ASCT-B_VH_Placenta_Full_Term.csv
+    - asct-b-placenta-full-term.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702

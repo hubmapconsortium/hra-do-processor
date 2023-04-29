@@ -51,7 +51,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed on Dec 1, 2021.
   datatable:
-    - ASCT-B_VH_Peripheral_Nervous_System.csv
+    - asct-b-peripheral-nervous-system.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702

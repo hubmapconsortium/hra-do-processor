@@ -51,7 +51,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed on Dec 1, 2021.
   datatable:
-    - ASCT-B_VH_Urinary_Bladder.csv
+    - asct-b-urinary-bladder.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702

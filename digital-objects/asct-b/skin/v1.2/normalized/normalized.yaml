@@ -69,7 +69,7 @@ metadata:
     Tables*](https://hubmapconsortium.github.io/ccf/pages/ccf-anatomical-structures.html).
     Accessed on May 6, 2022
   datatable:
-    - ASCT-B_VH_Skin.csv
+    - asct-b-skin.csv
 data:
   anatomical_structures:
     - id: UBERON:0013702
@@ -361,7 +361,7 @@ data:
       ccf_has_biomarker_set:
         - members:
             - HGNC:6421
-            - ASCTB-TEMP:cd200-molecule
+            - CD200
             - HGNC:1662
           references:
             - DOI:10.1002/jcp.22275
@@ -1005,7 +1005,7 @@ data:
       ccf_asctb_type: BM
       ccf_biomarker_type: protein
       ccf_is_provisional: false
-    - id: ASCTB-TEMP:cd200-molecule
+    - id: CD200
       class_type: Biomarker
       ccf_pref_label: CD200 molecule
       ccf_asctb_type: BM
