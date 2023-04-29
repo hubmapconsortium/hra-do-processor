@@ -24,8 +24,14 @@ imports:
   - ../shared/metadata
 
 settings:
-  prefix: "\\w+:"
-  name: "\\w+"
+  uberon: "UBERON"
+  fma: "FMA"
+  cl: "CL"
+  pcl: "PCL"
+  hgnc: "HGNC"
+  asctb_temp: "ASCTB-TEMP"
+  doi: "DOI"
+  pmid: "PMID"
 
 classes:
   AsctbConcept:
@@ -51,6 +57,11 @@ classes:
     slots:
       - ccf_part_of
     slot_usage:
+      id:
+        structured_pattern:
+          syntax: "({uberon}|{fma}):\\d+|{asctb_temp}:[a-zA-Z0-9-]+"
+          interpolated: true
+          partial_match: false
       ccf_part_of:
         annotations:
           owl: AnnotationAssertion, AnnotationProperty
@@ -63,6 +74,11 @@ classes:
       - ccf_located_in
       - ccf_has_biomarker_set
     slot_usage:
+      id:
+        structured_pattern:
+          syntax: "({cl}|{pcl}):\\d+|{asctb_temp}:[a-zA-Z0-9-]+"
+          interpolated: true
+          partial_match: false
       ccf_ct_isa:
         annotations:
           owl: AnnotationAssertion, AnnotationProperty
@@ -97,6 +113,11 @@ classes:
     slots:
       - ccf_biomarker_type
     slot_usage:
+      id:
+        structured_pattern:
+          syntax: "{hgnc}:\\d+|{asctb_temp}:[a-zA-Z0-9-]+"
+          interpolated: true
+          partial_match: false
       ccf_biomarker_type:
         annotations:
           owl: AnnotationAssertion, AnnotationProperty
@@ -178,10 +199,6 @@ slots:
     required: true
     identifier: true
     range: string
-    structured_pattern:
-      syntax: "{prefix}{name}"
-      interpolated: true
-      partial_match: false
   class_type:
     required: true
     designates_type: true
@@ -206,7 +223,7 @@ slots:
     multivalued: true
     range: string
     structured_pattern:
-      syntax: "{prefix}{name}"
+      syntax: "{doi}:10\\.\\d+/.*|{pmid}:\\d+"
       interpolated: true
       partial_match: false    
     slot_uri: dct:reference
