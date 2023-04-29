@@ -217,7 +217,7 @@ function addCharacterizingBiomarkers(array, {id: ct_id, name: ct_name}, biomarke
 }
 
 function generateIdWhenEmpty(id, name) {
-  if (checkNotEmpty(id) && id.match(/\w+:\w+/)) {
+  if (checkNotEmpty(id)) {
     return id;
   }
   const suffix = name.trim()
