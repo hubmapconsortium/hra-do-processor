@@ -212,11 +212,6 @@ slots:
     identifier: true
     range: string
     required: true
-    pattern: \w+:\w+
-    structured_pattern:
-      syntax: '{prefix}{name}'
-      interpolated: true
-      partial_match: false
   class_type:
     name: class_type
     from_schema: http://purl.humanatlas.io/specs/asct-b
@@ -255,9 +250,9 @@ slots:
     slot_uri: dct:reference
     multivalued: true
     range: string
-    pattern: \w+:\w+
+    pattern: DOI:10\.\d+/.*|PMID:\d+
     structured_pattern:
-      syntax: '{prefix}{name}'
+      syntax: '{doi}:10\.\d+/.*|{pmid}:\d+'
       interpolated: true
       partial_match: false
   ccf_has_biomarker_set:
@@ -486,6 +481,13 @@ classes:
     slots:
     - ccf_part_of
     slot_usage:
+      id:
+        name: id
+        pattern: (UBERON|FMA):\d+|ASCTB-TEMP:[a-zA-Z0-9-]+
+        structured_pattern:
+          syntax: ({uberon}|{fma}):\d+|{asctb_temp}:[a-zA-Z0-9-]+
+          interpolated: true
+          partial_match: false
       ccf_part_of:
         name: ccf_part_of
         annotations:
@@ -512,6 +514,13 @@ classes:
     - ccf_located_in
     - ccf_has_biomarker_set
     slot_usage:
+      id:
+        name: id
+        pattern: (CL|PCL):\d+|ASCTB-TEMP:[a-zA-Z0-9-]+
+        structured_pattern:
+          syntax: ({cl}|{pcl}):\d+|{asctb_temp}:[a-zA-Z0-9-]+
+          interpolated: true
+          partial_match: false
       ccf_ct_isa:
         name: ccf_ct_isa
         annotations:
@@ -541,6 +550,13 @@ classes:
     slots:
     - ccf_biomarker_type
     slot_usage:
+      id:
+        name: id
+        pattern: HGNC:\d+|ASCTB-TEMP:[a-zA-Z0-9-]+
+        structured_pattern:
+          syntax: '{hgnc}:\d+|{asctb_temp}:[a-zA-Z0-9-]+'
+          interpolated: true
+          partial_match: false
       ccf_biomarker_type:
         name: ccf_biomarker_type
         annotations:
@@ -684,10 +700,28 @@ classes:
     class_uri: schema:Grant
 source_file: schemas/src/digital-objects/asct-b.yaml
 settings:
-  prefix:
-    setting_key: prefix
-    setting_value: '\w+:'
-  name:
-    setting_key: name
-    setting_value: \w+
+  uberon:
+    setting_key: uberon
+    setting_value: UBERON
+  fma:
+    setting_key: fma
+    setting_value: FMA
+  cl:
+    setting_key: cl
+    setting_value: CL
+  pcl:
+    setting_key: pcl
+    setting_value: PCL
+  hgnc:
+    setting_key: hgnc
+    setting_value: HGNC
+  asctb_temp:
+    setting_key: asctb_temp
+    setting_value: ASCTB-TEMP
+  doi:
+    setting_key: doi
+    setting_value: DOI
+  pmid:
+    setting_key: pmid
+    setting_value: PMID
 

@@ -23,7 +23,7 @@
                     "type": "string"
                 },
                 "id": {
-                    "pattern": "\\w+:\\w+",
+                    "pattern": "(UBERON|FMA):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+",
                     "type": "string"
                 }
             },
@@ -171,7 +171,7 @@
                     "type": "string"
                 },
                 "id": {
-                    "pattern": "\\w+:\\w+",
+                    "pattern": "HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+",
                     "type": "string"
                 }
             },
@@ -198,7 +198,7 @@
                 },
                 "references": {
                     "items": {
-                        "pattern": "\\w+:\\w+",
+                        "pattern": "DOI:10\\.\\d+/.*|PMID:\\d+",
                         "type": "string"
                     },
                     "type": "array"
@@ -242,7 +242,7 @@
                     "type": "string"
                 },
                 "id": {
-                    "pattern": "\\w+:\\w+",
+                    "pattern": "(CL|PCL):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+",
                     "type": "string"
                 }
             },

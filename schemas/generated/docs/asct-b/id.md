@@ -16,10 +16,10 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 
 ## Children
 
+ *  [AnatomicalStructure➞id](AnatomicalStructure_id.md)
+ *  [Biomarker➞id](Biomarker_id.md)
+ *  [CellType➞id](CellType_id.md)
 
 ## Used by
 
- * [AnatomicalStructure](AnatomicalStructure.md)
  * [AsctbConcept](AsctbConcept.md)
- * [Biomarker](Biomarker.md)
- * [CellType](CellType.md)
