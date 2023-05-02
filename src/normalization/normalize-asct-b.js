@@ -237,16 +237,6 @@ function checkNotEmpty(str) {
   return str && str.trim() !== "";
 }
 
-function expandId(id) {
-  return id
-    .replace(/^UBERON:/, 'http://purl.obolibrary.org/obo/UBERON_')
-    .replace(/^FMA:/, 'http://purl.org/sig/ont/fma/fma')
-    .replace(/^CL:/, 'http://purl.obolibrary.org/obo/CL_')
-    .replace(/^HGNC:/, 'http://identifiers.org/hgnc/')
-    .replace(/^DOI:/, 'https://doi.org/')
-    .replace(/\s+/g, '');
-}
-
 function normalizeDoi(doi) {
   return doi.replace(/\s+/g, '')
             .replace(/^doi:/, 'DOI:')
