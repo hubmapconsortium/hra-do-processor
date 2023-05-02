@@ -248,7 +248,9 @@ function expandId(id) {
 }
 
 function normalizeDoi(doi) {
-  return doi.replace(/\s+/g, '');
+  return doi.replace(/\s+/g, '')
+            .replace(/^doi:/, 'DOI:')
+            .replace(/^(https:\/\/)?doi\.org\//, 'DOI:');
 }
 
 function removeDuplicates(array) {
