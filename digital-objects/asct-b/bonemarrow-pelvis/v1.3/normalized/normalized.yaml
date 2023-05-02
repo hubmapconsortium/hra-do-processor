@@ -80,12 +80,20 @@ data:
       ccf_pref_label: body proper
       ccf_asctb_type: AS
       ccf_is_provisional: false
-    - id: UBERON:0002371
+    - id: UBERON:0001270
       class_type: AnatomicalStructure
-      ccf_pref_label: Bone marrow
+      ccf_pref_label: pelvis
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
+        - UBERON:0013702
+    - id: UBERON:0002371
+      class_type: AnatomicalStructure
+      ccf_pref_label: bone marrow
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001270
         - UBERON:0013702
   cell_types:
     - id: CL:0000000

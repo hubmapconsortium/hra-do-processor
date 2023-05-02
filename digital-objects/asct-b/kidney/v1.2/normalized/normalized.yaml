@@ -84,6 +84,20 @@ data:
       ccf_pref_label: body proper
       ccf_asctb_type: AS
       ccf_is_provisional: false
+    - id: UBERON:0004538
+      class_type: AnatomicalStructure
+      ccf_pref_label: left kidney
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0002113
+    - id: UBERON:0004538
+      class_type: AnatomicalStructure
+      ccf_pref_label: left kidney
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0002113
     - id: UBERON:0002113
       class_type: AnatomicalStructure
       ccf_pref_label: kidney

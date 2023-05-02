@@ -62,12 +62,21 @@ data:
       ccf_pref_label: body proper
       ccf_asctb_type: AS
       ccf_is_provisional: false
-    - id: UBERON:0001004
+    - id: UBERON:0002048
       class_type: AnatomicalStructure
-      ccf_pref_label: Respiratory System
+      ccf_pref_label: lung
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
+        - UBERON:0013702
+        - UBERON:0000170
+    - id: UBERON:0001004
+      class_type: AnatomicalStructure
+      ccf_pref_label: respiratory system
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0002048
         - UBERON:0013702
     - id: UBERON:0000065
       class_type: AnatomicalStructure
@@ -347,13 +356,6 @@ data:
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0001558
-    - id: UBERON:0002048
-      class_type: AnatomicalStructure
-      ccf_pref_label: Lung
-      ccf_asctb_type: AS
-      ccf_is_provisional: false
-      ccf_part_of:
-        - UBERON:0000170
     - id: UBERON:0002401
       class_type: AnatomicalStructure
       ccf_pref_label: visceral pleura
@@ -618,7 +620,7 @@ data:
             - HGNC:7809
             - HGNC:12338
           references:
-            - doi:10.1042/BST20191010.
+            - DOI:10.1042/BST20191010.
     - id: CL:1000329
       class_type: CellType
       ccf_pref_label: tracheal goblet cell
@@ -638,7 +640,7 @@ data:
             - HGNC:16438
             - HGNC:8659
           references:
-            - doi:10.1038/s41385-020-00370-7
+            - DOI:10.1038/s41385-020-00370-7
     - id: CL:0002207
       class_type: CellType
       ccf_pref_label: tuft cell
@@ -655,7 +657,7 @@ data:
             - HGNC:14323
             - HGNC:2700
           references:
-            - doi:10.1126/sciimmunol.aax7224
+            - DOI:10.1126/sciimmunol.aax7224
     - id: CL:0002145
       class_type: CellType
       ccf_pref_label: tracheobronchial ciliated cell
@@ -674,7 +676,7 @@ data:
             - HGNC:26308
             - HGNC:34527
           references:
-            - doi:10.1038/s41467-020-16239-z
+            - DOI:10.1038/s41467-020-16239-z
     - id: CL:1000223
       class_type: CellType
       ccf_pref_label: neuroendocrine cell
@@ -695,7 +697,7 @@ data:
             - HGNC:1757
             - HGNC:8008
           references:
-            - doi:10.1126/science.aan8546
+            - DOI:10.1126/science.aan8546
         - members:
             - HGNC:738
             - HGNC:4605
@@ -704,7 +706,7 @@ data:
             - HGNC:1757
             - HGNC:8008
           references:
-            - doi:10.1126/science.aan8546
+            - DOI:10.1126/science.aan8546
     - id: CL:0019019
       class_type: CellType
       ccf_pref_label: tracheobronchial smooth muscle cell
@@ -723,14 +725,14 @@ data:
             - HGNC:2770
             - HGNC:11553
           references:
-            - doi:10.1186/s12931-017-0640-8
+            - DOI:10.1186/s12931-017-0640-8
         - members:
             - HGNC:130
             - HGNC:11553
             - HGNC:2155
             - HGNC:19719
           references:
-            - doi:10.1186/s12931-017-0640-8
+            - DOI:10.1186/s12931-017-0640-8
     - id: LMHA:00142
       class_type: CellType
       ccf_pref_label: submucosal gland ciliated duct cells
@@ -749,7 +751,7 @@ data:
             - HGNC:20771
             - HGNC:12371
           references:
-            - doi:10.1038/s41467-020-16239-z
+            - DOI:10.1038/s41467-020-16239-z
     - id: LMHA:00087
       class_type: CellType
       ccf_pref_label: submucosal gland basal cells
@@ -768,7 +770,7 @@ data:
             - HGNC:6416
             - HGNCL2514
           references:
-            - doi:10.1038/s41467-020-16239-z
+            - DOI:10.1038/s41467-020-16239-z
         - members:
             - HGNC:15979
             - HGNC:6442
@@ -777,7 +779,7 @@ data:
             - HGNCL2514
             - HGNC:3800
           references:
-            - doi:10.1038/s41467-020-16239-z
+            - DOI:10.1038/s41467-020-16239-z
     - id: LMHA:00693
       class_type: CellType
       ccf_pref_label: submucosal gland collecting duct epithelium
@@ -795,7 +797,7 @@ data:
             - HGNC:409
             - HGNC:9867
           references:
-            - doi:10.1038/s41467-020-16239-z
+            - DOI:10.1038/s41467-020-16239-z
     - id: LMHA:00238
       class_type: CellType
       ccf_pref_label: submucosal gland mucous cells
@@ -812,7 +814,7 @@ data:
             - HGNC:17257
             - HGNC:328
           references:
-            - doi:10.1016/j.stem.2018.03.018
+            - DOI:10.1016/j.stem.2018.03.018
     - id: CL:0000313
       class_type: CellType
       ccf_pref_label: submucosal gland serous cells
@@ -830,14 +832,14 @@ data:
             - HGNC:6678
             - HGNC:6720
           references:
-            - doi:10.1016/j.stem.2018.03.018
+            - DOI:10.1016/j.stem.2018.03.018
         - members:
             - HGNC:8968
             - HGNC:6740
             - HGNC:6678
             - HGNC:6720
           references:
-            - doi:10.1016/j.stem.2018.03.018
+            - DOI:10.1016/j.stem.2018.03.018
     - id: CL:0000185
       class_type: CellType
       ccf_pref_label: submucosal gland myoepithelium
@@ -856,14 +858,14 @@ data:
             - HGNC:15979
             - HGNC:6442
           references:
-            - doi:10.1016/j.stem.2018.03.018
+            - DOI:10.1016/j.stem.2018.03.018
         - members:
             - HGNC:130
             - HGNC:15979
             - HGNC:6442
             - HGNC:6416
           references:
-            - doi:10.1038/s41467-020-16239-z
+            - DOI:10.1038/s41467-020-16239-z
     - id: CL:0019002
       class_type: CellType
       ccf_pref_label: chondrocyte
@@ -879,11 +881,11 @@ data:
             - HGNC:2200
             - HGNC:11204
           references:
-            - doi:10.1101/2021.11.26.470108
+            - DOI:10.1101/2021.11.26.470108
         - members:
             - HGNC:2200
           references:
-            - doi:10.1101/2021.11.26.470108
+            - DOI:10.1101/2021.11.26.470108
     - id: CL:1000413
       class_type: CellType
       ccf_pref_label: arterial endothelial cell
@@ -901,7 +903,7 @@ data:
             - HGNC:2892
             - HGNC:12726
           references:
-            - doi:10.1161/CIRCULATIONAHA.120.052318.
+            - DOI:10.1161/CIRCULATIONAHA.120.052318.
     - id: CL:0019018
       class_type: CellType
       ccf_pref_label: vascular smooth muscle
@@ -945,7 +947,7 @@ data:
             - HGNC:12726
             - HGNC:16041
           references:
-            - doi:10.1161/CIRCULATIONAHA.120.052318.
+            - DOI:10.1161/CIRCULATIONAHA.120.052318.
         - members:
             - HGNC:7976
             - HGNC:4035
@@ -953,7 +955,7 @@ data:
             - HGNC:12726
             - HGNC:16041
           references:
-            - doi:10.1161/CIRCULATIONAHA.120.052318.
+            - DOI:10.1161/CIRCULATIONAHA.120.052318.
         - members:
             - HGNC:4035
             - HGNC:30552
@@ -962,7 +964,7 @@ data:
             - HGNC:12726
             - HGNC:16041
           references:
-            - doi:10.1161/CIRCULATIONAHA.120.052318.
+            - DOI:10.1161/CIRCULATIONAHA.120.052318.
         - members:
             - HGNC:4035
             - HGNC:30552
@@ -970,7 +972,7 @@ data:
             - HGNC:12726
             - HGNC:16041
           references:
-            - doi:10.1161/CIRCULATIONAHA.120.052318.
+            - DOI:10.1161/CIRCULATIONAHA.120.052318.
     - id: ASCTB-TEMP:perichondrial-fibroblasts
       class_type: CellType
       ccf_pref_label: perichondrial fibroblasts
@@ -987,7 +989,7 @@ data:
             - HGNC:3755
             - HGNC:3689
           references:
-            - doi:10.1101/2021.11.26.470108.
+            - DOI:10.1101/2021.11.26.470108.
     - id: CL:0002332
       class_type: CellType
       ccf_pref_label: ciliated bronchial cell
@@ -1008,7 +1010,7 @@ data:
             - HGNC:26308
             - HGNC:34527
           references:
-            - doi:10.1042/BST20191010.
+            - DOI:10.1042/BST20191010.
         - members:
             - HGNC:3816
             - HGNC:12371
@@ -1017,7 +1019,7 @@ data:
             - HGNC:26308
             - HGNC:34527
           references:
-            - doi:10.1042/BST20191010.
+            - DOI:10.1042/BST20191010.
     - id: ASCTB-TEMP:airway-deuterosomal-cell
       class_type: CellType
       ccf_pref_label: airway deuterosomal cell
@@ -1034,14 +1036,14 @@ data:
             - HGNC:21399
             - HGNC:24222
           references:
-            - doi:10.1042/BST20191010.
+            - DOI:10.1042/BST20191010.
         - members:
             - HGNC:26344
             - HGNC:21399
             - HGNC:24222
             - HGNC:3816
           references:
-            - doi:10.1042/BST20191010.
+            - DOI:10.1042/BST20191010.
     - id: CL:0002329
       class_type: CellType
       ccf_pref_label: basal cell
@@ -1059,7 +1061,7 @@ data:
             - HGNC:7809
             - HGNC:12338
           references:
-            - doi:10.1042/BST20191010.
+            - DOI:10.1042/BST20191010.
     - id: ASCTB-TEMP:suprabasal-cell
       class_type: CellType
       ccf_pref_label: suprabasal cell
@@ -1078,7 +1080,7 @@ data:
             - HGNC:6436
             - HGNC:7883
           references:
-            - doi:10.1042/BST20191010.
+            - DOI:10.1042/BST20191010.
     - id: CL:1000143
       class_type: CellType
       ccf_pref_label: bronchial goblet cell
@@ -1099,7 +1101,7 @@ data:
             - HGNC:16438
             - HGNC:8659
           references:
-            - doi:10.1038/s41385-020-00370-7
+            - DOI:10.1038/s41385-020-00370-7
     - id: CL:0002208
       class_type: CellType
       ccf_pref_label: tuft cell
@@ -1117,7 +1119,7 @@ data:
             - HGNC:14323
             - HGNC:2700
           references:
-            - doi:10.1126/sciimmunol.aax7224
+            - DOI:10.1126/sciimmunol.aax7224
     - id: CL:0017000
       class_type: CellType
       ccf_pref_label: pulmonary ionocyte
@@ -1135,7 +1137,7 @@ data:
             - HGNC:861
             - HGNC:1884
           references:
-            - doi.org/10.1038/s41586-018-0394-6
+            - DOI:10.1038/s41586-018-0394-6
     - id: CL:0002598
       class_type: CellType
       ccf_pref_label: bronchial smooth muscle cell
@@ -1152,7 +1154,7 @@ data:
             - HGNC:7569
             - HGNC:11553
           references:
-            - doi:10.1186/s12931-017-0640-8
+            - DOI:10.1186/s12931-017-0640-8
     - id: CL:1001568
       class_type: CellType
       ccf_pref_label: pulmonary artery endothelial cell
@@ -1172,7 +1174,7 @@ data:
             - HGNC:7884
             - HGNC:12726
           references:
-            - doi:10.1161/CIRCULATIONAHA.120.052318.
+            - DOI:10.1161/CIRCULATIONAHA.120.052318.
     - id: CL:0002591
       class_type: CellType
       ccf_pref_label: pulmonary artery smooth muscle cell
@@ -1208,7 +1210,7 @@ data:
             - HGNC:7371
             - HGNC:21444
           references:
-            - doi:10.3978/j.issn.2072-1439.2015.02.19
+            - DOI:10.3978/j.issn.2072-1439.2015.02.19
     - id: CL:0000158
       class_type: CellType
       ccf_pref_label: club cell
@@ -1227,7 +1229,7 @@ data:
             - HGNC:18391
             - HGNC:2632
           references:
-            - doi:10.1038/s41525-021-00237-1
+            - DOI:10.1038/s41525-021-00237-1
     - id: CL:1000271
       class_type: CellType
       ccf_pref_label: lung ciliated cell
@@ -1247,7 +1249,7 @@ data:
             - HGNC:26308
             - HGNC:34527
           references:
-            - doi:10.1038/s41591-021-01332-7
+            - DOI:10.1038/s41591-021-01332-7
     - id: CL:0000192
       class_type: CellType
       ccf_pref_label: airway smooth muscle cells
@@ -1266,7 +1268,7 @@ data:
             - HGNC:2155
             - HGNC:19719
           references:
-            - doi:10.1186/s12931-017-0640-8
+            - DOI:10.1186/s12931-017-0640-8
     - id: CL:1000352
       class_type: CellType
       ccf_pref_label: basal cell
@@ -1283,7 +1285,7 @@ data:
             - HGNC:7809
             - HGNC:12338
           references:
-            - doi:10.1042/BST20191010.
+            - DOI:10.1042/BST20191010.
     - id: CL:1000350
       class_type: CellType
       ccf_pref_label: basal cell
@@ -1300,7 +1302,7 @@ data:
             - HGNC:7809
             - HGNC:12338
           references:
-            - doi:10.1042/BST20191010.
+            - DOI:10.1042/BST20191010.
     - id: CL:1001566
       class_type: CellType
       ccf_pref_label: bronchioalveolar stem cell
@@ -1315,7 +1317,7 @@ data:
             - HGNC:10802
             - HGNC:12523
           references:
-            - doi:10.1186/s12931-017-0640-8
+            - DOI:10.1186/s12931-017-0640-8
     - id: ASCTB-TEMP:respiratory-airway-secretory-cell
       class_type: CellType
       ccf_pref_label: respiratory airway secretory cell
@@ -1331,7 +1333,7 @@ data:
             - HGNC:6359
             - HGNC:11200
           references:
-            - doi:10.1038/s41586-022-04552-0
+            - DOI:10.1038/s41586-022-04552-0
     - id: CL:1000351
       class_type: CellType
       ccf_pref_label: basal cell
@@ -1348,7 +1350,7 @@ data:
             - HGNC:7809
             - HGNC:12338
           references:
-            - doi:10.1042/BST20191010.
+            - DOI:10.1042/BST20191010.
     - id: CL:0002063
       class_type: CellType
       ccf_pref_label: AT2
@@ -1365,7 +1367,7 @@ data:
             - HGNC:10799
             - HGNC:14582
           references:
-            - doi:10.1165/rcmb.2016-0426PS
+            - DOI:10.1165/rcmb.2016-0426PS
     - id: CL:0002062
       class_type: CellType
       ccf_pref_label: AT1
@@ -1385,7 +1387,7 @@ data:
             - HGNC:24961
             - HGNC:10724
           references:
-            - doi:10.1146/annurev.physiol.65.092101.142446
+            - DOI:10.1146/annurev.physiol.65.092101.142446
     - id: CL:4028006
       class_type: CellType
       ccf_pref_label: alveolar type 2 fibroblast
@@ -1401,7 +1403,7 @@ data:
             - HGNC:28701
             - HGNC:17104
           references:
-            - doi:10.1038/s41586-020-2922-4
+            - DOI:10.1038/s41586-020-2922-4
     - id: CL:4028004
       class_type: CellType
       ccf_pref_label: alveolar type 1 fibroblast
@@ -1418,7 +1420,7 @@ data:
             - HGNC:14674
             - HGNC:248
           references:
-            - doi:10.1038/s41586-020-2922-4
+            - DOI:10.1038/s41586-020-2922-4
     - id: CL:0000186
       class_type: CellType
       ccf_pref_label: secondary crest myofibroblasts
@@ -1435,7 +1437,7 @@ data:
             - HGNC:130
             - HGNC:14342
           references:
-            - doi:10.1002/sctm.20-0526
+            - DOI:10.1002/sctm.20-0526
     - id: CL:0009089
       class_type: CellType
       ccf_pref_label: lung pericyte
@@ -1454,7 +1456,7 @@ data:
             - HGNC:2466
             - HGNC:12338
           references:
-            - doi:10.1002/cphy.c200027
+            - DOI:10.1002/cphy.c200027
     - id: CL:4028002
       class_type: CellType
       ccf_pref_label: CAP1 general capillary aCap
@@ -1472,7 +1474,7 @@ data:
             - HGNC:13635
             - HGNC:24945
           references:
-            - doi:10.1038/s41586-020-2822-7
+            - DOI:10.1038/s41586-020-2822-7
     - id: CL:4028003
       class_type: CellType
       ccf_pref_label: CAP2 aerocyte capillary gCap
@@ -1488,7 +1490,7 @@ data:
             - HGNC:16665
             - HGNC:1375
           references:
-            - doi:10.1038/s41586-020-2822-7
+            - DOI:10.1038/s41586-020-2822-7
     - id: CL:0002619
       class_type: CellType
       ccf_pref_label: endothelial progenitors
@@ -1503,7 +1505,7 @@ data:
             - HGNC:6342
             - HGNC:339
           references:
-            - doi:10.1164/rccm.201812-2312OC
+            - DOI:10.1164/rccm.201812-2312OC
     - id: CL:0009086
       class_type: CellType
       ccf_pref_label: lymphatic endothelial cell
@@ -1521,7 +1523,7 @@ data:
             - HGNC:14687
             - HGNC:8005
           references:
-            - doi:10.1038/s41598-021-88064-3
+            - DOI:10.1038/s41598-021-88064-3
     - id: CL:0001065
       class_type: CellType
       ccf_pref_label: innate lymphoid cell
@@ -1549,7 +1551,7 @@ data:
             - HGNC:6731
             - HGNC:7656
           references:
-            - doi:10.3389/fimmu.2019.01597
+            - DOI:10.3389/fimmu.2019.01597
     - id: CL:0000938
       class_type: CellType
       ccf_pref_label: NK CD56bright
@@ -1566,7 +1568,7 @@ data:
             - HGNC:10646
             - HGNC:7656
           references:
-            - doi:10.3389/fimmu.2019.01597
+            - DOI:10.3389/fimmu.2019.01597
     - id: CL:0000814
       class_type: CellType
       ccf_pref_label: NK T cell
@@ -1581,7 +1583,7 @@ data:
             - HGNC:7656
             - HGNC:1674
           references:
-            - doi:10.3389/fimmu.2019.01597
+            - DOI:10.3389/fimmu.2019.01597
     - id: CL:0000542
       class_type: CellType
       ccf_pref_label: lymphoid cells of lung
@@ -1609,7 +1611,7 @@ data:
             - HGNC:1674
             - HGNC:1706
           references:
-            - doi:10.1111/febs.15770
+            - DOI:10.1111/febs.15770
     - id: CL:0000236
       class_type: CellType
       ccf_pref_label: B cell
@@ -1627,7 +1629,7 @@ data:
             - HGNC:7315
             - HGNC:1633
           references:
-            - doi:10.1161/CIRCULATIONAHA.120.052318.
+            - DOI:10.1161/CIRCULATIONAHA.120.052318.
     - id: CL:0000786
       class_type: CellType
       ccf_pref_label: plasma cell
@@ -1642,7 +1644,7 @@ data:
             - HGNC:10658
             - HGNC:1667
           references:
-            - doi:10.3390/vaccines9010024
+            - DOI:10.3390/vaccines9010024
     - id: CL:0000905
       class_type: CellType
       ccf_pref_label: CD4+ T cell effector memory
@@ -1657,7 +1659,7 @@ data:
             - HGNC:1674
             - HGNC:1678
           references:
-            - doi:10.1111/imcb.12272
+            - DOI:10.1111/imcb.12272
     - id: CL:0000895
       class_type: CellType
       ccf_pref_label: CD4+ T cell naive
@@ -1674,7 +1676,7 @@ data:
             - HGNC:6551
             - HGNC:1678
           references:
-            - doi:10.1111/febs.15770
+            - DOI:10.1111/febs.15770
     - id: ASCTB-TEMP:cd4-t-cell-resident-memory
       class_type: CellType
       ccf_pref_label: CD4+ T cell resident memory
@@ -1691,7 +1693,7 @@ data:
             - HGNC:1678
             - HGNC:1674
           references:
-            - doi:10.3389/fimmu.2020.624411
+            - DOI:10.3389/fimmu.2020.624411
     - id: CL:0000913
       class_type: CellType
       ccf_pref_label: CD8+ T cell effector memory
@@ -1708,7 +1710,7 @@ data:
             - HGNC:1673
             - HGNC:1707
           references:
-            - doi:10.1101/cshperspect.a037796
+            - DOI:10.1101/cshperspect.a037796
     - id: ASCTB-TEMP:cd8-t-cell-resident-memory
       class_type: CellType
       ccf_pref_label: CD8+ T cell resident memory
@@ -1728,7 +1730,7 @@ data:
             - HGNC:1694
             - HGNC:1681
           references:
-            - doi:10.1016/j.coi.2019.05.011
+            - DOI:10.1016/j.coi.2019.05.011
     - id: CL:0000940
       class_type: CellType
       ccf_pref_label: mucosal invariant T cell
@@ -1762,7 +1764,7 @@ data:
             - HGNC:19364
             - HGNC:23527
           references:
-            - doi:10.1186/s12967-020-02632-1;doi:10.1155/2019/1907807.
+            - DOI:10.1186/s12967-020-02632-1;doi:10.1155/2019/1907807.
     - id: CL:0000763
       class_type: CellType
       ccf_pref_label: myeloid cell
@@ -1787,7 +1789,7 @@ data:
             - HGNC:10617
             - HGNC:6472
           references:
-            - doi:10.1126/sciadv.aba1983
+            - DOI:10.1126/sciadv.aba1983
     - id: CL:0002394
       class_type: CellType
       ccf_pref_label: cDC1 myeloid dendritic cell
@@ -1805,7 +1807,7 @@ data:
             - HGNC:5951
             - HGNC:3765
           references:
-            - doi:10.1111/imm.13143
+            - DOI:10.1111/imm.13143
     - id: LMHA:00213
       class_type: CellType
       ccf_pref_label: Interstitial macrophage
@@ -1827,7 +1829,7 @@ data:
             - HGNC:1705
             - HGNC:2558
           references:
-            - doi:10.1002/JLB.3RU0720-418R
+            - DOI:10.1002/JLB.3RU0720-418R
     - id: CL:0000583
       class_type: CellType
       ccf_pref_label: alveolar macrophage
@@ -1847,8 +1849,7 @@ data:
             - HGNC:1693
             - HGNC:9666
           references:
-            - >-
-              doi.org/10.1016/j.cellimm.2018.01.005;doi:10.1164/rccm.201911-2105OC
+            - DOI:10.1016/j.cellimm.2018.01.005;doi:10.1164/rccm.201911-2105OC
     - id: CL:0000860
       class_type: CellType
       ccf_pref_label: classical monocyte
@@ -1866,7 +1867,7 @@ data:
             - HGNC:1603
             - HGNC:3623
           references:
-            - doi:10.3389/fimmu.2019.02035
+            - DOI:10.3389/fimmu.2019.02035
     - id: CL:0000875
       class_type: CellType
       ccf_pref_label: non-classical monocyte
@@ -1882,7 +1883,7 @@ data:
             - HGNC:2433
             - HGNC:14261
           references:
-            - doi:10.3389/fimmu.2019.02035
+            - DOI:10.3389/fimmu.2019.02035
     - id: CL:0002399
       class_type: CellType
       ccf_pref_label: cDC2 myeloid dendritic cell
@@ -1900,7 +1901,7 @@ data:
             - HGNC:3618
             - HGNC:9662
           references:
-            - doi:10.1111/imm.13143
+            - DOI:10.1111/imm.13143
     - id: CL:0000784
       class_type: CellType
       ccf_pref_label: plasmacytoid dendritic cell
@@ -1918,7 +1919,7 @@ data:
             - HGNC:8004
             - HGNC:4540
           references:
-            - doi:10.1111/imm.13143
+            - DOI:10.1111/imm.13143
     - id: ASCTB-TEMP:alveolar-macrophage-proliferating
       class_type: CellType
       ccf_pref_label: alveolar macrophage proliferating
@@ -1991,7 +1992,7 @@ data:
             - HGNC:6342
             - HGNC:2097
           references:
-            - doi:10.1007/s12016-020-08779-5
+            - DOI:10.1007/s12016-020-08779-5
     - id: CL:0000485
       class_type: CellType
       ccf_pref_label: tissue resident mucosal type mast cell
@@ -2007,7 +2008,7 @@ data:
             - HGNC:2298
             - HGNC:6342
           references:
-            - doi:10.1007/s12016-020-08779-5
+            - DOI:10.1007/s12016-020-08779-5
     - id: CL:0019015
       class_type: CellType
       ccf_pref_label: eosinophil
@@ -2022,7 +2023,7 @@ data:
             - HGNC:3423
             - HGNC:10046
           references:
-            - doi:10.1016/j.lfs.2020.118973
+            - DOI:10.1016/j.lfs.2020.118973
     - id: CL:0000094
       class_type: CellType
       ccf_pref_label: neutrophil
@@ -2039,7 +2040,7 @@ data:
             - HGNC:3620
             - HGNC:1603
           references:
-            - doi:10.3390/ijms21030851
+            - DOI:10.3390/ijms21030851
     - id: CL:0000556
       class_type: CellType
       ccf_pref_label: lung megakaryocyte
@@ -2054,7 +2055,7 @@ data:
             - HGNC:6138
             - HGNC:6156
           references:
-            - doi:10.1007/s12015-017-9747-z
+            - DOI:10.1007/s12015-017-9747-z
   biomarkers:
     - id: HGNC:15979
       class_type: Biomarker

@@ -53,6 +53,20 @@ data:
       ccf_pref_label: body proper
       ccf_asctb_type: AS
       ccf_is_provisional: false
+    - id: FMA:24978
+      class_type: AnatomicalStructure
+      ccf_pref_label: left knee
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001465
+    - id: FMA:24977
+      class_type: AnatomicalStructure
+      ccf_pref_label: right knee
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0001465
     - id: UBERON:0001465
       class_type: AnatomicalStructure
       ccf_pref_label: knee

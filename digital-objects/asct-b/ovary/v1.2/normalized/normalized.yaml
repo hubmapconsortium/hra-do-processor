@@ -74,6 +74,20 @@ data:
       ccf_pref_label: body proper
       ccf_asctb_type: AS
       ccf_is_provisional: false
+    - id: FMA:7214
+      class_type: AnatomicalStructure
+      ccf_pref_label: left ovary
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000992
+    - id: FMA:7213
+      class_type: AnatomicalStructure
+      ccf_pref_label: right ovary
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000992
     - id: UBERON:0000992
       class_type: AnatomicalStructure
       ccf_pref_label: ovary

@@ -570,7 +570,7 @@ data:
             - ASCTB-TEMP:sema3g
             - ASCTB-TEMP:ackr1
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
     - id: ASCTB-TEMP:endocervical-epithelial-cell
       class_type: CellType
       ccf_pref_label: endocervical epithelial cell
@@ -618,7 +618,7 @@ data:
             - ASCTB-TEMP:myh11
             - ASCTB-TEMP:actg2
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
     - id: ASCTB-TEMP:sox9-epithelial-cell
       class_type: CellType
       ccf_pref_label: SOX9+ epithelial cell
@@ -634,7 +634,7 @@ data:
             - ASCTB-TEMP:sox9
             - ASCTB-TEMP:mmp7
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
     - id: ASCTB-TEMP:ciliated-epithelial-cell
       class_type: CellType
       ccf_pref_label: ciliated epithelial cell
@@ -651,7 +651,7 @@ data:
             - ASCTB-TEMP:tppp3
             - ASCTB-TEMP:foxj1
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
     - id: ASCTB-TEMP:glandular-epithelial-cell
       class_type: CellType
       ccf_pref_label: glandular epithelial cell
@@ -669,7 +669,7 @@ data:
             - ASCTB-TEMP:paep
             - ASCTB-TEMP:cxcl8
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
     - id: ASCTB-TEMP:luminal-epithelial-cell
       class_type: CellType
       ccf_pref_label: luminal epithelial cell
@@ -686,7 +686,7 @@ data:
             - ASCTB-TEMP:lgr5
             - ASCTB-TEMP:ptgs1
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
     - id: ASCTB-TEMP:stromal-cell
       class_type: CellType
       ccf_pref_label: stromal cell
@@ -704,7 +704,7 @@ data:
             - ASCTB-TEMP:mmp11
             - ASCTB-TEMP:ogn
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
     - id: ASCTB-TEMP:perivascular-support-cell
       class_type: CellType
       ccf_pref_label: perivascular support cell
@@ -719,7 +719,7 @@ data:
             - ASCTB-TEMP:acta2
             - ASCTB-TEMP:myh11
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
     - id: ASCTB-TEMP:macrophage
       class_type: CellType
       ccf_pref_label: macrophage
@@ -737,7 +737,7 @@ data:
             - ASCTB-TEMP:il1b
             - ASCTB-TEMP:sepp1
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
     - id: ASCTB-TEMP:lymphocyte
       class_type: CellType
       ccf_pref_label: lymphocyte
@@ -752,7 +752,7 @@ data:
             - ASCTB-TEMP:ptprc
             - ASCTB-TEMP:ncam1
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
     - id: ASCTB-TEMP:uterine-natural-killer-cell
       class_type: CellType
       ccf_pref_label: uterine natural killer cell
@@ -769,7 +769,7 @@ data:
             - ASCTB-TEMP:ncam1
             - ASCTB-TEMP:ccl5
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
     - id: ASCTB-TEMP:uterine-dendritic-cells
       class_type: CellType
       ccf_pref_label: uterine dendritic cells
@@ -784,7 +784,7 @@ data:
             - ASCTB-TEMP:il1b
             - ASCTB-TEMP:cd68
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
     - id: ASCTB-TEMP:b-cell
       class_type: CellType
       ccf_pref_label: B cell
@@ -801,7 +801,7 @@ data:
             - ASCTB-TEMP:ms4a1
             - ASCTB-TEMP:cxcr4
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
     - id: ASCTB-TEMP:t-cell
       class_type: CellType
       ccf_pref_label: T cell
@@ -820,7 +820,7 @@ data:
             - ASCTB-TEMP:cxcr4
             - ASCTB-TEMP:ccl5
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
     - id: ASCTB-TEMP:innate-lymphoid-cell
       class_type: CellType
       ccf_pref_label: innate lymphoid cell
@@ -839,7 +839,7 @@ data:
             - ASCTB-TEMP:ccl5
             - ASCTB-TEMP:spink2
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
     - id: ASCTB-TEMP:mast-cell
       class_type: CellType
       ccf_pref_label: mast cell
@@ -856,7 +856,7 @@ data:
             - ASCTB-TEMP:kit
             - ASCTB-TEMP:csf1
           references:
-            - https://doi.org/10.1101/2021.01.02.425073
+            - DOI:10.1101/2021.01.02.425073
   biomarkers:
     - id: ASCTB-TEMP:cd34
       class_type: Biomarker

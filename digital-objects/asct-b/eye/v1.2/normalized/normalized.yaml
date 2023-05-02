@@ -69,6 +69,20 @@ data:
       ccf_pref_label: body proper
       ccf_asctb_type: AS
       ccf_is_provisional: false
+    - id: UBERON:0004548
+      class_type: AnatomicalStructure
+      ccf_pref_label: left eye
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000970
+    - id: UBERON:0004549
+      class_type: AnatomicalStructure
+      ccf_pref_label: right eye
+      ccf_asctb_type: AS
+      ccf_is_provisional: false
+      ccf_part_of:
+        - UBERON:0000970
     - id: UBERON:0000970
       class_type: AnatomicalStructure
       ccf_pref_label: eye

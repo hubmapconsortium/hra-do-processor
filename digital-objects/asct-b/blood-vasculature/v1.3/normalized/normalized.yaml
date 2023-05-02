@@ -8151,19 +8151,19 @@ data:
         - members:
             - HGNC:1764
           references:
-            - https://doi.org/10.1006/rwei.1999.0557.
+            - DOI:10.1006/rwei.1999.0557.
         - members:
             - HGNC:8823
           references:
-            - https://doi.org/10.1006/rwei.1999.0557.
+            - DOI:10.1006/rwei.1999.0557.
         - members:
             - HGNC:11724
           references:
-            - https://doi.org/10.1006/rwei.1999.0557.
+            - DOI:10.1006/rwei.1999.0557.
         - members:
             - HGNC:11809
           references:
-            - https://doi.org/10.1006/rwei.1999.0557.
+            - DOI:10.1006/rwei.1999.0557.
         - members:
             - HGNC:1764
           references:
@@ -10972,7 +10972,7 @@ data:
           references: []
         - members: []
           references:
-            - https://doi.org/10.1006/rwei.1999.0557.
+            - DOI:10.1006/rwei.1999.0557.
         - members: []
           references:
             - 10.1111/j.1469-7580.2009.01199.x
@@ -11017,7 +11017,7 @@ data:
           references: []
         - members: []
           references:
-            - https://doi.org/10.1006/rwei.1999.0557.
+            - DOI:10.1006/rwei.1999.0557.
   biomarkers:
     - id: HGNC:8823
       class_type: Biomarker

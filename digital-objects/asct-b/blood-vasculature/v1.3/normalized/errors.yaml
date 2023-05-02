@@ -42,34 +42,6 @@ errors:
     has_sub_errors: false
   - filename: >-
       /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
-    path: $.data.cell_types[2].ccf_has_biomarker_set[12].references[0]
-    message: >-
-      'https://doi.org/10.1006/rwei.1999.0557.' does not match
-      'DOI:10\\.\\d+/.*|PMID:\\d+'
-    has_sub_errors: false
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
-    path: $.data.cell_types[2].ccf_has_biomarker_set[13].references[0]
-    message: >-
-      'https://doi.org/10.1006/rwei.1999.0557.' does not match
-      'DOI:10\\.\\d+/.*|PMID:\\d+'
-    has_sub_errors: false
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
-    path: $.data.cell_types[2].ccf_has_biomarker_set[14].references[0]
-    message: >-
-      'https://doi.org/10.1006/rwei.1999.0557.' does not match
-      'DOI:10\\.\\d+/.*|PMID:\\d+'
-    has_sub_errors: false
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
-    path: $.data.cell_types[2].ccf_has_biomarker_set[15].references[0]
-    message: >-
-      'https://doi.org/10.1006/rwei.1999.0557.' does not match
-      'DOI:10\\.\\d+/.*|PMID:\\d+'
-    has_sub_errors: false
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
     path: $.data.cell_types[2].ccf_has_biomarker_set[16].references[0]
     message: '''10.15562/bmj.v9i2.1812'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
     has_sub_errors: false
@@ -780,13 +752,6 @@ errors:
     has_sub_errors: false
   - filename: >-
       /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
-    path: $.data.cell_types[8].ccf_has_biomarker_set[1].references[0]
-    message: >-
-      'https://doi.org/10.1006/rwei.1999.0557.' does not match
-      'DOI:10\\.\\d+/.*|PMID:\\d+'
-    has_sub_errors: false
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
     path: $.data.cell_types[8].ccf_has_biomarker_set[2].references[0]
     message: >-
       '10.1111/j.1469-7580.2009.01199.x' does not match
@@ -797,13 +762,6 @@ errors:
     path: $.data.cell_types[9].ccf_has_biomarker_set[1].references[0]
     message: >-
       '10.1111/j.1469-7580.2009.01199.x' does not match
-      'DOI:10\\.\\d+/.*|PMID:\\d+'
-    has_sub_errors: false
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/blood-vasculature/v1.3/normalized/normalized.yaml
-    path: $.data.cell_types[10].ccf_has_biomarker_set[1].references[0]
-    message: >-
-      'https://doi.org/10.1006/rwei.1999.0557.' does not match
       'DOI:10\\.\\d+/.*|PMID:\\d+'
     has_sub_errors: false
 parse_errors: []
