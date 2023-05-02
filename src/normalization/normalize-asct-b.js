@@ -4,7 +4,11 @@ import { dump } from 'js-yaml';
 import { resolve } from 'path';
 import sh from 'shelljs';
 import { validateNormalized } from '../utils/validation.js';
-import { readMetadata, writeNormalized } from './utils.js';
+import { readMetadata, 
+         writeNormalized, 
+         getPatchesForAnatomicalStructure, 
+         getPatchesForCellType, 
+         getPatchesForBiomarker } from './utils.js';
 
 const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
 
@@ -34,7 +38,7 @@ export async function normalizeAsctb(context) {
     );
     data = await fetch(requestUrl, { method: 'POST', body: formData }).then((r) => r.json());
   }
-  const normalizedData = normalizeAsctbApiResponse(data.data);
+  const normalizedData = normalizeAsctbApiResponse(context, data.data);
 
   writeNormalized(obj, id, metadata, normalizedData);
   validateNormalized(context);
@@ -52,51 +56,24 @@ export async function normalizeAsctb(context) {
   }
 }
 
-function normalizeAsctbApiResponse(data) {
+function normalizeAsctbApiResponse(context, data) {
   return {
-    anatomical_structures: data.reduce((collector, row) => {
-      row.anatomical_structures.reduce(normalizeASData, collector);
-      return collector;
-    }, [{
-      id: 'UBERON:0013702',
-      class_type: 'AnatomicalStructure',
-      ccf_pref_label: 'body proper',
-      ccf_asctb_type: 'AS',
-      ccf_is_provisional: false,
-    }]),
-    cell_types: data.reduce((collector, row) => {
-      row.cell_types.reduce(normalizeCTData, collector);
-
-      // Add ccf_located_in relationship that is between AS and CT
-      const last_as = row.anatomical_structures.pop();
-      const last_ct = row.cell_types.pop();
-      if (last_ct) {
-        addLocatedIn(collector, last_as, last_ct);
-      }
-      // Add has_biomarker relationship between CT and BM
-      const biomarkers = row.biomarkers.filter(({id, name}) => checkIfValid({id, name}));
-      const references = row.references.filter(({doi}) => checkNotEmpty(doi));
-      if (last_ct) {
-        addCharacterizingBiomarkers(collector, last_ct, biomarkers, references);
-      }
-      return collector;
-    }, [{
-      id: 'CL:0000000',
-      class_type: 'CellType',
-      ccf_pref_label: 'cell type',
-      ccf_asctb_type: 'CT',
-      ccf_is_provisional: false,
-    }]),
-    biomarkers: data.reduce((collector, row) => {
-      row.biomarkers.reduce(normalizeBMData, collector);
-      return collector;
-    }, []),
+    anatomical_structures: normalizeAsData(context, data),
+    cell_types: normalizeCtData(data),
+    biomarkers: normalizeBmData(data),
   };
 }
 
-function normalizeASData(accumulator, {id, name}, index, array) {
+function normalizeAsData(context, data) {
+  return data.reduce((collector, row) => {
+    row.anatomical_structures.reduce(normalizeAs, collector);
+    return collector;
+  }, getPatchesForAnatomicalStructure(context));
+}
+
+function normalizeAs(collector, {id, name}, index, array) {
   if (checkIfValid({id, name})) {
-    const foundEntity = accumulator.find(
+    const foundEntity = collector.find(
       (entity) => entity.id === generateIdWhenEmpty(id, name)
     );
     if (foundEntity) {
@@ -106,9 +83,8 @@ function normalizeASData(accumulator, {id, name}, index, array) {
         getPartOfEntity(array, index),
       ];
       foundEntity.ccf_part_of = removeDuplicates(newPartOf);
-    } 
-    else {
-      accumulator.push({
+    } else {
+      collector.push({
         id: generateIdWhenEmpty(id, name),
         class_type: "AnatomicalStructure",
         ccf_pref_label: name,
@@ -118,7 +94,7 @@ function normalizeASData(accumulator, {id, name}, index, array) {
       });
     }
   }
-  return accumulator;
+  return collector;
 }
 
 function getPartOfEntity(array, index) {
@@ -127,9 +103,29 @@ function getPartOfEntity(array, index) {
     : generateIdWhenEmpty(array[index-1].id, array[index-1].name)
 }
 
-function normalizeCTData(accumulator, {id, name}, index, array) {
+function normalizeCtData(data) {
+  return data.reduce((collector, row) => {
+    row.cell_types.reduce(normalizeCt, collector);
+
+    // Add ccf_located_in relationship that is between AS and CT
+    const last_as = row.anatomical_structures.pop();
+    const last_ct = row.cell_types.pop();
+    if (last_ct) {
+      addLocatedIn(collector, last_as, last_ct);
+    }
+    // Add has_biomarker relationship between CT and BM
+    const biomarkers = row.biomarkers.filter(({id, name}) => checkIfValid({id, name}));
+    const references = row.references.filter(({doi}) => checkNotEmpty(doi));
+    if (last_ct) {
+      addCharacterizingBiomarkers(collector, last_ct, biomarkers, references);
+    }
+    return collector;
+  }, getPatchesForCellType())
+}
+
+function normalizeCt(collector, {id, name}, index, array) {
   if (checkIfValid({id, name})) {
-    const foundEntity = accumulator.find(
+    const foundEntity = collector.find(
       (entity) => entity.id === generateIdWhenEmpty(id, name)
     );
     if (foundEntity) {
@@ -141,7 +137,7 @@ function normalizeCTData(accumulator, {id, name}, index, array) {
       foundEntity.ccf_ct_isa = removeDuplicates(newCtIsa);
     } 
     else {
-      accumulator.push({
+      collector.push({
         id: generateIdWhenEmpty(id, name),
         class_type: "CellType",
         ccf_pref_label: name,
@@ -153,7 +149,7 @@ function normalizeCTData(accumulator, {id, name}, index, array) {
       });
     }
   }
-  return accumulator;
+  return collector;
 }
 
 function getCtIsaEntity(array, index) {
@@ -162,13 +158,19 @@ function getCtIsaEntity(array, index) {
     : generateIdWhenEmpty(array[index-1].id, array[index-1].name)
 }
 
-function normalizeBMData(accumulator, {id, name, b_type}, index, array) {
+function normalizeBmData(data) {
+  return data.reduce((collector, row) => {
+    row.biomarkers.reduce(normalizeBm, collector);
+    return collector;
+  }, getPatchesForBiomarker())
+}
+function normalizeBm(collector, {id, name, b_type}, index, array) {
   if (checkNotEmpty(id) || checkNotEmpty(name)) {
-    const foundEntity = accumulator.find(
+    const foundEntity = collector.find(
       (entity) => entity.id === generateIdWhenEmpty(id, name)
     );
     if (!foundEntity) {
-      accumulator.push({
+      collector.push({
         id: generateIdWhenEmpty(id, name),
         class_type: "Biomarker",
         ccf_pref_label: name,
@@ -178,7 +180,7 @@ function normalizeBMData(accumulator, {id, name, b_type}, index, array) {
       });
     }
   }
-  return accumulator;
+  return collector;
 }
 
 function addLocatedIn(array, {id: as_id, name: as_name}, {id: ct_id, name: ct_name}) {
