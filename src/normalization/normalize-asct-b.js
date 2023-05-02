@@ -13,10 +13,16 @@ import { readMetadata,
 const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
 
 export async function normalizeAsctb(context) {
-  const obj = context.selectedDigitalObject;
-  const id = `http://purl.humanatlas.io/${obj.doString}`
-  const metadata = readMetadata(obj);
+  const rawData = await getRawData(context);
+  const normalizedData = normalizeRawData(context, rawData);
+  writeNormalized(context, normalizedData);
+  validateNormalized(context);
+}
 
+async function getRawData(context) {
+  const { selectedDigitalObject: obj } = context;
+
+  const metadata = readMetadata(obj);
   const dataUrl = Array.isArray(metadata.datatable) ? metadata.datatable[0] : metadata.datatable;
   let requestUrl = ASCTB_API + 'v2/csv';
   let data;
@@ -38,25 +44,23 @@ export async function normalizeAsctb(context) {
     );
     data = await fetch(requestUrl, { method: 'POST', body: formData }).then((r) => r.json());
   }
-  const normalizedData = normalizeAsctbApiResponse(context, data.data);
-
-  writeNormalized(obj, id, metadata, normalizedData);
-  validateNormalized(context);
 
   // If warnings are found in the response, save for reference.
   const warningsFile = resolve(obj.path, 'normalized/warnings.yaml');
   sh.rm('-f', warningsFile); // Clear previous warnings file
   if (!context.skipValidation && data.warnings?.length > 0) {
-    writeFileSync(warningsFile, dump({ warnings: data.warnings }));
+    writeFileSync(warningsFile, dump(data.warnings));
     console.log(
       chalk.yellow('Warnings were reported by the ASCTB-API.'),
       'This may indicate further errors that need resolved. Please review the warnings at',
-      warningsFile
+      obj.doString + 'normalized/warnings.yaml'
     );
   }
+
+  return data.data;
 }
 
-function normalizeAsctbApiResponse(context, data) {
+function normalizeRawData(context, data) {
   return {
     anatomical_structures: normalizeAsData(context, data),
     cell_types: normalizeCtData(data),
