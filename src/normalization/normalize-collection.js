@@ -3,16 +3,18 @@ import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
 import { readMetadata, writeNormalized } from './utils.js';
+import { header } from '../utils/logging.js';
 
 export function normalizeCollection(context) {
-  const obj = context.selectedDigitalObject;
-  const id = `http://purl.humanatlas.io/${obj.doString}`;
-  const metadata = readMetadata(obj);
+  header(context, 'run-normalize');
+  const { path, doString } = context.selectedDigitalObject;
+  const id = `http://purl.humanatlas.io/${doString}`;
+  const metadata = readMetadata(path);
 
-  const dataPath = resolve(obj.path, 'raw', metadata.datatable);
+  const dataPath = resolve(path, 'raw', metadata.datatable);
   const data = load(readFileSync(dataPath))['digital-objects'];
 
-  writeNormalized(obj, id, metadata, data);
+  writeNormalized(context, data);
   validateCollection(context, data);
 }
 

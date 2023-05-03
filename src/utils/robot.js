@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import { throwOnError } from './sh-exec.js';
+import { more } from './logging.js';
 
 export function collectEntities(context, ontology, graphData) {
   const { selectedDigitalObject: obj, processorHome } = context;
@@ -22,6 +23,7 @@ export function extractClassHierarchy(context, ontology, upperTerm, lowerTerms) 
   const inputOntology = resolve(processorHome, `mirrors/${ontology}.ttl`);
   const output = resolve(obj.path, `enriched/${ontology}-extract.ttl`);
 
+  more(`Extracting class hierarchy from: ${inputOntology}`);
   throwOnError(
     `robot extract -i ${inputOntology} \
               --method MIREOT \
@@ -46,6 +48,10 @@ export function mergeOntologies(context, ontologyPaths=[]) {
   const merged = resolve(obj.path, `enriched/enriched-merged.ttl`);
   const output = resolve(obj.path, `enriched/enriched.ttl`);
 
+  more(`Merging ${ontologyPaths[0]} with:`);
+  for (const ontologyPath of ontologyPaths.slice(1)) {
+    more(` -> ${ontologyPath}`);
+  }
   throwOnError(
     `robot merge ${inputParams} \
            convert --format ttl -o ${merged} && \

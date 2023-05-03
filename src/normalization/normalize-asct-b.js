@@ -4,6 +4,7 @@ import { dump } from 'js-yaml';
 import { resolve } from 'path';
 import sh from 'shelljs';
 import { validateNormalized } from '../utils/validation.js';
+import { header, info, warning, more } from '../utils/logging.js';
 import { readMetadata, 
          writeNormalized, 
          getPatchesForAnatomicalStructure, 
@@ -13,6 +14,7 @@ import { readMetadata,
 const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
 
 export async function normalizeAsctb(context) {
+  header(context, 'run-normalize');
   const rawData = await getRawData(context);
   const normalizedData = normalizeRawData(context, rawData);
   writeNormalized(context, normalizedData);
@@ -20,9 +22,9 @@ export async function normalizeAsctb(context) {
 }
 
 async function getRawData(context) {
-  const { selectedDigitalObject: obj } = context;
+  const { path } = context.selectedDigitalObject;
 
-  const metadata = readMetadata(obj);
+  const metadata = readMetadata(path);
   const dataUrl = Array.isArray(metadata.datatable) ? metadata.datatable[0] : metadata.datatable;
   let requestUrl = ASCTB_API + 'v2/csv';
   let data;
@@ -36,7 +38,7 @@ async function getRawData(context) {
     data = await fetch(requestUrl).then((r) => r.json());
   } else {
     const formData = new FormData();
-    const dataPath = resolve(obj.path, 'raw', dataUrl);
+    const dataPath = resolve(path, 'raw', dataUrl);
     formData.append(
       'csvFile',
       new Blob([readFileSync(dataPath).toString()], { type: 'text/csv', path: dataPath }),
@@ -44,17 +46,15 @@ async function getRawData(context) {
     );
     data = await fetch(requestUrl, { method: 'POST', body: formData }).then((r) => r.json());
   }
+  info(`Reading data: ${dataUrl}`);
 
   // If warnings are found in the response, save for reference.
-  const warningsFile = resolve(obj.path, 'normalized/warnings.yaml');
+  const warningsFile = resolve(path, 'normalized/warnings.yaml');
   sh.rm('-f', warningsFile); // Clear previous warnings file
   if (!context.skipValidation && data.warnings?.length > 0) {
     writeFileSync(warningsFile, dump(data.warnings));
-    console.log(
-      chalk.yellow('Warnings were reported by the ASCTB-API.'),
-      'This may indicate further errors that need resolved. Please review the warnings at',
-      obj.doString + 'normalized/warnings.yaml'
-    );
+    warning('Warnings were reported by the ASCTB-API. This may indicate further errors that need resolved.')
+    more(`Please review the warnings at ${warningsFile}`);
   }
 
   return data.data;

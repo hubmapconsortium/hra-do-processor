@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import { throwOnError } from '../utils/sh-exec.js';
+import { info, more } from '../utils/logging.js';
 
 export function convertNormalized(context) {
   const { selectedDigitalObject: obj, processorHome, skipValidation } = context;
@@ -7,11 +8,14 @@ export function convertNormalized(context) {
   const schema = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml`);
   const input = resolve(obj.path, 'normalized/normalized.yaml');
   const output = resolve(obj.path, 'enriched/enriched.ttl');
+  const errorFile = resolve(obj.path, 'enriched/errors.yaml');
 
+  info(`Using 'linkml-convert' to transform ${input}`)
   throwOnError(
     `linkml-convert ${skipValidation ? '--no-validate' : ''} --schema ${schema} ${input} -o ${output}`,
-    'Enrichment failed. See errors above.'
+    'Enrichment failed.'
   );
+  info(`Enriched digital object written to ${output}`);
 
   return output;
 }
@@ -22,33 +26,37 @@ export function convertNormalizedToOwl(context) {
   const schema = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml`);
   const input = resolve(obj.path, 'normalized/normalized.yaml');
   const output = resolve(obj.path, 'enriched/enriched.ttl');
+  const errorFile = resolve(obj.path, 'enriched/errors.yaml');
 
+  info(`Using 'linkml-data2owl' to transform ${input}`)
   throwOnError(
     `linkml-data2owl --output-type ttl --schema ${schema} ${input} -o ${output}`,
-    'Enrichment failed. See errors above.'
+    'Converting to OWL failed.',
+    (message) => (message.replace(/(.*\n)+TypeError:(.*)/, '$2').trim())
   );
+  info(`Enriched digital object written to ${output}`);
 
   return output;
 }
 
 export function downloadValidationResult(context, useNightlyBuild=true) {
-  const { selectedDigitalObject: obj, processorHome } = context;
+  const { name, path } = context.selectedDigitalObject;
   
   const baseUrl = "https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl";
   if (!useNightlyBuild) {
     baseUrl = `${baseUrl}/last_official_ASCTB_release`
   }
-
-  const organName = findOrganName(obj.name);
+  const organName = findOrganName(name);
   const input = `${baseUrl}/${organName}_extended.owl`;
 
-  const download = resolve(obj.path, `enriched/${obj.name}-validation.owl`);
-  const output = resolve(obj.path, `enriched/${obj.name}-validation.ttl`);
+  more(`Downloading from ccf-validation-tools: ${input}`);
 
+  const download = resolve(path, `enriched/${name}-validation.owl`);
+  const output = resolve(path, `enriched/${name}-validation.ttl`);
   throwOnError(
     `wget -nc -nv -q ${input} -O ${download} && \
      robot convert --input ${download} --format ttl -o ${output}`,
-    'Download validation failed. See errors above.'
+    'Download validation failed.'
   )
 
   return output;

@@ -2,16 +2,28 @@ import sh from 'shelljs';
 import { writeFileSync } from 'fs';
 import { dump } from 'js-yaml';
 import chalk from 'chalk';
+import { error, more } from './logging.js';
 
-export function throwOnError(command, message) {
+export function throwOnError(command, message, errorParser=defaultParser) {
   const response = sh.exec(command);
-  const success = response.code !== 1;
+  const { stdout, stderr, code } = response;
+  const success = code !== 1;
   if (!success) {
-    throw new Error(message);
+    let errorMessage = message;
+    if (stderr !== '') {
+      if (errorParser) {
+        errorMessage = errorParser(stderr);
+      }
+    } else if (stdout !== '') {
+      if (errorParser) {
+        errorMessage = errorParser(stdout);
+      }
+    }
+    throw new Error(errorMessage);
   }
 }
 
-export function logOnError(command, message, { errorFile, errorParser }) {
+export function logOnError(command, message, { errorFile, errorParser=defaultParser }) {
   const response = sh.exec(command, { silent: true });
   const { stdout, stderr, code } = response;
   const success = code !== 1;
@@ -28,7 +40,12 @@ export function logOnError(command, message, { errorFile, errorParser }) {
     }
     sh.rm('-f', errorFile); // Clear previous errors file
     writeFileSync(errorFile, dump(errorMessage));
-    console.log(chalk.red(message));
+    error(message);
+    more(`Please review the errors at ${errorFile}`);
   }
   return success;
+}
+
+function defaultParser(message) {
+  return message;
 }

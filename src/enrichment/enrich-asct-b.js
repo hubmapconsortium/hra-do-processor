@@ -3,14 +3,18 @@ import { resolve } from 'path';
 import { convertNormalizedToOwl, downloadValidationResult } from './utils.js';
 import { collectEntities, extractClassHierarchy, mergeOntologies } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
+import { header, info, error, more } from '../utils/logging.js';
 
 export function enrichAsctb(context) {
+  header(context, 'run-enrich');
   try {
     // Convert normalized data to graph data (.ttl)
     overrideSchemaId(context);
     const enrichedData = convertNormalizedToOwl(context);
     revertChanges(context);
     
+    info('Starting the data enrichment...')
+
     // Include asssertions from the CCF validation tool to enrich the graph data
     const validationResults = downloadValidationResult(context);
 
@@ -45,12 +49,12 @@ export function enrichAsctb(context) {
       clExtract,
       hgncExtract
     ]);
-
-    // Clean up
-    cleanTemporaryFiles(context);
   }
   catch (e) {
-    console.log(chalk.red(e));
+    error(e);
+  } finally {
+    // Clean up
+    cleanTemporaryFiles(context);
   }
 }
 
@@ -62,7 +66,7 @@ function overrideSchemaId(context) {
 
   throwOnError(
     `sed -i.bak 's|^id:.*|id: ${newId}|' ${schema}`,
-    'Override schema id failed. See errors above.'
+    'Override schema id failed.'
   );
 }
 
@@ -74,7 +78,7 @@ function revertChanges(context) {
 
   throwOnError(
     `mv ${originalSchema} ${schema}`,
-    'Revert schema changes failed. See errors above.'
+    'Revert schema changes failed.'
   );
 }
 
@@ -85,6 +89,6 @@ function cleanTemporaryFiles(context) {
 
   throwOnError(
     `find ${enrichedPath} ! -name 'enriched.ttl' -type f -exec rm -f {} +`,
-    'Clean temporary files failed. See errors above.'
+    'Clean temporary files failed.'
   );
 }

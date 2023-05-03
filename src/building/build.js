@@ -6,6 +6,7 @@ import { enrich } from '../enrichment/enrich.js';
 import { normalize } from '../normalization/normalize.js';
 import { packageIt } from '../packaging/package.js';
 import { getDigitalObjectInformation } from '../utils/digital-object.js';
+import { info, banner } from '../utils/logging.js';
 
 const COMMANDS = [
   {
@@ -94,10 +95,12 @@ function cleanAction(context) {
 }
 
 export async function build(context) {
+  info('Preparing to build...')
   const { selectedDigitalObject: obj, clean } = context;
   const commands = obj.type === 'collection' ? COLLECTION_COMMANDS : COMMANDS;
   for (const cmd of commands) {
     if (clean || !testCmdSuccess(context, cmd)) {
+      banner(`Generating resources in the '${cmd.step}' step`);
       await cmd.action(context);
     }
   }
