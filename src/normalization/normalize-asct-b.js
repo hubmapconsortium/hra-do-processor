@@ -5,11 +5,10 @@ import { resolve } from 'path';
 import sh from 'shelljs';
 import { validateNormalized } from '../utils/validation.js';
 import { header, info, warning, more } from '../utils/logging.js';
-import { readMetadata, 
-         writeNormalized, 
-         getPatchesForAnatomicalStructure, 
+import { readMetadata, writeNormalized } from './utils.js';
+import { getPatchesForAnatomicalStructure, 
          getPatchesForCellType, 
-         getPatchesForBiomarker } from './utils.js';
+         getPatchesForBiomarker } from './patches.js';
 
 const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
 
