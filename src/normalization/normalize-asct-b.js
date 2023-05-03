@@ -8,7 +8,8 @@ import { header, info, warning, more } from '../utils/logging.js';
 import { readMetadata, writeNormalized } from './utils.js';
 import { getPatchesForAnatomicalStructure, 
          getPatchesForCellType, 
-         getPatchesForBiomarker } from './patches.js';
+         getPatchesForBiomarker,
+         normalizeDoi } from './patches.js';
 
 const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
 
@@ -238,12 +239,6 @@ function checkIfValid({id, name}) {
 
 function checkNotEmpty(str) {
   return str && str.trim() !== "";
-}
-
-function normalizeDoi(doi) {
-  return doi.replace(/\s+/g, '')
-            .replace(/^doi:/, 'DOI:')
-            .replace(/^(https:\/\/)?doi\.org\//, 'DOI:');
 }
 
 function removeDuplicates(array) {

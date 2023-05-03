@@ -222,3 +222,9 @@ export function getPatchesForBiomarker() {
   const patches = [];
   return patches;
 }
+
+export function normalizeDoi(doi) {
+  return doi.replace(/\s+/g, '')
+            .replace(/^doi:/, 'DOI:')
+            .replace(/^(https:\/\/)?doi\.org\//, 'DOI:');
+}
