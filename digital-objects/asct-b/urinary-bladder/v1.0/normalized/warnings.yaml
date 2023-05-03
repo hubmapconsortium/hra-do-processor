@@ -1,90 +1,89 @@
-warnings:
-  - >-
-    WARNING: Invalid Header found at column: CD, row: 10 where Header Value:
-    BPROTEIN10/LABEL (Code 3)
-  - >-
-    WARNING: Invalid Header found at column: CE, row: 10 where Header Value:
-    BPROTEIN10/ID (Code 3)
-  - >-
-    WARNING: Invalid Header found at column: CF, row: 10 where Header Value:
-    BPROTEIN/11/ (Code 3)
-  - >-
-    WARNING: Invalid Header found at column: DD, row: 10 where Header Value:
-    FTU/1/COMMENTS (Code 3)
-  - >-
-    WARNING: Invalid characters in data cell at column: O row: 11 where data
-    cell: CL_1001428 (Code 5)
-  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 11 (Code 6)'
-  - 'WARNING: unmapped array found BPROTEIN10 (Code 7)'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 10'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 10'
-  - >-
-    WARNING: Invalid characters in data cell at column: O row: 12 where data
-    cell: CL_1001428 (Code 5)
-  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 12 (Code 6)'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 11'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 11'
-  - >-
-    WARNING: Invalid characters in data cell at column: O row: 13 where data
-    cell: CL_1001428 (Code 5)
-  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 13 (Code 6)'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 12'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 12'
-  - >-
-    WARNING: Invalid characters in data cell at column: O row: 14 where data
-    cell: CL_0002597 (Code 5)
-  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 14 (Code 6)'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 13'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 13'
-  - >-
-    WARNING: Invalid characters in data cell at column: O row: 15 where data
-    cell: CL_1001319 (Code 5)
-  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 15 (Code 6)'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 14'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 14'
-  - >-
-    WARNING: Invalid characters in data cell at column: O row: 16 where data
-    cell: CL_1001319 (Code 5)
-  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 16 (Code 6)'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 15'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 15'
-  - >-
-    WARNING: Invalid characters in data cell at column: O row: 17 where data
-    cell: CL_1001319 (Code 5)
-  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 17 (Code 6)'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 16'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 16'
-  - >-
-    WARNING: Invalid characters in data cell at column: O row: 18 where data
-    cell: CL_1001319 (Code 5)
-  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 18 (Code 6)'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 17'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 17'
-  - >-
-    WARNING: Invalid characters in data cell at column: O row: 19 where data
-    cell: CL_2000040 (Code 5)
-  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 19 (Code 6)'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 18'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 18'
-  - >-
-    WARNING: Invalid characters in data cell at column: O row: 20 where data
-    cell: CL_0002597 (Code 5)
-  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 20 (Code 6)'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 19'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 19'
-  - >-
-    WARNING: Invalid characters in data cell at column: O row: 21 where data
-    cell: CL_0002597 (Code 5)
-  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 21 (Code 6)'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 20'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 20'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 21'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 21'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 22'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 22'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 23'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 23'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 24'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 24'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 25'
-  - 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 25'
+- >-
+  WARNING: Invalid Header found at column: CD, row: 10 where Header Value:
+  BPROTEIN10/LABEL (Code 3)
+- >-
+  WARNING: Invalid Header found at column: CE, row: 10 where Header Value:
+  BPROTEIN10/ID (Code 3)
+- >-
+  WARNING: Invalid Header found at column: CF, row: 10 where Header Value:
+  BPROTEIN/11/ (Code 3)
+- >-
+  WARNING: Invalid Header found at column: DD, row: 10 where Header Value:
+  FTU/1/COMMENTS (Code 3)
+- >-
+  WARNING: Invalid characters in data cell at column: O row: 11 where data cell:
+  CL_1001428 (Code 5)
+- 'WARNING: Missing Uberon/CL ID at Column: R, Row: 11 (Code 6)'
+- 'WARNING: unmapped array found BPROTEIN10 (Code 7)'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 10'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 10'
+- >-
+  WARNING: Invalid characters in data cell at column: O row: 12 where data cell:
+  CL_1001428 (Code 5)
+- 'WARNING: Missing Uberon/CL ID at Column: R, Row: 12 (Code 6)'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 11'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 11'
+- >-
+  WARNING: Invalid characters in data cell at column: O row: 13 where data cell:
+  CL_1001428 (Code 5)
+- 'WARNING: Missing Uberon/CL ID at Column: R, Row: 13 (Code 6)'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 12'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 12'
+- >-
+  WARNING: Invalid characters in data cell at column: O row: 14 where data cell:
+  CL_0002597 (Code 5)
+- 'WARNING: Missing Uberon/CL ID at Column: R, Row: 14 (Code 6)'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 13'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 13'
+- >-
+  WARNING: Invalid characters in data cell at column: O row: 15 where data cell:
+  CL_1001319 (Code 5)
+- 'WARNING: Missing Uberon/CL ID at Column: R, Row: 15 (Code 6)'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 14'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 14'
+- >-
+  WARNING: Invalid characters in data cell at column: O row: 16 where data cell:
+  CL_1001319 (Code 5)
+- 'WARNING: Missing Uberon/CL ID at Column: R, Row: 16 (Code 6)'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 15'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 15'
+- >-
+  WARNING: Invalid characters in data cell at column: O row: 17 where data cell:
+  CL_1001319 (Code 5)
+- 'WARNING: Missing Uberon/CL ID at Column: R, Row: 17 (Code 6)'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 16'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 16'
+- >-
+  WARNING: Invalid characters in data cell at column: O row: 18 where data cell:
+  CL_1001319 (Code 5)
+- 'WARNING: Missing Uberon/CL ID at Column: R, Row: 18 (Code 6)'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 17'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 17'
+- >-
+  WARNING: Invalid characters in data cell at column: O row: 19 where data cell:
+  CL_2000040 (Code 5)
+- 'WARNING: Missing Uberon/CL ID at Column: R, Row: 19 (Code 6)'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 18'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 18'
+- >-
+  WARNING: Invalid characters in data cell at column: O row: 20 where data cell:
+  CL_0002597 (Code 5)
+- 'WARNING: Missing Uberon/CL ID at Column: R, Row: 20 (Code 6)'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 19'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 19'
+- >-
+  WARNING: Invalid characters in data cell at column: O row: 21 where data cell:
+  CL_0002597 (Code 5)
+- 'WARNING: Missing Uberon/CL ID at Column: R, Row: 21 (Code 6)'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 20'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 20'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 21'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 21'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 22'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 22'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 23'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 23'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 24'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 24'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/LABEL, row: 25'
+- 'WARNING: blank cells likely found in column: BPROTEIN/11/ID, row: 25'

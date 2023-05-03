@@ -1,28 +1,25 @@
-status: fail
-errors:
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/skin/v1.2/normalized/normalized.yaml
-    path: $.data.biomarkers[20].id
-    message: '''CD200'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
-    has_sub_errors: false
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/skin/v1.2/normalized/normalized.yaml
-    path: $.data.cell_types[13].ccf_has_biomarker_set[0].references[2]
-    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
-    has_sub_errors: false
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/skin/v1.2/normalized/normalized.yaml
-    path: $.data.cell_types[31].ccf_has_biomarker_set[0].references[2]
-    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
-    has_sub_errors: false
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/skin/v1.2/normalized/normalized.yaml
-    path: $.data.cell_types[31].ccf_has_biomarker_set[1].references[1]
-    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
-    has_sub_errors: false
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/skin/v1.2/normalized/normalized.yaml
-    path: $.data.cell_types[32].ccf_has_biomarker_set[0].references[1]
-    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
-    has_sub_errors: false
-parse_errors: []
+- filename: >-
+    /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/skin/v1.2/normalized/normalized.yaml
+  path: $.data.biomarkers[20].id
+  message: '''CD200'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+  has_sub_errors: false
+- filename: >-
+    /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/skin/v1.2/normalized/normalized.yaml
+  path: $.data.cell_types[13].ccf_has_biomarker_set[0].references[2]
+  message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+  has_sub_errors: false
+- filename: >-
+    /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/skin/v1.2/normalized/normalized.yaml
+  path: $.data.cell_types[31].ccf_has_biomarker_set[0].references[2]
+  message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+  has_sub_errors: false
+- filename: >-
+    /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/skin/v1.2/normalized/normalized.yaml
+  path: $.data.cell_types[31].ccf_has_biomarker_set[1].references[1]
+  message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+  has_sub_errors: false
+- filename: >-
+    /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/skin/v1.2/normalized/normalized.yaml
+  path: $.data.cell_types[32].ccf_has_biomarker_set[0].references[1]
+  message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+  has_sub_errors: false

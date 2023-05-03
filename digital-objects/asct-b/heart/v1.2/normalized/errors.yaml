@@ -1,13 +1,10 @@
-status: fail
-errors:
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/heart/v1.2/normalized/normalized.yaml
-    path: $.data.biomarkers[37].id
-    message: '''GSN'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
-    has_sub_errors: false
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/heart/v1.2/normalized/normalized.yaml
-    path: $.data.biomarkers[43].id
-    message: '''MANY'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
-    has_sub_errors: false
-parse_errors: []
+- filename: >-
+    /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/heart/v1.2/normalized/normalized.yaml
+  path: $.data.biomarkers[37].id
+  message: '''GSN'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+  has_sub_errors: false
+- filename: >-
+    /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/heart/v1.2/normalized/normalized.yaml
+  path: $.data.biomarkers[43].id
+  message: '''MANY'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+  has_sub_errors: false

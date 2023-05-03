@@ -1,154 +1,149 @@
-warnings:
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 13 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 14 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 19 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: M, Row: 22 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: M, Row: 23 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: M, Row: 24 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: M, Row: 25 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 25 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: M, Row: 26 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: M, Row: 27 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: M, Row: 28 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: M, Row: 29 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 30 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 30 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 31 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 32 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 32 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: M, Row: 34 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 39 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: AS, Row: 46 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 49 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 50 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 51 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 52 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 52 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 53 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 53 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 54 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 55 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 56 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 57 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 58 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 58 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: M, Row: 59 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: M, Row: 60 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: CF, Row: 60 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 65 (Code 6)'
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 72
-    (Code 6)
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 72 (Code 6)'
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 73
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 74
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 75
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 76
-    (Code 6)
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 76 (Code 6)'
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 77
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 78
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 79
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 80
-    (Code 6)
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 80 (Code 6)'
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 81
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 82
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 83
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 84
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 85
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 86
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 87
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 88
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 89
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 90
-    (Code 6)
-  - >-
-    WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 91
-    (Code 6)
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 92 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 93 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 94 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 95 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 96 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 97 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 97 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 98 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 98 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 99 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 100 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 101 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 102 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 103 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 104 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 105 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 106 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 106 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 107 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 108 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 108 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 109 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: CF, Row: 109 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 110 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 110 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 111 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 112 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 113 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 114 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 115 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 116 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: CF, Row: 116 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 117 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 118 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 119 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 127 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: AS, Row: 130 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 134 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: CF, Row: 135 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 136 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: I, Row: 137 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 137 (Code 6)'
-  - >-
-    WARNING: Missing RDFS Label for ID HGNC:6012 at Column: BS, Row: 137 (Code
-    6)
-  - 'WARNING: Missing Uberon/CL ID at Column: CF, Row: 138 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: X, Row: 141 (Code 6)'
-  - >-
-    WARNING: Missing RDFS Label for ID HGNC:14687 at Column: BS, Row: 142 (Code
-    6)
-  - 'WARNING: Missing Uberon/CL ID at Column: CF, Row: 142 (Code 6)'
-  - 'WARNING: unmapped metadata found Author ORCID(s) at Row: 4 (Code 2)'
-  - 'WARNING: unmapped metadata found Reviewer ORCID(s) at Row: 6 (Code 2)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 13 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 14 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 19 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: M, Row: 22 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: M, Row: 23 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: M, Row: 24 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: M, Row: 25 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 25 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: M, Row: 26 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: M, Row: 27 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: M, Row: 28 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: M, Row: 29 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 30 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 30 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 31 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 32 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 32 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: M, Row: 34 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 39 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: AS, Row: 46 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 49 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 50 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 51 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 52 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 52 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 53 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 53 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 54 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 55 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 56 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 57 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 58 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 58 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: M, Row: 59 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: M, Row: 60 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: CF, Row: 60 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 65 (Code 6)'
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 72 (Code
+  6)
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 72 (Code 6)'
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 73 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 74 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 75 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 76 (Code
+  6)
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 76 (Code 6)'
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 77 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 78 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 79 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 80 (Code
+  6)
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 80 (Code 6)'
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: T, Row: 81 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 82 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 83 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 84 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 85 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 86 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 87 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 88 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 89 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 90 (Code
+  6)
+- >-
+  WARNING: Missing RDFS Label for ID Added new term at Column: H, Row: 91 (Code
+  6)
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 92 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 93 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 94 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 95 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 96 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 97 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 97 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 98 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 98 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 99 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 100 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 101 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 102 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 103 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 104 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 105 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 106 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 106 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 107 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 108 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 108 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 109 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: CF, Row: 109 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 110 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 110 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 111 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 112 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 113 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 114 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 115 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 116 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: CF, Row: 116 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 117 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: Q, Row: 118 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 119 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 127 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: AS, Row: 130 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 134 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: CF, Row: 135 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 136 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: I, Row: 137 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 137 (Code 6)'
+- 'WARNING: Missing RDFS Label for ID HGNC:6012 at Column: BS, Row: 137 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: CF, Row: 138 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: X, Row: 141 (Code 6)'
+- 'WARNING: Missing RDFS Label for ID HGNC:14687 at Column: BS, Row: 142 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: CF, Row: 142 (Code 6)'
+- 'WARNING: unmapped metadata found Author ORCID(s) at Row: 4 (Code 2)'
+- 'WARNING: unmapped metadata found Reviewer ORCID(s) at Row: 6 (Code 2)'

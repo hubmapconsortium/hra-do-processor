@@ -1,8 +1,5 @@
-status: fail
-errors:
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/peripheral-nervous-system/v1.0/normalized/normalized.yaml
-    path: $.data.biomarkers[1].id
-    message: '''PR:000007081'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
-    has_sub_errors: false
-parse_errors: []
+- filename: >-
+    /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/peripheral-nervous-system/v1.0/normalized/normalized.yaml
+  path: $.data.biomarkers[1].id
+  message: '''PR:000007081'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+  has_sub_errors: false

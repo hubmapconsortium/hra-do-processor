@@ -1,10 +1,7 @@
-status: fail
-errors:
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
-    path: $.data.cell_types[2].ccf_has_biomarker_set[0].references[0]
-    message: >-
-      'https://screening.iarc.fr/colpochap.php?lang=1' does not match
-      'DOI:10\\.\\d+/.*|PMID:\\d+'
-    has_sub_errors: false
-parse_errors: []
+- filename: >-
+    /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/uterus/v1.1/normalized/normalized.yaml
+  path: $.data.cell_types[2].ccf_has_biomarker_set[0].references[0]
+  message: >-
+    'https://screening.iarc.fr/colpochap.php?lang=1' does not match
+    'DOI:10\\.\\d+/.*|PMID:\\d+'
+  has_sub_errors: false

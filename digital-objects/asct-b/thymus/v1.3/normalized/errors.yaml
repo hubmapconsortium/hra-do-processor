@@ -1,8 +1,5 @@
-status: fail
-errors:
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/thymus/v1.3/normalized/normalized.yaml
-    path: $.data.cell_types[7].ccf_has_biomarker_set[0].references[1]
-    message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
-    has_sub_errors: false
-parse_errors: []
+- filename: >-
+    /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/thymus/v1.3/normalized/normalized.yaml
+  path: $.data.cell_types[7].ccf_has_biomarker_set[0].references[1]
+  message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
+  has_sub_errors: false

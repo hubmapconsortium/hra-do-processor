@@ -1,4 +1,3 @@
-warnings:
-  - 'WARNING: Missing Uberon/CL ID at Column: AI, Row: 66 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: BH, Row: 78 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: BA, Row: 82 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: AI, Row: 66 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: BH, Row: 78 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: BA, Row: 82 (Code 6)'

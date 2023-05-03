@@ -91,9 +91,9 @@ data:
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0002113
-    - id: UBERON:0004538
+    - id: UBERON:0004539
       class_type: AnatomicalStructure
-      ccf_pref_label: left kidney
+      ccf_pref_label: right kidney
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:

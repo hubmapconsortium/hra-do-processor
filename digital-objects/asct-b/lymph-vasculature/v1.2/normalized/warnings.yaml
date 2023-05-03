@@ -1,9 +1,8 @@
-warnings:
-  - >-
-    WARNING: Invalid Header found at column: AK, row: 11 where Header Value:
-    FTU/1/COMMENTS (Code 3)
-  - 'WARNING: Missing Uberon/CL ID at Column: O, Row: 43 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: R, Row: 46 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: L, Row: 47 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: L, Row: 48 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: O, Row: 48 (Code 6)'
+- >-
+  WARNING: Invalid Header found at column: AK, row: 11 where Header Value:
+  FTU/1/COMMENTS (Code 3)
+- 'WARNING: Missing Uberon/CL ID at Column: O, Row: 43 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: R, Row: 46 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: L, Row: 47 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: L, Row: 48 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: O, Row: 48 (Code 6)'

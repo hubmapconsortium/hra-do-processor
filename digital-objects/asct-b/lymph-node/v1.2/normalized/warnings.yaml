@@ -1,14 +1,13 @@
-warnings:
-  - >-
-    WARNING: Invalid Header found at column: W, row: 11 where Header Value:
-    TRANSCRIPTOMICS/WITH REFERENCES (Code 3)
-  - 'WARNING: unmapped array found TRANSCRIPTOMICS (Code 7)'
-  - 'WARNING: Missing Uberon/CL ID at Column: AF, Row: 56 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: M, Row: 59 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: DI, Row: 74 (Code 6)'
-  - 'WARNING: Missing Uberon/CL ID at Column: DL, Row: 74 (Code 6)'
-  - 'WARNING: unmapped metadata found Author Names: at Row: 3 (Code 2)'
-  - 'WARNING: unmapped metadata found Author ORCIDs: at Row: 4 (Code 2)'
-  - 'WARNING: unmapped metadata found Reviewers: at Row: 5 (Code 2)'
-  - 'WARNING: unmapped metadata found Reviewer ORCIDs: at Row: 6 (Code 2)'
-  - 'WARNING: unmapped metadata found General Publications: at Row: 7 (Code 2)'
+- >-
+  WARNING: Invalid Header found at column: W, row: 11 where Header Value:
+  TRANSCRIPTOMICS/WITH REFERENCES (Code 3)
+- 'WARNING: unmapped array found TRANSCRIPTOMICS (Code 7)'
+- 'WARNING: Missing Uberon/CL ID at Column: AF, Row: 56 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: M, Row: 59 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: DI, Row: 74 (Code 6)'
+- 'WARNING: Missing Uberon/CL ID at Column: DL, Row: 74 (Code 6)'
+- 'WARNING: unmapped metadata found Author Names: at Row: 3 (Code 2)'
+- 'WARNING: unmapped metadata found Author ORCIDs: at Row: 4 (Code 2)'
+- 'WARNING: unmapped metadata found Reviewers: at Row: 5 (Code 2)'
+- 'WARNING: unmapped metadata found Reviewer ORCIDs: at Row: 6 (Code 2)'
+- 'WARNING: unmapped metadata found General Publications: at Row: 7 (Code 2)'

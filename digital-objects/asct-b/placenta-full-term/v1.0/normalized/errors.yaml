@@ -1,8 +1,5 @@
-status: fail
-errors:
-  - filename: >-
-      /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
-    path: $.data.biomarkers[16].id
-    message: '''LM:LMSP0502AE00'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
-    has_sub_errors: false
-parse_errors: []
+- filename: >-
+    /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/placenta-full-term/v1.0/normalized/normalized.yaml
+  path: $.data.biomarkers[16].id
+  message: '''LM:LMSP0502AE00'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
+  has_sub_errors: false
