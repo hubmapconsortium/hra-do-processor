@@ -128,14 +128,14 @@ ccf:Container a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Container" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom ccf:SpatialEntity ;
-            owl:onProperty ccf:spatial_entities ],
-        [ a owl:Restriction ;
             owl:allValuesFrom ccf:ExtractionSet ;
             owl:onProperty ccf:extraction_sets ],
         [ a owl:Restriction ;
             owl:allValuesFrom ccf:SpatialPlacement ;
-            owl:onProperty ccf:rui_placements ] ;
+            owl:onProperty ccf:rui_placements ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:SpatialEntity ;
+            owl:onProperty ccf:spatial_entities ] ;
     linkml:attributes "{'extraction_sets': SlotDefinition(name='extraction_sets', id_prefixes=[], definition_uri=None, local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='http://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, singular_name=None, domain=None, slot_uri=None, multivalued=True, inherited=None, readonly=None, ifabsent=None, list_elements_unique=None, list_elements_ordered=None, shared=None, key=None, identifier=None, designates_type=None, alias=None, owner=None, domain_of=[], subproperty_of=None, symmetric=None, reflexive=None, locally_reflexive=None, irreflexive=None, asymmetric=None, transitive=None, inverse=None, is_class_field=None, transitive_form_of=None, reflexive_transitive_form_of=None, role=None, is_usage_slot=None, usage_slot_name=None, relational_role=None, slot_group=None, is_grouping_slot=None, path_rule=None, disjoint_with=[], children_are_mutually_disjoint=None, union_of=[], range='ExtractionSet', range_expression=None, enum_range=None, required=None, recommended=None, inlined=None, inlined_as_list=True, minimum_value=None, maximum_value=None, pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, value_presence=None, equals_string=None, equals_string_in=[], equals_number=None, equals_expression=None, minimum_cardinality=None, maximum_cardinality=None, has_member=None, all_members=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'spatial_entities': SlotDefinition(name='spatial_entities', id_prefixes=[], definition_uri=None, local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='http://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, singular_name=None, domain=None, slot_uri=None, multivalued=True, inherited=None, readonly=None, ifabsent=None, list_elements_unique=None, list_elements_ordered=None, shared=None, key=None, identifier=None, designates_type=None, alias=None, owner=None, domain_of=[], subproperty_of=None, symmetric=None, reflexive=None, locally_reflexive=None, irreflexive=None, asymmetric=None, transitive=None, inverse=None, is_class_field=None, transitive_form_of=None, reflexive_transitive_form_of=None, role=None, is_usage_slot=None, usage_slot_name=None, relational_role=None, slot_group=None, is_grouping_slot=None, path_rule=None, disjoint_with=[], children_are_mutually_disjoint=None, union_of=[], range='SpatialEntity', range_expression=None, enum_range=None, required=None, recommended=None, inlined=None, inlined_as_list=True, minimum_value=None, maximum_value=None, pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, value_presence=None, equals_string=None, equals_string_in=[], equals_number=None, equals_expression=None, minimum_cardinality=None, maximum_cardinality=None, has_member=None, all_members=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'rui_placements': SlotDefinition(name='rui_placements', id_prefixes=[], definition_uri=None, local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='http://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, singular_name=None, domain=None, slot_uri=None, multivalued=True, inherited=None, readonly=None, ifabsent=None, list_elements_unique=None, list_elements_ordered=None, shared=None, key=None, identifier=None, designates_type=None, alias=None, owner=None, domain_of=[], subproperty_of=None, symmetric=None, reflexive=None, locally_reflexive=None, irreflexive=None, asymmetric=None, transitive=None, inverse=None, is_class_field=None, transitive_form_of=None, reflexive_transitive_form_of=None, role=None, is_usage_slot=None, usage_slot_name=None, relational_role=None, slot_group=None, is_grouping_slot=None, path_rule=None, disjoint_with=[], children_are_mutually_disjoint=None, union_of=[], range='SpatialPlacement', range_expression=None, enum_range=None, required=None, recommended=None, inlined=None, inlined_as_list=True, minimum_value=None, maximum_value=None, pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, value_presence=None, equals_string=None, equals_string_in=[], equals_number=None, equals_expression=None, minimum_cardinality=None, maximum_cardinality=None, has_member=None, all_members=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[])}" .
 
 ccf:extraction_sets a owl:ObjectProperty,
@@ -462,14 +462,6 @@ ccf:SpatialObjectReference a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "SpatialObjectReference" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:file_subpath ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:file_url ;
             owl:qualifiedCardinality 1 ],
@@ -477,6 +469,14 @@ ccf:SpatialObjectReference a owl:Class,
             owl:onClass ccf:SpatialPlacement ;
             owl:onProperty ccf:has_placement ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:file_subpath ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:file_format ;
@@ -501,11 +501,7 @@ ccf:ExtractionSet a owl:Class,
     rdfs:label "ExtractionSet" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass ccf:String ;
-            owl:onProperty rdfs:label ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:SpatialEntity ;
-            owl:onProperty ccf:extraction_set_for ;
+            owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
@@ -513,7 +509,11 @@ ccf:ExtractionSet a owl:Class,
             owl:onProperty ccf:rui_rank ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
+            owl:onProperty rdfs:label ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:SpatialEntity ;
+            owl:onProperty ccf:extraction_set_for ;
             owl:qualifiedCardinality 1 ] ;
     skos:exactMatch ccf:ExtractionSet ;
     linkml:attributes "{}" .
@@ -523,59 +523,27 @@ ccf:SpatialPlacement a owl:Class,
     rdfs:label "SpatialPlacement" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass ccf:Decimal ;
+            owl:onProperty ccf:z_scaling ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Decimal ;
             owl:onProperty ccf:z_translation ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:y_scaling ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:x_rotation ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:SpatialEntity ;
-            owl:onProperty ccf:placement_relative_to ;
+            owl:onProperty ccf:x_scaling ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:TranslationUnitEnum ;
             owl:onProperty ccf:translation_unit ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:y_rotation ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:rotation_order ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Date ;
-            owl:onProperty dcterms:created ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:RotationUnitEnum ;
-            owl:onProperty ccf:rotation_unit ;
+            owl:onClass ccf:SpatialEntity ;
+            owl:onProperty ccf:placement_relative_to ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:Decimal ;
             owl:onProperty ccf:x_translation ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:z_rotation ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:SpatialEntity ;
-            owl:onProperty ccf:placement_for ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:x_scaling ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:ScalingUnitEnum ;
@@ -583,11 +551,43 @@ ccf:SpatialPlacement a owl:Class,
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:z_scaling ;
+            owl:onProperty ccf:z_rotation ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:Decimal ;
+            owl:onProperty ccf:x_rotation ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:rotation_order ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Decimal ;
             owl:onProperty ccf:y_translation ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Decimal ;
+            owl:onProperty ccf:y_rotation ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:SpatialEntity ;
+            owl:onProperty ccf:placement_for ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:RotationUnitEnum ;
+            owl:onProperty ccf:rotation_unit ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Decimal ;
+            owl:onProperty ccf:y_scaling ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Date ;
+            owl:onProperty dcterms:created ;
             owl:qualifiedCardinality 1 ] ;
     skos:exactMatch ccf:SpatialPlacement ;
     linkml:attributes "{}" .
@@ -602,23 +602,56 @@ ccf:SpatialEntity a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "SpatialEntity" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:AnatomicalStructure ;
+            owl:onProperty ccf:representation_of ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Decimal ;
+            owl:onProperty ccf:y_dimension ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass ccf:Date ;
             owl:onProperty dcterms:created ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:SpatialObjectReference ;
+            owl:onProperty ccf:has_object_reference ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty rdfs:label ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:creator_orcid ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:DonorSexEnum ;
+            owl:onProperty ccf:organ_donor_sex ],
         [ a owl:Restriction ;
             owl:onClass ccf:DimensionUnitEnum ;
             owl:onProperty ccf:dimension_unit ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:AnatomicalStructure ;
-            owl:onProperty ccf:representation_of ],
+            owl:onClass ccf:Decimal ;
+            owl:onProperty ccf:x_dimension ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ccf:SpatialPlacement ;
-            owl:onProperty ccf:has_placement ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:Integer ;
+            owl:onProperty ccf:rui_rank ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Decimal ;
+            owl:onProperty ccf:z_dimension ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
+            owl:onProperty dcterms:creator ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
@@ -626,56 +659,23 @@ ccf:SpatialEntity a owl:Class,
             owl:onProperty ccf:has_extraction_set ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:DonorSexEnum ;
-            owl:onProperty ccf:organ_donor_sex ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:creator_orcid ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:OrganSideEnum ;
-            owl:onProperty ccf:organ_side ],
+            owl:onClass ccf:SpatialEntity ;
+            owl:onProperty ccf:has_reference_organ ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
-            owl:onProperty dcterms:creator ;
+            owl:onProperty ccf:creator_first_name ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:Integer ;
-            owl:onProperty ccf:rui_rank ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:creator_last_name ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:x_dimension ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:z_dimension ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:SpatialObjectReference ;
-            owl:onProperty ccf:has_object_reference ],
+            owl:onClass ccf:OrganSideEnum ;
+            owl:onProperty ccf:organ_side ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:SpatialEntity ;
-            owl:onProperty ccf:has_reference_organ ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:y_dimension ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty rdfs:label ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:creator_first_name ;
-            owl:qualifiedCardinality 1 ] ;
+            owl:allValuesFrom ccf:SpatialPlacement ;
+            owl:onProperty ccf:has_placement ] ;
     skos:exactMatch ccf:SpatialEntity ;
     linkml:attributes "{}" .
 

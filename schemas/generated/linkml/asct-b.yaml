@@ -22,6 +22,9 @@ prefixes:
   DOI:
     prefix_prefix: DOI
     prefix_reference: https://doi.org/
+  PMID:
+    prefix_prefix: PMID
+    prefix_reference: https://www.ncbi.nlm.nih.gov/pubmed/
   UBERON:
     prefix_prefix: UBERON
     prefix_reference: http://purl.obolibrary.org/obo/UBERON_
