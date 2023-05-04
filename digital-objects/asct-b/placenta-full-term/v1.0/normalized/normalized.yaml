@@ -416,7 +416,6 @@ data:
             - HGNC:6445
             - HGNC:9221
             - HGNC:11195
-            - LM:LMSP0502AE00
           references:
             - DOI:10.1016/j.jim.2003.03.001
             - DOI:10.1053/plac.2000.0559
@@ -848,12 +847,6 @@ data:
       ccf_pref_label: SOX2
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
-      ccf_is_provisional: false
-    - id: LM:LMSP0502AE00
-      class_type: Biomarker
-      ccf_pref_label: SSEA3
-      ccf_asctb_type: BM
-      ccf_biomarker_type: lipids
       ccf_is_provisional: false
     - id: HGNC:7656
       class_type: Biomarker

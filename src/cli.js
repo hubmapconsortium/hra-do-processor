@@ -17,7 +17,8 @@ program
   .option('--base-iri <string>', 'Base IRI for Digital Objects', 'http://purl.humanatlas.io/')
   .option('--do-home <string>', 'Digital Objects home directory', parseDirectory)
   .option('--processor-home <string>', 'DO Processor home', parseDirectory)
-  .option('--skip-validation', 'Skip validation in each command', false);
+  .option('--skip-validation', 'Skip validation in each command', false)
+  .option('--exclude-bad-values', 'Do not pass invalid values from data processors', false)
 
 program
   .command('normalize')

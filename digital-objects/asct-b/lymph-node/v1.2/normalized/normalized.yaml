@@ -378,8 +378,7 @@ data:
             - HGNC:3327
             - HGNC:2770
             - HGNC:12692
-          references:
-            - NoDOI
+          references: []
         - members:
             - HGNC:130
             - HGNC:2197
@@ -388,7 +387,6 @@ data:
             - HGNC:2770
             - HGNC:12692
           references:
-            - NoDOI
             - DOI:10.1002/ar.1091830404
     - id: CL:0000071
       class_type: CellType
@@ -436,7 +434,6 @@ data:
           references:
             - DOI:10.1371/journal.pone.0094781
             - DOI:10.1369/jhc.4A6514.2005
-            - NoDOI
         - members:
             - HGNC:1527
             - HGNC:10612
@@ -545,30 +542,6 @@ data:
             - HGNC:8823
           references:
             - DOI:10.1369/jhc.4A6514.2005
-        - members:
-            - HGNC:1527
-            - HGNC:10612
-            - HGNC:1662
-            - HGNC:1697
-            - HGNC:1641
-            - HGNC:30455
-            - HGNC:4035
-            - HGNC:16041
-            - HGNC:17474
-            - HGNC:5344
-            - HGNC:14686
-            - HGNC:4947
-            - HGNC:4948
-            - HGNC:4938
-            - HGNC:4940
-            - HGNC:6895
-            - HGNC:13635
-            - HGNC:9707
-            - HGNC:11220
-            - HGNC:8823
-          references:
-            - DOI:10.1369/jhc.4A6514.2005
-            - NoDOI
         - members:
             - HGNC:1527
             - HGNC:10612
@@ -741,7 +714,6 @@ data:
             - HGNC:130
           references:
             - DOI:10.1038/s41577-020-0281-x
-            - NoDOI
     - id: CL:0000887
       class_type: CellType
       ccf_pref_label: Macrophage
@@ -948,9 +920,7 @@ data:
             - HGNC:9666
             - HGNC:1697
             - HGNC:24692
-          references:
-            - NODOI
-            - NoDOI
+          references: []
         - members:
             - HGNC:1633
             - HGNC:7315
@@ -966,8 +936,7 @@ data:
             - HGNC:9666
             - HGNC:1697
             - HGNC:24692
-          references:
-            - NoDOI
+          references: []
     - id: CL:0000787
       class_type: CellType
       ccf_pref_label: Memory B Cell
@@ -987,9 +956,7 @@ data:
             - HGNC:9666
             - HGNC:1698
             - HGNC:1697
-          references:
-            - NODOI
-            - NoDOI
+          references: []
         - members:
             - HGNC:1633
             - HGNC:7315
@@ -997,9 +964,7 @@ data:
             - HGNC:9666
             - HGNC:1698
             - HGNC:1697
-          references:
-            - NODOI
-            - NoDOI
+          references: []
     - id: CL:0000235
       class_type: CellType
       ccf_pref_label: Macrophage
@@ -1083,7 +1048,6 @@ data:
             - HGNC:1060
             - HGNC:5480
           references:
-            - NoDOI
             - DOI:10.1182/blood-2012-03-415380
     - id: CL:0002038
       class_type: CellType
@@ -1171,8 +1135,7 @@ data:
             - HGNC:11922
             - HGNC:1698
             - HGNC:2561
-          references:
-            - NoDOI
+          references: []
         - members:
             - HGNC:1667
             - HGNC:6119
@@ -1181,8 +1144,7 @@ data:
             - HGNC:7315
             - HGNC:1698
             - HGNC:2561
-          references:
-            - NoDOI
+          references: []
     - id: CL:0009112
       class_type: CellType
       ccf_pref_label: Centroblast
@@ -1208,8 +1170,6 @@ data:
             - HGNC:5480
             - HGNC:6642
           references:
-            - NODOI
-            - NoDOI
             - DOI:10.1182/blood-2012-03-415380
     - id: CL:0009104
       class_type: CellType
@@ -1230,7 +1190,6 @@ data:
             - HGNC:130
             - HGNC:12692
           references:
-            - NoDOI
             - DOI:10.1080/01926230600867727
     - id: CL:0000895
       class_type: CellType
@@ -1254,7 +1213,6 @@ data:
             - HGNC:9666
           references:
             - DOI:10.4049/jimmunol.1701025
-            - NoDOI
     - id: CL:0000897
       class_type: CellType
       ccf_pref_label: Memory CD4+ T cell
@@ -1276,7 +1234,6 @@ data:
             - HGNC:9666
           references:
             - DOI:10.4049/jimmunol.1701025
-            - NoDOI
     - id: CL:0000545
       class_type: CellType
       ccf_pref_label: Th1 cell
@@ -1301,7 +1258,6 @@ data:
             - HGNC:11599
           references:
             - DOI:10.4049/jimmunol.1701025
-            - NoDOI
     - id: CL:0000546
       class_type: CellType
       ccf_pref_label: Th2 cell
@@ -1326,7 +1282,6 @@ data:
             - HGNC:4172
           references:
             - DOI:10.4049/jimmunol.1701025
-            - NoDOI
     - id: CL:0000899
       class_type: CellType
       ccf_pref_label: Th17 cell
@@ -1350,7 +1305,6 @@ data:
             - HGNC:10260
           references:
             - DOI:10.4049/jimmunol.1701025
-            - NoDOI
     - id: CL:0000815
       class_type: CellType
       ccf_pref_label: T Regulatory Cell
@@ -1362,15 +1316,6 @@ data:
         - UBERON:8410067
         - UBERON:8410075
       ccf_has_biomarker_set:
-        - members:
-            - HGNC:6106
-            - HGNC:6008
-            - HGNC:2505
-            - HGNC:1675
-            - HGNC:1678
-          references:
-            - DOI:10.4049/jimmunol.1701025
-            - NoDOI
         - members:
             - HGNC:6106
             - HGNC:6008
@@ -1398,8 +1343,7 @@ data:
             - HGNC:1675
             - HGNC:9360
             - HGNC:11802
-          references:
-            - NODOI
+          references: []
         - members:
             - HGNC:1673
             - HGNC:1706
@@ -1430,8 +1374,7 @@ data:
             - HGNC:1678
             - HGNC:1653
             - HGNC:9666
-          references:
-            - NoDOI
+          references: []
         - members:
             - HGNC:1673
             - HGNC:1706
@@ -1462,8 +1405,7 @@ data:
             - HGNC:1675
             - HGNC:1678
             - HGNC:9666
-          references:
-            - NoDOI
+          references: []
         - members:
             - HGNC:1673
             - HGNC:1706
@@ -1499,7 +1441,6 @@ data:
             - HGNC:6374
             - HGNC:18788
           references:
-            - NoDOI
             - DOI:10.1038/nri.2016.34
         - members:
             - HGNC:5361
@@ -1515,7 +1456,6 @@ data:
             - ASCTB-TEMP:nkg2a
             - ASCTB-TEMP:nkg2d
           references:
-            - NoDOI
             - DOI:10.1038/nri.2016.34
     - id: CL:0009105
       class_type: CellType
@@ -1542,8 +1482,6 @@ data:
             - DOI:10.3389/fimmu.2011.00035
             - DOI:10.1016/j.jcyt.2017.01.010
         - members:
-            - CCL21
-            - IL7
             - ASCTB-TEMP:il7
             - HGNC:10617
             - HGNC:10620
@@ -1733,8 +1671,7 @@ data:
             - HGNC:10658
             - HGNC:7315
             - HGNC:1698
-          references:
-            - NoDOI
+          references: []
         - members:
             - HGNC:1667
             - HGNC:6119
@@ -1743,8 +1680,7 @@ data:
             - HGNC:7315
             - HGNC:11922
             - HGNC:1698
-          references:
-            - NoDOI
+          references: []
     - id: CL:0009114
       class_type: CellType
       ccf_pref_label: Monocytoid B Cell
@@ -1762,7 +1698,6 @@ data:
             - HGNC:11922
             - HGNC:24692
           references:
-            - NODOI
             - DOI:10.1038/s41573-020-00092-2
     - id: CL:0000236
       class_type: CellType
@@ -1781,15 +1716,13 @@ data:
             - HGNC:4947
             - HGNC:1698
           references:
-            - NODOI
             - DOI:10.1038/s41573-020-00092-2
         - members:
             - HGNC:1633
             - HGNC:7315
             - HGNC:4947
             - HGNC:1698
-          references:
-            - NoDOI
+          references: []
     - id: CL:0009106
       class_type: CellType
       ccf_pref_label: Medullary Reticular Cell
@@ -1827,8 +1760,7 @@ data:
             - HGNC:1678
             - HGNC:1706
             - HGNC:1675
-          references:
-            - NoDOI
+          references: []
     - id: CL:0009110
       class_type: CellType
       ccf_pref_label: Lymphatic Endothelial Cell of Medulla Ceiling
@@ -2716,18 +2648,6 @@ data:
       ccf_pref_label: STAB2
       ccf_asctb_type: BM
       ccf_biomarker_type: protein
-      ccf_is_provisional: false
-    - id: CCL21
-      class_type: Biomarker
-      ccf_pref_label: CCL19
-      ccf_asctb_type: BM
-      ccf_biomarker_type: gene
-      ccf_is_provisional: false
-    - id: IL7
-      class_type: Biomarker
-      ccf_pref_label: CCL12
-      ccf_asctb_type: BM
-      ccf_biomarker_type: gene
       ccf_is_provisional: false
     - id: ASCTB-TEMP:il7
       class_type: Biomarker

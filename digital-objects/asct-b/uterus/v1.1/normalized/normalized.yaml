@@ -582,8 +582,7 @@ data:
         - UBERON:0012252
       ccf_has_biomarker_set:
         - members: []
-          references:
-            - https://screening.iarc.fr/colpochap.php?lang=1
+          references: []
     - id: ASCTB-TEMP:uterine-smooth-muscle-type-i-cell
       class_type: CellType
       ccf_pref_label: uterine smooth muscle type I cell

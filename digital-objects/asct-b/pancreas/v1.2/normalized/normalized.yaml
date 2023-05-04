@@ -248,14 +248,6 @@ data:
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0009752
-    - id: GO:0031012
-      class_type: AnatomicalStructure
-      ccf_pref_label: Extracellular matrix
-      ccf_asctb_type: AS
-      ccf_is_provisional: false
-      ccf_part_of:
-        - UBERON:0000482
-        - UBERON:0002384
     - id: UBERON:0002384
       class_type: AnatomicalStructure
       ccf_pref_label: Interlobular connective tissue
@@ -618,7 +610,6 @@ data:
             - HGNC:11506
             - HGNC:12513
             - HGNC:7839
-            - P01308
           references: []
     - id: CL:0000173
       class_type: CellType
@@ -784,7 +775,6 @@ data:
             - HGNC:6621
             - HGNC:3559
             - HGNC:9155
-            - Q8N9N2
           references: []
   biomarkers:
     - id: HGNC:477
@@ -1021,12 +1011,6 @@ data:
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
-    - id: P01308
-      class_type: Biomarker
-      ccf_pref_label: Insulin
-      ccf_asctb_type: BM
-      ccf_biomarker_type: protein
-      ccf_is_provisional: false
     - id: HGNC:11329
       class_type: Biomarker
       ccf_pref_label: Somatostatin
@@ -1098,12 +1082,6 @@ data:
       ccf_pref_label: Pancreatic lipase
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
-      ccf_is_provisional: false
-    - id: Q8N9N2
-      class_type: Biomarker
-      ccf_pref_label: Asc-type amino acid transporter 1
-      ccf_asctb_type: BM
-      ccf_biomarker_type: protein
       ccf_is_provisional: false
     - id: HGNC:6487
       class_type: Biomarker

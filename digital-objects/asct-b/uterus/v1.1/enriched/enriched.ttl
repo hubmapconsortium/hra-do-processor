@@ -4596,26 +4596,18 @@ _:genid332 rdf:type owl:Restriction ;
 
 ###  http://purl.org/ccf/ASCTB-TEMP_endocervical-epithelial-cell
 <http://purl.org/ccf/ASCTB-TEMP_endocervical-epithelial-cell> rdf:type owl:Class ;
-                                                              rdfs:subClassOf _:genid344 ;
+                                                              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
+                                                                                owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
+                                                                                                                        ) ;
+                                                                                                     rdf:type owl:Class
+                                                                                                   ]
+                                                                              ] ;
                                                               <http://purl.org/ccf/ccf_asctb_type> "CT" ;
                                                               <http://purl.org/ccf/ccf_ct_isa> <http://purl.obolibrary.org/obo/CL_0000000> ;
                                                               <http://purl.org/ccf/ccf_is_provisional> "true"^^xsd:boolean ;
                                                               <http://purl.org/ccf/ccf_located_in> <http://purl.obolibrary.org/obo/UBERON_0012252> ;
                                                               <http://purl.org/ccf/ccf_pref_label> "endocervical epithelial cell" .
-
-_:genid344 rdf:type owl:Restriction ;
-            owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
-            owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
-                                                    ) ;
-                                 rdf:type owl:Class
-                               ] .
-
-[ rdf:type owl:Axiom ;
-   owl:annotatedSource <http://purl.org/ccf/ASCTB-TEMP_endocervical-epithelial-cell> ;
-   owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid344 ;
-   <http://purl.org/dc/terms/reference> <https://screening.iarc.fr/colpochap.php?lang=1>
- ] .
 
 
 ###  http://purl.org/ccf/ASCTB-TEMP_endocervical-stroma
@@ -4628,7 +4620,7 @@ _:genid344 rdf:type owl:Restriction ;
 
 ###  http://purl.org/ccf/ASCTB-TEMP_endothelial-cell
 <http://purl.org/ccf/ASCTB-TEMP_endothelial-cell> rdf:type owl:Class ;
-                                                  rdfs:subClassOf _:genid348 ;
+                                                  rdfs:subClassOf _:genid347 ;
                                                   <http://purl.org/ccf/ccf_asctb_type> "CT" ;
                                                   <http://purl.org/ccf/ccf_ct_isa> <http://purl.obolibrary.org/obo/CL_0000000> ;
                                                   <http://purl.org/ccf/ccf_is_provisional> "true"^^xsd:boolean ;
@@ -4636,7 +4628,7 @@ _:genid344 rdf:type owl:Restriction ;
                                                                                        <http://purl.obolibrary.org/obo/UBERON_0022356> ;
                                                   <http://purl.org/ccf/ccf_pref_label> "endothelial cell" .
 
-_:genid348 rdf:type owl:Restriction ;
+_:genid347 rdf:type owl:Restriction ;
             owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
             owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
                                                       [ rdf:type owl:Restriction ;
@@ -4658,7 +4650,7 @@ _:genid348 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.org/ccf/ASCTB-TEMP_endothelial-cell> ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid348 ;
+   owl:annotatedTarget _:genid347 ;
    <http://purl.org/dc/terms/reference> <DOI:10.1101/2021.01.02.425073>
  ] .
 
@@ -4689,7 +4681,7 @@ _:genid348 rdf:type owl:Restriction ;
 
 ###  http://purl.org/ccf/ASCTB-TEMP_glandular-epithelial-cell
 <http://purl.org/ccf/ASCTB-TEMP_glandular-epithelial-cell> rdf:type owl:Class ;
-                                                           rdfs:subClassOf _:genid358 ;
+                                                           rdfs:subClassOf _:genid357 ;
                                                            <http://purl.org/ccf/ccf_asctb_type> "CT" ;
                                                            <http://purl.org/ccf/ccf_ct_isa> <http://purl.obolibrary.org/obo/CL_0000000> ;
                                                            <http://purl.org/ccf/ccf_is_provisional> "true"^^xsd:boolean ;
@@ -4697,7 +4689,7 @@ _:genid348 rdf:type owl:Restriction ;
                                                                                                 <http://purl.obolibrary.org/obo/UBERON_0022355> ;
                                                            <http://purl.org/ccf/ccf_pref_label> "glandular epithelial cell" .
 
-_:genid358 rdf:type owl:Restriction ;
+_:genid357 rdf:type owl:Restriction ;
             owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
             owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
                                                       [ rdf:type owl:Restriction ;
@@ -4723,7 +4715,7 @@ _:genid358 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.org/ccf/ASCTB-TEMP_glandular-epithelial-cell> ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid358 ;
+   owl:annotatedTarget _:genid357 ;
    <http://purl.org/dc/terms/reference> <DOI:10.1101/2021.01.02.425073>
  ] .
 
@@ -4770,14 +4762,14 @@ _:genid358 rdf:type owl:Restriction ;
 
 ###  http://purl.org/ccf/ASCTB-TEMP_innate-lymphoid-cell
 <http://purl.org/ccf/ASCTB-TEMP_innate-lymphoid-cell> rdf:type owl:Class ;
-                                                      rdfs:subClassOf _:genid370 ;
+                                                      rdfs:subClassOf _:genid369 ;
                                                       <http://purl.org/ccf/ccf_asctb_type> "CT" ;
                                                       <http://purl.org/ccf/ccf_ct_isa> <http://purl.obolibrary.org/obo/CL_0000000> ;
                                                       <http://purl.org/ccf/ccf_is_provisional> "true"^^xsd:boolean ;
                                                       <http://purl.org/ccf/ccf_located_in> <http://purl.obolibrary.org/obo/UBERON_0022356> ;
                                                       <http://purl.org/ccf/ccf_pref_label> "innate lymphoid cell" .
 
-_:genid370 rdf:type owl:Restriction ;
+_:genid369 rdf:type owl:Restriction ;
             owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
             owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
                                                       [ rdf:type owl:Restriction ;
@@ -4811,7 +4803,7 @@ _:genid370 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.org/ccf/ASCTB-TEMP_innate-lymphoid-cell> ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid370 ;
+   owl:annotatedTarget _:genid369 ;
    <http://purl.org/dc/terms/reference> <DOI:10.1101/2021.01.02.425073>
  ] .
 
@@ -4906,7 +4898,7 @@ _:genid370 rdf:type owl:Restriction ;
 
 ###  http://purl.org/ccf/ASCTB-TEMP_luminal-epithelial-cell
 <http://purl.org/ccf/ASCTB-TEMP_luminal-epithelial-cell> rdf:type owl:Class ;
-                                                         rdfs:subClassOf _:genid386 ;
+                                                         rdfs:subClassOf _:genid385 ;
                                                          <http://purl.org/ccf/ccf_asctb_type> "CT" ;
                                                          <http://purl.org/ccf/ccf_ct_isa> <http://purl.obolibrary.org/obo/CL_0000000> ;
                                                          <http://purl.org/ccf/ccf_is_provisional> "true"^^xsd:boolean ;
@@ -4914,7 +4906,7 @@ _:genid370 rdf:type owl:Restriction ;
                                                                                               <http://purl.obolibrary.org/obo/UBERON_0022355> ;
                                                          <http://purl.org/ccf/ccf_pref_label> "luminal epithelial cell" .
 
-_:genid386 rdf:type owl:Restriction ;
+_:genid385 rdf:type owl:Restriction ;
             owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
             owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
                                                       [ rdf:type owl:Restriction ;
@@ -4936,21 +4928,21 @@ _:genid386 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.org/ccf/ASCTB-TEMP_luminal-epithelial-cell> ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid386 ;
+   owl:annotatedTarget _:genid385 ;
    <http://purl.org/dc/terms/reference> <DOI:10.1101/2021.01.02.425073>
  ] .
 
 
 ###  http://purl.org/ccf/ASCTB-TEMP_lymphocyte
 <http://purl.org/ccf/ASCTB-TEMP_lymphocyte> rdf:type owl:Class ;
-                                            rdfs:subClassOf _:genid396 ;
+                                            rdfs:subClassOf _:genid395 ;
                                             <http://purl.org/ccf/ccf_asctb_type> "CT" ;
                                             <http://purl.org/ccf/ccf_ct_isa> <http://purl.obolibrary.org/obo/CL_0000000> ;
                                             <http://purl.org/ccf/ccf_is_provisional> "true"^^xsd:boolean ;
                                             <http://purl.org/ccf/ccf_located_in> <http://purl.obolibrary.org/obo/UBERON_0022355> ;
                                             <http://purl.org/ccf/ccf_pref_label> "lymphocyte" .
 
-_:genid396 rdf:type owl:Restriction ;
+_:genid395 rdf:type owl:Restriction ;
             owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
             owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
                                                       [ rdf:type owl:Restriction ;
@@ -4968,21 +4960,21 @@ _:genid396 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.org/ccf/ASCTB-TEMP_lymphocyte> ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid396 ;
+   owl:annotatedTarget _:genid395 ;
    <http://purl.org/dc/terms/reference> <DOI:10.1101/2021.01.02.425073>
  ] .
 
 
 ###  http://purl.org/ccf/ASCTB-TEMP_macrophage
 <http://purl.org/ccf/ASCTB-TEMP_macrophage> rdf:type owl:Class ;
-                                            rdfs:subClassOf _:genid404 ;
+                                            rdfs:subClassOf _:genid403 ;
                                             <http://purl.org/ccf/ccf_asctb_type> "CT" ;
                                             <http://purl.org/ccf/ccf_ct_isa> <http://purl.obolibrary.org/obo/CL_0000000> ;
                                             <http://purl.org/ccf/ccf_is_provisional> "true"^^xsd:boolean ;
                                             <http://purl.org/ccf/ccf_located_in> <http://purl.obolibrary.org/obo/UBERON_0022355> ;
                                             <http://purl.org/ccf/ccf_pref_label> "macrophage" .
 
-_:genid404 rdf:type owl:Restriction ;
+_:genid403 rdf:type owl:Restriction ;
             owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
             owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
                                                       [ rdf:type owl:Restriction ;
@@ -5012,21 +5004,21 @@ _:genid404 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.org/ccf/ASCTB-TEMP_macrophage> ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid404 ;
+   owl:annotatedTarget _:genid403 ;
    <http://purl.org/dc/terms/reference> <DOI:10.1101/2021.01.02.425073>
  ] .
 
 
 ###  http://purl.org/ccf/ASCTB-TEMP_mast-cell
 <http://purl.org/ccf/ASCTB-TEMP_mast-cell> rdf:type owl:Class ;
-                                           rdfs:subClassOf _:genid418 ;
+                                           rdfs:subClassOf _:genid417 ;
                                            <http://purl.org/ccf/ccf_asctb_type> "CT" ;
                                            <http://purl.org/ccf/ccf_ct_isa> <http://purl.obolibrary.org/obo/CL_0000000> ;
                                            <http://purl.org/ccf/ccf_is_provisional> "true"^^xsd:boolean ;
                                            <http://purl.org/ccf/ccf_located_in> <http://purl.obolibrary.org/obo/UBERON_0022356> ;
                                            <http://purl.org/ccf/ccf_pref_label> "mast cell" .
 
-_:genid418 rdf:type owl:Restriction ;
+_:genid417 rdf:type owl:Restriction ;
             owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
             owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
                                                       [ rdf:type owl:Restriction ;
@@ -5052,7 +5044,7 @@ _:genid418 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.org/ccf/ASCTB-TEMP_mast-cell> ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid418 ;
+   owl:annotatedTarget _:genid417 ;
    <http://purl.org/dc/terms/reference> <DOI:10.1101/2021.01.02.425073>
  ] .
 
@@ -5147,14 +5139,14 @@ _:genid418 rdf:type owl:Restriction ;
 
 ###  http://purl.org/ccf/ASCTB-TEMP_perivascular-support-cell
 <http://purl.org/ccf/ASCTB-TEMP_perivascular-support-cell> rdf:type owl:Class ;
-                                                           rdfs:subClassOf _:genid430 ;
+                                                           rdfs:subClassOf _:genid429 ;
                                                            <http://purl.org/ccf/ccf_asctb_type> "CT" ;
                                                            <http://purl.org/ccf/ccf_ct_isa> <http://purl.obolibrary.org/obo/CL_0000000> ;
                                                            <http://purl.org/ccf/ccf_is_provisional> "true"^^xsd:boolean ;
                                                            <http://purl.org/ccf/ccf_located_in> <http://purl.obolibrary.org/obo/UBERON_0022355> ;
                                                            <http://purl.org/ccf/ccf_pref_label> "perivascular support cell" .
 
-_:genid430 rdf:type owl:Restriction ;
+_:genid429 rdf:type owl:Restriction ;
             owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
             owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
                                                       [ rdf:type owl:Restriction ;
@@ -5172,7 +5164,7 @@ _:genid430 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.org/ccf/ASCTB-TEMP_perivascular-support-cell> ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid430 ;
+   owl:annotatedTarget _:genid429 ;
    <http://purl.org/dc/terms/reference> <DOI:10.1101/2021.01.02.425073>
  ] .
 
@@ -5283,14 +5275,14 @@ _:genid430 rdf:type owl:Restriction ;
 
 ###  http://purl.org/ccf/ASCTB-TEMP_sox9-epithelial-cell
 <http://purl.org/ccf/ASCTB-TEMP_sox9-epithelial-cell> rdf:type owl:Class ;
-                                                      rdfs:subClassOf _:genid438 ;
+                                                      rdfs:subClassOf _:genid437 ;
                                                       <http://purl.org/ccf/ccf_asctb_type> "CT" ;
                                                       <http://purl.org/ccf/ccf_ct_isa> <http://purl.obolibrary.org/obo/CL_0000000> ;
                                                       <http://purl.org/ccf/ccf_is_provisional> "true"^^xsd:boolean ;
                                                       <http://purl.org/ccf/ccf_located_in> <http://purl.obolibrary.org/obo/UBERON_0022355> ;
                                                       <http://purl.org/ccf/ccf_pref_label> "SOX9+ epithelial cell" .
 
-_:genid438 rdf:type owl:Restriction ;
+_:genid437 rdf:type owl:Restriction ;
             owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
             owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
                                                       [ rdf:type owl:Restriction ;
@@ -5312,7 +5304,7 @@ _:genid438 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.org/ccf/ASCTB-TEMP_sox9-epithelial-cell> ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid438 ;
+   owl:annotatedTarget _:genid437 ;
    <http://purl.org/dc/terms/reference> <DOI:10.1101/2021.01.02.425073>
  ] .
 
@@ -5327,7 +5319,7 @@ _:genid438 rdf:type owl:Restriction ;
 
 ###  http://purl.org/ccf/ASCTB-TEMP_stromal-cell
 <http://purl.org/ccf/ASCTB-TEMP_stromal-cell> rdf:type owl:Class ;
-                                              rdfs:subClassOf _:genid448 ;
+                                              rdfs:subClassOf _:genid447 ;
                                               <http://purl.org/ccf/ccf_asctb_type> "CT" ;
                                               <http://purl.org/ccf/ccf_ct_isa> <http://purl.obolibrary.org/obo/CL_0000000> ;
                                               <http://purl.org/ccf/ccf_is_provisional> "true"^^xsd:boolean ;
@@ -5335,7 +5327,7 @@ _:genid438 rdf:type owl:Restriction ;
                                                                                    <http://purl.obolibrary.org/obo/UBERON_0022355> ;
                                               <http://purl.org/ccf/ccf_pref_label> "stromal cell" .
 
-_:genid448 rdf:type owl:Restriction ;
+_:genid447 rdf:type owl:Restriction ;
             owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
             owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
                                                       [ rdf:type owl:Restriction ;
@@ -5361,7 +5353,7 @@ _:genid448 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.org/ccf/ASCTB-TEMP_stromal-cell> ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid448 ;
+   owl:annotatedTarget _:genid447 ;
    <http://purl.org/dc/terms/reference> <DOI:10.1101/2021.01.02.425073>
  ] .
 
@@ -5376,14 +5368,14 @@ _:genid448 rdf:type owl:Restriction ;
 
 ###  http://purl.org/ccf/ASCTB-TEMP_t-cell
 <http://purl.org/ccf/ASCTB-TEMP_t-cell> rdf:type owl:Class ;
-                                        rdfs:subClassOf _:genid460 ;
+                                        rdfs:subClassOf _:genid459 ;
                                         <http://purl.org/ccf/ccf_asctb_type> "CT" ;
                                         <http://purl.org/ccf/ccf_ct_isa> <http://purl.obolibrary.org/obo/CL_0000000> ;
                                         <http://purl.org/ccf/ccf_is_provisional> "true"^^xsd:boolean ;
                                         <http://purl.org/ccf/ccf_located_in> <http://purl.obolibrary.org/obo/UBERON_0022356> ;
                                         <http://purl.org/ccf/ccf_pref_label> "T cell" .
 
-_:genid460 rdf:type owl:Restriction ;
+_:genid459 rdf:type owl:Restriction ;
             owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
             owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
                                                       [ rdf:type owl:Restriction ;
@@ -5417,7 +5409,7 @@ _:genid460 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.org/ccf/ASCTB-TEMP_t-cell> ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid460 ;
+   owl:annotatedTarget _:genid459 ;
    <http://purl.org/dc/terms/reference> <DOI:10.1101/2021.01.02.425073>
  ] .
 
@@ -5440,14 +5432,14 @@ _:genid460 rdf:type owl:Restriction ;
 
 ###  http://purl.org/ccf/ASCTB-TEMP_uterine-dendritic-cells
 <http://purl.org/ccf/ASCTB-TEMP_uterine-dendritic-cells> rdf:type owl:Class ;
-                                                         rdfs:subClassOf _:genid476 ;
+                                                         rdfs:subClassOf _:genid475 ;
                                                          <http://purl.org/ccf/ccf_asctb_type> "CT" ;
                                                          <http://purl.org/ccf/ccf_ct_isa> <http://purl.obolibrary.org/obo/CL_0000000> ;
                                                          <http://purl.org/ccf/ccf_is_provisional> "true"^^xsd:boolean ;
                                                          <http://purl.org/ccf/ccf_located_in> <http://purl.obolibrary.org/obo/UBERON_0022355> ;
                                                          <http://purl.org/ccf/ccf_pref_label> "uterine dendritic cells" .
 
-_:genid476 rdf:type owl:Restriction ;
+_:genid475 rdf:type owl:Restriction ;
             owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
             owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
                                                       [ rdf:type owl:Restriction ;
@@ -5465,21 +5457,21 @@ _:genid476 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.org/ccf/ASCTB-TEMP_uterine-dendritic-cells> ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid476 ;
+   owl:annotatedTarget _:genid475 ;
    <http://purl.org/dc/terms/reference> <DOI:10.1101/2021.01.02.425073>
  ] .
 
 
 ###  http://purl.org/ccf/ASCTB-TEMP_uterine-natural-killer-cell
 <http://purl.org/ccf/ASCTB-TEMP_uterine-natural-killer-cell> rdf:type owl:Class ;
-                                                             rdfs:subClassOf _:genid484 ;
+                                                             rdfs:subClassOf _:genid483 ;
                                                              <http://purl.org/ccf/ccf_asctb_type> "CT" ;
                                                              <http://purl.org/ccf/ccf_ct_isa> <http://purl.obolibrary.org/obo/CL_0000000> ;
                                                              <http://purl.org/ccf/ccf_is_provisional> "true"^^xsd:boolean ;
                                                              <http://purl.org/ccf/ccf_located_in> <http://purl.obolibrary.org/obo/UBERON_0022355> ;
                                                              <http://purl.org/ccf/ccf_pref_label> "uterine natural killer cell" .
 
-_:genid484 rdf:type owl:Restriction ;
+_:genid483 rdf:type owl:Restriction ;
             owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
             owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
                                                       [ rdf:type owl:Restriction ;
@@ -5505,7 +5497,7 @@ _:genid484 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.org/ccf/ASCTB-TEMP_uterine-natural-killer-cell> ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid484 ;
+   owl:annotatedTarget _:genid483 ;
    <http://purl.org/dc/terms/reference> <DOI:10.1101/2021.01.02.425073>
  ] .
 
@@ -5552,7 +5544,7 @@ _:genid484 rdf:type owl:Restriction ;
 
 ###  http://purl.org/ccf/ASCTB-TEMP_uterine-smooth-muscle-type-ii-cell
 <http://purl.org/ccf/ASCTB-TEMP_uterine-smooth-muscle-type-ii-cell> rdf:type owl:Class ;
-                                                                    rdfs:subClassOf _:genid511 ;
+                                                                    rdfs:subClassOf _:genid510 ;
                                                                     <http://purl.org/ccf/ccf_asctb_type> "CT" ;
                                                                     <http://purl.org/ccf/ccf_ct_isa> <http://purl.obolibrary.org/obo/CL_0000000> ;
                                                                     <http://purl.org/ccf/ccf_is_provisional> "true"^^xsd:boolean ;
@@ -5560,7 +5552,7 @@ _:genid484 rdf:type owl:Restriction ;
                                                                                                          <http://purl.org/ccf/ASCTB-TEMP_outer-uterine-myometrium> ;
                                                                     <http://purl.org/ccf/ccf_pref_label> "uterine smooth muscle type II cell" .
 
-_:genid511 rdf:type owl:Restriction ;
+_:genid510 rdf:type owl:Restriction ;
             owl:onProperty <http://purl.obolibrary.org/obo/RO_0015004> ;
             owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/SO_0001260>
                                                       [ rdf:type owl:Restriction ;
@@ -5582,7 +5574,7 @@ _:genid511 rdf:type owl:Restriction ;
 [ rdf:type owl:Axiom ;
    owl:annotatedSource <http://purl.org/ccf/ASCTB-TEMP_uterine-smooth-muscle-type-ii-cell> ;
    owl:annotatedProperty rdfs:subClassOf ;
-   owl:annotatedTarget _:genid511 ;
+   owl:annotatedTarget _:genid510 ;
    <http://purl.org/dc/terms/reference> <DOI:10.1101/2021.01.02.425073>
  ] .
 

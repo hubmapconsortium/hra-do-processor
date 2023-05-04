@@ -361,7 +361,6 @@ data:
       ccf_has_biomarker_set:
         - members:
             - HGNC:6421
-            - CD200
             - HGNC:1662
           references:
             - DOI:10.1002/jcp.22275
@@ -457,7 +456,6 @@ data:
           references:
             - DOI:10.1016/S1081-1206(10)62853-0
             - DOI:10.1111/imr.12639
-            - NoDOI
             - DOI:10.1159/000053694.
         - members:
             - HGNC:3358
@@ -789,14 +787,12 @@ data:
           references:
             - DOI:10.1002/biot.201200199
             - DOI:10.1083/jcb.113.1.147
-            - NoDOI
         - members:
             - HGNC:130
             - HGNC:2155
             - HGNC:1441
           references:
             - DOI:10.1002/biot.201200199
-            - NoDOI
     - id: CL:0002292
       class_type: CellType
       ccf_pref_label: Glomus cell
@@ -813,7 +809,6 @@ data:
             - HGNC:3023
           references:
             - DOI:10.1016/j.cmet.2015.09.004
-            - NoDOI
             - DOI:10.1016/j.acthis.2015.07.007
     - id: CL:0000669
       class_type: CellType
@@ -1002,12 +997,6 @@ data:
     - id: HGNC:6421
       class_type: Biomarker
       ccf_pref_label: keratin 15
-      ccf_asctb_type: BM
-      ccf_biomarker_type: protein
-      ccf_is_provisional: false
-    - id: CD200
-      class_type: Biomarker
-      ccf_pref_label: CD200 molecule
       ccf_asctb_type: BM
       ccf_biomarker_type: protein
       ccf_is_provisional: false

@@ -37687,8 +37687,7 @@ _:genid3366 rdf:type owl:Restriction ;
    owl:annotatedSource <http://purl.obolibrary.org/obo/CL_0000764> ;
    owl:annotatedProperty rdfs:subClassOf ;
    owl:annotatedTarget _:genid3366 ;
-   <http://purl.org/dc/terms/reference> <DOI:10.1126/science.aay3224> ,
-                                        "NoDOI"
+   <http://purl.org/dc/terms/reference> <DOI:10.1126/science.aay3224>
  ] .
 
 [ rdf:type owl:Axiom ;

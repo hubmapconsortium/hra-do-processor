@@ -275,21 +275,13 @@ data:
       ccf_is_provisional: false
       ccf_part_of:
         - UBERON:0004042
-    - id: ADDED
-      class_type: AnatomicalStructure
-      ccf_pref_label: Inner Mantle Zone
-      ccf_asctb_type: AS
-      ccf_is_provisional: false
-      ccf_part_of:
-        - UBERON:0010421
-        - UBERON:1000023
     - id: UBERON:0001251
       class_type: AnatomicalStructure
       ccf_pref_label: Superficial Zone
       ccf_asctb_type: AS
       ccf_is_provisional: false
       ccf_part_of:
-        - ADDED
+        - UBERON:1000023
         - ASCTB-TEMP:red-pulp-white-pulp-border
     - id: ASCTB-TEMP:inner-pals
       class_type: AnatomicalStructure
@@ -392,7 +384,7 @@ data:
         - UBERON:0003713
         - ASCTB-TEMP:splenic-venules
         - ASCTB-TEMP:central-arteries
-        - ADDED
+        - UBERON:0010421
         - UBERON:0001251
         - ASCTB-TEMP:inner-pals
         - UBERON:0010399
@@ -407,7 +399,6 @@ data:
             - DOI:10.1111/imm.12469
             - DOI:10.1111/j.1365-2559.1986.tb02482.x
             - DOI:10.1111/j.1365-2559.1985.tb02841.x
-            - DOI10.1182/bloodadvances.2017015073
         - members:
             - HGNC:1662
             - HGNC:8823
@@ -415,7 +406,6 @@ data:
             - HGNC:11784
           references:
             - DOI:10.1007/s00418-007-0320-8
-            - DOI10.1182/bloodadvances.2017015073
         - members:
             - HGNC:1662
             - HGNC:8823
@@ -423,7 +413,6 @@ data:
             - HGNC:12663
           references:
             - DOI:10.1017/CBO9780511545979
-            - DOI10.1182/bloodadvances.2017015073
         - members:
             - HGNC:1662
             - HGNC:8823
@@ -433,7 +422,6 @@ data:
           references:
             - DOI:10.1007/s00418-007-0320-8
             - DOI:10.1016/j.aanat.2019.05.004
-            - DOI10.1182/bloodadvances.2017015073
         - members:
             - HGNC:1662
             - HGNC:8823
@@ -441,7 +429,6 @@ data:
           references:
             - DOI:10.1111/imm.12469
             - DOI:10.1016/j.aanat.2019.05.004
-            - DOI10.1182/bloodadvances.2017015073
         - members:
             - HGNC:1662
             - HGNC:8823
@@ -450,7 +437,6 @@ data:
           references:
             - DOI:10.1007/s00418-007-0320-8
             - DOI:10.1016/j.aanat.2019.05.004
-            - DOI10.1182/bloodadvances.2017015073
         - members:
             - HGNC:1662
             - HGNC:8823
@@ -460,7 +446,6 @@ data:
             - DOI:10.1007/s00418-007-0320-8
             - DOI:10.1111/j.1365-2559.1986.tb02482.x
             - DOI:10.1111/j.1365-2559.1985.tb02841.x
-            - DOI10.1182/bloodadvances.2017015073
     - id: ASCTB-TEMP:catecholaminergic-neuron
       class_type: CellType
       ccf_pref_label: Catecholaminergic Neuron
@@ -503,7 +488,7 @@ data:
         - UBERON:0013132
         - ASCTB-TEMP:sheathed-capillary
         - UBERON:0004041
-        - ADDED
+        - UBERON:0010421
       ccf_has_biomarker_set:
         - members:
             - HGNC:1633
@@ -552,7 +537,7 @@ data:
         - UBERON:0013132
         - ASCTB-TEMP:sheathed-capillary
         - UBERON:0004041
-        - ADDED
+        - UBERON:0010421
         - UBERON:0001251
       ccf_has_biomarker_set:
         - members:
@@ -760,7 +745,6 @@ data:
             - HGNC:1693
             - HGNC:1631
           references:
-            - NoDOI
             - DOI:10.1182/bloodadvances.2017015008
             - DOI:10.1186/s13059-019-1906-x
     - id: ASCTB-TEMP:reticular-cell-of-splenic-sinusoid
@@ -807,7 +791,6 @@ data:
           references:
             - DOI:10.1182/blood.V126.23.3594.3594
             - DOI:10.4049/jimmunol.1103086
-            - DOI10.1182/bloodadvances.2017015073
     - id: ASCTB-TEMP:splenic-red-pulp-stromal-cell
       class_type: CellType
       ccf_pref_label: Splenic Red Pulp Stromal Cell
@@ -927,7 +910,6 @@ data:
             - HGNC:1678
             - HGNC:1706
           references:
-            - NoDOI
             - DOI:10.1186/s13059-019-1906-x
     - id: CL:0000909
       class_type: CellType
@@ -981,7 +963,6 @@ data:
             - HGNC:2561
             - HGNC:6119
           references:
-            - NoDOI
             - DOI:10.1002/eji.200425442
             - DOI:10.1186/s13059-019-1906-x
         - members:
@@ -998,7 +979,6 @@ data:
             - HGNC:2561
             - HGNC:6119
           references:
-            - NoDOI
             - DOI:10.1002/eji.200425442
             - DOI:10.1186/s13059-019-1906-x
     - id: CL:0000980
@@ -1026,7 +1006,6 @@ data:
             - HGNC:2561
             - HGNC:6119
           references:
-            - NoDOI
             - DOI:10.1186/s13059-019-1906-x
         - members:
             - HGNC:5525
@@ -1041,7 +1020,6 @@ data:
             - HGNC:2561
             - HGNC:6119
           references:
-            - NoDOI
             - DOI:10.1002/eji.200425442
             - DOI:10.1186/s13059-019-1906-x
     - id: CL:0001056
@@ -1056,8 +1034,7 @@ data:
       ccf_has_biomarker_set:
         - members:
             - HGNC:6152
-          references:
-            - NoDOI
+          references: []
     - id: CL:0000233
       class_type: CellType
       ccf_pref_label: Platelet
@@ -1167,7 +1144,6 @@ data:
             - HGNC:130
           references:
             - DOI:10.1111/imm.12469
-            - NoDOI
             - DOI:10.1038/s41467-019-09728-3
     - id: CL:0000775
       class_type: CellType
@@ -1216,7 +1192,6 @@ data:
             - HGNC:7228
             - HGNC:1641
           references:
-            - NoDOI
             - DOI:10.1046/j.1365-2567.1997.00328.x
             - DOI:10.1111/j.1365-2567.2007.02710.x
             - DOI:10.1186/s13059-019-1906-x
@@ -1351,7 +1326,6 @@ data:
             - ASCTB-TEMP:ulex-
           references:
             - DOI:10.1369/jhc.4A6514.2005
-            - NoDOI
         - members:
             - HGNC:8823
             - HGNC:29602
@@ -1359,9 +1333,7 @@ data:
             - HGNC:9459
             - HGNC:12726
             - ASCTB-TEMP:ulex-
-          references:
-            - DOI:10.1369%2Fjhc.4A6514.2005
-            - NoDOI
+          references: []
     - id: CL:0000442
       class_type: CellType
       ccf_pref_label: Follicular Dendritic Cell (FDC)
@@ -1372,7 +1344,7 @@ data:
       ccf_located_in:
         - UBERON:0004041
         - UBERON:0005196
-        - ADDED
+        - UBERON:0010421
         - UBERON:0001251
       ccf_has_biomarker_set:
         - members:
@@ -1435,7 +1407,6 @@ data:
             - HGNC:130
           references:
             - DOI:10.1111/imm.12469
-            - NoDOI
             - DOI:10.1038/s41467-019-09728-3
         - members:
             - HGNC:2336
@@ -1457,7 +1428,6 @@ data:
           references:
             - DOI:10.1111/imm.12469
             - DOI:10.1007/s00418-011-0799-x
-            - NoDOI
             - DOI:10.1038/s41467-019-09728-3
     - id: CL:0000876
       class_type: CellType
@@ -1571,7 +1541,7 @@ data:
       ccf_ct_isa:
         - CL:0000000
       ccf_located_in:
-        - ADDED
+        - UBERON:0010421
       ccf_has_biomarker_set:
         - members:
             - HGNC:11922
@@ -1591,7 +1561,7 @@ data:
       ccf_ct_isa:
         - CL:0000000
       ccf_located_in:
-        - ADDED
+        - UBERON:0010421
         - UBERON:0001251
         - ASCTB-TEMP:outer-pals
       ccf_has_biomarker_set:
@@ -1642,7 +1612,7 @@ data:
       ccf_ct_isa:
         - CL:0000000
       ccf_located_in:
-        - ADDED
+        - UBERON:0010421
       ccf_has_biomarker_set:
         - members:
             - HGNC:7809
@@ -1848,11 +1818,6 @@ data:
             - HGNC:6106
             - HGNC:6008
             - HGNC:1608
-            - CD4
-            - IL2RA
-            - PTPRC
-            - IL7R
-            - FOXP3
             - ASCTB-TEMP:hgnc-6106
           references:
             - DOI:10.1016/j.immuni.2012.09.020
@@ -1946,12 +1911,10 @@ data:
             - HGNC:130
           references:
             - DOI:10.1038/s41598-018-34105-3
-            - NoDOI
         - members:
             - HGNC:1441
             - HGNC:130
-          references:
-            - NoDOI
+          references: []
     - id: CL:0000798
       class_type: CellType
       ccf_pref_label: Gamma/Delta T cells
@@ -1989,7 +1952,6 @@ data:
           references:
             - DOI:10.1007/s00418-007-0320-8
             - DOI:10.1016/j.aanat.2019.05.004
-            - DOI10.1182/bloodadvances.2017015073
     - id: CL:0002543
       class_type: CellType
       ccf_pref_label: Blood Endothelial Cells
@@ -2008,7 +1970,6 @@ data:
           references:
             - DOI:10.1007/s00418-007-0320-8
             - DOI:10.1016/j.aanat.2019.05.004
-            - DOI10.1182/bloodadvances.2017015073
     - id: ASCTB-TEMP:subcapsular-dendritic-cell
       class_type: CellType
       ccf_pref_label: Subcapsular Dendritic Cell
@@ -2899,36 +2860,6 @@ data:
     - id: HGNC:12692
       class_type: Biomarker
       ccf_pref_label: Vimentin
-      ccf_asctb_type: BM
-      ccf_biomarker_type: protein
-      ccf_is_provisional: false
-    - id: CD4
-      class_type: Biomarker
-      ccf_pref_label: CD3
-      ccf_asctb_type: BM
-      ccf_biomarker_type: protein
-      ccf_is_provisional: false
-    - id: IL2RA
-      class_type: Biomarker
-      ccf_pref_label: HGNC:1678
-      ccf_asctb_type: BM
-      ccf_biomarker_type: protein
-      ccf_is_provisional: false
-    - id: PTPRC
-      class_type: Biomarker
-      ccf_pref_label: HGNC:6008
-      ccf_asctb_type: BM
-      ccf_biomarker_type: protein
-      ccf_is_provisional: false
-    - id: IL7R
-      class_type: Biomarker
-      ccf_pref_label: HGNC:9666
-      ccf_asctb_type: BM
-      ccf_biomarker_type: protein
-      ccf_is_provisional: false
-    - id: FOXP3
-      class_type: Biomarker
-      ccf_pref_label: HGNC:6024
       ccf_asctb_type: BM
       ccf_biomarker_type: protein
       ccf_is_provisional: false

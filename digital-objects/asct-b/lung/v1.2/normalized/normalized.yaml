@@ -733,88 +733,6 @@ data:
             - HGNC:19719
           references:
             - DOI:10.1186/s12931-017-0640-8
-    - id: LMHA:00142
-      class_type: CellType
-      ccf_pref_label: submucosal gland ciliated duct cells
-      ccf_asctb_type: CT
-      ccf_is_provisional: false
-      ccf_ct_isa:
-        - CL:0000000
-      ccf_located_in:
-        - ASCTB-TEMP:terminal-ciliated-ducts-of-tracheal-submucosal-gland
-        - ASCTB-TEMP:ciliated-ducts-of-bronchial-submucosal-gland
-      ccf_has_biomarker_set:
-        - members:
-            - HGNC:3816
-            - HGNC:20766
-            - HGNC:15467
-            - HGNC:20771
-            - HGNC:12371
-          references:
-            - DOI:10.1038/s41467-020-16239-z
-    - id: LMHA:00087
-      class_type: CellType
-      ccf_pref_label: submucosal gland basal cells
-      ccf_asctb_type: CT
-      ccf_is_provisional: false
-      ccf_ct_isa:
-        - CL:0000000
-      ccf_located_in:
-        - ASCTB-TEMP:terminal-ciliated-ducts-of-tracheal-submucosal-gland
-        - ASCTB-TEMP:ciliated-ducts-of-bronchial-submucosal-gland
-      ccf_has_biomarker_set:
-        - members:
-            - HGNC:15979
-            - HGNC:6442
-            - HGNC:3800
-            - HGNC:6416
-            - HGNCL2514
-          references:
-            - DOI:10.1038/s41467-020-16239-z
-        - members:
-            - HGNC:15979
-            - HGNC:6442
-            - HGNC:7809
-            - HGNC:6416
-            - HGNCL2514
-            - HGNC:3800
-          references:
-            - DOI:10.1038/s41467-020-16239-z
-    - id: LMHA:00693
-      class_type: CellType
-      ccf_pref_label: submucosal gland collecting duct epithelium
-      ccf_asctb_type: CT
-      ccf_is_provisional: false
-      ccf_ct_isa:
-        - CL:0000000
-      ccf_located_in:
-        - ASCTB-TEMP:collecting-ducts-of-tracheal-submucosal-gland
-        - UBERON:8410043
-      ccf_has_biomarker_set:
-        - members:
-            - HGNC:15749
-            - HGNC:7076
-            - HGNC:409
-            - HGNC:9867
-          references:
-            - DOI:10.1038/s41467-020-16239-z
-    - id: LMHA:00238
-      class_type: CellType
-      ccf_pref_label: submucosal gland mucous cells
-      ccf_asctb_type: CT
-      ccf_is_provisional: false
-      ccf_ct_isa:
-        - CL:0000000
-      ccf_located_in:
-        - ASCTB-TEMP:mucous-tubules-of-tracheal-submucosal-gland
-        - UBERON:8410043
-      ccf_has_biomarker_set:
-        - members:
-            - HGNC:7516
-            - HGNC:17257
-            - HGNC:328
-          references:
-            - DOI:10.1016/j.stem.2018.03.018
     - id: CL:0000313
       class_type: CellType
       ccf_pref_label: submucosal gland serous cells
@@ -921,14 +839,12 @@ data:
             - HGNC:4881
             - HGNC:130
             - HGNC:6143
-          references:
-            - 10.1161/01.atv.17.7.1203
+          references: []
         - members:
             - HGNC:130
             - HGNC:6143
             - HGNC:2155
-          references:
-            - 10.1161/01.atv.17.7.1203
+          references: []
     - id: CL:0002543
       class_type: CellType
       ccf_pref_label: venous endothelial cell
@@ -1192,8 +1108,7 @@ data:
             - HGNC:8033
             - HGNC:7883
             - HGNC:6143
-          references:
-            - 10.1161/01.atv.17.7.1203
+          references: []
     - id: CL:1000493
       class_type: CellType
       ccf_pref_label: mesothelial cell
@@ -1745,8 +1660,7 @@ data:
             - HGNC:6373
             - HGNC:9360
             - HGNC:6380
-          references:
-            - oi:10.1016/j.molimm.2020.12.017
+          references: []
     - id: CL:0000815
       class_type: CellType
       ccf_pref_label: regulatory T cell
@@ -1772,8 +1686,21 @@ data:
       ccf_is_provisional: false
       ccf_ct_isa:
         - CL:0000000
-      ccf_located_in: []
-      ccf_has_biomarker_set: []
+      ccf_located_in:
+        - UBERON:0002405
+      ccf_has_biomarker_set:
+        - members:
+            - HGNC:18628
+            - HGNC:9236
+            - HGNC:28246
+            - HGNC:3793
+            - HGNC:10909
+            - HGNC:1693
+            - HGNC:9666
+            - HGNC:1705
+            - HGNC:2558
+          references:
+            - DOI:10.1002/JLB.3RU0720-418R
     - id: ASCTB-TEMP:migratory-dendritic-cell
       class_type: CellType
       ccf_pref_label: migratory dendritic cell
@@ -1808,28 +1735,6 @@ data:
             - HGNC:3765
           references:
             - DOI:10.1111/imm.13143
-    - id: LMHA:00213
-      class_type: CellType
-      ccf_pref_label: Interstitial macrophage
-      ccf_asctb_type: CT
-      ccf_is_provisional: false
-      ccf_ct_isa:
-        - CL:0000763
-      ccf_located_in:
-        - UBERON:0002405
-      ccf_has_biomarker_set:
-        - members:
-            - HGNC:18628
-            - HGNC:9236
-            - HGNC:28246
-            - HGNC:3793
-            - HGNC:10909
-            - HGNC:1693
-            - HGNC:9666
-            - HGNC:1705
-            - HGNC:2558
-          references:
-            - DOI:10.1002/JLB.3RU0720-418R
     - id: CL:0000583
       class_type: CellType
       ccf_pref_label: alveolar macrophage
@@ -1937,8 +1842,7 @@ data:
             - HGNC:9666
             - HGNC:11127
             - HGNC:1693
-          references:
-            - NA
+          references: []
     - id: ASCTB-TEMP:alveolar-macrophage-ccl3-
       class_type: CellType
       ccf_pref_label: alveolar macrophage CCL3+
@@ -1955,8 +1859,7 @@ data:
             - HGNC:9666
             - HGNC:11127
             - HGNC:1693
-          references:
-            - NA
+          references: []
     - id: ASCTB-TEMP:alveolar-macrophage-mt-positive
       class_type: CellType
       ccf_pref_label: alveolar macrophage MT-positive
@@ -1974,8 +1877,7 @@ data:
             - HGNC:9666
             - HGNC:11127
             - HGNC:1693
-          references:
-            - NA
+          references: []
     - id: CL:0000484
       class_type: CellType
       ccf_pref_label: connective tissue mast cell
@@ -2264,12 +2166,6 @@ data:
     - id: HGNC:6416
       class_type: Biomarker
       ccf_pref_label: KRT14
-      ccf_asctb_type: BM
-      ccf_biomarker_type: gene
-      ccf_is_provisional: false
-    - id: HGNCL2514
-      class_type: Biomarker
-      ccf_pref_label: CTNNB1
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
