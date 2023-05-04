@@ -76,7 +76,7 @@ function normalizeAsData(context, data) {
 }
 
 function normalizeAs(collector, {id, name}, index, array) {
-  if (checkIfValid({id, name})) {
+  if (checkNotEmpty(id) || checkNotEmpty(name)) {
     const foundEntity = collector.find(
       (entity) => entity.id === generateIdWhenEmpty(id, name)
     );
@@ -118,7 +118,7 @@ function normalizeCtData(data) {
       addLocatedIn(collector, last_as, last_ct);
     }
     // Add has_biomarker relationship between CT and BM
-    const biomarkers = row.biomarkers.filter(({id, name}) => checkIfValid({id, name}));
+    const biomarkers = row.biomarkers.filter(({id, name}) => checkNotEmpty(id) || checkNotEmpty(name));
     const references = row.references.filter(({doi}) => checkNotEmpty(doi));
     if (last_ct) {
       addCharacterizingBiomarkers(collector, last_ct, biomarkers, references);
@@ -128,7 +128,7 @@ function normalizeCtData(data) {
 }
 
 function normalizeCt(collector, {id, name}, index, array) {
-  if (checkIfValid({id, name})) {
+  if (checkNotEmpty(id) || checkNotEmpty(name)) {
     const foundEntity = collector.find(
       (entity) => entity.id === generateIdWhenEmpty(id, name)
     );
@@ -231,10 +231,6 @@ function generateIdWhenEmpty(id, name) {
     .replace(/\W+/g, '-')
     .replace(/[^a-z0-9-]+/g, '');
   return `ASCTB-TEMP:${suffix}`;
-}
-
-function checkIfValid({id, name}) {
-  return checkNotEmpty(id) || checkNotEmpty(name);
 }
 
 function checkNotEmpty(str) {
