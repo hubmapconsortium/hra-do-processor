@@ -9,15 +9,14 @@ export function readMetadata(path) {
 }
 
 export function writeNormalized(context, data) {
-  const { path, doString } = context.selectedDigitalObject;
-  const id = `http://purl.humanatlas.io/${doString}`;
+  const { path, iri } = context.selectedDigitalObject;
   const metadata = readMetadata(path);
 
   sh.mkdir('-p', resolve(path, 'normalized'));
   const normalizedPath = resolve(path, 'normalized/normalized.yaml');
   writeFileSync(
     normalizedPath,
-    dump({ id, metadata, data })
+    dump({ id: iri, metadata, data })
   );
   info(`Normalized digital object written to ${normalizedPath}`);
 }
