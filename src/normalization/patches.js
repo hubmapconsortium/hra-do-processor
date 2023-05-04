@@ -228,3 +228,12 @@ export function normalizeDoi(doi) {
             .replace(/^doi:/, 'DOI:')
             .replace(/^(https:\/\/)?doi\.org\//, 'DOI:');
 }
+
+export function isIdValid(id) {
+  return /(UBERON|FMA|CL|PCL|HGNC):\d+|ASCTB-TEMP:[a-zA-Z0-9\-]+/.test(id);
+}
+
+export function isDoiValid(doi) {
+  return /DOI:10\.\d+\/.*|PMID:\d+/.test(doi);
+}
+

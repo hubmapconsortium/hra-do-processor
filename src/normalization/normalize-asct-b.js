@@ -9,6 +9,8 @@ import { readMetadata, writeNormalized } from './utils.js';
 import { getPatchesForAnatomicalStructure, 
          getPatchesForCellType, 
          getPatchesForBiomarker,
+         isIdValid,
+         isDoiValid,
          normalizeDoi } from './patches.js';
 
 const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
@@ -61,42 +63,54 @@ async function getRawData(context) {
 }
 
 function normalizeRawData(context, data) {
+  const { excludeBadValues } = context;
+  if (excludeBadValues) {
+    warning(`Option '--exclude-bad-values' is used to exclude invalid values. The resulting data may be lessen than the raw data.`)
+  }
   return {
     anatomical_structures: normalizeAsData(context, data),
-    cell_types: normalizeCtData(data),
-    biomarkers: normalizeBmData(data),
+    cell_types: normalizeCtData(context, data),
+    biomarkers: normalizeBmData(context, data),
   };
 }
 
 function normalizeAsData(context, data) {
   return data.reduce((collector, row) => {
-    row.anatomical_structures.reduce(normalizeAs, collector);
+    row.anatomical_structures
+       .filter(({id, name}) => checkNotEmpty(id) || checkNotEmpty(name))
+       .map(({id, name}) => {
+          return {
+            id: generateIdWhenEmpty(id, name),
+            name: name,
+            is_provisional: !checkNotEmpty(id),
+          };
+        })
+       .filter(({id}) => passIdFilterCriteria(context, id))
+       .reduce(normalizeAs, collector);
     return collector;
   }, getPatchesForAnatomicalStructure(context));
 }
 
-function normalizeAs(collector, {id, name}, index, array) {
-  if (checkNotEmpty(id) || checkNotEmpty(name)) {
-    const foundEntity = collector.find(
-      (entity) => entity.id === generateIdWhenEmpty(id, name)
-    );
-    if (foundEntity) {
-      const oldPartOf = foundEntity.ccf_part_of;
-      const newPartOf = [
-        ...oldPartOf,
-        getPartOfEntity(array, index),
-      ];
-      foundEntity.ccf_part_of = removeDuplicates(newPartOf);
-    } else {
-      collector.push({
-        id: generateIdWhenEmpty(id, name),
-        class_type: "AnatomicalStructure",
-        ccf_pref_label: name,
-        ccf_asctb_type: "AS",
-        ccf_is_provisional: !checkNotEmpty(id),
-        ccf_part_of: [ getPartOfEntity(array, index) ], 
-      });
-    }
+function normalizeAs(collector, {id: as_id, name: as_name, is_provisional}, index, array) {
+  const foundEntity = collector.find(
+    (entityInCollector) => entityInCollector.id === as_id
+  );
+  if (foundEntity) {
+    const oldPartOf = foundEntity.ccf_part_of;
+    const newPartOf = [
+      ...oldPartOf,
+      getPartOfEntity(array, index),
+    ];
+    foundEntity.ccf_part_of = removeDuplicates(newPartOf);
+  } else {
+    collector.push({
+      id: as_id,
+      class_type: "AnatomicalStructure",
+      ccf_pref_label: as_name,
+      ccf_asctb_type: "AS",
+      ccf_is_provisional: is_provisional,
+      ccf_part_of: [ getPartOfEntity(array, index) ], 
+    });
   }
   return collector;
 }
@@ -104,22 +118,46 @@ function normalizeAs(collector, {id, name}, index, array) {
 function getPartOfEntity(array, index) {
   return (index === 0) 
     ? "UBERON:0013702" // body proper
-    : generateIdWhenEmpty(array[index-1].id, array[index-1].name)
+    : array[index-1].id // previous array item
 }
 
-function normalizeCtData(data) {
+function normalizeCtData(context, data) {
   return data.reduce((collector, row) => {
-    row.cell_types.reduce(normalizeCt, collector);
+    row.cell_types
+       .filter(({id, name}) => checkNotEmpty(id) || checkNotEmpty(name))
+       .map(({id, name}) => {
+          return {
+            id: generateIdWhenEmpty(id, name),
+            name: name,
+            is_provisional: !checkNotEmpty(id),
+          };
+        })
+       .filter(({id}) => passIdFilterCriteria(context, id))
+       .reduce(normalizeCt, collector);
 
     // Add ccf_located_in relationship that is between AS and CT
-    const last_as = row.anatomical_structures.pop();
-    const last_ct = row.cell_types.pop();
+    const last_as = row.anatomical_structures
+                       .filter(({id, name}) => checkNotEmpty(id) || checkNotEmpty(name))
+                       .map(({id, name}) => generateIdWhenEmpty(id, name))
+                       .filter((id) => passIdFilterCriteria(context, id))
+                       .pop();
+    const last_ct = row.cell_types
+                       .filter(({id, name}) => checkNotEmpty(id) || checkNotEmpty(name))
+                       .map(({id, name}) => generateIdWhenEmpty(id, name))
+                       .filter((id) => passIdFilterCriteria(context, id))
+                       .pop();
     if (last_ct) {
-      addLocatedIn(collector, last_as, last_ct);
+      addLocatedIn(collector, last_ct, last_as);
     }
     // Add has_biomarker relationship between CT and BM
-    const biomarkers = row.biomarkers.filter(({id, name}) => checkNotEmpty(id) || checkNotEmpty(name));
-    const references = row.references.filter(({doi}) => checkNotEmpty(doi));
+    const biomarkers = row.biomarkers
+                          .filter(({id, name}) => checkNotEmpty(id) || checkNotEmpty(name))
+                          .map(({id, name}) => generateIdWhenEmpty(id, name))
+                          .filter((id) => passIdFilterCriteria(context, id));
+    const references = row.references
+                          .filter(({doi}) => checkNotEmpty(doi))
+                          .map(({doi}) => normalizeDoi(doi))
+                          .filter((doi) => passDoiFilterCriteria(context, doi));
     if (last_ct) {
       addCharacterizingBiomarkers(collector, last_ct, biomarkers, references);
     }
@@ -127,31 +165,29 @@ function normalizeCtData(data) {
   }, getPatchesForCellType())
 }
 
-function normalizeCt(collector, {id, name}, index, array) {
-  if (checkNotEmpty(id) || checkNotEmpty(name)) {
-    const foundEntity = collector.find(
-      (entity) => entity.id === generateIdWhenEmpty(id, name)
-    );
-    if (foundEntity) {
-      const oldCtIsa = foundEntity.ccf_ct_isa;
-      const newCtIsa = [
-        ...oldCtIsa,
-        getCtIsaEntity(array, index),
-      ];
-      foundEntity.ccf_ct_isa = removeDuplicates(newCtIsa);
-    } 
-    else {
-      collector.push({
-        id: generateIdWhenEmpty(id, name),
-        class_type: "CellType",
-        ccf_pref_label: name,
-        ccf_asctb_type: "CT",
-        ccf_is_provisional: !checkNotEmpty(id),
-        ccf_ct_isa: [ getCtIsaEntity(array, index) ], 
-        ccf_located_in: [],
-        ccf_has_biomarker_set: [],
-      });
-    }
+function normalizeCt(collector, {id: ct_id, name: ct_name, is_provisional}, index, array) {
+  const foundEntity = collector.find(
+    (entityInCollector) => entityInCollector.id === ct_id
+  );
+  if (foundEntity) {
+    const oldCtIsa = foundEntity.ccf_ct_isa;
+    const newCtIsa = [
+      ...oldCtIsa,
+      getCtIsaEntity(array, index),
+    ];
+    foundEntity.ccf_ct_isa = removeDuplicates(newCtIsa);
+  } 
+  else {
+    collector.push({
+      id: ct_id,
+      class_type: "CellType",
+      ccf_pref_label: ct_name,
+      ccf_asctb_type: "CT",
+      ccf_is_provisional: is_provisional,
+      ccf_ct_isa: [ getCtIsaEntity(array, index) ], 
+      ccf_located_in: [],
+      ccf_has_biomarker_set: [],
+    });
   }
   return collector;
 }
@@ -159,67 +195,73 @@ function normalizeCt(collector, {id, name}, index, array) {
 function getCtIsaEntity(array, index) {
   return (index === 0) 
     ? "CL:0000000" // cell type
-    : generateIdWhenEmpty(array[index-1].id, array[index-1].name)
+    : array[index-1].id; // previous array item
 }
 
-function normalizeBmData(data) {
-  return data.reduce((collector, row) => {
-    row.biomarkers.reduce(normalizeBm, collector);
-    return collector;
-  }, getPatchesForBiomarker())
-}
-function normalizeBm(collector, {id, name, b_type}, index, array) {
-  if (checkNotEmpty(id) || checkNotEmpty(name)) {
-    const foundEntity = collector.find(
-      (entity) => entity.id === generateIdWhenEmpty(id, name)
-    );
-    if (!foundEntity) {
-      collector.push({
-        id: generateIdWhenEmpty(id, name),
-        class_type: "Biomarker",
-        ccf_pref_label: name,
-        ccf_asctb_type: "BM",
-        ccf_biomarker_type: b_type,
-        ccf_is_provisional: !checkNotEmpty(id),
-      });
-    }
-  }
-  return collector;
-}
-
-function addLocatedIn(array, {id: as_id, name: as_name}, {id: ct_id, name: ct_name}) {
-  const foundEntity = array.find(
-    (entity) => entity.id === generateIdWhenEmpty(ct_id, ct_name)
+function addLocatedIn(collector, cellType, anatomicalStructure) {
+  const foundEntity = collector.find(
+    (entityInCollector) => entityInCollector.id === cellType
   );
   if (foundEntity) {
     const oldLocatedIn = foundEntity.ccf_located_in;
     const newLocatedIn = [
       ...oldLocatedIn,
-      generateIdWhenEmpty(as_id, as_name)
+      anatomicalStructure
     ];
     foundEntity.ccf_located_in = removeDuplicates(newLocatedIn);
   }
 }
 
-function addCharacterizingBiomarkers(array, {id: ct_id, name: ct_name}, biomarkers, references) {
-  const foundEntity = array.find(
-    (entity) => entity.id === generateIdWhenEmpty(ct_id, ct_name)
+function addCharacterizingBiomarkers(collector, cellType, biomarkers, references) {
+  const foundEntity = collector.find(
+    (entityInCollector) => entityInCollector.id === cellType
   );
   if (foundEntity) {
     const oldHasBiomarker = foundEntity.ccf_has_biomarker_set;
     const newHasBiomarker = [
       ...oldHasBiomarker,
       { 
-        members: removeDuplicates(biomarkers.map(
-          ({id: bm_id, name: bm_name}) => generateIdWhenEmpty(bm_id, bm_name)
-        )),
-        references: removeDuplicates(references.map(
-          ({doi}) => normalizeDoi(doi)
-        ))
+        members: removeDuplicates(biomarkers),
+        references: removeDuplicates(references),
       }
     ];
     foundEntity.ccf_has_biomarker_set = removeDuplicates(newHasBiomarker);
   }
+}
+
+function normalizeBmData(context, data) {
+  return data.reduce((collector, row) => {
+    row.biomarkers
+       .filter(({id, name}) => checkNotEmpty(id) || checkNotEmpty(name))
+       .map(({id, name, b_type}) => {
+          return {
+            id: generateIdWhenEmpty(id, name),
+            name: name,
+            b_type: b_type,
+            is_provisional: !checkNotEmpty(id),
+          };
+        })
+       .filter(({id}) => passIdFilterCriteria(context, id))
+       .reduce(normalizeBm, collector);
+    return collector;
+  }, getPatchesForBiomarker())
+}
+
+function normalizeBm(collector, {id: bm_id, name: bm_name, b_type, is_provisional}, index, array) {
+  const foundEntity = collector.find(
+    (entityInCollector) => entityInCollector.id === bm_id
+  );
+  if (!foundEntity) {
+    collector.push({
+      id: bm_id,
+      class_type: "Biomarker",
+      ccf_pref_label: bm_name,
+      ccf_asctb_type: "BM",
+      ccf_biomarker_type: b_type,
+      ccf_is_provisional: is_provisional,
+    });
+  }
+  return collector;
 }
 
 function generateIdWhenEmpty(id, name) {
@@ -239,4 +281,12 @@ function checkNotEmpty(str) {
 
 function removeDuplicates(array) {
   return Array.from(new Set(array.map(JSON.stringify)), JSON.parse);
+}
+
+function passIdFilterCriteria(context, id) {
+  return isIdValid(id) || !context.excludeBadValues;
+}
+
+function passDoiFilterCriteria(context, doi) {
+  return isDoiValid(doi) || !context.excludeBadValues;
 }
