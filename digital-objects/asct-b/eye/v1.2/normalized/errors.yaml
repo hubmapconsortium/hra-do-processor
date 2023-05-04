@@ -1,17 +1,7 @@
 - filename: >-
     /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/eye/v1.2/normalized/normalized.yaml
-  path: $.data.biomarkers[110].id
-  message: '''P28906'' does not match ''HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
-  has_sub_errors: false
-- filename: >-
-    /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/eye/v1.2/normalized/normalized.yaml
   path: $.data.cell_types[6].id
   message: '''FMA:62362'' does not match ''(CL|PCL):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
-  has_sub_errors: false
-- filename: >-
-    /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/eye/v1.2/normalized/normalized.yaml
-  path: $.data.cell_types[26].ccf_has_biomarker_set[0].references[2]
-  message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
   has_sub_errors: false
 - filename: >-
     /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/eye/v1.2/normalized/normalized.yaml
@@ -22,9 +12,4 @@
     /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/eye/v1.2/normalized/normalized.yaml
   path: $.data.cell_types[34].id
   message: '''FMA:67916'' does not match ''(CL|PCL):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+'''
-  has_sub_errors: false
-- filename: >-
-    /Users/johardi/Documents/Code/hra-do-processor/digital-objects/asct-b/eye/v1.2/normalized/normalized.yaml
-  path: $.data.cell_types[41].ccf_has_biomarker_set[0].references[0]
-  message: '''NoDOI'' does not match ''DOI:10\\.\\d+/.*|PMID:\\d+'''
   has_sub_errors: false

@@ -6420,7 +6420,6 @@ data:
       ccf_has_biomarker_set:
         - members:
             - HGNC:3353
-            - PR:000007081
           references: []
   biomarkers:
     - id: HGNC:3353
@@ -6428,10 +6427,4 @@ data:
       ccf_pref_label: neuron-specific enolase (NSE)
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
-      ccf_is_provisional: false
-    - id: PR:000007081
-      class_type: Biomarker
-      ccf_pref_label: gamma-enolase (human)
-      ccf_asctb_type: BM
-      ccf_biomarker_type: protein
       ccf_is_provisional: false

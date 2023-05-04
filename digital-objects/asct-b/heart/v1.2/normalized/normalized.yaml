@@ -567,7 +567,6 @@ data:
           references: []
         - members:
             - HGNC:8803
-            - GSN
             - HGNC:2705
           references: []
     - id: CL:0000746
@@ -658,7 +657,6 @@ data:
           references: []
         - members:
             - HGNC:11190
-            - MANY
           references: []
     - id: CL:0000097
       class_type: CellType
@@ -1260,12 +1258,6 @@ data:
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
-    - id: GSN
-      class_type: Biomarker
-      ccf_pref_label: GSN
-      ccf_asctb_type: BM
-      ccf_biomarker_type: gene
-      ccf_is_provisional: false
     - id: HGNC:1455
       class_type: Biomarker
       ccf_pref_label: CRT
@@ -1293,12 +1285,6 @@ data:
     - id: HGNC:11190
       class_type: Biomarker
       ccf_pref_label: SOX10
-      ccf_asctb_type: BM
-      ccf_biomarker_type: gene
-      ccf_is_provisional: false
-    - id: MANY
-      class_type: Biomarker
-      ccf_pref_label: S100
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false

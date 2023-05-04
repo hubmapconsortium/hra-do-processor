@@ -732,13 +732,7 @@ data:
             - ASCTB-TEMP:cholesterol-esters
           references:
             - >-
-              McKay,D.,Pinkerton,J.,Hertig,A.&Danziger,S.(1961).TheAdultHumanOvary:AHistochemicalStudy.Obstetrics&Gynecology,18(1),13-39.
-            - >-
               BossJH,ScullyRE,WegnerKH,CohenRB.StructuralVariationsInTheAdultOvary.ClinicalSignificance.ObstetGynecol.1965Jun;25:747-64.PMID:14287465.
-            - >-
-              Mills,StaceyE.HistologyforPathologists.Fifthedition.Philadelphia:LippincottWilliams&Wilkins,2020.
-            - >-
-              JungbluthAA,BusamKJ,GeraldWL,etal.A103:Ananti-melan-amonoclonalantibodyforthedetectionofmalignantmelanomainparaffin-embeddedtissues.AmJSurgPathol1998;22:595-602
             - >-
               PelkeyTJ,FriersonHFJr,MillsSE,StolerMH.Thediagnosticutilityofinhibinstaininginovarianneoplasms.IntJGynecolPathol.1998Apr;17(2):97-105.doi:10.1097/00004347-199804000-00001.PMID:9553804.
     - id: ASCTB-TEMP:columnar-ovarian-surface-epithelial-cell
@@ -754,17 +748,7 @@ data:
         - members:
             - HGNC:1435
             - HGNC:7371
-          references:
-            - >-
-              Mills,StaceyE.HistologyforPathologists.Fifthedition.Philadelphia:LippincottWilliams&Wilkins,2020.
-            - >-
-              Reeves,G.SpecificStromaInTheCortexAndMedullaOfTheOvary.CellTypesAndVascularSupplyInRelationToFollicularApparatusAndOvulation.Obstet.Gynecol.Surv.27,179-181(1971).
-            - >-
-              HummitzschK,Irving-RodgersHF,HatzirodosN,etal.Anewmodelofdevelopmentofthemammalianovaryandfollicles.PLoSOne2013;8:e55578
-            - >-
-              BlausteinA,LeeH.Surfacecellsoftheovaryandpelvicperitoneum:Ahistochemicalandultrastructuralcomparison.GynecolOncol1979;8:34-43
-            - >-
-              McKay,D.,Pinkerton,J.,Hertig,A.&Danziger,S.(1961).TheAdultHumanOvary:AHistochemicalStudy.Obstetrics&Gynecology,18(1),13-39.
+          references: []
     - id: ASCTB-TEMP:flattened-cuboidal-ovarian-surface-epithelial-cell
       class_type: CellType
       ccf_pref_label: flattened cuboidal ovarian surface epithelial cell
@@ -778,17 +762,7 @@ data:
         - members:
             - HGNC:8524
             - HGNC:1748
-          references:
-            - >-
-              Mills,StaceyE.HistologyforPathologists.Fifthedition.Philadelphia:LippincottWilliams&Wilkins,2020.
-            - >-
-              Reeves,G.SpecificStromaInTheCortexAndMedullaOfTheOvary.CellTypesAndVascularSupplyInRelationToFollicularApparatusAndOvulation.Obstet.Gynecol.Surv.27,179-181(1971).
-            - >-
-              HummitzschK,Irving-RodgersHF,HatzirodosN,etal.Anewmodelofdevelopmentofthemammalianovaryandfollicles.PLoSOne2013;8:e55578
-            - >-
-              BlausteinA,LeeH.Surfacecellsoftheovaryandpelvicperitoneum:Ahistochemicalandultrastructuralcomparison.GynecolOncol1979;8:34-43
-            - >-
-              McKay,D.,Pinkerton,J.,Hertig,A.&Danziger,S.(1961).TheAdultHumanOvary:AHistochemicalStudy.Obstetrics&Gynecology,18(1),13-39.
+          references: []
     - id: ASCTB-TEMP:corpus-luteum-endothelial-cell
       class_type: CellType
       ccf_pref_label: corpus luteum endothelial cell
@@ -873,25 +847,6 @@ data:
       ccf_has_biomarker_set:
         - members: []
           references: []
-    - id: EFO:0005289
-      class_type: CellType
-      ccf_pref_label: mural granulosa cell
-      ccf_asctb_type: CT
-      ccf_is_provisional: false
-      ccf_ct_isa:
-        - CL:0000000
-      ccf_located_in:
-        - UBERON:2001571
-        - ASCTB-TEMP:early-antral-follicle
-        - ASCTB-TEMP:pre-selection-antral-follicle
-        - ASCTB-TEMP:selection-antral-follicle
-        - ASCTB-TEMP:dominance-antral-follicle
-        - UBERON:0003982
-      ccf_has_biomarker_set:
-        - members: []
-          references:
-            - >-
-              GougeonA.Dynamicsoffolliculargrowthinthehuman:amodelfrompreliminaryresults.HumReprod.1986Feb;1(2):81-7.doi:10.1093/oxfordjournals.humrep.a136365.PMID:3558758.
     - id: CL:0000654
       class_type: CellType
       ccf_pref_label: primary oocyte
@@ -915,8 +870,6 @@ data:
           references:
             - >-
               GougeonA.Dynamicsoffolliculargrowthinthehuman:amodelfrompreliminaryresults.HumReprod.1986Feb;1(2):81-7.doi:10.1093/oxfordjournals.humrep.a136365.PMID:3558758.
-            - >-
-              RichardsJS,RenYA,CandelariaN,AdamsJE,RajkovicA.OvarianFollicularThecaCellRecruitment,Differentiation,andImpactonFertility:2017Update.EndocrRev.2018;39(1):1-20.
     - id: ASCTB-TEMP:pre-antral-follicle-granulosa-cell
       class_type: CellType
       ccf_pref_label: pre-antral follicle granulosa cell

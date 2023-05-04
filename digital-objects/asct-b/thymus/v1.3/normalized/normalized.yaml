@@ -401,7 +401,6 @@ data:
             - HGNC:4826
           references:
             - DOI:10.1126/science.aay3224
-            - NoDOI
     - id: CL:0000097
       class_type: CellType
       ccf_pref_label: mast cell

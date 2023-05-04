@@ -661,7 +661,6 @@ data:
           references:
             - DOI:10.1016/j.preteyeres.2020.100844
             - DOI:10.1002/cne.10491
-            - NoDOI
     - id: ASCTB-TEMP:invaginating-bipolar-cell
       class_type: CellType
       ccf_pref_label: invaginating bipolar cell
@@ -908,7 +907,6 @@ data:
             - HGNC:2418
             - HGNC:4235
           references:
-            - NoDOI
             - DOI:10.1016/j.ophtha.2017.09.016
     - id: CL:0008034
       class_type: CellType
@@ -1001,7 +999,6 @@ data:
         - UBERON:0003952
       ccf_has_biomarker_set:
         - members:
-            - P28906
             - HGNC:8803
           references:
             - DOI:10.1111/jcmm.13270
@@ -1016,7 +1013,6 @@ data:
         - UBERON:0003952
       ccf_has_biomarker_set:
         - members:
-            - P28906
             - HGNC:8803
           references:
             - DOI:10.1111/jcmm.13270
@@ -1756,12 +1752,6 @@ data:
     - id: HGNC:1759
       class_type: Biomarker
       ccf_pref_label: N-cadherin
-      ccf_asctb_type: BM
-      ccf_biomarker_type: protein
-      ccf_is_provisional: false
-    - id: P28906
-      class_type: Biomarker
-      ccf_pref_label: CD34
       ccf_asctb_type: BM
       ccf_biomarker_type: protein
       ccf_is_provisional: false

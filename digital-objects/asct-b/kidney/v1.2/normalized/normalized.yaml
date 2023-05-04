@@ -896,7 +896,6 @@ data:
             - HGNC:20862
             - HGNC:11530
             - HGNC:633
-            - SLC4A11
           references:
             - DOI:10.1101/2021.07.28.454201
             - DOI:10.1016/j.devcel.2019.10.005
@@ -1589,7 +1588,6 @@ data:
         - ASCTB-TEMP:immune
       ccf_has_biomarker_set:
         - members:
-            - 'HGNC:'
             - HGNC:3619
           references:
             - DOI:10.1101/2021.07.28.454201
@@ -2239,12 +2237,6 @@ data:
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
-    - id: SLC4A11
-      class_type: Biomarker
-      ccf_pref_label: SLC9A3
-      ccf_asctb_type: BM
-      ccf_biomarker_type: gene
-      ccf_is_provisional: false
     - id: HGNC:10832
       class_type: Biomarker
       ccf_pref_label: SH3GL3
@@ -2692,12 +2684,6 @@ data:
     - id: HGNC:1628
       class_type: Biomarker
       ccf_pref_label: CD14
-      ccf_asctb_type: BM
-      ccf_biomarker_type: gene
-      ccf_is_provisional: false
-    - id: 'HGNC:'
-      class_type: Biomarker
-      ccf_pref_label: ITGAL
       ccf_asctb_type: BM
       ccf_biomarker_type: gene
       ccf_is_provisional: false
