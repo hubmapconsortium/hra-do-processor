@@ -7,8 +7,7 @@ import { header } from '../utils/logging.js';
 
 export function normalizeCollection(context) {
   header(context, 'run-normalize');
-  const { path, doString } = context.selectedDigitalObject;
-  const id = `http://purl.humanatlas.io/${doString}`;
+  const { path } = context.selectedDigitalObject;
   const metadata = readMetadata(path);
 
   const dataPath = resolve(path, 'raw', metadata.datatable);

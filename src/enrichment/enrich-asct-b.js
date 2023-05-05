@@ -60,12 +60,10 @@ export function enrichAsctb(context) {
 
 function overrideSchemaId(context) {
   const { selectedDigitalObject: obj, processorHome } = context;
-
-  const newId = `http://purl.humanatlas.io/${obj.doString}`;
   const schema = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml`);
 
   throwOnError(
-    `sed -i.bak 's|^id:.*|id: ${newId}|' ${schema}`,
+    `sed -i.bak 's|^id:.*|id: ${obj.iri}|' ${schema}`,
     'Override schema id failed.'
   );
 }
