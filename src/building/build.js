@@ -72,9 +72,16 @@ async function runOnChildObjects(context, action) {
   const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
   const childObjects = load(readFileSync(normalizedPath))['data'];
   for (const child of childObjects) {
+    const selectedDigitalObject = getDigitalObjectInformation(resolve(context.doHome, child));
+
+    // If baseIri is set, then use that for a digital object's default IRI
+    if (context.baseIri) {
+      const doString = context.selectedDigitalObject.doString;
+      context.selectedDigitalObject.iri = `${context.baseIri}${doString}`;
+    }
     await action({
       ...context,
-      selectedDigitalObject: getDigitalObjectInformation(resolve(context.doHome, child)),
+      selectedDigitalObject,
     });
   }
 }
@@ -95,7 +102,7 @@ function cleanAction(context) {
 }
 
 export async function build(context) {
-  info('Preparing to build...')
+  info('Preparing to build...');
   const { selectedDigitalObject: obj, clean } = context;
   const commands = obj.type === 'collection' ? COLLECTION_COMMANDS : COMMANDS;
   for (const cmd of commands) {
