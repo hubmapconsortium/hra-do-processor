@@ -8,12 +8,12 @@ export function banner(title) {
 }
 
 export function header(context, pipeline) {
-  const { type, name, version, doString } = context.selectedDigitalObject;
+  const { type, name, version, iri } = context.selectedDigitalObject;
   info('');
   info(chalk.whiteBright('---') + ' ' + 
        chalk.green(`${type}:${version}:${name}`) + ' ' + 
        chalk.whiteBright(`(${pipeline})`) + ' @ ' +
-       chalk.cyanBright(doString) + ' ' +
+       chalk.cyanBright(iri) + ' ' +
        chalk.whiteBright('---'));
 }
 
