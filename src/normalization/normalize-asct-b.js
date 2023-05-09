@@ -1,17 +1,18 @@
-import chalk from 'chalk';
 import { readFileSync, writeFileSync } from 'fs';
 import { dump } from 'js-yaml';
 import { resolve } from 'path';
 import sh from 'shelljs';
+import { header, info, more, warning } from '../utils/logging.js';
 import { validateNormalized } from '../utils/validation.js';
-import { header, info, warning, more } from '../utils/logging.js';
+import {
+  getPatchesForAnatomicalStructure,
+  getPatchesForBiomarker,
+  getPatchesForCellType,
+  isDoiValid,
+  isIdValid,
+  normalizeDoi
+} from './patches.js';
 import { readMetadata, writeNormalized } from './utils.js';
-import { getPatchesForAnatomicalStructure, 
-         getPatchesForCellType, 
-         getPatchesForBiomarker,
-         isIdValid,
-         isDoiValid,
-         normalizeDoi } from './patches.js';
 
 const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
 

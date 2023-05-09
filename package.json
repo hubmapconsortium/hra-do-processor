@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/hubmapconsortium/ccf-linkml#readme",
   "dependencies": {
+    "@math.gl/core": "^3.6.3",
+    "ccf-body-ui": "^0.0.1",
     "chalk": "^5.2.0",
     "commander": "^10.0.0",
     "glob": "^9.2.1",

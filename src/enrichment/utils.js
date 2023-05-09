@@ -1,6 +1,6 @@
 import { resolve } from 'path';
-import { throwOnError } from '../utils/sh-exec.js';
 import { info, more } from '../utils/logging.js';
+import { throwOnError } from '../utils/sh-exec.js';
 
 export function convertNormalized(context) {
   const { selectedDigitalObject: obj, processorHome, skipValidation } = context;

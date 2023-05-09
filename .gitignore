@@ -1,3 +1,9 @@
+# Repo-specific ignores
+mirrors
+digital-objects/*/*/*/normalized
+digital-objects/*/*/*/enriched
+digital-objects/*/*/*/packaged
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -3,8 +3,10 @@ import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
 import sh from 'shelljs';
+import { header } from '../utils/logging.js';
 
 export function enrichCollection(context) {
+  header(context, 'run-enrich');
   const obj = context.selectedDigitalObject;
   const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
   const data = load(readFileSync(normalizedPath))['data'];

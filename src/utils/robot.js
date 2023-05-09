@@ -1,6 +1,6 @@
 import { resolve } from 'path';
-import { throwOnError } from './sh-exec.js';
 import { more } from './logging.js';
+import { throwOnError } from './sh-exec.js';
 
 export function collectEntities(context, ontology, graphData) {
   const { selectedDigitalObject: obj, processorHome } = context;

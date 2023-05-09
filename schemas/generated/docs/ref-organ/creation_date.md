@@ -19,6 +19,7 @@ None &#8594;  <sub>1..1</sub> [Date](types/Date.md)
 
 ## Used by
 
+ * [RefOrganMetadata](RefOrganMetadata.md)
  * [SpatialEntity](SpatialEntity.md)
 
 ## Other properties

@@ -6,7 +6,7 @@ import { enrich } from '../enrichment/enrich.js';
 import { normalize } from '../normalization/normalize.js';
 import { packageIt } from '../packaging/package.js';
 import { getDigitalObjectInformation } from '../utils/digital-object.js';
-import { info, banner } from '../utils/logging.js';
+import { banner, info } from '../utils/logging.js';
 
 const COMMANDS = [
   {
@@ -36,8 +36,8 @@ const COLLECTION_COMMANDS = [
     step: 'raw',
     test: 'raw/metadata.yaml',
     action: async (context) => {
-      await normalize(context);
-      await runOnChildObjects(context, cleanAction);
+      // await normalize(context);
+      // await runOnChildObjects(context, cleanAction);
       cleanAction(context);
     },
   },
@@ -72,13 +72,7 @@ async function runOnChildObjects(context, action) {
   const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
   const childObjects = load(readFileSync(normalizedPath))['data'];
   for (const child of childObjects) {
-    const selectedDigitalObject = getDigitalObjectInformation(resolve(context.doHome, child));
-
-    // If baseIri is set, then use that for a digital object's default IRI
-    if (context.baseIri) {
-      const doString = context.selectedDigitalObject.doString;
-      context.selectedDigitalObject.iri = `${context.baseIri}${doString}`;
-    }
+    const selectedDigitalObject = getDigitalObjectInformation(resolve(context.doHome, child), context.baseIri);
     await action({
       ...context,
       selectedDigitalObject,

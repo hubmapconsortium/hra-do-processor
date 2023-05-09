@@ -8,10 +8,13 @@ prefixes:
   xsd: http://www.w3.org/2001/XMLSchema#
   obo: http://purl.obolibrary.org/obo/
   linkml: https://w3id.org/linkml/
-imports:
-  - linkml:types
+
 default_prefix: ccf
 default_range: string
+
+imports:
+  - linkml:types
+  - ../shared/metadata
   
 classes:
   SpatialEntity:
@@ -36,6 +39,7 @@ classes:
       - reference_organ
       - extraction_set
       - rui_rank
+
   SpatialObjectReference:
     class_uri: ccf:SpatialObjectReference
     slots:
@@ -75,21 +79,52 @@ classes:
     class_uri: ccf:AnatomicalStructure
     slots:
       - id
+  RefOrganMetadata:
+    class_uri: dcat:Dataset
+    slots:
+      - type
+      - name
+      - version
+      - title
+      - description
+      - creators
+      - project_leads
+      - reviewers
+      - externalReviewers
+      - creation_date
+      - license
+      - publisher
+      - funders
+      - hubmapId
+      - doi
+      - citation
+      - citationOverall
+      - datatable
   Container:
     tree_root: true
     attributes:
-      extraction_sets:
-        multivalued: true
-        inlined_as_list: true
-        range: ExtractionSet
-      spatial_entities:
+      id:
+        range: uriorcurie
+      metadata:
+        range: RefOrganMetadata
+  
+      data:
         multivalued: true
         inlined_as_list: true
         range: SpatialEntity
-      rui_placements:
-        multivalued: true
-        inlined_as_list: true
-        range: SpatialPlacement
+  
+      # extraction_sets:
+      #   multivalued: true
+      #   inlined_as_list: true
+      #   range: ExtractionSet
+      # spatial_entities:
+      #   multivalued: true
+      #   inlined_as_list: true
+      #   range: SpatialEntity
+      # rui_placements:
+      #   multivalued: true
+      #   inlined_as_list: true
+      #   range: SpatialPlacement
 
 slots:
   id:

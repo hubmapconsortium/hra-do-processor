@@ -1,9 +1,8 @@
-import chalk from 'chalk';
 import { resolve } from 'path';
-import { convertNormalizedToOwl, downloadValidationResult } from './utils.js';
+import { error, header, info } from '../utils/logging.js';
 import { collectEntities, extractClassHierarchy, mergeOntologies } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
-import { header, info, error, more } from '../utils/logging.js';
+import { convertNormalizedToOwl, downloadValidationResult } from './utils.js';
 
 export function enrichAsctb(context) {
   header(context, 'run-enrich');

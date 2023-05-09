@@ -316,6 +316,7 @@
     "$id": "http://purl.humanatlas.io/specs/collection",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": true,
+    "description": "",
     "metamodel_version": "1.7.0",
     "properties": {
         "data": {

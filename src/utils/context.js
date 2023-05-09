@@ -22,13 +22,7 @@ export function getContext(program, subcommand, selectedDigitalObject) {
   if (selectedDigitalObject) {
     try {
       const doPath = parseDirectory(selectedDigitalObject, context.doHome);
-      context.selectedDigitalObject = getDigitalObjectInformation(doPath);
-      
-      // If baseIri is set, then use that for a digital object's default IRI
-      if (context.baseIri) {
-        const doString = context.selectedDigitalObject.doString;
-        context.selectedDigitalObject.iri = `${context.baseIri}${doString}`;
-      }
+      context.selectedDigitalObject = getDigitalObjectInformation(doPath, context.baseIri);
     } catch (error) {
       program.error(error.message);
     }

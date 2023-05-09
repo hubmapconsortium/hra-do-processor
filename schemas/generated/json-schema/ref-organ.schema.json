@@ -18,23 +18,17 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "extraction_sets": {
-                    "items": {
-                        "$ref": "#/$defs/ExtractionSet"
-                    },
-                    "type": "array"
-                },
-                "rui_placements": {
-                    "items": {
-                        "$ref": "#/$defs/SpatialPlacement"
-                    },
-                    "type": "array"
-                },
-                "spatial_entities": {
+                "data": {
                     "items": {
                         "$ref": "#/$defs/SpatialEntity"
                     },
                     "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "metadata": {
+                    "$ref": "#/$defs/RefOrganMetadata"
                 }
             },
             "title": "Container",
@@ -83,6 +77,23 @@
             "title": "ExtractionSet",
             "type": "object"
         },
+        "Grant": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "awardNumber": {
+                    "type": "string"
+                },
+                "funder": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "funder"
+            ],
+            "title": "Grant",
+            "type": "object"
+        },
         "OrganSideEnum": {
             "description": "",
             "enum": [
@@ -91,6 +102,121 @@
             ],
             "title": "OrganSideEnum",
             "type": "string"
+        },
+        "Person": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "firstName": {
+                    "type": "string"
+                },
+                "fullName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "orcid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "fullName",
+                "firstName",
+                "lastName",
+                "orcid"
+            ],
+            "title": "Person",
+            "type": "object"
+        },
+        "RefOrganMetadata": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "citation": {
+                    "type": "string"
+                },
+                "citationOverall": {
+                    "type": "string"
+                },
+                "creation_date": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "creators": {
+                    "items": {
+                        "$ref": "#/$defs/Person"
+                    },
+                    "type": "array"
+                },
+                "datatable": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "doi": {
+                    "type": "string"
+                },
+                "externalReviewers": {
+                    "items": {
+                        "$ref": "#/$defs/Person"
+                    },
+                    "type": "array"
+                },
+                "funders": {
+                    "items": {
+                        "$ref": "#/$defs/Grant"
+                    },
+                    "type": "array"
+                },
+                "hubmapId": {
+                    "type": "string"
+                },
+                "license": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "project_leads": {
+                    "items": {
+                        "$ref": "#/$defs/Person"
+                    },
+                    "type": "array"
+                },
+                "publisher": {
+                    "type": "string"
+                },
+                "reviewers": {
+                    "items": {
+                        "$ref": "#/$defs/Person"
+                    },
+                    "type": "array"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "version",
+                "title",
+                "description",
+                "creators",
+                "creation_date",
+                "license"
+            ],
+            "title": "RefOrganMetadata",
+            "type": "object"
         },
         "RotationUnitEnum": {
             "description": "",
@@ -314,25 +440,20 @@
     "$id": "http://purl.humanatlas.io/specs/ref-organ",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": true,
+    "description": "",
     "metamodel_version": "1.7.0",
     "properties": {
-        "extraction_sets": {
-            "items": {
-                "$ref": "#/$defs/ExtractionSet"
-            },
-            "type": "array"
-        },
-        "rui_placements": {
-            "items": {
-                "$ref": "#/$defs/SpatialPlacement"
-            },
-            "type": "array"
-        },
-        "spatial_entities": {
+        "data": {
             "items": {
                 "$ref": "#/$defs/SpatialEntity"
             },
             "type": "array"
+        },
+        "id": {
+            "type": "string"
+        },
+        "metadata": {
+            "$ref": "#/$defs/RefOrganMetadata"
         }
     },
     "title": "ref-organ",

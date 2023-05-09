@@ -7,11 +7,10 @@
 URI: [ccf:ExtractionSet](http://purl.org/ccf/ExtractionSet)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialEntity],[SpatialEntity]<extraction_set_for%201..1-%20[ExtractionSet&#124;id:string;label:string;rui_rank:integer%20%3F],[Container]++-%20extraction_sets%200..*>[ExtractionSet],[SpatialEntity]-%20extraction_set%200..1>[ExtractionSet],[Container])](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialEntity],[SpatialEntity]<extraction_set_for%201..1-%20[ExtractionSet&#124;id:string;label:string;rui_rank:integer%20%3F],[Container]++-%20extraction_sets%200..*>[ExtractionSet],[SpatialEntity]-%20extraction_set%200..1>[ExtractionSet],[Container])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialEntity],[SpatialEntity]<extraction_set_for%201..1-%20[ExtractionSet&#124;id:string;label:string;rui_rank:integer%20%3F],[SpatialEntity]-%20extraction_set%200..1>[ExtractionSet])](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialEntity],[SpatialEntity]<extraction_set_for%201..1-%20[ExtractionSet&#124;id:string;label:string;rui_rank:integer%20%3F],[SpatialEntity]-%20extraction_set%200..1>[ExtractionSet])
 
 ## Referenced by Class
 
- *  **None** *[➞extraction_sets](container__extraction_sets.md)*  <sub>0..\*</sub>  **[ExtractionSet](ExtractionSet.md)**
  *  **None** *[extraction_set](extraction_set.md)*  <sub>0..1</sub>  **[ExtractionSet](ExtractionSet.md)**
 
 ## Attributes

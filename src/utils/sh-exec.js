@@ -1,7 +1,6 @@
-import sh from 'shelljs';
 import { writeFileSync } from 'fs';
 import { dump } from 'js-yaml';
-import chalk from 'chalk';
+import sh from 'shelljs';
 import { error, more } from './logging.js';
 
 export function throwOnError(command, message, errorParser=defaultParser) {

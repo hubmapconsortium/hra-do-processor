@@ -22,12 +22,21 @@ prefixes:
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
-  shex:
-    prefix_prefix: shex
-    prefix_reference: http://www.w3.org/ns/shex#
+  dcat:
+    prefix_prefix: dcat
+    prefix_reference: http://www.w3.org/ns/dcat#
+  dct:
+    prefix_prefix: dct
+    prefix_reference: http://purl.org/dc/terms/
+  foaf:
+    prefix_prefix: foaf
+    prefix_reference: http://xmlns.com/foaf/0.1/
   schema:
     prefix_prefix: schema
     prefix_reference: http://schema.org/
+  shex:
+    prefix_prefix: shex
+    prefix_reference: http://www.w3.org/ns/shex#
 default_prefix: ccf
 default_range: string
 types:
@@ -492,6 +501,138 @@ slots:
     range: integer
     required: false
     recommended: true
+  type:
+    name: type
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:about
+    required: false
+  name:
+    name: name
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:name
+    required: false
+  version:
+    name: version
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:version
+    required: true
+  title:
+    name: title
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: dct:title
+    required: true
+  description:
+    name: description
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: dct:description
+    required: true
+  creators:
+    name: creators
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: dct:creator
+    multivalued: true
+    range: Person
+    required: true
+    inlined_as_list: true
+  project_leads:
+    name: project_leads
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: ccf:project_lead
+    multivalued: true
+    range: Person
+    required: false
+    inlined_as_list: true
+  reviewers:
+    name: reviewers
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:reviewedBy
+    multivalued: true
+    range: Person
+    required: false
+    inlined_as_list: true
+  externalReviewers:
+    name: externalReviewers
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: ccf:externallyReviewedBy
+    multivalued: true
+    range: Person
+    required: false
+    inlined_as_list: true
+  license:
+    name: license
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: dct:license
+    required: true
+  publisher:
+    name: publisher
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: dct:publisher
+    required: false
+  funders:
+    name: funders
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:funding
+    multivalued: true
+    range: Grant
+    required: false
+    inlined_as_list: true
+  hubmapId:
+    name: hubmapId
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: ccf:hubmap_id
+    required: false
+  doi:
+    name: doi
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: ccf:doi
+    range: uriorcurie
+    required: false
+  citation:
+    name: citation
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:citation
+    required: false
+  citationOverall:
+    name: citationOverall
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: ccf:citation_overall
+    required: false
+  datatable:
+    name: datatable
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: ccf:data_table
+    multivalued: true
+    required: false
+  fullName:
+    name: fullName
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: foaf:name
+    required: true
+  firstName:
+    name: firstName
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: foaf:firstName
+    required: true
+  lastName:
+    name: lastName
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: foaf:surname
+    required: true
+  orcid:
+    name: orcid
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:identifier
+    required: true
+  funder:
+    name: funder
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:funder
+    required: true
+  awardNumber:
+    name: awardNumber
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:award
+    required: false
 classes:
   SpatialEntity:
     name: SpatialEntity
@@ -564,28 +705,63 @@ classes:
     slots:
     - id
     class_uri: ccf:AnatomicalStructure
+  RefOrganMetadata:
+    name: RefOrganMetadata
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slots:
+    - type
+    - name
+    - version
+    - title
+    - description
+    - creators
+    - project_leads
+    - reviewers
+    - externalReviewers
+    - creation_date
+    - license
+    - publisher
+    - funders
+    - hubmapId
+    - doi
+    - citation
+    - citationOverall
+    - datatable
+    class_uri: dcat:Dataset
   Container:
     name: Container
     from_schema: http://purl.humanatlas.io/specs/ref-organ
     attributes:
-      extraction_sets:
-        name: extraction_sets
+      id:
+        name: id
         from_schema: http://purl.humanatlas.io/specs/ref-organ
-        multivalued: true
-        range: ExtractionSet
-        inlined_as_list: true
-      spatial_entities:
-        name: spatial_entities
+        range: uriorcurie
+      metadata:
+        name: metadata
+        from_schema: http://purl.humanatlas.io/specs/ref-organ
+        range: RefOrganMetadata
+      data:
+        name: data
         from_schema: http://purl.humanatlas.io/specs/ref-organ
         multivalued: true
         range: SpatialEntity
         inlined_as_list: true
-      rui_placements:
-        name: rui_placements
-        from_schema: http://purl.humanatlas.io/specs/ref-organ
-        multivalued: true
-        range: SpatialPlacement
-        inlined_as_list: true
     tree_root: true
+  Person:
+    name: Person
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slots:
+    - fullName
+    - firstName
+    - lastName
+    - orcid
+    class_uri: foaf:Person
+  Grant:
+    name: Grant
+    from_schema: http://purl.humanatlas.io/specs/ref-organ
+    slots:
+    - funder
+    - awardNumber
+    class_uri: schema:Grant
 source_file: schemas/src/digital-objects/ref-organ.yaml
 

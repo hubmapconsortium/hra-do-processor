@@ -1,9 +1,12 @@
+import { resolve } from 'path';
+import sh from 'shelljs';
 import { normalizeAsctb } from './normalize-asct-b.js';
 import { normalizeCollection } from './normalize-collection.js';
 import { normalizeRefOrgan } from './normalize-ref-organ.js';
 
 export async function normalize(context) {
   const obj = context.selectedDigitalObject;
+  sh.mkdir('-p', resolve(obj.path, 'normalized'));
   switch (obj.type) {
     case 'asct-b':
       await normalizeAsctb(context);
@@ -12,7 +15,7 @@ export async function normalize(context) {
       normalizeCollection(context);
       break;
     case 'ref-organ':
-      normalizeRefOrgan(context);
+      await normalizeRefOrgan(context);
       break;
     default:
       console.log(`normalize: "${obj.type}" digital object type not supported (yet)`);

@@ -1,3 +1,7 @@
+import { header } from '../utils/logging.js';
+import { convertNormalized } from './utils.js';
+
 export function enrichRefOrgan(context) {
-  console.log('enrich ref-organ', context.selectedDigitalObject.doString, 'not implemented (yet)');
+  header(context, 'run-enrich');
+  convertNormalized(context);
 }

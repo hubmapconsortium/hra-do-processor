@@ -7,16 +7,16 @@
 URI: [ccf:Container](http://purl.org/ccf/Container)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialPlacement],[SpatialEntity],[ExtractionSet],[SpatialPlacement]<rui_placements%200..*-++[Container],[SpatialEntity]<spatial_entities%200..*-++[Container],[ExtractionSet]<extraction_sets%200..*-++[Container])](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialPlacement],[SpatialEntity],[ExtractionSet],[SpatialPlacement]<rui_placements%200..*-++[Container],[SpatialEntity]<spatial_entities%200..*-++[Container],[ExtractionSet]<extraction_sets%200..*-++[Container])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialEntity],[RefOrganMetadata],[SpatialEntity]<data%200..*-++[Container&#124;id:uriorcurie%20%3F],[RefOrganMetadata]<metadata%200..1-++[Container])](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialEntity],[RefOrganMetadata],[SpatialEntity]<data%200..*-++[Container&#124;id:uriorcurie%20%3F],[RefOrganMetadata]<metadata%200..1-++[Container])
 
 ## Attributes
 
 
 ### Own
 
- * [➞extraction_sets](container__extraction_sets.md)  <sub>0..\*</sub>
-     * Range: [ExtractionSet](ExtractionSet.md)
- * [➞spatial_entities](container__spatial_entities.md)  <sub>0..\*</sub>
+ * [➞id](container__id.md)  <sub>0..1</sub>
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+ * [➞metadata](container__metadata.md)  <sub>0..1</sub>
+     * Range: [RefOrganMetadata](RefOrganMetadata.md)
+ * [➞data](container__data.md)  <sub>0..\*</sub>
      * Range: [SpatialEntity](SpatialEntity.md)
- * [➞rui_placements](container__rui_placements.md)  <sub>0..\*</sub>
-     * Range: [SpatialPlacement](SpatialPlacement.md)

@@ -242,17 +242,23 @@ ccf:AsctbRecord a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AsctbRecord" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom ccf:ProteinBiomarker ;
-            owl:onProperty ccf:contains_protein_biomarkers ],
+            owl:allValuesFrom ccf:MetaBiomarker ;
+            owl:onProperty ccf:contains_meta_biomarkers ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ccf:StudyReference ;
-            owl:onProperty ccf:contains_references ],
+            owl:allValuesFrom ccf:GeneBiomarker ;
+            owl:onProperty ccf:contains_gene_biomarkers ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:FtuType ;
+            owl:onProperty ccf:ftu_types ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Biomarker ;
+            owl:onProperty ccf:contains_biomarkers ],
         [ a owl:Restriction ;
             owl:allValuesFrom ccf:LipidBiomarker ;
             owl:onProperty ccf:contains_lipid_biomarkers ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ccf:MetaBiomarker ;
-            owl:onProperty ccf:contains_meta_biomarkers ],
+            owl:allValuesFrom ccf:CellType ;
+            owl:onProperty ccf:contains_cell_types ],
         [ a owl:Class ;
             owl:intersectionOf ( [ a owl:Restriction ;
                         owl:allValuesFrom ccf:AnatomicalStructure ;
@@ -263,17 +269,11 @@ ccf:AsctbRecord a owl:Class,
             owl:allValuesFrom ccf:ProtBiomarker ;
             owl:onProperty ccf:contains_prot_biomarkers ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ccf:CellType ;
-            owl:onProperty ccf:contains_cell_types ],
+            owl:allValuesFrom ccf:StudyReference ;
+            owl:onProperty ccf:contains_references ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Biomarker ;
-            owl:onProperty ccf:contains_biomarkers ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:FtuType ;
-            owl:onProperty ccf:ftu_types ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:GeneBiomarker ;
-            owl:onProperty ccf:contains_gene_biomarkers ] ;
+            owl:allValuesFrom ccf:ProteinBiomarker ;
+            owl:onProperty ccf:contains_protein_biomarkers ] ;
     skos:exactMatch ccf:AsctbRecord ;
     linkml:attributes "{}" .
 
@@ -283,7 +283,11 @@ ccf:Biomarker a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:pref_label ],
+            owl:onProperty ccf:biomarker_type ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty rdfs:label ;
@@ -291,11 +295,7 @@ ccf:Biomarker a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:biomarker_type ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
-            owl:qualifiedCardinality 1 ] ;
+            owl:onProperty ccf:pref_label ] ;
     skos:exactMatch ccf:Biomarker ;
     linkml:attributes "{}" .
 
@@ -304,7 +304,7 @@ ccf:CellType a owl:Class,
     rdfs:label "CellType" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass ccf:String ;
-            owl:onProperty rdfs:label ;
+            owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
@@ -312,7 +312,7 @@ ccf:CellType a owl:Class,
             owl:onProperty ccf:pref_label ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
+            owl:onProperty rdfs:label ;
             owl:qualifiedCardinality 1 ] ;
     skos:exactMatch ccf:CellType ;
     linkml:attributes "{}" .
@@ -321,13 +321,13 @@ ccf:FtuType a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "FtuType" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:pref_label ],
-        [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty rdfs:label ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:pref_label ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:id ;
@@ -339,6 +339,10 @@ ccf:GeneBiomarker a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "GeneBiomarker" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:biomarker_type ],
@@ -349,10 +353,6 @@ ccf:GeneBiomarker a owl:Class,
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty rdfs:label ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ] ;
     skos:exactMatch ccf:GeneBiomarker ;
     linkml:attributes "{}" .
@@ -361,17 +361,17 @@ ccf:LipidBiomarker a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "LipidBiomarker" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
-            owl:qualifiedCardinality 1 ],
+            owl:onProperty ccf:pref_label ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty rdfs:label ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:pref_label ],
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
@@ -388,16 +388,16 @@ ccf:MetaBiomarker a owl:Class,
             owl:onProperty ccf:pref_label ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
             owl:onProperty rdfs:label ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:biomarker_type ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
-            owl:qualifiedCardinality 1 ] ;
+            owl:onProperty ccf:biomarker_type ] ;
     skos:exactMatch ccf:MetaBiomarker ;
     linkml:attributes "{}" .
 
@@ -406,19 +406,19 @@ ccf:ProtBiomarker a owl:Class,
     rdfs:label "ProtBiomarker" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass ccf:String ;
-            owl:onProperty rdfs:label ;
+            owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:biomarker_type ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:pref_label ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
+            owl:onProperty ccf:biomarker_type ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty rdfs:label ;
             owl:qualifiedCardinality 1 ] ;
     skos:exactMatch ccf:ProtBiomarker ;
     linkml:attributes "{}" .
@@ -431,17 +431,17 @@ ccf:ProteinBiomarker a owl:Class,
             owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty rdfs:label ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:pref_label ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:biomarker_type ] ;
+            owl:onProperty ccf:biomarker_type ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty rdfs:label ;
+            owl:qualifiedCardinality 1 ] ;
     skos:exactMatch ccf:ProteinBiomarker ;
     linkml:attributes "{}" .
 
@@ -451,11 +451,11 @@ ccf:StudyReference a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:pubmed_id ],
+            owl:onProperty dcterms:references ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty dcterms:references ],
+            owl:onProperty ccf:pubmed_id ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:id ;
@@ -467,17 +467,17 @@ ccf:AnatomicalStructure a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AnatomicalStructure" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:pref_label ],
-        [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty rdfs:label ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:id ;
-            owl:qualifiedCardinality 1 ] ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:pref_label ] ;
     skos:exactMatch ccf:AnatomicalStructure ;
     linkml:attributes "{}" .
 
