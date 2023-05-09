@@ -76,8 +76,8 @@ async function runOnChildObjects(context, action) {
 
     // If baseIri is set, then use that for a digital object's default IRI
     if (context.baseIri) {
-      const doString = context.selectedDigitalObject.doString;
-      context.selectedDigitalObject.iri = `${context.baseIri}${doString}`;
+      const doString = selectedDigitalObject.doString;
+      selectedDigitalObject.iri = `${context.baseIri}${doString}`;
     }
     await action({
       ...context,
