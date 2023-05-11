@@ -7,6 +7,7 @@ import { normalize } from '../normalization/normalize.js';
 import { packageIt } from '../packaging/package.js';
 import { getDigitalObjectInformation } from '../utils/digital-object.js';
 import { banner, info } from '../utils/logging.js';
+import { deploy } from '../deployment/deploy.js';
 
 const COMMANDS = [
   {
@@ -29,6 +30,11 @@ const COMMANDS = [
     test: 'packaged/index.html',
     action: packageIt,
   },
+  {
+    step: 'deploy',
+    test: 'false',
+    action: deploy,
+  }
 ];
 
 const COLLECTION_COMMANDS = [
@@ -63,6 +69,14 @@ const COLLECTION_COMMANDS = [
     action: async (context) => {
       await runOnChildObjects(context, packageIt);
       await packageIt(context);
+    },
+  },
+  {
+    step: 'deploy',
+    test: 'false',
+    action: async (context) => {
+      await runOnChildObjects(context, deploy);
+      await deploy(context);
     },
   },
 ];

@@ -5,6 +5,7 @@ import { getDigitalObjectInformation } from './digital-object.js';
 import { getDirName } from './source-info.js';
 
 const DEFAULT_DO_HOME = resolve(process.env.DO_HOME || './digital-objects');
+const DEFAULT_DEPLOY_HOME = resolve(process.env.DEPLOY_HOME || './dist');
 export const PROCESSOR_HOME = resolve(process.env.PROCESSOR_HOME || dirname(dirname(getDirName(import.meta.url))));
 
 export function getProcessorVersion() {
@@ -16,6 +17,7 @@ export function getContext(program, subcommand, selectedDigitalObject) {
   const context = {
     doHome: DEFAULT_DO_HOME,
     processorHome: PROCESSOR_HOME,
+    deploymentHome: DEFAULT_DEPLOY_HOME,
     ...program.opts(),
     ...subcommand.opts(),
   };

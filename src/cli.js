@@ -7,6 +7,7 @@ import { list } from './list.js';
 import { normalize } from './normalization/normalize.js';
 import { packageIt } from './packaging/package.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
+import { deploy } from './deployment/deploy.js';
 
 const program = new Command();
 
@@ -17,6 +18,7 @@ program
   .option('--base-iri <string>', 'Base IRI for Digital Objects', 'http://purl.humanatlas.io/')
   .option('--do-home <string>', 'Digital Objects home directory', parseDirectory)
   .option('--processor-home <string>', 'DO Processor home', parseDirectory)
+  .option('--deployment-home <string>', 'DO deployment home', parseDirectory)
   .option('--skip-validation', 'Skip validation in each command', false)
   .option('--exclude-bad-values', 'Do not pass invalid values from data processors', false)
 
@@ -55,6 +57,14 @@ program
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     build(getContext(program, command, str));
+  });
+
+program
+  .command('deploy')
+  .description('Deploys a given Digital Object to the deployment home (default ./site)')
+  .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
+  .action((str, _options, command) => {
+    deploy(getContext(program, command, str));
   });
 
 program
