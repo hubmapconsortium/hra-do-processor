@@ -4,4 +4,4 @@ set -ev
 if [ "$(which deactivate)" != "" ]; then
   deactivate
 fi
-rm -rf node_modules .venv schemas/generated
+rm -rf node_modules .venv mirrors schemas/generated

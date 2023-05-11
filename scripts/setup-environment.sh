@@ -38,9 +38,20 @@ if [ -e "$ENV/bin/activate" ]; then
         nodeenv --python-virtualenv --node lts
     fi
 
+    # Install node deps
     npm ci
-    npm install -g .
-    npm install -g ttl-merge
+    npm install -g ${ROOT_DIR}
+    npm install -g ttl-merge # ttl-merge is weird and has to be installed separately
+
+    # Download ontologies
+    if [ ! -e "${ROOT_DIR}/mirrors" ]; then
+        ${ROOT_DIR}/scripts/download-ontologies.sh
+    fi
+
+    # Setup schemas
+    if [ ! -e "${ROOT_DIR}/schemas/generated" ]; then
+        ${ROOT_DIR}/scripts/setup-schemas.sh
+    fi
 fi
 
 if [ -e "$ENV/bin/activate" ]; then
