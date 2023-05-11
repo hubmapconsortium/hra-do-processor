@@ -10,7 +10,7 @@ export function normalizeCollection(context) {
   const { path } = context.selectedDigitalObject;
   const metadata = readMetadata(path);
 
-  const dataPath = resolve(path, 'raw', metadata.datatable);
+  const dataPath = resolve(path, 'raw', metadata.datatable[0]);
   const data = load(readFileSync(dataPath))['digital-objects'];
 
   writeNormalized(context, data);
