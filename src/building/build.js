@@ -26,7 +26,7 @@ const COMMANDS = [
   },
   {
     step: 'package',
-    test: 'packaged/',
+    test: 'packaged/index.html',
     action: packageIt,
   },
 ];
@@ -36,8 +36,8 @@ const COLLECTION_COMMANDS = [
     step: 'raw',
     test: 'raw/metadata.yaml',
     action: async (context) => {
-      // await normalize(context);
-      // await runOnChildObjects(context, cleanAction);
+      await normalize(context);
+      await runOnChildObjects(context, cleanAction);
       cleanAction(context);
     },
   },
@@ -59,7 +59,7 @@ const COLLECTION_COMMANDS = [
   },
   {
     step: 'package',
-    test: 'packaged/README.md',
+    test: 'packaged/index.html',
     action: async (context) => {
       await runOnChildObjects(context, packageIt);
       await packageIt(context);

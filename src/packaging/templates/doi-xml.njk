@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns="http://datacite.org/schema/kernel-4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4/metadata.xsd">
+<identifier identifierType="DOI">{{ doi }}</identifier>
+<titles>
+  <title>{{ title }}, {{ version }}</title>
+</titles>
+<creators>
+{%- for creator in creators %}
+  <creator>
+    <creatorName>{{ creator.fullName | safe }}</creatorName>
+    <givenName>{{ creator.firstName | safe }}</givenName>
+    <familyName>{{ creator.lastName | safe }}</familyName>
+    <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org/{{ creator.orcid }}">{{ creator.orcid }}<nameIdentifier>
+  </creator>
+{%- endfor %}
+</creators>
+<publisher>{{ publisher }}</publisher>
+<publicationYear>{{ creation_date | year }}</publicationYear>
+<resourceType resourceTypeGeneral="{{ resource_mappings[type] }}">{{ resource_title_mappings[type] }}</resourceType>
+<subjects>
+  <subject>{{ title }}, {{ version }}</subject>
+<subjects>
+<contributors>
+{%- for creator in project_leads %}
+  <contributor contributorType="ProjectLeader">
+      <contributorName>{{ creator.fullName | safe }}</contributorName>
+      <givenName>{{ creator.firstName | safe }}</givenName>
+      <familyName>{{ creator.lastName | safe }}</familyName>
+      <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org/{{ creator.orcid }}">{{ creator.orcid }}<nameIdentifier>
+  </contributor>
+{%- endfor -%}
+{%- for creator in reviewers %}
+  <contributor contributorType="Other">
+    <contributorName>{{ creator.fullName | safe }}</contributorName>
+    <givenName>{{ creator.firstName | safe }}</givenName>
+    <familyName>{{ creator.lastName | safe }}</familyName>
+    <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org/{{ creator.orcid }}">{{ creator.orcid }}<nameIdentifier>
+  </contributor>
+{%- endfor %}
+{%- for creator in externalReviewers %}
+  <contributor contributorType="Other">
+    <contributorName>{{ creator.fullName | safe }}</contributorName>
+    <givenName>{{ creator.firstName | safe }}</givenName>
+    <familyName>{{ creator.lastName | safe }}</familyName>
+    <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org/{{ creator.orcid }}">{{ creator.orcid }}<nameIdentifier>
+  </contributor>
+{%- endfor %}
+</contributors>
+<dates>
+  <date dateType="Available">{{ creation_date }}</date>
+</dates>
+<descriptions>
+  <description>{{ description }}</description>
+</decsriptions>
+<language>EN</language>
+<alternateIdentfiers>
+  <alternateIdentfier alternateIdentiferType="HuBMAP ID">{{ hubmapId }}</alternateIdentfier>
+  <alternateIdentfier alternateIdentfierType="How to Cite This {{ cite_model_mappings[type] }}">{{ citation }}</alternateIdentfier>
+  <alternateIdentfier alternateIdentfierType="How to Cite {{ cite_overall_model_mappings[type] }} Overall">{{ citationOverall }}</alternateIdentfier>
+</alternateIdentfiers>
+<formats>
+	<format>.{{ datatable | fileExtension }}</format>
+</formats>
+<rightsList>
+  <rights rightsURI="{{ license | mdLinkAsUrlOnly }}">{{ license | mdLinkAsTitleOnly }}</rights>
+</rightsList>
+<fundingReferences>
+{%- for funder in funders %}
+	<fundingReference>
+		<funderName>{{ funder.funder }}</funderName>
+		<awardNumber>{{ funder.awardNumber }}</awardNumber>
+	</fundingReference>
+{%- endfor %}
+</fundingReferences>
+</resource>

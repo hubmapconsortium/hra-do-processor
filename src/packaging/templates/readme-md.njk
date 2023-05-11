@@ -1,0 +1,23 @@
+# {{ title }}, {{ version }}
+
+### Description
+{{ description }}
+
+| Label | Value |
+| :------------- |:-------------|
+| **Creator(s):** | {{ creators | authorList }} |
+| **Creator ORCID(s):** | {{ creators | orcidList }} |
+| **Project Lead:** | {{ project_leads | authorList }} |
+| **Project Lead ORCID:** | {{ project_leads | orcidList }} |
+| **Reviewer(s):** | {{ reviewers | authorList }}  |
+| **Reviewer ORCID(s):** | {{ reviewers | orcidList }} |
+| **Creation Date:** | {{ creation_date }} |
+| **License:** | {{ license }} |
+| **Publisher:** | {{ publisher }} |
+| **Funder:** | {{ funders[0].funder }} |
+| **Award Number:** | {{ funders[0].awardNumber }} |
+| **HuBMAP ID:** | {{ hubmapId }} |
+| **{{ cite_model_mappings[type] }}:** | {{ title }}, {{ version }} {{ datatable | downloadLinks }} |
+| **DOI:** | <{{ doi }}> |
+| **How to Cite This 2D Data:** | {{ citation }} |
+| **How to Cite 2D Data Overall:** | {{ citationOverall }} |
