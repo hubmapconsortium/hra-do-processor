@@ -33,6 +33,22 @@ if [ -e "$ENV/bin/activate" ]; then
         curl -L https://github.com/ontodev/robot/releases/download/v1.9.3/robot.jar -o $ENV/bin/robot.jar
     fi
 
+    # Install Blazegraph Runner
+    if [ ! -e "$ENV/opt/blazegraph-runner" ]; then
+        mkdir -p $ENV/opt
+        BR=1.7
+        wget -nv https://github.com/balhoff/blazegraph-runner/releases/download/v$BR/blazegraph-runner-$BR.tgz \
+            && tar -zxvf blazegraph-runner-$BR.tgz \
+            && mv blazegraph-runner-$BR $ENV/opt/blazegraph-runner;
+        ln -s $ENV/opt/blazegraph-runner/bin/blazegraph-runner $ENV/bin/blazegraph-runner
+    fi
+
+    # Install OWL CLI (for pretty turtle)
+    if [ ! -e "$ENV/bin/owl-cli" ]; then
+        wget -nv https://github.com/atextor/owl-cli/releases/download/snapshot/owl-x86_64-linux-snapshot -O $ENV/bin/owl-cli
+        chmod +x $ENV/bin/owl-cli
+    fi
+
     # Install node (latest LTS version)
     if [ ! -e "$ENV/bin/node" ]; then
         nodeenv --python-virtualenv --node lts
@@ -41,7 +57,6 @@ if [ -e "$ENV/bin/activate" ]; then
     # Install node deps
     npm ci
     npm install -g ${ROOT_DIR}
-    npm install -g ttl-merge # ttl-merge is weird and has to be installed separately
 
     # Download ontologies
     if [ ! -e "${ROOT_DIR}/mirrors" ]; then

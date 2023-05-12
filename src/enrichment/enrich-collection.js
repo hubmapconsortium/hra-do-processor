@@ -2,8 +2,8 @@ import chalk from 'chalk';
 import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
-import sh from 'shelljs';
 import { header } from '../utils/logging.js';
+import { mergeTurtles } from '../utils/owl-cli.js';
 
 export function enrichCollection(context) {
   header(context, 'run-enrich');
@@ -16,10 +16,10 @@ export function enrichCollection(context) {
     return;
   }
 
-  const dataPaths = data.map((s) => resolve(context.doHome, s, 'enriched/enriched.ttl')).join(' ');
+  const dataPaths = data.map((s) => resolve(context.doHome, s, 'enriched/enriched.ttl'));
   const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
   const prefixes = resolve(context.processorHome, 'schemas/prefixes.json');
-  sh.exec(`ttl-merge -i ${dataPaths} -p ${prefixes} > ${enrichedPath}`);
+  mergeTurtles(enrichedPath, prefixes, dataPaths);
 }
 
 function validateCollection(context, data) {

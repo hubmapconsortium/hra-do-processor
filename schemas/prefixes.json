@@ -1,8 +1,16 @@
 {
   "ccf1": "http://purl.org/ccf/latest/ccf.owl#",
-  "ccfo": "http://purl.org/ccf/",
+  "ccf2": "http://purl.org/ccf/",
   "dc": "http://purl.org/dc/terms/",
   "hgnc": "http://identifiers.org/hgnc/",
+  "hgnco": "http://purl.bioontology.org/ontology/HGNC/",
   "obo": "http://purl.obolibrary.org/obo/",
-  "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "DOI": "https://dx.doi.org/",
+  "doi": "https://dx.doi.org/",
+  "schema": "http://schema.org/",
+  "uberon": "http://purl.obolibrary.org/obo/UBERON_",
+  "cl": "http://purl.obolibrary.org/obo/CL_",
+  "oboInOwl": "http://www.geneontology.org/formats/oboInOwl#",
+  "skos": "http://www.w3.org/2004/02/skos/core#"
 }

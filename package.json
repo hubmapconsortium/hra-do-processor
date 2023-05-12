@@ -31,8 +31,7 @@
     "js-yaml": "^4.1.0",
     "node-fetch": "^3.3.0",
     "nunjucks": "^3.2.4",
-    "shelljs": "^0.8.5",
-    "ttl-merge": "^0.2.2"
+    "shelljs": "^0.8.5"
   },
   "devDependencies": {
     "eslint": "^8.35.0",
