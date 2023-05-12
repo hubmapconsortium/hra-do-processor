@@ -2,8 +2,8 @@ import chalk from 'chalk';
 import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
+import { mergeTurtles } from '../utils/blazegraph.js';
 import { header } from '../utils/logging.js';
-import { mergeTurtles } from '../utils/owl-cli.js';
 
 export function enrichCollection(context) {
   header(context, 'run-enrich');

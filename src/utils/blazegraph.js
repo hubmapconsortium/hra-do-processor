@@ -1,3 +1,4 @@
+import { resolve } from 'path';
 import sh from 'shelljs';
 import { throwOnError } from './sh-exec.js';
 
@@ -17,4 +18,14 @@ export function mergeTurtles(outputPath, _prefixesPath, ontologyPaths) {
     `${outputPath} failed to dump`
   );
   sh.rm('-f', tempJournal);
+}
+
+export function loadDoIntoTripleStore(context, journalPath) {
+  const obj = context.selectedDigitalObject;
+  const graph = obj.iri;
+  const data = resolve(obj.path, 'enriched/enriched.ttl');
+  throwOnError(
+    `owl-cli write -i turtle -o ntriple ${data} ${journalPath}.temp && blazegraph-runner load --journal=${journalPath} --use-ontology-graph=false --graph="${graph}" --informat=ntriples ${journalPath}.temp && rm -f ${journalPath}.temp`,
+    `${data} failed to load`
+  );
 }

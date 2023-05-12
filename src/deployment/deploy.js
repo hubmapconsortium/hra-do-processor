@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import sh from 'shelljs';
 import { readMetadata } from '../normalization/utils.js';
+import { loadDoIntoTripleStore } from '../utils/blazegraph.js';
 
 export function deploy(context) {
   const obj = context.selectedDigitalObject;
@@ -14,4 +15,7 @@ export function deploy(context) {
   for (const file of metadata.datatable) {
     sh.cp(resolve(obj.path, 'raw', file), resolve(deployPath, 'assets', file));
   }
+
+  const tripleStore = resolve(context.deploymentHome, 'blazegraph.jnl');
+  loadDoIntoTripleStore(context, tripleStore);
 }
