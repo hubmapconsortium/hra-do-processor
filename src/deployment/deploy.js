@@ -18,8 +18,7 @@ export function deploy(context) {
     sh.cp(resolve(obj.path, 'raw', file), resolve(deployPath, 'assets', file));
   }
 
-  reifyTurtle(datasetPath);
-
   const tripleStore = resolve(context.deploymentHome, 'blazegraph.jnl');
   loadDoIntoTripleStore(context, tripleStore);
+  reifyTurtle(context, datasetPath, tripleStore);
 }
