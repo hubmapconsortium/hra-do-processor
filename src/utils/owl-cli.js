@@ -15,7 +15,7 @@ export function mergeTurtles(outputPath, prefixesPath, inputPaths) {
     `failed to merge ${outputPath}`
   );
   throwOnError(
-    `owl-cli write ${prefixesString} ${outputPath}.nt ${outputPath} && rm -f ${outputPath}.nt`,
+    `owl-cli write --writeRdfType ${prefixesString} ${outputPath}.nt ${outputPath} && rm -f ${outputPath}.nt`,
     `failed to prettify ${outputPath}`
   );
 }
