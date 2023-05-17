@@ -6,6 +6,13 @@ This repository contains digital object definitions and a data processor (do-pro
 
 - python 3.x
 - node.js 16+ (if not using the virtualenv, which has it installed)
+- Java 11
+
+## Docker Setup
+
+To build the docker container, first install Docker, and then run:
+
+`docker build . -t hra-do-processor`
 
 ## Local Setup
 
