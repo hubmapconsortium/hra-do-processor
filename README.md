@@ -2,17 +2,37 @@
 
 This repository contains digital object definitions and a data processor (do-processor) to process conforming digital objects. The primary use case for this processor is to generate the Human Reference Atlas Knowledge Graph (hra-kg).
 
+# Running with Docker
+
+## Docker Setup Requirements
+
+All that's required for execution using our Docker-based setup is `Docker` with `docker` available on command line. See the [Docker website](https://docs.docker.com/engine/install/) for details on installation based on your platform.
+
+## Building the Docker container
+
+If you are not using a pre-built container run:
+
+`docker build . -t hra-do-processor`
+
+## Running the Docker container
+
+To run the container, use the following command:
+
+`docker run --mount type=bind,source=./digital-objects,target=/digital-objects --mount type=bind,source=./dist,target=/dist -t hra-do-processor:latest help`
+
+Replace `./digital-objects` and `./dist` with paths to your own `digital-objects` and `dist` folders if not the same.
+
+You can also use the docker-compose.yaml file as an example if you want to run it
+
+`docker compose run do-processor help`
+
+# Running Locally
+
 ## Local Setup Requirements
 
 - python 3.x
 - node.js 16+ (if not using the virtualenv, which has it installed)
 - Java 11
-
-## Docker Setup
-
-To build the docker container, first install Docker, and then run:
-
-`docker build . -t hra-do-processor`
 
 ## Local Setup
 
