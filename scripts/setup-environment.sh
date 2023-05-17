@@ -51,6 +51,7 @@ if [ -e "$ENV/bin/activate" ]; then
             && tar -zxvf blazegraph-runner-$BR.tgz \
             && mv blazegraph-runner-$BR $ENV/opt/blazegraph-runner;
         ln -s ../opt/blazegraph-runner/bin/blazegraph-runner $ENV/bin/blazegraph-runner
+        rm -f blazegraph-runner-$BR.tgz
     fi
 
     # Install OWL CLI (for pretty turtle)

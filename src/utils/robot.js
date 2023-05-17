@@ -53,8 +53,9 @@ export function mergeOntologies(context, ontologyPaths=[]) {
     more(` -> ${ontologyPath}`);
   }
   throwOnError(
-    `robot merge ${inputParams} \
-           convert --format ttl -o ${merged} && \
+    `robot merge ${inputParams} convert -o ${merged}.owl \
+        && owl-cli write --anonymousNodeIdPattern _:${obj.type}_${obj.name}_0 \
+          -i rdfxml -o turtle ${merged}.owl ${merged} && \
      mv ${merged} ${output}`,
      'Merge ontologies failed. See errors above.'
   );

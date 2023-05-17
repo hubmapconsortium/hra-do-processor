@@ -1,9 +1,9 @@
 import { Matrix4 } from '@math.gl/core';
-import { processSceneNodes } from 'ccf-body-ui';
 import { readFile } from 'fs/promises';
 import { resolve } from 'path';
 import { header } from '../utils/logging.js';
 import { validateNormalized } from '../utils/validation.js';
+import { processSceneNodes } from './ref-organ-utils/process-scene-nodes.js';
 import { readMetadata, writeNormalized } from './utils.js';
 
 export async function normalizeRefOrgan(context) {
