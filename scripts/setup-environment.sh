@@ -16,6 +16,16 @@ if [ ! -e "$ENV/bin/activate" ]; then
     python3 -m venv $ENV
 fi
 
+# Detect OS, from https://stackoverflow.com/a/3466183
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+
 # Install dependencies
 if [ -e "$ENV/bin/activate" ]; then
     set +u # Disable in case we are running old venv versions that can't handle strict mode
@@ -45,7 +55,11 @@ if [ -e "$ENV/bin/activate" ]; then
 
     # Install OWL CLI (for pretty turtle)
     if [ ! -e "$ENV/bin/owl-cli" ]; then
-        wget -nv https://github.com/atextor/owl-cli/releases/download/snapshot/owl-x86_64-linux-snapshot -O $ENV/bin/owl-cli
+        if [ $machine == "Mac" ]; then
+            wget -nv https://github.com/atextor/owl-cli/releases/download/snapshot/owl-x86_64-apple-darwin-snapshot -O $ENV/bin/owl-cli
+        else
+            wget -nv https://github.com/atextor/owl-cli/releases/download/snapshot/owl-x86_64-linux-snapshot -O $ENV/bin/owl-cli
+        fi
         chmod +x $ENV/bin/owl-cli
     fi
 
