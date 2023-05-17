@@ -18,9 +18,9 @@ RUN apt-get update && \
 
 COPY scripts scripts
 COPY schemas schemas
-COPY requirements.txt package.json package-lock.json .
+COPY requirements.txt package.json package-lock.json /build/
 
-RUN /bin/bash /build/scripts/setup-environment.sh /venv
+RUN ./scripts/setup-environment.sh /venv
 
 ENV PATH="/venv/bin:$PATH"
 

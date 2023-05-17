@@ -26,6 +26,18 @@ You can also use the docker-compose.yaml file as an example if you want to run i
 
 `docker compose run do-processor help`
 
+# Running with CWL
+
+## CWL Setup Requirements
+
+You will need to install a Python 3 and Docker (or other container system supported by CWL) and a cwl runner. The default cwl runner can be installed with Python 3's pip module like so:
+
+`python3 -m pip cwltool cwl-runner`
+
+## Running the DO Processor with CWL
+
+`cwl-runner hra-do-processor.cwl example-cwl-job.yaml`
+
 # Running Locally
 
 ## Local Setup Requirements

@@ -1,0 +1,9 @@
+do_home:
+  class: Directory
+  path: ./digital-objects
+deploy_home:
+  class: Directory
+  path: ./dist
+arguments:
+  - list
+  - --help
