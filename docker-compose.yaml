@@ -1,7 +1,9 @@
 version: '3.9'
 services:
   do-processor:
-    image: hra-do-processor:latest
+    # image: ghcr.io/hubmapconsortium/hra-do-processor:main # uncomment if using the pre-built container
+    # image: hra-do-processor # uncomment if using a locally built container
+    build: . # uncomment to build locally on the fly
     volumes:
       - type: bind
         source: ./digital-objects

@@ -10,15 +10,21 @@ All that's required for execution using our Docker-based setup is `Docker` with 
 
 ## Building the Docker container
 
-If you are not using a pre-built container run:
+If you want to use a pre-built container run:
+
+`docker pull ghcr.io/hubmapconsortium/hra-do-processor:main`
+
+if you are not using a pre-built container run:
 
 `docker build . -t hra-do-processor`
 
 ## Running the Docker container
 
-To run the container, use the following command:
+To run using a pre-built container, use the following command:
 
-`docker run --mount type=bind,source=./digital-objects,target=/digital-objects --mount type=bind,source=./dist,target=/dist -t hra-do-processor:latest help`
+`docker run --mount type=bind,source=./digital-objects,target=/digital-objects --mount type=bind,source=./dist,target=/dist -t ghcr.io/hubmapconsortium/hra-do-processor:main help`
+
+If you are using a locally built container, replace `ghcr.io/hubmapconsortium/hra-do-processor:main` with `hra-do-processor:latest`.
 
 Replace `./digital-objects` and `./dist` with paths to your own `digital-objects` and `dist` folders if not the same.
 
@@ -36,7 +42,13 @@ You will need to install a Python 3 and Docker (or other container system suppor
 
 ## Running the DO Processor with CWL
 
-`cwl-runner hra-do-processor.cwl example-cwl-job.yaml`
+For running with a pre-built container (no git checkout required), use this command:
+
+`cwl-runner https://raw.githubusercontent.com/hubmapconsortium/hra-do-processor/main/do-processor.cwl example-cwl-job.yaml`
+
+For running with a local container, use this command:
+
+`cwl-runner do-processor.local.cwl example-cwl-job.yaml`
 
 # Running Locally
 
