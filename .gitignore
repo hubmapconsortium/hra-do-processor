@@ -3,6 +3,7 @@ mirrors
 digital-objects/*/*/*/normalized
 digital-objects/*/*/*/enriched
 digital-objects/*/*/*/packaged
+scratch
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
