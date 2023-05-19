@@ -2,24 +2,50 @@ import chalk from 'chalk';
 import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
-import { mergeTurtles } from '../utils/owl-cli.js';
-import { header } from '../utils/logging.js';
+import { runCompleteClosure, cleanTemporaryFiles } from './utils.js';
+import { merge, convert } from '../utils/robot.js';
+import { header, info, error, more } from '../utils/logging.js';
 
 export function enrichCollection(context) {
   header(context, 'run-enrich');
-  const obj = context.selectedDigitalObject;
-  const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
-  const data = load(readFileSync(normalizedPath))['data'];
-  const isValid = validateCollection(context, data);
-  if (!isValid) {
-    console.log(chalk.red('Error: cannot enrich', obj.doString, 'until all referenced digital objects are enriched.'));
-    return;
-  }
+  try {
+    const { selectedDigitalObject: obj, processorHome } = context;
 
-  const dataPaths = data.map((s) => resolve(context.doHome, s, 'enriched/enriched.ttl'));
-  const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
-  const prefixes = resolve(context.processorHome, 'schemas/prefixes.json');
-  mergeTurtles(enrichedPath, prefixes, dataPaths);
+    const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
+    const digitalObjects = load(readFileSync(normalizedPath))['data'];
+
+    info('Reading data:')
+    const doPaths = digitalObjects.map(
+      (doId) => resolve(context.doHome, doId, 'enriched/enriched.ttl')
+    );
+    for (const doPath of doPaths) {
+      more(` -> ${doPath}`);
+    }    
+
+    info('Validating digital objects in the collection.');
+    validateCollection(context, digitalObjects);
+
+    info('Starting the data enrichment...');
+    info('Merging all digital objects.');
+    const enrichedPath = resolve(obj.path, 'enriched/enriched.owl');
+    merge(doPaths, enrichedPath);
+
+    info('Running the complete inference closure process.');
+    const roPath = resolve(processorHome, `mirrors/ro.owl`);
+    const roEnrichedPath = resolve(obj.path, 'enriched/ro-enriched.owl');
+    merge([roPath, enrichedPath], roEnrichedPath);
+    runCompleteClosure(context, roEnrichedPath, enrichedPath);
+
+    const turtleEnrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
+    info(`Creating collection: ${turtleEnrichedPath}`);
+    convert(enrichedPath, turtleEnrichedPath, "ttl");
+  } catch (e) {
+    error(e)
+  } finally {
+    // Clean up
+    info('Cleaning up temporary files.')
+    cleanTemporaryFiles(context);
+  }
 }
 
 function validateCollection(context, data) {
@@ -27,10 +53,12 @@ function validateCollection(context, data) {
   if (!context.skipValidation) {
     for (const collectedObj of data) {
       if (!existsSync(resolve(context.doHome, collectedObj, 'enriched/enriched.ttl'))) {
-        console.log(chalk.red(collectedObj, 'does not exist or is invalid'));
+        error(`${collectedObj} does not exist or is invalid.`);
         isValid = false;
       }
     }
   }
-  return isValid;
+  if (!isValid) {
+    throw new Error(`Cannot enrich ${obj.doString} until all referenced digital objects are enriched.`);
+  }
 }

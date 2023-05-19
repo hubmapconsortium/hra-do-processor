@@ -1,5 +1,7 @@
 import { resolve } from 'path';
+import { redundant } from '../utils/relation-graph.js';
 import { info, more } from '../utils/logging.js';
+import { merge } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
 
 export function convertNormalized(context) {
@@ -39,6 +41,13 @@ export function convertNormalizedToOwl(context) {
   return output;
 }
 
+export function runCompleteClosure(context, inputPath, outputPath) {
+  const { selectedDigitalObject: obj } = context;
+  const closurePath = resolve(obj.path, 'enriched/closure.ttl');
+  redundant(inputPath, closurePath);
+  merge([inputPath, closurePath], outputPath);
+}
+
 export function downloadValidationResult(context, useNightlyBuild=true) {
   const { name, path } = context.selectedDigitalObject;
   
@@ -75,4 +84,13 @@ function findOrganName(name) {
     outputName = "Spinal_Cord";
   }
   return outputName;
+}
+
+export function cleanTemporaryFiles(context) {
+  const { selectedDigitalObject: obj } = context;
+  const enrichedPath = resolve(obj.path, "enriched/");
+  throwOnError(
+    `find ${enrichedPath} ! -name 'enriched.ttl' -type f -exec rm -f {} +`,
+    'Clean temporary files failed.'
+  );
 }

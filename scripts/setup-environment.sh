@@ -43,6 +43,16 @@ if [ -e "$ENV/bin/activate" ]; then
         curl -L https://github.com/ontodev/robot/releases/download/v1.9.3/robot.jar -o $ENV/bin/robot.jar
     fi
 
+    # Intall Relation-Graph
+        if [ ! -e "$ENV/opt/relation-graph" ]; then
+        mkdir -p $ENV/opt
+        RG=2.3.1
+        wget -nv https://github.com/INCATools/relation-graph/releases/download/v$RG/relation-graph-cli-$RG.tgz \
+            && tar -zxvf relation-graph-cli-$RG.tgz \
+            && mv relation-graph-cli-$RG $ENV/opt/relation-graph;
+        ln -s ../opt/relation-graph/bin/relation-graph $ENV/bin/relation-graph
+    fi
+
     # Install Blazegraph Runner
     if [ ! -e "$ENV/opt/blazegraph-runner" ]; then
         mkdir -p $ENV/opt
