@@ -38,31 +38,6 @@ export function extractClassHierarchy(context, ontology, upperTerm, lowerTerms) 
   return output;
 }
 
-export function mergeOntologies(context, ontologyPaths=[]) {
-  const { selectedDigitalObject: obj } = context;
-
-  const input = resolve(obj.path, `enriched/enriched.ttl`);
-
-  const inputParams = ontologyPaths.reduce(
-    (collector, ontologyPath) => (`${collector} --input ${ontologyPath}`), "");
-  const merged = resolve(obj.path, `enriched/enriched-merged.ttl`);
-  const output = resolve(obj.path, `enriched/enriched.ttl`);
-
-  more(`Merging ${ontologyPaths[0]} with:`);
-  for (const ontologyPath of ontologyPaths.slice(1)) {
-    more(` -> ${ontologyPath}`);
-  }
-  throwOnError(
-    `robot merge ${inputParams} convert -o ${merged}.owl \
-        && owl-cli write --anonymousNodeIdPattern _:${obj.type}_${obj.name}_0 \
-          -i rdfxml -o turtle ${merged}.owl ${merged} && \
-     mv ${merged} ${output}`,
-     'Merge ontologies failed. See errors above.'
-  );
-
-  return output;
-}
-
 export function merge(inputs, output, outputFormat="owl") {
   // Convert the inputs to OWL/XML format to avoid blank node collisions
   const owlInputs = [];
