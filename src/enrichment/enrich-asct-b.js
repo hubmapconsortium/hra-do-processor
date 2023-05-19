@@ -2,7 +2,7 @@ import { resolve } from 'path';
 import { error, header, info } from '../utils/logging.js';
 import { collectEntities, extractClassHierarchy, mergeOntologies } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
-import { convertNormalizedToOwl, downloadValidationResult } from './utils.js';
+import { convertNormalizedToOwl, downloadValidationResult, cleanTemporaryFiles } from './utils.js';
 
 export function enrichAsctb(context) {
   header(context, 'run-enrich');
@@ -53,6 +53,7 @@ export function enrichAsctb(context) {
     error(e);
   } finally {
     // Clean up
+    info('Cleaning up temporary files.')
     cleanTemporaryFiles(context);
   }
 }
@@ -76,16 +77,5 @@ function revertChanges(context) {
   throwOnError(
     `mv ${originalSchema} ${schema}`,
     'Revert schema changes failed.'
-  );
-}
-
-function cleanTemporaryFiles(context) {
-  const { selectedDigitalObject: obj } = context;
-
-  const enrichedPath = resolve(obj.path, "enriched/");
-
-  throwOnError(
-    `find ${enrichedPath} ! -name 'enriched.ttl' -type f -exec rm -f {} +`,
-    'Clean temporary files failed.'
   );
 }
