@@ -7,8 +7,6 @@ prefixes:
   xsd: http://www.w3.org/2001/XMLSchema#
   dct: http://purl.org/dc/terms/
   linkml: https://w3id.org/linkml/
-  DOI: https://doi.org/
-  PMID: https://www.ncbi.nlm.nih.gov/pubmed/
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   CL: http://purl.obolibrary.org/obo/CL_
   SO: http://purl.obolibrary.org/obo/SO_
@@ -31,8 +29,6 @@ settings:
   pcl: "PCL"
   hgnc: "HGNC"
   asctb_temp: "ASCTB-TEMP"
-  doi: "DOI"
-  pmid: "PMID"
 
 classes:
   AsctbConcept:
@@ -224,7 +220,7 @@ slots:
     multivalued: true
     range: string
     structured_pattern:
-      syntax: "{doi}:10\\.\\d+/.*|{pmid}:\\d+"
+      syntax: "^(https?:\\/\\/)?doi\\.org\\/10\\.\\d+\\/.*"
       interpolated: true
       partial_match: false    
     slot_uri: dct:reference

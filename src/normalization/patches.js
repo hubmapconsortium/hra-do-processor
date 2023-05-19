@@ -225,8 +225,7 @@ export function getPatchesForBiomarker() {
 
 export function normalizeDoi(doi) {
   return doi.replace(/\s+/g, '')
-            .replace(/^doi:/, 'DOI:')
-            .replace(/^(https:\/\/)?doi\.org\//, 'DOI:');
+            .replace(/^(DOI|doi):|^(https?:\/\/)?doi\.org\//, 'https://doi.org/');
 }
 
 export function isIdValid(id) {
@@ -234,6 +233,7 @@ export function isIdValid(id) {
 }
 
 export function isDoiValid(doi) {
-  return /DOI:10\.\d+\/.*|PMID:\d+/.test(doi);
+  const doiString = doi.replace(/\s+/g, '');
+  return /^(DOI|doi):10\.\d+\/.*|^(https?:\/\/)?doi\.org\/10\.\d+\/.*/.test(doiString);
 }
 
