@@ -8,7 +8,7 @@ DIR="${0%/*}"
 ROOT_DIR="$DIR/.."
 MIRROR_DIR="$ROOT_DIR/mirrors"
 
-# Download the latest UBERON ontology
+echo "Downloading the latest UBERON ontology..."
 curl -L "$OBO_BASE_URL/uberon/uberon-base.owl" \
      --create-dirs -o "$MIRROR_DIR/uberon.owl" \
      --retry 4 \
@@ -17,7 +17,7 @@ robot convert -i "$MIRROR_DIR/uberon.owl" \
      --format owl \
      -o "$MIRROR_DIR/uberon.owl"
 
-# Download the latest FMA ontology
+echo "Downloading the latest FMA ontology..."
 curl -L "http://sig.biostr.washington.edu/share/downloads/fma/release/latest/fma.zip" \
      --create-dirs -o "$MIRROR_DIR/fma.zip" \
      --retry 4 \
@@ -28,7 +28,7 @@ robot convert -i "$MIRROR_DIR/fma.owl" \
      -o "$MIRROR_DIR/fma.owl"
 rm -rf $MIRROR_DIR/fma.zip
 
-# Download the latest CL ontology
+echo "Downloading the latest CL ontology..."
 curl -L "$OBO_BASE_URL/cl/cl-base.owl" \
      --create-dirs -o "$MIRROR_DIR/cl.owl" \
      --retry 4 \
@@ -37,7 +37,7 @@ robot convert -i "$MIRROR_DIR/cl.owl" \
      --format owl \
      -o "$MIRROR_DIR/cl.owl"
 
-# Download the latest PCL ontology
+echo "Downloading the latest PCL ontology..."
 curl -L "$OBO_BASE_URL/pcl/pcl-base.owl" \
      --create-dirs -o "$MIRROR_DIR/pcl.owl" \
      --retry 4 \
@@ -46,7 +46,7 @@ robot convert -i "$MIRROR_DIR/pcl.owl" \
      --format owl \
      -o "$MIRROR_DIR/pcl.owl"
 
-# Download the latest LMHA ontology
+echo "Downloading the latest LHMA ontology..."
 curl -L "https://www.lungmap.net/assets/Uploads/ontology/558488ae7f/LMHA_20190512_Cell.zip" \
      --create-dirs -o "$MIRROR_DIR/lmha.zip" \
      --retry 4 \
@@ -58,7 +58,7 @@ robot convert -i "$MIRROR_DIR/lmha.owl" \
      -o "$MIRROR_DIR/lmha.owl" && \
 rm -rf "$MIRROR_DIR/lmha.zip"
 
-# Download the latest HGNC ontology
+echo "Downloading the latest HGNC ontology..."
 curl -L "https://github.com/musen-lab/hgnc2owl/raw/main/hgnc.owl.gz" \
      --create-dirs -o "$MIRROR_DIR/hgnc.owl.gz" \
      --retry 4 \
@@ -68,7 +68,7 @@ robot convert -i "$MIRROR_DIR/hgnc.owl" \
      --format owl \
      -o "$MIRROR_DIR/hgnc.owl"
 
-# Download the latest RO ontology
+echo "Downloading the latest RO ontology..."
 curl -L "$OBO_BASE_URL/ro/ro.owl" \
      --create-dirs -o "$MIRROR_DIR/ro.owl" \
      --retry 4 \
