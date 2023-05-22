@@ -12,22 +12,21 @@ export function enrichCollection(context) {
     const { selectedDigitalObject: obj, processorHome } = context;
 
     const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
+
+    info(`Reading data: ${normalizedPath}`)
     const digitalObjects = load(readFileSync(normalizedPath))['data'];
-
-    info('Reading data:')
-    const doPaths = digitalObjects.map(
-      (doId) => resolve(context.doHome, doId, 'enriched/enriched.ttl')
-    );
-    for (const doPath of doPaths) {
-      more(` -> ${doPath}`);
-    }    
-
+   
     info('Validating digital objects in the collection.');
     validateCollection(context, digitalObjects);
 
-    info('Starting the data enrichment...');
-    info('Merging all digital objects.');
+    info('Merging files:');
+    const doPaths = digitalObjects.map(
+      (doId) => resolve(context.doHome, doId, 'enriched/enriched.ttl')
+    );
     const enrichedPath = resolve(obj.path, 'enriched/enriched.owl');
+    for (const doPath of doPaths) {
+      more(` -> ${doPath}`);
+    } 
     merge(doPaths, enrichedPath);
 
     info('Running the complete inference closure process.');

@@ -3,39 +3,23 @@ import sh from 'shelljs';
 import { more } from './logging.js';
 import { throwOnError } from './sh-exec.js';
 
-export function collectEntities(context, ontology, graphData) {
-  const { selectedDigitalObject: obj, processorHome } = context;
-
-  const query = resolve(processorHome, `src/utils/get-${ontology}-terms.sparql`);
-  const output = resolve(obj.path, `enriched/${ontology}-terms.csv`);
-
+export function query(input, query, output) {
   throwOnError(
-    `robot query -i ${graphData} --query ${query} ${output} && \
-     sed -i '1d' ${output}`,
-    'Collect entities failed. See errors above.'
+    `robot query -i ${input} --query ${query} ${output}`,
+    `Querying ${input} failed.`
   );
-
-  return output;
 }
 
-export function extractClassHierarchy(context, ontology, upperTerm, lowerTerms) {
-  const { selectedDigitalObject: obj, processorHome } = context;
-
-  const inputOntology = resolve(processorHome, `mirrors/${ontology}.ttl`);
-  const output = resolve(obj.path, `enriched/${ontology}-extract.ttl`);
-
-  more(`Extracting class hierarchy from: ${inputOntology}`);
+export function extract(input, upperTerm, lowerTerms, output, outputFormat="owl") {
   throwOnError(
-    `robot extract -i ${inputOntology} \
+    `robot extract -i ${input} \
               --method MIREOT \
               --upper-term ${upperTerm} \
               --lower-terms ${lowerTerms} \
               --intermediates minimal \
-           convert --format ttl -o ${output}`,
+           convert --format ${outputFormat} -o ${output}`,
     'Class hierarchy extraction failed. See errors above.'
   );
-
-  return output;
 }
 
 export function merge(inputs, output, outputFormat="owl") {
@@ -65,7 +49,7 @@ export function merge(inputs, output, outputFormat="owl") {
   }
 }
 
-export function convert(input, output, outputFormat="owl") {
+export function convert(input, output, outputFormat) {
   throwOnError(
     `robot convert -i ${input} --format ${outputFormat} -o ${output}`,
     'Data conversion failed.'

@@ -1,8 +1,6 @@
 import { resolve } from 'path';
-import { convertNormalizedToOwl, 
-         downloadValidationResult, 
-         cleanTemporaryFiles } from './utils.js';
-import { collectEntities, extractClassHierarchy, merge } from '../utils/robot.js';
+import { convertNormalizedToOwl, cleanTemporaryFiles } from './utils.js';
+import { query, extract, merge, convert } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
 import { error, header, info, more } from '../utils/logging.js';
 
@@ -18,36 +16,54 @@ export function enrichAsctb(context) {
     convertNormalizedToOwl(context, normalizedPath, graphPath);
     revertChanges(context);
     
-    info('Starting the data enrichment...')
+    let inputPaths = []; // variable to hold input files for merging
 
     // Download CCF validation result to enrich the graph data
+    info("Downloading ccf-validation-tool result.")
     const validationPath = downloadValidationResult(context);
-    const enrichedPath = resolve(obj.path, 'enriched.owl')
-    merge([graphPath, validationPath], enrichedPath);
+
+    info("Merging files:");
+    const enrichedPath = resolve(obj.path, 'enriched/enriched.owl')
+    inputPaths.push(graphPath);
+    inputPaths.push(validationPath);
+    for (const inputPath of inputPaths) {
+      more(` -> ${inputPath}`);
+    }
+    merge(inputPaths, enrichedPath);
 
     // Extract terms from reference ontologies to enrich the graph data
-    const uberonEntities = collectEntities(context, "uberon", validatedData);
+    inputPaths = [];
+    inputPaths.push(enrichedPath); // Set the enriched path as the initial
+
+    info("Extracting UBERON terms.")
+    const uberonEntitiesPath = collectEntities(context, "uberon", enrichedPath);
     const uberonExtractPath = extractClassHierarchy(context, "uberon",
-      "http://purl.obolibrary.org/obo/UBERON_0001062", uberonEntities);
-    
-    const fmaEntities = collectEntities(context, "fma", validatedData);
+      "http://purl.obolibrary.org/obo/UBERON_0001062", uberonEntitiesPath);
+    inputPaths.push(uberonExtractPath);
+
+    info("Extracting FMA terms.")
+    const fmaEntities = collectEntities(context, "fma", enrichedPath);
     const fmaExtractPath = extractClassHierarchy(context, "fma", 
       "http://purl.org/sig/ont/fma/fma62955", fmaEntities);
+    inputPaths.push(fmaExtractPath);
 
-    const clEntities = collectEntities(context, "cl", validatedData);
+    info("Extracting CL terms.")
+    const clEntities = collectEntities(context, "cl", enrichedPath);
     const clExtractPath = extractClassHierarchy(context, "cl",
       "http://purl.obolibrary.org/obo/CL_0000000", clEntities);
+    inputPaths.push(clExtractPath);
 
-    const hgncEntities = collectEntities(context, "hgnc", validatedData);
+    info("Extracting HGNC terms.")
+    const hgncEntities = collectEntities(context, "hgnc", enrichedPath);
     const hgncExtractPath = extractClassHierarchy(context, "hgnc", 
       "http://purl.bioontology.org/ontology/HGNC/gene", hgncEntities);
+    inputPaths.push(hgncExtractPath);
 
-    merge([enrichedPath,
-      uberonExtractPath,
-      fmaExtractPath,
-      clExtractPath,
-      hgncExtractPath
-    ], enrichedPath);
+    info("Merging files:");
+    for (const inputPath of inputPaths) {
+      more(` -> ${inputPath}`);
+    }
+    merge(inputPaths, enrichedPath);
 
     const turtleEnrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating file: ${turtleEnrichedPath}`);
@@ -87,6 +103,8 @@ function revertChanges(context) {
 function downloadValidationResult(context, useNightlyBuild=true) {
   const { name, path } = context.selectedDigitalObject;
   
+  more(`Set useNightlyBuild = ${useNightlyBuild}`)
+
   const baseUrl = "https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl";
   if (!useNightlyBuild) {
     baseUrl = `${baseUrl}/last_official_ASCTB_release`
@@ -94,16 +112,17 @@ function downloadValidationResult(context, useNightlyBuild=true) {
   const organName = findOrganName(name);
   const input = `${baseUrl}/${organName}_extended.owl`;
 
-  more(`Downloading from ccf-validation-tools: ${input}`);
+  more(`Downloading file: ${input}`);
 
-  const download = resolve(path, `enriched/${organName}_extended.owl`);
-  const output = resolve(path, `enriched/${name}-validation.owl`);
+  const downloadPath = resolve(path, `enriched/${organName}_extended.owl`);
+  const outputPath = resolve(path, `enriched/${name}-validation.owl`);
   throwOnError(
-    `wget -nc -nv -q ${input} -O ${download} && \
-     robot convert --input ${download} --format owl -o ${output}`,
+    `wget -nc -nv -q ${input} -O ${downloadPath}`,
     'Download validation result failed.'
   )
-  return output;
+  convert(downloadPath, outputPath, "owl");
+
+  return outputPath;
 }
 
 function findOrganName(name) {
@@ -119,4 +138,31 @@ function findOrganName(name) {
     outputName = "Spinal_Cord";
   }
   return outputName;
+}
+
+function collectEntities(context, ontologyName, inputPath) {
+  const { selectedDigitalObject: obj, processorHome } = context;
+
+  const queryPath = resolve(processorHome, `src/utils/get-${ontologyName}-terms.sparql`);
+  const outputPath = resolve(obj.path, `enriched/${ontologyName}-terms.csv`);
+
+  query(inputPath, queryPath, outputPath);
+  throwOnError(
+    `sed -i '1d' ${outputPath}`,
+    'Collect entities failed.'
+  );
+
+  return outputPath;
+}
+
+function extractClassHierarchy(context, ontologyName, upperTerm, lowerTerms) {
+  const { selectedDigitalObject: obj, processorHome } = context;
+
+  const ontologyPath = resolve(processorHome, `mirrors/${ontologyName}.owl`);
+  const outputPath = resolve(obj.path, `enriched/${ontologyName}-extract.owl`);
+
+  more(`Extracting terms from: ${ontologyPath}`);
+  extract(ontologyPath, upperTerm, lowerTerms, outputPath);
+  
+  return outputPath;
 }
