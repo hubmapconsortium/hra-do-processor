@@ -9,6 +9,8 @@ prefixes:
   linkml: https://w3id.org/linkml/
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   CL: http://purl.obolibrary.org/obo/CL_
+  PCL: http://purl.obolibrary.org/obo/PCL_
+  LMHA: http://purl.obolibrary.org/obo/LMHA_
   SO: http://purl.obolibrary.org/obo/SO_
   RO: http://purl.obolibrary.org/obo/RO_
   FMA: http://purl.org/sig/ont/fma/fma
@@ -27,6 +29,7 @@ settings:
   fma: "FMA"
   cl: "CL"
   pcl: "PCL"
+  lmha: "LMHA"
   hgnc: "HGNC"
   asctb_temp: "ASCTB-TEMP"
 
@@ -73,7 +76,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "({cl}|{pcl}):\\d+|{asctb_temp}:[a-zA-Z0-9-]+"
+          syntax: "({cl}|{pcl}|{lmha}):\\d+|{asctb_temp}:[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
       ccf_ct_isa:

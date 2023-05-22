@@ -1,0 +1,22 @@
+SELECT DISTINCT ?entity
+WHERE {
+   {
+      SELECT (?s AS ?entity) WHERE { 
+         ?s ?p ?o .
+         FILTER(STRSTARTS(STR(?s),"http://purl.obolibrary.org/obo/PCL_"))
+      }
+   }
+   UNION
+   {
+      SELECT (?o AS ?entity) WHERE {
+         ?s ?p ?o .
+         FILTER(STRSTARTS(STR(?o),"http://purl.obolibrary.org/obo/PCL_"))
+      }
+   }
+   UNION
+   {
+      SELECT ?entity WHERE {
+         BIND("http://purl.obolibrary.org/obo/CL_0000000" AS ?entity)
+      }
+   }
+}

@@ -229,7 +229,7 @@ export function normalizeDoi(doi) {
 }
 
 export function isIdValid(id) {
-  return /(UBERON|FMA|CL|PCL|HGNC):\d+|ASCTB-TEMP:[a-zA-Z0-9\-]+/.test(id);
+  return /(UBERON|FMA|CL|PCL|LMHA|HGNC):\d+|ASCTB-TEMP:[a-zA-Z0-9\-]+/.test(id);
 }
 
 export function isDoiValid(doi) {

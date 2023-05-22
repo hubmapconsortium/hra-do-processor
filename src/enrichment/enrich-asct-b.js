@@ -53,6 +53,18 @@ export function enrichAsctb(context) {
       "http://purl.obolibrary.org/obo/CL_0000000", clEntities);
     inputPaths.push(clExtractPath);
 
+    info("Extracting PCL terms.")
+    const pclEntities = collectEntities(context, "pcl", enrichedPath);
+    const pclExtractPath = extractClassHierarchy(context, "pcl",
+      "http://purl.obolibrary.org/obo/CL_0000000", clEntities);
+    inputPaths.push(pclExtractPath);
+
+    info("Extracting LMHA terms.")
+    const lmhaEntities = collectEntities(context, "lmha", enrichedPath);
+    const lmhaExtractPath = extractClassHierarchy(context, "lmha",
+      "http://purl.obolibrary.org/obo/LMHA_00135", clEntities);
+    inputPaths.push(lmhaExtractPath);
+
     info("Extracting HGNC terms.")
     const hgncEntities = collectEntities(context, "hgnc", enrichedPath);
     const hgncExtractPath = extractClassHierarchy(context, "hgnc", 

@@ -37,6 +37,27 @@ robot convert -i "$MIRROR_DIR/cl.owl" \
      --format owl \
      -o "$MIRROR_DIR/cl.owl"
 
+# Download the latest PCL ontology
+curl -L "$OBO_BASE_URL/pcl/pcl-base.owl" \
+     --create-dirs -o "$MIRROR_DIR/pcl.owl" \
+     --retry 4 \
+     --max-time 200 && \
+robot convert -i "$MIRROR_DIR/pcl.owl" \
+     --format owl \
+     -o "$MIRROR_DIR/pcl.owl"
+
+# Download the latest LMHA ontology
+curl -L "https://www.lungmap.net/assets/Uploads/ontology/558488ae7f/LMHA_20190512_Cell.zip" \
+     --create-dirs -o "$MIRROR_DIR/lmha.zip" \
+     --retry 4 \
+     --max-time 200 && \
+unzip -o "$MIRROR_DIR/lmha.zip" -d $MIRROR_DIR && \
+mv "$MIRROR_DIR/LMHA_20190512_Cell.owl" "$MIRROR_DIR/lmha.owl" && \
+robot convert -i "$MIRROR_DIR/lmha.owl" \
+     --format owl \
+     -o "$MIRROR_DIR/lmha.owl" && \
+rm -rf "$MIRROR_DIR/lmha.zip"
+
 # Download the latest HGNC ontology
 curl -L "https://github.com/musen-lab/hgnc2owl/raw/main/hgnc.owl.gz" \
      --create-dirs -o "$MIRROR_DIR/hgnc.owl.gz" \
