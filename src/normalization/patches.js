@@ -224,8 +224,13 @@ export function getPatchesForBiomarker() {
 }
 
 export function normalizeDoi(doi) {
-  return doi.replace(/\s+/g, '')
-            .replace(/^(DOI|doi):|^(https?:\/\/)?doi\.org\//, 'https://doi.org/');
+  let normDoi = doi.replace(/\s+/g, '');
+  if (/^10\.\d+\/.*/.test(normDoi)) {
+    normDoi = normDoi.replace(/^(10\.\d+\/.*)/, 'https://doi.org/$1');
+  } else {
+    normDoi = normDoi.replace(/^(DOI|doi):|^(https?:\/\/)?doi\.org\//, 'https://doi.org/');
+  }
+  return normDoi;
 }
 
 export function isIdValid(id) {
@@ -234,6 +239,6 @@ export function isIdValid(id) {
 
 export function isDoiValid(doi) {
   const doiString = doi.replace(/\s+/g, '');
-  return /^(DOI|doi):10\.\d+\/.*|^(https?:\/\/)?doi\.org\/10\.\d+\/.*/.test(doiString);
+  return /^https:\/\/doi\.org\/10\.\d+\/.*/.test(doiString);
 }
 
