@@ -223,7 +223,7 @@ slots:
     multivalued: true
     range: string
     structured_pattern:
-      syntax: "^(https?:\\/\\/)?doi\\.org\\/10\\.\\d+\\/.*"
+      syntax: "^https:\\/\\/doi\\.org\\/10\\.\\d+\\/.*"
       interpolated: true
       partial_match: false    
     slot_uri: dct:reference
