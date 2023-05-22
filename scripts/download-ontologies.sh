@@ -8,6 +8,9 @@ DIR="${0%/*}"
 ROOT_DIR="$DIR/.."
 MIRROR_DIR="$ROOT_DIR/mirrors"
 
+echo "Cleaning directory..."
+rm -rf $MIRROR_DIR/*.*
+
 echo "Downloading the latest UBERON ontology..."
 curl -L "$OBO_BASE_URL/uberon/uberon-base.owl" \
      --create-dirs -o "$MIRROR_DIR/uberon.owl" \
