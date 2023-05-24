@@ -51,6 +51,7 @@ if [ -e "$ENV/bin/activate" ]; then
             && tar -zxvf relation-graph-cli-$RG.tgz \
             && mv relation-graph-cli-$RG $ENV/opt/relation-graph;
         ln -s ../opt/relation-graph/bin/relation-graph $ENV/bin/relation-graph
+        rm -f relation-graph-cli-$RG.tgz
     fi
 
     # Install Blazegraph Runner
