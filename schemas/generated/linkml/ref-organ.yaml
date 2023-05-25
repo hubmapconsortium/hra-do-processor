@@ -730,6 +730,64 @@ classes:
     class_uri: dcat:Dataset
   Container:
     name: Container
+    annotations:
+      owl.template:
+        tag: owl.template
+        value: 'AnnotationAssertion( schema:about {{id}} "{{metadata.type}}" )
+
+          AnnotationAssertion( schema:version {{id}} "{{metadata.version}}" )
+
+          AnnotationAssertion( dct:title {{id}} "{{metadata.title}}" )
+
+          AnnotationAssertion( dct:description {{id}} "{{metadata.description}}" )
+
+          {% for c in metadata.creators %}
+
+          AnnotationAssertion( dct:creator {{id}} "{{c.fullName}} ({{c.orcid}})" )
+
+          {% endfor %}
+
+          {% for l in metadata.project_leads %}
+
+          AnnotationAssertion( ccf:project_lead {{id}} "{{l.fullName}} ({{l.orcid}})"
+          )
+
+          {% endfor %}
+
+          {% for r in metadata.reviewers %}
+
+          AnnotationAssertion( schema:reviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})"
+          )
+
+          {% endfor %}
+
+          {% for r in metadata.externalReviewers %}
+
+          AnnotationAssertion( ccf:externallyReviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})"
+          )
+
+          {% endfor %}
+
+          AnnotationAssertion( schema:dateCreated {{id}} "{{metadata.creation_date}}"
+          )
+
+          AnnotationAssertion( dct:license {{id}} "{{metadata.license}}" )
+
+          AnnotationAssertion( dct:publisher {{id}} "{{metadata.publisher}}" )
+
+          {% for f in metadata.funders %}
+
+          AnnotationAssertion( schema:funding {{id}} "Award number {{f.awardNumber}}
+          from {{f.funder}}" )
+
+          {% endfor %}
+
+          AnnotationAssertion( ccf:hubmap_id {{id}} "{{metadata.hubmapId}}" )
+
+          AnnotationAssertion( schema:citation {{id}} "{{metadata.citation}}" )
+
+          AnnotationAssertion( ccf:citation_overall {{id}} "{{metadata.citationOverall}}"
+          )'
     from_schema: http://purl.humanatlas.io/specs/ref-organ
     attributes:
       id:

@@ -166,16 +166,16 @@ AnnotationAssertion( schema:citation {{id}} "{{metadata.citation}}" )
 AnnotationAssertion( ccf:citation_overall {{id}} "{{metadata.citationOverall}}" )""" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:AsctbMetadata ;
-            owl:onProperty ccf:metadata ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:AsctbDataset ;
             owl:onProperty ccf:data ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:Uriorcurie ;
-            owl:onProperty ccf:id ] ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:AsctbMetadata ;
+            owl:onProperty ccf:metadata ] ;
     linkml:attributes "{'id': SlotDefinition(name='id', id_prefixes=[], definition_uri=None, local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='http://purl.humanatlas.io/specs/asct-b', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, singular_name=None, domain=None, slot_uri=None, multivalued=None, inherited=None, readonly=None, ifabsent=None, list_elements_unique=None, list_elements_ordered=None, shared=None, key=None, identifier=None, designates_type=None, alias=None, owner=None, domain_of=[], subproperty_of=None, symmetric=None, reflexive=None, locally_reflexive=None, irreflexive=None, asymmetric=None, transitive=None, inverse=None, is_class_field=None, transitive_form_of=None, reflexive_transitive_form_of=None, role=None, is_usage_slot=None, usage_slot_name=None, relational_role=None, slot_group=None, is_grouping_slot=None, path_rule=None, disjoint_with=[], children_are_mutually_disjoint=None, union_of=[], range='uriorcurie', range_expression=None, enum_range=None, required=None, recommended=None, inlined=None, inlined_as_list=None, minimum_value=None, maximum_value=None, pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, value_presence=None, equals_string=None, equals_string_in=[], equals_number=None, equals_expression=None, minimum_cardinality=None, maximum_cardinality=None, has_member=None, all_members=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'metadata': SlotDefinition(name='metadata', id_prefixes=[], definition_uri=None, local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='http://purl.humanatlas.io/specs/asct-b', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, singular_name=None, domain=None, slot_uri=None, multivalued=None, inherited=None, readonly=None, ifabsent=None, list_elements_unique=None, list_elements_ordered=None, shared=None, key=None, identifier=None, designates_type=None, alias=None, owner=None, domain_of=[], subproperty_of=None, symmetric=None, reflexive=None, locally_reflexive=None, irreflexive=None, asymmetric=None, transitive=None, inverse=None, is_class_field=None, transitive_form_of=None, reflexive_transitive_form_of=None, role=None, is_usage_slot=None, usage_slot_name=None, relational_role=None, slot_group=None, is_grouping_slot=None, path_rule=None, disjoint_with=[], children_are_mutually_disjoint=None, union_of=[], range='AsctbMetadata', range_expression=None, enum_range=None, required=None, recommended=None, inlined=None, inlined_as_list=None, minimum_value=None, maximum_value=None, pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, value_presence=None, equals_string=None, equals_string_in=[], equals_number=None, equals_expression=None, minimum_cardinality=None, maximum_cardinality=None, has_member=None, all_members=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'data': SlotDefinition(name='data', id_prefixes=[], definition_uri=None, local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='http://purl.humanatlas.io/specs/asct-b', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, singular_name=None, domain=None, slot_uri=None, multivalued=None, inherited=None, readonly=None, ifabsent=None, list_elements_unique=None, list_elements_ordered=None, shared=None, key=None, identifier=None, designates_type=None, alias=None, owner=None, domain_of=[], subproperty_of=None, symmetric=None, reflexive=None, locally_reflexive=None, irreflexive=None, asymmetric=None, transitive=None, inverse=None, is_class_field=None, transitive_form_of=None, reflexive_transitive_form_of=None, role=None, is_usage_slot=None, usage_slot_name=None, relational_role=None, slot_group=None, is_grouping_slot=None, path_rule=None, disjoint_with=[], children_are_mutually_disjoint=None, union_of=[], range='AsctbDataset', range_expression=None, enum_range=None, required=None, recommended=None, inlined=None, inlined_as_list=None, minimum_value=None, maximum_value=None, pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, value_presence=None, equals_string=None, equals_string_in=[], equals_number=None, equals_expression=None, minimum_cardinality=None, maximum_cardinality=None, has_member=None, all_members=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[])}" .
 
 ccf:anatomical_structures a owl:ObjectProperty,
@@ -417,27 +417,25 @@ ccf:AsctbDataset a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AsctbDataset" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ccf:AnatomicalStructure ;
+            owl:onProperty ccf:anatomical_structures ],
+        [ a owl:Restriction ;
             owl:allValuesFrom ccf:CellType ;
             owl:onProperty ccf:cell_types ],
         [ a owl:Restriction ;
             owl:allValuesFrom ccf:Biomarker ;
-            owl:onProperty ccf:biomarkers ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:AnatomicalStructure ;
-            owl:onProperty ccf:anatomical_structures ] ;
+            owl:onProperty ccf:biomarkers ] ;
     linkml:attributes "{}" .
 
 ccf:AsctbMetadata a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AsctbMetadata" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:hubmap_id ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema1:version ;
-            owl:qualifiedCardinality 1 ],
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:allValuesFrom ccf:Person ;
+                        owl:onProperty dct:creator ] [ a owl:Restriction ;
+                        owl:onProperty dct:creator ;
+                        owl:someValuesFrom ccf:Person ] ) ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty schema1:dateCreated ;
@@ -449,55 +447,57 @@ ccf:AsctbMetadata a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty schema1:about ],
+            owl:onProperty ccf:hubmap_id ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ccf:String ;
-            owl:onProperty ccf:data_table ],
-        [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:allValuesFrom ccf:Person ;
-                        owl:onProperty dct:creator ] [ a owl:Restriction ;
-                        owl:onProperty dct:creator ;
-                        owl:someValuesFrom ccf:Person ] ) ],
-        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty dct:license ;
-            owl:qualifiedCardinality 1 ],
+            owl:onProperty schema1:name ],
         [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty dct:title ;
-            owl:qualifiedCardinality 1 ],
+            owl:allValuesFrom ccf:Grant ;
+            owl:onProperty schema1:funding ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Person ;
+            owl:onProperty schema1:reviewedBy ],
         [ a owl:Restriction ;
             owl:allValuesFrom ccf:Person ;
             owl:onProperty ccf:project_lead ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty schema1:name ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
             owl:onProperty dct:publisher ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Person ;
-            owl:onProperty ccf:externallyReviewedBy ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:citation_overall ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Person ;
-            owl:onProperty schema1:reviewedBy ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema1:about ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:Uriorcurie ;
             owl:onProperty ccf:doi ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Grant ;
-            owl:onProperty schema1:funding ],
+            owl:allValuesFrom ccf:String ;
+            owl:onProperty ccf:data_table ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:license ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema1:version ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Person ;
+            owl:onProperty ccf:externallyReviewedBy ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty dct:description ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:title ;
             owl:qualifiedCardinality 1 ] ;
     skos:exactMatch dcat:Dataset ;
     linkml:attributes "{}" .
@@ -506,24 +506,24 @@ ccf:BiomarkerSet a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "BiomarkerSet" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom ccf:String ;
-            owl:onProperty dct:reference ],
-        [ a owl:Restriction ;
             owl:allValuesFrom ccf:Biomarker ;
-            owl:onProperty ccf:members ] ;
+            owl:onProperty ccf:members ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:String ;
+            owl:onProperty dct:reference ] ;
     linkml:attributes "{}" .
 
 ccf:Grant a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Grant" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema1:funder ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty schema1:award ] ;
+            owl:onProperty schema1:award ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema1:funder ;
+            owl:qualifiedCardinality 1 ] ;
     skos:exactMatch schema1:Grant ;
     linkml:attributes "{}" .
 
@@ -545,14 +545,6 @@ ccf:AsctbConcept a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AsctbConcept" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass ccf:Boolean ;
-            owl:onProperty ccf:ccf_is_provisional ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:ccf_asctb_type ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:class_type ;
             owl:qualifiedCardinality 1 ],
@@ -561,8 +553,16 @@ ccf:AsctbConcept a owl:Class,
             owl:onProperty ccf:ccf_pref_label ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:onClass ccf:Boolean ;
+            owl:onProperty ccf:ccf_is_provisional ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:ccf_asctb_type ;
             owl:qualifiedCardinality 1 ] ;
     linkml:attributes "{}" .
 
@@ -572,11 +572,11 @@ ccf:Biomarker a owl:Class,
     ccf:owl "Class" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:ccf_biomarker_type ;
+            owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
+            owl:onProperty ccf:ccf_biomarker_type ;
             owl:qualifiedCardinality 1 ],
         ccf:AsctbConcept ;
     linkml:attributes "{}" ;
@@ -604,18 +604,18 @@ SubClassOf(
 )
 {% endfor %} """ ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ccf:BiomarkerSet ;
+            owl:onProperty ccf:ccf_has_biomarker_set ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:CellType ;
+            owl:onProperty ccf:ccf_ct_isa ],
+        [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:allValuesFrom ccf:AnatomicalStructure ;
             owl:onProperty ccf:ccf_located_in ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:CellType ;
-            owl:onProperty ccf:ccf_ct_isa ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:BiomarkerSet ;
-            owl:onProperty ccf:ccf_has_biomarker_set ],
         ccf:AsctbConcept ;
     linkml:attributes "{}" ;
     linkml:is_a "AsctbConcept" .
@@ -628,12 +628,12 @@ ccf:AnatomicalStructure a owl:Class,
     rdfs:label "AnatomicalStructure" ;
     ccf:owl "Class" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ccf:AnatomicalStructure ;
+            owl:onProperty ccf:ccf_part_of ],
+        [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:AnatomicalStructure ;
-            owl:onProperty ccf:ccf_part_of ],
         ccf:AsctbConcept ;
     linkml:attributes "{}" ;
     linkml:is_a "AsctbConcept" .
@@ -642,10 +642,6 @@ ccf:Person a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Person" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty foaf:name ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty foaf:firstName ;
             owl:qualifiedCardinality 1 ],
@@ -656,6 +652,10 @@ ccf:Person a owl:Class,
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty foaf:surname ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty foaf:name ;
             owl:qualifiedCardinality 1 ] ;
     skos:exactMatch foaf:Person ;
     linkml:attributes "{}" .
