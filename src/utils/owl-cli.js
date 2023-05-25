@@ -1,10 +1,13 @@
 import { existsSync, readFileSync } from 'fs';
 import { throwOnError } from './sh-exec.js';
 
-export function mergeTurtles(outputPath, prefixesPath, inputPaths) {
+export function mergeTurtles(outputPath, prefixesPath, inputPaths, defaultPrefix = undefined) {
   let prefixMap = {};
   if (prefixesPath && existsSync(prefixesPath)) {
     prefixMap = JSON.parse(readFileSync(prefixesPath));
+  }
+  if (defaultPrefix) {
+    prefixMap['='] = defaultPrefix;
   }
   const prefixesString = Object.entries(prefixMap)
     .map(([key, value]) => `-p${key}=${value}`)
