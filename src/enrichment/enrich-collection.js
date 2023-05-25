@@ -3,7 +3,7 @@ import { load } from 'js-yaml';
 import { resolve } from 'path';
 import { error, header, info, more } from '../utils/logging.js';
 import { convert, merge } from '../utils/robot.js';
-import { cleanTemporaryFiles, convertNormalizedToOwl, prettifyEnriched } from './utils.js';
+import { cleanTemporaryFiles, convertNormalizedToOwl } from './utils.js';
 
 export function enrichCollection(context) {
   header(context, 'run-enrich');
@@ -33,7 +33,6 @@ export function enrichCollection(context) {
     const turtleEnrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating collection: ${turtleEnrichedPath}`);
     convert(enrichedPath, turtleEnrichedPath, 'ttl');
-    prettifyEnriched(context);
   } catch (e) {
     error(e);
   } finally {

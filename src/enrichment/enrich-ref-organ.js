@@ -1,6 +1,6 @@
 import { resolve } from 'path';
 import { header, info } from '../utils/logging.js';
-import { cleanTemporaryFiles, convertNormalized, convertNormalizedToOwl, prettifyEnriched } from './utils.js';
+import { cleanTemporaryFiles, convertNormalized, convertNormalizedToOwl } from './utils.js';
 import { convert, merge } from '../utils/robot.js';
 
 export function enrichRefOrgan(context) {
@@ -19,7 +19,6 @@ export function enrichRefOrgan(context) {
 
     info(`Creating ref-organ: ${turtleEnrichedPath}`);
     convert(enrichedPath, turtleEnrichedPath, 'ttl');
-    prettifyEnriched(context);
   } catch (e) {
     error(e);
   } finally {

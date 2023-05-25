@@ -2,7 +2,7 @@ import { resolve } from 'path';
 import { error, header, info, more } from '../utils/logging.js';
 import { convert, extract, merge, query } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
-import { cleanTemporaryFiles, convertNormalizedToOwl, prettifyEnriched, runCompleteClosure } from './utils.js';
+import { cleanTemporaryFiles, convertNormalizedToOwl, runCompleteClosure } from './utils.js';
 
 export function enrichAsctb(context) {
   header(context, 'run-enrich');
@@ -98,7 +98,6 @@ export function enrichAsctb(context) {
     const turtleEnrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating asct-b: ${turtleEnrichedPath}`);
     convert(enrichedPath, turtleEnrichedPath, 'ttl');
-    prettifyEnriched(context);
   } catch (e) {
     error(e);
   } finally {
