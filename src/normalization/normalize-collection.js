@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
 import { readMetadata, writeNormalized } from './utils.js';
+import { validateNormalized } from '../utils/validation.js';
 import { header } from '../utils/logging.js';
 
 export function normalizeCollection(context) {
@@ -14,6 +15,8 @@ export function normalizeCollection(context) {
   const data = load(readFileSync(dataPath))['digital-objects'];
 
   writeNormalized(context, data);
+  validateNormalized(context);
+
   validateCollection(context, data);
 }
 
