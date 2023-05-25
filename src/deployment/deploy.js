@@ -7,7 +7,7 @@ import { reifyTurtle } from '../utils/reify.js';
 export function deploy(context) {
   const obj = context.selectedDigitalObject;
   const deployPath = resolve(context.deploymentHome, obj.doString);
-  const metadata = readMetadata(obj.path);
+  const metadata = readMetadata(context);
   const datasetPath = resolve(deployPath, 'dataset.ttl');
 
   sh.mkdir('-p', resolve(deployPath, 'assets'));

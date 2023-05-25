@@ -1,15 +1,15 @@
 
-# Slot: doi
+# Slot: publisher
 
 
 
 
-URI: [ccf:doi](http://purl.org/ccf/doi)
+URI: [ccf:publisher](http://purl.org/ccf/publisher)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Uriorcurie](types/Uriorcurie.md)
+None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Parents
 
@@ -25,5 +25,5 @@ None &#8594;  <sub>0..1</sub> [Uriorcurie](types/Uriorcurie.md)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | ccf:doi |
+| **Mappings:** | | dct:publisher |
 

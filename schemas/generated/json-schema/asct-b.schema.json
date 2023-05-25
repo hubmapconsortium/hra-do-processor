@@ -198,7 +198,7 @@
                 },
                 "references": {
                     "items": {
-                        "pattern": "DOI:10\\.\\d+/.*|PMID:\\d+",
+                        "pattern": "^https:\\/\\/doi\\.org\\/10\\.\\d+\\/.*",
                         "type": "string"
                     },
                     "type": "array"
@@ -242,7 +242,7 @@
                     "type": "string"
                 },
                 "id": {
-                    "pattern": "(CL|PCL):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+",
+                    "pattern": "(CL|PCL|LMHA):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+",
                     "type": "string"
                 }
             },

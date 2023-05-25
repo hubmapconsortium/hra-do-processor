@@ -27,7 +27,7 @@ export async function normalizeAsctb(context) {
 async function getRawData(context) {
   const { path } = context.selectedDigitalObject;
 
-  const metadata = readMetadata(path);
+  const metadata = readMetadata(context);
   const dataUrl = Array.isArray(metadata.datatable) ? metadata.datatable[0] : metadata.datatable;
   let requestUrl = ASCTB_API + 'v2/csv';
   let data;

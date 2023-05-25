@@ -1,6 +1,7 @@
 import { resolve } from 'path';
+import { info } from '../utils/logging.js';
+import { mergeTurtles } from '../utils/owl-cli.js';
 import { redundant } from '../utils/relation-graph.js';
-import { info, more } from '../utils/logging.js';
 import { merge } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
 
@@ -12,7 +13,7 @@ export function convertNormalized(context) {
   const output = resolve(obj.path, 'enriched/enriched.ttl');
   const errorFile = resolve(obj.path, 'enriched/errors.yaml');
 
-  info(`Using 'linkml-convert' to transform ${input}`)
+  info(`Using 'linkml-convert' to transform ${input}`);
   throwOnError(
     `linkml-convert ${skipValidation ? '--no-validate' : ''} --schema ${schema} ${input} -o ${output}`,
     'Enrichment failed.'
@@ -20,6 +21,13 @@ export function convertNormalized(context) {
   info(`Enriched digital object written to ${output}`);
 
   return output;
+}
+
+export function prettifyEnriched(context) {
+  const { selectedDigitalObject: obj, processorHome } = context;
+  const enriched = resolve(obj.path, 'enriched/enriched.ttl');
+  const prefixes = resolve(processorHome, 'schemas/prefixes.json');
+  mergeTurtles(enriched, prefixes, [enriched]);
 }
 
 export function convertNormalizedToOwl(context, inputPath, outputPath) {
@@ -47,9 +55,6 @@ export function runCompleteClosure(context, inputPath, outputPath) {
 
 export function cleanTemporaryFiles(context) {
   const { selectedDigitalObject: obj } = context;
-  const enrichedPath = resolve(obj.path, "enriched/");
-  throwOnError(
-    `find ${enrichedPath} ! -name 'enriched.ttl' -type f -exec rm -f {} +`,
-    'Clean temporary files failed.'
-  );
+  const enrichedPath = resolve(obj.path, 'enriched/');
+  throwOnError(`find ${enrichedPath} ! -name 'enriched.ttl' -type f -exec rm -f {} +`, 'Clean temporary files failed.');
 }

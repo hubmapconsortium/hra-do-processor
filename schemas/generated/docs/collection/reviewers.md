@@ -1,15 +1,15 @@
 
-# Slot: doi
+# Slot: reviewers
 
 
 
 
-URI: [ccf:doi](http://purl.org/ccf/doi)
+URI: [ccf:reviewers](http://purl.org/ccf/reviewers)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Uriorcurie](types/Uriorcurie.md)
+None &#8594;  <sub>0..\*</sub> [Person](Person.md)
 
 ## Parents
 
@@ -25,5 +25,5 @@ None &#8594;  <sub>0..1</sub> [Uriorcurie](types/Uriorcurie.md)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | ccf:doi |
+| **Mappings:** | | schema:reviewedBy |
 

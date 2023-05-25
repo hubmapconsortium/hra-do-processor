@@ -1,15 +1,15 @@
 
-# Slot: doi
+# Slot: funders
 
 
 
 
-URI: [ccf:doi](http://purl.org/ccf/doi)
+URI: [ccf:funders](http://purl.org/ccf/funders)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Uriorcurie](types/Uriorcurie.md)
+None &#8594;  <sub>0..\*</sub> [Grant](Grant.md)
 
 ## Parents
 
@@ -25,5 +25,5 @@ None &#8594;  <sub>0..1</sub> [Uriorcurie](types/Uriorcurie.md)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | ccf:doi |
+| **Mappings:** | | schema:funding |
 

@@ -9,7 +9,7 @@ export function packageIt(context) {
   const obj = context.selectedDigitalObject;
   sh.mkdir('-p', resolve(obj.path, 'packaged'));
 
-  const metadata = readMetadata(obj.path);
+  const metadata = readMetadata(context);
   writeDoiXml(context, metadata);
   writeReadmeMd(context, metadata);
   writeIndexHtml(context, metadata);

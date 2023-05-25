@@ -264,12 +264,12 @@ slots:
     inlined: true
   placement:
     required: true
-    slot_uri: ccf:has_placement
+    slot_uri: ccf:placement_for
     range: SpatialPlacement
     inlined: true
   placements:
     required: false
-    slot_uri: ccf:has_placement
+    slot_uri: ccf:placement_for
     range: SpatialPlacement
     inlined: true
     multivalued: true

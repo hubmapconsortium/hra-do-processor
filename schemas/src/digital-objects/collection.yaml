@@ -21,6 +21,7 @@ classes:
     class_uri: dcat:Dataset
     slots:
       - type
+      - name
       - version
       - title
       - description

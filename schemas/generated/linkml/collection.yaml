@@ -22,12 +22,21 @@ prefixes:
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
-  shex:
-    prefix_prefix: shex
-    prefix_reference: http://www.w3.org/ns/shex#
+  dcat:
+    prefix_prefix: dcat
+    prefix_reference: http://www.w3.org/ns/dcat#
+  dct:
+    prefix_prefix: dct
+    prefix_reference: http://purl.org/dc/terms/
+  foaf:
+    prefix_prefix: foaf
+    prefix_reference: http://xmlns.com/foaf/0.1/
   schema:
     prefix_prefix: schema
     prefix_reference: http://schema.org/
+  shex:
+    prefix_prefix: shex
+    prefix_reference: http://www.w3.org/ns/shex#
 default_prefix: ccf
 default_range: string
 types:
@@ -176,228 +185,266 @@ types:
     uri: shex:nonLiteral
     repr: str
 slots:
-  id:
-    name: id
+  type:
+    name: type
     from_schema: http://purl.humanatlas.io/specs/collection
-    identifier: true
+    slot_uri: schema:about
+    required: false
+  name:
+    name: name
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slot_uri: schema:name
+    required: false
+  version:
+    name: version
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slot_uri: schema:version
     required: true
-  anatomical_structures:
-    name: anatomical_structures
+  title:
+    name: title
     from_schema: http://purl.humanatlas.io/specs/collection
-    slot_uri: ccf:contains_anatomical_structures
+    slot_uri: dct:title
+    required: true
+  description:
+    name: description
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slot_uri: dct:description
+    required: true
+  creators:
+    name: creators
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slot_uri: dct:creator
     multivalued: true
-    range: AnatomicalStructure
+    range: Person
     required: true
     inlined_as_list: true
-  cell_types:
-    name: cell_types
+  project_leads:
+    name: project_leads
     from_schema: http://purl.humanatlas.io/specs/collection
-    slot_uri: ccf:contains_cell_types
+    slot_uri: ccf:project_lead
     multivalued: true
-    range: CellType
+    range: Person
     required: false
     inlined_as_list: true
-  biomarkers:
-    name: biomarkers
+  reviewers:
+    name: reviewers
     from_schema: http://purl.humanatlas.io/specs/collection
-    slot_uri: ccf:contains_biomarkers
+    slot_uri: schema:reviewedBy
     multivalued: true
-    range: Biomarker
+    range: Person
     required: false
     inlined_as_list: true
-  biomarkers_protein:
-    name: biomarkers_protein
+  externalReviewers:
+    name: externalReviewers
     from_schema: http://purl.humanatlas.io/specs/collection
-    slot_uri: ccf:contains_protein_biomarkers
+    slot_uri: ccf:externallyReviewedBy
     multivalued: true
-    range: ProteinBiomarker
+    range: Person
     required: false
     inlined_as_list: true
-  biomarkers_gene:
-    name: biomarkers_gene
+  creation_date:
+    name: creation_date
     from_schema: http://purl.humanatlas.io/specs/collection
-    slot_uri: ccf:contains_gene_biomarkers
-    multivalued: true
-    range: GeneBiomarker
-    required: false
-    inlined_as_list: true
-  biomarkers_lipids:
-    name: biomarkers_lipids
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slot_uri: ccf:contains_lipid_biomarkers
-    multivalued: true
-    range: LipidBiomarker
-    required: false
-    inlined_as_list: true
-  biomarkers_meta:
-    name: biomarkers_meta
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slot_uri: ccf:contains_meta_biomarkers
-    multivalued: true
-    range: MetaBiomarker
-    required: false
-    inlined_as_list: true
-  biomarkers_prot:
-    name: biomarkers_prot
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slot_uri: ccf:contains_prot_biomarkers
-    multivalued: true
-    range: ProtBiomarker
-    required: false
-    inlined_as_list: true
-  ftu_types:
-    name: ftu_types
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slot_uri: ccf:ftu_types
-    multivalued: true
-    range: FtuType
-    required: false
-    inlined_as_list: true
-  references:
-    name: references
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slot_uri: ccf:contains_references
-    multivalued: true
-    range: StudyReference
-    required: false
-    inlined_as_list: true
-  label:
-    name: label
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slot_uri: rdfs:label
+    slot_uri: schema:dateCreated
     required: true
-  preferred_name:
-    name: preferred_name
+  license:
+    name: license
     from_schema: http://purl.humanatlas.io/specs/collection
-    slot_uri: ccf:pref_label
+    slot_uri: dct:license
+    required: true
+  publisher:
+    name: publisher
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slot_uri: dct:publisher
     required: false
-  biomarker_type:
-    name: biomarker_type
+  funders:
+    name: funders
     from_schema: http://purl.humanatlas.io/specs/collection
-    slot_uri: ccf:biomarker_type
+    slot_uri: schema:funding
+    multivalued: true
+    range: Grant
+    required: false
+    inlined_as_list: true
+  hubmapId:
+    name: hubmapId
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slot_uri: ccf:hubmap_id
     required: false
   doi:
     name: doi
     from_schema: http://purl.humanatlas.io/specs/collection
-    slot_uri: dcterms:references
+    slot_uri: ccf:doi
+    range: uriorcurie
     required: false
-  pubmed_id:
-    name: pubmed_id
+  citation:
+    name: citation
     from_schema: http://purl.humanatlas.io/specs/collection
-    slot_uri: ccf:pubmed_id
+    slot_uri: schema:citation
+    required: false
+  citationOverall:
+    name: citationOverall
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slot_uri: ccf:citation_overall
+    required: false
+  datatable:
+    name: datatable
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slot_uri: ccf:data_table
+    multivalued: true
+    required: false
+  fullName:
+    name: fullName
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slot_uri: foaf:name
+    required: true
+  firstName:
+    name: firstName
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slot_uri: foaf:firstName
+    required: true
+  lastName:
+    name: lastName
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slot_uri: foaf:surname
+    required: true
+  orcid:
+    name: orcid
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slot_uri: schema:identifier
+    required: true
+  funder:
+    name: funder
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slot_uri: schema:funder
+    required: true
+  awardNumber:
+    name: awardNumber
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slot_uri: schema:award
     required: false
 classes:
-  AsctbRecord:
-    name: AsctbRecord
+  CollectionMetadata:
+    name: CollectionMetadata
     from_schema: http://purl.humanatlas.io/specs/collection
     slots:
-    - anatomical_structures
-    - cell_types
-    - biomarkers
-    - biomarkers_protein
-    - biomarkers_gene
-    - biomarkers_lipids
-    - biomarkers_meta
-    - biomarkers_prot
-    - ftu_types
-    - references
-    class_uri: ccf:AsctbRecord
-  AnatomicalStructure:
-    name: AnatomicalStructure
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slots:
-    - id
-    - label
-    - preferred_name
-    class_uri: ccf:AnatomicalStructure
-  CellType:
-    name: CellType
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slots:
-    - id
-    - label
-    - preferred_name
-    class_uri: ccf:CellType
-  Biomarker:
-    name: Biomarker
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slots:
-    - id
-    - label
-    - preferred_name
-    - biomarker_type
-    class_uri: ccf:Biomarker
-  ProteinBiomarker:
-    name: ProteinBiomarker
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slots:
-    - id
-    - label
-    - preferred_name
-    - biomarker_type
-    class_uri: ccf:ProteinBiomarker
-  GeneBiomarker:
-    name: GeneBiomarker
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slots:
-    - id
-    - label
-    - preferred_name
-    - biomarker_type
-    class_uri: ccf:GeneBiomarker
-  LipidBiomarker:
-    name: LipidBiomarker
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slots:
-    - id
-    - label
-    - preferred_name
-    - biomarker_type
-    class_uri: ccf:LipidBiomarker
-  MetaBiomarker:
-    name: MetaBiomarker
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slots:
-    - id
-    - label
-    - preferred_name
-    - biomarker_type
-    class_uri: ccf:MetaBiomarker
-  ProtBiomarker:
-    name: ProtBiomarker
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slots:
-    - id
-    - label
-    - preferred_name
-    - biomarker_type
-    class_uri: ccf:ProtBiomarker
-  FtuType:
-    name: FtuType
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slots:
-    - id
-    - label
-    - preferred_name
-    class_uri: ccf:FtuType
-  StudyReference:
-    name: StudyReference
-    from_schema: http://purl.humanatlas.io/specs/collection
-    slots:
-    - id
+    - type
+    - name
+    - version
+    - title
+    - description
+    - creators
+    - project_leads
+    - reviewers
+    - externalReviewers
+    - creation_date
+    - license
+    - publisher
+    - funders
+    - hubmapId
     - doi
-    - pubmed_id
-    class_uri: ccf:StudyReference
+    - citation
+    - citationOverall
+    - datatable
+    class_uri: dcat:Dataset
   Container:
     name: Container
+    annotations:
+      owl.template:
+        tag: owl.template
+        value: 'AnnotationAssertion( schema:about {{id}} "{{metadata.type}}" )
+
+          AnnotationAssertion( schema:version {{id}} "{{metadata.version}}" )
+
+          AnnotationAssertion( dct:title {{id}} "{{metadata.title}}" )
+
+          AnnotationAssertion( dct:description {{id}} "{{metadata.description}}" )
+
+          {% for c in metadata.creators %}
+
+          AnnotationAssertion( dct:creator {{id}} "{{c.fullName}} ({{c.orcid}})" )
+
+          {% endfor %}
+
+          {% for l in metadata.project_leads %}
+
+          AnnotationAssertion( ccf:project_lead {{id}} "{{l.fullName}} ({{l.orcid}})"
+          )
+
+          {% endfor %}
+
+          {% for r in metadata.reviewers %}
+
+          AnnotationAssertion( schema:reviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})"
+          )
+
+          {% endfor %}
+
+          {% for r in metadata.externalReviewers %}
+
+          AnnotationAssertion( ccf:externallyReviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})"
+          )
+
+          {% endfor %}
+
+          AnnotationAssertion( schema:dateCreated {{id}} "{{metadata.creation_date}}"
+          )
+
+          AnnotationAssertion( dct:license {{id}} "{{metadata.license}}" )
+
+          AnnotationAssertion( dct:publisher {{id}} "{{metadata.publisher}}" )
+
+          {% for f in metadata.funders %}
+
+          AnnotationAssertion( schema:funding {{id}} "Award number {{f.awardNumber}}
+          from {{f.funder}}" )
+
+          {% endfor %}
+
+          AnnotationAssertion( ccf:hubmap_id {{id}} "{{metadata.hubmapId}}" )
+
+          AnnotationAssertion( schema:citation {{id}} "{{metadata.citation}}" )
+
+          AnnotationAssertion( ccf:citation_overall {{id}} "{{metadata.citationOverall}}"
+          )
+
+          {% for do in data %}
+
+          AnnotationAssertion( schema:isBasedOn {{id}} https://purl.humanatlas.io/{{do}}
+          )
+
+          {% endfor %}'
     from_schema: http://purl.humanatlas.io/specs/collection
     attributes:
+      id:
+        name: id
+        from_schema: http://purl.humanatlas.io/specs/collection
+        range: uriorcurie
+      metadata:
+        name: metadata
+        from_schema: http://purl.humanatlas.io/specs/collection
+        range: CollectionMetadata
       data:
         name: data
         from_schema: http://purl.humanatlas.io/specs/collection
         multivalued: true
-        range: AsctbRecord
+        required: true
         inlined_as_list: true
     tree_root: true
+  Person:
+    name: Person
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slots:
+    - fullName
+    - firstName
+    - lastName
+    - orcid
+    class_uri: foaf:Person
+  Grant:
+    name: Grant
+    from_schema: http://purl.humanatlas.io/specs/collection
+    slots:
+    - funder
+    - awardNumber
+    class_uri: schema:Grant
 source_file: schemas/src/digital-objects/collection.yaml
 

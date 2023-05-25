@@ -9,7 +9,7 @@ import { header } from '../utils/logging.js';
 export function normalizeCollection(context) {
   header(context, 'run-normalize');
   const { path } = context.selectedDigitalObject;
-  const metadata = readMetadata(path);
+  const metadata = readMetadata(context);
 
   const dataPath = resolve(path, 'raw', metadata.datatable[0]);
   const data = load(readFileSync(dataPath))['digital-objects'];

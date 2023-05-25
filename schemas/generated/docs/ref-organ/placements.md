@@ -25,5 +25,5 @@ None &#8594;  <sub>0..\*</sub> [SpatialPlacement](SpatialPlacement.md)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | ccf:has_placement |
+| **Mappings:** | | ccf:placement_for |
 

@@ -460,14 +460,14 @@ slots:
   placement:
     name: placement
     from_schema: http://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:has_placement
+    slot_uri: ccf:placement_for
     range: SpatialPlacement
     required: true
     inlined: true
   placements:
     name: placements
     from_schema: http://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:has_placement
+    slot_uri: ccf:placement_for
     multivalued: true
     range: SpatialPlacement
     required: false

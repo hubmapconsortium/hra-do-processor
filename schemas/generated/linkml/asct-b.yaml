@@ -19,18 +19,18 @@ prefixes:
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
-  DOI:
-    prefix_prefix: DOI
-    prefix_reference: https://doi.org/
-  PMID:
-    prefix_prefix: PMID
-    prefix_reference: https://www.ncbi.nlm.nih.gov/pubmed/
   UBERON:
     prefix_prefix: UBERON
     prefix_reference: http://purl.obolibrary.org/obo/UBERON_
   CL:
     prefix_prefix: CL
     prefix_reference: http://purl.obolibrary.org/obo/CL_
+  PCL:
+    prefix_prefix: PCL
+    prefix_reference: http://purl.obolibrary.org/obo/PCL_
+  LMHA:
+    prefix_prefix: LMHA
+    prefix_reference: http://purl.obolibrary.org/obo/LMHA_
   SO:
     prefix_prefix: SO
     prefix_reference: http://purl.obolibrary.org/obo/SO_
@@ -253,9 +253,9 @@ slots:
     slot_uri: dct:reference
     multivalued: true
     range: string
-    pattern: DOI:10\.\d+/.*|PMID:\d+
+    pattern: ^https:\/\/doi\.org\/10\.\d+\/.*
     structured_pattern:
-      syntax: '{doi}:10\.\d+/.*|{pmid}:\d+'
+      syntax: ^https:\/\/doi\.org\/10\.\d+\/.*
       interpolated: true
       partial_match: false
   ccf_has_biomarker_set:
@@ -519,9 +519,9 @@ classes:
     slot_usage:
       id:
         name: id
-        pattern: (CL|PCL):\d+|ASCTB-TEMP:[a-zA-Z0-9-]+
+        pattern: (CL|PCL|LMHA):\d+|ASCTB-TEMP:[a-zA-Z0-9-]+
         structured_pattern:
-          syntax: ({cl}|{pcl}):\d+|{asctb_temp}:[a-zA-Z0-9-]+
+          syntax: ({cl}|{pcl}|{lmha}):\d+|{asctb_temp}:[a-zA-Z0-9-]+
           interpolated: true
           partial_match: false
       ccf_ct_isa:
@@ -663,13 +663,7 @@ classes:
           AnnotationAssertion( schema:citation {{id}} "{{metadata.citation}}" )
 
           AnnotationAssertion( ccf:citation_overall {{id}} "{{metadata.citationOverall}}"
-          )
-
-          {% for d in metadata.datatable %}
-
-          AnnotationAssertion( ccf:data_table {{id}} "{{d}}" )
-
-          {% endfor %}'
+          )'
     from_schema: http://purl.humanatlas.io/specs/asct-b
     attributes:
       id:
@@ -715,16 +709,13 @@ settings:
   pcl:
     setting_key: pcl
     setting_value: PCL
+  lmha:
+    setting_key: lmha
+    setting_value: LMHA
   hgnc:
     setting_key: hgnc
     setting_value: HGNC
   asctb_temp:
     setting_key: asctb_temp
     setting_value: ASCTB-TEMP
-  doi:
-    setting_key: doi
-    setting_value: DOI
-  pmid:
-    setting_key: pmid
-    setting_value: PMID
 
