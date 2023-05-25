@@ -155,7 +155,7 @@
             "type": "object"
         }
     },
-    "$id": "http://purl.humanatlas.io/specs/collection",
+    "$id": "https://purl.humanatlas.io/specs/collection",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": true,
     "description": "",

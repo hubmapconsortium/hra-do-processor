@@ -1,4 +1,4 @@
-id: http://purl.humanatlas.io/specs/metadata
+id: https://purl.humanatlas.io/specs/metadata
 name: metadata
 prefixes:
   ccf: http://purl.org/ccf/

@@ -437,7 +437,7 @@
             "type": "string"
         }
     },
-    "$id": "http://purl.humanatlas.io/specs/ref-organ",
+    "$id": "https://purl.humanatlas.io/specs/ref-organ",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": true,
     "description": "",

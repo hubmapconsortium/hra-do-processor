@@ -317,7 +317,7 @@
             "type": "object"
         }
     },
-    "$id": "http://purl.humanatlas.io/specs/asct-b",
+    "$id": "https://purl.humanatlas.io/specs/asct-b",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": true,
     "description": "",

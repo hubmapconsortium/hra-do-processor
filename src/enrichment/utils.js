@@ -32,17 +32,17 @@ export function prettifyEnriched(context) {
 
 export function convertNormalizedToOwl(context, inputPath, outputPath) {
   const { selectedDigitalObject: obj, processorHome } = context;
-  
+
   const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml`);
   const schemaBackupPath = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml.bak`);
 
-  info(`Using 'linkml-data2owl' to transform ${inputPath}`)
+  info(`Using 'linkml-data2owl' to transform ${inputPath}`);
   throwOnError(
     `sed -i.bak 's|^id:.*|id: ${obj.iri}|' ${schemaPath} && \
      linkml-data2owl --output-type ttl --schema ${schemaPath} ${inputPath} -o ${outputPath} && \
      mv ${schemaBackupPath} ${schemaPath}`,
     'Converting to OWL ontology failed.',
-    (message) => (message.replace(/(.*\n)+TypeError:(.*)/, '$2').trim())
+    (message) => message.replace(/(.*\n)+TypeError:(.*)/, '$2').trim()
   );
 }
 
