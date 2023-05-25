@@ -77,8 +77,14 @@ export function enrichAsctb(context) {
     }
     merge(inputPaths, enrichedPath);
 
+    info('Running the complete inference closure process.');
+    const roPath = resolve(processorHome, `mirrors/ro.owl`);
+    const roEnrichedPath = resolve(obj.path, 'enriched/ro-enriched.owl');
+    merge([enrichedPath, roPath], roEnrichedPath);
+    runCompleteClosure(context, roEnrichedPath, enrichedPath);
+
     const turtleEnrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
-    info(`Creating file: ${turtleEnrichedPath}`);
+    info(`Creating asct-b: ${turtleEnrichedPath}`);
     convert(enrichedPath, turtleEnrichedPath, "ttl");
   }
   catch (e) {
