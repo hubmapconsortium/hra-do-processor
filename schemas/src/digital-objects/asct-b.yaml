@@ -190,9 +190,6 @@ classes:
         AnnotationAssertion( ccf:hubmap_id {{id}} "{{metadata.hubmapId}}" )
         AnnotationAssertion( schema:citation {{id}} "{{metadata.citation}}" )
         AnnotationAssertion( ccf:citation_overall {{id}} "{{metadata.citationOverall}}" )
-        {% for d in metadata.datatable %}
-        AnnotationAssertion( ccf:data_table {{id}} "{{d}}" )
-        {% endfor %}
 
 slots:
   id:
