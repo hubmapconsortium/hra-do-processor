@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { convertNormalizedToOwl, cleanTemporaryFiles } from './utils.js';
+import { convertNormalizedToOwl, runCompleteClosure, cleanTemporaryFiles } from './utils.js';
 import { query, extract, merge, convert } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
 import { error, header, info, more } from '../utils/logging.js';
@@ -7,7 +7,7 @@ import { error, header, info, more } from '../utils/logging.js';
 export function enrichAsctb(context) {
   header(context, 'run-enrich');
   try {
-    const { selectedDigitalObject: obj } = context;
+    const { selectedDigitalObject: obj, processorHome } = context;
 
     // Convert normalized data to graph data (.ttl)
     overrideSchemaId(context);
