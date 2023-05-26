@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { header, info } from '../utils/logging.js';
+import { error, header, info } from '../utils/logging.js';
 import { cleanTemporaryFiles, convertNormalized, convertNormalizedToOwl } from './utils.js';
 import { convert, merge } from '../utils/robot.js';
 
