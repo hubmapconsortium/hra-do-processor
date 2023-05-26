@@ -10,11 +10,9 @@ export function enrichAsctb(context) {
     const { selectedDigitalObject: obj, processorHome } = context;
 
     // Convert normalized data to graph data (.ttl)
-    overrideSchemaId(context);
     const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
-    const graphPath = resolve(obj.path, 'enriched/graph.ttl');
-    convertNormalizedToOwl(context, normalizedPath, graphPath);
-    revertChanges(context);
+    const ontologyPath = resolve(obj.path, 'enriched/ontology.ttl');
+    convertNormalizedToOwl(context, normalizedPath, ontologyPath);
     
     let inputPaths = []; // variable to hold input files for merging
 
@@ -24,7 +22,7 @@ export function enrichAsctb(context) {
 
     info("Merging files:");
     const enrichedPath = resolve(obj.path, 'enriched/enriched.owl')
-    inputPaths.push(graphPath);
+    inputPaths.push(ontologyPath);
     inputPaths.push(validationPath);
     for (const inputPath of inputPaths) {
       more(` -> ${inputPath}`);
@@ -94,28 +92,6 @@ export function enrichAsctb(context) {
     info('Cleaning up temporary files.')
     cleanTemporaryFiles(context);
   }
-}
-
-function overrideSchemaId(context) {
-  const { selectedDigitalObject: obj, processorHome } = context;
-  const schema = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml`);
-
-  throwOnError(
-    `sed -i.bak 's|^id:.*|id: ${obj.iri}|' ${schema}`,
-    'Override schema id failed.'
-  );
-}
-
-function revertChanges(context) {
-  const { selectedDigitalObject: obj, processorHome } = context;
-
-  const originalSchema = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml.bak`);
-  const schema = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml`);
-
-  throwOnError(
-    `mv ${originalSchema} ${schema}`,
-    'Revert schema changes failed.'
-  );
 }
 
 function downloadValidationResult(context, useNightlyBuild=true) {
