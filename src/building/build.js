@@ -86,7 +86,7 @@ async function runOnChildObjects(context, action) {
   const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
   const childObjects = load(readFileSync(normalizedPath))['data'];
   for (const child of childObjects) {
-    const selectedDigitalObject = getDigitalObjectInformation(resolve(context.doHome, child), context.baseIri);
+    const selectedDigitalObject = getDigitalObjectInformation(resolve(context.doHome, child), context.purlIri);
     await action({
       ...context,
       selectedDigitalObject,

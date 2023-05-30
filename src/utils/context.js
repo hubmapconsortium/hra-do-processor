@@ -22,7 +22,7 @@ export function getContext(program, subcommand, selectedDigitalObject) {
     doHome: DEFAULT_DO_HOME,
     processorHome: PROCESSOR_HOME,
     deploymentHome: DEFAULT_DEPLOY_HOME,
-    baseIri: DEFAULT_PURL_IRI,
+    purlIri: DEFAULT_PURL_IRI,
     lodIri: DEFAULT_LOD_IRI,
     cdnIri: DEFAULT_CDN_IRI,
     ...program.opts(),
@@ -31,7 +31,7 @@ export function getContext(program, subcommand, selectedDigitalObject) {
   if (selectedDigitalObject) {
     try {
       const doPath = parseDirectory(selectedDigitalObject, context.doHome);
-      context.selectedDigitalObject = getDigitalObjectInformation(doPath, context.baseIri);
+      context.selectedDigitalObject = getDigitalObjectInformation(doPath, context.purlIri);
     } catch (error) {
       program.error(error.message);
     }

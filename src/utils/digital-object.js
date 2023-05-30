@@ -1,8 +1,8 @@
-export function getDigitalObjectInformation(path, baseIri) {
+export function getDigitalObjectInformation(path, purlIri) {
   const doString = path.split('/').slice('-3').join('/');
   const [type, name, version] = doString.split('/');
   return {
-    iri: `${baseIri}${type}/${name}`,
+    iri: `${purlIri}${type}/${name}`,
     path,
     doString,
     type,
