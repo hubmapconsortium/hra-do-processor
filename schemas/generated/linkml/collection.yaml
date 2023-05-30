@@ -357,7 +357,8 @@ classes:
 
           AnnotationAssertion( dct:title {{id}} "{{metadata.title}}" )
 
-          AnnotationAssertion( dct:description {{id}} "{{metadata.description}}" )
+          AnnotationAssertion( dct:description {{id}} "{{metadata.description|e}}"
+          )
 
           {% for c in metadata.creators %}
 
