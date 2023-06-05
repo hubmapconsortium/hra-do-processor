@@ -117,7 +117,7 @@ classes:
         AnnotationAssertion( schema:about {{id}} "{{metadata.type}}" )
         AnnotationAssertion( schema:version {{id}} "{{metadata.version}}" )
         AnnotationAssertion( dct:title {{id}} "{{metadata.title}}" )
-        AnnotationAssertion( dct:description {{id}} "{{metadata.description}}" )
+        AnnotationAssertion( dct:description {{id}} "{{metadata.description|e}}" )
         {% for c in metadata.creators %}
         AnnotationAssertion( dct:creator {{id}} "{{c.fullName}} ({{c.orcid}})" )
         {% endfor %}
