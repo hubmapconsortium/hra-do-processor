@@ -21,20 +21,23 @@ export function enrichAsctb(context) {
     const validationPath = downloadValidationResult(context);
 
     info('Merging files:');
-    const enrichedPath = resolve(obj.path, 'enriched/enriched.owl');
+    const enrichedValidationPath = resolve(obj.path, 'enriched/enriched_validation.owl');
     inputPaths.push(ontologyPath);
     inputPaths.push(validationPath);
     for (const inputPath of inputPaths) {
       more(` -> ${inputPath}`);
     }
-    merge(inputPaths, enrichedPath);
+    merge(inputPaths, enrichedValidationPath);
 
     // Extract terms from reference ontologies to enrich the graph data
     inputPaths = [];
-    inputPaths.push(enrichedPath); // Set the enriched path as the initial
+
+    const enrichedPath = resolve(obj.path, 'enriched/enriched.owl');
+
+    inputPaths.push(enrichedValidationPath); // Set the enriched path as the initial
 
     info('Extracting UBERON terms.');
-    const uberonEntitiesPath = collectEntities(context, 'uberon', enrichedPath);
+    const uberonEntitiesPath = collectEntities(context, 'uberon', enrichedValidationPath);
     const uberonExtractPath = extractClassHierarchy(
       context,
       'uberon',
@@ -44,17 +47,17 @@ export function enrichAsctb(context) {
     inputPaths.push(uberonExtractPath);
 
     info('Extracting FMA terms.');
-    const fmaEntities = collectEntities(context, 'fma', enrichedPath);
+    const fmaEntities = collectEntities(context, 'fma', enrichedValidationPath);
     const fmaExtractPath = extractClassHierarchy(context, 'fma', 'http://purl.org/sig/ont/fma/fma62955', fmaEntities);
     inputPaths.push(fmaExtractPath);
 
     info('Extracting CL terms.');
-    const clEntities = collectEntities(context, 'cl', enrichedPath);
+    const clEntities = collectEntities(context, 'cl', enrichedValidationPath);
     const clExtractPath = extractClassHierarchy(context, 'cl', 'http://purl.obolibrary.org/obo/CL_0000000', clEntities);
     inputPaths.push(clExtractPath);
 
     info('Extracting PCL terms.');
-    const pclEntities = collectEntities(context, 'pcl', enrichedPath);
+    const pclEntities = collectEntities(context, 'pcl', enrichedValidationPath);
     const pclExtractPath = extractClassHierarchy(
       context,
       'pcl',
@@ -64,7 +67,7 @@ export function enrichAsctb(context) {
     inputPaths.push(pclExtractPath);
 
     info('Extracting LMHA terms.');
-    const lmhaEntities = collectEntities(context, 'lmha', enrichedPath);
+    const lmhaEntities = collectEntities(context, 'lmha', enrichedValidationPath);
     const lmhaExtractPath = extractClassHierarchy(
       context,
       'lmha',
@@ -74,7 +77,7 @@ export function enrichAsctb(context) {
     inputPaths.push(lmhaExtractPath);
 
     info('Extracting HGNC terms.');
-    const hgncEntities = collectEntities(context, 'hgnc', enrichedPath);
+    const hgncEntities = collectEntities(context, 'hgnc', enrichedValidationPath);
     const hgncExtractPath = extractClassHierarchy(
       context,
       'hgnc',
