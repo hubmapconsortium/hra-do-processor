@@ -11,10 +11,7 @@ export function reifyTurtle(context, inputPath, journal) {
   const basePath = inputPath.slice(0, inputPath.lastIndexOf('.'));
 
   for (const [extension, type] of Object.entries(FORMATS)) {
-    throwOnError(
-      `rdfpipe --output-format ${type} ${inputPath} > ${basePath}.${extension}`,
-      `Failed to reify ${inputPath} to ${type}`
-    );
+    convert(inputPath, `${basePath}.${extension}`, type);
   }
 
   throwOnError(
@@ -23,4 +20,11 @@ export function reifyTurtle(context, inputPath, journal) {
         --outformat=nquads ${basePath}.nq`,
     `Failed to reify ${inputPath} to n-quads`
   );
+}
+
+export function convert(inputPath, outputPath, outputFormat) {
+  throwOnError(
+      `rdfpipe --output-format ${outputFormat} ${inputPath} > ${outputPath}`,
+      `Failed to convert to '${outputFormat}'' format.`
+    );
 }
