@@ -19,7 +19,7 @@ export function renderReadmeMd(templateFile, metadata) {
   env.addFilter('downloadLinks', (datatable) => {
     return datatable.map((str) => {
       const ext = str !== undefined ? str.slice(str.replace('.zip', '').lastIndexOf('.') + 1).replace(')', '') : '';
-      return `[${ext.toUpperCase()}](${str})`
+      return `[${ext.toUpperCase()}](assets/${str})`
     }).join(' ');
   });
   const template = readFileSync(templateFile).toString();
