@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { info } from '../utils/logging.js';
+import { info, more } from '../utils/logging.js';
 import { mergeTurtles } from '../utils/owl-cli.js';
 import { redundant } from '../utils/relation-graph.js';
 import { merge } from '../utils/robot.js';
@@ -57,4 +57,8 @@ export function cleanTemporaryFiles(context) {
   const { selectedDigitalObject: obj } = context;
   const enrichedPath = resolve(obj.path, 'enriched/');
   throwOnError(`find ${enrichedPath} ! -name 'enriched.ttl' -type f -exec rm -f {} +`, 'Clean temporary files failed.');
+}
+
+export function logOutput(outputPath) {
+  more(`==> ${outputPath}`);
 }

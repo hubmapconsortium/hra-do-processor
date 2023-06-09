@@ -2,7 +2,7 @@ import { resolve } from 'path';
 import { error, header, info, more } from '../utils/logging.js';
 import { convert, extract, merge, query } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
-import { cleanTemporaryFiles, convertNormalizedToOwl, runCompleteClosure } from './utils.js';
+import { cleanTemporaryFiles, convertNormalizedToOwl, runCompleteClosure, logOutput } from './utils.js';
 
 export function enrichAsctb(context) {
   header(context, 'run-enrich');
@@ -13,6 +13,7 @@ export function enrichAsctb(context) {
     const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
     const baseInputPath = resolve(obj.path, 'enriched/base-input.ttl');
     convertNormalizedToOwl(context, normalizedPath, baseInputPath);
+    logOutput(baseInputPath);
 
     let inputPaths = []; // variable to hold input files for merging
 
@@ -28,6 +29,7 @@ export function enrichAsctb(context) {
       more(` -> ${inputPath}`);
     }
     merge(inputPaths, enrichedWithValidationPath);
+    logOutput(enrichedWithValidationPath);
 
     // Extract terms from reference ontologies to enrich the graph data
     inputPaths = [];
@@ -45,17 +47,19 @@ export function enrichAsctb(context) {
       'http://purl.obolibrary.org/obo/UBERON_0001062',
       uberonEntitiesPath
     );
-    more(`Output: `)
+    logOutput(uberonEntitiesPath);
     inputPaths.push(uberonExtractPath);
 
     info('Extracting FMA terms.');
     const fmaEntities = collectEntities(context, 'fma', enrichedWithValidationPath);
     const fmaExtractPath = extractClassHierarchy(context, 'fma', 'http://purl.org/sig/ont/fma/fma62955', fmaEntities);
+    logOutput(fmaExtractPath);
     inputPaths.push(fmaExtractPath);
 
     info('Extracting CL terms.');
     const clEntities = collectEntities(context, 'cl', enrichedWithValidationPath);
     const clExtractPath = extractClassHierarchy(context, 'cl', 'http://purl.obolibrary.org/obo/CL_0000000', clEntities);
+    logOutput(clExtractPath);
     inputPaths.push(clExtractPath);
 
     info('Extracting PCL terms.');
@@ -66,6 +70,7 @@ export function enrichAsctb(context) {
       'http://purl.obolibrary.org/obo/CL_0000000',
       clEntities
     );
+    logOutput(pclExtractPath);
     inputPaths.push(pclExtractPath);
 
     info('Extracting LMHA terms.');
@@ -76,6 +81,7 @@ export function enrichAsctb(context) {
       'http://purl.obolibrary.org/obo/LMHA_00135',
       clEntities
     );
+    logOutput(lmhaExtractPath);
     inputPaths.push(lmhaExtractPath);
 
     info('Extracting HGNC terms.');
@@ -86,6 +92,7 @@ export function enrichAsctb(context) {
       'http://purl.bioontology.org/ontology/HGNC/gene',
       hgncEntities
     );
+    logOutput(hgncExtractPath);
     inputPaths.push(hgncExtractPath);
 
     info('Merging files:');
@@ -93,14 +100,16 @@ export function enrichAsctb(context) {
       more(` -> ${inputPath}`);
     }
     merge(inputPaths, enrichedWithOntologyPath);
+    logOutput(enrichedWithOntologyPath);
 
-    info('Running the complete inference closure process.');
+    info('Running the complete inference closure process...');
     const roPath = resolve(processorHome, `mirrors/ro.owl`);
     const enrichedWithRelationPath = resolve(obj.path, 'enriched/enriched-with-relation.owl');
     merge([enrichedWithOntologyPath, roPath], enrichedWithRelationPath);
 
     const enrichedWithCompleteClosurePath = resolve(obj.path, 'enriched/enriched-with-complete-closure.owl');
     runCompleteClosure(context, enrichedWithRelationPath, enrichedWithCompleteClosurePath);
+    logOutput(enrichedWithCompleteClosurePath);
 
     const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
 
@@ -111,8 +120,9 @@ export function enrichAsctb(context) {
     error(e);
   } finally {
     // Clean up
-    info('Cleaning up temporary files.');
+    info('Cleaning up temporary files...');
     cleanTemporaryFiles(context);
+    more("Done.")
   }
 }
 
@@ -133,7 +143,9 @@ function downloadValidationResult(context, useNightlyBuild = true) {
   const downloadPath = resolve(path, `enriched/${organName}_extended.owl`);
   const outputPath = resolve(path, `enriched/${name}-validation.owl`);
   throwOnError(`wget -nc -nv -q ${input} -O ${downloadPath}`, 'Download validation result failed.');
+  
   convert(downloadPath, outputPath, 'owl');
+  logOutput(outputPath);
 
   return outputPath;
 }
