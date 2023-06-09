@@ -55,3 +55,11 @@ export function convert(input, output, outputFormat) {
     'Data conversion failed.'
   );
 }
+
+export function remove(input, output, subsetSelector) {
+  throwOnError(
+    `robot remove --input ${input} --select ${subsetSelector} -o ${output}`,
+    'Data removal failed.'
+  );
+}
+
