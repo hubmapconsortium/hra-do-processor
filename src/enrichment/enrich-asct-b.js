@@ -11,53 +11,55 @@ export function enrichAsctb(context) {
 
     // Convert normalized data to graph data (.ttl)
     const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
-    const ontologyPath = resolve(obj.path, 'enriched/ontology.ttl');
-    convertNormalizedToOwl(context, normalizedPath, ontologyPath);
+    const baseInputPath = resolve(obj.path, 'enriched/base-input.ttl');
+    convertNormalizedToOwl(context, normalizedPath, baseInputPath);
 
     let inputPaths = []; // variable to hold input files for merging
 
     // Download CCF validation result to enrich the graph data
-    info('Downloading ccf-validation-tool result.');
+    info('Downloading ccf-validation-tool result...');
     const validationPath = downloadValidationResult(context);
 
     info('Merging files:');
-    const enrichedValidationPath = resolve(obj.path, 'enriched/enriched_validation.owl');
-    inputPaths.push(ontologyPath);
+    const enrichedWithValidationPath = resolve(obj.path, 'enriched/enriched-with-validation.owl');
+    inputPaths.push(baseInputPath);
     inputPaths.push(validationPath);
     for (const inputPath of inputPaths) {
       more(` -> ${inputPath}`);
     }
-    merge(inputPaths, enrichedValidationPath);
+    merge(inputPaths, enrichedWithValidationPath);
 
     // Extract terms from reference ontologies to enrich the graph data
     inputPaths = [];
 
-    const enrichedPath = resolve(obj.path, 'enriched/enriched.owl');
+    const enrichedWithOntologyPath = resolve(obj.path, 'enriched/enriched-with-ontology.owl');
 
-    inputPaths.push(enrichedValidationPath); // Set the enriched path as the initial
+    inputPaths.push(enrichedWithValidationPath); // Set the enriched path as the initial
 
+    info('Building class hierarchy from reference ontologies...')
     info('Extracting UBERON terms.');
-    const uberonEntitiesPath = collectEntities(context, 'uberon', enrichedValidationPath);
+    const uberonEntitiesPath = collectEntities(context, 'uberon', enrichedWithValidationPath);
     const uberonExtractPath = extractClassHierarchy(
       context,
       'uberon',
       'http://purl.obolibrary.org/obo/UBERON_0001062',
       uberonEntitiesPath
     );
+    more(`Output: `)
     inputPaths.push(uberonExtractPath);
 
     info('Extracting FMA terms.');
-    const fmaEntities = collectEntities(context, 'fma', enrichedValidationPath);
+    const fmaEntities = collectEntities(context, 'fma', enrichedWithValidationPath);
     const fmaExtractPath = extractClassHierarchy(context, 'fma', 'http://purl.org/sig/ont/fma/fma62955', fmaEntities);
     inputPaths.push(fmaExtractPath);
 
     info('Extracting CL terms.');
-    const clEntities = collectEntities(context, 'cl', enrichedValidationPath);
+    const clEntities = collectEntities(context, 'cl', enrichedWithValidationPath);
     const clExtractPath = extractClassHierarchy(context, 'cl', 'http://purl.obolibrary.org/obo/CL_0000000', clEntities);
     inputPaths.push(clExtractPath);
 
     info('Extracting PCL terms.');
-    const pclEntities = collectEntities(context, 'pcl', enrichedValidationPath);
+    const pclEntities = collectEntities(context, 'pcl', enrichedWithValidationPath);
     const pclExtractPath = extractClassHierarchy(
       context,
       'pcl',
@@ -67,7 +69,7 @@ export function enrichAsctb(context) {
     inputPaths.push(pclExtractPath);
 
     info('Extracting LMHA terms.');
-    const lmhaEntities = collectEntities(context, 'lmha', enrichedValidationPath);
+    const lmhaEntities = collectEntities(context, 'lmha', enrichedWithValidationPath);
     const lmhaExtractPath = extractClassHierarchy(
       context,
       'lmha',
@@ -77,7 +79,7 @@ export function enrichAsctb(context) {
     inputPaths.push(lmhaExtractPath);
 
     info('Extracting HGNC terms.');
-    const hgncEntities = collectEntities(context, 'hgnc', enrichedValidationPath);
+    const hgncEntities = collectEntities(context, 'hgnc', enrichedWithValidationPath);
     const hgncExtractPath = extractClassHierarchy(
       context,
       'hgnc',
@@ -90,17 +92,21 @@ export function enrichAsctb(context) {
     for (const inputPath of inputPaths) {
       more(` -> ${inputPath}`);
     }
-    merge(inputPaths, enrichedPath);
+    merge(inputPaths, enrichedWithOntologyPath);
 
     info('Running the complete inference closure process.');
     const roPath = resolve(processorHome, `mirrors/ro.owl`);
-    const roEnrichedPath = resolve(obj.path, 'enriched/ro-enriched.owl');
-    merge([enrichedPath, roPath], roEnrichedPath);
-    runCompleteClosure(context, roEnrichedPath, enrichedPath);
+    const enrichedWithRelationPath = resolve(obj.path, 'enriched/enriched-with-relation.owl');
+    merge([enrichedWithOntologyPath, roPath], enrichedWithRelationPath);
 
-    const turtleEnrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
-    info(`Creating asct-b: ${turtleEnrichedPath}`);
-    convert(enrichedPath, turtleEnrichedPath, 'ttl');
+    const enrichedWithCompleteClosurePath = resolve(obj.path, 'enriched/enriched-with-complete-closure.owl');
+    runCompleteClosure(context, enrichedWithRelationPath, enrichedWithCompleteClosurePath);
+
+    const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
+
+    info(`Creating asct-b: ${enrichedPath}`);
+    convert(enrichedWithCompleteClosurePath, enrichedPath, 'ttl');
+
   } catch (e) {
     error(e);
   } finally {
