@@ -46,11 +46,8 @@ export function convertNormalizedToOwl(context, inputPath, outputPath) {
   );
 }
 
-export function runCompleteClosure(context, inputPath, outputPath) {
-  const { selectedDigitalObject: obj } = context;
-  const closurePath = resolve(obj.path, 'enriched/closure.ttl');
-  redundant(inputPath, closurePath);
-  merge([inputPath, closurePath], outputPath);
+export function runCompleteClosure(inputPath, outputPath) {
+  redundant(inputPath, outputPath);
 }
 
 export function cleanTemporaryFiles(context) {
