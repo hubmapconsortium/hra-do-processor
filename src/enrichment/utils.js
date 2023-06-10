@@ -53,7 +53,10 @@ export function runCompleteClosure(inputPath, outputPath) {
 export function cleanTemporaryFiles(context) {
   const { selectedDigitalObject: obj } = context;
   const enrichedPath = resolve(obj.path, 'enriched/');
-  throwOnError(`find ${enrichedPath} ! -name 'enriched.ttl' -type f -exec rm -f {} +`, 'Clean temporary files failed.');
+  throwOnError(
+    `find ${enrichedPath} ! -name 'enriched.ttl' ! -name 'redundant.ttl' -type f -exec rm -f {} +`, 
+    'Clean temporary files failed.'
+  );
 }
 
 export function logOutput(outputPath) {
