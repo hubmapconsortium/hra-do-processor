@@ -2,7 +2,7 @@ import { resolve } from 'path';
 import { error, header, info, more } from '../utils/logging.js';
 import { convert, extract, merge, query } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
-import { cleanTemporaryFiles, convertNormalizedToOwl, runCompleteClosure, logOutput } from './utils.js';
+import { cleanTemporaryFiles, convertNormalizedToOwl, logOutput } from './utils.js';
 
 export function enrichAsctb(context) {
   header(context, 'run-enrich');
@@ -95,6 +95,10 @@ export function enrichAsctb(context) {
     logOutput(hgncExtractPath);
     inputPaths.push(hgncExtractPath);
 
+    info('Merging RO terms.');
+    const roPath = resolve(processorHome, `mirrors/ro.owl`);
+    inputPaths.push(roPath);
+
     info('Merging files:');
     for (const inputPath of inputPaths) {
       more(` -> ${inputPath}`);
@@ -102,19 +106,10 @@ export function enrichAsctb(context) {
     merge(inputPaths, enrichedWithOntologyPath);
     logOutput(enrichedWithOntologyPath);
 
-    info('Running the complete inference closure process...');
-    const roPath = resolve(processorHome, `mirrors/ro.owl`);
-    const enrichedWithRelationPath = resolve(obj.path, 'enriched/enriched-with-relation.owl');
-    merge([enrichedWithOntologyPath, roPath], enrichedWithRelationPath);
-
-    const enrichedWithCompleteClosurePath = resolve(obj.path, 'enriched/enriched-with-complete-closure.owl');
-    runCompleteClosure(context, enrichedWithRelationPath, enrichedWithCompleteClosurePath);
-    logOutput(enrichedWithCompleteClosurePath);
-
     const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
 
     info(`Creating asct-b: ${enrichedPath}`);
-    convert(enrichedWithCompleteClosurePath, enrichedPath, 'ttl');
+    convert(enrichedWithOntologyPath, enrichedPath, 'ttl');
 
   } catch (e) {
     error(e);
