@@ -24,17 +24,23 @@ export function mergeTurtles(outputPath, _prefixesPath, ontologyPaths) {
   sh.rm('-f', tempJournal);
 }
 
-export function loadDoIntoTripleStore(context, journalPath) {
-  const obj = context.selectedDigitalObject;
-  const graph = obj.iri;
-  const data = resolve(obj.path, 'enriched/enriched.ttl');
+export function dump(graphName, journalPath, outputPath, format) {
   throwOnError(
-    `owl-cli write -i turtle -o ntriple ${data} ${journalPath}.temp && \
+    `blazegraph-runner dump --journal=${journalPath} \
+        --graph="${graphName}" \
+        --outformat=${format} ${outputPath}`,
+    `Failed to dump ${graphName} graph.`
+  );
+}
+
+export function load(graphName, inputPath, journalPath) {
+  throwOnError(
+    `owl-cli write -i turtle -o ntriple ${inputPath} ${journalPath}.temp && \
      blazegraph-runner load --journal=${journalPath} \
         --use-ontology-graph=false \
-        --graph="${graph}" \
+        --graph="${graphName}" \
         --informat=ntriples ${journalPath}.temp && \
      rm -f ${journalPath}.temp`,
-    `${data} failed to load`
+    `File ${inputPath} failed to load.`
   );
 }
