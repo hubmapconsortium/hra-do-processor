@@ -1,8 +1,10 @@
+import { existsSync } from 'fs';
 import { resolve } from 'path';
 import sh from 'shelljs';
 import { readMetadata } from '../normalization/utils.js';
-import { loadDoIntoTripleStore } from '../utils/blazegraph.js';
-import { reifyTurtle } from '../utils/reify.js';
+import { loadDoIntoTripleStore, loadRedundantIntoTripleStore } from './utils.js';
+import { reifyDoTurtle, reifyRedundantTurtle } from '../utils/reify.js';
+import { info } from '../utils/logging.js';
 
 export function deploy(context) {
   const obj = context.selectedDigitalObject;
@@ -19,6 +21,19 @@ export function deploy(context) {
   }
 
   const tripleStore = resolve(context.deploymentHome, 'blazegraph.jnl');
+
+  info(`Loading "${obj.iri}" graph to triple store...`);
   loadDoIntoTripleStore(context, tripleStore);
-  reifyTurtle(context, datasetPath, tripleStore);
+  reifyDoTurtle(context, datasetPath, tripleStore);
+
+  // Check if the enrichment produces redundant graph
+  const redundant = resolve(obj.path, 'enriched/redundant.ttl')
+  if (existsSync(redundant)) {
+    info(`Loading "${obj.iri}/redundant" graph to triple store...`);
+    loadRedundantIntoTripleStore(context, tripleStore);
+
+    const redundantDeployPath = resolve(deployPath, 'redundant.ttl');
+    sh.cp(redundant, redundantDeployPath);
+    reifyRedundantTurtle(context, redundantDeployPath, tripleStore);
+  }
 }
