@@ -14,7 +14,7 @@ default_range: string
 
 imports:
   - linkml:types
-  - ../shared/metadata
+  - ../shared/metadata-base
 
 classes:
   CollectionMetadata:
