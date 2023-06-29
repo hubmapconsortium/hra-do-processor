@@ -59,6 +59,14 @@ program
     build(getContext(program, command, str));
   });
 
+  program
+  .command('finalize')
+  .description('Given a Digital Object, checks for and finalizes to get the latest version from the catalog')
+  .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
+  .action((str, _options, command) => {
+    build(getContext(program, command, str));
+  });
+
 program
   .command('deploy')
   .description('Deploys a given Digital Object to the deployment home (default ./site)')
