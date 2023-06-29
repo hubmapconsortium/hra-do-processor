@@ -10,7 +10,7 @@ export function deploy(context) {
   const obj = context.selectedDigitalObject;
   const deployPath = resolve(context.deploymentHome, obj.doString);
   const metadata = readMetadata(context);
-  const graph = resolve(deployPath, 'dataset.ttl');
+  const graph = resolve(deployPath, 'graph.ttl');
 
   sh.mkdir('-p', resolve(deployPath, 'assets'));
   sh.cp(resolve(obj.path, 'packaged/*'), deployPath);
