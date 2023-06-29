@@ -10,11 +10,11 @@ export function deploy(context) {
   const obj = context.selectedDigitalObject;
   const deployPath = resolve(context.deploymentHome, obj.doString);
   const metadata = readMetadata(context);
-  const datasetPath = resolve(deployPath, 'dataset.ttl');
+  const graph = resolve(deployPath, 'dataset.ttl');
 
   sh.mkdir('-p', resolve(deployPath, 'assets'));
   sh.cp(resolve(obj.path, 'packaged/*'), deployPath);
-  sh.cp(resolve(obj.path, 'enriched/enriched.ttl'), datasetPath);
+  sh.cp(resolve(obj.path, 'enriched/enriched.ttl'), graph);
 
   for (const file of metadata.datatable) {
     sh.cp(resolve(obj.path, 'raw', file), resolve(deployPath, 'assets', file));
@@ -24,7 +24,7 @@ export function deploy(context) {
 
   info(`Loading "${obj.iri}" graph to triple store...`);
   loadDoIntoTripleStore(context, tripleStore);
-  reifyDoTurtle(context, datasetPath, tripleStore);
+  reifyDoTurtle(context, graph, tripleStore);
 
   // Check if the enrichment produces redundant graph
   const redundant = resolve(obj.path, 'enriched/redundant.ttl')
