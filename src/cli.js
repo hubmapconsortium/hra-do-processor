@@ -8,6 +8,7 @@ import { normalize } from './normalization/normalize.js';
 import { packageIt } from './packaging/package.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
 import { deploy } from './deployment/deploy.js';
+import { finalize } from './finalizing/finalize.js';
 
 const program = new Command();
 
@@ -62,9 +63,8 @@ program
   program
   .command('finalize')
   .description('Given a Digital Object, checks for and finalizes to get the latest version from the catalog')
-  .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
-  .action((str, _options, command) => {
-    build(getContext(program, command, str));
+  .action(( _options, command) => {
+    finalize(getContext(program, command));
   });
 
 program
