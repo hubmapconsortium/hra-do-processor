@@ -1,5 +1,5 @@
 name: asct-b
-id: https://purl.humanatlas.io/asct-b/kidney
+id: https://purl.humanatlas.io/specs/asct-b
 prefixes:
   ccf:
     prefix_prefix: ccf
