@@ -1,3 +1,4 @@
+import { buildBlazegraphJournal } from './build-blazegraph.js';
 import { deriveLatest } from './derive-latest.js';
 
 /**
@@ -5,8 +6,9 @@ import { deriveLatest } from './derive-latest.js';
  * runs a set of codes to process the deployment home in preparation for final deployment
  * to a server.
  *
- * @param {object} context 
+ * @param {object} context
  */
 export function finalize(context) {
   deriveLatest(context);
+  buildBlazegraphJournal(context);
 }
