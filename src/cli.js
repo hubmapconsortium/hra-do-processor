@@ -60,19 +60,19 @@ program
     build(getContext(program, command, str));
   });
 
-  program
-  .command('finalize')
-  .description('Given a Digital Object, checks for and finalizes to get the latest version from the catalog')
-  .action(( _options, command) => {
-    finalize(getContext(program, command));
-  });
-
 program
   .command('deploy')
   .description('Deploys a given Digital Object to the deployment home (default ./site)')
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     deploy(getContext(program, command, str));
+  });
+
+program
+  .command('finalize')
+  .description('Finalize the deployment home before sending to the live server')
+  .action((_options, command) => {
+    finalize(getContext(program, command));
   });
 
 program
