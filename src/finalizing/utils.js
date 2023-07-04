@@ -1,4 +1,4 @@
-import { readdirSync } from 'fs';
+import { existsSync, readdirSync } from 'fs';
 import { globSync } from 'glob';
 import { resolve } from 'path';
 import semver from 'semver';
@@ -45,6 +45,15 @@ export function getLatestDigitalObject(context, doType, doName) {
   if (versions.length > 0) {
     // Convert to a digital object "object"
     return getDigitalObjectInformation([doType, doName, versions[0]].join('/'), context.purlIri);
+  } else {
+    return undefined;
+  }
+}
+
+export function getRedundantGraph(context, digitalObject) {
+  const redundant = resolve(context.deploymentHome, digitalObject.doString, 'redundant.ttl');
+  if (existsSync(redundant)) {
+    return redundant;
   } else {
     return undefined;
   }

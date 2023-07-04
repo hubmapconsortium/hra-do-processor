@@ -1,4 +1,3 @@
-import { resolve } from 'path';
 import sh from 'shelljs';
 import { throwOnError } from './sh-exec.js';
 
@@ -43,4 +42,8 @@ export function load(graphName, inputPath, journalPath) {
      rm -f ${journalPath}.temp`,
     `File ${inputPath} failed to load.`
   );
+}
+
+export function update(script, journalPath) {
+  throwOnError(`blazegraph-runner update --journal=${journalPath} ${script}`, `Failed to update ${journalPath}.`);
 }

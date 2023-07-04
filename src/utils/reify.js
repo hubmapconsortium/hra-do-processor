@@ -1,5 +1,4 @@
 import { throwOnError } from './sh-exec.js';
-import { dump } from './blazegraph.js';
 
 const FORMATS = {
   json: 'application/ld+json',
@@ -8,30 +7,35 @@ const FORMATS = {
   nq: 'application/n-quads'
 };
 
-export function reifyDoTurtle(context, inputPath, journalPath) {
+export function reifyDoTurtle(context, inputPath) {
   const graphName = context.selectedDigitalObject.iri;
-  reifyTurtle(inputPath, graphName, journalPath);
+  reifyTurtle(inputPath, graphName);
 }
 
-export function reifyRedundantTurtle(context, inputPath, journalPath) {
+export function reifyRedundantTurtle(context, inputPath) {
   const graphName = `${context.selectedDigitalObject.iri}/redundant`;
-  reifyTurtle(inputPath, graphName, journalPath);
+  reifyTurtle(inputPath, graphName);
 }
 
-function reifyTurtle(inputPath, graphName, journalPath) {
+function reifyTurtle(inputPath, graphName) {
   const basePath = inputPath.slice(0, inputPath.lastIndexOf('.'));
   for (const [extension, type] of Object.entries(FORMATS)) {
-    if (extension === 'nq') {
-      dump(graphName, journalPath, `${basePath}.${extension}`, 'nquads');
-    } else {
-      convert(inputPath, `${basePath}.${extension}`, type);
-    }
+    convert(inputPath, `${basePath}.${extension}`, type, graphName);
   }
 }
 
-function convert(inputPath, outputPath, outputFormat) {
-  throwOnError(
+function convert(inputPath, outputPath, outputFormat, graphName) {
+  if (graphName && outputFormat === 'application/n-quads') {
+    throwOnError(
+      `rdfpipe --output-format ${outputFormat} ${inputPath} | \\
+          perl -pe 's|\\Qfile://${inputPath}\\E|${graphName}|g' \\
+          > ${outputPath}`,
+      `Failed to fix n-quads file: ${outputPath}`
+    )
+  } else {
+    throwOnError(
       `rdfpipe --output-format ${outputFormat} ${inputPath} > ${outputPath}`,
       `Failed to convert to '${outputFormat}' format.`
     );
+  }
 }
