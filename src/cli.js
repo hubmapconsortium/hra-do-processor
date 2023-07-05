@@ -8,6 +8,7 @@ import { normalize } from './normalization/normalize.js';
 import { packageIt } from './packaging/package.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
 import { deploy } from './deployment/deploy.js';
+import { finalize } from './finalizing/finalize.js';
 
 const program = new Command();
 
@@ -65,6 +66,13 @@ program
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     deploy(getContext(program, command, str));
+  });
+
+program
+  .command('finalize')
+  .description('Finalize the deployment home before sending to the live server')
+  .action((_options, command) => {
+    finalize(getContext(program, command));
   });
 
 program
