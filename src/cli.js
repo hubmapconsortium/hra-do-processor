@@ -36,10 +36,10 @@ program
 
 program
   .command('new-draft')
-  .description('Creates draft for the latest version')
+  .description('Creates a draft digital object from a given Digital Object')
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
-  .option('--latest', 'Use the latest version of the given digital object for the new draft', false)
-  .option('--force', 'Replaces the existing draft with a new draft', false)
+  .option('--latest', 'Use the latest version of the given Digital Object for the new draft regardless of the version indicated', false)
+  .option('--force', 'Deletes the existing draft, if it already exists', false)
   .action((str, _options, command) => {
     newDraft(getContext(program, command, str));
   });
