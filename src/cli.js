@@ -9,6 +9,7 @@ import { packageIt } from './packaging/package.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
 import { deploy } from './deployment/deploy.js';
 import { finalize } from './finalizing/finalize.js';
+import { newDraft } from './drafting/new-draft.js';
 
 const program = new Command();
 
@@ -22,6 +23,7 @@ program
   .option('--deployment-home <string>', 'DO deployment home', parseDirectory)
   .option('--skip-validation', 'Skip validation in each command', false)
   .option('--exclude-bad-values', 'Do not pass invalid values from data processors', false)
+  .option('--force', 'Replaces the existing draft with a new draft', false);
 
 program
   .command('normalize')
@@ -31,6 +33,15 @@ program
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     normalize(getContext(program, command, str));
+  });
+
+program
+  .command('new-draft')
+  .description('Creates draft for the lastest version')
+  .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
+  .option('--latest', 'Use the latest version of the given digital object for the new draft')
+  .action((str, _options, command) => {
+    newDraft(getContext(program, command, str));
   });
 
 program
