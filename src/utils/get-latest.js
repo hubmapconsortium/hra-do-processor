@@ -11,7 +11,7 @@ import { resolve } from 'path';
  * @param {string} doName the digital object name
  * @returns the digital object that is the latest version
  */
-export function getLatest(doPath, doType, doName, purlIri) {
+export function getLatestDigitalObject(doPath, doType, doName, purlIri) {
   const digitalObjectDir = resolve(doPath, doType, doName);
 
   // Find all subdirectories in deployHome for a digital object type + name

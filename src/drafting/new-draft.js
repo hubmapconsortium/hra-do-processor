@@ -1,6 +1,5 @@
 import { resolve } from 'path';
-import { getLatest } from '../utils/getLatest.js';
-
+import { getLatestDigitalObject } from '../utils/get-latest.js';
 import sh from 'shelljs';
 import semver from 'semver';
 import { existsSync } from 'fs';
@@ -15,7 +14,7 @@ export function newDraft(context) {
 
   let version = obj.version;
   if (latest || !semver.valid(semver.coerce(version))) {
-    const latest = getLatest(context.doHome, obj.type, obj.name, obj.iri);
+    const latest = getLatestDigitalObject(context.doHome, obj.type, obj.name, obj.iri);
     version = latest.version;
   }
 

@@ -22,8 +22,7 @@ program
   .option('--processor-home <string>', 'DO Processor home', parseDirectory)
   .option('--deployment-home <string>', 'DO deployment home', parseDirectory)
   .option('--skip-validation', 'Skip validation in each command', false)
-  .option('--exclude-bad-values', 'Do not pass invalid values from data processors', false)
-  .option('--force', 'Replaces the existing draft with a new draft', false);
+  .option('--exclude-bad-values', 'Do not pass invalid values from data processors', false);
 
 program
   .command('normalize')
@@ -37,9 +36,10 @@ program
 
 program
   .command('new-draft')
-  .description('Creates draft for the lastest version')
+  .description('Creates draft for the latest version')
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
-  .option('--latest', 'Use the latest version of the given digital object for the new draft')
+  .option('--latest', 'Use the latest version of the given digital object for the new draft', false)
+  .option('--force', 'Replaces the existing draft with a new draft', false)
   .action((str, _options, command) => {
     newDraft(getContext(program, command, str));
   });
