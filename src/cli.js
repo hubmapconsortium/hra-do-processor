@@ -9,6 +9,7 @@ import { packageIt } from './packaging/package.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
 import { deploy } from './deployment/deploy.js';
 import { finalize } from './finalizing/finalize.js';
+import { newDraft } from './drafting/new-draft.js';
 
 const program = new Command();
 
@@ -21,7 +22,7 @@ program
   .option('--processor-home <string>', 'DO Processor home', parseDirectory)
   .option('--deployment-home <string>', 'DO deployment home', parseDirectory)
   .option('--skip-validation', 'Skip validation in each command', false)
-  .option('--exclude-bad-values', 'Do not pass invalid values from data processors', false)
+  .option('--exclude-bad-values', 'Do not pass invalid values from data processors', false);
 
 program
   .command('normalize')
@@ -31,6 +32,16 @@ program
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     normalize(getContext(program, command, str));
+  });
+
+program
+  .command('new-draft')
+  .description('Creates a draft digital object from a given Digital Object')
+  .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
+  .option('--latest', 'Use the latest version of the given Digital Object for the new draft regardless of the version indicated', false)
+  .option('--force', 'Deletes the existing draft, if it already exists', false)
+  .action((str, _options, command) => {
+    newDraft(getContext(program, command, str));
   });
 
 program

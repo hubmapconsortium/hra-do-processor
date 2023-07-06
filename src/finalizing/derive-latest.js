@@ -1,7 +1,8 @@
 import fs from 'fs';
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { getDeployedDigitalObjects, getLatestDigitalObject } from './utils.js';
+import { getDeployedDigitalObjects } from './utils.js';
+import { getLatestDigitalObject } from '../utils/get-latest.js';
 
 /**
  * Evaluates the deployment home and derives a 'latest' version for each digital object.
@@ -9,12 +10,12 @@ import { getDeployedDigitalObjects, getLatestDigitalObject } from './utils.js';
  *
  * @param {object} context
  */
-export async function deriveLatest(context) {
+export function deriveLatest(context) {
   const deployedDigitalObjects = getDeployedDigitalObjects(context);
   const doTypeAndNames = Array.from(new Set(deployedDigitalObjects.map((obj) => [obj.type, obj.name].join('/'))));
 
   for (const doTypeAndName of doTypeAndNames) {
-    const latest = getLatestDigitalObject(context, ...doTypeAndName.split('/'));
+    const latest = getLatestDigitalObject(context.deploymentHome, ...doTypeAndName.split('/'), context.purlIri);
     if (latest) {
       const latestPath = resolve(context.deploymentHome, doTypeAndName, 'latest');
       const latestVersionedPath = resolve(context.deploymentHome, latest.doString);
