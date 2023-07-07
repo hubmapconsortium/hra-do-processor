@@ -3,6 +3,10 @@ import sh from 'shelljs';
 import { getLatestDigitalObject } from '../utils/get-latest.js';
 import { resolve } from 'path';
 
+/**
+ * Converts the draft into the latest version based on the given option, default is --minor
+ * @param {Object} context
+ */
 export function bumpDraft(context) {
   const { selectedDigitalObject: obj, major, patch } = context;
   let latest = getLatestDigitalObject(context.doHome, obj.type, obj.name, obj.iri)?.version ?? '0';
@@ -10,10 +14,11 @@ export function bumpDraft(context) {
   const releaseType = major ? 'major' : patch ? 'patch' : 'minor';
   latest = semver.inc(semver.coerce(latest), releaseType);
 
-  //   Removing the trailing zero from the version if present and concatinating 'v'.
-  const newVersion = `v${latest.split('.').slice(0, -1).join('.')}${
-    latest.endsWith('.0') ? '' : `.${latest.split('.').pop()}`
-  }`;
+  //  formating the version
+  const newVersion =
+    semver.patch(latest) == 0
+      ? `v${semver.major(latest)}.${semver.minor(latest)}`
+      : `v${semver.major(latest)}.${semver.minor(latest)}.${semver.patch(latest)}`;
 
   const draftPath = resolve(obj.path);
   const newVersionPath = resolve(context.doHome, obj.type, obj.name, newVersion, 'raw');
