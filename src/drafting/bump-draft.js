@@ -2,6 +2,7 @@ import semver from 'semver';
 import sh from 'shelljs';
 import { getLatestDigitalObject } from '../utils/get-latest.js';
 import { resolve } from 'path';
+import { existsSync } from 'fs';
 
 /**
  * Converts the draft into the latest version based on the given option, default is --minor
@@ -22,6 +23,10 @@ export function bumpDraft(context) {
 
   const draftPath = resolve(obj.path);
   const newVersionPath = resolve(context.doHome, obj.type, obj.name, newVersion, 'raw');
+
+  if (existsSync(newVersionPath)) {
+    sh.rm('-r', newVersionPath);
+  }
 
   sh.mkdir('-p', newVersionPath);
   sh.mv(`${draftPath}/*`, newVersionPath);
