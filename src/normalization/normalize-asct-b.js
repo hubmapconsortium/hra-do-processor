@@ -16,7 +16,7 @@ import { readMetadata, writeNormalizedMetadata, writeNormalizedData } from './ut
 
 const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
 
-export async function normalizeAsctbMetadata(context) {
+export function normalizeAsctbMetadata(context) {
   const rawMetadata = readMetadata(context);
   writeNormalizedMetadata(context, rawMetadata);
 }
