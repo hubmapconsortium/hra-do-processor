@@ -11,6 +11,16 @@ export function readMetadata(context) {
   }
 }
 
+export function writeNormalizedMetadata(context, metadata) {
+  const { path, iri } = context.selectedDigitalObject;
+  const normalizedPath = resolve(path, 'normalized/normalized-metadata.yaml');
+  writeFileSync(
+    normalizedPath,
+    dump({ metadata })
+  );
+  info(`Normalized metadata written to ${normalizedPath}`);
+}
+
 export function writeNormalized(context, data) {
   const { path, iri } = context.selectedDigitalObject;
   const metadata = selectMetadata(readMetadata(context));

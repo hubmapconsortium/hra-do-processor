@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from 'fs';
 import { dump } from 'js-yaml';
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { header, info, more, warning } from '../utils/logging.js';
+import { info, more, warning } from '../utils/logging.js';
 import { validateNormalized } from '../utils/validation.js';
 import {
   getPatchesForAnatomicalStructure,
@@ -12,12 +12,16 @@ import {
   isIdValid,
   normalizeDoi
 } from './patches.js';
-import { readMetadata, writeNormalized } from './utils.js';
+import { readMetadata, writeNormalizedMetadata, writeNormalized } from './utils.js';
 
 const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
 
+export async function normalizeAsctbMetadata(context) {
+  const rawMetadata = readMetadata(context);
+  writeNormalizedMetadata(context, rawMetadata);
+}
+
 export async function normalizeAsctb(context) {
-  header(context, 'run-normalize');
   const rawData = await getRawData(context);
   const normalizedData = normalizeRawData(context, rawData);
   writeNormalized(context, normalizedData);
