@@ -3,7 +3,7 @@ import { dump } from 'js-yaml';
 import { resolve } from 'path';
 import sh from 'shelljs';
 import { info, more, warning } from '../utils/logging.js';
-import { validateNormalized } from '../utils/validation.js';
+import { validateNormalizedData } from '../utils/validation.js';
 import {
   getPatchesForAnatomicalStructure,
   getPatchesForBiomarker,
@@ -12,7 +12,7 @@ import {
   isIdValid,
   normalizeDoi
 } from './patches.js';
-import { readMetadata, writeNormalizedMetadata, writeNormalized } from './utils.js';
+import { readMetadata, writeNormalizedMetadata, writeNormalizedData } from './utils.js';
 
 const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
 
@@ -21,11 +21,11 @@ export async function normalizeAsctbMetadata(context) {
   writeNormalizedMetadata(context, rawMetadata);
 }
 
-export async function normalizeAsctb(context) {
+export async function normalizeAsctbData(context) {
   const rawData = await getRawData(context);
-  const normalizedData = normalizeRawData(context, rawData);
-  writeNormalized(context, normalizedData);
-  validateNormalized(context);
+  const normalizedData = normalizeData(context, rawData);
+  writeNormalizedData(context, normalizedData);
+  validateNormalizedData(context);
 }
 
 async function getRawData(context) {
@@ -67,7 +67,7 @@ async function getRawData(context) {
   return data.data;
 }
 
-function normalizeRawData(context, data) {
+function normalizeData(context, data) {
   const { excludeBadValues } = context;
   if (excludeBadValues) {
     warning(`Option '--exclude-bad-values' is used to exclude invalid values. The resulting data may be lessen than the raw data.`)

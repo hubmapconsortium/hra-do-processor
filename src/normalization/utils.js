@@ -21,7 +21,7 @@ export function writeNormalizedMetadata(context, metadata) {
   info(`Normalized metadata written to ${normalizedPath}`);
 }
 
-export function writeNormalized(context, data) {
+export function writeNormalizedData(context, data) {
   const { path, iri } = context.selectedDigitalObject;
   const metadata = selectMetadata(readMetadata(context));
 

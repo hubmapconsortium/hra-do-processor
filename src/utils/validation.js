@@ -6,7 +6,7 @@ import sh from 'shelljs';
 import { logOnError } from './sh-exec.js';
 import { header, info } from './logging.js';
 
-export function validateNormalized(context) {
+export function validateNormalizedData(context) {
   const { selectedDigitalObject: obj, processorHome, skipValidation } = context;
 
   header(context, 'run-validation');

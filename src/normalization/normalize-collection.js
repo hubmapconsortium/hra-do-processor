@@ -2,8 +2,8 @@ import chalk from 'chalk';
 import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
-import { readMetadata, writeNormalized } from './utils.js';
-import { validateNormalized } from '../utils/validation.js';
+import { readMetadata, writeNormalizedData } from './utils.js';
+import { validateNormalizedData } from '../utils/validation.js';
 import { header } from '../utils/logging.js';
 
 export function normalizeCollection(context) {
@@ -14,8 +14,8 @@ export function normalizeCollection(context) {
   const dataPath = resolve(path, 'raw', metadata.datatable[0]);
   const data = load(readFileSync(dataPath))['digital-objects'];
 
-  writeNormalized(context, data);
-  validateNormalized(context);
+  writeNormalizedData(context, data);
+  validateNormalizedData(context);
 
   validateCollection(context, data);
 }

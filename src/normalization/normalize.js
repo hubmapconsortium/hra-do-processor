@@ -1,6 +1,6 @@
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { normalizeAsctbMetadata, normalizeAsctb } from './normalize-asct-b.js';
+import { normalizeAsctbMetadata, normalizeAsctbData } from './normalize-asct-b.js';
 import { normalizeCollection } from './normalize-collection.js';
 import { normalizeRefOrgan } from './normalize-ref-organ.js';
 import { header, error } from '../utils/logging.js';
@@ -12,7 +12,7 @@ export async function normalize(context) {
     case 'asct-b':
       header(context, 'run-normalize');
       normalizeAsctbMetadata(context);
-      await normalizeAsctb(context);
+      await normalizeAsctbData(context);
       break;
     case 'collection':
       normalizeCollection(context);
