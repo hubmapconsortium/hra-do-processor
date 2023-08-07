@@ -18,7 +18,12 @@ const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
 
 export function normalizeAsctbMetadata(context) {
   const rawMetadata = readMetadata(context);
+  const normalizedMetadata = normalizeMetadata(rawMetadata);
   writeNormalizedMetadata(context, rawMetadata);
+}
+
+function normalizeMetadata(context, metadata) {
+  return metadata;
 }
 
 export async function normalizeAsctbData(context) {
