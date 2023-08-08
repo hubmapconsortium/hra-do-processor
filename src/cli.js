@@ -7,6 +7,7 @@ import { list } from './list.js';
 import { normalize } from './normalization/normalize.js';
 import { packageIt } from './packaging/package.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
+import { error } from './utils/logging.js';
 import { deploy } from './deployment/deploy.js';
 
 const program = new Command();
@@ -29,7 +30,7 @@ program
   )
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
-    normalize(getContext(program, command, str));
+    normalize(getContext(program, command, str)).catch((e) => error(e));
   });
 
 program

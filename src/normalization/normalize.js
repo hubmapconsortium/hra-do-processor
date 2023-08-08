@@ -4,46 +4,38 @@ import { normalizeAsctbMetadata, normalizeAsctbData } from './normalize-asct-b.j
 import { normalizeCollection } from './normalize-collection.js';
 import { normalizeRefOrganMetadata, normalizeRefOrganData } from './normalize-ref-organ.js';
 import { validateNormalizedMetadata, validateNormalizedData } from '../utils/validation.js';
-import { header, error } from '../utils/logging.js';
+import { header } from '../utils/logging.js';
 
 export async function normalize(context) {
-  const { selectedDigitalObject: obj, skipValidation } = context;
+  const { selectedDigitalObject: obj } = context;
   sh.mkdir('-p', resolve(obj.path, 'normalized'));
+  header(context, 'run-normalize');
   switch (obj.type) {
     case 'asct-b':
-      // Produce normalized metadata and data
-      header(context, 'run-normalize');
       normalizeAsctbMetadata(context);
       await normalizeAsctbData(context);
-
-      // Validate the produced normalized metadata and data
-      header(context, 'run-validation');
-      if (skipValidation) {
-        info('Skip validation.');
-      } else {
-        validateNormalizedMetadata(context);
-        validateNormalizedData(context);
-      }
       break;
     case 'ref-organ':
-      // Produce normalized metadata and data
-      header(context, 'run-normalize');
       normalizeRefOrganMetadata(context);
       await normalizeRefOrganData(context);
-
-      // Validate the produced metadata and data
-      if (skipValidation) {
-        info('Skip validation.');
-      } else {
-        validateNormalizedMetadata(context);
-        validateNormalizedData(context)
-      }
       break;
     case 'collection':
       normalizeCollection(context);
       break;
     default:
-      error(`The "${obj.type}" digital object type not supported (yet)`);
-      break;
+      throw new Error(`The "${obj.type}" digital object type not supported (yet).`);
+  }
+  // Validate the produced metadata and data
+  validate(context);
+}
+
+function validate(context) {
+  const { skipValidation } = context;
+  header(context, 'run-validation');
+  if (skipValidation) {
+    info('Skip validation.');
+  } else {
+    validateNormalizedMetadata(context);
+    validateNormalizedData(context);
   }
 }
