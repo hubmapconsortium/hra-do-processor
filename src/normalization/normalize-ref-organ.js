@@ -4,7 +4,19 @@ import { resolve } from 'path';
 import { header } from '../utils/logging.js';
 import { validateNormalizedData } from '../utils/validation.js';
 import { processSceneNodes } from './ref-organ-utils/process-scene-nodes.js';
-import { readMetadata, writeNormalizedData } from './utils.js';
+import { readMetadata, writeNormalizedMetadata, writeNormalizedData } from './utils.js';
+
+export function normalizeRefOrganMetadata(context) {
+  const rawMetadata = readMetadata(context);
+  const normalizedMetadata = normalizeMetadata(rawMetadata);
+  writeNormalizedMetadata(context, normalizedMetadata);
+}
+
+function normalizeMetadata(metadata) {
+  delete metadata.type;
+  delete metadata.name;
+  return metadata;
+}
 
 export async function normalizeRefOrganData(context) {
   const rawData = await getRawData(context);

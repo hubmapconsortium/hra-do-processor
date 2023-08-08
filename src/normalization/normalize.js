@@ -2,7 +2,7 @@ import { resolve } from 'path';
 import sh from 'shelljs';
 import { normalizeAsctbMetadata, normalizeAsctbData } from './normalize-asct-b.js';
 import { normalizeCollection } from './normalize-collection.js';
-import { normalizeRefOrganData } from './normalize-ref-organ.js';
+import { normalizeRefOrganMetadata, normalizeRefOrganData } from './normalize-ref-organ.js';
 import { validateNormalizedMetadata, validateNormalizedData } from '../utils/validation.js';
 import { header, error } from '../utils/logging.js';
 
@@ -26,14 +26,16 @@ export async function normalize(context) {
       }
       break;
     case 'ref-organ':
-      // Produce normalized data
+      // Produce normalized metadata and data
       header(context, 'run-normalize');
+      normalizeRefOrganMetadata(context);
       await normalizeRefOrganData(context);
 
-      // Validate the produced data
+      // Validate the produced metadata and data
       if (skipValidation) {
         info('Skip validation.');
       } else {
+        validateNormalizedMetadata(context);
         validateNormalizedData(context)
       }
       break;
