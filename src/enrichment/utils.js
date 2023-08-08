@@ -37,6 +37,15 @@ export function convertNormalizedToOwl(context, inputPath, outputPath) {
   const schemaBackupPath = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml.bak`);
 
   info(`Using 'linkml-data2owl' to transform ${inputPath}`);
+  /*
+   * The steps:
+   *  1. Substitute the "id" parameter in the schema file (LinkML) with the digital object's IRI, 
+   *     ensuring that the resulting OWL ontology uses the digital object IRI as its ontology IRI.
+   *  2. Employ the linkml-data2owl tool to transform the normalized digital object from YAML into
+   *     OWL format.
+   *  3. Restore the original schema file to its initial state, thereby reinstating the original 
+   *     "id" parameter.
+   */
   throwOnError(
     `sed -i.bak 's|^id:.*|id: ${obj.iri}|' ${schemaPath} && \
      linkml-data2owl --output-type ttl --schema ${schemaPath} ${inputPath} -o ${outputPath} && \
