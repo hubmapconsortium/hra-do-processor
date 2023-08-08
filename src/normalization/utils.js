@@ -28,7 +28,7 @@ export function writeNormalizedData(context, data) {
   const normalizedPath = resolve(path, 'normalized/normalized.yaml');
   writeFileSync(
     normalizedPath,
-    dump({ id: iri, metadata, data })
+    dump({ iri, metadata, data })
   );
   info(`Normalized digital object written to ${normalizedPath}`);
 }

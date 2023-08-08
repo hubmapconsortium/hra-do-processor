@@ -30,7 +30,7 @@ classes:
   Container:
     tree_root: true
     attributes:
-      id:
+      iri:
         range: uriorcurie
       metadata:
         range: CollectionMetadata
@@ -40,12 +40,12 @@ classes:
         inlined_as_list: true
     annotations:
       owl.template: |-
-        AnnotationAssertion( dct:title {{id}} "{{metadata.title}}" )
-        AnnotationAssertion( dct:description {{id}} "{{metadata.description}}" )
+        AnnotationAssertion( dct:title {{iri}} "{{metadata.title}}" )
+        AnnotationAssertion( dct:description {{iri}} "{{metadata.description}}" )
         {% for c in metadata.creators %}
-        AnnotationAssertion( dct:creator {{id}} "{{c.fullName}} ({{c.orcid}})" )
+        AnnotationAssertion( dct:creator {{iri}} "{{c.fullName}} ({{c.orcid}})" )
         {% endfor %}
-        AnnotationAssertion( schema:version {{id}} "{{metadata.version}}" )
-        AnnotationAssertion( schema:dateCreated {{id}} "{{metadata.creation_date}}" )
-        AnnotationAssertion( dct:license {{id}} "{{metadata.license}}" )
-        AnnotationAssertion( dct:publisher {{id}} "{{metadata.publisher}}" )
+        AnnotationAssertion( schema:version {{iri}} "{{metadata.version}}" )
+        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date}}" )
+        AnnotationAssertion( dct:license {{iri}} "{{metadata.license}}" )
+        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher}}" )
