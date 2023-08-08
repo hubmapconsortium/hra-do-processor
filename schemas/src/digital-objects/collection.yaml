@@ -20,24 +20,13 @@ classes:
   CollectionMetadata:
     class_uri: dcat:Dataset
     slots:
-      - type
-      - name
-      - version
       - title
       - description
       - creators
-      - project_leads
-      - reviewers
-      - externalReviewers
+      - version
       - creation_date
       - license
       - publisher
-      - funders
-      - hubmapId
-      - doi
-      - citation
-      - citationOverall
-      - datatable
   Container:
     tree_root: true
     attributes:
@@ -51,31 +40,12 @@ classes:
         inlined_as_list: true
     annotations:
       owl.template: |-
-        AnnotationAssertion( schema:about {{id}} "{{metadata.type}}" )
-        AnnotationAssertion( schema:version {{id}} "{{metadata.version}}" )
         AnnotationAssertion( dct:title {{id}} "{{metadata.title}}" )
-        AnnotationAssertion( dct:description {{id}} "{{metadata.description|e}}" )
+        AnnotationAssertion( dct:description {{id}} "{{metadata.description}}" )
         {% for c in metadata.creators %}
         AnnotationAssertion( dct:creator {{id}} "{{c.fullName}} ({{c.orcid}})" )
         {% endfor %}
-        {% for l in metadata.project_leads %}
-        AnnotationAssertion( ccf:project_lead {{id}} "{{l.fullName}} ({{l.orcid}})" )
-        {% endfor %}
-        {% for r in metadata.reviewers %}
-        AnnotationAssertion( schema:reviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})" )
-        {% endfor %}
-        {% for r in metadata.externalReviewers %}
-        AnnotationAssertion( ccf:externallyReviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})" )
-        {% endfor %}
+        AnnotationAssertion( schema:version {{id}} "{{metadata.version}}" )
         AnnotationAssertion( schema:dateCreated {{id}} "{{metadata.creation_date}}" )
         AnnotationAssertion( dct:license {{id}} "{{metadata.license}}" )
         AnnotationAssertion( dct:publisher {{id}} "{{metadata.publisher}}" )
-        {% for f in metadata.funders %}
-        AnnotationAssertion( schema:funding {{id}} "Award number {{f.awardNumber}} from {{f.funder}}" )
-        {% endfor %}
-        AnnotationAssertion( ccf:hubmap_id {{id}} "{{metadata.hubmapId}}" )
-        AnnotationAssertion( schema:citation {{id}} "{{metadata.citation}}" )
-        AnnotationAssertion( ccf:citation_overall {{id}} "{{metadata.citationOverall}}" )
-        {% for do in data %}
-        AnnotationAssertion( schema:isBasedOn {{id}} https://purl.humanatlas.io/{{do}} )
-        {% endfor %}
