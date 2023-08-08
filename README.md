@@ -79,22 +79,27 @@ Usage: do-processor [options] [command]
 Digital Object Processing Command-Line Interface
 
 Options:
-  -V, --version                    output the version number
-  --do-home <string>               Digital Objects home directory
-  --processor-home <string>        DO Processor home
-  --skip-validation                Skip validation in each command (default: false)
-  -h, --help                       display help for command
+  -V, --version                          output the version number
+  --base-iri <string>                    Base IRI for Digital Objects
+  --do-home <string>                     Digital Objects home directory
+  --processor-home <string>              DO Processor home
+  --deployment-home <string>             DO deployment home
+  --skip-validation                      Skip validation in each command (default: false)
+  --exclude-bad-values                   Do not pass invalid values from data processors (default: false)
+  -h, --help                             display help for command
 
 Commands:
-  normalize <digital-object-path>  Mechanically normalizes a Digital Object from it's raw form. Minimally, it converts the source DO type + integrates the
-                                   metadata into a single linkml-compatible JSON file.
-  enrich <digital-object-path>     Enriches a Normalized Digital Object, optionally pulling in data from other sources like Uberon, CL, Ubergraph, or other
-                                   external resources. Minimally, it converts the Normalized JSON file into RDF. Optionally enriches data from the original
-                                   form (ie add Metadata to nodes in the SVG or GLB files).
-  package <digital-object-path>    Packages an Enriched Digital Object, such that it can published to a website/DOI'd/etc and used
-  build <digital-object-path>      Given a Digital Object, checks for and runs normalization, enrichment, and packaging in one command.
-  list                             Lists all digital objects in the DO_HOME directory
-  help [command]                   display help for command
+  normalize <digital-object-path>        Mechanically normalizes a Digital Object from it's raw form. Minimally, it converts the source DO type +
+                                         integrates the metadata into a single linkml-compatible JSON file.
+  enrich <digital-object-path>           Enriches a Normalized Digital Object, optionally pulling in data from other sources like Uberon, CL, Ubergraph,
+                                         or other external resources. Minimally, it converts the Normalized JSON file into RDF. Optionally enriches data
+                                         from the original form (ie add Metadata to nodes in the SVG or GLB files).
+  package <digital-object-path>          Packages an Enriched Digital Object, such that it can published to a website/DOI'd/etc and used
+  build [options] <digital-object-path>  Given a Digital Object, checks for and runs normalization, enrichment, and packaging in one command.
+  deploy <digital-object-path>           Deploys a given Digital Object to the deployment home (default ./site)
+  finalize                               Finalize the deployment home before sending to the live server
+  list                                   Lists all digital objects in the DO_HOME directory
+  help [command]                         display help for command
 ```
 
 ## Digital Object Processor Subcommands

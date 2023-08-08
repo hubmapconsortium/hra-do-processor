@@ -9,6 +9,9 @@ import { packageIt } from './packaging/package.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
 import { error } from './utils/logging.js';
 import { deploy } from './deployment/deploy.js';
+import { finalize } from './finalizing/finalize.js';
+import { newDraft } from './drafting/new-draft.js';
+import { bumpDraft } from './drafting/bump-draft.js';
 
 const program = new Command();
 
@@ -21,7 +24,7 @@ program
   .option('--processor-home <string>', 'DO Processor home', parseDirectory)
   .option('--deployment-home <string>', 'DO deployment home', parseDirectory)
   .option('--skip-validation', 'Skip validation in each command', false)
-  .option('--exclude-bad-values', 'Do not pass invalid values from data processors', false)
+  .option('--exclude-bad-values', 'Do not pass invalid values from data processors', false);
 
 program
   .command('normalize')
@@ -31,6 +34,31 @@ program
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     normalize(getContext(program, command, str)).catch((e) => error(e));
+  });
+
+program
+  .command('new-draft')
+  .description('Creates a draft digital object from a given Digital Object')
+  .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
+  .option(
+    '--latest',
+    'Use the latest version of the given Digital Object for the new draft regardless of the version indicated',
+    false
+  )
+  .option('--force', 'Deletes the existing draft, if it already exists', false)
+  .action((str, _options, command) => {
+    newDraft(getContext(program, command, str));
+  });
+
+program
+  .command('bump-draft')
+  .description('Increments the latest version of the digital object based on the given option, default is --minor')
+  .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
+  .option('--major', 'Increments the latest digital object version by 1', false)
+  .option('--minor', 'Increments the latest digital object version by 0.1', false)
+  .option('--patch', 'Increments the latest digital object version by 0.0.1', false)
+  .action((str, _options, command) => {
+    bumpDraft(getContext(program, command, str));
   });
 
 program
@@ -66,6 +94,13 @@ program
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     deploy(getContext(program, command, str));
+  });
+
+program
+  .command('finalize')
+  .description('Finalize the deployment home before sending to the live server')
+  .action((_options, command) => {
+    finalize(getContext(program, command));
   });
 
 program
