@@ -41,7 +41,5 @@ classes:
   Container:
     tree_root: true
     attributes:
-      id:
-        range: uriorcurie
       metadata:
         range: AsctbMetadata
