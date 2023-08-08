@@ -22,6 +22,8 @@ export function normalizeAsctbMetadata(context) {
 }
 
 function normalizeMetadata(metadata) {
+  delete metadata.type;
+  delete metadata.name;
   return metadata;
 }
 
