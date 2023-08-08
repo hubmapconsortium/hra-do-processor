@@ -2,7 +2,7 @@
 set -ev
 
 # Process the edit version of the LinkML schema
-for schemaFile in schemas/src/digital-objects/*.yaml; do
+for schemaFile in schemas/src/{metadata,digital-objects}/*.yaml; do
   type=$(basename ${schemaFile%.yaml})
   echo $type $schemaFile
 
