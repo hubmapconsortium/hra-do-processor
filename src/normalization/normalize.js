@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import sh from 'shelljs';
 import { normalizeAsctbMetadata, normalizeAsctbData } from './normalize-asct-b.js';
-import { normalizeCollection } from './normalize-collection.js';
+import { normalizeCollectionMetadata, normalizeCollectionData } from './normalize-collection.js';
 import { normalizeRefOrganMetadata, normalizeRefOrganData } from './normalize-ref-organ.js';
 import { validateNormalizedMetadata, validateNormalizedData } from '../utils/validation.js';
 import { header } from '../utils/logging.js';
@@ -20,7 +20,8 @@ export async function normalize(context) {
       await normalizeRefOrganData(context);
       break;
     case 'collection':
-      normalizeCollection(context);
+      normalizeCollectionMetadata(context);
+      normalizeCollectionData(context);
       break;
     default:
       throw new Error(`The "${obj.type}" digital object type not supported (yet).`);
