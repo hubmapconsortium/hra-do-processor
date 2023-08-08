@@ -3,7 +3,6 @@ import { dump } from 'js-yaml';
 import { resolve } from 'path';
 import sh from 'shelljs';
 import { info, more, warning } from '../utils/logging.js';
-import { validateNormalizedData } from '../utils/validation.js';
 import {
   getPatchesForAnatomicalStructure,
   getPatchesForBiomarker,
@@ -22,7 +21,7 @@ export function normalizeAsctbMetadata(context) {
   writeNormalizedMetadata(context, rawMetadata);
 }
 
-function normalizeMetadata(context, metadata) {
+function normalizeMetadata(metadata) {
   return metadata;
 }
 
@@ -30,7 +29,6 @@ export async function normalizeAsctbData(context) {
   const rawData = await getRawData(context);
   const normalizedData = normalizeData(context, rawData);
   writeNormalizedData(context, normalizedData);
-  validateNormalizedData(context);
 }
 
 async function getRawData(context) {
