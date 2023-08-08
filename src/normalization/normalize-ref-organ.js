@@ -6,12 +6,10 @@ import { validateNormalizedData } from '../utils/validation.js';
 import { processSceneNodes } from './ref-organ-utils/process-scene-nodes.js';
 import { readMetadata, writeNormalizedData } from './utils.js';
 
-export async function normalizeRefOrgan(context) {
-  header(context, 'run-normalize');
+export async function normalizeRefOrganData(context) {
   const rawData = await getRawData(context);
   const normalizedData = normalizeRawData(context, rawData);
   writeNormalizedData(context, normalizedData);
-  validateNormalizedData(context);
 }
 
 async function getRawData(context) {
