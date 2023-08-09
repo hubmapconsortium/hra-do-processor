@@ -40,3 +40,21 @@ classes:
       - citation
       - citationOverall
       - datatable
+      - distributions
+    slot_usage:
+      iri:
+        required: true
+      title:
+        required: true
+      description:
+        required: true
+      creators:
+        required: true
+      version:
+        required: true
+      creation_date:
+        required: true
+      license:
+        required: true
+      distributions:
+        required: true
