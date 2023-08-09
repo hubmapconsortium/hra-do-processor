@@ -2,17 +2,28 @@ import { resolve } from 'path';
 import { error, header, info, more } from '../utils/logging.js';
 import { convert, extract, merge, query } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
-import { cleanTemporaryFiles, convertNormalizedToOwl, logOutput } from './utils.js';
+import { 
+  cleanTemporaryFiles, 
+  convertNormalizedMetadataToRdf,
+  convertNormalizedDataToOwl,
+  logOutput 
+} from './utils.js';
 
-export function enrichAsctb(context) {
-  header(context, 'run-enrich');
+export function enrichAsctbMetadata(context) {
+  const { selectedDigitalObject: obj } = context;
+  const normalizedPath = resolve(obj.path, 'normalized/normalized-metadata.yaml');
+  const enrichedPath = resolve(obj.path, 'enriched/enriched-metadata.ttl');
+  convertNormalizedMetadataToRdf(context, normalizedPath, enrichedPath);
+}
+
+export function enrichAsctbData(context) {
   try {
     const { selectedDigitalObject: obj, processorHome } = context;
 
     // Convert normalized data to graph data (.ttl)
     const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
     const baseInputPath = resolve(obj.path, 'enriched/base-input.ttl');
-    convertNormalizedToOwl(context, normalizedPath, baseInputPath);
+    convertNormalizedDataToOwl(context, normalizedPath, baseInputPath);
     logOutput(baseInputPath);
 
     let inputPaths = []; // variable to hold input files for merging

@@ -3,16 +3,28 @@ import { load } from 'js-yaml';
 import { resolve } from 'path';
 import { error, header, info, more } from '../utils/logging.js';
 import { convert, merge } from '../utils/robot.js';
-import { cleanTemporaryFiles, convertNormalizedToOwl, runCompleteClosure, logOutput } from './utils.js';
+import {
+  cleanTemporaryFiles,
+  convertNormalizedMetadataToRdf,
+  convertNormalizedDataToOwl,
+  runCompleteClosure,
+  logOutput
+} from './utils.js';
 
-export function enrichCollection(context) {
-  header(context, 'run-enrich');
+export function enrichCollectionMetadata(context) {
+  const { selectedDigitalObject: obj } = context;
+  const normalizedPath = resolve(obj.path, 'normalized/normalized-metadata.yaml');
+  const enrichedPath = resolve(obj.path, 'enriched/enriched-metadata.ttl');
+  convertNormalizedMetadataToRdf(context, normalizedPath, enrichedPath);
+}
+
+export function enrichCollectionData(context) {
   try {
     const { selectedDigitalObject: obj } = context;
 
     const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
     const baseInputPath = resolve(obj.path, 'enriched/base-input.ttl');
-    convertNormalizedToOwl(context, normalizedPath, baseInputPath);
+    convertNormalizedDataToOwl(context, normalizedPath, baseInputPath);
     logOutput(baseInputPath);
 
     info(`Reading data: ${normalizedPath}`);
@@ -53,11 +65,13 @@ export function enrichCollection(context) {
 }
 
 function validateCollection(context, data) {
+  const { selectedDigitalObject: obj, skipValidation, doHome } = context;
   let isValid = true;
-  if (!context.skipValidation) {
+  if (!skipValidation) {
     for (const collectedObj of data) {
-      if (!existsSync(resolve(context.doHome, collectedObj, 'enriched/enriched.ttl'))) {
-        error(`${collectedObj} does not exist or is invalid.`);
+      const enrichPath = resolve(doHome, collectedObj, 'enriched/enriched.ttl');
+      if (!existsSync(enrichPath)) {
+        error(`${collectedObj}/enriched/enriched.ttl does not exist or is invalid.`);
         isValid = false;
       }
     }

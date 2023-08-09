@@ -1,26 +1,41 @@
 import { resolve } from 'path';
+import sh from 'shelljs';
 import { info, more } from '../utils/logging.js';
 import { mergeTurtles } from '../utils/owl-cli.js';
 import { redundant } from '../utils/relation-graph.js';
 import { merge } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
 
-export function convertNormalized(context) {
+export function convertNormalizedMetadataToRdf(context, inputPath, outputPath) {
+  const { selectedDigitalObject: obj, processorHome } = context;
+
+  const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}-metadata.yaml`);
+  const errorPath = resolve(obj.path, 'enriched/metadata-enrichment-errors.yaml');
+
+  convertNormalizedToRdf(context, inputPath, outputPath, schemaPath);
+}
+
+export function convertNormalizedDataToRdf(context, inputPath, outputPath) {
+  const { selectedDigitalObject: obj, processorHome } = context;
+
+  const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml`);
+  const errorPath = resolve(obj.path, 'enriched/data-enrichment-errors.yaml');
+
+  convertNormalizedToRdf(context, inputPath, outputPath, schemaPath);
+}
+
+function convertNormalizedToRdf(context, inputPath, outputPath, schemaPath, objectIri) {
   const { selectedDigitalObject: obj, processorHome, skipValidation } = context;
 
-  const schema = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml`);
-  const input = resolve(obj.path, 'normalized/normalized.yaml');
-  const output = resolve(obj.path, 'enriched/enriched.ttl');
-  const errorFile = resolve(obj.path, 'enriched/errors.yaml');
+  const schemaBackupPath = resolve(processorHome, 'schemas/generated/linkml', `schema.yaml.bak`);
+  sh.cp(schemaPath, schemaBackupPath);
 
-  info(`Using 'linkml-convert' to transform ${input}`);
+  info(`Using 'linkml-convert' to transform ${inputPath}`);
   throwOnError(
-    `linkml-convert ${skipValidation ? '--no-validate' : ''} --schema ${schema} ${input} -o ${output}`,
+    `linkml-convert ${skipValidation ? '--no-validate' : ''} --schema ${schemaPath} ${inputPath} -o ${outputPath}`,
     'Enrichment failed.'
   );
-  info(`Enriched digital object written to ${output}`);
-
-  return output;
+  info(`Enriched digital object written to ${outputPath}`);
 }
 
 export function prettifyEnriched(context) {
@@ -30,7 +45,7 @@ export function prettifyEnriched(context) {
   mergeTurtles(enriched, prefixes, [enriched]);
 }
 
-export function convertNormalizedToOwl(context, inputPath, outputPath) {
+export function convertNormalizedDataToOwl(context, inputPath, outputPath) {
   const { selectedDigitalObject: obj, processorHome } = context;
 
   const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml`);
@@ -63,7 +78,7 @@ export function cleanTemporaryFiles(context) {
   const { selectedDigitalObject: obj } = context;
   const enrichedPath = resolve(obj.path, 'enriched/');
   throwOnError(
-    `find ${enrichedPath} ! -name 'enriched.ttl' ! -name 'redundant.ttl' -type f -exec rm -f {} +`, 
+    `find ${enrichedPath} ! -name 'enriched.ttl' ! -name 'enriched-metadata.ttl' ! -name 'redundant.ttl' -type f -exec rm -f {} +`, 
     'Clean temporary files failed.'
   );
 }
