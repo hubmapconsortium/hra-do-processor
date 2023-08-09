@@ -13,7 +13,7 @@ export function normalizeRefOrganMetadata(context) {
 
 function normalizeMetadata(context, metadata) {
   const { selectedDigitalObject: obj } = context;
-  const normalizedMetadata = { id: `${obj.iri}/${obj.version}`, ...metadata };
+  const normalizedMetadata = { iri: `${obj.iri}/${obj.version}`, ...metadata };
   delete normalizedMetadata.type;
   delete normalizedMetadata.name;
   return normalizedMetadata;

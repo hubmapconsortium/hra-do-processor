@@ -13,11 +13,12 @@ export function normalizeCollectionMetadata(context) {
 
 function normalizeMetadata(context, metadata) {
   const { selectedDigitalObject: obj } = context;
-  const normalizedMetadata = { id: `${obj.iri}/${obj.version}`, ...metadata };
+  const normalizedMetadata = { iri: `${obj.iri}/${obj.version}`, ...metadata };
   delete normalizedMetadata.type;
   delete normalizedMetadata.name;
   return normalizedMetadata;
 }
+
 export function normalizeCollectionData(context) {
   const { path } = context.selectedDigitalObject;
   const metadata = readMetadata(context);

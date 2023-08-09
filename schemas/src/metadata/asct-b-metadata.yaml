@@ -23,7 +23,7 @@ classes:
     tree_root: true
     class_uri: dcat:Dataset
     slots:
-      - id
+      - iri
       - title
       - description
       - creators

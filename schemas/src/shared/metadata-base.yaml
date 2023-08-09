@@ -34,7 +34,7 @@ classes:
       - awardNumber
 
 slots:
-  id:
+  iri:
     identifier: true
 
   # Schema.org properties
