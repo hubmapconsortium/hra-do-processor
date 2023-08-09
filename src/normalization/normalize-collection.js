@@ -3,7 +3,7 @@ import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
 import { readMetadata, writeNormalizedMetadata, writeNormalizedData } from './utils.js';
-import { header } from '../utils/logging.js';
+import { header, error } from '../utils/logging.js';
 
 export function normalizeCollectionMetadata(context) {
   const rawMetadata = readMetadata(context);
@@ -34,8 +34,11 @@ function checkCollectionItems(context, data) {
   if (!context.skipValidation) {
     for (const collectedObj of data) {
       if (!existsSync(resolve(context.doHome, collectedObj, 'raw/metadata.yaml'))) {
-        throw new Error(`${collectedObj} does not exist or is invalid`);
+        error(`${collectedObj} does not exist or is invalid`);
       }
     }
+  }
+  if (!isValid) {
+    throw new Error(`Cannot normalize ${obj.doString} until all referenced digital objects are found.`);
   }
 }
