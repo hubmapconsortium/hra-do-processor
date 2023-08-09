@@ -11,7 +11,13 @@ import {
   isIdValid,
   normalizeDoi
 } from './patches.js';
-import { readMetadata, writeNormalizedMetadata, writeNormalizedData, getMetadataIri } from './utils.js';
+import {
+  readMetadata,
+  writeNormalizedMetadata,
+  writeNormalizedData,
+  getMetadataIri,
+  getDataDistributions 
+} from './utils.js';
 
 const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
 
@@ -24,7 +30,8 @@ export function normalizeAsctbMetadata(context) {
 function normalizeMetadata(context, metadata) {
   const normalizedMetadata = {
     iri: getMetadataIri(context),
-     ...metadata
+    ...metadata,
+    distributions: getDataDistributions(context)
   };
   delete normalizedMetadata.type;
   delete normalizedMetadata.name;

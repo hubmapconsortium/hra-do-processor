@@ -3,7 +3,13 @@ import { readFile } from 'fs/promises';
 import { resolve } from 'path';
 import { header } from '../utils/logging.js';
 import { processSceneNodes } from './ref-organ-utils/process-scene-nodes.js';
-import { readMetadata, writeNormalizedMetadata, writeNormalizedData, getMetadataIri } from './utils.js';
+import {
+  readMetadata,
+  writeNormalizedMetadata,
+  writeNormalizedData,
+  getMetadataIri,
+  getDataDistributions
+} from './utils.js';
 
 export function normalizeRefOrganMetadata(context) {
   const rawMetadata = readMetadata(context);
@@ -14,7 +20,8 @@ export function normalizeRefOrganMetadata(context) {
 function normalizeMetadata(context, metadata) {
   const normalizedMetadata = {
     iri: getMetadataIri(context),
-     ...metadata
+    ...metadata,
+    distributions: getDataDistributions(context)
   };
   delete normalizedMetadata.type;
   delete normalizedMetadata.name;

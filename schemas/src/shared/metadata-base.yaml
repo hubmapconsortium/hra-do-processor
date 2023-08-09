@@ -32,10 +32,48 @@ classes:
     slots:
       - funder
       - awardNumber
+  Distribution:
+    class_uri: dcat:Distribution
+    slots:
+      - title
+      - downloadUrl
+      - accessUrl
+      - mediaType
 
 slots:
   iri:
     identifier: true
+
+  # DCAT properties
+  distributions:
+    multivalued: true
+    inlined_as_list: true
+    range: Distribution
+    slot_uri: dcat:distribution
+  downloadUrl:
+    range: uri
+    slot_uri: dcat:downloadURL
+  accessUrl:
+    range: uri
+    slot_uri: dcat:accessURL
+  mediaType:
+    range: uriorcurie
+    slot_uri: dcat:mediaType
+
+  # Dublin Core properties
+  title:
+    slot_uri: dct:title
+  description:
+    slot_uri: dct:description
+  license:
+    slot_uri: dct:license
+  publisher:
+    slot_uri: dct:publisher
+  creators:
+    multivalued: true
+    inlined_as_list: true
+    range: Person
+    slot_uri: dct:creator
 
   # Schema.org properties
   about:
@@ -74,21 +112,6 @@ slots:
     range: Grant
     slot_uri: schema:funding
 
-  # Dublin Core properties
-  title:
-    slot_uri: dct:title
-  description:
-    slot_uri: dct:description
-  license:
-    slot_uri: dct:license
-  publisher:
-    slot_uri: dct:publisher
-  creators:
-    multivalued: true
-    inlined_as_list: true
-    range: Person
-    slot_uri: dct:creator
-
   # OWL properties
   versionInfo:
     slot_uri: owl:versionInfo
@@ -114,4 +137,3 @@ slots:
     inlined_as_list: true
     range: Person    
     slot_uri: ccf:external_reviewer
-
