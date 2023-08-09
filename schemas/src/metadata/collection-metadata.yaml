@@ -19,9 +19,11 @@ imports:
   - ../shared/metadata-base
 
 classes:
-  CollectionMetadata:
+  Container:
+    tree_root: true
     class_uri: dcat:Dataset
     slots:
+      - id
       - title
       - description
       - creators
@@ -38,8 +40,3 @@ classes:
       - citation
       - citationOverall
       - datatable
-  Container:
-    tree_root: true
-    attributes:
-      metadata:
-        range: CollectionMetadata
