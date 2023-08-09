@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
-import { readMetadata, writeNormalizedMetadata, writeNormalizedData } from './utils.js';
+import { readMetadata, writeNormalizedMetadata, writeNormalizedData, getMetadataIri } from './utils.js';
 import { header, error } from '../utils/logging.js';
 
 export function normalizeCollectionMetadata(context) {
@@ -12,8 +12,10 @@ export function normalizeCollectionMetadata(context) {
 }
 
 function normalizeMetadata(context, metadata) {
-  const { selectedDigitalObject: obj } = context;
-  const normalizedMetadata = { iri: `${obj.iri}/${obj.version}`, ...metadata };
+  const normalizedMetadata = {
+    iri: getMetadataIri(context),
+     ...metadata
+  };
   delete normalizedMetadata.type;
   delete normalizedMetadata.name;
   return normalizedMetadata;

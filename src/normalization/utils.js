@@ -36,3 +36,8 @@ export function writeNormalizedData(context, data) {
 function selectMetadata({title, description, creators, version, creation_date, license, publisher }) {
   return { title, description, creators, version, creation_date, license, publisher };
 }
+
+export function getMetadataIri(context) {
+  const { type, name, version } = context.selectedDigitalObject;
+  return `https://lod.humanatlas.io/${type}/${name}/${version}`;
+}
