@@ -7,16 +7,17 @@ import { header } from '../utils/logging.js';
 
 export function normalizeCollectionMetadata(context) {
   const rawMetadata = readMetadata(context);
-  const normalizedMetadata = normalizeMetadata(rawMetadata);
-  writeNormalizedMetadata(context, rawMetadata);
+  const normalizedMetadata = normalizeMetadata(context, rawMetadata);
+  writeNormalizedMetadata(context, normalizedMetadata);
 }
 
-function normalizeMetadata(metadata) {
-  delete metadata.type;
-  delete metadata.name;
-  return metadata;
+function normalizeMetadata(context, metadata) {
+  const { selectedDigitalObject: obj } = context;
+  const normalizedMetadata = { id: `${obj.iri}/${obj.version}`, ...metadata };
+  delete normalizedMetadata.type;
+  delete normalizedMetadata.name;
+  return normalizedMetadata;
 }
-
 export function normalizeCollectionData(context) {
   const { path } = context.selectedDigitalObject;
   const metadata = readMetadata(context);

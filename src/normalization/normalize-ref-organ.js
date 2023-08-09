@@ -7,14 +7,16 @@ import { readMetadata, writeNormalizedMetadata, writeNormalizedData } from './ut
 
 export function normalizeRefOrganMetadata(context) {
   const rawMetadata = readMetadata(context);
-  const normalizedMetadata = normalizeMetadata(rawMetadata);
+  const normalizedMetadata = normalizeMetadata(context, rawMetadata);
   writeNormalizedMetadata(context, normalizedMetadata);
 }
 
-function normalizeMetadata(metadata) {
-  delete metadata.type;
-  delete metadata.name;
-  return metadata;
+function normalizeMetadata(context, metadata) {
+  const { selectedDigitalObject: obj } = context;
+  const normalizedMetadata = { id: `${obj.iri}/${obj.version}`, ...metadata };
+  delete normalizedMetadata.type;
+  delete normalizedMetadata.name;
+  return normalizedMetadata;
 }
 
 export async function normalizeRefOrganData(context) {

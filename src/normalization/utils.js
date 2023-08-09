@@ -12,11 +12,11 @@ export function readMetadata(context) {
 }
 
 export function writeNormalizedMetadata(context, metadata) {
-  const { path, iri } = context.selectedDigitalObject;
+  const { path } = context.selectedDigitalObject;
   const normalizedPath = resolve(path, 'normalized/normalized-metadata.yaml');
   writeFileSync(
     normalizedPath,
-    dump({ metadata })
+    dump(metadata)
   );
   info(`Normalized metadata written to ${normalizedPath}`);
 }
