@@ -14,7 +14,7 @@ default_range: string
 
 imports:
   - linkml:types
-  - ../shared/metadata
+  - ../shared/metadata-base
   
 classes:
   SpatialEntity:
@@ -39,7 +39,6 @@ classes:
       - reference_organ
       - extraction_set
       - rui_rank
-
   SpatialObjectReference:
     class_uri: ccf:SpatialObjectReference
     slots:
@@ -82,76 +81,35 @@ classes:
   RefOrganMetadata:
     class_uri: dcat:Dataset
     slots:
-      - type
-      - name
-      - version
       - title
       - description
       - creators
-      - project_leads
-      - reviewers
-      - externalReviewers
+      - version
       - creation_date
       - license
       - publisher
-      - funders
-      - hubmapId
-      - doi
-      - citation
-      - citationOverall
-      - datatable
   Container:
     tree_root: true
     attributes:
-      id:
+      iri:
         range: uriorcurie
       metadata:
         range: RefOrganMetadata
-  
       data:
         multivalued: true
         inlined_as_list: true
         range: SpatialEntity
     annotations:
       owl.template: |-
-        AnnotationAssertion( schema:about {{id}} "{{metadata.type}}" )
-        AnnotationAssertion( schema:version {{id}} "{{metadata.version}}" )
-        AnnotationAssertion( dct:title {{id}} "{{metadata.title}}" )
-        AnnotationAssertion( dct:description {{id}} "{{metadata.description|e}}" )
+        AnnotationAssertion( dct:title {{iri}} "{{metadata.title}}" )
+        AnnotationAssertion( dct:description {{iri}} "{{metadata.description}}" )
         {% for c in metadata.creators %}
-        AnnotationAssertion( dct:creator {{id}} "{{c.fullName}} ({{c.orcid}})" )
+        AnnotationAssertion( dct:creator {{iri}} "{{c.fullName}} ({{c.orcid}})" )
         {% endfor %}
-        {% for l in metadata.project_leads %}
-        AnnotationAssertion( ccf:project_lead {{id}} "{{l.fullName}} ({{l.orcid}})" )
-        {% endfor %}
-        {% for r in metadata.reviewers %}
-        AnnotationAssertion( schema:reviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})" )
-        {% endfor %}
-        {% for r in metadata.externalReviewers %}
-        AnnotationAssertion( ccf:externallyReviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})" )
-        {% endfor %}
-        AnnotationAssertion( schema:dateCreated {{id}} "{{metadata.creation_date}}" )
-        AnnotationAssertion( dct:license {{id}} "{{metadata.license}}" )
-        AnnotationAssertion( dct:publisher {{id}} "{{metadata.publisher}}" )
-        {% for f in metadata.funders %}
-        AnnotationAssertion( schema:funding {{id}} "Award number {{f.awardNumber}} from {{f.funder}}" )
-        {% endfor %}
-        AnnotationAssertion( ccf:hubmap_id {{id}} "{{metadata.hubmapId}}" )
-        AnnotationAssertion( schema:citation {{id}} "{{metadata.citation}}" )
-        AnnotationAssertion( ccf:citation_overall {{id}} "{{metadata.citationOverall}}" )
-  
-      # extraction_sets:
-      #   multivalued: true
-      #   inlined_as_list: true
-      #   range: ExtractionSet
-      # spatial_entities:
-      #   multivalued: true
-      #   inlined_as_list: true
-      #   range: SpatialEntity
-      # rui_placements:
-      #   multivalued: true
-      #   inlined_as_list: true
-      #   range: SpatialPlacement
+        AnnotationAssertion( schema:version {{iri}} "{{metadata.version}}" )
+        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date}}" )
+        AnnotationAssertion( dct:license {{iri}} "{{metadata.license}}" )
+        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher}}" )  
 
 slots:
   id:
@@ -161,7 +119,7 @@ slots:
     slot_uri: rdfs:label
   creator:
     required: true
-    slot_uri: dcterms:creator
+    slot_uri: ccf:creator
   creator_first_name:
     required: true
     slot_uri: ccf:creator_first_name
@@ -173,7 +131,7 @@ slots:
     slot_uri: ccf:creator_orcid
   creation_date:
     required: true
-    slot_uri: dcterms:created
+    slot_uri: ccf:creation_date
     range: date
   x_dimension:
     required: true
@@ -272,7 +230,7 @@ slots:
     slot_uri: ccf:file_format
   placement_date:
     required: true
-    slot_uri: dcterms:created
+    slot_uri: ccf:placement_date
     range: date
   target:
     required: true
@@ -291,12 +249,12 @@ slots:
     inlined: true
   placement:
     required: true
-    slot_uri: ccf:placement_for
+    slot_uri: ccf:placement
     range: SpatialPlacement
     inlined: true
   placements:
     required: false
-    slot_uri: ccf:placement_for
+    slot_uri: ccf:placements
     range: SpatialPlacement
     inlined: true
     multivalued: true

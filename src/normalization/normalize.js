@@ -1,25 +1,42 @@
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { normalizeAsctb } from './normalize-asct-b.js';
-import { normalizeCollection } from './normalize-collection.js';
-import { normalizeRefOrgan } from './normalize-ref-organ.js';
-import { error } from '../utils/logging.js';
+import { normalizeAsctbMetadata, normalizeAsctbData } from './normalize-asct-b.js';
+import { normalizeCollectionMetadata, normalizeCollectionData } from './normalize-collection.js';
+import { normalizeRefOrganMetadata, normalizeRefOrganData } from './normalize-ref-organ.js';
+import { validateNormalizedMetadata, validateNormalizedData } from '../utils/validation.js';
+import { header } from '../utils/logging.js';
 
 export async function normalize(context) {
-  const obj = context.selectedDigitalObject;
+  const { selectedDigitalObject: obj } = context;
   sh.mkdir('-p', resolve(obj.path, 'normalized'));
+  header(context, 'run-normalize');
   switch (obj.type) {
     case 'asct-b':
-      await normalizeAsctb(context);
-      break;
-    case 'collection':
-      normalizeCollection(context);
+      normalizeAsctbMetadata(context);
+      await normalizeAsctbData(context);
       break;
     case 'ref-organ':
-      await normalizeRefOrgan(context);
+      normalizeRefOrganMetadata(context);
+      await normalizeRefOrganData(context);
+      break;
+    case 'collection':
+      normalizeCollectionMetadata(context);
+      normalizeCollectionData(context);
       break;
     default:
-      error(`The "${obj.type}" digital object type not supported (yet)`);
-      break;
+      throw new Error(`The "${obj.type}" digital object type not supported (yet).`);
+  }
+  // Validate the produced metadata and data
+  validate(context);
+}
+
+function validate(context) {
+  const { skipValidation } = context;
+  header(context, 'run-validation');
+  if (skipValidation) {
+    info('Skip validation.');
+  } else {
+    validateNormalizedMetadata(context);
+    validateNormalizedData(context);
   }
 }

@@ -2,33 +2,53 @@ import chalk from 'chalk';
 import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
-import { readMetadata, writeNormalized } from './utils.js';
-import { validateNormalized } from '../utils/validation.js';
-import { header } from '../utils/logging.js';
+import { header, error } from '../utils/logging.js';
+import {
+  readMetadata,
+  writeNormalizedMetadata,
+  writeNormalizedData,
+  getMetadataIri,
+  getDataDistributions
+} from './utils.js';
 
-export function normalizeCollection(context) {
-  header(context, 'run-normalize');
+export function normalizeCollectionMetadata(context) {
+  const rawMetadata = readMetadata(context);
+  const normalizedMetadata = normalizeMetadata(context, rawMetadata);
+  writeNormalizedMetadata(context, normalizedMetadata);
+}
+
+function normalizeMetadata(context, metadata) {
+  const normalizedMetadata = {
+    iri: getMetadataIri(context),
+    ...metadata,
+    distributions: getDataDistributions(context)
+  };
+  delete normalizedMetadata.type;
+  delete normalizedMetadata.name;
+  return normalizedMetadata;
+}
+
+export function normalizeCollectionData(context) {
   const { path } = context.selectedDigitalObject;
   const metadata = readMetadata(context);
 
   const dataPath = resolve(path, 'raw', metadata.datatable[0]);
   const data = load(readFileSync(dataPath))['digital-objects'];
+  checkCollectionItems(context, data);
 
-  writeNormalized(context, data);
-  validateNormalized(context);
-
-  validateCollection(context, data);
+  writeNormalizedData(context, data);
 }
 
-function validateCollection(context, data) {
+function checkCollectionItems(context, data) {
   let isValid = true;
   if (!context.skipValidation) {
     for (const collectedObj of data) {
       if (!existsSync(resolve(context.doHome, collectedObj, 'raw/metadata.yaml'))) {
-        console.log(chalk.red(collectedObj, 'does not exist or is invalid'));
-        isValid = false;
+        error(`${collectedObj} does not exist or is invalid`);
       }
     }
   }
-  return isValid;
+  if (!isValid) {
+    throw new Error(`Cannot normalize ${obj.doString} until all referenced digital objects are found.`);
+  }
 }

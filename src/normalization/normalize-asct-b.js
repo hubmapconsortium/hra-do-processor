@@ -2,8 +2,7 @@ import { readFileSync, writeFileSync } from 'fs';
 import { dump } from 'js-yaml';
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { header, info, more, warning } from '../utils/logging.js';
-import { validateNormalized } from '../utils/validation.js';
+import { info, more, warning } from '../utils/logging.js';
 import {
   getPatchesForAnatomicalStructure,
   getPatchesForBiomarker,
@@ -12,16 +11,37 @@ import {
   isIdValid,
   normalizeDoi
 } from './patches.js';
-import { readMetadata, writeNormalized } from './utils.js';
+import {
+  readMetadata,
+  writeNormalizedMetadata,
+  writeNormalizedData,
+  getMetadataIri,
+  getDataDistributions 
+} from './utils.js';
 
 const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
 
-export async function normalizeAsctb(context) {
-  header(context, 'run-normalize');
+export function normalizeAsctbMetadata(context) {
+  const rawMetadata = readMetadata(context);
+  const normalizedMetadata = normalizeMetadata(context, rawMetadata);
+  writeNormalizedMetadata(context, normalizedMetadata);
+}
+
+function normalizeMetadata(context, metadata) {
+  const normalizedMetadata = {
+    iri: getMetadataIri(context),
+    ...metadata,
+    distributions: getDataDistributions(context)
+  };
+  delete normalizedMetadata.type;
+  delete normalizedMetadata.name;
+  return normalizedMetadata;
+}
+
+export async function normalizeAsctbData(context) {
   const rawData = await getRawData(context);
-  const normalizedData = normalizeRawData(context, rawData);
-  writeNormalized(context, normalizedData);
-  validateNormalized(context);
+  const normalizedData = normalizeData(context, rawData);
+  writeNormalizedData(context, normalizedData);
 }
 
 async function getRawData(context) {
@@ -63,7 +83,7 @@ async function getRawData(context) {
   return data.data;
 }
 
-function normalizeRawData(context, data) {
+function normalizeData(context, data) {
   const { excludeBadValues } = context;
   if (excludeBadValues) {
     warning(`Option '--exclude-bad-values' is used to exclude invalid values. The resulting data may be lessen than the raw data.`)

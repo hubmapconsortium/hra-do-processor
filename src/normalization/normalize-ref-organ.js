@@ -2,16 +2,36 @@ import { Matrix4 } from '@math.gl/core';
 import { readFile } from 'fs/promises';
 import { resolve } from 'path';
 import { header } from '../utils/logging.js';
-import { validateNormalized } from '../utils/validation.js';
 import { processSceneNodes } from './ref-organ-utils/process-scene-nodes.js';
-import { readMetadata, writeNormalized } from './utils.js';
+import {
+  readMetadata,
+  writeNormalizedMetadata,
+  writeNormalizedData,
+  getMetadataIri,
+  getDataDistributions
+} from './utils.js';
 
-export async function normalizeRefOrgan(context) {
-  header(context, 'run-normalize');
+export function normalizeRefOrganMetadata(context) {
+  const rawMetadata = readMetadata(context);
+  const normalizedMetadata = normalizeMetadata(context, rawMetadata);
+  writeNormalizedMetadata(context, normalizedMetadata);
+}
+
+function normalizeMetadata(context, metadata) {
+  const normalizedMetadata = {
+    iri: getMetadataIri(context),
+    ...metadata,
+    distributions: getDataDistributions(context)
+  };
+  delete normalizedMetadata.type;
+  delete normalizedMetadata.name;
+  return normalizedMetadata;
+}
+
+export async function normalizeRefOrganData(context) {
   const rawData = await getRawData(context);
   const normalizedData = normalizeRawData(context, rawData);
-  writeNormalized(context, normalizedData);
-  validateNormalized(context);
+  writeNormalizedData(context, normalizedData);
 }
 
 async function getRawData(context) {
