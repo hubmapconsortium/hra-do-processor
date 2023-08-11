@@ -23,8 +23,11 @@ export function writeNormalizedMetadata(context, metadata) {
 
 export function writeNormalizedData(context, data) {
   const { path, iri } = context.selectedDigitalObject;
-  const metadata = selectMetadata(readMetadata(context));
-
+  const rawMetadata = readMetadata(context);
+  const metadata = { 
+    ...selectMetadata(rawMetadata),
+    see_also: getMetadataIri(context)
+  }
   const normalizedPath = resolve(path, 'normalized/normalized.yaml');
   writeFileSync(
     normalizedPath,

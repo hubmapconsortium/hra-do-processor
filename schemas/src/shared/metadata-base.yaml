@@ -116,6 +116,11 @@ slots:
   versionInfo:
     slot_uri: owl:versionInfo
 
+  # RDFS properties
+  see_also:
+    range: uriorcurie
+    slot_uri: rdfs:seeAlso
+
   # HRA properties
   hubmapId:
     slot_uri: ccf:hubmap_id

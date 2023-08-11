@@ -27,6 +27,7 @@ classes:
       - creation_date
       - license
       - publisher
+      - see_also
   Container:
     tree_root: true
     attributes:
@@ -49,3 +50,4 @@ classes:
         AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date}}" )
         AnnotationAssertion( dct:license {{iri}} "{{metadata.license}}" )
         AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher}}" )
+        AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also}}" )
