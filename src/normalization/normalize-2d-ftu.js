@@ -65,18 +65,19 @@ function normalizeData(context, metadata, data) {
 function normalizeIllustrationImage(context, metadata) {
   const { iri, type, name, version } = context.selectedDigitalObject;
   const datatable = metadata['datatable'];
-  return datatable.map(item => {
-    const fileType = item.split('.').pop();
-    const fileTypeName = fileType.toUpperCase();
-    const illustrationName = name.replace(/-/g, " ");
-    return {
-      id: `${iri}#${fileType}`,
-      label: `${fileTypeName} image of ${illustrationName}`,
-      class_type: 'FtuIllustrationFile',
-      typeOf: [ 'FtuIllustrationFile' ],
-      file_url: `https://cdn.humanatlast.io/digital-objects/${type}/${name}/${version}/${item}`,
-      file_format: getMimeType(fileType)
-    }
+  return datatable.filter(item => item.split('.').pop() != "csv")
+    .map(item => {
+      const fileType = item.split('.').pop();
+      const fileTypeName = fileType.toUpperCase();
+      const illustrationName = name.replace(/-/g, " ");
+      return {
+        id: `${iri}#${fileType}`,
+        label: `${fileTypeName} image of ${illustrationName}`,
+        class_type: 'FtuIllustrationFile',
+        typeOf: [ 'FtuIllustrationFile' ],
+        file_url: `https://cdn.humanatlast.io/digital-objects/${type}/${name}/${version}/${item}`,
+        file_format: getMimeType(fileType)
+      }
   });
 }
 
