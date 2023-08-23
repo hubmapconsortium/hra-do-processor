@@ -24,11 +24,17 @@ function normalizeMetadata(context, metadata) {
   const normalizedMetadata = {
     iri: getMetadataIri(context),
     ...metadata,
+    datatable: normalizeDatatable(context, metadata.datatable),
     distributions: getDataDistributions(context)
   };
   delete normalizedMetadata.type;
   delete normalizedMetadata.name;
   return normalizedMetadata;
+}
+
+function normalizeDatatable(context, datatable) {
+  const { type, name, version } = context.selectedDigitalObject;
+  return datatable.map(item => `https://cdn.humanatlast.io/digital-objects/${type}/${name}/${version}/${item}`)
 }
 
 export async function normalize2dFtuData(context) {
