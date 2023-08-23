@@ -1,0 +1,133 @@
+id: https://purl.humanatlas.io/specs/2d-ftu
+name: ftu-2d
+prefixes:
+  ccf: http://purl.org/ccf/
+  dcterms: http://purl.org/dc/terms/
+  pav: http://purl.org/pav/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  obo: http://purl.obolibrary.org/obo/
+  linkml: https://w3id.org/linkml/
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  CL: http://purl.obolibrary.org/obo/CL_
+
+default_prefix: ccf
+default_range: string
+
+imports:
+  - linkml:types
+  - ../shared/metadata-base
+  
+classes:
+  Named:
+    mixin: true
+    slots:
+      - id
+      - label
+      - class_type
+  Instance:
+    mixin: true
+    slots:
+      - typeOf
+    annotations:
+      owl: Individual
+
+  FtuIllustration:
+    class_uri: ccf:FtuIllustration
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - image_file
+      - illustration_node
+    annotations:
+      owl: NamedIndividual
+
+  FtuIllustrationFile:
+    class_uri: ccf:FtuIllustrationFile
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - file_url
+      - file_format
+    annotations:
+      owl: NamedIndividual
+
+  FtuIllustrationNode:
+    class_uri: ccf:FtuIllustrationNode
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - node_name
+      - part_of_illustration
+    annotations:
+      owl: NamedIndividual
+
+  Container:
+    tree_root: true
+    attributes:
+      iri:
+        range: uriorcurie
+      metadata:
+        range: DatasetMetadata
+      data:
+        multivalued: true
+        inlined_as_list: true
+        range: FtuIllustration
+    annotations:
+      owl.template: |-
+        AnnotationAssertion( dct:title {{iri}} "{{metadata.title}}" )
+        AnnotationAssertion( dct:description {{iri}} "{{metadata.description}}" )
+        {% for c in metadata.creators %}
+        AnnotationAssertion( dct:creator {{iri}} "{{c.fullName}} ({{c.orcid}})" )
+        {% endfor %}
+        AnnotationAssertion( schema:version {{iri}} "{{metadata.version}}" )
+        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date}}" )
+        AnnotationAssertion( dct:license {{iri}} "{{metadata.license}}" )
+        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher}}" )
+        AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also}}" )
+
+slots:
+  id:
+    identifier: true
+    range: string
+  label:
+    slot_uri: rdfs:label
+    annotations:
+      owl: AnnotationAssertion
+  class_type:
+    designates_type: true
+  typeOf:
+    multivalued: true
+    range: Named
+    slot_uri: rdf:type
+    annotations:
+      owl: ClassAssertion
+  image_file:
+    range: FtuIllustrationFile
+    multivalued: true
+    inlined_as_list: true
+    annotations:
+      owl: AnnotationAssertion
+  file_url:
+    range: uri
+    annotations:
+      owl: AnnotationAssertion
+  file_format:
+    annotations:
+      owl: AnnotationAssertion
+  illustration_node:
+    range: FtuIllustrationNode
+    multivalued: true
+    inlined_as_list: true
+    annotations:
+      owl: AnnotationAssertion
+  node_name:
+    annotations:
+      owl: AnnotationAssertion
+  part_of_illustration:
+    annotations:
+      owl: AnnotationAssertion
