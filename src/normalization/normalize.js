@@ -3,6 +3,7 @@ import sh from 'shelljs';
 import { normalizeAsctbMetadata, normalizeAsctbData } from './normalize-asct-b.js';
 import { normalizeCollectionMetadata, normalizeCollectionData } from './normalize-collection.js';
 import { normalizeRefOrganMetadata, normalizeRefOrganData } from './normalize-ref-organ.js';
+import { normalize2dFtuMetadata, normalize2dFtuData } from './normalize-2d-ftu.js';
 import { validateNormalizedMetadata, validateNormalizedData } from '../utils/validation.js';
 import { header } from '../utils/logging.js';
 
@@ -18,6 +19,10 @@ export async function normalize(context) {
     case 'ref-organ':
       normalizeRefOrganMetadata(context);
       await normalizeRefOrganData(context);
+      break;
+    case '2d-ftu':
+      normalize2dFtuMetadata(context);
+      await normalize2dFtuData(context);
       break;
     case 'collection':
       normalizeCollectionMetadata(context);

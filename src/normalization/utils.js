@@ -11,6 +11,11 @@ export function readMetadata(context) {
   }
 }
 
+export function readLocalData(context, fileName, parse) {
+  const { path, type, name, version } = context.selectedDigitalObject;
+  return parse(readFileSync(resolve(path, `raw/${fileName}`)));
+}
+
 export function writeNormalizedMetadata(context, metadata) {
   const { path } = context.selectedDigitalObject;
   const normalizedPath = resolve(path, 'normalized/normalized-metadata.yaml');
