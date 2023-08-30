@@ -4,7 +4,6 @@ import { resolve } from 'path';
 import sh from 'shelljs';
 import Papa from 'papaparse';
 import { info, more, warning } from '../utils/logging.js';
-import { getCrosswalk } from './2d-ftu-utils/get-crosswalk.js';
 import {
   readMetadata,
   readLocalData,
@@ -57,7 +56,7 @@ async function getRawData(context) {
 function normalizeData(context, metadata, data) {
   const { iri, name } = context.selectedDigitalObject;
   const illustrationName = name.replace(/-/g, " ");
-  const illustrationRepresentation = data[0]['organ_mapped_to'];
+  const illustrationRepresentation = data[0]['tissue_mapped_to'];
   return [{
       id: iri,
       label: `An illustration of ${illustrationName}`,
