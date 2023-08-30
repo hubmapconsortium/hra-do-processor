@@ -39,6 +39,7 @@ classes:
       - Named
       - Instance
     slots:
+      - located_in
       - image_file
       - illustration_node
     annotations:
@@ -106,6 +107,10 @@ slots:
     slot_uri: rdf:type
     annotations:
       owl: ClassAssertion
+  located_in:
+    slot_uri: ccf:ccf_located_in
+    annotations:
+      owl: AnnotationAssertion
   image_file:
     range: FtuIllustrationFile
     multivalued: true

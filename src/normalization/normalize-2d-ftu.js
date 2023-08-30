@@ -62,6 +62,7 @@ function normalizeData(context, metadata, data) {
       label: `An illustration of ${illustrationName}`,
       class_type: 'FtuIllustration',
       typeOf: [ 'FtuIllustration', illustrationRepresentation ],
+      located_in: data[0]['organ_mapped_to'],
       image_file: normalizeIllustrationImage(context, metadata),
       illustration_node: normalizeIllustrationNode(context, data)
     }];
