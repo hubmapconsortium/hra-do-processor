@@ -13,10 +13,4 @@ WHERE {
          FILTER(STRSTARTS(STR(?o),"http://purl.obolibrary.org/obo/LMHA_"))
       }
    }
-   UNION
-   {
-      SELECT ?entity WHERE {
-         BIND("http://purl.obolibrary.org/obo/LMHA_00135" AS ?entity)
-      }
-   }
 }

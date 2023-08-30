@@ -13,10 +13,4 @@ WHERE {
          FILTER(STRSTARTS(STR(?o),"http://identifiers.org/hgnc/"))
       }
    }
-   UNION
-   {
-      SELECT ?entity WHERE {
-         BIND("http://purl.bioontology.org/ontology/HGNC/gene" AS ?entity)
-      }
-   }
 }

@@ -22,6 +22,17 @@ export function extract(input, upperTerm, lowerTerms, output, outputFormat="owl"
   );
 }
 
+export function filter(input, anyTerms, annotationTerms=['rdfs:label'], output, outputFormat="owl") {
+  const termArguments = annotationTerms.map(term => `--term ${term}`).join(" ");
+  throwOnError(
+    `robot filter -i ${input} \
+                  --include-terms ${anyTerms} \
+                  ${termArguments} \
+           convert --format ${outputFormat} -o ${output}`,
+    'Class(es) extraction failed. See errors above.'
+  );
+}
+
 export function merge(inputs, output, outputFormat="owl") {
   // Convert the inputs to OWL/XML format to avoid blank node collisions
   const owlInputs = [];
