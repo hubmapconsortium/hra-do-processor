@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { resolve } from 'path';
 import { error, header, info, more } from '../utils/logging.js';
 import { convert, extract, merge, query } from '../utils/robot.js';
@@ -50,61 +51,81 @@ export function enrichAsctbData(context) {
     inputPaths.push(enrichedWithValidationPath); // Set the enriched path as the initial
 
     info('Building class hierarchy from reference ontologies...')
-    info('Extracting UBERON terms.');
     const uberonEntitiesPath = collectEntities(context, 'uberon', enrichedWithValidationPath);
-    const uberonExtractPath = extractClassHierarchy(
-      context,
-      'uberon',
-      'http://purl.obolibrary.org/obo/UBERON_0001062',
-      uberonEntitiesPath
-    );
-    logOutput(uberonEntitiesPath);
-    inputPaths.push(uberonExtractPath);
+    if (!isFileEmpty(uberonEntitiesPath)) {
+      info('Extracting UBERON.');
+      const uberonExtractPath = extractClassHierarchy(
+        context,
+        'uberon',
+        'http://purl.obolibrary.org/obo/UBERON_0001062',
+        uberonEntitiesPath
+      );
+      logOutput(uberonExtractPath);
+      inputPaths.push(uberonExtractPath);
+    }
 
-    info('Extracting FMA terms.');
-    const fmaEntities = collectEntities(context, 'fma', enrichedWithValidationPath);
-    const fmaExtractPath = extractClassHierarchy(context, 'fma', 'http://purl.org/sig/ont/fma/fma62955', fmaEntities);
-    logOutput(fmaExtractPath);
-    inputPaths.push(fmaExtractPath);
+    const fmaEntitiesPath = collectEntities(context, 'fma', enrichedWithValidationPath);
+    if (!isFileEmpty(fmaEntitiesPath)) {
+      info('Extracting FMA.');
+      const fmaExtractPath = extractClassHierarchy(
+        context, 
+        'fma', 
+        'http://purl.org/sig/ont/fma/fma62955', 
+        fmaEntitiesPath);
+      logOutput(fmaExtractPath);
+      inputPaths.push(fmaExtractPath);
+    }
 
-    info('Extracting CL terms.');
-    const clEntities = collectEntities(context, 'cl', enrichedWithValidationPath);
-    const clExtractPath = extractClassHierarchy(context, 'cl', 'http://purl.obolibrary.org/obo/CL_0000000', clEntities);
-    logOutput(clExtractPath);
-    inputPaths.push(clExtractPath);
+    const clEntitiesPath = collectEntities(context, 'cl', enrichedWithValidationPath);
+    if (!isFileEmpty(clEntitiesPath)) {
+      info('Extracting CL.');
+      const clExtractPath = extractClassHierarchy(
+        context, 
+        'cl', 
+        'http://purl.obolibrary.org/obo/CL_0000000', 
+        clEntitiesPath);
+      logOutput(clExtractPath);
+      inputPaths.push(clExtractPath);
+    }
 
-    info('Extracting PCL terms.');
-    const pclEntities = collectEntities(context, 'pcl', enrichedWithValidationPath);
-    const pclExtractPath = extractClassHierarchy(
-      context,
-      'pcl',
-      'http://purl.obolibrary.org/obo/CL_0000000',
-      clEntities
-    );
-    logOutput(pclExtractPath);
-    inputPaths.push(pclExtractPath);
+    const pclEntitiesPath = collectEntities(context, 'pcl', enrichedWithValidationPath);
+    if (!isFileEmpty(pclEntitiesPath)) {
+      info('Extracting PCL.');
+      const pclExtractPath = extractClassHierarchy(
+        context,
+        'pcl',
+        'http://purl.obolibrary.org/obo/CL_0000000',
+        pclEntitiesPath
+      );
+      logOutput(pclExtractPath);
+      inputPaths.push(pclExtractPath);
+    }
 
-    info('Extracting LMHA terms.');
-    const lmhaEntities = collectEntities(context, 'lmha', enrichedWithValidationPath);
-    const lmhaExtractPath = extractClassHierarchy(
-      context,
-      'lmha',
-      'http://purl.obolibrary.org/obo/LMHA_00135',
-      clEntities
-    );
-    logOutput(lmhaExtractPath);
-    inputPaths.push(lmhaExtractPath);
+    const lmhaEntitiesPath = collectEntities(context, 'lmha', enrichedWithValidationPath);
+    if (!isFileEmpty(lmhaEntitiesPath)) {
+      info('Extracting LMHA.');
+      const lmhaExtractPath = extractClassHierarchy(
+        context,
+        'lmha',
+        'http://purl.obolibrary.org/obo/LMHA_00135',
+        lmhaEntitiesPath
+      );
+      logOutput(lmhaExtractPath);
+      inputPaths.push(lmhaExtractPath);
+    }
 
-    info('Extracting HGNC terms.');
-    const hgncEntities = collectEntities(context, 'hgnc', enrichedWithValidationPath);
-    const hgncExtractPath = extractClassHierarchy(
-      context,
-      'hgnc',
-      'http://purl.bioontology.org/ontology/HGNC/gene',
-      hgncEntities
-    );
-    logOutput(hgncExtractPath);
-    inputPaths.push(hgncExtractPath);
+    const hgncEntitiesPath = collectEntities(context, 'hgnc', enrichedWithValidationPath);
+    if (!isFileEmpty(hgncEntitiesPath)) {
+      info('Extracting HGNC.');
+      const hgncExtractPath = extractClassHierarchy(
+        context,
+        'hgnc',
+        'http://purl.bioontology.org/ontology/HGNC/gene',
+        hgncEntitiesPath
+      );
+      logOutput(hgncExtractPath);
+      inputPaths.push(hgncExtractPath);
+    }
 
     info('Merging RO terms.');
     const roPath = resolve(processorHome, `mirrors/ro.owl`);
@@ -171,6 +192,10 @@ function findOrganName(name) {
   return outputName;
 }
 
+function isFileEmpty(path) {
+  return fs.statSync(path).size === 0;
+}
+
 function collectEntities(context, ontologyName, inputPath) {
   const { selectedDigitalObject: obj, processorHome } = context;
 
@@ -189,7 +214,6 @@ function extractClassHierarchy(context, ontologyName, upperTerm, lowerTerms) {
   const ontologyPath = resolve(processorHome, `mirrors/${ontologyName}.owl`);
   const outputPath = resolve(obj.path, `enriched/${ontologyName}-extract.owl`);
 
-  more(`Extracting terms from: ${ontologyPath}`);
   extract(ontologyPath, upperTerm, lowerTerms, outputPath);
 
   return outputPath;
