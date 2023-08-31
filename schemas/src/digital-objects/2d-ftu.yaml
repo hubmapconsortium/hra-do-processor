@@ -18,7 +18,11 @@ default_range: string
 imports:
   - linkml:types
   - ../shared/metadata-base
-  
+
+settings:
+  uberon: "UBERON"
+  fma: "FMA"
+
 classes:
   Named:
     mixin: true
@@ -67,6 +71,16 @@ classes:
     annotations:
       owl: NamedIndividual
 
+  AnatomicalStructure:
+    slots:
+      - id
+    slot_usage:
+      id:
+        structured_pattern:
+          syntax: "({uberon}|{fma}):\\d+"
+          interpolated: true
+          partial_match: false
+
   Container:
     tree_root: true
     attributes:
@@ -109,6 +123,7 @@ slots:
       owl: ClassAssertion
   located_in:
     slot_uri: ccf:ccf_located_in
+    range: AnatomicalStructure
     annotations:
       owl: AnnotationAssertion
   image_file:
