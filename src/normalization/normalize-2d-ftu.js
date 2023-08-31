@@ -58,7 +58,7 @@ function normalizeData(context, metadata, data) {
   const illustrationName = name.replace(/-/g, " ");
   const illustrationRepresentation = data[0]['tissue_mapped_to'];
   return [{
-      id: `${iri}#illustration`,
+      id: `${iri}#primary`,
       label: `An illustration of ${illustrationName}`,
       class_type: 'FtuIllustration',
       typeOf: [ 'FtuIllustration', illustrationRepresentation ],
@@ -111,7 +111,7 @@ function normalizeIllustrationNode(context, data) {
       class_type: 'FtuIllustrationNode',
       typeOf: [ 'FtuIllustrationNode', nodeRepresentation ],
       node_name: nodeId,
-      part_of_illustration: `${iri}#illustration`
+      part_of_illustration: `${iri}#primary`
     }
   });
 }
