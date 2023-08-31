@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import sh from 'shelljs';
 import { enrichAsctbMetadata, enrichAsctbData } from './enrich-asct-b.js';
 import { enrichRefOrganMetadata, enrichRefOrganData } from './enrich-ref-organ.js';
+import { enrich2dFtuMetadata, enrich2dFtuData } from './enrich-2d-ftu.js';
 import { enrichCollectionMetadata, enrichCollectionData } from './enrich-collection.js';
 import { header } from '../utils/logging.js';
 
@@ -17,6 +18,10 @@ export function enrich(context) {
     case 'ref-organ':
       enrichRefOrganMetadata(context);
       enrichRefOrganData(context);
+      break;
+    case '2d-ftu':
+      enrich2dFtuMetadata(context);
+      enrich2dFtuData(context);
       break;
     case 'collection':
       enrichCollectionMetadata(context);

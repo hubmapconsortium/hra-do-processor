@@ -39,6 +39,17 @@ classes:
       - downloadUrl
       - accessUrl
       - mediaType
+  DatasetMetadata:
+    class_uri: dcat:Dataset
+    slots:
+      - title
+      - description
+      - creators
+      - version
+      - creation_date
+      - license
+      - publisher
+      - see_also
 
 slots:
   iri:

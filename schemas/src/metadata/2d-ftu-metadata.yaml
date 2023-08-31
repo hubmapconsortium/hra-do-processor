@@ -1,0 +1,60 @@
+id: https://purl.humanatlas.io/specs/2d-ftu-metadata
+name: ftu-2d-metadata
+prefixes:
+  ccf: http://purl.org/ccf/
+  pav: http://purl.org/pav/
+  dcat: http://www.w3.org/ns/dcat#
+  dct: http://purl.org/dc/terms/
+  foaf: http://xmlns.com/foaf/0.1/
+  schema: http://schema.org/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  linkml: https://w3id.org/linkml/
+
+default_prefix: dcat
+default_range: string
+
+imports:
+  - linkml:types
+  - ../shared/metadata-base
+
+classes:
+  Container:
+    tree_root: true
+    class_uri: dcat:Dataset
+    slots:
+      - iri
+      - title
+      - description
+      - creators
+      - project_leads
+      - reviewers
+      - externalReviewers
+      - version
+      - creation_date
+      - license
+      - publisher
+      - funders
+      - hubmapId
+      - doi
+      - citation
+      - citationOverall
+      - datatable
+      - distributions
+    slot_usage:
+      iri:
+        required: true
+      title:
+        required: true
+      description:
+        required: true
+      creators:
+        required: true
+      version:
+        required: true
+      creation_date:
+        required: true
+      license:
+        required: true
+      distributions:
+        required: true
