@@ -1,10 +1,12 @@
 import { Matrix4 } from '@math.gl/core';
 import { readFile } from 'fs/promises';
 import { resolve } from 'path';
+import Papa from 'papaparse';
 import { header } from '../utils/logging.js';
 import { processSceneNodes } from './ref-organ-utils/process-scene-nodes.js';
 import {
   readMetadata,
+  readLocalData,
   writeNormalizedMetadata,
   writeNormalizedData,
   getMetadataIri,
@@ -38,11 +40,19 @@ async function getRawData(context) {
   const { path } = context.selectedDigitalObject;
 
   const metadata = readMetadata(context);
+
+  const crosswalk = readLocalData(context, "crosswalk.csv",
+    (csvData) => Papa.parse(
+        csvData.toString(), {
+          header: true, 
+          skipEmptyLines: true
+        })).data;
+
   const dataUrl = Array.isArray(metadata.datatable) ? metadata.datatable[0] : metadata.datatable;
 
   let data;
   if (dataUrl.startsWith('http')) { 
-    data = await processSpatialEntities(context, metadata, dataUrl);
+    data = await processSpatialEntities(context, metadata, dataUrl, undefined, crosswalk);
   } else {
     // FIXME: Add deployment URL option to context
     const baseUrl = 'https://ccf-ontology.hubmapconsortium.org/objects/v1.2/';
@@ -53,13 +63,13 @@ async function getRawData(context) {
     const cache = {
       [gltfUrl]: readFile(resolve(path, 'raw', dataUrl))
     }
-    data = await processSpatialEntities(context, metadata, gltfUrl, cache);
+    data = await processSpatialEntities(context, metadata, gltfUrl, cache, crosswalk);
   }
 
   return data;
 }
 
-async function processSpatialEntities(context, metadata, gltfFile, cache) {
+async function processSpatialEntities(context, metadata, gltfFile, cache, crosswalk) {
   const scalar = new Matrix4(Matrix4.IDENTITY).scale([1000, 1000, 1000]);
   const nodes = await processSceneNodes(gltfFile, scalar, undefined, cache);
 
@@ -69,19 +79,31 @@ async function processSpatialEntities(context, metadata, gltfFile, cache) {
   const parentIri = metadata.config?.parentIri || `${baseIri}${separator}Parent`;
 
   return Object.values(nodes)
-    .filter((n) => n['@type'] !== 'GLTFNode')
+    .filter((node) => node['@type'] !== 'GLTFNode')
+    .filter((node) => node['@id'] !== 'scene-0')
     .map((node) => {
-      const id = `${baseIri}${separator}${encodeURIComponent(node['@id'])}`;
+      const nodeId = node['@id'];
+      const id = `${baseIri}${separator}${encodeURIComponent(nodeId)}`;
       const creationDate = metadata.creation_date;
       const T = { x: node.bbox.lowerBound.x, y: node.bbox.lowerBound.y, z: node.bbox.lowerBound.z };
+      const typeOf = crosswalk.reduce((accumulator, value) => {
+        if (value['node_name'] === node['@id']) {
+          accumulator.push(value['OntologyID']);
+        }
+        return accumulator;
+      }, ['SpatialEntity']);
+      const organName = getOrganName(nodeId, crosswalk);
+      const organOwnerSex = getOrganOwnerSex(nodeId);
 
       return {
         id,
-        label: `${metadata.title} (${node['@id']})`,
+        label: `Spatial entity of the ${organOwnerSex} ${organName}`,
+        class_type: 'SpatialEntity',
+        typeOf: typeOf,
         creator: metadata.creators.map(c => `${c.fullName} (${c.orcid})`).join(', '),
         creator_first_name: metadata.creators[0].firstName,
         creator_last_name: metadata.creators[0].lastName,
-        creation_date: creationDate,
+        create_date: creationDate,
         x_dimension: node.size.x,
         y_dimension: node.size.y,
         z_dimension: node.size.z,
@@ -89,12 +111,18 @@ async function processSpatialEntities(context, metadata, gltfFile, cache) {
 
         object_reference: {
           'id': `${id}Obj`,
+          label: `The 3D object of the ${organOwnerSex} ${organName}`,
+          class_type: 'SpatialObjectReference',
+          typeOf: [ 'SpatialObjectReference' ],
           file: gltfFile,
           file_format: 'model/gltf-binary',
           file_subpath: node['@id'],
 
           placement: {
             id: `${id}ObjPlacement`,
+            label: `The local placement of the ${organOwnerSex} ${organName}`,
+            class_type: 'SpatialPlacement',
+            typeOf: [ 'SpatialPlacement' ],
             target: id,
             placement_date: creationDate,
 
@@ -117,6 +145,9 @@ async function processSpatialEntities(context, metadata, gltfFile, cache) {
 
         placements: [{
           id: `${id}GlobalPlacement`,
+          label: `The global placement of the ${organOwnerSex} ${organName}`,
+          class_type: 'SpatialPlacement',
+          typeOf: [ 'SpatialPlacement' ],
           target: parentIri,
           placement_date: creationDate,
           
@@ -137,6 +168,16 @@ async function processSpatialEntities(context, metadata, gltfFile, cache) {
         }]
       };
     });
+}
+
+function getOrganName(nodeId, crosswalk) {
+  const organ = crosswalk.filter((value) => value["node_name"] === nodeId);
+  return organ[0]["label"];
+}
+
+function getOrganOwnerSex(nodeId) {
+  const sexAbbreviation = nodeId.match(/^VH\_(F|M).*/)[1];
+  return (sexAbbreviation === "F") ? "female" : "male";
 }
 
 function normalizeRawData(context, data) {
