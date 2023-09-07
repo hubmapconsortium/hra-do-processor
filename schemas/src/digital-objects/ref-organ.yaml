@@ -5,9 +5,12 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   pav: http://purl.org/pav/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   xsd: http://www.w3.org/2001/XMLSchema#
   obo: http://purl.obolibrary.org/obo/
   linkml: https://w3id.org/linkml/
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  FMA: http://purl.org/sig/ont/fma/fma
 
 default_prefix: ccf
 default_range: string
@@ -15,10 +18,30 @@ default_range: string
 imports:
   - linkml:types
   - ../shared/metadata-base
-  
+
+settings:
+  uberon: "UBERON"
+  fma: "FMA"
+
 classes:
+  Named:
+    mixin: true
+    slots:
+      - id
+      - label
+      - class_type
+  Instance:
+    mixin: true
+    slots:
+      - typeOf
+    annotations:
+      owl: Individual
+
   SpatialEntity:
     class_uri: ccf:SpatialEntity
+    mixins:
+      - Named
+      - Instance
     slots:
       - id
       - label
@@ -26,7 +49,7 @@ classes:
       - creator_first_name
       - creator_last_name
       - creator_orcid
-      - creation_date
+      - create_date
       - x_dimension
       - y_dimension
       - z_dimension
@@ -39,16 +62,24 @@ classes:
       - reference_organ
       - extraction_set
       - rui_rank
+
   SpatialObjectReference:
     class_uri: ccf:SpatialObjectReference
+    mixins:
+      - Named
+      - Instance
     slots:
       - id
       - file
       - file_subpath
       - file_format
       - placement
+
   SpatialPlacement:
     class_uri: ccf:SpatialPlacement
+    mixins:
+      - Named
+      - Instance
     slots:
       - id
       - target
@@ -67,17 +98,29 @@ classes:
       - y_translation
       - z_translation
       - translation_unit
+
   ExtractionSet:
     class_uri: ccf:ExtractionSet
+    mixins:
+      - Named
+      - Instance
     slots:
       - id
       - label
       - extraction_set_for
       - rui_rank
+
   AnatomicalStructure:
     class_uri: ccf:AnatomicalStructure
     slots:
       - id
+    slot_usage:
+      id:
+        structured_pattern:
+          syntax: "({uberon}|{fma}):\\d+"
+          interpolated: true
+          partial_match: false
+
   RefOrganMetadata:
     class_uri: dcat:Dataset
     slots:
@@ -89,6 +132,7 @@ classes:
       - license
       - publisher
       - see_also
+
   Container:
     tree_root: true
     attributes:
@@ -116,171 +160,226 @@ classes:
 slots:
   id:
     identifier: true
+  typeOf:
+    multivalued: true
+    range: Named
+    slot_uri: rdf:type
+    annotations:
+      owl: ClassAssertion
+  class_type:
+    designates_type: true
   label:
     required: true
     slot_uri: rdfs:label
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   creator:
     required: true
-    slot_uri: ccf:creator
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   creator_first_name:
     required: true
-    slot_uri: ccf:creator_first_name
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   creator_last_name:
     required: true
-    slot_uri: ccf:creator_last_name
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   creator_orcid:
     required: false
-    slot_uri: ccf:creator_orcid
-  creation_date:
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  create_date:
     required: true
     slot_uri: ccf:creation_date
     range: date
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   x_dimension:
     required: true
-    slot_uri: ccf:x_dimension
-    range: decimal
+    range: float
     minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   y_dimension:
     required: true
-    slot_uri: ccf:y_dimension
-    range: decimal
+    range: float
     minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   z_dimension:
     required: true
-    slot_uri: ccf:z_dimension
-    range: decimal
+    range: float
     minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   dimension_unit:
     required: true
-    slot_uri: ccf:dimension_unit
     range: DimensionUnitEnum
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   x_scaling:
     required: true
-    slot_uri: ccf:x_scaling
-    range: decimal
+    range: float
     minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   y_scaling:
     required: true
-    slot_uri: ccf:y_scaling
-    range: decimal
+    range: float
     minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   z_scaling:
     required: true
-    slot_uri: ccf:z_scaling    
-    range: decimal
+    range: float
     minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   scaling_unit:
     required: true
-    slot_uri: ccf:scaling_unit
     range: ScalingUnitEnum
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   x_rotation:
     required: true
-    slot_uri: ccf:x_rotation
-    range: decimal
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   y_rotation:
     required: true
-    slot_uri: ccf:y_rotation
-    range: decimal
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   z_rotation:
     required: true
-    slot_uri: ccf:z_rotation
-    range: decimal
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   rotation_unit:
     required: true
-    slot_uri: ccf:rotation_unit
     range: RotationUnitEnum
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   rotation_order:
     required: false
-    slot_uri: ccf:rotation_order
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   x_translation:
     required: true
-    slot_uri: ccf:x_translation
-    range: decimal
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   y_translation:
     required: true
-    slot_uri: ccf:y_translation
-    range: decimal
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   z_translation:
     required: true
-    slot_uri: ccf:z_translation
-    range: decimal
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   translation_unit:
     required: true
-    slot_uri: ccf:translation_unit
     range: TranslationUnitEnum
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   representation_of:
     required: false
-    slot_uri: ccf:representation_of
     range: AnatomicalStructure
     inlined: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   organ_donor_sex:
     required: false
-    slot_uri: ccf:organ_donor_sex
     range: DonorSexEnum
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   organ_side:
     required: false
-    slot_uri: ccf:organ_side
     range: OrganSideEnum
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   file:
     required: true
     slot_uri: ccf:file_url
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   file_subpath:
     required: false
-    slot_uri: ccf:file_subpath
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   file_format:
     required: true
-    slot_uri: ccf:file_format
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   placement_date:
     required: true
-    slot_uri: ccf:placement_date
     range: date
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   target:
     required: true
     slot_uri: ccf:placement_relative_to
     range: SpatialEntity
     inlined: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   source:
     required: false
     slot_uri: ccf:placement_for
     range: SpatialEntity
     inlined: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   object_reference:
     required: false
     slot_uri: ccf:has_object_reference
     range: SpatialObjectReference
     inlined: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   placement:
     required: true
-    slot_uri: ccf:placement
     range: SpatialPlacement
     inlined: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   placements:
     required: false
-    slot_uri: ccf:placements
     range: SpatialPlacement
     inlined: true
     multivalued: true
     inlined_as_list: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   reference_organ:
     required: false
     slot_uri: ccf:has_reference_organ
     range: SpatialEntity
     inlined: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   extraction_set:
     required: false
     slot_uri: ccf:has_extraction_set
     range: ExtractionSet
     inlined: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   extraction_set_for:
     required: true
-    slot_uri: ccf:extraction_set_for
     range: SpatialEntity
     inlined: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   rui_rank:
     required: false
     recommended: true
-    slot_uri: ccf:rui_rank
     range: integer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
 
 enums:
   OrganSideEnum:
