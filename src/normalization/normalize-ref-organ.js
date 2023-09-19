@@ -110,9 +110,18 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         pref_label: organName,
         class_type: 'SpatialEntity',
         typeOf: typeOf,
-        creator: metadata.creators.map(c => `${c.fullName} (${c.orcid})`).join(', '),
-        creator_first_name: metadata.creators[0].firstName,
-        creator_last_name: metadata.creators[0].lastName,
+        creator: metadata.creators.map(c => {
+            return { 
+              id: `https://orcid.org/${c.orcid}`,
+              label: c.fullName,
+              class_type: 'Creator',
+              typeOf: [ 'schema:Person' ],
+              fullName: c.fullName,
+              firstName: c.firstName,
+              lastName: c.lastName,
+              orcid: c.orcid
+            }
+          }),
         create_date: creationDate,
         x_dimension: node.size.x,
         y_dimension: node.size.y,
@@ -120,7 +129,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         dimension_unit: 'millimeter',
 
         object_reference: {
-          'id': `${id}Obj`,
+          id: `${id}Obj`,
           label: `The 3D object of ${organLabel}`,
           class_type: 'SpatialObjectReference',
           typeOf: [ 'SpatialObjectReference' ],
