@@ -83,7 +83,10 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
     .filter((node) => node['@id'] !== 'scene-0')
     .map((node) => {
       const nodeId = node['@id'];
-      const id = `${baseIri}${separator}${encodeURIComponent(nodeId)}`;
+      const primaryNodeId = crosswalk[0]['node_name'];
+      const id = (nodeId === primaryNodeId) ?
+          `${baseIri}${separator}primary` :
+          `${baseIri}${separator}${encodeURIComponent(nodeId)}`;
       const creationDate = metadata.creation_date;
       const T = { x: node.bbox.lowerBound.x, y: node.bbox.lowerBound.y, z: node.bbox.lowerBound.z };
       const typeOf = crosswalk.reduce((accumulator, value) => {
@@ -94,10 +97,17 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
       }, ['SpatialEntity']);
       const organName = getOrganName(nodeId, crosswalk);
       const organOwnerSex = getOrganOwnerSex(nodeId);
+      const organSide = getOrganSide(nodeId);
+      const nodeLabel = getNodeLabel(nodeId);
+      let organLabel = `${organOwnerSex} ${nodeLabel}`;
+      if (organSide !== '') {
+        organLabel = `${organOwnerSex} ${organSide} ${nodeLabel}`;
+      }
 
       return {
         id,
-        label: `Spatial entity of the ${organOwnerSex} ${organName}`,
+        label: `Spatial entity of ${organLabel}`,
+        pref_label: organName,
         class_type: 'SpatialEntity',
         typeOf: typeOf,
         creator: metadata.creators.map(c => `${c.fullName} (${c.orcid})`).join(', '),
@@ -111,7 +121,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
 
         object_reference: {
           'id': `${id}Obj`,
-          label: `The 3D object of the ${organOwnerSex} ${organName}`,
+          label: `The 3D object of ${organLabel}`,
           class_type: 'SpatialObjectReference',
           typeOf: [ 'SpatialObjectReference' ],
           file: gltfFile,
@@ -120,7 +130,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
 
           placement: {
             id: `${id}ObjPlacement`,
-            label: `The local placement of the ${organOwnerSex} ${organName}`,
+            label: `The local placement of ${organLabel}`,
             class_type: 'SpatialPlacement',
             typeOf: [ 'SpatialPlacement' ],
             target: id,
@@ -145,7 +155,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
 
         placements: [{
           id: `${id}GlobalPlacement`,
-          label: `The global placement of the ${organOwnerSex} ${organName}`,
+          label: `The global placement of ${organLabel}`,
           class_type: 'SpatialPlacement',
           typeOf: [ 'SpatialPlacement' ],
           target: parentIri,
@@ -176,8 +186,30 @@ function getOrganName(nodeId, crosswalk) {
 }
 
 function getOrganOwnerSex(nodeId) {
-  const sexAbbreviation = nodeId.match(/^VH\_(F|M).*/)[1];
+  const sexAbbreviation = nodeId.match(/^VH_(F|M)_([a-z_]+)_?([L|R]?)_?(.?)/)[1];
   return (sexAbbreviation === "F") ? "female" : "male";
+}
+
+function getOrganSide(nodeId) {
+  const sideAbbreviation = nodeId.match(/^VH_(F|M)_([a-z_]+)_?([L|R]?)_?(.?)/)[3];
+  if (sideAbbreviation === "L") {
+    return "left";
+  } else if (sideAbbreviation === "R") {
+    return "right";
+  } else {
+    return "";
+  }
+}
+
+function getNodeLabel(nodeId) {
+  const matching = nodeId.match(/^VH_(F|M)_([a-z_]+)_?([L|R]?)_?(.?)/);
+  const organLabel = matching[2].replaceAll("_", " ").trim();
+  const partOrder = matching[4];
+  if (partOrder !== "") {
+    return `${organLabel} ${partOrder}`
+  } else {
+    return organLabel;
+  }
 }
 
 function normalizeRawData(context, data) {
