@@ -6,6 +6,7 @@ prefixes:
   pav: http://purl.org/pav/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  skos: http://www.w3.org/2004/02/skos/core#
   xsd: http://www.w3.org/2001/XMLSchema#
   obo: http://purl.obolibrary.org/obo/
   linkml: https://w3id.org/linkml/
@@ -45,6 +46,7 @@ classes:
     slots:
       - id
       - label
+      - pref_label
       - creator
       - creator_first_name
       - creator_last_name
@@ -171,6 +173,11 @@ slots:
   label:
     required: true
     slot_uri: rdfs:label
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  pref_label:
+    required: true
+    slot_uri: skos:prefLabel
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   creator:
