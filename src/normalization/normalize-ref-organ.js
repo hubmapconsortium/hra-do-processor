@@ -79,8 +79,9 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
   const parentIri = metadata.config?.parentIri || `${baseIri}${separator}Parent`;
 
   return Object.values(nodes)
-    .filter((node) => node['@type'] !== 'GLTFNode')
-    .filter((node) => node['@id'] !== 'scene-0')
+    .filter((node) => excludeNodeType(node))
+    .filter((node) => excludeNodeId(node))
+    .filter((node) => validNodeId(context, node, crosswalk))
     .map((node) => {
       const nodeId = node['@id'];
       const primaryNodeId = crosswalk[0]['node_name'];
@@ -223,4 +224,16 @@ function getNodeLabel(nodeId) {
 
 function normalizeRawData(context, data) {
   return data;
+}
+
+function excludeNodeType(node) {
+  return node['@type'] !== 'GLTFNode';
+}
+
+function excludeNodeId(node) {
+  return node['@id'] !== 'scene-0';
+}
+
+function validNodeId(context, node, crosswalk) {
+  return crosswalk.find((value) => value['node_name'] === node['@id']) || !context.excludeBadValues;
 }
