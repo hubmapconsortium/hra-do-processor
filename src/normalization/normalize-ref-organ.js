@@ -100,9 +100,13 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
       const organOwnerSex = getOrganOwnerSex(nodeId);
       const organSide = getOrganSide(nodeId);
       const nodeLabel = getNodeLabel(nodeId);
-      let organLabel = `${organOwnerSex} ${nodeLabel}`;
+      let organLabel = `${organOwnerSex} ${nodeLabel}`.trim();
       if (organSide !== '') {
-        organLabel = `${organOwnerSex} ${organSide} ${nodeLabel}`;
+        if (organLabel.includes(organSide)) {
+          organLabel = `${organOwnerSex} ${nodeLabel}`.trim();
+        } else {
+          organLabel = `${organOwnerSex} ${organSide} ${nodeLabel}`.trim();
+        }
       }
 
       return {
@@ -196,29 +200,65 @@ function getOrganName(nodeId, crosswalk) {
 }
 
 function getOrganOwnerSex(nodeId) {
-  const sexAbbreviation = nodeId.match(/^VH_(F|M)_([a-z_]+)_?([L|R]?)_?(.?)/)[1];
-  return (sexAbbreviation === "F") ? "female" : "male";
+  let matching = nodeId.match(/^VH_(F|M)_([a-z_]+)_?([L|R]?)_?(.?)/);
+  let organOwnerSexIndex = 1;
+  if (matching === null) {
+    matching = nodeId.match(/^VH_(F|M)_([L|R])_([a-z_]+)_?(.?)/);
+    organOwnerSexIndex = 1;
+  }
+  if (matching !== null) {
+    const sexAbbreviation = matching[organOwnerSexIndex];
+    return (sexAbbreviation === "F") ? "female" : "male";
+  } else {
+    return "";
+  }
 }
 
 function getOrganSide(nodeId) {
-  const sideAbbreviation = nodeId.match(/^VH_(F|M)_([a-z_]+)_?([L|R]?)_?(.?)/)[3];
-  if (sideAbbreviation === "L") {
-    return "left";
-  } else if (sideAbbreviation === "R") {
-    return "right";
+  let matching = nodeId.match(/^VH_(F|M)_([a-z_]+)_?([L|R]?)_?(.?)/);
+  let organSideIndex = 3;
+  if (matching === null) {
+    matching = nodeId.match(/^VH_(F|M)_([L|R])_([a-z_]+)_?(.?)/);
+    organSideIndex = 2;    
+  }
+  if (matching !== null) {
+    const sideAbbreviation = matching[organSideIndex];
+    if (sideAbbreviation === "L") {
+      return "left";
+    } else if (sideAbbreviation === "R") {
+      return "right";
+    } else {
+      return "";
+    }
   } else {
     return "";
   }
 }
 
 function getNodeLabel(nodeId) {
-  const matching = nodeId.match(/^VH_(F|M)_([a-z_]+)_?([L|R]?)_?(.?)/);
-  const organLabel = matching[2].replaceAll("_", " ").trim();
-  const partOrder = matching[4];
-  if (partOrder !== "") {
-    return `${organLabel} ${partOrder}`
+  let matching = nodeId.match(/^VH_(F|M)_([a-z_]+)_?([L|R]?)_?(.?)/);
+  let organLabelIndex = 2;
+  let partOrderIndex = 4;
+  if (matching === null) {
+    matching = nodeId.match(/^VH_(F|M)_([L|R])_([a-z_]+)_?(.?)/);
+    organLabelIndex = 3;
+    partOrderIndex = 4;
+  }
+  if (matching === null) {
+    matching = nodeId.match(/^Yao_([a-z_]+)_?(.?)/); 
+    organLabelIndex = 1;
+    partOrderIndex = 2;
+  }
+  if (matching !== null) {
+    const organLabel = matching[organLabelIndex].replaceAll("_", " ").trim();
+    const partOrder = matching[partOrderIndex];
+    if (partOrder !== "") {
+      return `${organLabel} ${partOrder}`
+    } else {
+      return organLabel;
+    }
   } else {
-    return organLabel;
+    return "";
   }
 }
 
