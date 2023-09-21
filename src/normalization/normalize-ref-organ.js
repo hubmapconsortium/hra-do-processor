@@ -81,7 +81,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
   return Object.values(nodes)
     .filter((node) => excludeNodeType(node))
     .filter((node) => excludeNodeId(node))
-    .filter((node) => validNodeId(context, node, crosswalk))
+    .filter((node) => validNodeId(node, crosswalk))
     .map((node) => {
       const nodeId = node['@id'];
       const primaryNodeId = crosswalk[0]['node_name'];
@@ -274,6 +274,6 @@ function excludeNodeId(node) {
   return node['@id'] !== 'scene-0';
 }
 
-function validNodeId(context, node, crosswalk) {
-  return crosswalk.find((value) => value['node_name'] === node['@id']) || !context.excludeBadValues;
+function validNodeId(node, crosswalk) {
+  return crosswalk.find((value) => value['node_name'] === node['@id']);
 }
