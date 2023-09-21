@@ -92,7 +92,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
       const T = { x: node.bbox.lowerBound.x, y: node.bbox.lowerBound.y, z: node.bbox.lowerBound.z };
       const typeOf = crosswalk.reduce((accumulator, value) => {
         if (value['node_name'] === node['@id']) {
-          accumulator.push(value['OntologyID']);
+          accumulator.push(value['OntologyID'].trim());
         }
         return accumulator;
       }, ['SpatialEntity']);
