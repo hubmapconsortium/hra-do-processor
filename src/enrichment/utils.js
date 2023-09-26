@@ -3,22 +3,21 @@ import sh from 'shelljs';
 import { info, more } from '../utils/logging.js';
 import { mergeTurtles } from '../utils/owl-cli.js';
 import { redundant } from '../utils/relation-graph.js';
-import { merge } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
 
-export function convertNormalizedMetadataToRdf(context, inputPath, outputPath) {
+export function convertNormalizedMetadataToRdf(context, inputPath, outputPath, overrideType) {
   const { selectedDigitalObject: obj, processorHome } = context;
 
-  const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}-metadata.yaml`);
+  const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${overrideType || obj.type}-metadata.yaml`);
   const errorPath = resolve(obj.path, 'enriched/metadata-enrichment-errors.yaml');
 
   convertNormalizedToRdf(context, inputPath, outputPath, schemaPath);
 }
 
-export function convertNormalizedDataToRdf(context, inputPath, outputPath) {
+export function convertNormalizedDataToRdf(context, inputPath, outputPath, overrideType) {
   const { selectedDigitalObject: obj, processorHome } = context;
 
-  const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml`);
+  const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${overrideType || obj.type}.yaml`);
   const errorPath = resolve(obj.path, 'enriched/data-enrichment-errors.yaml');
 
   convertNormalizedToRdf(context, inputPath, outputPath, schemaPath);
@@ -45,20 +44,20 @@ export function prettifyEnriched(context) {
   mergeTurtles(enriched, prefixes, [enriched]);
 }
 
-export function convertNormalizedDataToOwl(context, inputPath, outputPath) {
+export function convertNormalizedDataToOwl(context, inputPath, outputPath, overrideType) {
   const { selectedDigitalObject: obj, processorHome } = context;
 
-  const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml`);
-  const schemaBackupPath = resolve(processorHome, 'schemas/generated/linkml', `${obj.type}.yaml.bak`);
+  const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${overrideType || obj.type}.yaml`);
+  const schemaBackupPath = resolve(processorHome, 'schemas/generated/linkml', `${overrideType || obj.type}.yaml.bak`);
 
   info(`Using 'linkml-data2owl' to transform ${inputPath}`);
   /*
    * The steps:
-   *  1. Substitute the "id" parameter in the schema file (LinkML) with the digital object's IRI, 
+   *  1. Substitute the "id" parameter in the schema file (LinkML) with the digital object's IRI,
    *     ensuring that the resulting OWL ontology uses the digital object IRI as its ontology IRI.
    *  2. Employ the linkml-data2owl tool to transform the normalized digital object from YAML into
    *     OWL format.
-   *  3. Restore the original schema file to its initial state, thereby reinstating the original 
+   *  3. Restore the original schema file to its initial state, thereby reinstating the original
    *     "id" parameter.
    */
   throwOnError(
@@ -78,7 +77,7 @@ export function cleanTemporaryFiles(context) {
   const { selectedDigitalObject: obj } = context;
   const enrichedPath = resolve(obj.path, 'enriched/');
   throwOnError(
-    `find ${enrichedPath} ! -name 'enriched.ttl' ! -name 'enriched-metadata.ttl' ! -name 'redundant.ttl' -type f -exec rm -f {} +`, 
+    `find ${enrichedPath} ! -name 'enriched.ttl' ! -name 'enriched-metadata.ttl' ! -name 'redundant.ttl' -type f -exec rm -f {} +`,
     'Clean temporary files failed.'
   );
 }

@@ -1,16 +1,18 @@
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { normalizeAsctbMetadata, normalizeAsctbData } from './normalize-asct-b.js';
-import { normalizeCollectionMetadata, normalizeCollectionData } from './normalize-collection.js';
-import { normalizeRefOrganMetadata, normalizeRefOrganData } from './normalize-ref-organ.js';
-import { normalize2dFtuMetadata, normalize2dFtuData } from './normalize-2d-ftu.js';
-import { validateNormalizedMetadata, validateNormalizedData } from '../utils/validation.js';
-import { header } from '../utils/logging.js';
+import { header, info, warning } from '../utils/logging.js';
+import { validateNormalizedData, validateNormalizedMetadata } from '../utils/validation.js';
+import { normalize2dFtuData, normalize2dFtuMetadata } from './normalize-2d-ftu.js';
+import { normalizeAsctbData, normalizeAsctbMetadata } from './normalize-asct-b.js';
+import { normalizeBasicData, normalizeBasicMetadata } from './normalize-basic.js';
+import { normalizeCollectionData, normalizeCollectionMetadata } from './normalize-collection.js';
+import { normalizeRefOrganData, normalizeRefOrganMetadata } from './normalize-ref-organ.js';
 
 export async function normalize(context) {
   const { selectedDigitalObject: obj } = context;
   sh.mkdir('-p', resolve(obj.path, 'normalized'));
   header(context, 'run-normalize');
+  let processedType = obj.type;
   switch (obj.type) {
     case 'asct-b':
       normalizeAsctbMetadata(context);
@@ -29,19 +31,23 @@ export async function normalize(context) {
       normalizeCollectionData(context);
       break;
     default:
-      throw new Error(`The "${obj.type}" digital object type not supported (yet).`);
+      warning(`"${obj.type}" digital object type is using basic processing.`);
+      normalizeBasicMetadata(context);
+      normalizeBasicData(context);
+      processedType = 'basic';
+      break;
   }
   // Validate the produced metadata and data
-  validate(context);
+  validate(context, processedType);
 }
 
-function validate(context) {
+function validate(context, overrideType) {
   const { skipValidation } = context;
   header(context, 'run-validation');
   if (skipValidation) {
     info('Skip validation.');
   } else {
-    validateNormalizedMetadata(context);
-    validateNormalizedData(context);
+    validateNormalizedMetadata(context, overrideType);
+    validateNormalizedData(context, overrideType);
   }
 }

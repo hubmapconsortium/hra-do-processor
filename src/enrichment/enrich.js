@@ -1,10 +1,11 @@
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { enrichAsctbMetadata, enrichAsctbData } from './enrich-asct-b.js';
-import { enrichRefOrganMetadata, enrichRefOrganData } from './enrich-ref-organ.js';
-import { enrich2dFtuMetadata, enrich2dFtuData } from './enrich-2d-ftu.js';
-import { enrichCollectionMetadata, enrichCollectionData } from './enrich-collection.js';
-import { header } from '../utils/logging.js';
+import { header, warning } from '../utils/logging.js';
+import { enrich2dFtuData, enrich2dFtuMetadata } from './enrich-2d-ftu.js';
+import { enrichAsctbData, enrichAsctbMetadata } from './enrich-asct-b.js';
+import { enrichBasicData, enrichBasicMetadata } from './enrich-basic.js';
+import { enrichCollectionData, enrichCollectionMetadata } from './enrich-collection.js';
+import { enrichRefOrganData, enrichRefOrganMetadata } from './enrich-ref-organ.js';
 
 export function enrich(context) {
   const obj = context.selectedDigitalObject;
@@ -28,7 +29,9 @@ export function enrich(context) {
       enrichCollectionData(context);
       break;
     default:
-      console.log(`enrich: "${obj.type}" digital object type not supported (yet)`);
+      warning(`"${obj.type}" digital object type is using basic processing.`);
+      enrichBasicMetadata(context);
+      enrichBasicData(context);
       break;
   }
 }

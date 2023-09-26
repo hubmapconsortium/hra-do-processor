@@ -154,16 +154,16 @@ classes:
         range: AsctbDataset
     annotations:
       owl.template: |-
-        AnnotationAssertion( dct:title {{iri}} "{{metadata.title}}" )
-        AnnotationAssertion( dct:description {{iri}} "{{metadata.description}}" )
+        AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
+        AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
         {% for c in metadata.creators %}
-        AnnotationAssertion( dct:creator {{iri}} "{{c.fullName}} ({{c.orcid}})" )
+        AnnotationAssertion( dct:creator {{iri}} "{{c.fullName|e}} ({{c.orcid}})" )
         {% endfor %}
-        AnnotationAssertion( schema:version {{iri}} "{{metadata.version}}" )
-        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date}}" )
-        AnnotationAssertion( dct:license {{iri}} "{{metadata.license}}" )
-        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher}}" )
-        AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also}}" )
+        AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
+        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
+        AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
+        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
+        AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
 
 slots:
   id:

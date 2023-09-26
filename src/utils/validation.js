@@ -1,25 +1,25 @@
-import chalk from 'chalk';
-import { writeFileSync } from 'fs';
-import { dump } from 'js-yaml';
 import { resolve } from 'path';
-import sh from 'shelljs';
+import { info } from './logging.js';
 import { logOnError } from './sh-exec.js';
-import { header, info } from './logging.js';
 
-export function validateNormalizedMetadata(context) {
+export function validateNormalizedMetadata(context, overrideType) {
   const { selectedDigitalObject: obj, processorHome, skipValidation } = context;
-  
-  const schemaFile = resolve(processorHome, 'schemas/generated/json-schema', `${obj.type}-metadata.schema.json`);
+
+  const schemaFile = resolve(
+    processorHome,
+    'schemas/generated/json-schema',
+    `${overrideType || obj.type}-metadata.schema.json`
+  );
   const dataFile = resolve(obj.path, 'normalized/normalized-metadata.yaml');
   const errorFile = resolve(obj.path, 'normalized/metadata-validation-errors.yaml');
 
   return validate(context, dataFile, schemaFile, errorFile);
 }
 
-export function validateNormalizedData(context) {
+export function validateNormalizedData(context, overrideType) {
   const { selectedDigitalObject: obj, processorHome, skipValidation } = context;
 
-  const schemaFile = resolve(processorHome, 'schemas/generated/json-schema', `${obj.type}.schema.json`);
+  const schemaFile = resolve(processorHome, 'schemas/generated/json-schema', `${overrideType || obj.type}.schema.json`);
   const dataFile = resolve(obj.path, 'normalized/normalized.yaml');
   const errorFile = resolve(obj.path, 'normalized/data-validation-errors.yaml');
 
@@ -35,7 +35,7 @@ function validate(context, dataFile, schemaFile, errorFile) {
     `ValidationError: The content was invalid!`,
     {
       errorFile: errorFile,
-      errorParser: (message) => (JSON.parse(message).errors),
+      errorParser: (message) => JSON.parse(message).errors,
     }
   );
   if (success) {

@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { resolve, join } from 'path';
 import { getLatestDigitalObject } from '../utils/get-latest.js';
 import sh from 'shelljs';
 import semver from 'semver';
@@ -25,7 +25,9 @@ export function newDraft(context) {
   }
 
   if (!existsSync(draftPath)) {
-    sh.cp('-r', sourcePath, draftPath);
+    const rawDir = join(draftPath, 'raw');
+    sh.mkdir('-p', rawDir);
+    sh.cp('-r', join(sourcePath, '*'), rawDir);
   } else {
     console.error('Draft already exists');
   }

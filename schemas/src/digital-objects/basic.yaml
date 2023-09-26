@@ -1,5 +1,5 @@
-id: https://purl.humanatlas.io/specs/collection
-name: collection
+id: https://purl.humanatlas.io/specs/basic
+name: basic
 prefixes:
   ccf: http://purl.org/ccf/
   dcterms: http://purl.org/dc/terms/
@@ -17,7 +17,7 @@ imports:
   - ../shared/metadata-base
 
 classes:
-  CollectionMetadata:
+  BasicMetadata:
     class_uri: dcat:Dataset
     slots:
       - title
@@ -34,7 +34,7 @@ classes:
       iri:
         range: uriorcurie
       metadata:
-        range: CollectionMetadata
+        range: BasicMetadata
       data:
         required: true
         multivalued: true
