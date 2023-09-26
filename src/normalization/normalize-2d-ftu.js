@@ -83,6 +83,7 @@ function normalizeIllustrationNode(context, data) {
   const { iri } = context.selectedDigitalObject;
   return data.map((item) => {
     const nodeId = item['node_id'];
+    //const nodeLabel = item['node_label'];
     const nodeLabel = item['node_id'].replace(/_/g, ' ').toLowerCase();
     const nodeRepresentation = item['node_mapped_to'];
     return {

@@ -97,7 +97,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         }
       }
 
-      let parentIri = `${baseIri}${separator}Parent`;
+      let parentIri = `${baseIri}${separator}parent`;
       if (organOwnerSex) {
         parentIri = `https://purl.humanatlas.io/graph/ccf-body#VH${organOwnerSex}`;
       }
@@ -131,7 +131,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         dimension_unit: 'millimeter',
 
         object_reference: {
-          id: `${id}Obj`,
+          id: `${id}_obj`,
           label: `3D object of ${organLabel}`,
           class_type: 'SpatialObjectReference',
           typeOf: ['SpatialObjectReference'],
@@ -140,7 +140,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
           file_subpath: node['@id'],
 
           placement: {
-            id: `${id}ObjPlacement`,
+            id: `${id}_obj_placement`,
             label: `local placement of ${organLabel}`,
             class_type: 'SpatialPlacement',
             typeOf: ['SpatialPlacement'],
@@ -166,7 +166,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
 
         placements: [
           {
-            id: `${id}GlobalPlacement`,
+            id: `${id}_global_placement`,
             label: `global placement of ${organLabel}`,
             class_type: 'SpatialPlacement',
             typeOf: ['SpatialPlacement'],
