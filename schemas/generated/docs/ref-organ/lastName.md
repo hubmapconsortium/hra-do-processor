@@ -9,13 +9,14 @@ URI: [ccf:lastName](http://purl.org/ccf/lastName)
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [String](types/String.md)
+None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Parents
 
 
 ## Children
 
+ *  [Creator➞lastName](Creator_lastName.md)
 
 ## Used by
 
@@ -25,5 +26,5 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | foaf:surname |
+| **Mappings:** | | schema:familyName |
 

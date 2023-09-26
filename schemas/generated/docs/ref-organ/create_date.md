@@ -1,0 +1,29 @@
+
+# Slot: create_date
+
+
+
+
+URI: [ccf:create_date](http://purl.org/ccf/create_date)
+
+
+## Domain and Range
+
+None &#8594;  <sub>1..1</sub> [Date](types/Date.md)
+
+## Parents
+
+
+## Children
+
+
+## Used by
+
+ * [SpatialEntity](SpatialEntity.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | ccf:creation_date |
+

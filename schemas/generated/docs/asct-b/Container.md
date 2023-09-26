@@ -7,14 +7,14 @@
 URI: [ccf:Container](http://purl.org/ccf/Container)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[AsctbDataset]<data%200..1-++[Container&#124;id:uriorcurie%20%3F],[AsctbMetadata]<metadata%200..1-++[Container],[AsctbMetadata],[AsctbDataset])](https://yuml.me/diagram/nofunky;dir:TB/class/[AsctbDataset]<data%200..1-++[Container&#124;id:uriorcurie%20%3F],[AsctbMetadata]<metadata%200..1-++[Container],[AsctbMetadata],[AsctbDataset])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[AsctbDataset]<data%200..1-++[Container&#124;iri:uriorcurie%20%3F],[AsctbMetadata]<metadata%200..1-++[Container],[AsctbMetadata],[AsctbDataset])](https://yuml.me/diagram/nofunky;dir:TB/class/[AsctbDataset]<data%200..1-++[Container&#124;iri:uriorcurie%20%3F],[AsctbMetadata]<metadata%200..1-++[Container],[AsctbMetadata],[AsctbDataset])
 
 ## Attributes
 
 
 ### Own
 
- * [➞id](container__id.md)  <sub>0..1</sub>
+ * [➞iri](container__iri.md)  <sub>0..1</sub>
      * Range: [Uriorcurie](types/Uriorcurie.md)
  * [➞metadata](container__metadata.md)  <sub>0..1</sub>
      * Range: [AsctbMetadata](AsctbMetadata.md)

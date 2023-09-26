@@ -19,7 +19,6 @@ None &#8594;  <sub>0..\*</sub> [Grant](Grant.md)
 
 ## Used by
 
- * [RefOrganMetadata](RefOrganMetadata.md)
 
 ## Other properties
 

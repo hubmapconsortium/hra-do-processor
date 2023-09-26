@@ -1,0 +1,282 @@
+{
+    "$defs": {
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "citation": {
+                    "type": "string"
+                },
+                "citationOverall": {
+                    "type": "string"
+                },
+                "creation_date": {
+                    "type": "string"
+                },
+                "creators": {
+                    "items": {
+                        "$ref": "#/$defs/Person"
+                    },
+                    "type": "array"
+                },
+                "datatable": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "distributions": {
+                    "items": {
+                        "$ref": "#/$defs/Distribution"
+                    },
+                    "type": "array"
+                },
+                "doi": {
+                    "type": "string"
+                },
+                "externalReviewers": {
+                    "items": {
+                        "$ref": "#/$defs/Person"
+                    },
+                    "type": "array"
+                },
+                "funders": {
+                    "items": {
+                        "$ref": "#/$defs/Grant"
+                    },
+                    "type": "array"
+                },
+                "hubmapId": {
+                    "type": "string"
+                },
+                "iri": {
+                    "type": "string"
+                },
+                "license": {
+                    "type": "string"
+                },
+                "project_leads": {
+                    "items": {
+                        "$ref": "#/$defs/Person"
+                    },
+                    "type": "array"
+                },
+                "publisher": {
+                    "type": "string"
+                },
+                "reviewers": {
+                    "items": {
+                        "$ref": "#/$defs/Person"
+                    },
+                    "type": "array"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "iri",
+                "title",
+                "description",
+                "creators",
+                "version",
+                "creation_date",
+                "license",
+                "distributions"
+            ],
+            "title": "Container",
+            "type": "object"
+        },
+        "DatasetMetadata": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "creation_date": {
+                    "type": "string"
+                },
+                "creators": {
+                    "items": {
+                        "$ref": "#/$defs/Person"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "license": {
+                    "type": "string"
+                },
+                "publisher": {
+                    "type": "string"
+                },
+                "see_also": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "title": "DatasetMetadata",
+            "type": "object"
+        },
+        "Distribution": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "accessUrl": {
+                    "type": "string"
+                },
+                "downloadUrl": {
+                    "type": "string"
+                },
+                "mediaType": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "title": "Distribution",
+            "type": "object"
+        },
+        "Grant": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "awardNumber": {
+                    "type": "string"
+                },
+                "funder": {
+                    "type": "string"
+                }
+            },
+            "title": "Grant",
+            "type": "object"
+        },
+        "Person": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "firstName": {
+                    "type": "string"
+                },
+                "fullName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "orcid": {
+                    "pattern": "^(\\d{4}-){3}\\d{3}(\\d|X)$",
+                    "type": "string"
+                }
+            },
+            "title": "Person",
+            "type": "object"
+        }
+    },
+    "$id": "https://purl.humanatlas.io/specs/ref-organ-metadata",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": true,
+    "description": "",
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "citation": {
+            "type": "string"
+        },
+        "citationOverall": {
+            "type": "string"
+        },
+        "creation_date": {
+            "type": "string"
+        },
+        "creators": {
+            "items": {
+                "$ref": "#/$defs/Person"
+            },
+            "type": "array"
+        },
+        "datatable": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "description": {
+            "type": "string"
+        },
+        "distributions": {
+            "items": {
+                "$ref": "#/$defs/Distribution"
+            },
+            "type": "array"
+        },
+        "doi": {
+            "type": "string"
+        },
+        "externalReviewers": {
+            "items": {
+                "$ref": "#/$defs/Person"
+            },
+            "type": "array"
+        },
+        "funders": {
+            "items": {
+                "$ref": "#/$defs/Grant"
+            },
+            "type": "array"
+        },
+        "hubmapId": {
+            "type": "string"
+        },
+        "iri": {
+            "type": "string"
+        },
+        "license": {
+            "type": "string"
+        },
+        "project_leads": {
+            "items": {
+                "$ref": "#/$defs/Person"
+            },
+            "type": "array"
+        },
+        "publisher": {
+            "type": "string"
+        },
+        "reviewers": {
+            "items": {
+                "$ref": "#/$defs/Person"
+            },
+            "type": "array"
+        },
+        "title": {
+            "type": "string"
+        },
+        "version": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "iri",
+        "title",
+        "description",
+        "creators",
+        "version",
+        "creation_date",
+        "license",
+        "distributions"
+    ],
+    "title": "ref-organ-metadata",
+    "type": "object",
+    "version": null
+}

@@ -22,12 +22,18 @@ prefixes:
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
+  owl:
+    prefix_prefix: owl
+    prefix_reference: http://www.w3.org/2002/07/owl#
   dcat:
     prefix_prefix: dcat
     prefix_reference: http://www.w3.org/ns/dcat#
   dct:
     prefix_prefix: dct
     prefix_reference: http://purl.org/dc/terms/
+  dc:
+    prefix_prefix: dc
+    prefix_reference: http://purl.org/dc/elements/1.1/
   foaf:
     prefix_prefix: foaf
     prefix_reference: http://xmlns.com/foaf/0.1/
@@ -185,239 +191,204 @@ types:
     uri: shex:nonLiteral
     repr: str
 slots:
-  type:
-    name: type
+  iri:
+    name: iri
     from_schema: https://purl.humanatlas.io/specs/collection
-    slot_uri: schema:about
-    required: false
-  name:
-    name: name
+    identifier: true
+  distributions:
+    name: distributions
     from_schema: https://purl.humanatlas.io/specs/collection
-    slot_uri: schema:name
-    required: false
-  version:
-    name: version
+    slot_uri: dcat:distribution
+    multivalued: true
+    range: Distribution
+    inlined_as_list: true
+  downloadUrl:
+    name: downloadUrl
     from_schema: https://purl.humanatlas.io/specs/collection
-    slot_uri: schema:version
-    required: true
+    slot_uri: dcat:downloadURL
+    range: uri
+  accessUrl:
+    name: accessUrl
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: dcat:accessURL
+    range: uri
+  mediaType:
+    name: mediaType
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: dcat:mediaType
+    range: uriorcurie
   title:
     name: title
     from_schema: https://purl.humanatlas.io/specs/collection
     slot_uri: dct:title
-    required: true
   description:
     name: description
     from_schema: https://purl.humanatlas.io/specs/collection
     slot_uri: dct:description
-    required: true
+  license:
+    name: license
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: dct:license
+  publisher:
+    name: publisher
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: dct:publisher
   creators:
     name: creators
     from_schema: https://purl.humanatlas.io/specs/collection
     slot_uri: dct:creator
     multivalued: true
     range: Person
-    required: true
     inlined_as_list: true
-  project_leads:
-    name: project_leads
+  about:
+    name: about
     from_schema: https://purl.humanatlas.io/specs/collection
-    slot_uri: ccf:project_lead
-    multivalued: true
-    range: Person
-    required: false
-    inlined_as_list: true
+    slot_uri: schema:about
+  version:
+    name: version
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: schema:version
+  fullName:
+    name: fullName
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: schema:name
+  firstName:
+    name: firstName
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: schema:givenName
+  lastName:
+    name: lastName
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: schema:familyName
+  orcid:
+    name: orcid
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: schema:identifier
+    pattern: ^(\d{4}-){3}\d{3}(\d|X)$
+  funder:
+    name: funder
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: schema:funder
+  awardNumber:
+    name: awardNumber
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: schema:award
+  citation:
+    name: citation
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: schema:citation
+  creation_date:
+    name: creation_date
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: schema:dateCreated
+  propertyId:
+    name: propertyId
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: schema:propertyID
+  value:
+    name: value
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: schema:value
   reviewers:
     name: reviewers
     from_schema: https://purl.humanatlas.io/specs/collection
     slot_uri: schema:reviewedBy
     multivalued: true
     range: Person
-    required: false
     inlined_as_list: true
-  externalReviewers:
-    name: externalReviewers
-    from_schema: https://purl.humanatlas.io/specs/collection
-    slot_uri: ccf:externallyReviewedBy
-    multivalued: true
-    range: Person
-    required: false
-    inlined_as_list: true
-  creation_date:
-    name: creation_date
-    from_schema: https://purl.humanatlas.io/specs/collection
-    slot_uri: schema:dateCreated
-    required: true
-  license:
-    name: license
-    from_schema: https://purl.humanatlas.io/specs/collection
-    slot_uri: dct:license
-    required: true
-  publisher:
-    name: publisher
-    from_schema: https://purl.humanatlas.io/specs/collection
-    slot_uri: dct:publisher
-    required: false
   funders:
     name: funders
     from_schema: https://purl.humanatlas.io/specs/collection
     slot_uri: schema:funding
     multivalued: true
     range: Grant
-    required: false
     inlined_as_list: true
+  versionInfo:
+    name: versionInfo
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: owl:versionInfo
+  see_also:
+    name: see_also
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slot_uri: rdfs:seeAlso
+    range: uriorcurie
   hubmapId:
     name: hubmapId
     from_schema: https://purl.humanatlas.io/specs/collection
     slot_uri: ccf:hubmap_id
-    required: false
   doi:
     name: doi
     from_schema: https://purl.humanatlas.io/specs/collection
     slot_uri: ccf:doi
     range: uriorcurie
-    required: false
-  citation:
-    name: citation
-    from_schema: https://purl.humanatlas.io/specs/collection
-    slot_uri: schema:citation
-    required: false
   citationOverall:
     name: citationOverall
     from_schema: https://purl.humanatlas.io/specs/collection
     slot_uri: ccf:citation_overall
-    required: false
   datatable:
     name: datatable
     from_schema: https://purl.humanatlas.io/specs/collection
     slot_uri: ccf:data_table
     multivalued: true
-    required: false
-  fullName:
-    name: fullName
+  project_leads:
+    name: project_leads
     from_schema: https://purl.humanatlas.io/specs/collection
-    slot_uri: foaf:name
-    required: true
-  firstName:
-    name: firstName
+    slot_uri: ccf:project_lead
+    multivalued: true
+    range: Person
+    inlined_as_list: true
+  externalReviewers:
+    name: externalReviewers
     from_schema: https://purl.humanatlas.io/specs/collection
-    slot_uri: foaf:firstName
-    required: true
-  lastName:
-    name: lastName
-    from_schema: https://purl.humanatlas.io/specs/collection
-    slot_uri: foaf:surname
-    required: true
-  orcid:
-    name: orcid
-    from_schema: https://purl.humanatlas.io/specs/collection
-    slot_uri: schema:identifier
-    required: true
-  funder:
-    name: funder
-    from_schema: https://purl.humanatlas.io/specs/collection
-    slot_uri: schema:funder
-    required: true
-  awardNumber:
-    name: awardNumber
-    from_schema: https://purl.humanatlas.io/specs/collection
-    slot_uri: schema:award
-    required: false
+    slot_uri: ccf:external_reviewer
+    multivalued: true
+    range: Person
+    inlined_as_list: true
 classes:
   CollectionMetadata:
     name: CollectionMetadata
     from_schema: https://purl.humanatlas.io/specs/collection
     slots:
-    - type
-    - name
-    - version
     - title
     - description
     - creators
-    - project_leads
-    - reviewers
-    - externalReviewers
+    - version
     - creation_date
     - license
     - publisher
-    - funders
-    - hubmapId
-    - doi
-    - citation
-    - citationOverall
-    - datatable
+    - see_also
     class_uri: dcat:Dataset
   Container:
     name: Container
     annotations:
       owl.template:
         tag: owl.template
-        value: 'AnnotationAssertion( schema:about {{id}} "{{metadata.type}}" )
+        value: 'AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
 
-          AnnotationAssertion( schema:version {{id}} "{{metadata.version}}" )
-
-          AnnotationAssertion( dct:title {{id}} "{{metadata.title}}" )
-
-          AnnotationAssertion( dct:description {{id}} "{{metadata.description|e}}"
+          AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}"
           )
 
           {% for c in metadata.creators %}
 
-          AnnotationAssertion( dct:creator {{id}} "{{c.fullName}} ({{c.orcid}})" )
-
-          {% endfor %}
-
-          {% for l in metadata.project_leads %}
-
-          AnnotationAssertion( ccf:project_lead {{id}} "{{l.fullName}} ({{l.orcid}})"
+          AnnotationAssertion( dct:creator {{iri}} "{{c.fullName|e}} ({{c.orcid}})"
           )
 
           {% endfor %}
 
-          {% for r in metadata.reviewers %}
+          AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
 
-          AnnotationAssertion( schema:reviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})"
+          AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}"
           )
 
-          {% endfor %}
+          AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
 
-          {% for r in metadata.externalReviewers %}
+          AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
 
-          AnnotationAssertion( ccf:externallyReviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})"
-          )
-
-          {% endfor %}
-
-          AnnotationAssertion( schema:dateCreated {{id}} "{{metadata.creation_date}}"
-          )
-
-          AnnotationAssertion( dct:license {{id}} "{{metadata.license}}" )
-
-          AnnotationAssertion( dct:publisher {{id}} "{{metadata.publisher}}" )
-
-          {% for f in metadata.funders %}
-
-          AnnotationAssertion( schema:funding {{id}} "Award number {{f.awardNumber}}
-          from {{f.funder}}" )
-
-          {% endfor %}
-
-          AnnotationAssertion( ccf:hubmap_id {{id}} "{{metadata.hubmapId}}" )
-
-          AnnotationAssertion( schema:citation {{id}} "{{metadata.citation}}" )
-
-          AnnotationAssertion( ccf:citation_overall {{id}} "{{metadata.citationOverall}}"
-          )
-
-          {% for do in data %}
-
-          AnnotationAssertion( schema:isBasedOn {{id}} https://purl.humanatlas.io/{{do}}
-          )
-
-          {% endfor %}'
+          AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )'
     from_schema: https://purl.humanatlas.io/specs/collection
     attributes:
-      id:
-        name: id
+      iri:
+        name: iri
         from_schema: https://purl.humanatlas.io/specs/collection
         range: uriorcurie
       metadata:
@@ -439,7 +410,7 @@ classes:
     - firstName
     - lastName
     - orcid
-    class_uri: foaf:Person
+    class_uri: schema:Person
   Grant:
     name: Grant
     from_schema: https://purl.humanatlas.io/specs/collection
@@ -447,5 +418,27 @@ classes:
     - funder
     - awardNumber
     class_uri: schema:Grant
+  Distribution:
+    name: Distribution
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slots:
+    - title
+    - downloadUrl
+    - accessUrl
+    - mediaType
+    class_uri: dcat:Distribution
+  DatasetMetadata:
+    name: DatasetMetadata
+    from_schema: https://purl.humanatlas.io/specs/collection
+    slots:
+    - title
+    - description
+    - creators
+    - version
+    - creation_date
+    - license
+    - publisher
+    - see_also
+    class_uri: dcat:Dataset
 source_file: schemas/src/digital-objects/collection.yaml
 

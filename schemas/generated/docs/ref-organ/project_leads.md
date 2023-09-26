@@ -19,7 +19,6 @@ None &#8594;  <sub>0..\*</sub> [Person](Person.md)
 
 ## Used by
 
- * [RefOrganMetadata](RefOrganMetadata.md)
 
 ## Other properties
 

@@ -20,10 +20,3 @@ None &#8594;  <sub>0..1</sub> [OrganSideEnum](OrganSideEnum.md)
 ## Used by
 
  * [SpatialEntity](SpatialEntity.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | ccf:organ_side |
-

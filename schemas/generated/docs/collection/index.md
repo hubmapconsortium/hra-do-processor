@@ -14,6 +14,8 @@
 
  * [CollectionMetadata](CollectionMetadata.md)
  * [Container](Container.md)
+ * [DatasetMetadata](DatasetMetadata.md)
+ * [Distribution](Distribution.md)
  * [Grant](Grant.md)
  * [Person](Person.md)
 
@@ -22,33 +24,41 @@
 
 ### Slots
 
+ * [about](about.md)
+ * [accessUrl](accessUrl.md)
  * [awardNumber](awardNumber.md)
  * [citation](citation.md)
  * [citationOverall](citationOverall.md)
  * [➞data](container__data.md)
- * [➞id](container__id.md)
+ * [➞iri](container__iri.md)
  * [➞metadata](container__metadata.md)
  * [creation_date](creation_date.md)
  * [creators](creators.md)
  * [datatable](datatable.md)
  * [description](description.md)
+ * [distributions](distributions.md)
  * [doi](doi.md)
+ * [downloadUrl](downloadUrl.md)
  * [externalReviewers](externalReviewers.md)
  * [firstName](firstName.md)
  * [fullName](fullName.md)
  * [funder](funder.md)
  * [funders](funders.md)
  * [hubmapId](hubmapId.md)
+ * [iri](iri.md)
  * [lastName](lastName.md)
  * [license](license.md)
- * [name](name.md)
+ * [mediaType](mediaType.md)
  * [orcid](orcid.md)
  * [project_leads](project_leads.md)
+ * [propertyId](propertyId.md)
  * [publisher](publisher.md)
  * [reviewers](reviewers.md)
+ * [see_also](see_also.md)
  * [title](title.md)
- * [type](type.md)
+ * [value](value.md)
  * [version](version.md)
+ * [versionInfo](versionInfo.md)
 
 ### Enums
 

@@ -4,15 +4,24 @@ prefixes:
   ccf:
     prefix_prefix: ccf
     prefix_reference: http://purl.org/ccf/
-  dcterms:
-    prefix_prefix: dcterms
+  dct:
+    prefix_prefix: dct
     prefix_reference: http://purl.org/dc/terms/
+  schema:
+    prefix_prefix: schema
+    prefix_reference: https://schema.org/
   pav:
     prefix_prefix: pav
     prefix_reference: http://purl.org/pav/
   rdfs:
     prefix_prefix: rdfs
     prefix_reference: http://www.w3.org/2000/01/rdf-schema#
+  rdf:
+    prefix_prefix: rdf
+    prefix_reference: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  skos:
+    prefix_prefix: skos
+    prefix_reference: http://www.w3.org/2004/02/skos/core#
   xsd:
     prefix_prefix: xsd
     prefix_reference: http://www.w3.org/2001/XMLSchema#
@@ -22,21 +31,27 @@ prefixes:
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
-  dcat:
-    prefix_prefix: dcat
-    prefix_reference: http://www.w3.org/ns/dcat#
-  dct:
-    prefix_prefix: dct
-    prefix_reference: http://purl.org/dc/terms/
-  foaf:
-    prefix_prefix: foaf
-    prefix_reference: http://xmlns.com/foaf/0.1/
-  schema:
-    prefix_prefix: schema
-    prefix_reference: http://schema.org/
+  UBERON:
+    prefix_prefix: UBERON
+    prefix_reference: http://purl.obolibrary.org/obo/UBERON_
+  FMA:
+    prefix_prefix: FMA
+    prefix_reference: http://purl.org/sig/ont/fma/fma
   shex:
     prefix_prefix: shex
     prefix_reference: http://www.w3.org/ns/shex#
+  owl:
+    prefix_prefix: owl
+    prefix_reference: http://www.w3.org/2002/07/owl#
+  dcat:
+    prefix_prefix: dcat
+    prefix_reference: http://www.w3.org/ns/dcat#
+  dc:
+    prefix_prefix: dc
+    prefix_reference: http://purl.org/dc/elements/1.1/
+  foaf:
+    prefix_prefix: foaf
+    prefix_reference: http://xmlns.com/foaf/0.1/
 default_prefix: ccf
 default_range: string
 types:
@@ -254,190 +269,264 @@ enums:
         description: A length unit which is equal to one thousandth of a meter.
         meaning: obo:UO_0000016
 slots:
-  id:
-    name: id
+  pref_label:
+    name: pref_label
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    identifier: true
-  label:
-    name: label
-    from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: rdfs:label
+    slot_uri: skos:prefLabel
     required: true
   creator:
     name: creator
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: dcterms:creator
+    slot_uri: dct:creator
+    multivalued: true
+    range: Creator
     required: true
-  creator_first_name:
-    name: creator_first_name
+    inlined: true
+    inlined_as_list: true
+  create_date:
+    name: create_date
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:creator_first_name
-    required: true
-  creator_last_name:
-    name: creator_last_name
-    from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:creator_last_name
-    required: true
-  creator_orcid:
-    name: creator_orcid
-    from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:creator_orcid
-    required: false
-  creation_date:
-    name: creation_date
-    from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: dcterms:created
+    slot_uri: ccf:creation_date
     range: date
     required: true
   x_dimension:
     name: x_dimension
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:x_dimension
-    range: decimal
+    range: float
     required: true
     minimum_value: 0
   y_dimension:
     name: y_dimension
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:y_dimension
-    range: decimal
+    range: float
     required: true
     minimum_value: 0
   z_dimension:
     name: z_dimension
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:z_dimension
-    range: decimal
+    range: float
     required: true
     minimum_value: 0
   dimension_unit:
     name: dimension_unit
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:dimension_unit
     range: DimensionUnitEnum
     required: true
   x_scaling:
     name: x_scaling
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:x_scaling
-    range: decimal
+    range: float
     required: true
     minimum_value: 0
   y_scaling:
     name: y_scaling
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:y_scaling
-    range: decimal
+    range: float
     required: true
     minimum_value: 0
   z_scaling:
     name: z_scaling
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:z_scaling
-    range: decimal
+    range: float
     required: true
     minimum_value: 0
   scaling_unit:
     name: scaling_unit
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:scaling_unit
     range: ScalingUnitEnum
     required: true
   x_rotation:
     name: x_rotation
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:x_rotation
-    range: decimal
+    range: float
     required: true
   y_rotation:
     name: y_rotation
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:y_rotation
-    range: decimal
+    range: float
     required: true
   z_rotation:
     name: z_rotation
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:z_rotation
-    range: decimal
+    range: float
     required: true
   rotation_unit:
     name: rotation_unit
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:rotation_unit
     range: RotationUnitEnum
     required: true
   rotation_order:
     name: rotation_order
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:rotation_order
     required: false
   x_translation:
     name: x_translation
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:x_translation
-    range: decimal
+    range: float
     required: true
   y_translation:
     name: y_translation
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:y_translation
-    range: decimal
+    range: float
     required: true
   z_translation:
     name: z_translation
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:z_translation
-    range: decimal
+    range: float
     required: true
   translation_unit:
     name: translation_unit
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:translation_unit
     range: TranslationUnitEnum
     required: true
   representation_of:
     name: representation_of
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:representation_of
     range: AnatomicalStructure
     required: false
     inlined: false
   organ_donor_sex:
     name: organ_donor_sex
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:organ_donor_sex
     range: DonorSexEnum
     required: false
   organ_side:
     name: organ_side
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:organ_side
     range: OrganSideEnum
     required: false
   file:
     name: file
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slot_uri: ccf:file_url
     required: true
   file_subpath:
     name: file_subpath
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:file_subpath
     required: false
   file_format:
     name: file_format
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:file_format
     required: true
   placement_date:
     name: placement_date
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: dcterms:created
     range: date
     required: true
   target:
     name: target
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slot_uri: ccf:placement_relative_to
     range: SpatialEntity
@@ -445,6 +534,10 @@ slots:
     inlined: false
   source:
     name: source
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slot_uri: ccf:placement_for
     range: SpatialEntity
@@ -452,6 +545,10 @@ slots:
     inlined: false
   object_reference:
     name: object_reference
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slot_uri: ccf:has_object_reference
     range: SpatialObjectReference
@@ -459,15 +556,21 @@ slots:
     inlined: true
   placement:
     name: placement
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:placement_for
     range: SpatialPlacement
     required: true
     inlined: true
   placements:
     name: placements
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:placement_for
     multivalued: true
     range: SpatialPlacement
     required: false
@@ -475,6 +578,10 @@ slots:
     inlined_as_list: true
   reference_organ:
     name: reference_organ
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slot_uri: ccf:has_reference_organ
     range: SpatialEntity
@@ -482,6 +589,10 @@ slots:
     inlined: false
   extraction_set:
     name: extraction_set
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slot_uri: ccf:has_extraction_set
     range: ExtractionSet
@@ -489,162 +600,217 @@ slots:
     inlined: false
   extraction_set_for:
     name: extraction_set_for
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:extraction_set_for
     range: SpatialEntity
     required: true
     inlined: false
   rui_rank:
     name: rui_rank
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:rui_rank
     range: integer
     required: false
     recommended: true
-  type:
-    name: type
+  id:
+    name: id
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: schema:about
-    required: false
-  name:
-    name: name
+    identifier: true
+  typeOf:
+    name: typeOf
+    annotations:
+      owl:
+        tag: owl
+        value: ClassAssertion
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: schema:name
-    required: false
-  version:
-    name: version
+    slot_uri: rdf:type
+    multivalued: true
+    range: Named
+  class_type:
+    name: class_type
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: schema:version
+    designates_type: true
+  label:
+    name: label
+    annotations:
+      owl:
+        tag: owl
+        value: AnnotationProperty, AnnotationAssertion
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: rdfs:label
     required: true
+  iri:
+    name: iri
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    identifier: true
+  distributions:
+    name: distributions
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: dcat:distribution
+    multivalued: true
+    range: Distribution
+    inlined_as_list: true
+  downloadUrl:
+    name: downloadUrl
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: dcat:downloadURL
+    range: uri
+  accessUrl:
+    name: accessUrl
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: dcat:accessURL
+    range: uri
+  mediaType:
+    name: mediaType
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: dcat:mediaType
+    range: uriorcurie
   title:
     name: title
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slot_uri: dct:title
-    required: true
   description:
     name: description
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slot_uri: dct:description
-    required: true
+  license:
+    name: license
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: dct:license
+  publisher:
+    name: publisher
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: dct:publisher
   creators:
     name: creators
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slot_uri: dct:creator
     multivalued: true
     range: Person
-    required: true
     inlined_as_list: true
-  project_leads:
-    name: project_leads
+  about:
+    name: about
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:project_lead
-    multivalued: true
-    range: Person
-    required: false
-    inlined_as_list: true
+    slot_uri: schema:about
+  version:
+    name: version
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:version
+  fullName:
+    name: fullName
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:name
+  firstName:
+    name: firstName
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:givenName
+  lastName:
+    name: lastName
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:familyName
+  orcid:
+    name: orcid
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:identifier
+    pattern: ^(\d{4}-){3}\d{3}(\d|X)$
+  funder:
+    name: funder
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:funder
+  awardNumber:
+    name: awardNumber
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:award
+  citation:
+    name: citation
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:citation
+  creation_date:
+    name: creation_date
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:dateCreated
+  propertyId:
+    name: propertyId
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:propertyID
+  value:
+    name: value
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: schema:value
   reviewers:
     name: reviewers
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slot_uri: schema:reviewedBy
     multivalued: true
     range: Person
-    required: false
     inlined_as_list: true
-  externalReviewers:
-    name: externalReviewers
-    from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: ccf:externallyReviewedBy
-    multivalued: true
-    range: Person
-    required: false
-    inlined_as_list: true
-  license:
-    name: license
-    from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: dct:license
-    required: true
-  publisher:
-    name: publisher
-    from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: dct:publisher
-    required: false
   funders:
     name: funders
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slot_uri: schema:funding
     multivalued: true
     range: Grant
-    required: false
     inlined_as_list: true
+  versionInfo:
+    name: versionInfo
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: owl:versionInfo
+  see_also:
+    name: see_also
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slot_uri: rdfs:seeAlso
+    range: uriorcurie
   hubmapId:
     name: hubmapId
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slot_uri: ccf:hubmap_id
-    required: false
   doi:
     name: doi
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slot_uri: ccf:doi
     range: uriorcurie
-    required: false
-  citation:
-    name: citation
-    from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: schema:citation
-    required: false
   citationOverall:
     name: citationOverall
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slot_uri: ccf:citation_overall
-    required: false
   datatable:
     name: datatable
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slot_uri: ccf:data_table
     multivalued: true
-    required: false
-  fullName:
-    name: fullName
+  project_leads:
+    name: project_leads
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: foaf:name
-    required: true
-  firstName:
-    name: firstName
+    slot_uri: ccf:project_lead
+    multivalued: true
+    range: Person
+    inlined_as_list: true
+  externalReviewers:
+    name: externalReviewers
     from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: foaf:firstName
-    required: true
-  lastName:
-    name: lastName
-    from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: foaf:surname
-    required: true
-  orcid:
-    name: orcid
-    from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: schema:identifier
-    required: true
-  funder:
-    name: funder
-    from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: schema:funder
-    required: true
-  awardNumber:
-    name: awardNumber
-    from_schema: https://purl.humanatlas.io/specs/ref-organ
-    slot_uri: schema:award
-    required: false
+    slot_uri: ccf:external_reviewer
+    multivalued: true
+    range: Person
+    inlined_as_list: true
 classes:
   SpatialEntity:
     name: SpatialEntity
     from_schema: https://purl.humanatlas.io/specs/ref-organ
+    mixins:
+    - Named
+    - Instance
     slots:
     - id
     - label
+    - pref_label
     - creator
-    - creator_first_name
-    - creator_last_name
-    - creator_orcid
-    - creation_date
+    - create_date
     - x_dimension
     - y_dimension
     - z_dimension
@@ -661,6 +827,9 @@ classes:
   SpatialObjectReference:
     name: SpatialObjectReference
     from_schema: https://purl.humanatlas.io/specs/ref-organ
+    mixins:
+    - Named
+    - Instance
     slots:
     - id
     - file
@@ -671,6 +840,9 @@ classes:
   SpatialPlacement:
     name: SpatialPlacement
     from_schema: https://purl.humanatlas.io/specs/ref-organ
+    mixins:
+    - Named
+    - Instance
     slots:
     - id
     - target
@@ -693,6 +865,9 @@ classes:
   ExtractionSet:
     name: ExtractionSet
     from_schema: https://purl.humanatlas.io/specs/ref-organ
+    mixins:
+    - Named
+    - Instance
     slots:
     - id
     - label
@@ -704,95 +879,96 @@ classes:
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slots:
     - id
+    slot_usage:
+      id:
+        name: id
+        pattern: (UBERON|FMA):\d+
+        structured_pattern:
+          syntax: ({uberon}|{fma}):\d+
+          interpolated: true
+          partial_match: false
     class_uri: ccf:AnatomicalStructure
   RefOrganMetadata:
     name: RefOrganMetadata
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     slots:
-    - type
-    - name
-    - version
     - title
     - description
     - creators
-    - project_leads
-    - reviewers
-    - externalReviewers
+    - version
     - creation_date
     - license
     - publisher
-    - funders
-    - hubmapId
-    - doi
-    - citation
-    - citationOverall
-    - datatable
+    - see_also
     class_uri: dcat:Dataset
+  Creator:
+    name: Creator
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    mixins:
+    - Named
+    - Instance
+    slots:
+    - fullName
+    - firstName
+    - lastName
+    - orcid
+    slot_usage:
+      fullName:
+        name: fullName
+        annotations:
+          owl:
+            tag: owl
+            value: AnnotationProperty, AnnotationAssertion
+      firstName:
+        name: firstName
+        annotations:
+          owl:
+            tag: owl
+            value: AnnotationProperty, AnnotationAssertion
+      lastName:
+        name: lastName
+        annotations:
+          owl:
+            tag: owl
+            value: AnnotationProperty, AnnotationAssertion
+      orcid:
+        name: orcid
+        annotations:
+          owl:
+            tag: owl
+            value: AnnotationProperty, AnnotationAssertion
+    class_uri: schema:Person
   Container:
     name: Container
     annotations:
       owl.template:
         tag: owl.template
-        value: 'AnnotationAssertion( schema:about {{id}} "{{metadata.type}}" )
+        value: 'AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
 
-          AnnotationAssertion( schema:version {{id}} "{{metadata.version}}" )
-
-          AnnotationAssertion( dct:title {{id}} "{{metadata.title}}" )
-
-          AnnotationAssertion( dct:description {{id}} "{{metadata.description|e}}"
+          AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}"
           )
 
           {% for c in metadata.creators %}
 
-          AnnotationAssertion( dct:creator {{id}} "{{c.fullName}} ({{c.orcid}})" )
-
-          {% endfor %}
-
-          {% for l in metadata.project_leads %}
-
-          AnnotationAssertion( ccf:project_lead {{id}} "{{l.fullName}} ({{l.orcid}})"
+          AnnotationAssertion( dct:creator {{iri}} "{{c.fullName|e}} ({{c.orcid}})"
           )
 
           {% endfor %}
 
-          {% for r in metadata.reviewers %}
+          AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
 
-          AnnotationAssertion( schema:reviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})"
+          AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}"
           )
 
-          {% endfor %}
+          AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
 
-          {% for r in metadata.externalReviewers %}
+          AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
 
-          AnnotationAssertion( ccf:externallyReviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})"
-          )
-
-          {% endfor %}
-
-          AnnotationAssertion( schema:dateCreated {{id}} "{{metadata.creation_date}}"
-          )
-
-          AnnotationAssertion( dct:license {{id}} "{{metadata.license}}" )
-
-          AnnotationAssertion( dct:publisher {{id}} "{{metadata.publisher}}" )
-
-          {% for f in metadata.funders %}
-
-          AnnotationAssertion( schema:funding {{id}} "Award number {{f.awardNumber}}
-          from {{f.funder}}" )
-
-          {% endfor %}
-
-          AnnotationAssertion( ccf:hubmap_id {{id}} "{{metadata.hubmapId}}" )
-
-          AnnotationAssertion( schema:citation {{id}} "{{metadata.citation}}" )
-
-          AnnotationAssertion( ccf:citation_overall {{id}} "{{metadata.citationOverall}}"
-          )'
+          AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )'
     from_schema: https://purl.humanatlas.io/specs/ref-organ
     attributes:
-      id:
-        name: id
+      iri:
+        name: iri
         from_schema: https://purl.humanatlas.io/specs/ref-organ
         range: uriorcurie
       metadata:
@@ -806,6 +982,24 @@ classes:
         range: SpatialEntity
         inlined_as_list: true
     tree_root: true
+  Named:
+    name: Named
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    mixin: true
+    slots:
+    - id
+    - label
+    - class_type
+  Instance:
+    name: Instance
+    annotations:
+      owl:
+        tag: owl
+        value: Individual
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    mixin: true
+    slots:
+    - typeOf
   Person:
     name: Person
     from_schema: https://purl.humanatlas.io/specs/ref-organ
@@ -814,7 +1008,7 @@ classes:
     - firstName
     - lastName
     - orcid
-    class_uri: foaf:Person
+    class_uri: schema:Person
   Grant:
     name: Grant
     from_schema: https://purl.humanatlas.io/specs/ref-organ
@@ -822,5 +1016,34 @@ classes:
     - funder
     - awardNumber
     class_uri: schema:Grant
+  Distribution:
+    name: Distribution
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slots:
+    - title
+    - downloadUrl
+    - accessUrl
+    - mediaType
+    class_uri: dcat:Distribution
+  DatasetMetadata:
+    name: DatasetMetadata
+    from_schema: https://purl.humanatlas.io/specs/ref-organ
+    slots:
+    - title
+    - description
+    - creators
+    - version
+    - creation_date
+    - license
+    - publisher
+    - see_also
+    class_uri: dcat:Dataset
 source_file: schemas/src/digital-objects/ref-organ.yaml
+settings:
+  uberon:
+    setting_key: uberon
+    setting_value: UBERON
+  fma:
+    setting_key: fma
+    setting_value: FMA
 

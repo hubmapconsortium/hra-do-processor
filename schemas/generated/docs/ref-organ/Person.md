@@ -7,11 +7,11 @@
 URI: [ccf:Person](http://purl.org/ccf/Person)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RefOrganMetadata]++-%20creators%201..*>[Person&#124;fullName:string;firstName:string;lastName:string;orcid:string],[RefOrganMetadata]++-%20externalReviewers%200..*>[Person],[RefOrganMetadata]++-%20project_leads%200..*>[Person],[RefOrganMetadata]++-%20reviewers%200..*>[Person],[RefOrganMetadata])](https://yuml.me/diagram/nofunky;dir:TB/class/[RefOrganMetadata]++-%20creators%201..*>[Person&#124;fullName:string;firstName:string;lastName:string;orcid:string],[RefOrganMetadata]++-%20externalReviewers%200..*>[Person],[RefOrganMetadata]++-%20project_leads%200..*>[Person],[RefOrganMetadata]++-%20reviewers%200..*>[Person],[RefOrganMetadata])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RefOrganMetadata]++-%20creators%200..*>[Person&#124;fullName:string%20%3F;firstName:string%20%3F;lastName:string%20%3F;orcid:string%20%3F],[DatasetMetadata]++-%20creators%200..*>[Person],[RefOrganMetadata],[DatasetMetadata])](https://yuml.me/diagram/nofunky;dir:TB/class/[RefOrganMetadata]++-%20creators%200..*>[Person&#124;fullName:string%20%3F;firstName:string%20%3F;lastName:string%20%3F;orcid:string%20%3F],[DatasetMetadata]++-%20creators%200..*>[Person],[RefOrganMetadata],[DatasetMetadata])
 
 ## Referenced by Class
 
- *  **None** *[creators](creators.md)*  <sub>1..\*</sub>  **[Person](Person.md)**
+ *  **None** *[creators](creators.md)*  <sub>0..\*</sub>  **[Person](Person.md)**
  *  **None** *[externalReviewers](externalReviewers.md)*  <sub>0..\*</sub>  **[Person](Person.md)**
  *  **None** *[project_leads](project_leads.md)*  <sub>0..\*</sub>  **[Person](Person.md)**
  *  **None** *[reviewers](reviewers.md)*  <sub>0..\*</sub>  **[Person](Person.md)**
@@ -21,18 +21,18 @@ URI: [ccf:Person](http://purl.org/ccf/Person)
 
 ### Own
 
- * [fullName](fullName.md)  <sub>1..1</sub>
+ * [fullName](fullName.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [firstName](firstName.md)  <sub>1..1</sub>
+ * [firstName](firstName.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [lastName](lastName.md)  <sub>1..1</sub>
+ * [lastName](lastName.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [orcid](orcid.md)  <sub>1..1</sub>
+ * [orcid](orcid.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | foaf:Person |
+| **Mappings:** | | schema:Person |
 

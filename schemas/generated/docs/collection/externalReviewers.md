@@ -19,11 +19,10 @@ None &#8594;  <sub>0..\*</sub> [Person](Person.md)
 
 ## Used by
 
- * [CollectionMetadata](CollectionMetadata.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | ccf:externallyReviewedBy |
+| **Mappings:** | | ccf:external_reviewer |
 

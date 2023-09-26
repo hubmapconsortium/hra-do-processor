@@ -9,7 +9,7 @@ URI: [ccf:creation_date](http://purl.org/ccf/creation_date)
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [Date](types/Date.md)
+None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Parents
 
@@ -19,12 +19,12 @@ None &#8594;  <sub>1..1</sub> [Date](types/Date.md)
 
 ## Used by
 
+ * [DatasetMetadata](DatasetMetadata.md)
  * [RefOrganMetadata](RefOrganMetadata.md)
- * [SpatialEntity](SpatialEntity.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | dcterms:created |
+| **Mappings:** | | schema:dateCreated |
 

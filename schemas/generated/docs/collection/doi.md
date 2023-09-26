@@ -19,7 +19,6 @@ None &#8594;  <sub>0..1</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Used by
 
- * [CollectionMetadata](CollectionMetadata.md)
 
 ## Other properties
 

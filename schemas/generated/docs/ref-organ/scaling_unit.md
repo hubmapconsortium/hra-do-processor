@@ -20,10 +20,3 @@ None &#8594;  <sub>1..1</sub> [ScalingUnitEnum](ScalingUnitEnum.md)
 ## Used by
 
  * [SpatialPlacement](SpatialPlacement.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | ccf:scaling_unit |
-

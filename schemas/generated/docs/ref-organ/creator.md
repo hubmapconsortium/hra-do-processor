@@ -9,7 +9,7 @@ URI: [ccf:creator](http://purl.org/ccf/creator)
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [String](types/String.md)
+None &#8594;  <sub>1..\*</sub> [Creator](Creator.md)
 
 ## Parents
 
@@ -25,5 +25,5 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | dcterms:creator |
+| **Mappings:** | | dct:creator |
 

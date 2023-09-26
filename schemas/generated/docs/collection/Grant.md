@@ -7,7 +7,7 @@
 URI: [ccf:Grant](http://purl.org/ccf/Grant)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[CollectionMetadata]++-%20funders%200..*>[Grant&#124;funder:string;awardNumber:string%20%3F],[CollectionMetadata])](https://yuml.me/diagram/nofunky;dir:TB/class/[CollectionMetadata]++-%20funders%200..*>[Grant&#124;funder:string;awardNumber:string%20%3F],[CollectionMetadata])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Grant&#124;funder:string%20%3F;awardNumber:string%20%3F])](https://yuml.me/diagram/nofunky;dir:TB/class/[Grant&#124;funder:string%20%3F;awardNumber:string%20%3F])
 
 ## Referenced by Class
 
@@ -18,7 +18,7 @@ URI: [ccf:Grant](http://purl.org/ccf/Grant)
 
 ### Own
 
- * [funder](funder.md)  <sub>1..1</sub>
+ * [funder](funder.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [awardNumber](awardNumber.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)

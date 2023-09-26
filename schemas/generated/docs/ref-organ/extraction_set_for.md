@@ -20,10 +20,3 @@ None &#8594;  <sub>1..1</sub> [SpatialEntity](SpatialEntity.md)
 ## Used by
 
  * [ExtractionSet](ExtractionSet.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | ccf:extraction_set_for |
-

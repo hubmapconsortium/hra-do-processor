@@ -18,7 +18,7 @@ URI: [ccf:AnatomicalStructure](http://purl.org/ccf/AnatomicalStructure)
 
 ### Own
 
- * [id](id.md)  <sub>1..1</sub>
+ * [AnatomicalStructure➞id](AnatomicalStructure_id.md)  <sub>1..1</sub>
      * Range: [String](types/String.md)
 
 ## Other properties

@@ -2,13 +2,12 @@
 @prefix ccf: <http://purl.org/ccf/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix linkml: <https://w3id.org/linkml/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema1: <http://schema.org/> .
+@prefix schema: <https://schema.org/> .
 @prefix shex: <http://www.w3.org/ns/shex#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -45,19 +44,19 @@ ccf:Datetime a owl:Class,
             owl:onProperty linkml:topValue ;
             owl:qualifiedCardinality 1 ] .
 
+ccf:Decimal a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "decimal" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:decimal ;
+            owl:onProperty linkml:topValue ;
+            owl:qualifiedCardinality 1 ] .
+
 ccf:Double a owl:Class,
         linkml:TypeDefinition ;
     rdfs:label "double" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onDataRange xsd:double ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
-
-ccf:Float a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "float" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:float ;
             owl:onProperty linkml:topValue ;
             owl:qualifiedCardinality 1 ] .
 
@@ -93,85 +92,334 @@ ccf:Time a owl:Class,
             owl:onProperty linkml:topValue ;
             owl:qualifiedCardinality 1 ] .
 
-ccf:Uri a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "uri" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:anyURI ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
-
 <https://purl.humanatlas.io/specs/ref-organ.owl.ttl> a owl:Ontology ;
     rdfs:label "ref-organ" ;
     IAO:0000700 ccf:AnatomicalStructure,
         ccf:Container,
-        ccf:ExtractionSet,
+        ccf:DatasetMetadata,
+        ccf:Distribution,
         ccf:Grant,
+        ccf:Instance,
+        ccf:Named,
         ccf:Person,
-        ccf:RefOrganMetadata,
-        ccf:SpatialEntity,
-        ccf:SpatialObjectReference,
-        ccf:SpatialPlacement ;
-    linkml:classes "{'SpatialEntity': ClassDefinition(name='SpatialEntity', id_prefixes=[], definition_uri='http://purl.org/ccf/SpatialEntity', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=['ccf:SpatialEntity'], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, slots=['id', 'label', 'creator', 'creator_first_name', 'creator_last_name', 'creator_orcid', 'creation_date', 'x_dimension', 'y_dimension', 'z_dimension', 'dimension_unit', 'representation_of', 'organ_donor_sex', 'organ_side', 'object_reference', 'placements', 'reference_organ', 'extraction_set', 'rui_rank'], slot_usage={}, attributes={}, class_uri='ccf:SpatialEntity', subclass_of=None, union_of=[], defining_slots=[], tree_root=None, unique_keys={}, rules=[], classification_rules=[], slot_names_unique=None, represents_relationship=None, disjoint_with=[], children_are_mutually_disjoint=None, any_of=[], exactly_one_of=[], none_of=[], all_of=[], slot_conditions={}), 'SpatialObjectReference': ClassDefinition(name='SpatialObjectReference', id_prefixes=[], definition_uri='http://purl.org/ccf/SpatialObjectReference', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=['ccf:SpatialObjectReference'], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, slots=['id', 'file', 'file_subpath', 'file_format', 'placement'], slot_usage={}, attributes={}, class_uri='ccf:SpatialObjectReference', subclass_of=None, union_of=[], defining_slots=[], tree_root=None, unique_keys={}, rules=[], classification_rules=[], slot_names_unique=None, represents_relationship=None, disjoint_with=[], children_are_mutually_disjoint=None, any_of=[], exactly_one_of=[], none_of=[], all_of=[], slot_conditions={}), 'SpatialPlacement': ClassDefinition(name='SpatialPlacement', id_prefixes=[], definition_uri='http://purl.org/ccf/SpatialPlacement', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=['ccf:SpatialPlacement'], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, slots=['id', 'target', 'source', 'placement_date', 'x_scaling', 'y_scaling', 'z_scaling', 'scaling_unit', 'x_rotation', 'y_rotation', 'z_rotation', 'rotation_unit', 'rotation_order', 'x_translation', 'y_translation', 'z_translation', 'translation_unit'], slot_usage={}, attributes={}, class_uri='ccf:SpatialPlacement', subclass_of=None, union_of=[], defining_slots=[], tree_root=None, unique_keys={}, rules=[], classification_rules=[], slot_names_unique=None, represents_relationship=None, disjoint_with=[], children_are_mutually_disjoint=None, any_of=[], exactly_one_of=[], none_of=[], all_of=[], slot_conditions={}), 'ExtractionSet': ClassDefinition(name='ExtractionSet', id_prefixes=[], definition_uri='http://purl.org/ccf/ExtractionSet', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=['ccf:ExtractionSet'], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, slots=['id', 'label', 'extraction_set_for', 'rui_rank'], slot_usage={}, attributes={}, class_uri='ccf:ExtractionSet', subclass_of=None, union_of=[], defining_slots=[], tree_root=None, unique_keys={}, rules=[], classification_rules=[], slot_names_unique=None, represents_relationship=None, disjoint_with=[], children_are_mutually_disjoint=None, any_of=[], exactly_one_of=[], none_of=[], all_of=[], slot_conditions={}), 'AnatomicalStructure': ClassDefinition(name='AnatomicalStructure', id_prefixes=[], definition_uri='http://purl.org/ccf/AnatomicalStructure', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=['ccf:AnatomicalStructure'], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, slots=['id'], slot_usage={}, attributes={}, class_uri='ccf:AnatomicalStructure', subclass_of=None, union_of=[], defining_slots=[], tree_root=None, unique_keys={}, rules=[], classification_rules=[], slot_names_unique=None, represents_relationship=None, disjoint_with=[], children_are_mutually_disjoint=None, any_of=[], exactly_one_of=[], none_of=[], all_of=[], slot_conditions={}), 'RefOrganMetadata': ClassDefinition(name='RefOrganMetadata', id_prefixes=[], definition_uri='http://purl.org/ccf/RefOrganMetadata', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=['dcat:Dataset'], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, slots=['type', 'name', 'version', 'title', 'description', 'creators', 'project_leads', 'reviewers', 'externalReviewers', 'creation_date', 'license', 'publisher', 'funders', 'hubmapId', 'doi', 'citation', 'citationOverall', 'datatable'], slot_usage={}, attributes={}, class_uri='dcat:Dataset', subclass_of=None, union_of=[], defining_slots=[], tree_root=None, unique_keys={}, rules=[], classification_rules=[], slot_names_unique=None, represents_relationship=None, disjoint_with=[], children_are_mutually_disjoint=None, any_of=[], exactly_one_of=[], none_of=[], all_of=[], slot_conditions={}), 'Container': ClassDefinition(name='Container', id_prefixes=[], definition_uri='http://purl.org/ccf/Container', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={'owl.template': Annotation(tag='owl.template', value='AnnotationAssertion( schema:about {{id}} \"{{metadata.type}}\" )\\nAnnotationAssertion( schema:version {{id}} \"{{metadata.version}}\" )\\nAnnotationAssertion( dct:title {{id}} \"{{metadata.title}}\" )\\nAnnotationAssertion( dct:description {{id}} \"{{metadata.description|e}}\" )\\n{% for c in metadata.creators %}\\nAnnotationAssertion( dct:creator {{id}} \"{{c.fullName}} ({{c.orcid}})\" )\\n{% endfor %}\\n{% for l in metadata.project_leads %}\\nAnnotationAssertion( ccf:project_lead {{id}} \"{{l.fullName}} ({{l.orcid}})\" )\\n{% endfor %}\\n{% for r in metadata.reviewers %}\\nAnnotationAssertion( schema:reviewedBy {{id}} \"{{r.fullName}} ({{r.orcid}})\" )\\n{% endfor %}\\n{% for r in metadata.externalReviewers %}\\nAnnotationAssertion( ccf:externallyReviewedBy {{id}} \"{{r.fullName}} ({{r.orcid}})\" )\\n{% endfor %}\\nAnnotationAssertion( schema:dateCreated {{id}} \"{{metadata.creation_date}}\" )\\nAnnotationAssertion( dct:license {{id}} \"{{metadata.license}}\" )\\nAnnotationAssertion( dct:publisher {{id}} \"{{metadata.publisher}}\" )\\n{% for f in metadata.funders %}\\nAnnotationAssertion( schema:funding {{id}} \"Award number {{f.awardNumber}} from {{f.funder}}\" )\\n{% endfor %}\\nAnnotationAssertion( ccf:hubmap_id {{id}} \"{{metadata.hubmapId}}\" )\\nAnnotationAssertion( schema:citation {{id}} \"{{metadata.citation}}\" )\\nAnnotationAssertion( ccf:citation_overall {{id}} \"{{metadata.citationOverall}}\" )', extensions={}, annotations={})}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, slots=['container__id', 'container__metadata', 'container__data'], slot_usage={}, attributes={'id': SlotDefinition(name='id', id_prefixes=[], definition_uri=None, local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, singular_name=None, domain=None, slot_uri=None, multivalued=None, inherited=None, readonly=None, ifabsent=None, list_elements_unique=None, list_elements_ordered=None, shared=None, key=None, identifier=None, designates_type=None, alias=None, owner=None, domain_of=[], subproperty_of=None, symmetric=None, reflexive=None, locally_reflexive=None, irreflexive=None, asymmetric=None, transitive=None, inverse=None, is_class_field=None, transitive_form_of=None, reflexive_transitive_form_of=None, role=None, is_usage_slot=None, usage_slot_name=None, relational_role=None, slot_group=None, is_grouping_slot=None, path_rule=None, disjoint_with=[], children_are_mutually_disjoint=None, union_of=[], range='uriorcurie', range_expression=None, enum_range=None, required=None, recommended=None, inlined=None, inlined_as_list=None, minimum_value=None, maximum_value=None, pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, value_presence=None, equals_string=None, equals_string_in=[], equals_number=None, equals_expression=None, minimum_cardinality=None, maximum_cardinality=None, has_member=None, all_members=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'metadata': SlotDefinition(name='metadata', id_prefixes=[], definition_uri=None, local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, singular_name=None, domain=None, slot_uri=None, multivalued=None, inherited=None, readonly=None, ifabsent=None, list_elements_unique=None, list_elements_ordered=None, shared=None, key=None, identifier=None, designates_type=None, alias=None, owner=None, domain_of=[], subproperty_of=None, symmetric=None, reflexive=None, locally_reflexive=None, irreflexive=None, asymmetric=None, transitive=None, inverse=None, is_class_field=None, transitive_form_of=None, reflexive_transitive_form_of=None, role=None, is_usage_slot=None, usage_slot_name=None, relational_role=None, slot_group=None, is_grouping_slot=None, path_rule=None, disjoint_with=[], children_are_mutually_disjoint=None, union_of=[], range='RefOrganMetadata', range_expression=None, enum_range=None, required=None, recommended=None, inlined=None, inlined_as_list=None, minimum_value=None, maximum_value=None, pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, value_presence=None, equals_string=None, equals_string_in=[], equals_number=None, equals_expression=None, minimum_cardinality=None, maximum_cardinality=None, has_member=None, all_members=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'data': SlotDefinition(name='data', id_prefixes=[], definition_uri=None, local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, singular_name=None, domain=None, slot_uri=None, multivalued=True, inherited=None, readonly=None, ifabsent=None, list_elements_unique=None, list_elements_ordered=None, shared=None, key=None, identifier=None, designates_type=None, alias=None, owner=None, domain_of=[], subproperty_of=None, symmetric=None, reflexive=None, locally_reflexive=None, irreflexive=None, asymmetric=None, transitive=None, inverse=None, is_class_field=None, transitive_form_of=None, reflexive_transitive_form_of=None, role=None, is_usage_slot=None, usage_slot_name=None, relational_role=None, slot_group=None, is_grouping_slot=None, path_rule=None, disjoint_with=[], children_are_mutually_disjoint=None, union_of=[], range='SpatialEntity', range_expression=None, enum_range=None, required=None, recommended=None, inlined=None, inlined_as_list=True, minimum_value=None, maximum_value=None, pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, value_presence=None, equals_string=None, equals_string_in=[], equals_number=None, equals_expression=None, minimum_cardinality=None, maximum_cardinality=None, has_member=None, all_members=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[])}, class_uri='ccf:Container', subclass_of=None, union_of=[], defining_slots=[], tree_root=True, unique_keys={}, rules=[], classification_rules=[], slot_names_unique=None, represents_relationship=None, disjoint_with=[], children_are_mutually_disjoint=None, any_of=[], exactly_one_of=[], none_of=[], all_of=[], slot_conditions={}), 'Person': ClassDefinition(name='Person', id_prefixes=[], definition_uri='http://purl.org/ccf/Person', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=['foaf:Person'], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, slots=['fullName', 'firstName', 'lastName', 'orcid'], slot_usage={}, attributes={}, class_uri='foaf:Person', subclass_of=None, union_of=[], defining_slots=[], tree_root=None, unique_keys={}, rules=[], classification_rules=[], slot_names_unique=None, represents_relationship=None, disjoint_with=[], children_are_mutually_disjoint=None, any_of=[], exactly_one_of=[], none_of=[], all_of=[], slot_conditions={}), 'Grant': ClassDefinition(name='Grant', id_prefixes=[], definition_uri='http://purl.org/ccf/Grant', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=['schema:Grant'], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, slots=['funder', 'awardNumber'], slot_usage={}, attributes={}, class_uri='schema:Grant', subclass_of=None, union_of=[], defining_slots=[], tree_root=None, unique_keys={}, rules=[], classification_rules=[], slot_names_unique=None, represents_relationship=None, disjoint_with=[], children_are_mutually_disjoint=None, any_of=[], exactly_one_of=[], none_of=[], all_of=[], slot_conditions={})}" ;
-    linkml:enums "{'OrganSideEnum': EnumDefinition(name='OrganSideEnum', id_prefixes=[], definition_uri='http://purl.org/ccf/OrganSideEnum', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, enum_uri=None, code_set=None, code_set_tag=None, code_set_version=None, pv_formula=None, permissible_values={'Left': PermissibleValue(text='Left', description='Being located on the left side of the body.', meaning='obo:HP_0012835', unit=None, is_a=None, mixins=[], extensions={}, annotations={}, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema=None, imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None), 'Right': PermissibleValue(text='Right', description='Being located on the right side of the body.', meaning='obo:HP_0012834', unit=None, is_a=None, mixins=[], extensions={}, annotations={}, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema=None, imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None)}, include=[], minus=[], inherits=[], reachable_from=None, matches=None, concepts=[]), 'DonorSexEnum': EnumDefinition(name='DonorSexEnum', id_prefixes=[], definition_uri='http://purl.org/ccf/DonorSexEnum', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, enum_uri=None, code_set=None, code_set_tag=None, code_set_version=None, pv_formula=None, permissible_values={'Female': PermissibleValue(text='Female', description='A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes.', meaning='obo:PATO_0000384', unit=None, is_a=None, mixins=[], extensions={}, annotations={}, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema=None, imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None), 'Male': PermissibleValue(text='Male', description='A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes.', meaning='obo:PATO_0000384', unit=None, is_a=None, mixins=[], extensions={}, annotations={}, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema=None, imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None)}, include=[], minus=[], inherits=[], reachable_from=None, matches=None, concepts=[]), 'DimensionUnitEnum': EnumDefinition(name='DimensionUnitEnum', id_prefixes=[], definition_uri='http://purl.org/ccf/DimensionUnitEnum', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, enum_uri=None, code_set=None, code_set_tag=None, code_set_version=None, pv_formula=None, permissible_values={'centimeter': PermissibleValue(text='centimeter', description='A length unit which is equal to one hundredth of a meter.', meaning='obo:UO_0000015', unit=None, is_a=None, mixins=[], extensions={}, annotations={}, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema=None, imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None), 'millimeter': PermissibleValue(text='millimeter', description='A length unit which is equal to one thousandth of a meter.', meaning='obo:UO_0000016', unit=None, is_a=None, mixins=[], extensions={}, annotations={}, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema=None, imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None)}, include=[], minus=[], inherits=[], reachable_from=None, matches=None, concepts=[]), 'ScalingUnitEnum': EnumDefinition(name='ScalingUnitEnum', id_prefixes=[], definition_uri='http://purl.org/ccf/ScalingUnitEnum', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, enum_uri=None, code_set=None, code_set_tag=None, code_set_version=None, pv_formula=None, permissible_values={'ratio': PermissibleValue(text='ratio', description='A dimensionless ratio unit which, given a pair of quantities a and b, for which b is a multiple of a, denotes b by giving the multiplier (coefficient) c for a to result in b.', meaning='obo:UO_0010006', unit=None, is_a=None, mixins=[], extensions={}, annotations={}, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema=None, imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None)}, include=[], minus=[], inherits=[], reachable_from=None, matches=None, concepts=[]), 'RotationUnitEnum': EnumDefinition(name='RotationUnitEnum', id_prefixes=[], definition_uri='http://purl.org/ccf/RotationUnitEnum', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, enum_uri=None, code_set=None, code_set_tag=None, code_set_version=None, pv_formula=None, permissible_values={'degree': PermissibleValue(text='degree', description='A plane angle unit which is equal to 1/360 of a full rotation.', meaning='obo:UO_0000185', unit=None, is_a=None, mixins=[], extensions={}, annotations={}, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema=None, imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None)}, include=[], minus=[], inherits=[], reachable_from=None, matches=None, concepts=[]), 'TranslationUnitEnum': EnumDefinition(name='TranslationUnitEnum', id_prefixes=[], definition_uri='http://purl.org/ccf/TranslationUnitEnum', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, enum_uri=None, code_set=None, code_set_tag=None, code_set_version=None, pv_formula=None, permissible_values={'centimeter': PermissibleValue(text='centimeter', description='A length unit which is equal to one hundredth of a meter.', meaning='obo:UO_0000015', unit=None, is_a=None, mixins=[], extensions={}, annotations={}, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema=None, imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None), 'millimeter': PermissibleValue(text='millimeter', description='A length unit which is equal to one thousandth of a meter.', meaning='obo:UO_0000016', unit=None, is_a=None, mixins=[], extensions={}, annotations={}, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema=None, imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None)}, include=[], minus=[], inherits=[], reachable_from=None, matches=None, concepts=[])}" ;
-    linkml:id "https://purl.humanatlas.io/specs/ref-organ" ;
-    linkml:types "{'string': TypeDefinition(name='string', id_prefixes=[], definition_uri='http://purl.org/ccf/String', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description='A character string', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=['schema:Text'], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='str', uri='xsd:string', repr=None, union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'integer': TypeDefinition(name='integer', id_prefixes=[], definition_uri='http://purl.org/ccf/Integer', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description='An integer', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=['schema:Integer'], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='int', uri='xsd:integer', repr=None, union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'boolean': TypeDefinition(name='boolean', id_prefixes=[], definition_uri='http://purl.org/ccf/Boolean', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description='A binary (true or false) value', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=['schema:Boolean'], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='Bool', uri='xsd:boolean', repr='bool', union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'float': TypeDefinition(name='float', id_prefixes=[], definition_uri='http://purl.org/ccf/Float', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description='A real number that conforms to the xsd:float specification', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=['schema:Float'], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='float', uri='xsd:float', repr=None, union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'double': TypeDefinition(name='double', id_prefixes=[], definition_uri='http://purl.org/ccf/Double', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description='A real number that conforms to the xsd:double specification', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=['schema:Float'], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='float', uri='xsd:double', repr=None, union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'decimal': TypeDefinition(name='decimal', id_prefixes=[], definition_uri='http://purl.org/ccf/Decimal', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description='A real number with arbitrary precision that conforms to the xsd:decimal specification', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=['schema:Number'], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='Decimal', uri='xsd:decimal', repr=None, union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'time': TypeDefinition(name='time', id_prefixes=[], definition_uri='http://purl.org/ccf/Time', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description='A time object represents a (local) time of day, independent of any particular day', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=['URI is dateTime because OWL reasoners do not work with straight date or time'], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=['schema:Time'], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='XSDTime', uri='xsd:dateTime', repr='str', union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'date': TypeDefinition(name='date', id_prefixes=[], definition_uri='http://purl.org/ccf/Date', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description='a date (year, month and day) in an idealized calendar', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[\"URI is dateTime because OWL reasoners don't work with straight date or time\"], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=['schema:Date'], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='XSDDate', uri='xsd:date', repr='str', union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'datetime': TypeDefinition(name='datetime', id_prefixes=[], definition_uri='http://purl.org/ccf/Datetime', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description='The combination of a date and time', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=['schema:DateTime'], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='XSDDateTime', uri='xsd:dateTime', repr='str', union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'date_or_datetime': TypeDefinition(name='date_or_datetime', id_prefixes=[], definition_uri='http://purl.org/ccf/DateOrDatetime', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description='Either a date or a datetime', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='str', uri='linkml:DateOrDatetime', repr='str', union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'uriorcurie': TypeDefinition(name='uriorcurie', id_prefixes=[], definition_uri='http://purl.org/ccf/Uriorcurie', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description='a URI or a CURIE', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='URIorCURIE', uri='xsd:anyURI', repr='str', union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'curie': TypeDefinition(name='curie', id_prefixes=[], definition_uri='http://purl.org/ccf/Curie', local_names={}, conforms_to='https://www.w3.org/TR/curie/', implements=[], extensions={}, annotations={}, description='a compact URI', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=['in RDF serializations this MUST be expanded to a URI', 'in non-RDF serializations MAY be serialized as the compact representation'], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='Curie', uri='xsd:string', repr='str', union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'uri': TypeDefinition(name='uri', id_prefixes=[], definition_uri='http://purl.org/ccf/Uri', local_names={}, conforms_to='https://www.ietf.org/rfc/rfc3987.txt', implements=[], extensions={}, annotations={}, description='a complete URI', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=['in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node'], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=['schema:URL'], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='URI', uri='xsd:anyURI', repr='str', union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'ncname': TypeDefinition(name='ncname', id_prefixes=[], definition_uri='http://purl.org/ccf/Ncname', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description='Prefix part of CURIE', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='NCName', uri='xsd:string', repr='str', union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'objectidentifier': TypeDefinition(name='objectidentifier', id_prefixes=[], definition_uri='http://purl.org/ccf/Objectidentifier', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description='A URI or CURIE that represents an object in the model.', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=['Used for inheritence and type checking'], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='ElementIdentifier', uri='shex:iri', repr='str', union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'nodeidentifier': TypeDefinition(name='nodeidentifier', id_prefixes=[], definition_uri='http://purl.org/ccf/Nodeidentifier', local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description='A URI, CURIE or BNODE that represents a node in a model.', alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, typeof=None, base='NodeIdentifier', uri='shex:nonLiteral', repr='str', union_of=[], pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, equals_string=None, equals_string_in=[], equals_number=None, minimum_value=None, maximum_value=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[])}" .
+        ccf:RefOrganMetadata ;
+    linkml:id "https://purl.humanatlas.io/specs/ref-organ" .
 
-linkml:SubsetDefinition a owl:Class ;
-    rdfs:label "subset_definition" ;
-    linkml:attributes "{}" ;
-    linkml:is_a "element" .
+linkml:SubsetDefinition a owl:Class .
 
 ccf:Container a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Container" ;
-    ccf:owl.template """AnnotationAssertion( schema:about {{id}} "{{metadata.type}}" )
-AnnotationAssertion( schema:version {{id}} "{{metadata.version}}" )
-AnnotationAssertion( dct:title {{id}} "{{metadata.title}}" )
-AnnotationAssertion( dct:description {{id}} "{{metadata.description|e}}" )
+    ccf:owl.template """AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
+AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
 {% for c in metadata.creators %}
-AnnotationAssertion( dct:creator {{id}} "{{c.fullName}} ({{c.orcid}})" )
+AnnotationAssertion( dct:creator {{iri}} "{{c.fullName|e}} ({{c.orcid}})" )
 {% endfor %}
-{% for l in metadata.project_leads %}
-AnnotationAssertion( ccf:project_lead {{id}} "{{l.fullName}} ({{l.orcid}})" )
-{% endfor %}
-{% for r in metadata.reviewers %}
-AnnotationAssertion( schema:reviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})" )
-{% endfor %}
-{% for r in metadata.externalReviewers %}
-AnnotationAssertion( ccf:externallyReviewedBy {{id}} "{{r.fullName}} ({{r.orcid}})" )
-{% endfor %}
-AnnotationAssertion( schema:dateCreated {{id}} "{{metadata.creation_date}}" )
-AnnotationAssertion( dct:license {{id}} "{{metadata.license}}" )
-AnnotationAssertion( dct:publisher {{id}} "{{metadata.publisher}}" )
-{% for f in metadata.funders %}
-AnnotationAssertion( schema:funding {{id}} "Award number {{f.awardNumber}} from {{f.funder}}" )
-{% endfor %}
-AnnotationAssertion( ccf:hubmap_id {{id}} "{{metadata.hubmapId}}" )
-AnnotationAssertion( schema:citation {{id}} "{{metadata.citation}}" )
-AnnotationAssertion( ccf:citation_overall {{id}} "{{metadata.citationOverall}}" )""" ;
+AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
+AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
+AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
+AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
+AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )""" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:RefOrganMetadata ;
-            owl:onProperty ccf:metadata ],
-        [ a owl:Restriction ;
             owl:allValuesFrom ccf:SpatialEntity ;
             owl:onProperty ccf:data ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:RefOrganMetadata ;
+            owl:onProperty ccf:metadata ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:Uriorcurie ;
-            owl:onProperty ccf:id ] ;
-    linkml:attributes "{'id': SlotDefinition(name='id', id_prefixes=[], definition_uri=None, local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, singular_name=None, domain=None, slot_uri=None, multivalued=None, inherited=None, readonly=None, ifabsent=None, list_elements_unique=None, list_elements_ordered=None, shared=None, key=None, identifier=None, designates_type=None, alias=None, owner=None, domain_of=[], subproperty_of=None, symmetric=None, reflexive=None, locally_reflexive=None, irreflexive=None, asymmetric=None, transitive=None, inverse=None, is_class_field=None, transitive_form_of=None, reflexive_transitive_form_of=None, role=None, is_usage_slot=None, usage_slot_name=None, relational_role=None, slot_group=None, is_grouping_slot=None, path_rule=None, disjoint_with=[], children_are_mutually_disjoint=None, union_of=[], range='uriorcurie', range_expression=None, enum_range=None, required=None, recommended=None, inlined=None, inlined_as_list=None, minimum_value=None, maximum_value=None, pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, value_presence=None, equals_string=None, equals_string_in=[], equals_number=None, equals_expression=None, minimum_cardinality=None, maximum_cardinality=None, has_member=None, all_members=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'metadata': SlotDefinition(name='metadata', id_prefixes=[], definition_uri=None, local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, singular_name=None, domain=None, slot_uri=None, multivalued=None, inherited=None, readonly=None, ifabsent=None, list_elements_unique=None, list_elements_ordered=None, shared=None, key=None, identifier=None, designates_type=None, alias=None, owner=None, domain_of=[], subproperty_of=None, symmetric=None, reflexive=None, locally_reflexive=None, irreflexive=None, asymmetric=None, transitive=None, inverse=None, is_class_field=None, transitive_form_of=None, reflexive_transitive_form_of=None, role=None, is_usage_slot=None, usage_slot_name=None, relational_role=None, slot_group=None, is_grouping_slot=None, path_rule=None, disjoint_with=[], children_are_mutually_disjoint=None, union_of=[], range='RefOrganMetadata', range_expression=None, enum_range=None, required=None, recommended=None, inlined=None, inlined_as_list=None, minimum_value=None, maximum_value=None, pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, value_presence=None, equals_string=None, equals_string_in=[], equals_number=None, equals_expression=None, minimum_cardinality=None, maximum_cardinality=None, has_member=None, all_members=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[]), 'data': SlotDefinition(name='data', id_prefixes=[], definition_uri=None, local_names={}, conforms_to=None, implements=[], extensions={}, annotations={}, description=None, alt_descriptions={}, title=None, deprecated=None, todos=[], notes=[], comments=[], examples=[], in_subset=[], from_schema='https://purl.humanatlas.io/specs/ref-organ', imported_from=None, source=None, in_language=None, see_also=[], deprecated_element_has_exact_replacement=None, deprecated_element_has_possible_replacement=None, aliases=[], structured_aliases={}, mappings=[], exact_mappings=[], close_mappings=[], related_mappings=[], narrow_mappings=[], broad_mappings=[], created_by=None, created_on=None, last_updated_on=None, modified_by=None, status=None, rank=None, is_a=None, abstract=None, mixin=None, mixins=[], apply_to=[], values_from=[], string_serialization=None, singular_name=None, domain=None, slot_uri=None, multivalued=True, inherited=None, readonly=None, ifabsent=None, list_elements_unique=None, list_elements_ordered=None, shared=None, key=None, identifier=None, designates_type=None, alias=None, owner=None, domain_of=[], subproperty_of=None, symmetric=None, reflexive=None, locally_reflexive=None, irreflexive=None, asymmetric=None, transitive=None, inverse=None, is_class_field=None, transitive_form_of=None, reflexive_transitive_form_of=None, role=None, is_usage_slot=None, usage_slot_name=None, relational_role=None, slot_group=None, is_grouping_slot=None, path_rule=None, disjoint_with=[], children_are_mutually_disjoint=None, union_of=[], range='SpatialEntity', range_expression=None, enum_range=None, required=None, recommended=None, inlined=None, inlined_as_list=True, minimum_value=None, maximum_value=None, pattern=None, structured_pattern=None, unit=None, implicit_prefix=None, value_presence=None, equals_string=None, equals_string_in=[], equals_number=None, equals_expression=None, minimum_cardinality=None, maximum_cardinality=None, has_member=None, all_members=None, none_of=[], exactly_one_of=[], any_of=[], all_of=[])}" .
+            owl:onProperty ccf:iri ] .
+
+ccf:DatasetMetadata a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "DatasetMetadata" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:dateCreated ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:version ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:Uriorcurie ;
+            owl:onProperty rdfs:seeAlso ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:publisher ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:license ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Person ;
+            owl:onProperty dct:creator ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:description ] ;
+    skos:exactMatch dcat:Dataset .
+
+ccf:citation_overall a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "citationOverall" ;
+    rdfs:range ccf:String ;
+    skos:exactMatch ccf:citation_overall .
 
 ccf:data a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "data" ;
     rdfs:range ccf:SpatialEntity .
 
+ccf:data_table a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "datatable" ;
+    rdfs:range ccf:String ;
+    skos:exactMatch ccf:data_table .
+
+ccf:dimension_unit a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "dimension_unit" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:DimensionUnitEnum .
+
+ccf:doi a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "doi" ;
+    rdfs:range ccf:Uriorcurie ;
+    skos:exactMatch ccf:doi .
+
+ccf:external_reviewer a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "externalReviewers" ;
+    rdfs:range ccf:Person ;
+    skos:exactMatch ccf:external_reviewer .
+
+ccf:extraction_set_for a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "extraction_set_for" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:SpatialEntity .
+
+ccf:file_format a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "file_format" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:String .
+
+ccf:file_subpath a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "file_subpath" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:String .
+
+ccf:hubmap_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hubmapId" ;
+    rdfs:range ccf:String ;
+    skos:exactMatch ccf:hubmap_id .
+
+ccf:iri a owl:ObjectProperty,
+        linkml:SlotDefinition .
+
 ccf:metadata a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "metadata" ;
     rdfs:range ccf:RefOrganMetadata .
+
+ccf:organ_donor_sex a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "organ_donor_sex" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:DonorSexEnum .
+
+ccf:organ_side a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "organ_side" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:OrganSideEnum .
+
+ccf:placement a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "placement" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:SpatialPlacement .
+
+ccf:placement_date a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "placement_date" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Date .
+
+ccf:placements a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "placements" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:SpatialPlacement .
+
+ccf:project_lead a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "project_leads" ;
+    rdfs:range ccf:Person ;
+    skos:exactMatch ccf:project_lead .
+
+ccf:representation_of a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "representation_of" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:AnatomicalStructure .
+
+ccf:rotation_order a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "rotation_order" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:String .
+
+ccf:rotation_unit a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "rotation_unit" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:RotationUnitEnum .
+
+ccf:scaling_unit a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "scaling_unit" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:ScalingUnitEnum .
+
+ccf:translation_unit a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "translation_unit" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:TranslationUnitEnum .
+
+ccf:x_dimension a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "x_dimension" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Float .
+
+ccf:x_rotation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "x_rotation" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Float .
+
+ccf:x_scaling a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "x_scaling" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Float .
+
+ccf:x_translation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "x_translation" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Float .
+
+ccf:y_dimension a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "y_dimension" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Float .
+
+ccf:y_rotation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "y_rotation" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Float .
+
+ccf:y_scaling a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "y_scaling" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Float .
+
+ccf:y_translation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "y_translation" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Float .
+
+ccf:z_dimension a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "z_dimension" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Float .
+
+ccf:z_rotation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "z_rotation" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Float .
+
+ccf:z_scaling a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "z_scaling" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Float .
+
+ccf:z_translation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "z_translation" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Float .
+
+owl:versionInfo a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "versionInfo" ;
+    rdfs:range ccf:String ;
+    skos:exactMatch owl:versionInfo .
+
+dcat:distribution a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "distributions" ;
+    rdfs:range ccf:Distribution ;
+    skos:exactMatch dcat:distribution .
+
+schema:about a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "about" ;
+    rdfs:range ccf:String ;
+    skos:exactMatch schema:about .
+
+schema:citation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "citation" ;
+    rdfs:range ccf:String ;
+    skos:exactMatch schema:citation .
+
+schema:funding a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "funders" ;
+    rdfs:range ccf:Grant ;
+    skos:exactMatch schema:funding .
+
+schema:propertyID a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "propertyId" ;
+    rdfs:range ccf:String ;
+    skos:exactMatch schema:propertyID .
+
+schema:reviewedBy a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "reviewers" ;
+    rdfs:range ccf:Person ;
+    skos:exactMatch schema:reviewedBy .
+
+schema:value a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "value" ;
+    rdfs:range ccf:String ;
+    skos:exactMatch schema:value .
 
 obo:HP_0012834 a ccf:OrganSideEnum,
         owl:Class ;
@@ -189,227 +437,304 @@ obo:UO_0010006 a ccf:ScalingUnitEnum,
         owl:Class ;
     rdfs:label "ratio" .
 
-ccf:citation_overall a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "citationOverall" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch ccf:citation_overall .
+ccf:Creator a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Creator" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:givenName ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty rdfs:label ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:class_type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:familyName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Named ;
+            owl:onProperty rdf:type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:identifier ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        ccf:Instance,
+        ccf:Named ;
+    skos:exactMatch schema:Person .
 
-ccf:creator_first_name a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "creator_first_name" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch ccf:creator_first_name .
+ccf:Distribution a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Distribution" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:Uri ;
+            owl:onProperty dcat:downloadURL ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:title ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:Uriorcurie ;
+            owl:onProperty dcat:mediaType ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:Uri ;
+            owl:onProperty dcat:accessURL ] ;
+    skos:exactMatch dcat:Distribution .
 
-ccf:creator_last_name a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "creator_last_name" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch ccf:creator_last_name .
+ccf:Grant a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Grant" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:award ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:funder ] ;
+    skos:exactMatch schema:Grant .
 
-ccf:creator_orcid a owl:ObjectProperty,
+ccf:creation_date a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "creator_orcid" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch ccf:creator_orcid .
-
-ccf:data_table a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "datatable" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch ccf:data_table .
-
-ccf:dimension_unit a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "dimension_unit" ;
-    rdfs:range ccf:DimensionUnitEnum ;
-    skos:exactMatch ccf:dimension_unit .
-
-ccf:doi a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "doi" ;
-    rdfs:range ccf:Uriorcurie ;
-    skos:exactMatch ccf:doi .
-
-ccf:externallyReviewedBy a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "externalReviewers" ;
-    rdfs:range ccf:Person ;
-    skos:exactMatch ccf:externallyReviewedBy .
-
-ccf:extraction_set_for a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "extraction_set_for" ;
-    rdfs:range ccf:SpatialEntity ;
-    skos:exactMatch ccf:extraction_set_for .
-
-ccf:file_format a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "file_format" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch ccf:file_format .
-
-ccf:file_subpath a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "file_subpath" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch ccf:file_subpath .
+    rdfs:label "create_date" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Date ;
+    skos:exactMatch ccf:creation_date .
 
 ccf:file_url a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "file" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
     rdfs:range ccf:String ;
     skos:exactMatch ccf:file_url .
 
 ccf:has_extraction_set a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "extraction_set" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
     rdfs:range ccf:ExtractionSet ;
     skos:exactMatch ccf:has_extraction_set .
 
 ccf:has_object_reference a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "object_reference" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
     rdfs:range ccf:SpatialObjectReference ;
     skos:exactMatch ccf:has_object_reference .
 
 ccf:has_reference_organ a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "reference_organ" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
     rdfs:range ccf:SpatialEntity ;
     skos:exactMatch ccf:has_reference_organ .
 
-ccf:hubmap_id a owl:ObjectProperty,
+ccf:placement_for a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "hubmapId" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch ccf:hubmap_id .
-
-ccf:organ_donor_sex a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "organ_donor_sex" ;
-    rdfs:range ccf:DonorSexEnum ;
-    skos:exactMatch ccf:organ_donor_sex .
-
-ccf:organ_side a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "organ_side" ;
-    rdfs:range ccf:OrganSideEnum ;
-    skos:exactMatch ccf:organ_side .
+    rdfs:label "source" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:SpatialEntity ;
+    skos:exactMatch ccf:placement_for .
 
 ccf:placement_relative_to a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "target" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
     rdfs:range ccf:SpatialEntity ;
     skos:exactMatch ccf:placement_relative_to .
 
-ccf:project_lead a owl:ObjectProperty,
+ccf:rui_rank a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "project_leads" ;
-    rdfs:range ccf:Person ;
-    skos:exactMatch ccf:project_lead .
+    rdfs:label "rui_rank" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Integer .
 
-ccf:representation_of a owl:ObjectProperty,
+skos:prefLabel a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "representation_of" ;
-    rdfs:range ccf:AnatomicalStructure ;
-    skos:exactMatch ccf:representation_of .
-
-ccf:rotation_order a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "rotation_order" ;
+    rdfs:label "pref_label" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
     rdfs:range ccf:String ;
-    skos:exactMatch ccf:rotation_order .
+    skos:exactMatch skos:prefLabel .
 
-ccf:rotation_unit a owl:ObjectProperty,
+dcat:accessURL a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "rotation_unit" ;
-    rdfs:range ccf:RotationUnitEnum ;
-    skos:exactMatch ccf:rotation_unit .
+    rdfs:label "accessUrl" ;
+    rdfs:range ccf:Uri ;
+    skos:exactMatch dcat:accessURL .
 
-ccf:scaling_unit a owl:ObjectProperty,
+dcat:downloadURL a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "scaling_unit" ;
-    rdfs:range ccf:ScalingUnitEnum ;
-    skos:exactMatch ccf:scaling_unit .
+    rdfs:label "downloadUrl" ;
+    rdfs:range ccf:Uri ;
+    skos:exactMatch dcat:downloadURL .
 
-ccf:translation_unit a owl:ObjectProperty,
+dcat:mediaType a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "translation_unit" ;
-    rdfs:range ccf:TranslationUnitEnum ;
-    skos:exactMatch ccf:translation_unit .
+    rdfs:label "mediaType" ;
+    rdfs:range ccf:Uriorcurie ;
+    skos:exactMatch dcat:mediaType .
 
-ccf:x_dimension a owl:ObjectProperty,
+schema:award a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "x_dimension" ;
-    rdfs:range ccf:Decimal ;
-    skos:exactMatch ccf:x_dimension .
+    rdfs:label "awardNumber" ;
+    rdfs:range ccf:String ;
+    skos:exactMatch schema:award .
 
-ccf:x_rotation a owl:ObjectProperty,
+schema:funder a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "x_rotation" ;
-    rdfs:range ccf:Decimal ;
-    skos:exactMatch ccf:x_rotation .
+    rdfs:label "funder" ;
+    rdfs:range ccf:String ;
+    skos:exactMatch schema:funder .
 
-ccf:x_scaling a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "x_scaling" ;
-    rdfs:range ccf:Decimal ;
-    skos:exactMatch ccf:x_scaling .
+obo:PATO_0000384 a ccf:DonorSexEnum,
+        owl:Class ;
+    rdfs:label "Female",
+        "Male" .
 
-ccf:x_translation a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "x_translation" ;
-    rdfs:range ccf:Decimal ;
-    skos:exactMatch ccf:x_translation .
+ccf:DonorSexEnum a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "DonorSexEnum" ;
+    owl:unionOf ( obo:PATO_0000384 obo:PATO_0000384 ) ;
+    linkml:permissible_values obo:PATO_0000384 .
 
-ccf:y_dimension a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "y_dimension" ;
-    rdfs:range ccf:Decimal ;
-    skos:exactMatch ccf:y_dimension .
+ccf:ExtractionSet a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ExtractionSet" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass ccf:SpatialEntity ;
+            owl:onProperty ccf:extraction_set_for ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:Integer ;
+            owl:onProperty ccf:rui_rank ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:class_type ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty rdfs:label ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Named ;
+            owl:onProperty rdf:type ],
+        ccf:Instance,
+        ccf:Named ;
+    skos:exactMatch ccf:ExtractionSet .
 
-ccf:y_rotation a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "y_rotation" ;
-    rdfs:range ccf:Decimal ;
-    skos:exactMatch ccf:y_rotation .
+ccf:Integer a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "integer" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:integer ;
+            owl:onProperty linkml:topValue ;
+            owl:qualifiedCardinality 1 ] .
 
-ccf:y_scaling a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "y_scaling" ;
-    rdfs:range ccf:Decimal ;
-    skos:exactMatch ccf:y_scaling .
+ccf:RefOrganMetadata a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "RefOrganMetadata" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:publisher ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:license ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:dateCreated ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Person ;
+            owl:onProperty dct:creator ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:version ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:title ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:Uriorcurie ;
+            owl:onProperty rdfs:seeAlso ] ;
+    skos:exactMatch dcat:Dataset .
 
-ccf:y_translation a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "y_translation" ;
-    rdfs:range ccf:Decimal ;
-    skos:exactMatch ccf:y_translation .
+ccf:RotationUnitEnum a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "RotationUnitEnum" ;
+    owl:unionOf ( obo:UO_0000185 ) ;
+    linkml:permissible_values obo:UO_0000185 .
 
-ccf:z_dimension a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "z_dimension" ;
-    rdfs:range ccf:Decimal ;
-    skos:exactMatch ccf:z_dimension .
+ccf:ScalingUnitEnum a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "ScalingUnitEnum" ;
+    owl:unionOf ( obo:UO_0010006 ) ;
+    linkml:permissible_values obo:UO_0010006 .
 
-ccf:z_rotation a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "z_rotation" ;
-    rdfs:range ccf:Decimal ;
-    skos:exactMatch ccf:z_rotation .
-
-ccf:z_scaling a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "z_scaling" ;
-    rdfs:range ccf:Decimal ;
-    skos:exactMatch ccf:z_scaling .
-
-ccf:z_translation a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "z_translation" ;
-    rdfs:range ccf:Decimal ;
-    skos:exactMatch ccf:z_translation .
+ccf:SpatialObjectReference a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SpatialObjectReference" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:file_subpath ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:file_format ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Named ;
+            owl:onProperty rdf:type ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:SpatialPlacement ;
+            owl:onProperty ccf:placement ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:file_url ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty rdfs:label ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:class_type ],
+        ccf:Instance,
+        ccf:Named ;
+    skos:exactMatch ccf:SpatialObjectReference .
 
 dct:description a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -429,240 +754,47 @@ dct:publisher a owl:ObjectProperty,
     rdfs:range ccf:String ;
     skos:exactMatch dct:publisher .
 
-dct:title a owl:ObjectProperty,
+rdfs:seeAlso a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "title" ;
+    rdfs:label "see_also" ;
+    rdfs:range ccf:Uriorcurie ;
+    skos:exactMatch rdfs:seeAlso .
+
+schema:dateCreated a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "creation_date" ;
     rdfs:range ccf:String ;
-    skos:exactMatch dct:title .
+    skos:exactMatch schema:dateCreated .
 
-schema1:about a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "type" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch schema1:about .
-
-schema1:award a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "awardNumber" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch schema1:award .
-
-schema1:citation a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "citation" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch schema1:citation .
-
-schema1:funder a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "funder" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch schema1:funder .
-
-schema1:funding a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "funders" ;
-    rdfs:range ccf:Grant ;
-    skos:exactMatch schema1:funding .
-
-schema1:identifier a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "orcid" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch schema1:identifier .
-
-schema1:name a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "name" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch schema1:name .
-
-schema1:reviewedBy a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "reviewers" ;
-    rdfs:range ccf:Person ;
-    skos:exactMatch schema1:reviewedBy .
-
-schema1:version a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "version" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch schema1:version .
-
-foaf:firstName a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "firstName" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch foaf:firstName .
-
-foaf:name a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "fullName" ;
-    rdfs:range ccf:String ;
-    skos:exactMatch foaf:name .
-
-foaf:surname a owl:ObjectProperty,
+schema:familyName a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "lastName" ;
     rdfs:range ccf:String ;
-    skos:exactMatch foaf:surname .
+    skos:exactMatch schema:familyName .
 
-obo:PATO_0000384 a ccf:DonorSexEnum,
-        owl:Class ;
-    rdfs:label "Female",
-        "Male" .
-
-ccf:Date a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "date" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:date ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
-
-ccf:DonorSexEnum a owl:Class,
-        linkml:EnumDefinition ;
-    rdfs:label "DonorSexEnum" ;
-    owl:unionOf ( obo:PATO_0000384 obo:PATO_0000384 ) ;
-    linkml:permissible_values obo:PATO_0000384 .
-
-ccf:Grant a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "Grant" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema1:funder ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema1:award ] ;
-    skos:exactMatch schema1:Grant ;
-    linkml:attributes "{}" .
-
-ccf:Integer a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "integer" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:integer ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
-
-ccf:RefOrganMetadata a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "RefOrganMetadata" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty dct:publisher ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Date ;
-            owl:onProperty dct:created ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:String ;
-            owl:onProperty ccf:data_table ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Person ;
-            owl:onProperty ccf:project_lead ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:citation_overall ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema1:about ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:hubmap_id ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema1:citation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Person ;
-            owl:onProperty ccf:externallyReviewedBy ],
-        [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:allValuesFrom ccf:Person ;
-                        owl:onProperty dct:creator ] [ a owl:Restriction ;
-                        owl:onProperty dct:creator ;
-                        owl:someValuesFrom ccf:Person ] ) ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty dct:title ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty dct:license ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema1:version ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Person ;
-            owl:onProperty schema1:reviewedBy ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema1:name ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty dct:description ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Grant ;
-            owl:onProperty schema1:funding ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:Uriorcurie ;
-            owl:onProperty ccf:doi ] ;
-    skos:exactMatch dcat:Dataset ;
-    linkml:attributes "{}" .
-
-ccf:RotationUnitEnum a owl:Class,
-        linkml:EnumDefinition ;
-    rdfs:label "RotationUnitEnum" ;
-    owl:unionOf ( obo:UO_0000185 ) ;
-    linkml:permissible_values obo:UO_0000185 .
-
-ccf:ScalingUnitEnum a owl:Class,
-        linkml:EnumDefinition ;
-    rdfs:label "ScalingUnitEnum" ;
-    owl:unionOf ( obo:UO_0010006 ) ;
-    linkml:permissible_values obo:UO_0010006 .
-
-ccf:Uriorcurie a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "uriorcurie" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:anyURI ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
-
-ccf:placement_for a owl:ObjectProperty,
-        linkml:SlotDefinition .
-
-ccf:rui_rank a owl:ObjectProperty,
+schema:givenName a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "rui_rank" ;
-    rdfs:range ccf:Integer ;
-    skos:exactMatch ccf:rui_rank .
-
-dct:created a owl:ObjectProperty,
-        linkml:SlotDefinition .
-
-dct:creator a owl:ObjectProperty,
-        linkml:SlotDefinition .
-
-rdfs:label a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "label" ;
+    rdfs:label "firstName" ;
     rdfs:range ccf:String ;
-    skos:exactMatch rdfs:label .
+    skos:exactMatch schema:givenName .
+
+schema:identifier a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "orcid" ;
+    rdfs:range ccf:String ;
+    skos:exactMatch schema:identifier .
+
+schema:name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "fullName" ;
+    rdfs:range ccf:String ;
+    skos:exactMatch schema:name .
+
+schema:version a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "version" ;
+    rdfs:range ccf:String ;
+    skos:exactMatch schema:version .
 
 obo:UO_0000015 a ccf:DimensionUnitEnum,
         ccf:TranslationUnitEnum,
@@ -681,8 +813,15 @@ ccf:AnatomicalStructure a owl:Class,
             owl:onClass ccf:String ;
             owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ] ;
-    skos:exactMatch ccf:AnatomicalStructure ;
-    linkml:attributes "{}" .
+    skos:exactMatch ccf:AnatomicalStructure .
+
+ccf:Date a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "date" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:date ;
+            owl:onProperty linkml:topValue ;
+            owl:qualifiedCardinality 1 ] .
 
 ccf:DimensionUnitEnum a owl:Class,
         linkml:EnumDefinition ;
@@ -691,134 +830,12 @@ ccf:DimensionUnitEnum a owl:Class,
     linkml:permissible_values obo:UO_0000015,
         obo:UO_0000016 .
 
-ccf:ExtractionSet a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "ExtractionSet" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass ccf:SpatialEntity ;
-            owl:onProperty ccf:extraction_set_for ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty rdfs:label ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:Integer ;
-            owl:onProperty ccf:rui_rank ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
-            owl:qualifiedCardinality 1 ] ;
-    skos:exactMatch ccf:ExtractionSet ;
-    linkml:attributes "{}" .
-
 ccf:OrganSideEnum a owl:Class,
         linkml:EnumDefinition ;
     rdfs:label "OrganSideEnum" ;
     owl:unionOf ( obo:HP_0012835 obo:HP_0012834 ) ;
     linkml:permissible_values obo:HP_0012834,
         obo:HP_0012835 .
-
-ccf:SpatialObjectReference a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "SpatialObjectReference" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:file_format ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:SpatialPlacement ;
-            owl:onProperty ccf:placement_for ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:file_subpath ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:file_url ;
-            owl:qualifiedCardinality 1 ] ;
-    skos:exactMatch ccf:SpatialObjectReference ;
-    linkml:attributes "{}" .
-
-ccf:SpatialPlacement a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "SpatialPlacement" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass ccf:ScalingUnitEnum ;
-            owl:onProperty ccf:scaling_unit ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:SpatialEntity ;
-            owl:onProperty ccf:placement_relative_to ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:y_rotation ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:z_rotation ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:z_translation ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:SpatialEntity ;
-            owl:onProperty ccf:placement_for ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Date ;
-            owl:onProperty dct:created ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:z_scaling ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:TranslationUnitEnum ;
-            owl:onProperty ccf:translation_unit ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:RotationUnitEnum ;
-            owl:onProperty ccf:rotation_unit ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:rotation_order ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:y_scaling ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:x_translation ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:y_translation ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:x_rotation ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:x_scaling ;
-            owl:qualifiedCardinality 1 ] ;
-    skos:exactMatch ccf:SpatialPlacement ;
-    linkml:attributes "{}" .
 
 ccf:TranslationUnitEnum a owl:Class,
         linkml:EnumDefinition ;
@@ -827,85 +844,176 @@ ccf:TranslationUnitEnum a owl:Class,
     linkml:permissible_values obo:UO_0000015,
         obo:UO_0000016 .
 
-ccf:id a owl:ObjectProperty,
+ccf:Uri a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "uri" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:anyURI ;
+            owl:onProperty linkml:topValue ;
+            owl:qualifiedCardinality 1 ] .
+
+dct:creator a owl:ObjectProperty,
         linkml:SlotDefinition .
 
-ccf:Person a owl:Class,
+dct:title a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "title" ;
+    rdfs:range ccf:String ;
+    skos:exactMatch dct:title .
+
+ccf:SpatialPlacement a owl:Class,
         linkml:ClassDefinition ;
-    rdfs:label "Person" ;
+    rdfs:label "SpatialPlacement" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass ccf:String ;
-            owl:onProperty foaf:name ;
+            owl:onProperty rdfs:label ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty foaf:firstName ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:z_rotation ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema1:identifier ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty foaf:surname ;
-            owl:qualifiedCardinality 1 ] ;
-    skos:exactMatch foaf:Person ;
-    linkml:attributes "{}" .
-
-linkml:ClassDefinition a owl:Class ;
-    rdfs:label "class_definition" ;
-    linkml:attributes "{}" ;
-    linkml:is_a "definition" ;
-    linkml:mixins "class_expression" .
-
-ccf:SpatialEntity a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "SpatialEntity" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:x_dimension ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:AnatomicalStructure ;
-            owl:onProperty ccf:representation_of ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:SpatialObjectReference ;
-            owl:onProperty ccf:has_object_reference ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ccf:SpatialPlacement ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:SpatialEntity ;
             owl:onProperty ccf:placement_for ],
         [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:creator_last_name ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:x_scaling ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
-            owl:onProperty ccf:y_dimension ;
+            owl:allValuesFrom ccf:Named ;
+            owl:onProperty rdf:type ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:y_scaling ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:x_translation ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:TranslationUnitEnum ;
+            owl:onProperty ccf:translation_unit ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:SpatialEntity ;
+            owl:onProperty ccf:placement_relative_to ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:creator_orcid ],
+            owl:onProperty ccf:rotation_order ],
         [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty dct:creator ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:z_translation ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:OrganSideEnum ;
-            owl:onProperty ccf:organ_side ],
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:class_type ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:ScalingUnitEnum ;
+            owl:onProperty ccf:scaling_unit ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:y_translation ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:z_scaling ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:RotationUnitEnum ;
+            owl:onProperty ccf:rotation_unit ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:Date ;
-            owl:onProperty dct:created ;
+            owl:onProperty ccf:placement_date ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass ccf:Decimal ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:x_rotation ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:y_rotation ;
+            owl:qualifiedCardinality 1 ],
+        ccf:Instance,
+        ccf:Named ;
+    skos:exactMatch ccf:SpatialPlacement .
+
+ccf:Instance a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Instance" ;
+    ccf:owl "Individual" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Named ;
+            owl:onProperty rdf:type ],
+        linkml:mixin .
+
+ccf:Person a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Person" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:identifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:givenName ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:familyName ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:name ] ;
+    skos:exactMatch schema:Person .
+
+ccf:class_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "class_type" ;
+    rdfs:range ccf:String .
+
+ccf:Uriorcurie a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "uriorcurie" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:anyURI ;
+            owl:onProperty linkml:topValue ;
+            owl:qualifiedCardinality 1 ] .
+
+ccf:id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "id" ;
+    rdfs:range ccf:String .
+
+rdf:type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "typeOf" ;
+    ccf:owl "ClassAssertion" ;
+    rdfs:range ccf:Named ;
+    skos:exactMatch rdf:type .
+
+rdfs:label a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "label" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:String ;
+    skos:exactMatch rdfs:label .
+
+ccf:SpatialEntity a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SpatialEntity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass ccf:Float ;
             owl:onProperty ccf:z_dimension ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
@@ -914,47 +1022,109 @@ ccf:SpatialEntity a owl:Class,
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:ExtractionSet ;
-            owl:onProperty ccf:has_extraction_set ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:DonorSexEnum ;
             owl:onProperty ccf:organ_donor_sex ],
         [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:y_dimension ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:Integer ;
-            owl:onProperty ccf:rui_rank ],
+            owl:onClass ccf:AnatomicalStructure ;
+            owl:onProperty ccf:representation_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:SpatialPlacement ;
+            owl:onProperty ccf:placements ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:creator_first_name ;
+            owl:onProperty skos:prefLabel ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:OrganSideEnum ;
+            owl:onProperty ccf:organ_side ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:class_type ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty rdfs:label ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:ExtractionSet ;
+            owl:onProperty ccf:has_extraction_set ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:x_dimension ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Named ;
+            owl:onProperty rdf:type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:SpatialObjectReference ;
+            owl:onProperty ccf:has_object_reference ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:SpatialEntity ;
-            owl:onProperty ccf:has_reference_organ ] ;
-    skos:exactMatch ccf:SpatialEntity ;
-    linkml:attributes "{}" .
+            owl:onProperty ccf:has_reference_organ ],
+        [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:allValuesFrom ccf:Creator ;
+                        owl:onProperty dct:creator ] [ a owl:Restriction ;
+                        owl:onProperty dct:creator ;
+                        owl:someValuesFrom ccf:Creator ] ) ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:Integer ;
+            owl:onProperty ccf:rui_rank ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Date ;
+            owl:onProperty ccf:creation_date ;
+            owl:qualifiedCardinality 1 ],
+        ccf:Instance,
+        ccf:Named ;
+    skos:exactMatch ccf:SpatialEntity .
 
-linkml:TypeDefinition a owl:Class ;
-    rdfs:label "type_definition" ;
-    linkml:attributes "{}" ;
-    linkml:is_a "element" ;
-    linkml:mixins "type_expression" .
+ccf:Named a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Named" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty rdfs:label ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:class_type ],
+        linkml:mixin .
+
+linkml:ClassDefinition a owl:Class .
+
+linkml:TypeDefinition a owl:Class .
 
 linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "value" .
 
-ccf:Decimal a owl:Class,
+ccf:Float a owl:Class,
         linkml:TypeDefinition ;
-    rdfs:label "decimal" ;
+    rdfs:label "float" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:decimal ;
+            owl:onDataRange xsd:float ;
             owl:onProperty linkml:topValue ;
             owl:qualifiedCardinality 1 ] .
+
+linkml:SlotDefinition a owl:Class .
 
 ccf:String a owl:Class,
         linkml:TypeDefinition ;
@@ -963,12 +1133,6 @@ ccf:String a owl:Class,
             owl:onDataRange xsd:string ;
             owl:onProperty linkml:topValue ;
             owl:qualifiedCardinality 1 ] .
-
-linkml:SlotDefinition a owl:Class ;
-    rdfs:label "slot_definition" ;
-    linkml:attributes "{}" ;
-    linkml:is_a "definition" ;
-    linkml:mixins "slot_expression" .
 
 
 

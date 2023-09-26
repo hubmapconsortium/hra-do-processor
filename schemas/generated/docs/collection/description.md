@@ -9,7 +9,7 @@ URI: [ccf:description](http://purl.org/ccf/description)
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [String](types/String.md)
+None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Parents
 
@@ -20,6 +20,7 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 ## Used by
 
  * [CollectionMetadata](CollectionMetadata.md)
+ * [DatasetMetadata](DatasetMetadata.md)
 
 ## Other properties
 

@@ -20,10 +20,3 @@ None &#8594;  <sub>1..1</sub> [DimensionUnitEnum](DimensionUnitEnum.md)
 ## Used by
 
  * [SpatialEntity](SpatialEntity.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | ccf:dimension_unit |
-

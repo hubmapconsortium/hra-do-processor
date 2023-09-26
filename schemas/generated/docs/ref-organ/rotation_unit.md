@@ -20,10 +20,3 @@ None &#8594;  <sub>1..1</sub> [RotationUnitEnum](RotationUnitEnum.md)
 ## Used by
 
  * [SpatialPlacement](SpatialPlacement.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | ccf:rotation_unit |
-

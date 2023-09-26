@@ -5,6 +5,7 @@
             "description": "",
             "properties": {
                 "id": {
+                    "pattern": "(UBERON|FMA):\\d+",
                     "type": "string"
                 }
             },
@@ -24,7 +25,7 @@
                     },
                     "type": "array"
                 },
-                "id": {
+                "iri": {
                     "type": "string"
                 },
                 "metadata": {
@@ -32,6 +33,81 @@
                 }
             },
             "title": "Container",
+            "type": "object"
+        },
+        "Creator": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "class_type": {
+                    "type": "string"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "fullName": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "orcid": {
+                    "pattern": "^(\\d{4}-){3}\\d{3}(\\d|X)$",
+                    "type": "string"
+                },
+                "typeOf": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "label"
+            ],
+            "title": "Creator",
+            "type": "object"
+        },
+        "DatasetMetadata": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "creation_date": {
+                    "type": "string"
+                },
+                "creators": {
+                    "items": {
+                        "$ref": "#/$defs/Person"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "license": {
+                    "type": "string"
+                },
+                "publisher": {
+                    "type": "string"
+                },
+                "see_also": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "title": "DatasetMetadata",
             "type": "object"
         },
         "DimensionUnitEnum": {
@@ -42,6 +118,26 @@
             ],
             "title": "DimensionUnitEnum",
             "type": "string"
+        },
+        "Distribution": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "accessUrl": {
+                    "type": "string"
+                },
+                "downloadUrl": {
+                    "type": "string"
+                },
+                "mediaType": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "title": "Distribution",
+            "type": "object"
         },
         "DonorSexEnum": {
             "description": "",
@@ -56,6 +152,9 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "class_type": {
+                    "type": "string"
+                },
                 "extraction_set_for": {
                     "type": "string"
                 },
@@ -67,6 +166,12 @@
                 },
                 "rui_rank": {
                     "type": "integer"
+                },
+                "typeOf": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 }
             },
             "required": [
@@ -88,9 +193,6 @@
                     "type": "string"
                 }
             },
-            "required": [
-                "funder"
-            ],
             "title": "Grant",
             "type": "object"
         },
@@ -117,15 +219,10 @@
                     "type": "string"
                 },
                 "orcid": {
+                    "pattern": "^(\\d{4}-){3}\\d{3}(\\d|X)$",
                     "type": "string"
                 }
             },
-            "required": [
-                "fullName",
-                "firstName",
-                "lastName",
-                "orcid"
-            ],
             "title": "Person",
             "type": "object"
         },
@@ -133,14 +230,7 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "citation": {
-                    "type": "string"
-                },
-                "citationOverall": {
-                    "type": "string"
-                },
                 "creation_date": {
-                    "format": "date",
                     "type": "string"
                 },
                 "creators": {
@@ -149,72 +239,25 @@
                     },
                     "type": "array"
                 },
-                "datatable": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
                 "description": {
-                    "type": "string"
-                },
-                "doi": {
-                    "type": "string"
-                },
-                "externalReviewers": {
-                    "items": {
-                        "$ref": "#/$defs/Person"
-                    },
-                    "type": "array"
-                },
-                "funders": {
-                    "items": {
-                        "$ref": "#/$defs/Grant"
-                    },
-                    "type": "array"
-                },
-                "hubmapId": {
                     "type": "string"
                 },
                 "license": {
                     "type": "string"
                 },
-                "name": {
-                    "type": "string"
-                },
-                "project_leads": {
-                    "items": {
-                        "$ref": "#/$defs/Person"
-                    },
-                    "type": "array"
-                },
                 "publisher": {
                     "type": "string"
                 },
-                "reviewers": {
-                    "items": {
-                        "$ref": "#/$defs/Person"
-                    },
-                    "type": "array"
-                },
-                "title": {
+                "see_also": {
                     "type": "string"
                 },
-                "type": {
+                "title": {
                     "type": "string"
                 },
                 "version": {
                     "type": "string"
                 }
             },
-            "required": [
-                "version",
-                "title",
-                "description",
-                "creators",
-                "creation_date",
-                "license"
-            ],
             "title": "RefOrganMetadata",
             "type": "object"
         },
@@ -238,21 +281,18 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "creation_date": {
+                "class_type": {
+                    "type": "string"
+                },
+                "create_date": {
                     "format": "date",
                     "type": "string"
                 },
                 "creator": {
-                    "type": "string"
-                },
-                "creator_first_name": {
-                    "type": "string"
-                },
-                "creator_last_name": {
-                    "type": "string"
-                },
-                "creator_orcid": {
-                    "type": "string"
+                    "items": {
+                        "$ref": "#/$defs/Creator"
+                    },
+                    "type": "array"
                 },
                 "dimension_unit": {
                     "$ref": "#/$defs/DimensionUnitEnum"
@@ -281,6 +321,9 @@
                     },
                     "type": "array"
                 },
+                "pref_label": {
+                    "type": "string"
+                },
                 "reference_organ": {
                     "type": "string"
                 },
@@ -289,6 +332,12 @@
                 },
                 "rui_rank": {
                     "type": "integer"
+                },
+                "typeOf": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "x_dimension": {
                     "minimum": 0,
@@ -306,10 +355,9 @@
             "required": [
                 "id",
                 "label",
+                "pref_label",
                 "creator",
-                "creator_first_name",
-                "creator_last_name",
-                "creation_date",
+                "create_date",
                 "x_dimension",
                 "y_dimension",
                 "z_dimension",
@@ -322,6 +370,9 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "class_type": {
+                    "type": "string"
+                },
                 "file": {
                     "type": "string"
                 },
@@ -334,15 +385,25 @@
                 "id": {
                     "type": "string"
                 },
+                "label": {
+                    "type": "string"
+                },
                 "placement": {
                     "$ref": "#/$defs/SpatialPlacement"
+                },
+                "typeOf": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 }
             },
             "required": [
                 "id",
                 "file",
                 "file_format",
-                "placement"
+                "placement",
+                "label"
             ],
             "title": "SpatialObjectReference",
             "type": "object"
@@ -351,7 +412,13 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "class_type": {
+                    "type": "string"
+                },
                 "id": {
+                    "type": "string"
+                },
+                "label": {
                     "type": "string"
                 },
                 "placement_date": {
@@ -375,6 +442,12 @@
                 },
                 "translation_unit": {
                     "$ref": "#/$defs/TranslationUnitEnum"
+                },
+                "typeOf": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "x_rotation": {
                     "type": "number"
@@ -422,7 +495,8 @@
                 "x_translation",
                 "y_translation",
                 "z_translation",
-                "translation_unit"
+                "translation_unit",
+                "label"
             ],
             "title": "SpatialPlacement",
             "type": "object"
@@ -449,7 +523,7 @@
             },
             "type": "array"
         },
-        "id": {
+        "iri": {
             "type": "string"
         },
         "metadata": {

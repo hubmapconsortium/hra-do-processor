@@ -7,7 +7,12 @@
 URI: [ccf:SpatialPlacement](http://purl.org/ccf/SpatialPlacement)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialEntity]<source%200..1-%20[SpatialPlacement&#124;id:string;placement_date:date;x_scaling:decimal;y_scaling:decimal;z_scaling:decimal;scaling_unit:ScalingUnitEnum;x_rotation:decimal;y_rotation:decimal;z_rotation:decimal;rotation_unit:RotationUnitEnum;rotation_order:string%20%3F;x_translation:decimal;y_translation:decimal;z_translation:decimal;translation_unit:TranslationUnitEnum],[SpatialEntity]<target%201..1-%20[SpatialPlacement],[SpatialObjectReference]++-%20placement%201..1>[SpatialPlacement],[SpatialEntity]++-%20placements%200..*>[SpatialPlacement],[SpatialObjectReference],[SpatialEntity])](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialEntity]<source%200..1-%20[SpatialPlacement&#124;id:string;placement_date:date;x_scaling:decimal;y_scaling:decimal;z_scaling:decimal;scaling_unit:ScalingUnitEnum;x_rotation:decimal;y_rotation:decimal;z_rotation:decimal;rotation_unit:RotationUnitEnum;rotation_order:string%20%3F;x_translation:decimal;y_translation:decimal;z_translation:decimal;translation_unit:TranslationUnitEnum],[SpatialEntity]<target%201..1-%20[SpatialPlacement],[SpatialObjectReference]++-%20placement%201..1>[SpatialPlacement],[SpatialEntity]++-%20placements%200..*>[SpatialPlacement],[SpatialObjectReference],[SpatialEntity])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialEntity]<source%200..1-%20[SpatialPlacement&#124;id:string;placement_date:date;x_scaling:float;y_scaling:float;z_scaling:float;scaling_unit:ScalingUnitEnum;x_rotation:float;y_rotation:float;z_rotation:float;rotation_unit:RotationUnitEnum;rotation_order:string%20%3F;x_translation:float;y_translation:float;z_translation:float;translation_unit:TranslationUnitEnum;label:string;class_type:string%20%3F],[SpatialEntity]<target%201..1-%20[SpatialPlacement],[SpatialObjectReference]++-%20placement%201..1>[SpatialPlacement],[SpatialEntity]++-%20placements%200..*>[SpatialPlacement],[SpatialPlacement]uses%20-.->[Named],[SpatialPlacement]uses%20-.->[Instance],[SpatialObjectReference],[SpatialEntity],[Named],[Instance])](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialEntity]<source%200..1-%20[SpatialPlacement&#124;id:string;placement_date:date;x_scaling:float;y_scaling:float;z_scaling:float;scaling_unit:ScalingUnitEnum;x_rotation:float;y_rotation:float;z_rotation:float;rotation_unit:RotationUnitEnum;rotation_order:string%20%3F;x_translation:float;y_translation:float;z_translation:float;translation_unit:TranslationUnitEnum;label:string;class_type:string%20%3F],[SpatialEntity]<target%201..1-%20[SpatialPlacement],[SpatialObjectReference]++-%20placement%201..1>[SpatialPlacement],[SpatialEntity]++-%20placements%200..*>[SpatialPlacement],[SpatialPlacement]uses%20-.->[Named],[SpatialPlacement]uses%20-.->[Instance],[SpatialObjectReference],[SpatialEntity],[Named],[Instance])
+
+## Uses Mixin
+
+ *  mixin: [Named](Named.md)
+ *  mixin: [Instance](Instance.md)
 
 ## Referenced by Class
 
@@ -28,31 +33,46 @@ URI: [ccf:SpatialPlacement](http://purl.org/ccf/SpatialPlacement)
  * [placement_date](placement_date.md)  <sub>1..1</sub>
      * Range: [Date](types/Date.md)
  * [x_scaling](x_scaling.md)  <sub>1..1</sub>
-     * Range: [Decimal](types/Decimal.md)
+     * Range: [Float](types/Float.md)
  * [y_scaling](y_scaling.md)  <sub>1..1</sub>
-     * Range: [Decimal](types/Decimal.md)
+     * Range: [Float](types/Float.md)
  * [z_scaling](z_scaling.md)  <sub>1..1</sub>
-     * Range: [Decimal](types/Decimal.md)
+     * Range: [Float](types/Float.md)
  * [scaling_unit](scaling_unit.md)  <sub>1..1</sub>
      * Range: [ScalingUnitEnum](ScalingUnitEnum.md)
  * [x_rotation](x_rotation.md)  <sub>1..1</sub>
-     * Range: [Decimal](types/Decimal.md)
+     * Range: [Float](types/Float.md)
  * [y_rotation](y_rotation.md)  <sub>1..1</sub>
-     * Range: [Decimal](types/Decimal.md)
+     * Range: [Float](types/Float.md)
  * [z_rotation](z_rotation.md)  <sub>1..1</sub>
-     * Range: [Decimal](types/Decimal.md)
+     * Range: [Float](types/Float.md)
  * [rotation_unit](rotation_unit.md)  <sub>1..1</sub>
      * Range: [RotationUnitEnum](RotationUnitEnum.md)
  * [rotation_order](rotation_order.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [x_translation](x_translation.md)  <sub>1..1</sub>
-     * Range: [Decimal](types/Decimal.md)
+     * Range: [Float](types/Float.md)
  * [y_translation](y_translation.md)  <sub>1..1</sub>
-     * Range: [Decimal](types/Decimal.md)
+     * Range: [Float](types/Float.md)
  * [z_translation](z_translation.md)  <sub>1..1</sub>
-     * Range: [Decimal](types/Decimal.md)
+     * Range: [Float](types/Float.md)
  * [translation_unit](translation_unit.md)  <sub>1..1</sub>
      * Range: [TranslationUnitEnum](TranslationUnitEnum.md)
+
+### Mixed in from Named:
+
+ * [label](label.md)  <sub>1..1</sub>
+     * Range: [String](types/String.md)
+
+### Mixed in from Named:
+
+ * [class_type](class_type.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+
+### Mixed in from Instance:
+
+ * [typeOf](typeOf.md)  <sub>0..\*</sub>
+     * Range: [Named](Named.md)
 
 ## Other properties
 

@@ -7,7 +7,12 @@
 URI: [ccf:SpatialEntity](http://purl.org/ccf/SpatialEntity)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialPlacement],[SpatialObjectReference],[ExtractionSet]<extraction_set%200..1-%20[SpatialEntity&#124;id:string;label:string;creator:string;creator_first_name:string;creator_last_name:string;creator_orcid:string%20%3F;creation_date:date;x_dimension:decimal;y_dimension:decimal;z_dimension:decimal;dimension_unit:DimensionUnitEnum;organ_donor_sex:DonorSexEnum%20%3F;organ_side:OrganSideEnum%20%3F;rui_rank:integer%20%3F],[SpatialEntity]<reference_organ%200..1-%20[SpatialEntity],[SpatialPlacement]<placements%200..*-++[SpatialEntity],[SpatialObjectReference]<object_reference%200..1-++[SpatialEntity],[AnatomicalStructure]<representation_of%200..1-%20[SpatialEntity],[Container]++-%20data%200..*>[SpatialEntity],[ExtractionSet]-%20extraction_set_for%201..1>[SpatialEntity],[SpatialPlacement]-%20source%200..1>[SpatialEntity],[SpatialPlacement]-%20target%201..1>[SpatialEntity],[ExtractionSet],[Container],[AnatomicalStructure])](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialPlacement],[SpatialObjectReference],[ExtractionSet]<extraction_set%200..1-%20[SpatialEntity&#124;id:string;label:string;creator:string;creator_first_name:string;creator_last_name:string;creator_orcid:string%20%3F;creation_date:date;x_dimension:decimal;y_dimension:decimal;z_dimension:decimal;dimension_unit:DimensionUnitEnum;organ_donor_sex:DonorSexEnum%20%3F;organ_side:OrganSideEnum%20%3F;rui_rank:integer%20%3F],[SpatialEntity]<reference_organ%200..1-%20[SpatialEntity],[SpatialPlacement]<placements%200..*-++[SpatialEntity],[SpatialObjectReference]<object_reference%200..1-++[SpatialEntity],[AnatomicalStructure]<representation_of%200..1-%20[SpatialEntity],[Container]++-%20data%200..*>[SpatialEntity],[ExtractionSet]-%20extraction_set_for%201..1>[SpatialEntity],[SpatialPlacement]-%20source%200..1>[SpatialEntity],[SpatialPlacement]-%20target%201..1>[SpatialEntity],[ExtractionSet],[Container],[AnatomicalStructure])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialPlacement],[SpatialObjectReference],[ExtractionSet]<extraction_set%200..1-%20[SpatialEntity&#124;id:string;label:string;pref_label:string;create_date:date;x_dimension:float;y_dimension:float;z_dimension:float;dimension_unit:DimensionUnitEnum;organ_donor_sex:DonorSexEnum%20%3F;organ_side:OrganSideEnum%20%3F;rui_rank:integer%20%3F;class_type:string%20%3F],[SpatialEntity]<reference_organ%200..1-%20[SpatialEntity],[SpatialPlacement]<placements%200..*-++[SpatialEntity],[SpatialObjectReference]<object_reference%200..1-++[SpatialEntity],[AnatomicalStructure]<representation_of%200..1-%20[SpatialEntity],[Creator]<creator%201..*-++[SpatialEntity],[Container]++-%20data%200..*>[SpatialEntity],[ExtractionSet]-%20extraction_set_for%201..1>[SpatialEntity],[SpatialPlacement]-%20source%200..1>[SpatialEntity],[SpatialPlacement]-%20target%201..1>[SpatialEntity],[SpatialEntity]uses%20-.->[Named],[SpatialEntity]uses%20-.->[Instance],[Named],[Instance],[ExtractionSet],[Creator],[Container],[AnatomicalStructure])](https://yuml.me/diagram/nofunky;dir:TB/class/[SpatialPlacement],[SpatialObjectReference],[ExtractionSet]<extraction_set%200..1-%20[SpatialEntity&#124;id:string;label:string;pref_label:string;create_date:date;x_dimension:float;y_dimension:float;z_dimension:float;dimension_unit:DimensionUnitEnum;organ_donor_sex:DonorSexEnum%20%3F;organ_side:OrganSideEnum%20%3F;rui_rank:integer%20%3F;class_type:string%20%3F],[SpatialEntity]<reference_organ%200..1-%20[SpatialEntity],[SpatialPlacement]<placements%200..*-++[SpatialEntity],[SpatialObjectReference]<object_reference%200..1-++[SpatialEntity],[AnatomicalStructure]<representation_of%200..1-%20[SpatialEntity],[Creator]<creator%201..*-++[SpatialEntity],[Container]++-%20data%200..*>[SpatialEntity],[ExtractionSet]-%20extraction_set_for%201..1>[SpatialEntity],[SpatialPlacement]-%20source%200..1>[SpatialEntity],[SpatialPlacement]-%20target%201..1>[SpatialEntity],[SpatialEntity]uses%20-.->[Named],[SpatialEntity]uses%20-.->[Instance],[Named],[Instance],[ExtractionSet],[Creator],[Container],[AnatomicalStructure])
+
+## Uses Mixin
+
+ *  mixin: [Named](Named.md)
+ *  mixin: [Instance](Instance.md)
 
 ## Referenced by Class
 
@@ -26,22 +31,18 @@ URI: [ccf:SpatialEntity](http://purl.org/ccf/SpatialEntity)
      * Range: [String](types/String.md)
  * [label](label.md)  <sub>1..1</sub>
      * Range: [String](types/String.md)
- * [creator](creator.md)  <sub>1..1</sub>
+ * [pref_label](pref_label.md)  <sub>1..1</sub>
      * Range: [String](types/String.md)
- * [creator_first_name](creator_first_name.md)  <sub>1..1</sub>
-     * Range: [String](types/String.md)
- * [creator_last_name](creator_last_name.md)  <sub>1..1</sub>
-     * Range: [String](types/String.md)
- * [creator_orcid](creator_orcid.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [creation_date](creation_date.md)  <sub>1..1</sub>
+ * [creator](creator.md)  <sub>1..\*</sub>
+     * Range: [Creator](Creator.md)
+ * [create_date](create_date.md)  <sub>1..1</sub>
      * Range: [Date](types/Date.md)
  * [x_dimension](x_dimension.md)  <sub>1..1</sub>
-     * Range: [Decimal](types/Decimal.md)
+     * Range: [Float](types/Float.md)
  * [y_dimension](y_dimension.md)  <sub>1..1</sub>
-     * Range: [Decimal](types/Decimal.md)
+     * Range: [Float](types/Float.md)
  * [z_dimension](z_dimension.md)  <sub>1..1</sub>
-     * Range: [Decimal](types/Decimal.md)
+     * Range: [Float](types/Float.md)
  * [dimension_unit](dimension_unit.md)  <sub>1..1</sub>
      * Range: [DimensionUnitEnum](DimensionUnitEnum.md)
  * [representation_of](representation_of.md)  <sub>0..1</sub>
@@ -60,6 +61,16 @@ URI: [ccf:SpatialEntity](http://purl.org/ccf/SpatialEntity)
      * Range: [ExtractionSet](ExtractionSet.md)
  * [rui_rank](rui_rank.md)  <sub>0..1</sub>
      * Range: [Integer](types/Integer.md)
+
+### Mixed in from Named:
+
+ * [class_type](class_type.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+
+### Mixed in from Instance:
+
+ * [typeOf](typeOf.md)  <sub>0..\*</sub>
+     * Range: [Named](Named.md)
 
 ## Other properties
 

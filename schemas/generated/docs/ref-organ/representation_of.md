@@ -20,10 +20,3 @@ None &#8594;  <sub>0..1</sub> [AnatomicalStructure](AnatomicalStructure.md)
 ## Used by
 
  * [SpatialEntity](SpatialEntity.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | ccf:representation_of |
-

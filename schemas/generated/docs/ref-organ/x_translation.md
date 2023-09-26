@@ -9,7 +9,7 @@ URI: [ccf:x_translation](http://purl.org/ccf/x_translation)
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [Decimal](types/Decimal.md)
+None &#8594;  <sub>1..1</sub> [Float](types/Float.md)
 
 ## Parents
 
@@ -20,10 +20,3 @@ None &#8594;  <sub>1..1</sub> [Decimal](types/Decimal.md)
 ## Used by
 
  * [SpatialPlacement](SpatialPlacement.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | ccf:x_translation |
-

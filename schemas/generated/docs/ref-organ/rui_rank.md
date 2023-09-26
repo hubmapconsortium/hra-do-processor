@@ -21,10 +21,3 @@ None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
 
  * [ExtractionSet](ExtractionSet.md)
  * [SpatialEntity](SpatialEntity.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | ccf:rui_rank |
-

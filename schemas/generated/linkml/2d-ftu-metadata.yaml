@@ -1,0 +1,430 @@
+name: ftu-2d-metadata
+id: https://purl.humanatlas.io/specs/2d-ftu-metadata
+prefixes:
+  ccf:
+    prefix_prefix: ccf
+    prefix_reference: http://purl.org/ccf/
+  pav:
+    prefix_prefix: pav
+    prefix_reference: http://purl.org/pav/
+  dcat:
+    prefix_prefix: dcat
+    prefix_reference: http://www.w3.org/ns/dcat#
+  dct:
+    prefix_prefix: dct
+    prefix_reference: http://purl.org/dc/terms/
+  foaf:
+    prefix_prefix: foaf
+    prefix_reference: http://xmlns.com/foaf/0.1/
+  schema:
+    prefix_prefix: schema
+    prefix_reference: http://schema.org/
+  rdfs:
+    prefix_prefix: rdfs
+    prefix_reference: http://www.w3.org/2000/01/rdf-schema#
+  xsd:
+    prefix_prefix: xsd
+    prefix_reference: http://www.w3.org/2001/XMLSchema#
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  owl:
+    prefix_prefix: owl
+    prefix_reference: http://www.w3.org/2002/07/owl#
+  dc:
+    prefix_prefix: dc
+    prefix_reference: http://purl.org/dc/elements/1.1/
+  shex:
+    prefix_prefix: shex
+    prefix_reference: http://www.w3.org/ns/shex#
+default_prefix: dcat
+default_range: string
+types:
+  string:
+    name: string
+    description: A character string
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    exact_mappings:
+    - schema:Text
+    base: str
+    uri: xsd:string
+  integer:
+    name: integer
+    description: An integer
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    exact_mappings:
+    - schema:Integer
+    base: int
+    uri: xsd:integer
+  boolean:
+    name: boolean
+    description: A binary (true or false) value
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    exact_mappings:
+    - schema:Boolean
+    base: Bool
+    uri: xsd:boolean
+    repr: bool
+  float:
+    name: float
+    description: A real number that conforms to the xsd:float specification
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    exact_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:float
+  double:
+    name: double
+    description: A real number that conforms to the xsd:double specification
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    close_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:double
+  decimal:
+    name: decimal
+    description: A real number with arbitrary precision that conforms to the xsd:decimal
+      specification
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    broad_mappings:
+    - schema:Number
+    base: Decimal
+    uri: xsd:decimal
+  time:
+    name: time
+    description: A time object represents a (local) time of day, independent of any
+      particular day
+    notes:
+    - URI is dateTime because OWL reasoners do not work with straight date or time
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    exact_mappings:
+    - schema:Time
+    base: XSDTime
+    uri: xsd:dateTime
+    repr: str
+  date:
+    name: date
+    description: a date (year, month and day) in an idealized calendar
+    notes:
+    - URI is dateTime because OWL reasoners don't work with straight date or time
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    exact_mappings:
+    - schema:Date
+    base: XSDDate
+    uri: xsd:date
+    repr: str
+  datetime:
+    name: datetime
+    description: The combination of a date and time
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    exact_mappings:
+    - schema:DateTime
+    base: XSDDateTime
+    uri: xsd:dateTime
+    repr: str
+  date_or_datetime:
+    name: date_or_datetime
+    description: Either a date or a datetime
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    base: str
+    uri: linkml:DateOrDatetime
+    repr: str
+  uriorcurie:
+    name: uriorcurie
+    description: a URI or a CURIE
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
+  curie:
+    name: curie
+    conforms_to: https://www.w3.org/TR/curie/
+    description: a compact URI
+    comments:
+    - in RDF serializations this MUST be expanded to a URI
+    - in non-RDF serializations MAY be serialized as the compact representation
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    base: Curie
+    uri: xsd:string
+    repr: str
+  uri:
+    name: uri
+    conforms_to: https://www.ietf.org/rfc/rfc3987.txt
+    description: a complete URI
+    comments:
+    - in RDF serializations a slot with range of uri is treated as a literal or type
+      xsd:anyURI unless it is an identifier or a reference to an identifier, in which
+      case it is translated directly to a node
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    close_mappings:
+    - schema:URL
+    base: URI
+    uri: xsd:anyURI
+    repr: str
+  ncname:
+    name: ncname
+    description: Prefix part of CURIE
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    base: NCName
+    uri: xsd:string
+    repr: str
+  objectidentifier:
+    name: objectidentifier
+    description: A URI or CURIE that represents an object in the model.
+    comments:
+    - Used for inheritence and type checking
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    base: ElementIdentifier
+    uri: shex:iri
+    repr: str
+  nodeidentifier:
+    name: nodeidentifier
+    description: A URI, CURIE or BNODE that represents a node in a model.
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    base: NodeIdentifier
+    uri: shex:nonLiteral
+    repr: str
+slots:
+  iri:
+    name: iri
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    identifier: true
+  distributions:
+    name: distributions
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: dcat:distribution
+    multivalued: true
+    range: Distribution
+    inlined_as_list: true
+  downloadUrl:
+    name: downloadUrl
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: dcat:downloadURL
+    range: uri
+  accessUrl:
+    name: accessUrl
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: dcat:accessURL
+    range: uri
+  mediaType:
+    name: mediaType
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: dcat:mediaType
+    range: uriorcurie
+  title:
+    name: title
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: dct:title
+  description:
+    name: description
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: dct:description
+  license:
+    name: license
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: dct:license
+  publisher:
+    name: publisher
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: dct:publisher
+  creators:
+    name: creators
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: dct:creator
+    multivalued: true
+    range: Person
+    inlined_as_list: true
+  about:
+    name: about
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: schema:about
+  version:
+    name: version
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: schema:version
+  fullName:
+    name: fullName
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: schema:name
+  firstName:
+    name: firstName
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: schema:givenName
+  lastName:
+    name: lastName
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: schema:familyName
+  orcid:
+    name: orcid
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: schema:identifier
+    pattern: ^(\d{4}-){3}\d{3}(\d|X)$
+  funder:
+    name: funder
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: schema:funder
+  awardNumber:
+    name: awardNumber
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: schema:award
+  citation:
+    name: citation
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: schema:citation
+  creation_date:
+    name: creation_date
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: schema:dateCreated
+  propertyId:
+    name: propertyId
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: schema:propertyID
+  value:
+    name: value
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: schema:value
+  reviewers:
+    name: reviewers
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: schema:reviewedBy
+    multivalued: true
+    range: Person
+    inlined_as_list: true
+  funders:
+    name: funders
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: schema:funding
+    multivalued: true
+    range: Grant
+    inlined_as_list: true
+  versionInfo:
+    name: versionInfo
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: owl:versionInfo
+  see_also:
+    name: see_also
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: rdfs:seeAlso
+    range: uriorcurie
+  hubmapId:
+    name: hubmapId
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: ccf:hubmap_id
+  doi:
+    name: doi
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: ccf:doi
+    range: uriorcurie
+  citationOverall:
+    name: citationOverall
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: ccf:citation_overall
+  datatable:
+    name: datatable
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: ccf:data_table
+    multivalued: true
+  project_leads:
+    name: project_leads
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: ccf:project_lead
+    multivalued: true
+    range: Person
+    inlined_as_list: true
+  externalReviewers:
+    name: externalReviewers
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slot_uri: ccf:external_reviewer
+    multivalued: true
+    range: Person
+    inlined_as_list: true
+classes:
+  Container:
+    name: Container
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slots:
+    - iri
+    - title
+    - description
+    - creators
+    - project_leads
+    - reviewers
+    - externalReviewers
+    - version
+    - creation_date
+    - license
+    - publisher
+    - funders
+    - hubmapId
+    - doi
+    - citation
+    - citationOverall
+    - datatable
+    - distributions
+    slot_usage:
+      iri:
+        name: iri
+        required: true
+      title:
+        name: title
+        required: true
+      description:
+        name: description
+        required: true
+      creators:
+        name: creators
+        required: true
+      version:
+        name: version
+        required: true
+      creation_date:
+        name: creation_date
+        required: true
+      license:
+        name: license
+        required: true
+      distributions:
+        name: distributions
+        required: true
+    class_uri: dcat:Dataset
+    tree_root: true
+  Person:
+    name: Person
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slots:
+    - fullName
+    - firstName
+    - lastName
+    - orcid
+    class_uri: schema:Person
+  Grant:
+    name: Grant
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slots:
+    - funder
+    - awardNumber
+    class_uri: schema:Grant
+  Distribution:
+    name: Distribution
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slots:
+    - title
+    - downloadUrl
+    - accessUrl
+    - mediaType
+    class_uri: dcat:Distribution
+  DatasetMetadata:
+    name: DatasetMetadata
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu-metadata
+    slots:
+    - title
+    - description
+    - creators
+    - version
+    - creation_date
+    - license
+    - publisher
+    - see_also
+    class_uri: dcat:Dataset
+source_file: schemas/src/metadata/2d-ftu-metadata.yaml
+

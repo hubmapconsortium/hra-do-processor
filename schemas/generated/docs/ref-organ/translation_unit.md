@@ -20,10 +20,3 @@ None &#8594;  <sub>1..1</sub> [TranslationUnitEnum](TranslationUnitEnum.md)
 ## Used by
 
  * [SpatialPlacement](SpatialPlacement.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | ccf:translation_unit |
-

@@ -9,7 +9,7 @@ URI: [ccf:firstName](http://purl.org/ccf/firstName)
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [String](types/String.md)
+None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Parents
 
@@ -25,5 +25,5 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | foaf:firstName |
+| **Mappings:** | | schema:givenName |
 
