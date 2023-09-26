@@ -11,6 +11,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   CL: http://purl.obolibrary.org/obo/CL_
+  LMHA: http://purl.obolibrary.org/obo/LMHA_
 
 default_prefix: ccf
 default_range: string

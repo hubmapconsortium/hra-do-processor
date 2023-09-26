@@ -136,16 +136,16 @@ AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
 AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )""" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:AsctbMetadata ;
-            owl:onProperty ccf:metadata ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:AsctbDataset ;
             owl:onProperty ccf:data ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:Uriorcurie ;
-            owl:onProperty ccf:iri ] .
+            owl:onProperty ccf:iri ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:AsctbMetadata ;
+            owl:onProperty ccf:metadata ] .
 
 ccf:DatasetMetadata a owl:Class,
         linkml:ClassDefinition ;
@@ -153,22 +153,7 @@ ccf:DatasetMetadata a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty dct:publisher ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Person ;
-            owl:onProperty dct:creator ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty dct:description ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
             owl:onProperty dct:title ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema1:version ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
@@ -180,7 +165,22 @@ ccf:DatasetMetadata a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:Uriorcurie ;
-            owl:onProperty rdfs:seeAlso ] ;
+            owl:onProperty rdfs:seeAlso ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema1:version ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:publisher ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Person ;
+            owl:onProperty dct:creator ] ;
     skos:exactMatch dcat:Dataset .
 
 ccf:anatomical_structures a owl:ObjectProperty,
@@ -324,20 +324,20 @@ ccf:Distribution a owl:Class,
     rdfs:label "Distribution" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty dct:title ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:Uri ;
-            owl:onProperty dcat:downloadURL ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:Uri ;
             owl:onProperty dcat:accessURL ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:Uriorcurie ;
-            owl:onProperty dcat:mediaType ] ;
+            owl:onProperty dcat:mediaType ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:title ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:Uri ;
+            owl:onProperty dcat:downloadURL ] ;
     skos:exactMatch dcat:Distribution .
 
 ccf:Grant a owl:Class,
@@ -472,20 +472,12 @@ ccf:AsctbMetadata a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AsctbMetadata" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:license ],
+        [ a owl:Restriction ;
             owl:allValuesFrom ccf:Person ;
             owl:onProperty dct:creator ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty dct:publisher ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:Uriorcurie ;
-            owl:onProperty rdfs:seeAlso ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema1:dateCreated ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
@@ -493,15 +485,23 @@ ccf:AsctbMetadata a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty dct:title ],
+            owl:onProperty dct:publisher ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty dct:license ],
+            owl:onProperty dct:description ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty dct:description ] ;
+            owl:onProperty schema1:dateCreated ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:Uriorcurie ;
+            owl:onProperty rdfs:seeAlso ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:title ] ;
     skos:exactMatch dcat:Dataset .
 
 ccf:BiomarkerSet a owl:Class,
@@ -565,7 +565,7 @@ ccf:AsctbConcept a owl:Class,
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:class_type ;
+            owl:onProperty ccf:ccf_pref_label ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
@@ -573,7 +573,7 @@ ccf:AsctbConcept a owl:Class,
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:ccf_pref_label ;
+            owl:onProperty ccf:class_type ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:Boolean ;
@@ -616,18 +616,18 @@ SubClassOf(
 )
 {% endfor %} """ ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom ccf:BiomarkerSet ;
-            owl:onProperty ccf:ccf_has_biomarker_set ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:AnatomicalStructure ;
-            owl:onProperty ccf:ccf_located_in ],
-        [ a owl:Restriction ;
             owl:allValuesFrom ccf:CellType ;
             owl:onProperty ccf:ccf_ct_isa ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:BiomarkerSet ;
+            owl:onProperty ccf:ccf_has_biomarker_set ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:AnatomicalStructure ;
+            owl:onProperty ccf:ccf_located_in ],
         ccf:AsctbConcept .
 
 ccf:Uri a owl:Class,
@@ -668,11 +668,7 @@ ccf:Person a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty schema1:name ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema1:identifier ],
+            owl:onProperty schema1:givenName ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
@@ -680,7 +676,11 @@ ccf:Person a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty schema1:givenName ] ;
+            owl:onProperty schema1:name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema1:identifier ] ;
     skos:exactMatch schema1:Person .
 
 ccf:Uriorcurie a owl:Class,

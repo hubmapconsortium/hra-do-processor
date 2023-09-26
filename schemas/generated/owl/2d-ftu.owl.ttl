@@ -144,15 +144,15 @@ AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
 AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )""" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:DatasetMetadata ;
+            owl:onProperty ccf:metadata ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:Uriorcurie ;
             owl:onProperty ccf:iri ],
         [ a owl:Restriction ;
             owl:allValuesFrom ccf:FtuIllustration ;
-            owl:onProperty ccf:data ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:DatasetMetadata ;
-            owl:onProperty ccf:metadata ] .
+            owl:onProperty ccf:data ] .
 
 ccf:citation_overall a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -292,20 +292,20 @@ ccf:Distribution a owl:Class,
     rdfs:label "Distribution" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:Uriorcurie ;
-            owl:onProperty dcat:mediaType ],
+            owl:onClass ccf:Uri ;
+            owl:onProperty dcat:accessURL ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:title ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:Uri ;
             owl:onProperty dcat:downloadURL ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:Uri ;
-            owl:onProperty dcat:accessURL ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty dct:title ] ;
+            owl:onClass ccf:Uriorcurie ;
+            owl:onProperty dcat:mediaType ] ;
     skos:exactMatch dcat:Distribution .
 
 ccf:Grant a owl:Class,
@@ -441,12 +441,16 @@ ccf:DatasetMetadata a owl:Class,
             owl:onProperty schema1:version ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:Uriorcurie ;
+            owl:onProperty rdfs:seeAlso ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
             owl:onProperty schema1:dateCreated ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:Uriorcurie ;
-            owl:onProperty rdfs:seeAlso ],
+            owl:onClass ccf:String ;
+            owl:onProperty dct:license ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
@@ -456,16 +460,12 @@ ccf:DatasetMetadata a owl:Class,
             owl:onClass ccf:String ;
             owl:onProperty dct:description ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Person ;
-            owl:onProperty dct:creator ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
             owl:onProperty dct:title ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty dct:license ] ;
+            owl:allValuesFrom ccf:Person ;
+            owl:onProperty dct:creator ] ;
     skos:exactMatch dcat:Dataset .
 
 ccf:FtuIllustration a owl:Class,
@@ -473,30 +473,30 @@ ccf:FtuIllustration a owl:Class,
     rdfs:label "FtuIllustration" ;
     ccf:owl "NamedIndividual" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:AnatomicalStructure ;
-            owl:onProperty ccf:ccf_located_in ],
-        [ a owl:Restriction ;
             owl:allValuesFrom ccf:FtuIllustrationNode ;
             owl:onProperty ccf:illustration_node ],
         [ a owl:Restriction ;
             owl:allValuesFrom ccf:FtuIllustrationFile ;
             owl:onProperty ccf:image_file ],
         [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:allValuesFrom ccf:Named ;
             owl:onProperty rdf:type ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:class_type ],
+            owl:onProperty rdfs:label ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:AnatomicalStructure ;
+            owl:onProperty ccf:ccf_located_in ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty rdfs:label ],
+            owl:onProperty ccf:class_type ],
         ccf:Instance,
         ccf:Named ;
     skos:exactMatch ccf:FtuIllustration .
@@ -506,6 +506,9 @@ ccf:FtuIllustrationFile a owl:Class,
     rdfs:label "FtuIllustrationFile" ;
     ccf:owl "NamedIndividual" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Named ;
+            owl:onProperty rdf:type ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:Uri ;
             owl:onProperty ccf:file_url ],
@@ -518,16 +521,13 @@ ccf:FtuIllustrationFile a owl:Class,
             owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Named ;
-            owl:onProperty rdf:type ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:class_type ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
             owl:onProperty rdfs:label ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:class_type ],
         ccf:Instance,
         ccf:Named ;
     skos:exactMatch ccf:FtuIllustrationFile .
@@ -537,24 +537,24 @@ ccf:FtuIllustrationNode a owl:Class,
     rdfs:label "FtuIllustrationNode" ;
     ccf:owl "NamedIndividual" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:class_type ],
+        [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty rdfs:label ],
         [ a owl:Restriction ;
             owl:allValuesFrom ccf:Named ;
             owl:onProperty rdf:type ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:class_type ],
+            owl:onProperty ccf:part_of_illustration ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:part_of_illustration ],
+            owl:onProperty rdfs:label ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
@@ -608,15 +608,15 @@ ccf:Person a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
+            owl:onProperty schema1:identifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
             owl:onProperty schema1:name ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
             owl:onProperty schema1:familyName ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema1:identifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
@@ -645,7 +645,7 @@ ccf:Named a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:class_type ],
+            owl:onProperty rdfs:label ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:id ;
@@ -653,7 +653,7 @@ ccf:Named a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty rdfs:label ],
+            owl:onProperty ccf:class_type ],
         linkml:mixin .
 
 linkml:ClassDefinition a owl:Class .

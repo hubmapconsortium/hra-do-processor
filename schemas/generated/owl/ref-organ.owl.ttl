@@ -121,28 +121,27 @@ AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
 AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
 AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )""" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:Uriorcurie ;
+            owl:onProperty ccf:iri ],
+        [ a owl:Restriction ;
             owl:allValuesFrom ccf:SpatialEntity ;
             owl:onProperty ccf:data ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:RefOrganMetadata ;
-            owl:onProperty ccf:metadata ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:Uriorcurie ;
-            owl:onProperty ccf:iri ] .
+            owl:onProperty ccf:metadata ] .
 
 ccf:DatasetMetadata a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "DatasetMetadata" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema:dateCreated ],
+            owl:allValuesFrom ccf:Person ;
+            owl:onProperty dct:creator ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty schema:version ],
+            owl:onProperty dct:title ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:Uriorcurie ;
@@ -150,22 +149,23 @@ ccf:DatasetMetadata a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty dct:publisher ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
             owl:onProperty dct:license ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty dct:title ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Person ;
-            owl:onProperty dct:creator ],
+            owl:onProperty schema:dateCreated ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty dct:description ] ;
+            owl:onProperty dct:description ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:version ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:publisher ] ;
     skos:exactMatch dcat:Dataset .
 
 ccf:citation_overall a owl:ObjectProperty,
@@ -443,11 +443,15 @@ ccf:Creator a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty schema:givenName ],
+            owl:onProperty ccf:class_type ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty rdfs:label ;
-            owl:qualifiedCardinality 1 ],
+            owl:onProperty schema:familyName ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty schema:identifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
@@ -455,22 +459,18 @@ ccf:Creator a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:class_type ],
+            owl:onProperty schema:givenName ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty schema:familyName ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Named ;
-            owl:onProperty rdf:type ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema:identifier ],
+            owl:onProperty rdfs:label ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Named ;
+            owl:onProperty rdf:type ],
         ccf:Instance,
         ccf:Named ;
     skos:exactMatch schema:Person .
@@ -480,16 +480,16 @@ ccf:Distribution a owl:Class,
     rdfs:label "Distribution" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:Uriorcurie ;
+            owl:onProperty dcat:mediaType ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:Uri ;
             owl:onProperty dcat:downloadURL ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
             owl:onProperty dct:title ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:Uriorcurie ;
-            owl:onProperty dcat:mediaType ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:Uri ;
@@ -616,6 +616,21 @@ ccf:ExtractionSet a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "ExtractionSet" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:Integer ;
+            owl:onProperty ccf:rui_rank ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Named ;
+            owl:onProperty rdf:type ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty rdfs:label ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:class_type ],
+        [ a owl:Restriction ;
             owl:onClass ccf:SpatialEntity ;
             owl:onProperty ccf:extraction_set_for ;
             owl:qualifiedCardinality 1 ],
@@ -623,21 +638,6 @@ ccf:ExtractionSet a owl:Class,
             owl:onClass ccf:String ;
             owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:Integer ;
-            owl:onProperty ccf:rui_rank ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:class_type ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty rdfs:label ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Named ;
-            owl:onProperty rdf:type ],
         ccf:Instance,
         ccf:Named ;
     skos:exactMatch ccf:ExtractionSet .
@@ -656,11 +656,18 @@ ccf:RefOrganMetadata a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty dct:publisher ],
+            owl:onProperty schema:version ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty dct:license ],
+            owl:onProperty dct:publisher ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Person ;
+            owl:onProperty dct:creator ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:title ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
@@ -668,22 +675,15 @@ ccf:RefOrganMetadata a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty dct:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Person ;
-            owl:onProperty dct:creator ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty schema:version ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty dct:title ],
+            owl:onProperty dct:license ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:Uriorcurie ;
-            owl:onProperty rdfs:seeAlso ] ;
+            owl:onProperty rdfs:seeAlso ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty dct:description ] ;
     skos:exactMatch dcat:Dataset .
 
 ccf:RotationUnitEnum a owl:Class,
@@ -702,20 +702,25 @@ ccf:SpatialObjectReference a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "SpatialObjectReference" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:file_subpath ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
-            owl:qualifiedCardinality 1 ],
+            owl:onProperty ccf:class_type ],
         [ a owl:Restriction ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:file_format ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ccf:Named ;
-            owl:onProperty rdf:type ],
+            owl:onClass ccf:String ;
+            owl:onProperty rdfs:label ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:SpatialPlacement ;
             owl:onProperty ccf:placement ;
@@ -725,13 +730,8 @@ ccf:SpatialObjectReference a owl:Class,
             owl:onProperty ccf:file_url ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty rdfs:label ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:class_type ],
+            owl:allValuesFrom ccf:Named ;
+            owl:onProperty rdf:type ],
         ccf:Instance,
         ccf:Named ;
     skos:exactMatch ccf:SpatialObjectReference .
@@ -865,24 +865,20 @@ ccf:SpatialPlacement a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "SpatialPlacement" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty rdfs:label ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Float ;
-            owl:onProperty ccf:z_rotation ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
-            owl:qualifiedCardinality 1 ],
+            owl:onProperty ccf:class_type ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:SpatialEntity ;
             owl:onProperty ccf:placement_for ],
         [ a owl:Restriction ;
-            owl:onClass ccf:Float ;
-            owl:onProperty ccf:x_scaling ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:rotation_order ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:RotationUnitEnum ;
+            owl:onProperty ccf:rotation_unit ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:allValuesFrom ccf:Named ;
@@ -893,55 +889,59 @@ ccf:SpatialPlacement a owl:Class,
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:Float ;
-            owl:onProperty ccf:x_translation ;
+            owl:onProperty ccf:y_rotation ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass ccf:TranslationUnitEnum ;
-            owl:onProperty ccf:translation_unit ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:SpatialEntity ;
-            owl:onProperty ccf:placement_relative_to ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty ccf:rotation_order ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Float ;
-            owl:onProperty ccf:z_translation ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:class_type ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:ScalingUnitEnum ;
-            owl:onProperty ccf:scaling_unit ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Float ;
-            owl:onProperty ccf:y_translation ;
+            owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:Float ;
             owl:onProperty ccf:z_scaling ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass ccf:RotationUnitEnum ;
-            owl:onProperty ccf:rotation_unit ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:x_scaling ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass ccf:Date ;
-            owl:onProperty ccf:placement_date ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:z_translation ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:x_translation ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:z_rotation ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass ccf:Float ;
             owl:onProperty ccf:x_rotation ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:onClass ccf:SpatialEntity ;
+            owl:onProperty ccf:placement_relative_to ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:TranslationUnitEnum ;
+            owl:onProperty ccf:translation_unit ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:ScalingUnitEnum ;
+            owl:onProperty ccf:scaling_unit ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty rdfs:label ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass ccf:Float ;
-            owl:onProperty ccf:y_rotation ;
+            owl:onProperty ccf:y_translation ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Date ;
+            owl:onProperty ccf:placement_date ;
             owl:qualifiedCardinality 1 ],
         ccf:Instance,
         ccf:Named ;
@@ -970,11 +970,11 @@ ccf:Person a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty schema:familyName ],
+            owl:onProperty schema:name ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
-            owl:onProperty schema:name ] ;
+            owl:onProperty schema:familyName ] ;
     skos:exactMatch schema:Person .
 
 ccf:class_type a owl:ObjectProperty,
@@ -1013,67 +1013,16 @@ ccf:SpatialEntity a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "SpatialEntity" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass ccf:Float ;
-            owl:onProperty ccf:z_dimension ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:DimensionUnitEnum ;
-            owl:onProperty ccf:dimension_unit ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:DonorSexEnum ;
-            owl:onProperty ccf:organ_donor_sex ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Float ;
-            owl:onProperty ccf:y_dimension ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:AnatomicalStructure ;
-            owl:onProperty ccf:representation_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:SpatialPlacement ;
-            owl:onProperty ccf:placements ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty skos:prefLabel ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:OrganSideEnum ;
-            owl:onProperty ccf:organ_side ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:String ;
-            owl:onProperty ccf:class_type ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
-            owl:onProperty rdfs:label ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:ExtractionSet ;
-            owl:onProperty ccf:has_extraction_set ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:Float ;
-            owl:onProperty ccf:x_dimension ;
+            owl:onClass ccf:Date ;
+            owl:onProperty ccf:creation_date ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:allValuesFrom ccf:Named ;
             owl:onProperty rdf:type ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:SpatialObjectReference ;
-            owl:onProperty ccf:has_object_reference ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass ccf:SpatialEntity ;
-            owl:onProperty ccf:has_reference_organ ],
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:id ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Class ;
             owl:intersectionOf ( [ a owl:Restriction ;
                         owl:allValuesFrom ccf:Creator ;
@@ -1082,11 +1031,62 @@ ccf:SpatialEntity a owl:Class,
                         owl:someValuesFrom ccf:Creator ] ) ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:OrganSideEnum ;
+            owl:onProperty ccf:organ_side ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:SpatialEntity ;
+            owl:onProperty ccf:has_reference_organ ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:z_dimension ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:x_dimension ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty skos:prefLabel ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:ExtractionSet ;
+            owl:onProperty ccf:has_extraction_set ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:DonorSexEnum ;
+            owl:onProperty ccf:organ_donor_sex ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:SpatialPlacement ;
+            owl:onProperty ccf:placements ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:Integer ;
             owl:onProperty ccf:rui_rank ],
         [ a owl:Restriction ;
-            owl:onClass ccf:Date ;
-            owl:onProperty ccf:creation_date ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:AnatomicalStructure ;
+            owl:onProperty ccf:representation_of ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:String ;
+            owl:onProperty ccf:class_type ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:Float ;
+            owl:onProperty ccf:y_dimension ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:DimensionUnitEnum ;
+            owl:onProperty ccf:dimension_unit ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass ccf:SpatialObjectReference ;
+            owl:onProperty ccf:has_object_reference ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty rdfs:label ;
             owl:qualifiedCardinality 1 ],
         ccf:Instance,
         ccf:Named ;
@@ -1097,16 +1097,16 @@ ccf:Named a owl:Class,
     rdfs:label "Named" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass ccf:String ;
-            owl:onProperty rdfs:label ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass ccf:String ;
             owl:onProperty ccf:id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass ccf:String ;
             owl:onProperty ccf:class_type ],
+        [ a owl:Restriction ;
+            owl:onClass ccf:String ;
+            owl:onProperty rdfs:label ;
+            owl:qualifiedCardinality 1 ],
         linkml:mixin .
 
 linkml:ClassDefinition a owl:Class .

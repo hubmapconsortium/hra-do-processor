@@ -153,14 +153,33 @@ owl:versionInfo a owl:ObjectProperty,
 dcat:Container a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Container" ;
-    rdfs:subClassOf [ a owl:Restriction ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:allValuesFrom dcat:Distribution ;
+                        owl:onProperty dcat:distribution ] [ a owl:Restriction ;
+                        owl:onProperty dcat:distribution ;
+                        owl:someValuesFrom dcat:Distribution ] ) ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dcat:String ;
+            owl:onProperty ccf:data_table ],
+        [ a owl:Restriction ;
             owl:onClass dcat:String ;
-            owl:onProperty schema1:version ;
+            owl:onProperty dcat:iri ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass dcat:String ;
+            owl:onProperty schema1:dateCreated ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:String ;
-            owl:onProperty ccf:citation_overall ],
+            owl:onProperty schema1:citation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dcat:Person ;
+            owl:onProperty schema1:reviewedBy ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dcat:Person ;
+            owl:onProperty ccf:external_reviewer ],
         [ a owl:Class ;
             owl:intersectionOf ( [ a owl:Restriction ;
                         owl:allValuesFrom dcat:Person ;
@@ -170,45 +189,33 @@ dcat:Container a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:String ;
-            owl:onProperty dct:publisher ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom dcat:String ;
-            owl:onProperty ccf:data_table ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom dcat:Person ;
-            owl:onProperty ccf:project_lead ],
+            owl:onProperty ccf:citation_overall ],
         [ a owl:Restriction ;
             owl:onClass dcat:String ;
-            owl:onProperty dcat:iri ;
+            owl:onProperty dct:description ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom dcat:Person ;
-            owl:onProperty ccf:external_reviewer ],
+            owl:onClass dcat:String ;
+            owl:onProperty dct:title ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dcat:Grant ;
+            owl:onProperty schema1:funding ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:String ;
             owl:onProperty ccf:hubmap_id ],
         [ a owl:Restriction ;
-            owl:onClass dcat:String ;
-            owl:onProperty schema1:dateCreated ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:String ;
-            owl:onProperty schema1:citation ],
-        [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:allValuesFrom dcat:Distribution ;
-                        owl:onProperty dcat:distribution ] [ a owl:Restriction ;
-                        owl:onProperty dcat:distribution ;
-                        owl:someValuesFrom dcat:Distribution ] ) ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom dcat:Grant ;
-            owl:onProperty schema1:funding ],
+            owl:onProperty dct:publisher ],
         [ a owl:Restriction ;
             owl:onClass dcat:String ;
-            owl:onProperty dct:description ;
+            owl:onProperty schema1:version ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dcat:Person ;
+            owl:onProperty ccf:project_lead ],
         [ a owl:Restriction ;
             owl:onClass dcat:String ;
             owl:onProperty dct:license ;
@@ -216,31 +223,19 @@ dcat:Container a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:Uriorcurie ;
-            owl:onProperty ccf:doi ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom dcat:Person ;
-            owl:onProperty schema1:reviewedBy ],
-        [ a owl:Restriction ;
-            owl:onClass dcat:String ;
-            owl:onProperty dct:title ;
-            owl:qualifiedCardinality 1 ] ;
+            owl:onProperty ccf:doi ] ;
     skos:exactMatch dcat:Dataset .
 
 dcat:DatasetMetadata a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "DatasetMetadata" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom dcat:Person ;
+            owl:onProperty dct:creator ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:Uriorcurie ;
             owl:onProperty rdfs:seeAlso ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty schema1:dateCreated ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty dct:license ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:String ;
@@ -254,8 +249,13 @@ dcat:DatasetMetadata a owl:Class,
             owl:onClass dcat:String ;
             owl:onProperty dct:description ],
         [ a owl:Restriction ;
-            owl:allValuesFrom dcat:Person ;
-            owl:onProperty dct:creator ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass dcat:String ;
+            owl:onProperty dct:license ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass dcat:String ;
+            owl:onProperty schema1:dateCreated ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:String ;
@@ -417,11 +417,11 @@ dcat:Grant a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:String ;
-            owl:onProperty schema1:funder ],
+            owl:onProperty schema1:award ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:String ;
-            owl:onProperty schema1:award ] ;
+            owl:onProperty schema1:funder ] ;
     skos:exactMatch schema1:Grant .
 
 dcat:distribution a owl:ObjectProperty,
@@ -455,20 +455,20 @@ dcat:Distribution a owl:Class,
     rdfs:label "Distribution" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:Uriorcurie ;
-            owl:onProperty dcat:mediaType ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:String ;
             owl:onProperty dct:title ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:Uri ;
-            owl:onProperty dcat:downloadURL ],
+            owl:onProperty dcat:accessURL ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass dcat:Uriorcurie ;
+            owl:onProperty dcat:mediaType ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:Uri ;
-            owl:onProperty dcat:accessURL ] ;
+            owl:onProperty dcat:downloadURL ] ;
     skos:exactMatch dcat:Distribution .
 
 linkml:ClassDefinition a owl:Class .
@@ -487,7 +487,11 @@ dcat:Person a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:String ;
-            owl:onProperty schema1:name ],
+            owl:onProperty schema1:identifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass dcat:String ;
+            owl:onProperty schema1:familyName ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:String ;
@@ -495,11 +499,7 @@ dcat:Person a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass dcat:String ;
-            owl:onProperty schema1:identifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty schema1:familyName ] ;
+            owl:onProperty schema1:name ] ;
     skos:exactMatch schema1:Person .
 
 linkml:TypeDefinition a owl:Class .
