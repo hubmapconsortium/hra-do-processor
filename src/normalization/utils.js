@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { dump, load } from 'js-yaml';
+import { lookup } from 'mime-types';
 import { resolve } from 'path';
 import { info } from '../utils/logging.js';
 
@@ -41,6 +42,19 @@ function selectMetadata({ title, description, creators, version, creation_date, 
   return { title, description, creators, version, creation_date, license, publisher };
 }
 
+export function normalizeMetadata(context, metadata) {
+  const datatable = normalizeDatatable(context, metadata.datatable);
+  const normalizedMetadata = {
+    iri: getMetadataIri(context),
+    ...metadata,
+    datatable,
+    distributions: getDataDistributions(context).concat(getDataTableDistributions(context, datatable)),
+  };
+  delete normalizedMetadata.type;
+  delete normalizedMetadata.name;
+  return normalizedMetadata;
+}
+
 export function getDataDistributions(context) {
   const { selectedDigitalObject: obj } = context;
   const accessUrl = getMetadataIri(context);
@@ -76,6 +90,24 @@ export function getDataDistributions(context) {
       mediaType: 'application/n-quads',
     },
   ];
+}
+
+export function normalizeDatatable(context, datatable) {
+  const { type, name, version } = context.selectedDigitalObject;
+  return datatable.map((item) => `${context.cdnIri}${type}/${name}/${version}/assets/${item}`);
+}
+
+export function getDataTableDistributions(context, urls) {
+  const { selectedDigitalObject: obj } = context;
+  const accessUrl = getMetadataIri(context);
+  return urls.map((url) => {
+    return {
+      title: `A raw source distriution of '${obj.doString}' in .${url.split('.').slice(-1).join('')} format.`,
+      downloadUrl: url,
+      accessUrl,
+      mediaType: lookup(url),
+    };
+  });
 }
 
 export function getMetadataIri(context) {

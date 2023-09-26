@@ -2,29 +2,12 @@ import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
 import { error } from '../utils/logging.js';
-import {
-  getDataDistributions,
-  getMetadataIri,
-  readMetadata,
-  writeNormalizedData,
-  writeNormalizedMetadata,
-} from './utils.js';
+import { normalizeMetadata, readMetadata, writeNormalizedData, writeNormalizedMetadata } from './utils.js';
 
 export function normalizeCollectionMetadata(context) {
   const rawMetadata = readMetadata(context);
   const normalizedMetadata = normalizeMetadata(context, rawMetadata);
   writeNormalizedMetadata(context, normalizedMetadata);
-}
-
-function normalizeMetadata(context, metadata) {
-  const normalizedMetadata = {
-    iri: getMetadataIri(context),
-    ...metadata,
-    distributions: getDataDistributions(context),
-  };
-  delete normalizedMetadata.type;
-  delete normalizedMetadata.name;
-  return normalizedMetadata;
 }
 
 export function normalizeCollectionData(context) {

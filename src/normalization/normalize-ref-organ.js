@@ -1,33 +1,20 @@
 import { Matrix4 } from '@math.gl/core';
 import { readFile } from 'fs/promises';
-import { resolve } from 'path';
 import Papa from 'papaparse';
-import { header } from '../utils/logging.js';
+import { resolve } from 'path';
 import { processSceneNodes } from './ref-organ-utils/process-scene-nodes.js';
 import {
-  readMetadata,
+  normalizeMetadata,
   readLocalData,
-  writeNormalizedMetadata,
+  readMetadata,
   writeNormalizedData,
-  getMetadataIri,
-  getDataDistributions
+  writeNormalizedMetadata,
 } from './utils.js';
 
 export function normalizeRefOrganMetadata(context) {
   const rawMetadata = readMetadata(context);
   const normalizedMetadata = normalizeMetadata(context, rawMetadata);
   writeNormalizedMetadata(context, normalizedMetadata);
-}
-
-function normalizeMetadata(context, metadata) {
-  const normalizedMetadata = {
-    iri: getMetadataIri(context),
-    ...metadata,
-    distributions: getDataDistributions(context)
-  };
-  delete normalizedMetadata.type;
-  delete normalizedMetadata.name;
-  return normalizedMetadata;
 }
 
 export async function normalizeRefOrganData(context) {
@@ -41,17 +28,17 @@ async function getRawData(context) {
 
   const metadata = readMetadata(context);
 
-  const crosswalk = readLocalData(context, "crosswalk.csv",
-    (csvData) => Papa.parse(
-        csvData.toString(), {
-          header: true, 
-          skipEmptyLines: true
-        })).data;
+  const crosswalk = readLocalData(context, 'crosswalk.csv', (csvData) =>
+    Papa.parse(csvData.toString(), {
+      header: true,
+      skipEmptyLines: true,
+    })
+  ).data;
 
   const dataUrl = Array.isArray(metadata.datatable) ? metadata.datatable[0] : metadata.datatable;
 
   let data;
-  if (dataUrl.startsWith('http')) { 
+  if (dataUrl.startsWith('http')) {
     data = await processSpatialEntities(context, metadata, dataUrl, undefined, crosswalk);
   } else {
     // FIXME: Add deployment URL option to context
@@ -61,8 +48,8 @@ async function getRawData(context) {
     // Load local GLB file, but ensure that the URL is placed in the output
     // for when it is deployed
     const cache = {
-      [gltfUrl]: readFile(resolve(path, 'raw', dataUrl))
-    }
+      [gltfUrl]: readFile(resolve(path, 'raw', dataUrl)),
+    };
     data = await processSpatialEntities(context, metadata, gltfUrl, cache, crosswalk);
   }
 
@@ -85,17 +72,21 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
     .map((node) => {
       const nodeId = node['@id'];
       const primaryNodeId = crosswalk[0]['node_name'];
-      const id = (nodeId === primaryNodeId) ?
-          `${baseIri}${separator}primary` :
-          `${baseIri}${separator}${encodeURIComponent(nodeId)}`;
+      const id =
+        nodeId === primaryNodeId
+          ? `${baseIri}${separator}primary`
+          : `${baseIri}${separator}${encodeURIComponent(nodeId)}`;
       const creationDate = metadata.creation_date;
       const T = { x: node.bbox.lowerBound.x, y: node.bbox.lowerBound.y, z: node.bbox.lowerBound.z };
-      const typeOf = crosswalk.reduce((accumulator, value) => {
-        if (value['node_name'] === node['@id']) {
-          accumulator.push(value['OntologyID'].trim());
-        }
-        return accumulator;
-      }, ['SpatialEntity']);
+      const typeOf = crosswalk.reduce(
+        (accumulator, value) => {
+          if (value['node_name'] === node['@id']) {
+            accumulator.push(value['OntologyID'].trim());
+          }
+          return accumulator;
+        },
+        ['SpatialEntity']
+      );
       const organName = getOrganName(nodeId, crosswalk);
       const organOwnerSex = getOrganOwnerSex(nodeId);
       const organSide = getOrganSide(nodeId);
@@ -115,18 +106,18 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         pref_label: organName,
         class_type: 'SpatialEntity',
         typeOf: typeOf,
-        creator: metadata.creators.map(c => {
-            return { 
-              id: `https://orcid.org/${c.orcid}`,
-              label: c.fullName,
-              class_type: 'Creator',
-              typeOf: [ 'schema:Person' ],
-              fullName: c.fullName,
-              firstName: c.firstName,
-              lastName: c.lastName,
-              orcid: c.orcid
-            }
-          }),
+        creator: metadata.creators.map((c) => {
+          return {
+            id: `https://orcid.org/${c.orcid}`,
+            label: c.fullName,
+            class_type: 'Creator',
+            typeOf: ['schema:Person'],
+            fullName: c.fullName,
+            firstName: c.firstName,
+            lastName: c.lastName,
+            orcid: c.orcid,
+          };
+        }),
         create_date: creationDate,
         x_dimension: node.size.x,
         y_dimension: node.size.y,
@@ -137,7 +128,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
           id: `${id}Obj`,
           label: `The 3D object of ${organLabel}`,
           class_type: 'SpatialObjectReference',
-          typeOf: [ 'SpatialObjectReference' ],
+          typeOf: ['SpatialObjectReference'],
           file: gltfFile,
           file_format: 'model/gltf-binary',
           file_subpath: node['@id'],
@@ -146,7 +137,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
             id: `${id}ObjPlacement`,
             label: `The local placement of ${organLabel}`,
             class_type: 'SpatialPlacement',
-            typeOf: [ 'SpatialPlacement' ],
+            typeOf: ['SpatialPlacement'],
             target: id,
             placement_date: creationDate,
 
@@ -167,36 +158,38 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
           },
         },
 
-        placements: [{
-          id: `${id}GlobalPlacement`,
-          label: `The global placement of ${organLabel}`,
-          class_type: 'SpatialPlacement',
-          typeOf: [ 'SpatialPlacement' ],
-          target: parentIri,
-          placement_date: creationDate,
-          
-          x_scaling: 1,
-          y_scaling: 1,
-          z_scaling: 1,
-          scaling_unit: 'ratio',
+        placements: [
+          {
+            id: `${id}GlobalPlacement`,
+            label: `The global placement of ${organLabel}`,
+            class_type: 'SpatialPlacement',
+            typeOf: ['SpatialPlacement'],
+            target: parentIri,
+            placement_date: creationDate,
 
-          x_rotation: 0,
-          y_rotation: 0,
-          z_rotation: 0,
-          rotation_unit: 'degree',
+            x_scaling: 1,
+            y_scaling: 1,
+            z_scaling: 1,
+            scaling_unit: 'ratio',
 
-          x_translation: T.x,
-          y_translation: T.y,
-          z_translation: T.z,
-          translation_unit: 'millimeter',
-        }]
+            x_rotation: 0,
+            y_rotation: 0,
+            z_rotation: 0,
+            rotation_unit: 'degree',
+
+            x_translation: T.x,
+            y_translation: T.y,
+            z_translation: T.z,
+            translation_unit: 'millimeter',
+          },
+        ],
       };
     });
 }
 
 function getOrganName(nodeId, crosswalk) {
-  const organ = crosswalk.filter((value) => value["node_name"] === nodeId);
-  return organ[0]["label"];
+  const organ = crosswalk.filter((value) => value['node_name'] === nodeId);
+  return organ[0]['label'];
 }
 
 function getOrganOwnerSex(nodeId) {
@@ -208,9 +201,9 @@ function getOrganOwnerSex(nodeId) {
   }
   if (matching !== null) {
     const sexAbbreviation = matching[organOwnerSexIndex];
-    return (sexAbbreviation === "F") ? "female" : "male";
+    return sexAbbreviation === 'F' ? 'female' : 'male';
   } else {
-    return "";
+    return '';
   }
 }
 
@@ -219,19 +212,19 @@ function getOrganSide(nodeId) {
   let organSideIndex = 3;
   if (matching === null) {
     matching = nodeId.match(/^VH_(F|M)_([L|R])_([a-z_]+)_?(.?)/);
-    organSideIndex = 2;    
+    organSideIndex = 2;
   }
   if (matching !== null) {
     const sideAbbreviation = matching[organSideIndex];
-    if (sideAbbreviation === "L") {
-      return "left";
-    } else if (sideAbbreviation === "R") {
-      return "right";
+    if (sideAbbreviation === 'L') {
+      return 'left';
+    } else if (sideAbbreviation === 'R') {
+      return 'right';
     } else {
-      return "";
+      return '';
     }
   } else {
-    return "";
+    return '';
   }
 }
 
@@ -245,20 +238,20 @@ function getNodeLabel(nodeId) {
     partOrderIndex = 4;
   }
   if (matching === null) {
-    matching = nodeId.match(/^Yao_([a-z_]+)_?(.?)/); 
+    matching = nodeId.match(/^Yao_([a-z_]+)_?(.?)/);
     organLabelIndex = 1;
     partOrderIndex = 2;
   }
   if (matching !== null) {
-    const organLabel = matching[organLabelIndex].replaceAll("_", " ").trim();
+    const organLabel = matching[organLabelIndex].replaceAll('_', ' ').trim();
     const partOrder = matching[partOrderIndex];
-    if (partOrder !== "") {
-      return `${organLabel} ${partOrder}`
+    if (partOrder !== '') {
+      return `${organLabel} ${partOrder}`;
     } else {
       return organLabel;
     }
   } else {
-    return "";
+    return '';
   }
 }
 
