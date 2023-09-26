@@ -12,8 +12,8 @@ export async function normalize(context) {
   const { selectedDigitalObject: obj } = context;
   sh.mkdir('-p', resolve(obj.path, 'normalized'));
   header(context, 'run-normalize');
-  let processedType = obj.type;
-  switch (obj.type) {
+  let processedType = obj.name.endsWith('crosswalk') ? 'basic' : obj.type;
+  switch (processedType) {
     case 'asct-b':
       normalizeAsctbMetadata(context);
       await normalizeAsctbData(context);

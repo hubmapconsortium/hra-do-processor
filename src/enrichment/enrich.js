@@ -11,7 +11,8 @@ export function enrich(context) {
   const obj = context.selectedDigitalObject;
   sh.mkdir('-p', resolve(obj.path, 'enriched'));
   header(context, 'run-enrich');
-  switch (obj.type) {
+  let processedType = obj.name.endsWith('crosswalk') ? 'basic' : obj.type;
+  switch (processedType) {
     case 'asct-b':
       enrichAsctbMetadata(context);
       enrichAsctbData(context);
