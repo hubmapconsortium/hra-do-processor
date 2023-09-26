@@ -24,7 +24,7 @@ export async function normalizeRefOrganData(context) {
 }
 
 async function getRawData(context) {
-  const { path } = context.selectedDigitalObject;
+  const { path, doString } = context.selectedDigitalObject;
 
   const metadata = readMetadata(context);
 
@@ -33,7 +33,7 @@ async function getRawData(context) {
       header: true,
       skipEmptyLines: true,
     })
-  ).data;
+  ).data.filter((row) => row.OntologyID.trim() !== '-');
 
   const dataUrl = Array.isArray(metadata.datatable) ? metadata.datatable[0] : metadata.datatable;
 
@@ -41,9 +41,7 @@ async function getRawData(context) {
   if (dataUrl.startsWith('http')) {
     data = await processSpatialEntities(context, metadata, dataUrl, undefined, crosswalk);
   } else {
-    // FIXME: Add deployment URL option to context
-    const baseUrl = 'https://ccf-ontology.hubmapconsortium.org/objects/v1.2/';
-    const gltfUrl = `${baseUrl}${dataUrl}`;
+    const gltfUrl = `${context.cdnIri}${doString}/assets/${dataUrl}`;
 
     // Load local GLB file, but ensure that the URL is placed in the output
     // for when it is deployed
@@ -60,10 +58,10 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
   const scalar = new Matrix4(Matrix4.IDENTITY).scale([1000, 1000, 1000]);
   const nodes = await processSceneNodes(gltfFile, scalar, undefined, cache);
 
-  const baseIri = metadata.config?.id || context.selectedDigitalObject.iri;
+  const obj = context.selectedDigitalObject;
+  const baseIri = obj.iri;
   const separator = baseIri?.indexOf('#') === -1 ? '#' : '_' ?? '#';
-
-  const parentIri = metadata.config?.parentIri || `${baseIri}${separator}Parent`;
+  const primaryId = `${baseIri}${separator}primary`;
 
   return Object.values(nodes)
     .filter((node) => excludeNodeType(node))
@@ -74,22 +72,21 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
       const primaryNodeId = crosswalk[0]['node_name'];
       const id =
         nodeId === primaryNodeId
-          ? `${baseIri}${separator}primary`
+          ? primaryId
           : `${baseIri}${separator}${encodeURIComponent(nodeId)}`;
       const creationDate = metadata.creation_date;
       const T = { x: node.bbox.lowerBound.x, y: node.bbox.lowerBound.y, z: node.bbox.lowerBound.z };
-      const typeOf = crosswalk.reduce(
-        (accumulator, value) => {
+      const typeOf = [
+        ...crosswalk.reduce((accumulator, value) => {
           if (value['node_name'] === node['@id']) {
-            accumulator.push(value['OntologyID'].trim());
+            accumulator.add(value['OntologyID'].trim());
           }
           return accumulator;
-        },
-        ['SpatialEntity']
-      );
+        }, new Set()),
+      ].concat(['SpatialEntity']);
+
       const organName = getOrganName(nodeId, crosswalk);
-      const organOwnerSex = getOrganOwnerSex(nodeId);
-      const organSide = getOrganSide(nodeId);
+      const { organOwnerSex, organSide } = getOrganMetadata(obj.name);
       const nodeLabel = getNodeLabel(nodeId);
       let organLabel = `${organOwnerSex} ${nodeLabel}`.trim();
       if (organSide !== '') {
@@ -100,12 +97,21 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         }
       }
 
+      let parentIri = `${baseIri}${separator}Parent`;
+      if (organOwnerSex) {
+        parentIri = `https://purl.humanatlas.io/graph/ccf-body#VH${organOwnerSex}`;
+      }
+
       return {
         id,
         label: `Spatial entity of ${organLabel}`,
         pref_label: organName,
         class_type: 'SpatialEntity',
         typeOf: typeOf,
+        representation_of: typeOf[0],
+        organ_donor_sex: organOwnerSex || undefined,
+        organ_side: organSide || undefined,
+        reference_organ: primaryId,
         creator: metadata.creators.map((c) => {
           return {
             id: `https://orcid.org/${c.orcid}`,
@@ -126,7 +132,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
 
         object_reference: {
           id: `${id}Obj`,
-          label: `The 3D object of ${organLabel}`,
+          label: `3D object of ${organLabel}`,
           class_type: 'SpatialObjectReference',
           typeOf: ['SpatialObjectReference'],
           file: gltfFile,
@@ -135,7 +141,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
 
           placement: {
             id: `${id}ObjPlacement`,
-            label: `The local placement of ${organLabel}`,
+            label: `local placement of ${organLabel}`,
             class_type: 'SpatialPlacement',
             typeOf: ['SpatialPlacement'],
             target: id,
@@ -161,7 +167,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         placements: [
           {
             id: `${id}GlobalPlacement`,
-            label: `The global placement of ${organLabel}`,
+            label: `global placement of ${organLabel}`,
             class_type: 'SpatialPlacement',
             typeOf: ['SpatialPlacement'],
             target: parentIri,
@@ -187,45 +193,18 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
     });
 }
 
+function getOrganMetadata(name) {
+  const sex = name.includes('female') ? 'Female' : name.includes('male') ? 'Male' : undefined;
+  const side = name.includes('left') ? 'Left' : name.includes('right') ? 'Right' : undefined;
+  
+  const exclude = new Set(['left', 'right', 'male', 'female']);
+  const organName = name.split('-').filter(n => !exclude.has(n)).join(' ');
+  return { organOwnerSex: sex, organSide: side, organName };
+}
+
 function getOrganName(nodeId, crosswalk) {
   const organ = crosswalk.filter((value) => value['node_name'] === nodeId);
   return organ[0]['label'];
-}
-
-function getOrganOwnerSex(nodeId) {
-  let matching = nodeId.match(/^VH_(F|M)_([a-z_]+)_?([L|R]?)_?(.?)/);
-  let organOwnerSexIndex = 1;
-  if (matching === null) {
-    matching = nodeId.match(/^VH_(F|M)_([L|R])_([a-z_]+)_?(.?)/);
-    organOwnerSexIndex = 1;
-  }
-  if (matching !== null) {
-    const sexAbbreviation = matching[organOwnerSexIndex];
-    return sexAbbreviation === 'F' ? 'female' : 'male';
-  } else {
-    return '';
-  }
-}
-
-function getOrganSide(nodeId) {
-  let matching = nodeId.match(/^VH_(F|M)_([a-z_]+)_?([L|R]?)_?(.?)/);
-  let organSideIndex = 3;
-  if (matching === null) {
-    matching = nodeId.match(/^VH_(F|M)_([L|R])_([a-z_]+)_?(.?)/);
-    organSideIndex = 2;
-  }
-  if (matching !== null) {
-    const sideAbbreviation = matching[organSideIndex];
-    if (sideAbbreviation === 'L') {
-      return 'left';
-    } else if (sideAbbreviation === 'R') {
-      return 'right';
-    } else {
-      return '';
-    }
-  } else {
-    return '';
-  }
 }
 
 function getNodeLabel(nodeId) {
@@ -239,6 +218,11 @@ function getNodeLabel(nodeId) {
   }
   if (matching === null) {
     matching = nodeId.match(/^Yao_([a-z_]+)_?(.?)/);
+    organLabelIndex = 1;
+    partOrderIndex = 2;
+  }
+  if (matching === null) {
+    matching = nodeId.match(/^Allen_([a-z_]+)_?(.?)/);
     organLabelIndex = 1;
     partOrderIndex = 2;
   }
