@@ -33,7 +33,7 @@ async function getRawData(context) {
       header: true,
       skipEmptyLines: true,
     })
-  ).data.filter((row) => row.OntologyID.trim() !== '-');
+  ).data;
 
   const dataUrl = Array.isArray(metadata.datatable) ? metadata.datatable[0] : metadata.datatable;
 
