@@ -1,8 +1,10 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { dump } from 'js-yaml';
+import Papa from 'papaparse';
 import { resolve } from 'path';
 import sh from 'shelljs';
 import { info, more, warning } from '../utils/logging.js';
+import { makeASCTBData } from './asct-b-utils/api.functions.js';
 import {
   getPatchesForAnatomicalStructure,
   getPatchesForBiomarker,
@@ -12,9 +14,6 @@ import {
   normalizeDoi,
 } from './patches.js';
 import { normalizeMetadata, readMetadata, writeNormalizedData, writeNormalizedMetadata } from './utils.js';
-
-const ASCTB_API = 'https://mmpyikxkcp.us-east-2.awsapprunner.com/';
-// const ASCTB_API = 'http://localhost:5000/';
 
 export function normalizeAsctbMetadata(context) {
   const rawMetadata = readMetadata(context);
@@ -33,26 +32,14 @@ async function getRawData(context) {
 
   const metadata = readMetadata(context);
   const dataUrl = Array.isArray(metadata.datatable) ? metadata.datatable[0] : metadata.datatable;
-  let requestUrl = ASCTB_API + 'v2/csv';
-  let data;
+  let csvData;
   if (dataUrl.startsWith('http')) {
-    requestUrl +=
-      '?' +
-      new URLSearchParams({
-        csvUrl: dataUrl,
-        cached: true,
-      });
-    data = await fetch(requestUrl).then((r) => r.json());
+    csvData = await fetch(dataUrl).then((r) => r.text());
   } else {
-    const formData = new FormData();
-    const dataPath = resolve(path, 'raw', dataUrl);
-    formData.append(
-      'csvFile',
-      new Blob([readFileSync(dataPath).toString()], { type: 'text/csv', path: dataPath }),
-      dataUrl
-    );
-    data = await fetch(requestUrl, { method: 'POST', body: formData }).then((r) => r.json());
+    csvData = readFileSync(resolve(path, 'raw', dataUrl)).toString();
   }
+  const csvRows = Papa.parse(csvData, { skipEmptyLines: 'greedy' }).data;
+  const data = makeASCTBData(csvRows);
   info(`Reading data: ${dataUrl}`);
 
   // If warnings are found in the response, save for reference.
