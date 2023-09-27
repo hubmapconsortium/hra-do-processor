@@ -12,6 +12,11 @@ export function reifyDoTurtle(context, inputPath) {
   reifyTurtle(inputPath, graphName);
 }
 
+export function reifyMetadataTurtle(context, inputPath) {
+  const graphName = `${context.lodIri}${context.selectedDigitalObject.doString}`;
+  reifyTurtle(inputPath, graphName);
+}
+
 export function reifyRedundantTurtle(context, inputPath) {
   const graphName = `${context.selectedDigitalObject.iri}/redundant`;
   reifyTurtle(inputPath, graphName);
