@@ -10,6 +10,6 @@ export function list(context) {
 
 export function listDeployed(context) {
   const glob = '*/*/*/graph.ttl';
-  const digitalObjects = globSync(glob, { cwd: context.deploymnentHome }).map((p) => p.split('/').slice(0, -1).join('/'));
+  const digitalObjects = globSync(glob, { cwd: context.deploymentHome }).map((p) => p.split('/').slice(0, -1).join('/'));
   return digitalObjects;
 }

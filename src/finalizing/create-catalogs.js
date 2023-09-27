@@ -16,10 +16,10 @@ export function createCatalogs(context) {
   createListing(context, '', doTypes, 'Catalog');
 
   for (const doType of doTypes) {
-    const doNames = Object.keys(catalog[doType]);
+    const doNames = Object.keys(catalog[doType]).sort();
     createListing(context, doType, doNames, 'Catalog');
 
-    for (const doName of doNames) {
+    for (const doName of doNames.sort()) {
       const versions = catalog[doType][doName];
       createListing(context, `${doType}/${doName}`, versions, 'Dataset');
     }
@@ -27,7 +27,7 @@ export function createCatalogs(context) {
 }
 
 function createListing(context, path, items, itemType) {
-  const iri = `${context.lodIri}${path}`;
+  const iri = `${context.lodIri}${path ? path + '/' : path}`;
   writeIndexHtml(context, path, { iri, items, itemType });
 }
 

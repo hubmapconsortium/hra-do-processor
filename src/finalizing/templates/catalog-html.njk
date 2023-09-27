@@ -21,20 +21,20 @@
       </div>
     </header>
     <div class="main" typeof="dcat:Catalog" resource="{{ iri }}">
-      <h1 property="dct:title">Catalog for {{ iri }}</h1>
+      <h1 property="dct:title">{{ iri }}</h1>
 
       <ul>
-        {% for item in items -%}
-          {% if itemType == 'Dataset' %}
-            <li property="dcat:dataset" typeof="dcat:Dataset" resource="{{ iri }}/{{ item }}">
-              <a href="{{ iri }}/{{ item }}" property="dct:title">{{ item }}</a>
-            </li>
-          {% else if itemType == 'Catalog' %}
-            <li property="dcat:catalog" typeof="dcat:Catalog" resource="{{ iri }}/{{ item }}">
-              <a href="{{ iri }}/{{ item }}" property="dct:title">{{ item }}</a>
-            </li>
-          {% endif %}
-        {%- endfor %}
+      {%- for item in items -%}
+      {% if itemType == 'Dataset' %}
+        <li property="dcat:dataset" typeof="dcat:Dataset" resource="{{ iri }}{{ item }}">
+          <a href="{{ item }}/" property="dct:title">{{ item }}</a>
+        </li>
+      {% elif itemType == 'Catalog' %}
+        <li property="dcat:catalog" typeof="dcat:Catalog" resource="{{ iri }}{{ item }}">
+          <a href="{{ item }}/" property="dct:title">{{ item }}</a>
+        </li>
+      {%- endif -%}
+      {%- endfor -%}
       </ul>
     </div>
     <footer class="main-footer">
