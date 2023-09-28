@@ -6,6 +6,7 @@ import { normalize2dFtuData, normalize2dFtuMetadata } from './normalize-2d-ftu.j
 import { normalizeAsctbData, normalizeAsctbMetadata } from './normalize-asct-b.js';
 import { normalizeBasicData, normalizeBasicMetadata } from './normalize-basic.js';
 import { normalizeCollectionData, normalizeCollectionMetadata } from './normalize-collection.js';
+import { normalizeGraphData, normalizeGraphMetadata } from './normalize-graph.js';
 import { normalizeRefOrganData, normalizeRefOrganMetadata } from './normalize-ref-organ.js';
 
 export async function normalize(context) {
@@ -29,6 +30,10 @@ export async function normalize(context) {
     case 'collection':
       normalizeCollectionMetadata(context);
       normalizeCollectionData(context);
+      break;
+    case 'graph':
+      normalizeGraphMetadata(context);
+      normalizeGraphData(context);
       break;
     default:
       warning(`"${obj.type}" digital object type is using basic processing.`);

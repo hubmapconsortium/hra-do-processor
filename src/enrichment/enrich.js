@@ -5,6 +5,7 @@ import { enrich2dFtuData, enrich2dFtuMetadata } from './enrich-2d-ftu.js';
 import { enrichAsctbData, enrichAsctbMetadata } from './enrich-asct-b.js';
 import { enrichBasicData, enrichBasicMetadata } from './enrich-basic.js';
 import { enrichCollectionData, enrichCollectionMetadata } from './enrich-collection.js';
+import { enrichGraphData, enrichGraphMetadata } from './enrich-graph.js';
 import { enrichRefOrganData, enrichRefOrganMetadata } from './enrich-ref-organ.js';
 
 export function enrich(context) {
@@ -28,6 +29,10 @@ export function enrich(context) {
     case 'collection':
       enrichCollectionMetadata(context);
       enrichCollectionData(context);
+      break;
+    case 'graph':
+      enrichGraphMetadata(context);
+      enrichGraphData(context);
       break;
     default:
       warning(`"${obj.type}" digital object type is using basic processing.`);
