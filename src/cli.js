@@ -83,6 +83,7 @@ program
   .command('build')
   .description('Given a Digital Object, checks for and runs normalization, enrichment, and packaging in one command.')
   .option('-c, --clean', 'clean and re-run all steps')
+  .option('--update-db', 'Create or update the blazegraph database in the deployment home.')
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     build(getContext(program, command, str));
@@ -91,6 +92,7 @@ program
 program
   .command('deploy')
   .description('Deploys a given Digital Object to the deployment home (default ./site)')
+  .option('--update-db', 'Create or update the blazegraph database in the deployment home.')
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     deploy(getContext(program, command, str));
@@ -99,6 +101,7 @@ program
 program
   .command('finalize')
   .description('Finalize the deployment home before sending to the live server')
+  .option('--skip-db', 'Skip recreating the blazegraph database.')
   .action((_options, command) => {
     finalize(getContext(program, command));
   });

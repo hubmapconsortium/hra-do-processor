@@ -10,5 +10,7 @@ import { deriveLatest } from './derive-latest.js';
  */
 export function finalize(context) {
   deriveLatest(context);
-  buildBlazegraphJournal(context);
+  if (!context.skipDb) {
+    buildBlazegraphJournal(context);
+  }
 }
