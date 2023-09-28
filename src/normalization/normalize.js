@@ -31,7 +31,9 @@ export async function normalize(context) {
       normalizeCollectionMetadata(context);
       normalizeCollectionData(context);
       break;
+    case 'vocab':
     case 'graph':
+    case 'g':
       normalizeGraphMetadata(context);
       normalizeGraphData(context);
       break;

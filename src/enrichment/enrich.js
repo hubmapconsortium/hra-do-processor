@@ -30,7 +30,9 @@ export function enrich(context) {
       enrichCollectionMetadata(context);
       enrichCollectionData(context);
       break;
+    case 'vocab':
     case 'graph':
+    case 'g':
       enrichGraphMetadata(context);
       enrichGraphData(context);
       break;
