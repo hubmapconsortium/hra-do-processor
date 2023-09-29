@@ -1,6 +1,7 @@
 import { buildBlazegraphJournal } from './build-blazegraph.js';
 import { createCatalogs } from './create-catalogs.js';
 import { deriveLatest } from './derive-latest.js';
+import { miscFiles } from './misc-files.js';
 
 /**
  * Driver function which runs after completing a round of deployments. This function
@@ -10,6 +11,7 @@ import { deriveLatest } from './derive-latest.js';
  * @param {object} context
  */
 export function finalize(context) {
+  miscFiles(context);
   deriveLatest(context);
   createCatalogs(context);
   if (!context.skipDb) {

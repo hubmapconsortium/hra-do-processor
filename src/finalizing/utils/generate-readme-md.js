@@ -28,8 +28,8 @@ export function renderReadmeMd(templateFile, metadata) {
 
 export function writeReadmeMd(context, metadata) {
   const obj = context.selectedDigitalObject;
-  const templateFile = resolve(context.processorHome, 'src/packaging/templates/readme-md.njk');
+  const templateFile = resolve(context.processorHome, 'src/finalizing/templates/readme-md.njk');
   const mdString = renderReadmeMd(templateFile, metadata);
-  const mdFile = resolve(obj.path, 'packaged/README.md');
+  const mdFile = resolve(context.deploymentHome, obj.doString, 'README.md');
   writeFileSync(mdFile, mdString);
 }

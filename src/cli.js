@@ -5,7 +5,6 @@ import { build } from './building/build.js';
 import { enrich } from './enrichment/enrich.js';
 import { list } from './list.js';
 import { normalize } from './normalization/normalize.js';
-import { packageIt } from './packaging/package.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
 import { error } from './utils/logging.js';
 import { deploy } from './deployment/deploy.js';
@@ -69,14 +68,6 @@ program
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     enrich(getContext(program, command, str));
-  });
-
-program
-  .command('package')
-  .description("Packages an Enriched Digital Object, such that it can published to a website/DOI'd/etc and used")
-  .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
-  .action((str, _options, command) => {
-    packageIt(getContext(program, command, str));
   });
 
 program

@@ -10,8 +10,8 @@ export function renderIndexHtml(templateFile, metadata) {
 
 export function writeIndexHtml(context, metadata) {
   const obj = context.selectedDigitalObject;
-  const templateFile = resolve(context.processorHome, 'src/packaging/templates/index-html.njk');
+  const templateFile = resolve(context.processorHome, 'src/finalizing/templates/index-html.njk');
   const htmlString = renderIndexHtml(templateFile, metadata);
-  const filePath = resolve(obj.path, 'packaged/index.html');
+  const filePath = resolve(context.deploymentHome, obj.doString, 'index.html');
   writeFileSync(filePath, htmlString);
 }

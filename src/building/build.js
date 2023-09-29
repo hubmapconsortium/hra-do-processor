@@ -4,7 +4,6 @@ import { resolve } from 'path';
 import sh from 'shelljs';
 import { enrich } from '../enrichment/enrich.js';
 import { normalize } from '../normalization/normalize.js';
-import { packageIt } from '../packaging/package.js';
 import { getDigitalObjectInformation } from '../utils/digital-object.js';
 import { banner, info } from '../utils/logging.js';
 import { deploy } from '../deployment/deploy.js';
@@ -24,11 +23,6 @@ const COMMANDS = [
     step: 'enrich',
     test: 'enriched/enriched.ttl',
     action: enrich,
-  },
-  {
-    step: 'package',
-    test: 'packaged/index.html',
-    action: packageIt,
   },
   {
     step: 'deploy',
@@ -61,14 +55,6 @@ const COLLECTION_COMMANDS = [
     action: async (context) => {
       await runOnChildObjects(context, enrich);
       await enrich(context);
-    },
-  },
-  {
-    step: 'package',
-    test: 'packaged/index.html',
-    action: async (context) => {
-      await runOnChildObjects(context, packageIt);
-      await packageIt(context);
     },
   },
   {

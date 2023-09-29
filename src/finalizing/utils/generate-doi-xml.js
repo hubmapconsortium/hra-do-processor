@@ -47,8 +47,8 @@ export function renderDoiXml(templateFile, metadata) {
 
 export function writeDoiXml(context, metadata) {
   const obj = context.selectedDigitalObject;
-  const templateFile = resolve(context.processorHome, 'src/packaging/templates/doi-xml.njk');
+  const templateFile = resolve(context.processorHome, 'src/finalizing/templates/doi-xml.njk');
   const xmlString = renderDoiXml(templateFile, metadata);
-  const doiXmlFile = resolve(obj.path, 'packaged/doi.xml');
+  const doiXmlFile = resolve(context.deploymentHome, obj.doString, 'doi.xml');
   writeFileSync(doiXmlFile, xmlString);
 }
