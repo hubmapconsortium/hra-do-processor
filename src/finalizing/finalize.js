@@ -1,4 +1,5 @@
 import { buildBlazegraphJournal } from './build-blazegraph.js';
+import { createCatalogs } from './create-catalogs.js';
 import { deriveLatest } from './derive-latest.js';
 
 /**
@@ -10,6 +11,7 @@ import { deriveLatest } from './derive-latest.js';
  */
 export function finalize(context) {
   deriveLatest(context);
+  createCatalogs(context);
   if (!context.skipDb) {
     buildBlazegraphJournal(context);
   }

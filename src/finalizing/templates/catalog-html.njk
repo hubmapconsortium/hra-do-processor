@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" prefix="dct: http://purl.org/dc/terms/
+                        rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+                        dcat: http://www.w3.org/ns/dcat#
+                        foaf: http://xmlns.com/foaf/0.1/">
+  <head>
+    <title>Catalog for {{ iri }}</title>
+    <script src="https://cdn.jsdelivr.net/gh/vanillawc/wc-markdown@1/index.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/styles.css">
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/img/favicon.png">
+    <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/img/apple-touch-icon-114x114.png">
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="main-logo">
+        <a href="https://humanatlas.io" title="Link to HuBMAP HRA Portal"><img src="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/img/logo-hubmap.svg" alt="HuBMAP logo" class="logo"></a>
+      </div>
+    </header>
+    <div class="main" typeof="dcat:Catalog" resource="{{ iri }}">
+      <h1 property="dct:title">Catalog for {{ iri }}</h1>
+
+      <ul>
+        {% for item in items -%}
+          {% if itemType == 'Dataset' %}
+            <li property="dcat:dataset" typeof="dcat:Dataset" resource="{{ iri }}/{{ item }}">
+              <a href="{{ iri }}/{{ item }}" property="dct:title">{{ item }}</a>
+            </li>
+          {% else if itemType == 'Catalog' %}
+            <li property="dcat:catalog" typeof="dcat:Catalog" resource="{{ iri }}/{{ item }}">
+              <a href="{{ iri }}/{{ item }}" property="dct:title">{{ item }}</a>
+            </li>
+          {% endif %}
+        {%- endfor %}
+      </ul>
+    </div>
+    <footer class="main-footer">
+      <p>
+        <small>©
+                    <script>
+            new Date().getFullYear() > 2010 && document.write(new Date().getFullYear());
+          </script> All Rights
+                    Reserved.</small>
+      </p>
+    </footer>
+  </body>
+</html>
