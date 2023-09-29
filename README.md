@@ -94,10 +94,9 @@ Commands:
   enrich <digital-object-path>           Enriches a Normalized Digital Object, optionally pulling in data from other sources like Uberon, CL, Ubergraph,
                                          or other external resources. Minimally, it converts the Normalized JSON file into RDF. Optionally enriches data
                                          from the original form (ie add Metadata to nodes in the SVG or GLB files).
-  package <digital-object-path>          Packages an Enriched Digital Object, such that it can published to a website/DOI'd/etc and used
   build [options] <digital-object-path>  Given a Digital Object, checks for and runs normalization, enrichment, and packaging in one command.
   deploy <digital-object-path>           Deploys a given Digital Object to the deployment home (default ./site)
-  finalize                               Finalize the deployment home before sending to the live server
+  finalize [options]                     Finalize the deployment home before sending to the live server
   list                                   Lists all digital objects in the DO_HOME directory
   help [command]                         display help for command
 ```
@@ -110,8 +109,8 @@ Each subcommand typically takes a path to the digital object and processes it ac
 
 **enrich** - Enriches a Normalized Digital Object, optionally pulling in data from other source like Uberon, CL, Ubergraph, or any other external resource. Minimally, it converts the Normalized JSON file into RDF. Optionally enriches data from the original form (ie add Metadata to nodes in the SVG or GLB files).
 
-**package** - Packages an Enriched Digital Object, such that it can published to a website/DOI'd/etc.
-
 **build** - Given a Digital Object, checks for and runs normalization, enrichment, and packaging in one command.
+
+**finalize** - Finalizes the deployment home before sending to the live server
 
 **list** - Lists digital object information in the DO_HOME directory
