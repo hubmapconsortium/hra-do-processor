@@ -84,6 +84,9 @@ if [ -e "$ENV/bin/activate" ]; then
   npm ci
   npm install -g ${ROOT_DIR}
 
+  # Install the RDF Formatter (for RDFa support)
+  npm install -g rdf-formatter
+
   # Download ontologies
   ${ROOT_DIR}/scripts/download-ontologies.sh
 

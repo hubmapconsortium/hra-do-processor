@@ -88,7 +88,7 @@ function testCmdSuccess(context, cmd) {
 function cleanAction(context) {
   const { selectedDigitalObject: obj, clean } = context;
   if (clean) {
-    sh.exec(`rm -rf normalized enriched packaged && mkdir normalized enriched packaged`, {
+    sh.exec(`rm -rf normalized enriched && mkdir normalized enriched`, {
       cwd: obj.path,
       silent: true,
     });

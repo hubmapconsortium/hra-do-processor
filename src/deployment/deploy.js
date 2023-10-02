@@ -14,7 +14,6 @@ export function deploy(context) {
   const metadataTtl = resolve(deployPath, 'metadata.ttl');
 
   sh.mkdir('-p', resolve(deployPath, 'assets'));
-  sh.cp(resolve(obj.path, 'packaged/*'), deployPath);
   sh.cp(resolve(obj.path, 'enriched/enriched.ttl'), graph);
   sh.cp(resolve(obj.path, 'enriched/enriched-metadata.ttl'), metadataTtl);
 

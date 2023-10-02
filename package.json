@@ -36,6 +36,7 @@
     "node-fetch": "^3.3.0",
     "nunjucks": "^3.2.4",
     "papaparse": "^5.4.1",
+    "rdf-formatter": "^1.0.4",
     "semver": "^7.5.3",
     "shelljs": "^0.8.5",
     "tslib": "^2.5.0"

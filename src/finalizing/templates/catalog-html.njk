@@ -27,11 +27,11 @@
       {%- for item in items -%}
       {% if itemType == 'Dataset' %}
         <li property="dcat:dataset" typeof="dcat:Dataset" resource="{{ iri }}{{ item }}">
-          <a href="{{ item }}/" property="dct:title">{{ item }}</a>
+          <a href="{{ item }}/" resource="{{ iri }}{{ item }}"><span property="dct:title">{{ item }}</span></a>
         </li>
       {% elif itemType == 'Catalog' %}
         <li property="dcat:catalog" typeof="dcat:Catalog" resource="{{ iri }}{{ item }}">
-          <a href="{{ item }}/" property="dct:title">{{ item }}</a>
+          <a href="{{ item }}/" resource="{{ iri }}{{ item }}"><span property="dct:title">{{ item }}</span></a>
         </li>
       {%- endif -%}
       {%- endfor -%}

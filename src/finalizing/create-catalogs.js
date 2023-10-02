@@ -2,6 +2,7 @@ import { listDeployed } from "../list.js";
 import { readFileSync, writeFileSync } from 'fs';
 import { Environment } from 'nunjucks';
 import { resolve } from 'path';
+import { reifyCatalog } from '../utils/reify.js';
 
 export function createCatalogs(context) {
   const catalog = {};
@@ -29,6 +30,7 @@ export function createCatalogs(context) {
 function createListing(context, path, items, itemType) {
   const iri = `${context.lodIri}${path ? path + '/' : path}`;
   writeIndexHtml(context, path, { iri, items, itemType });
+  reifyCatalog(context, iri, path);
 }
 
 export function writeIndexHtml(context, path, data) {
