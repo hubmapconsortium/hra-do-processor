@@ -15,5 +15,5 @@ URI: [dcat:Objectidentifier](http://www.w3.org/ns/dcat#Objectidentifier)
 
 |  |  |  |
 | --- | --- | --- |
-| **Comments:** | | Used for inheritence and type checking |
+| **Comments:** | | Used for inheritance and type checking |
 

@@ -1,7 +1,4 @@
-@prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
-@prefix ccf: <http://purl.org/ccf/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
 @prefix linkml: <https://w3id.org/linkml/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -11,511 +8,266 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-dcat:Boolean a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "boolean" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:boolean ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
+xsd:boolean a rdfs:Datatype .
 
-dcat:Curie a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "curie" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
+xsd:date a rdfs:Datatype .
 
-dcat:Date a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "date" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:date ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
+xsd:dateTime a rdfs:Datatype .
 
-dcat:DateOrDatetime a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "date_or_datetime" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange linkml:DateOrDatetime ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
+xsd:decimal a rdfs:Datatype .
 
-dcat:Datetime a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "datetime" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:dateTime ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
+xsd:double a rdfs:Datatype .
 
-dcat:Decimal a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "decimal" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:decimal ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
+xsd:float a rdfs:Datatype .
 
-dcat:Double a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "double" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:double ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
+xsd:integer a rdfs:Datatype .
 
-dcat:Float a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "float" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:float ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
+xsd:time a rdfs:Datatype .
 
-dcat:Integer a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "integer" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:integer ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
-
-dcat:Ncname a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "ncname" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
-
-dcat:Nodeidentifier a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "nodeidentifier" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange shex:nonLiteral ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
-
-dcat:Objectidentifier a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "objectidentifier" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange shex:iri ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
-
-dcat:Time a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "time" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:dateTime ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
-
-<https://purl.humanatlas.io/specs/collection-metadata.owl.ttl> a owl:Ontology ;
-    rdfs:label "collection-metadata" ;
-    IAO:0000700 dcat:Container,
-        dcat:DatasetMetadata,
-        dcat:Distribution,
-        dcat:Grant,
-        dcat:Person ;
-    linkml:id "https://purl.humanatlas.io/specs/collection-metadata" .
-
-linkml:SubsetDefinition a owl:Class .
-
-schema1:about a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "about" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch schema1:about .
-
-schema1:propertyID a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "propertyId" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch schema1:propertyID .
-
-schema1:value a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "value" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch schema1:value .
-
-owl:versionInfo a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "versionInfo" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch owl:versionInfo .
-
-dcat:Container a owl:Class,
-        linkml:ClassDefinition ;
+dcat:Container a owl:Class ;
     rdfs:label "Container" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass dcat:String ;
-            owl:onProperty dct:license ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:allValuesFrom dcat:Person ;
-                        owl:onProperty dct:creator ] [ a owl:Restriction ;
-                        owl:onProperty dct:creator ;
-                        owl:someValuesFrom dcat:Person ] ) ],
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:title ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty schema1:citation ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:creators ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty dct:publisher ],
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:creators ],
         [ a owl:Restriction ;
-            owl:onClass dcat:String ;
-            owl:onProperty dct:title ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:description ],
         [ a owl:Restriction ;
-            owl:allValuesFrom dcat:String ;
-            owl:onProperty ccf:data_table ],
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:license ],
         [ a owl:Restriction ;
-            owl:onClass dcat:String ;
-            owl:onProperty dcat:iri ;
-            owl:qualifiedCardinality 1 ],
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:iri ],
         [ a owl:Restriction ;
-            owl:allValuesFrom dcat:Person ;
-            owl:onProperty schema1:reviewedBy ],
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:version ],
         [ a owl:Restriction ;
-            owl:onClass dcat:String ;
-            owl:onProperty dct:description ;
-            owl:qualifiedCardinality 1 ],
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:distributions ],
         [ a owl:Restriction ;
-            owl:allValuesFrom dcat:Person ;
-            owl:onProperty ccf:external_reviewer ],
-        [ a owl:Class ;
-            owl:intersectionOf ( [ a owl:Restriction ;
-                        owl:allValuesFrom dcat:Distribution ;
-                        owl:onProperty dcat:distribution ] [ a owl:Restriction ;
-                        owl:onProperty dcat:distribution ;
-                        owl:someValuesFrom dcat:Distribution ] ) ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:license ],
         [ a owl:Restriction ;
-            owl:allValuesFrom dcat:Grant ;
-            owl:onProperty schema1:funding ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:iri ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty ccf:citation_overall ],
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:creation_date ],
         [ a owl:Restriction ;
-            owl:onClass dcat:String ;
-            owl:onProperty schema1:version ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:title ],
         [ a owl:Restriction ;
-            owl:allValuesFrom dcat:Person ;
-            owl:onProperty ccf:project_lead ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:version ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:Uriorcurie ;
-            owl:onProperty ccf:doi ],
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:version ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty ccf:hubmap_id ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:creation_date ],
         [ a owl:Restriction ;
-            owl:onClass dcat:String ;
-            owl:onProperty schema1:dateCreated ;
-            owl:qualifiedCardinality 1 ] ;
-    skos:exactMatch dcat:Dataset .
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:distributions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:creation_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:iri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:license ] ;
+    skos:exactMatch dcat:Dataset ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-dcat:DatasetMetadata a owl:Class,
-        linkml:ClassDefinition ;
+dcat:DatasetMetadata a owl:Class ;
     rdfs:label "DatasetMetadata" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty schema1:dateCreated ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty dct:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom dcat:Person ;
-            owl:onProperty dct:creator ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty dct:title ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty dct:publisher ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:Uriorcurie ;
-            owl:onProperty rdfs:seeAlso ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty dct:license ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty schema1:version ] ;
-    skos:exactMatch dcat:Dataset .
+    skos:exactMatch dcat:Dataset ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-dcat:iri a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "iri" ;
-    rdfs:range dcat:String .
+dcat:about a owl:DatatypeProperty ;
+    rdfs:label "about" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-ccf:citation_overall a owl:ObjectProperty,
-        linkml:SlotDefinition ;
+dcat:accessUrl a owl:DatatypeProperty ;
+    rdfs:label "accessUrl" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
+
+dcat:awardNumber a owl:DatatypeProperty ;
+    rdfs:label "awardNumber" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
+
+dcat:citation a owl:DatatypeProperty ;
+    rdfs:label "citation" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
+
+dcat:citationOverall a owl:DatatypeProperty ;
     rdfs:label "citationOverall" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch ccf:citation_overall .
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-ccf:data_table a owl:ObjectProperty,
-        linkml:SlotDefinition ;
+dcat:datatable a owl:DatatypeProperty ;
     rdfs:label "datatable" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch ccf:data_table .
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-ccf:doi a owl:ObjectProperty,
-        linkml:SlotDefinition ;
+dcat:doi a owl:DatatypeProperty ;
     rdfs:label "doi" ;
-    rdfs:range dcat:Uriorcurie ;
-    skos:exactMatch ccf:doi .
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-ccf:external_reviewer a owl:ObjectProperty,
-        linkml:SlotDefinition ;
+dcat:downloadUrl a owl:DatatypeProperty ;
+    rdfs:label "downloadUrl" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
+
+dcat:externalReviewers a owl:ObjectProperty ;
     rdfs:label "externalReviewers" ;
     rdfs:range dcat:Person ;
-    skos:exactMatch ccf:external_reviewer .
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-ccf:hubmap_id a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "hubmapId" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch ccf:hubmap_id .
+dcat:firstName a owl:DatatypeProperty ;
+    rdfs:label "firstName" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-ccf:project_lead a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "project_leads" ;
-    rdfs:range dcat:Person ;
-    skos:exactMatch ccf:project_lead .
+dcat:fullName a owl:DatatypeProperty ;
+    rdfs:label "fullName" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-schema1:award a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "awardNumber" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch schema1:award .
-
-schema1:citation a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "citation" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch schema1:citation .
-
-schema1:familyName a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "lastName" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch schema1:familyName .
-
-schema1:funder a owl:ObjectProperty,
-        linkml:SlotDefinition ;
+dcat:funder a owl:DatatypeProperty ;
     rdfs:label "funder" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch schema1:funder .
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-schema1:funding a owl:ObjectProperty,
-        linkml:SlotDefinition ;
+dcat:funders a owl:ObjectProperty ;
     rdfs:label "funders" ;
     rdfs:range dcat:Grant ;
-    skos:exactMatch schema1:funding .
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-schema1:givenName a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "firstName" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch schema1:givenName .
+dcat:hubmapId a owl:DatatypeProperty ;
+    rdfs:label "hubmapId" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-schema1:identifier a owl:ObjectProperty,
-        linkml:SlotDefinition ;
+dcat:lastName a owl:DatatypeProperty ;
+    rdfs:label "lastName" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
+
+dcat:mediaType a owl:DatatypeProperty ;
+    rdfs:label "mediaType" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
+
+dcat:orcid a owl:DatatypeProperty ;
     rdfs:label "orcid" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch schema1:identifier .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^(\\d{4}-){3}\\d{3}(\\d|X)$" ] ) ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-schema1:name a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "fullName" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch schema1:name .
+dcat:project_leads a owl:ObjectProperty ;
+    rdfs:label "project_leads" ;
+    rdfs:range dcat:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-schema1:reviewedBy a owl:ObjectProperty,
-        linkml:SlotDefinition ;
+dcat:propertyId a owl:DatatypeProperty ;
+    rdfs:label "propertyId" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
+
+dcat:publisher a owl:DatatypeProperty ;
+    rdfs:label "publisher" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
+
+dcat:reviewers a owl:ObjectProperty ;
     rdfs:label "reviewers" ;
     rdfs:range dcat:Person ;
-    skos:exactMatch schema1:reviewedBy .
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-rdfs:seeAlso a owl:ObjectProperty,
-        linkml:SlotDefinition ;
+dcat:see_also a owl:DatatypeProperty ;
     rdfs:label "see_also" ;
-    rdfs:range dcat:Uriorcurie ;
-    skos:exactMatch rdfs:seeAlso .
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-dcat:accessURL a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "accessUrl" ;
-    rdfs:range dcat:Uri ;
-    skos:exactMatch dcat:accessURL .
+dcat:value a owl:DatatypeProperty ;
+    rdfs:label "value" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-dcat:downloadURL a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "downloadUrl" ;
-    rdfs:range dcat:Uri ;
-    skos:exactMatch dcat:downloadURL .
+dcat:versionInfo a owl:DatatypeProperty ;
+    rdfs:label "versionInfo" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-dcat:mediaType a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "mediaType" ;
-    rdfs:range dcat:Uriorcurie ;
-    skos:exactMatch dcat:mediaType .
+shex:iri a rdfs:Datatype .
 
-dct:description a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "description" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch dct:description .
+shex:nonLiteral a rdfs:Datatype .
 
-dct:license a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "license" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch dct:license .
+<https://purl.humanatlas.io/specs/collection-metadata.owl.ttl> a owl:Ontology ;
+    rdfs:label "collection-metadata" .
 
-dct:publisher a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "publisher" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch dct:publisher .
+linkml:DateOrDatetime a rdfs:Datatype .
 
-schema1:dateCreated a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "creation_date" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch schema1:dateCreated .
-
-schema1:version a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "version" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch schema1:version .
-
-dcat:Grant a owl:Class,
-        linkml:ClassDefinition ;
+dcat:Grant a owl:Class ;
     rdfs:label "Grant" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty schema1:funder ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty schema1:award ] ;
-    skos:exactMatch schema1:Grant .
+    skos:exactMatch schema1:Grant ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-dcat:distribution a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "distributions" ;
-    rdfs:range dcat:Distribution ;
-    skos:exactMatch dcat:distribution .
+dcat:Distribution a owl:Class ;
+    rdfs:label "Distribution" ;
+    skos:exactMatch dcat:Distribution ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-dct:creator a owl:ObjectProperty,
-        linkml:SlotDefinition ;
+dcat:creators a owl:ObjectProperty ;
     rdfs:label "creators" ;
     rdfs:range dcat:Person ;
-    skos:exactMatch dct:creator .
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-dct:title a owl:ObjectProperty,
-        linkml:SlotDefinition ;
+dcat:distributions a owl:ObjectProperty ;
+    rdfs:label "distributions" ;
+    rdfs:range dcat:Distribution ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
+
+dcat:creation_date a owl:DatatypeProperty ;
+    rdfs:label "creation_date" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
+
+dcat:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
+
+dcat:iri a owl:DatatypeProperty ;
+    rdfs:label "iri" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
+
+dcat:license a owl:DatatypeProperty ;
+    rdfs:label "license" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
+
+dcat:title a owl:DatatypeProperty ;
     rdfs:label "title" ;
-    rdfs:range dcat:String ;
-    skos:exactMatch dct:title .
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-dcat:Uri a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "uri" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:anyURI ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
+dcat:version a owl:DatatypeProperty ;
+    rdfs:label "version" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-dcat:Distribution a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "Distribution" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:Uri ;
-            owl:onProperty dcat:accessURL ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:Uriorcurie ;
-            owl:onProperty dcat:mediaType ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty dct:title ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:Uri ;
-            owl:onProperty dcat:downloadURL ] ;
-    skos:exactMatch dcat:Distribution .
-
-linkml:ClassDefinition a owl:Class .
-
-dcat:Uriorcurie a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "uriorcurie" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:anyURI ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
-
-dcat:Person a owl:Class,
-        linkml:ClassDefinition ;
+dcat:Person a owl:Class ;
     rdfs:label "Person" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty schema1:givenName ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty schema1:identifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty schema1:name ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass dcat:String ;
-            owl:onProperty schema1:familyName ] ;
-    skos:exactMatch schema1:Person .
+    skos:exactMatch schema1:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/collection-metadata> .
 
-linkml:TypeDefinition a owl:Class .
+xsd:anyURI a rdfs:Datatype .
 
-linkml:topValue a owl:DatatypeProperty ;
-    rdfs:label "value" .
-
-linkml:SlotDefinition a owl:Class .
-
-dcat:String a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:label "string" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
-
+xsd:string a rdfs:Datatype .
 
 

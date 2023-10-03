@@ -21,7 +21,11 @@
             "properties": {
                 "data": {
                     "items": {
-                        "$ref": "#/$defs/FtuIllustration"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/FtuIllustration"
+                            }
+                        ]
                     },
                     "type": "array"
                 },
@@ -95,6 +99,9 @@
             "description": "",
             "properties": {
                 "class_type": {
+                    "enum": [
+                        "FtuIllustration"
+                    ],
                     "type": "string"
                 },
                 "id": {
@@ -102,13 +109,21 @@
                 },
                 "illustration_node": {
                     "items": {
-                        "$ref": "#/$defs/FtuIllustrationNode"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/FtuIllustrationNode"
+                            }
+                        ]
                     },
                     "type": "array"
                 },
                 "image_file": {
                     "items": {
-                        "$ref": "#/$defs/FtuIllustrationFile"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/FtuIllustrationFile"
+                            }
+                        ]
                     },
                     "type": "array"
                 },
@@ -136,6 +151,9 @@
             "description": "",
             "properties": {
                 "class_type": {
+                    "enum": [
+                        "FtuIllustrationFile"
+                    ],
                     "type": "string"
                 },
                 "file_format": {
@@ -168,6 +186,9 @@
             "description": "",
             "properties": {
                 "class_type": {
+                    "enum": [
+                        "FtuIllustrationNode"
+                    ],
                     "type": "string"
                 },
                 "id": {
@@ -239,7 +260,11 @@
     "properties": {
         "data": {
             "items": {
-                "$ref": "#/$defs/FtuIllustration"
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/FtuIllustration"
+                    }
+                ]
             },
             "type": "array"
         },

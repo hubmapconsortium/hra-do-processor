@@ -21,7 +21,11 @@
             "properties": {
                 "data": {
                     "items": {
-                        "$ref": "#/$defs/SpatialEntity"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SpatialEntity"
+                            }
+                        ]
                     },
                     "type": "array"
                 },
@@ -40,6 +44,9 @@
             "description": "",
             "properties": {
                 "class_type": {
+                    "enum": [
+                        "Creator"
+                    ],
                     "type": "string"
                 },
                 "firstName": {
@@ -153,6 +160,9 @@
             "description": "",
             "properties": {
                 "class_type": {
+                    "enum": [
+                        "ExtractionSet"
+                    ],
                     "type": "string"
                 },
                 "extraction_set_for": {
@@ -282,6 +292,9 @@
             "description": "",
             "properties": {
                 "class_type": {
+                    "enum": [
+                        "SpatialEntity"
+                    ],
                     "type": "string"
                 },
                 "create_date": {
@@ -290,7 +303,11 @@
                 },
                 "creator": {
                     "items": {
-                        "$ref": "#/$defs/Creator"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Creator"
+                            }
+                        ]
                     },
                     "type": "array"
                 },
@@ -307,7 +324,11 @@
                     "type": "string"
                 },
                 "object_reference": {
-                    "$ref": "#/$defs/SpatialObjectReference"
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/SpatialObjectReference"
+                        }
+                    ]
                 },
                 "organ_donor_sex": {
                     "$ref": "#/$defs/DonorSexEnum"
@@ -317,7 +338,11 @@
                 },
                 "placements": {
                     "items": {
-                        "$ref": "#/$defs/SpatialPlacement"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SpatialPlacement"
+                            }
+                        ]
                     },
                     "type": "array"
                 },
@@ -371,6 +396,9 @@
             "description": "",
             "properties": {
                 "class_type": {
+                    "enum": [
+                        "SpatialObjectReference"
+                    ],
                     "type": "string"
                 },
                 "file": {
@@ -389,7 +417,11 @@
                     "type": "string"
                 },
                 "placement": {
-                    "$ref": "#/$defs/SpatialPlacement"
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/SpatialPlacement"
+                        }
+                    ]
                 },
                 "typeOf": {
                     "items": {
@@ -413,6 +445,9 @@
             "description": "",
             "properties": {
                 "class_type": {
+                    "enum": [
+                        "SpatialPlacement"
+                    ],
                     "type": "string"
                 },
                 "id": {
@@ -519,7 +554,11 @@
     "properties": {
         "data": {
             "items": {
-                "$ref": "#/$defs/SpatialEntity"
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/SpatialEntity"
+                    }
+                ]
             },
             "type": "array"
         },

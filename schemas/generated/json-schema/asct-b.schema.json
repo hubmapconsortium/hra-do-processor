@@ -20,6 +20,9 @@
                     "type": "string"
                 },
                 "class_type": {
+                    "enum": [
+                        "AnatomicalStructure"
+                    ],
                     "type": "string"
                 },
                 "id": {
@@ -43,19 +46,31 @@
             "properties": {
                 "anatomical_structures": {
                     "items": {
-                        "$ref": "#/$defs/AnatomicalStructure"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/AnatomicalStructure"
+                            }
+                        ]
                     },
                     "type": "array"
                 },
                 "biomarkers": {
                     "items": {
-                        "$ref": "#/$defs/Biomarker"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Biomarker"
+                            }
+                        ]
                     },
                     "type": "array"
                 },
                 "cell_types": {
                     "items": {
-                        "$ref": "#/$defs/CellType"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/CellType"
+                            }
+                        ]
                     },
                     "type": "array"
                 }
@@ -115,6 +130,9 @@
                     "type": "string"
                 },
                 "class_type": {
+                    "enum": [
+                        "Biomarker"
+                    ],
                     "type": "string"
                 },
                 "id": {
@@ -186,6 +204,9 @@
                     "type": "string"
                 },
                 "class_type": {
+                    "enum": [
+                        "CellType"
+                    ],
                     "type": "string"
                 },
                 "id": {

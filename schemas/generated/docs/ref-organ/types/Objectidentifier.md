@@ -15,5 +15,5 @@ URI: [ccf:Objectidentifier](http://purl.org/ccf/Objectidentifier)
 
 |  |  |  |
 | --- | --- | --- |
-| **Comments:** | | Used for inheritence and type checking |
+| **Comments:** | | Used for inheritance and type checking |
 
