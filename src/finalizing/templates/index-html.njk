@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <title>{{ title }}, {{ version }}</title>
+    <script type="application/ld+json">
+    {{ getStructuredData() | json }}
+    </script>
     <script src="https://cdn.jsdelivr.net/gh/vanillawc/wc-markdown@1/index.js" type="module"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
