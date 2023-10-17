@@ -7,6 +7,7 @@ import { enrichBasicData, enrichBasicMetadata } from './enrich-basic.js';
 import { enrichCollectionData, enrichCollectionMetadata } from './enrich-collection.js';
 import { enrichGraphData, enrichGraphMetadata } from './enrich-graph.js';
 import { enrichRefOrganData, enrichRefOrganMetadata } from './enrich-ref-organ.js';
+import { enrichLandmarkData, enrichLandmarkMetadata } from './enrich-landmark.js';
 
 export function enrich(context) {
   const obj = context.selectedDigitalObject;
@@ -21,6 +22,10 @@ export function enrich(context) {
     case 'ref-organ':
       enrichRefOrganMetadata(context);
       enrichRefOrganData(context);
+      break;
+    case 'landmark':
+      enrichLandmarkMetadata(context);
+      enrichLandmarkData(context);
       break;
     case '2d-ftu':
       enrich2dFtuMetadata(context);
