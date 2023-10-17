@@ -8,6 +8,7 @@ import { normalizeBasicData, normalizeBasicMetadata } from './normalize-basic.js
 import { normalizeCollectionData, normalizeCollectionMetadata } from './normalize-collection.js';
 import { normalizeGraphData, normalizeGraphMetadata } from './normalize-graph.js';
 import { normalizeRefOrganData, normalizeRefOrganMetadata } from './normalize-ref-organ.js';
+import { normalizeLandmarkData, normalizeLandmarkMetadata } from './normalize-landmark.js';
 
 export async function normalize(context) {
   const { selectedDigitalObject: obj } = context;
@@ -22,6 +23,10 @@ export async function normalize(context) {
     case 'ref-organ':
       normalizeRefOrganMetadata(context);
       await normalizeRefOrganData(context);
+      break;
+    case 'landmark':
+      normalizeLandmarkMetadata(context);
+      await normalizeLandmarkData(context);
       break;
     case '2d-ftu':
       normalize2dFtuMetadata(context);

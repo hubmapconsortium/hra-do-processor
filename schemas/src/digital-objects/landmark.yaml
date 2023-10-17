@@ -1,0 +1,364 @@
+id: https://purl.humanatlas.io/specs/landmark
+name: landmark
+prefixes:
+  ccf: http://purl.org/ccf/
+  dct: http://purl.org/dc/terms/
+  schema: https://schema.org/
+  pav: http://purl.org/pav/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  obo: http://purl.obolibrary.org/obo/
+  linkml: https://w3id.org/linkml/
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  FMA: http://purl.org/sig/ont/fma/fma
+
+default_prefix: ccf
+default_range: string
+
+imports:
+  - linkml:types
+  - ../shared/metadata-base
+  - ../shared/instance-base
+
+settings:
+  uberon: "UBERON"
+  fma: "FMA"
+
+classes:
+  SpatialEntity:
+    class_uri: ccf:SpatialEntity
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - id
+      - pref_label
+      - creator
+      - x_dimension
+      - y_dimension
+      - z_dimension
+      - dimension_unit
+      - object_reference
+      - placements
+      - extraction_set
+      - rui_rank
+
+  SpatialObjectReference:
+    class_uri: ccf:SpatialObjectReference
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - id
+      - file
+      - file_subpath
+      - file_format
+      - placement
+
+  SpatialPlacement:
+    class_uri: ccf:SpatialPlacement
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - id
+      - target
+      - x_scaling
+      - y_scaling
+      - z_scaling
+      - scaling_unit
+      - x_rotation
+      - y_rotation
+      - z_rotation
+      - rotation_unit
+      - rotation_order
+      - x_translation
+      - y_translation
+      - z_translation
+      - translation_unit
+
+  ExtractionSet:
+    class_uri: ccf:ExtractionSet
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - id
+      - pref_label
+      - extraction_set_for
+      - rui_rank
+
+  LandmarkData:
+    slots:
+      - landmarks
+      - spatial_entities
+
+  LandmarkMetadata:
+    class_uri: dcat:Dataset
+    slots:
+      - title
+      - description
+      - creators
+      - version
+      - creation_date
+      - license
+      - publisher
+      - see_also
+
+  Creator:
+    class_uri: schema:Person
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - fullName
+      - firstName
+      - lastName
+      - orcid
+    slot_usage:
+      fullName:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      firstName:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      lastName:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      orcid:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+
+  Container:
+    tree_root: true
+    attributes:
+      iri:
+        range: uriorcurie
+      metadata:
+        range: LandmarkMetadata
+      data:
+        range: LandmarkData
+    annotations:
+      owl.template: |-
+        AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
+        AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
+        {% for c in metadata.creators %}
+        AnnotationAssertion( dct:creator {{iri}} "{{c.fullName|e}} ({{c.orcid}})" )
+        {% endfor %}
+        AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
+        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
+        AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
+        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
+        AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
+
+slots:
+  landmarks:
+    required: true
+    multivalued: true
+    inlined_as_list: true
+    range: ExtractionSet
+  spatial_entities:
+    required: true
+    multivalued: true
+    inlined_as_list: true
+    range: SpatialEntity
+  pref_label:
+    required: true
+    slot_uri: skos:prefLabel
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  creator:
+    required: true
+    slot_uri: dct:creator
+    inlined: true
+    multivalued: true
+    inlined_as_list: true
+    range: Creator
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  x_dimension:
+    required: true
+    range: float
+    minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  y_dimension:
+    required: true
+    range: float
+    minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  z_dimension:
+    required: true
+    range: float
+    minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  dimension_unit:
+    required: true
+    range: DimensionUnitEnum
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  x_scaling:
+    required: true
+    range: float
+    minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  y_scaling:
+    required: true
+    range: float
+    minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  z_scaling:
+    required: true
+    range: float
+    minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  scaling_unit:
+    required: true
+    range: ScalingUnitEnum
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  x_rotation:
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  y_rotation:
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  z_rotation:
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  rotation_unit:
+    required: true
+    range: RotationUnitEnum
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  rotation_order:
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  x_translation:
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  y_translation:
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  z_translation:
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  translation_unit:
+    required: true
+    range: TranslationUnitEnum
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  file:
+    required: true
+    slot_uri: ccf:file_url
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  file_subpath:
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  file_format:
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  target:
+    required: true
+    slot_uri: ccf:placement_relative_to
+    range: SpatialEntity
+    inlined: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  object_reference:
+    required: false
+    slot_uri: ccf:has_object_reference
+    range: SpatialObjectReference
+    inlined: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  placement:
+    required: true
+    range: SpatialPlacement
+    inlined: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  placements:
+    required: false
+    range: SpatialPlacement
+    inlined: true
+    multivalued: true
+    inlined_as_list: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  reference_organ:
+    required: false
+    slot_uri: ccf:has_reference_organ
+    range: SpatialEntity
+    inlined: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  extraction_set:
+    required: true
+    range: uriorcurie
+    inlined: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  extraction_set_for:
+    required: true
+    range: uriorcurie
+    inlined: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  rui_rank:
+    required: false
+    recommended: true
+    range: integer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+
+enums:
+  DimensionUnitEnum:
+    permissible_values:
+      centimeter:
+        description: A length unit which is equal to one hundredth of a meter.
+        meaning: obo:UO_0000015
+      millimeter:
+        description: A length unit which is equal to one thousandth of a meter.
+        meaning: obo:UO_0000016
+  ScalingUnitEnum:
+    permissible_values:
+      ratio:
+        description: A dimensionless ratio unit which, given a pair of quantities a and b, for which b is a multiple of a, denotes b by giving the multiplier (coefficient) c for a to result in b.
+        meaning: obo:UO_0010006
+  RotationUnitEnum:
+    permissible_values:
+      degree:
+        description: A plane angle unit which is equal to 1/360 of a full rotation.
+        meaning: obo:UO_0000185
+  TranslationUnitEnum:
+    permissible_values:
+      centimeter:
+        description: A length unit which is equal to one hundredth of a meter.
+        meaning: obo:UO_0000015
+      millimeter:
+        description: A length unit which is equal to one thousandth of a meter.
+        meaning: obo:UO_0000016
