@@ -3,6 +3,7 @@ import { dump, load } from 'js-yaml';
 import { lookup } from 'mime-types';
 import { resolve } from 'path';
 import { info } from '../utils/logging.js';
+import { throwOnError } from '../utils/sh-exec.js';
 
 export function readMetadata(context) {
   const { path, type, name, version } = context.selectedDigitalObject;
@@ -118,4 +119,13 @@ export function getMetadataIri(context) {
 function getDataDownloadUrl(context, format = 'ttl') {
   const { type, name, version } = context.selectedDigitalObject;
   return `${context.cdnIri}${type}/${name}/${version}/graph.${format}`;
+}
+
+export function cleanDirectory(context) {
+  const { selectedDigitalObject: obj } = context;
+  const path = resolve(obj.path, 'normalized/');
+  throwOnError(
+    `find ${path} -type f -exec rm -f {} +`,
+    'Clean normalized directory failed.'
+  );
 }

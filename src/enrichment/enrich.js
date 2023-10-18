@@ -8,11 +8,16 @@ import { enrichCollectionData, enrichCollectionMetadata } from './enrich-collect
 import { enrichGraphData, enrichGraphMetadata } from './enrich-graph.js';
 import { enrichRefOrganData, enrichRefOrganMetadata } from './enrich-ref-organ.js';
 import { enrichLandmarkData, enrichLandmarkMetadata } from './enrich-landmark.js';
+import { cleanDirectory } from './utils.js';
 
 export function enrich(context) {
   const obj = context.selectedDigitalObject;
   sh.mkdir('-p', resolve(obj.path, 'enriched'));
   header(context, 'run-enrich');
+
+  // Clean up any existing files
+  cleanDirectory(context);
+
   let processedType = obj.name.endsWith('crosswalk') ? 'basic' : obj.type;
   switch (processedType) {
     case 'asct-b':

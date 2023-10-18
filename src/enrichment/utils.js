@@ -82,6 +82,15 @@ export function cleanTemporaryFiles(context) {
   );
 }
 
+export function cleanDirectory(context) {
+  const { selectedDigitalObject: obj } = context;
+  const path = resolve(obj.path, 'enriched/');
+  throwOnError(
+    `find ${path} -type f -exec rm -f {} +`,
+    'Clean enriched directory failed.'
+  );
+}
+
 export function logOutput(outputPath) {
   more(`==> ${outputPath}`);
 }

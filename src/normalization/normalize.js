@@ -9,11 +9,16 @@ import { normalizeCollectionData, normalizeCollectionMetadata } from './normaliz
 import { normalizeGraphData, normalizeGraphMetadata } from './normalize-graph.js';
 import { normalizeRefOrganData, normalizeRefOrganMetadata } from './normalize-ref-organ.js';
 import { normalizeLandmarkData, normalizeLandmarkMetadata } from './normalize-landmark.js';
+import { cleanDirectory } from './utils.js';
 
 export async function normalize(context) {
   const { selectedDigitalObject: obj } = context;
   sh.mkdir('-p', resolve(obj.path, 'normalized'));
   header(context, 'run-normalize');
+
+  // Clean up any existing files
+  cleanDirectory(context);
+  
   let processedType = obj.name.endsWith('crosswalk') ? 'basic' : obj.type;
   switch (processedType) {
     case 'asct-b':
