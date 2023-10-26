@@ -1,5 +1,5 @@
-id: https://purl.humanatlas.io/specs/basic
-name: basic
+id: https://purl.humanatlas.io/specs/graph
+name: graph
 prefixes:
   ccf: http://purl.org/ccf/
   dcterms: http://purl.org/dc/terms/
