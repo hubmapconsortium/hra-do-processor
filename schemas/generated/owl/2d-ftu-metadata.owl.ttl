@@ -31,67 +31,67 @@ dcat:Container a owl:Class ;
             owl:onProperty dcat:description ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
+            owl:onProperty dcat:version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:license ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:creation_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:distributions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty dcat:creators ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcat:title ],
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:creation_date ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 1 ;
             owl:onProperty dcat:iri ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dcat:license ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dcat:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcat:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcat:license ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dcat:license ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcat:version ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dcat:version ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty dcat:title ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dcat:title ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dcat:version ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty dcat:creation_date ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty dcat:iri ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty dcat:distributions ],
+            owl:onProperty dcat:license ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:title ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty dcat:distributions ],
+            owl:onProperty dcat:title ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty dcat:creation_date ],
+            owl:onProperty dcat:license ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty dcat:creators ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty dcat:creation_date ],
+            owl:onProperty dcat:distributions ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dcat:iri ] ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:iri ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:version ] ;
     skos:exactMatch dcat:Dataset ;
     skos:inScheme <https://purl.humanatlas.io/specs/2d-ftu-metadata> .
 

@@ -22,8 +22,11 @@ AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
 AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
 AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )""" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:data ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ccf:metadata ],
+            owl:onProperty ccf:iri ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ccf:metadata ],
@@ -31,20 +34,17 @@ AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )""" ;
             owl:allValuesFrom xsd:anyURI ;
             owl:onProperty ccf:iri ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:metadata ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty ccf:data ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ccf:iri ],
         [ a owl:Restriction ;
             owl:allValuesFrom ccf:BasicMetadata ;
-            owl:onProperty ccf:metadata ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ccf:data ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ccf:iri ] ;
+            owl:onProperty ccf:metadata ] ;
     skos:inScheme <https://purl.humanatlas.io/specs/basic> .
 
 ccf:DatasetMetadata a owl:Class ;

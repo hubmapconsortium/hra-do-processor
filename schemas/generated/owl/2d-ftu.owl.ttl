@@ -22,29 +22,29 @@ AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
 AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
 AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )""" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom ccf:FtuIllustration ;
-            owl:onProperty ccf:data ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty ccf:metadata ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom ccf:FtuIllustration ;
             owl:onProperty ccf:data ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:anyURI ;
             owl:onProperty ccf:iri ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:iri ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty ccf:iri ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty ccf:metadata ],
         [ a owl:Restriction ;
             owl:allValuesFrom ccf:DatasetMetadata ;
             owl:onProperty ccf:metadata ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ccf:iri ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ccf:iri ] ;
+            owl:onProperty ccf:data ] ;
     skos:inScheme <https://purl.humanatlas.io/specs/2d-ftu> .
 
 ccf:about a owl:DatatypeProperty ;
@@ -267,15 +267,15 @@ linkml:DateOrDatetime a rdfs:Datatype .
 ccf:AnatomicalStructure a owl:Class ;
     rdfs:label "AnatomicalStructure" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:string ;
+                    owl:withRestrictions ( [ xsd:pattern "(UBERON|FMA):\\d+" ] ) ] ;
             owl:onProperty ccf:id ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ccf:id ],
         [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:onDatatype xsd:string ;
-                    owl:withRestrictions ( [ xsd:pattern "(UBERON|FMA):\\d+" ] ) ] ;
+            owl:maxCardinality 1 ;
             owl:onProperty ccf:id ] ;
     skos:inScheme <https://purl.humanatlas.io/specs/2d-ftu> .
 

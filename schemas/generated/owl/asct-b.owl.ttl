@@ -22,31 +22,31 @@ AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
 AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
 AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )""" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ccf:metadata ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ccf:metadata ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom ccf:AsctbDataset ;
+            owl:onProperty ccf:data ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty ccf:iri ],
         [ a owl:Restriction ;
             owl:allValuesFrom ccf:AsctbMetadata ;
             owl:onProperty ccf:metadata ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ccf:data ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty ccf:iri ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:AsctbDataset ;
-            owl:onProperty ccf:data ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ccf:data ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty ccf:data ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:iri ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:metadata ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
             owl:onProperty ccf:iri ] ;
     skos:inScheme <https://purl.humanatlas.io/specs/asct-b> .
 
@@ -278,22 +278,22 @@ ccf:Biomarker a owl:Class ;
     rdfs:label "Biomarker" ;
     ccf:owl "Class" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty ccf:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty ccf:ccf_biomarker_type ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty ccf:ccf_biomarker_type ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
             owl:onProperty ccf:ccf_biomarker_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:onDatatype xsd:string ;
                     owl:withRestrictions ( [ xsd:pattern "HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+" ] ) ] ;
             owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:ccf_biomarker_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ccf:id ],
@@ -321,34 +321,34 @@ SubClassOf(
 )
 {% endfor %} """ ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ccf:ccf_located_in ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ccf:ccf_ct_isa ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ccf:ccf_located_in ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ccf:ccf_ct_isa ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ccf:ccf_has_biomarker_set ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty ccf:id ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ccf:id ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty ccf:ccf_has_biomarker_set ],
+            owl:onProperty ccf:ccf_ct_isa ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:onDatatype xsd:string ;
                     owl:withRestrictions ( [ xsd:pattern "(CL|PCL|LMHA):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+" ] ) ] ;
             owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:ccf_has_biomarker_set ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:ccf_located_in ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:ccf_located_in ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:ccf_has_biomarker_set ],
         ccf:AsctbConcept ;
     skos:inScheme <https://purl.humanatlas.io/specs/asct-b> .
 
@@ -376,12 +376,6 @@ ccf:AnatomicalStructure a owl:Class ;
     rdfs:label "AnatomicalStructure" ;
     ccf:owl "Class" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty ccf:id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ccf:id ],
-        [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:onDatatype xsd:string ;
                     owl:withRestrictions ( [ xsd:pattern "(UBERON|FMA):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+" ] ) ] ;
@@ -389,6 +383,12 @@ ccf:AnatomicalStructure a owl:Class ;
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty ccf:ccf_part_of ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:id ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ccf:ccf_part_of ],
@@ -398,8 +398,8 @@ ccf:AnatomicalStructure a owl:Class ;
 ccf:AsctbConcept a owl:Class ;
     rdfs:label "AsctbConcept" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ccf:ccf_is_provisional ],
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:ccf_pref_label ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ccf:ccf_pref_label ],
@@ -407,23 +407,23 @@ ccf:AsctbConcept a owl:Class ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty ccf:ccf_asctb_type ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty ccf:ccf_is_provisional ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:ccf_asctb_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:ccf_pref_label ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ccf:ccf_asctb_type ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty ccf:ccf_pref_label ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ccf:ccf_pref_label ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty ccf:ccf_is_provisional ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty ccf:ccf_asctb_type ] ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:ccf_is_provisional ] ;
     skos:inScheme <https://purl.humanatlas.io/specs/asct-b> .
 
 ccf:ccf_asctb_type a owl:DatatypeProperty ;

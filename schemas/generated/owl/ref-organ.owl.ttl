@@ -23,28 +23,28 @@ AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
 AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
 AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )""" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ccf:iri ],
+            owl:allValuesFrom ccf:SpatialEntity ;
+            owl:onProperty ccf:data ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:metadata ],
         [ a owl:Restriction ;
             owl:allValuesFrom ccf:RefOrganMetadata ;
             owl:onProperty ccf:metadata ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ccf:metadata ],
+            owl:onProperty ccf:iri ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ccf:metadata ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ccf:iri ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ccf:SpatialEntity ;
-            owl:onProperty ccf:data ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ccf:data ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:iri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty ccf:iri ] ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
@@ -445,40 +445,40 @@ ccf:Creator a owl:Class ;
     rdfs:label "Creator" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ccf:fullName ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ccf:orcid ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ccf:orcid ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ccf:fullName ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty ccf:lastName ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ccf:firstName ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ccf:firstName ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ccf:orcid ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ccf:fullName ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ccf:firstName ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty ccf:lastName ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty ccf:orcid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:orcid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:firstName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty ccf:lastName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:fullName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:firstName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:orcid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:fullName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:fullName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:firstName ],
         ccf:Instance,
         ccf:Named ;
     skos:exactMatch schema:Person ;
@@ -533,15 +533,15 @@ obo:HP_0012835 a owl:Class ;
 ccf:AnatomicalStructure a owl:Class ;
     rdfs:label "AnatomicalStructure" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:string ;
+                    owl:withRestrictions ( [ xsd:pattern "(UBERON|FMA):\\d+" ] ) ] ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ccf:id ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ccf:id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:onDatatype xsd:string ;
-                    owl:withRestrictions ( [ xsd:pattern "(UBERON|FMA):\\d+" ] ) ] ;
             owl:onProperty ccf:id ] ;
     skos:exactMatch ccf:AnatomicalStructure ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .

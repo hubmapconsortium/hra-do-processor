@@ -2,15 +2,16 @@
 
 import { Command } from 'commander';
 import { build } from './building/build.js';
+import { deploy } from './deployment/deploy.js';
+import { bumpDraft } from './drafting/bump-draft.js';
+import { newDraft } from './drafting/new-draft.js';
 import { enrich } from './enrichment/enrich.js';
+import { finalize } from './finalizing/finalize.js';
 import { list } from './list.js';
+import { migrateLandmarks } from './migration/ccf-landmarks/migrate.js';
 import { normalize } from './normalization/normalize.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
 import { error } from './utils/logging.js';
-import { deploy } from './deployment/deploy.js';
-import { finalize } from './finalizing/finalize.js';
-import { newDraft } from './drafting/new-draft.js';
-import { bumpDraft } from './drafting/bump-draft.js';
 
 const program = new Command();
 
@@ -95,6 +96,13 @@ program
   .option('--skip-db', 'Skip recreating the blazegraph database.')
   .action((_options, command) => {
     finalize(getContext(program, command));
+  });
+
+program
+  .command('migrate-ccf-landmarks')
+  .description('Migrate ccf landmarks to HRA Digital Object')
+  .action((_options, command) => {
+    migrateLandmarks(getContext(program, command));
   });
 
 program

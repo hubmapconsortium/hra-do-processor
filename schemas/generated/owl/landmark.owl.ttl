@@ -1,0 +1,592 @@
+@prefix ccf: <http://purl.org/ccf/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix shex: <http://www.w3.org/ns/shex#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ccf:Container a owl:Class ;
+    rdfs:label "Container" ;
+    ccf:owl.template """AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
+AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
+{% for c in metadata.creators %}
+AnnotationAssertion( dct:creator {{iri}} "{{c.fullName|e}} ({{c.orcid}})" )
+{% endfor %}
+AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
+AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
+AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
+AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
+AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )""" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:iri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:iri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:data ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:iri ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:metadata ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:LandmarkMetadata ;
+            owl:onProperty ccf:metadata ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:metadata ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:data ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:LandmarkData ;
+            owl:onProperty ccf:data ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:DatasetMetadata a owl:Class ;
+    rdfs:label "DatasetMetadata" ;
+    skos:exactMatch dcat:Dataset ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:about a owl:DatatypeProperty ;
+    rdfs:label "about" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:accessUrl a owl:DatatypeProperty ;
+    rdfs:label "accessUrl" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:awardNumber a owl:DatatypeProperty ;
+    rdfs:label "awardNumber" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:citation a owl:DatatypeProperty ;
+    rdfs:label "citation" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:citationOverall a owl:DatatypeProperty ;
+    rdfs:label "citationOverall" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:class_type a owl:DatatypeProperty ;
+    rdfs:label "class_type" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:creation_date a owl:DatatypeProperty ;
+    rdfs:label "creation_date" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:creator a owl:ObjectProperty ;
+    rdfs:label "creator" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Creator ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:creators a owl:ObjectProperty ;
+    rdfs:label "creators" ;
+    rdfs:range ccf:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:datatable a owl:DatatypeProperty ;
+    rdfs:label "datatable" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:dimension_unit a owl:ObjectProperty ;
+    rdfs:label "dimension_unit" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:DimensionUnitEnum ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:distributions a owl:ObjectProperty ;
+    rdfs:label "distributions" ;
+    rdfs:range ccf:Distribution ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:doi a owl:DatatypeProperty ;
+    rdfs:label "doi" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:downloadUrl a owl:DatatypeProperty ;
+    rdfs:label "downloadUrl" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:externalReviewers a owl:ObjectProperty ;
+    rdfs:label "externalReviewers" ;
+    rdfs:range ccf:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:extraction_set a owl:DatatypeProperty ;
+    rdfs:label "extraction_set" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:extraction_set_for a owl:DatatypeProperty ;
+    rdfs:label "extraction_set_for" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:file a owl:DatatypeProperty ;
+    rdfs:label "file" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:file_format a owl:DatatypeProperty ;
+    rdfs:label "file_format" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:file_subpath a owl:DatatypeProperty ;
+    rdfs:label "file_subpath" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:funder a owl:DatatypeProperty ;
+    rdfs:label "funder" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:funders a owl:ObjectProperty ;
+    rdfs:label "funders" ;
+    rdfs:range ccf:Grant ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:hubmapId a owl:DatatypeProperty ;
+    rdfs:label "hubmapId" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:label a owl:DatatypeProperty ;
+    rdfs:label "label" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:landmarks a owl:ObjectProperty ;
+    rdfs:label "landmarks" ;
+    rdfs:range ccf:ExtractionSet ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:license a owl:DatatypeProperty ;
+    rdfs:label "license" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:mediaType a owl:DatatypeProperty ;
+    rdfs:label "mediaType" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:object_reference a owl:ObjectProperty ;
+    rdfs:label "object_reference" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:SpatialObjectReference ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:placement a owl:ObjectProperty ;
+    rdfs:label "placement" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:SpatialPlacement ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:placements a owl:ObjectProperty ;
+    rdfs:label "placements" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:SpatialPlacement ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:pref_label a owl:DatatypeProperty ;
+    rdfs:label "pref_label" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:project_leads a owl:ObjectProperty ;
+    rdfs:label "project_leads" ;
+    rdfs:range ccf:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:propertyId a owl:DatatypeProperty ;
+    rdfs:label "propertyId" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:publisher a owl:DatatypeProperty ;
+    rdfs:label "publisher" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:reference_organ a owl:ObjectProperty ;
+    rdfs:label "reference_organ" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:SpatialEntity ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:reviewers a owl:ObjectProperty ;
+    rdfs:label "reviewers" ;
+    rdfs:range ccf:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:rotation_order a owl:DatatypeProperty ;
+    rdfs:label "rotation_order" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:rotation_unit a owl:ObjectProperty ;
+    rdfs:label "rotation_unit" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:RotationUnitEnum ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:rui_rank a owl:DatatypeProperty ;
+    rdfs:label "rui_rank" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range xsd:integer ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:scaling_unit a owl:ObjectProperty ;
+    rdfs:label "scaling_unit" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:ScalingUnitEnum ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:see_also a owl:DatatypeProperty ;
+    rdfs:label "see_also" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:spatial_entities a owl:ObjectProperty ;
+    rdfs:label "spatial_entities" ;
+    rdfs:range ccf:SpatialEntity ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:target a owl:ObjectProperty ;
+    rdfs:label "target" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:SpatialEntity ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:title a owl:DatatypeProperty ;
+    rdfs:label "title" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:translation_unit a owl:ObjectProperty ;
+    rdfs:label "translation_unit" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:TranslationUnitEnum ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:typeOf a owl:ObjectProperty ;
+    rdfs:label "typeOf" ;
+    ccf:owl "ClassAssertion" ;
+    rdfs:range ccf:Named ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:value a owl:DatatypeProperty ;
+    rdfs:label "value" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:version a owl:DatatypeProperty ;
+    rdfs:label "version" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:versionInfo a owl:DatatypeProperty ;
+    rdfs:label "versionInfo" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:x_dimension a owl:DatatypeProperty ;
+    rdfs:label "x_dimension" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:intersectionOf ( xsd:float [ a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] ) ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:x_rotation a owl:DatatypeProperty ;
+    rdfs:label "x_rotation" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range xsd:float ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:x_scaling a owl:DatatypeProperty ;
+    rdfs:label "x_scaling" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:intersectionOf ( xsd:float [ a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] ) ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:x_translation a owl:DatatypeProperty ;
+    rdfs:label "x_translation" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range xsd:float ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:y_dimension a owl:DatatypeProperty ;
+    rdfs:label "y_dimension" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:intersectionOf ( xsd:float [ a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] ) ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:y_rotation a owl:DatatypeProperty ;
+    rdfs:label "y_rotation" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range xsd:float ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:y_scaling a owl:DatatypeProperty ;
+    rdfs:label "y_scaling" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:intersectionOf ( xsd:float [ a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] ) ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:y_translation a owl:DatatypeProperty ;
+    rdfs:label "y_translation" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range xsd:float ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:z_dimension a owl:DatatypeProperty ;
+    rdfs:label "z_dimension" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:intersectionOf ( xsd:float [ a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] ) ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:z_rotation a owl:DatatypeProperty ;
+    rdfs:label "z_rotation" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range xsd:float ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:z_scaling a owl:DatatypeProperty ;
+    rdfs:label "z_scaling" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:intersectionOf ( xsd:float [ a rdfs:Datatype ;
+                        owl:onDatatype xsd:integer ;
+                        owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] ) ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:z_translation a owl:DatatypeProperty ;
+    rdfs:label "z_translation" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range xsd:float ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+xsd:boolean a rdfs:Datatype .
+
+xsd:date a rdfs:Datatype .
+
+xsd:dateTime a rdfs:Datatype .
+
+xsd:decimal a rdfs:Datatype .
+
+xsd:double a rdfs:Datatype .
+
+xsd:time a rdfs:Datatype .
+
+shex:iri a rdfs:Datatype .
+
+shex:nonLiteral a rdfs:Datatype .
+
+<https://purl.humanatlas.io/specs/landmark.owl.ttl> a owl:Ontology ;
+    rdfs:label "landmark" .
+
+linkml:DateOrDatetime a rdfs:Datatype .
+
+obo:UO_0000185 a owl:Class ;
+    rdfs:label "degree" .
+
+obo:UO_0010006 a owl:Class ;
+    rdfs:label "ratio" .
+
+ccf:Creator a owl:Class ;
+    rdfs:label "Creator" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:fullName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:lastName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:fullName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:fullName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:orcid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:firstName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:orcid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:orcid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:firstName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:lastName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:firstName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:lastName ],
+        ccf:Instance,
+        ccf:Named ;
+    skos:exactMatch schema:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:DimensionUnitEnum a owl:Class ;
+    owl:unionOf ( obo:UO_0000015 obo:UO_0000016 ) ;
+    linkml:permissible_values obo:UO_0000015,
+        obo:UO_0000016 .
+
+ccf:Distribution a owl:Class ;
+    rdfs:label "Distribution" ;
+    skos:exactMatch dcat:Distribution ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:Grant a owl:Class ;
+    rdfs:label "Grant" ;
+    skos:exactMatch schema:Grant ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:LandmarkData a owl:Class ;
+    rdfs:label "LandmarkData" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:LandmarkMetadata a owl:Class ;
+    rdfs:label "LandmarkMetadata" ;
+    skos:exactMatch dcat:Dataset ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:RotationUnitEnum a owl:Class ;
+    linkml:permissible_values obo:UO_0000185 .
+
+ccf:ScalingUnitEnum a owl:Class ;
+    linkml:permissible_values obo:UO_0010006 .
+
+ccf:TranslationUnitEnum a owl:Class ;
+    owl:unionOf ( obo:UO_0000015 obo:UO_0000016 ) ;
+    linkml:permissible_values obo:UO_0000015,
+        obo:UO_0000016 .
+
+ccf:ExtractionSet a owl:Class ;
+    rdfs:label "ExtractionSet" ;
+    rdfs:subClassOf ccf:Instance,
+        ccf:Named ;
+    skos:exactMatch ccf:ExtractionSet ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:SpatialObjectReference a owl:Class ;
+    rdfs:label "SpatialObjectReference" ;
+    rdfs:subClassOf ccf:Instance,
+        ccf:Named ;
+    skos:exactMatch ccf:SpatialObjectReference ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:SpatialPlacement a owl:Class ;
+    rdfs:label "SpatialPlacement" ;
+    rdfs:subClassOf ccf:Instance,
+        ccf:Named ;
+    skos:exactMatch ccf:SpatialPlacement ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:data a owl:ObjectProperty ;
+    rdfs:label "data" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:firstName a owl:DatatypeProperty ;
+    rdfs:label "firstName" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:fullName a owl:DatatypeProperty ;
+    rdfs:label "fullName" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:iri a owl:DatatypeProperty ;
+    rdfs:label "iri" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:lastName a owl:DatatypeProperty ;
+    rdfs:label "lastName" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:metadata a owl:ObjectProperty ;
+    rdfs:label "metadata" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:orcid a owl:DatatypeProperty ;
+    rdfs:label "orcid" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^(\\d{4}-){3}\\d{3}(\\d|X)$" ] ) ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+obo:UO_0000015 a owl:Class ;
+    rdfs:label "centimeter" .
+
+obo:UO_0000016 a owl:Class ;
+    rdfs:label "millimeter" .
+
+ccf:Person a owl:Class ;
+    rdfs:label "Person" ;
+    skos:exactMatch schema:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:SpatialEntity a owl:Class ;
+    rdfs:label "SpatialEntity" ;
+    rdfs:subClassOf ccf:Instance,
+        ccf:Named ;
+    skos:exactMatch ccf:SpatialEntity ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+ccf:Instance a owl:Class ;
+    rdfs:label "Instance" ;
+    ccf:owl "Individual" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+xsd:string a rdfs:Datatype .
+
+ccf:Named a owl:Class ;
+    rdfs:label "Named" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/landmark> .
+
+xsd:integer a rdfs:Datatype .
+
+xsd:anyURI a rdfs:Datatype .
+
+xsd:float a rdfs:Datatype .
+
+
