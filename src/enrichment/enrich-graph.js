@@ -3,7 +3,13 @@ import { load } from 'js-yaml';
 import { resolve } from 'path';
 import { error, info } from '../utils/logging.js';
 import { convert, merge } from '../utils/robot.js';
-import { cleanTemporaryFiles, convertNormalizedDataToOwl, convertNormalizedMetadataToRdf, logOutput } from './utils.js';
+import {
+  cleanTemporaryFiles,
+  convertNormalizedDataToOwl,
+  convertNormalizedMetadataToRdf,
+  runCompleteClosure,
+  logOutput 
+} from './utils.js';
 
 export function enrichGraphMetadata(context) {
   const { selectedDigitalObject: obj } = context;
@@ -33,7 +39,7 @@ export function enrichGraphData(context) {
       const extension = inputRdfFile.split('.').slice(-1)[0];
       if (extension === 'ttl') {
         toMerge.push(inputRdf);
-      } else {
+      } else if (extension === 'rdf' || extension === 'jsonld' || extension === 'owl'){
         const outputTtl = resolve(obj.path, 'enriched', inputRdfFile + '.ttl');
         convert(inputRdf, outputTtl, 'ttl');
         toMerge.push(outputTtl);
