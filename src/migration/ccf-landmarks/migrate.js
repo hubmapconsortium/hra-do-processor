@@ -10,7 +10,7 @@ import { getLandmarkMetadata } from './renaming.js';
 const CROSSWALK_HEADER = ['extraction_set_for', 'extraction_set_id', 'extraction_set_label', 'node_name', 'label'];
 const SOURCE_DATA_URL = 'https://raw.githubusercontent.com/hubmapconsortium/hubmap-ontology/master/source_data';
 
-export async function migrateLandmarks(context) {
+export async function migrateCcfLandmarks(context) {
   const extractionSiteUrls = (await fetchCsv(`${SOURCE_DATA_URL}/extraction-site-config.csv`)).map((row) => row.object);
   const fullCrosswalk = await fetchCsv(`${SOURCE_DATA_URL}/asct-b-3d-models-landmarks.csv`, 10);
 
