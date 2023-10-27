@@ -68,7 +68,7 @@ function reifyTurtle(inputPath, graphName) {
 export function convert(inputPath, outputPath, outputFormat, graphName) {
   let command = `rdfpipe --output-format ${outputFormat} ${inputPath}`;
   if (isJsonLd(inputPath)) {
-    command = `cat ${inputPath} | jsonld expand | rdfpipe --input-format json-ld --output-format ${outputFormat}`;
+    command = `cat ${inputPath} | jsonld expand | rdfpipe --input-format json-ld --output-format ${outputFormat} -`;
   }
   if (graphName && outputFormat === 'application/n-quads') {
     command += ` | perl -pe 's|\\Qfile://${inputPath}\\E|${graphName}|g'`;
