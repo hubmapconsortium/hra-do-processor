@@ -62,43 +62,26 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
   const baseIri = obj.iri;
   const name = obj.name;
   const separator = baseIri?.indexOf('#') === -1 ? '#' : '_' ?? '#';
-  const primaryId = `${baseIri}${separator}primary`;
+  const { organOwnerSex, organLabel } = getOrganMetadata(name);
 
-  const { organOwnerSex, organSide, organName } = getOrganMetadata(name);
-  const organLabel = (organSide) ?
-      `${organOwnerSex} ${organSide} ${organName}` :
-      `${organOwnerSex} ${organName}`;
-
-  const extractionSets = [{
-      id: `${baseIri}${crosswalk[0].extraction_set_id}`,
-      class_type: 'ExtractionSet',
-      typeOf: ['ExtractionSet'],
-      label: `Landmarks in ${organLabel.toLowerCase()}`,
-      pref_label: "Landmarks",
-      extraction_set_for: `https://purl.humanatlas.io/ref-organ/${name}#primary`,
-    }];
-
+  const extractionSets = {};
   const spatialEntities = Object.values(nodes)
     .filter((node) => excludeNodeType(node))
     .filter((node) => excludeNodeId(node))
     .filter((node) => validNodeId(node, crosswalk))
+    .filter((node) => validExtractionSetId(node, crosswalk))
     .map((node) => {
       const nodeId = node['@id'];
-      const primaryNodeId = crosswalk[0]['node_name'];
-      const id =
-        nodeId === primaryNodeId
-          ? primaryId
-          : `${baseIri}${separator}${encodeURIComponent(nodeId)}`;
+      const id = `${baseIri}${separator}${encodeURIComponent(nodeId)}`;
       const T = { x: node.bbox.lowerBound.x, y: node.bbox.lowerBound.y, z: node.bbox.lowerBound.z };
 
       const landmarkName = getLandmarkName(nodeId, crosswalk);
       const landmarkLabel = `${landmarkName} landmark in ${organLabel.toLowerCase()}`.trim();
 
-      const extractionSetId = getExtractionSetId(nodeId, crosswalk);
-      const extractionSetIri = `${baseIri}${extractionSetId}`;
-
-      const spatialEntityId = getExtractionSetFor(nodeId, crosswalk);
-      const spatialEntityIri = `${baseIri}${spatialEntityId}`;
+      const extractionSetIri = getExtractionSetIri(nodeId, crosswalk, baseIri);
+      if (!extractionSets[extractionSetIri]) {
+        extractionSets[extractionSetIri] = getExtractionSet(nodeId, crosswalk, baseIri, organLabel);
+      }
 
       let parentIri = `${baseIri}${separator}parent`;
       if (organOwnerSex) {
@@ -189,19 +172,27 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
       };
     });
 
-    return {
-      landmarks: extractionSets,
-      spatial_entities: spatialEntities
-    };
+  return {
+    landmarks: Object.values(extractionSets),
+    spatial_entities: spatialEntities,
+  };
 }
 
 function getOrganMetadata(name) {
   const sex = name.includes('female') ? 'Female' : name.includes('male') ? 'Male' : undefined;
   const side = name.includes('left') ? 'Left' : name.includes('right') ? 'Right' : undefined;
-  
-  const exclude = new Set(['left', 'right', 'male', 'female']);
-  const organName = name.split('-').filter(n => !exclude.has(n)).join(' ');
-  return { organOwnerSex: sex, organSide: side, organName };
+  const bothSides = name.includes('both');
+
+  const exclude = new Set(['left', 'right', 'male', 'female', 'both', 'landmarks', 'extraction sites']);
+  const organName = name
+    .split('-')
+    .filter((n) => !exclude.has(n))
+    .join(' ');
+
+  const sideLabel = bothSides ? 'left and right' : side;
+  const organLabel = sideLabel ? `${sex} ${sideLabel} ${organName}` : `${sex} ${organName}`;
+
+  return { organOwnerSex: sex, organLabel };
 }
 
 function getLandmarkName(nodeId, crosswalk) {
@@ -209,14 +200,23 @@ function getLandmarkName(nodeId, crosswalk) {
   return results.label || '';
 }
 
-function getExtractionSetId(nodeId, crosswalk) {
+function getExtractionSet(nodeId, crosswalk, baseIri, organLabel) {
   const results = crosswalk.find((value) => value['node_name'] === nodeId);
-  return results.extraction_set_id || '';
+  const extractionSetIri = `${baseIri}#${encodeURIComponent(results.extraction_set_id.replace('#', ''))}`;
+  return {
+    id: extractionSetIri,
+    class_type: 'ExtractionSet',
+    typeOf: ['ExtractionSet'],
+    label: `Landmarks in ${organLabel.toLowerCase()}`,
+    pref_label: results.extraction_set_label,
+    extraction_set_for: results.extraction_set_for,
+  };
 }
 
-function getExtractionSetFor(nodeId, crosswalk) {
+function getExtractionSetIri(nodeId, crosswalk, baseIri) {
   const results = crosswalk.find((value) => value['node_name'] === nodeId);
-  return results.extraction_set_for || '';
+  const extractionSetIri = `${baseIri}#${encodeURIComponent(results.extraction_set_id.replace('#', ''))}`;
+  return extractionSetIri;
 }
 
 function normalizeRawData(context, data) {
@@ -233,4 +233,10 @@ function excludeNodeId(node) {
 
 function validNodeId(node, crosswalk) {
   return crosswalk.find((value) => value['node_name'] === node['@id']);
+}
+
+function validExtractionSetId(node, crosswalk) {
+  const results = crosswalk.find((value) => value['node_name'] === node['@id']);
+  const id = results.extraction_set_id;
+  return id && id != '-';
 }

@@ -4,8 +4,8 @@ import { basename, resolve } from 'path';
 import sh from 'shelljs';
 import { getDigitalObjectInformation } from '../../utils/digital-object.js';
 import { getSceneNodes } from './get-scene-nodes.js';
-import { getLandmarkMetadata } from './renaming.js';
 import { writeMetadata } from './metadata.js';
+import { getLandmarkMetadata } from './renaming.js';
 
 const CROSSWALK_HEADER = ['extraction_set_for', 'extraction_set_id', 'extraction_set_label', 'node_name', 'label'];
 const SOURCE_DATA_URL = 'https://raw.githubusercontent.com/hubmapconsortium/hubmap-ontology/master/source_data';
@@ -30,9 +30,7 @@ export async function migrateLandmarks(context) {
     const glbPath = resolve(doPath, 'raw', url.split('/').slice(-1)[0]);
     sh.exec(`curl -s -L ${url} -o ${glbPath}`);
 
-    writeMetadata(context, { title, datatable: [
-      basename(glbPath), 'crosswalk.csv'
-    ]});
+    writeMetadata(context, { title, datatable: [basename(glbPath), 'crosswalk.csv'] });
   }
 }
 
@@ -43,7 +41,13 @@ function deriveCrosswalk(filteredCrosswalk, refOrgans) {
       crosswalk.push(row);
     } else {
       for (const refOrgan of refOrgans) {
-        crosswalk.push({ ...row, extraction_set_for: refOrgan });
+        if ((!refOrgan.includes('left') && !refOrgan.includes('right')) || row.extraction_set_id === '-') {
+          crosswalk.push({ ...row, extraction_set_for: refOrgan });
+        } else if (refOrgan.includes('left') && row.extraction_set_id.toLowerCase().includes('left')) {
+          crosswalk.push({ ...row, extraction_set_for: refOrgan });
+        } else if (refOrgan.includes('right') && row.extraction_set_id.toLowerCase().includes('right')) {
+          crosswalk.push({ ...row, extraction_set_for: refOrgan });
+        }
       }
     }
   }
