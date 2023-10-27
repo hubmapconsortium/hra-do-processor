@@ -9,6 +9,27 @@ const FORMATS = {
   nq: 'application/n-quads',
 };
 
+export const RDF_EXTENSIONS = new Set([
+  'json',
+  'jsonld',
+  'json-ld',
+  'nt',
+  'xml',
+  'rdf',
+  'nq',
+  'n3',
+  '.owl',
+  '.trig',
+  'turtle',
+]);
+
+export const JSONLD_EXTENSIONS = new Set(['json', 'jsonld', 'json-ld']);
+
+export function isJsonLd(fileOrUrl) {
+  const extension = fileOrUrl.split('.').slice(-1)[0];
+  return JSONLD_EXTENSIONS.has(extension);
+}
+
 export function reifyDoTurtle(context, inputPath) {
   const graphName = context.selectedDigitalObject.iri;
   reifyTurtle(inputPath, graphName);
@@ -44,18 +65,13 @@ function reifyTurtle(inputPath, graphName) {
   }
 }
 
-function convert(inputPath, outputPath, outputFormat, graphName) {
-  if (graphName && outputFormat === 'application/n-quads') {
-    throwOnError(
-      `rdfpipe --output-format ${outputFormat} ${inputPath} | \\
-          perl -pe 's|\\Qfile://${inputPath}\\E|${graphName}|g' \\
-          > ${outputPath}`,
-      `Failed to fix n-quads file: ${outputPath}`
-    );
-  } else {
-    throwOnError(
-      `rdfpipe --output-format ${outputFormat} ${inputPath} > ${outputPath}`,
-      `Failed to convert to '${outputFormat}' format.`
-    );
+export function convert(inputPath, outputPath, outputFormat, graphName) {
+  let command = `rdfpipe --output-format ${outputFormat} ${inputPath}`;
+  if (isJsonLd(inputPath)) {
+    command = `cat ${inputPath} | jsonld expand | rdfpipe --input-format json-ld --output-format ${outputFormat}`;
   }
+  if (graphName && outputFormat === 'application/n-quads') {
+    command += ` | perl -pe 's|\\Qfile://${inputPath}\\E|${graphName}|g'`;
+  }
+  throwOnError(`${command} > ${outputPath}`, `Failed to convert to '${outputFormat}' format.`);
 }

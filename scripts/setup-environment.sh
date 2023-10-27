@@ -87,6 +87,9 @@ if [ -e "$ENV/bin/activate" ]; then
   # Install the RDF Formatter (for RDFa support)
   npm install -g rdf-formatter
 
+  # Install the JSON-LD CLI (a better JSON-LD converter)
+  npm install -g jsonld-cli
+
   # Download ontologies
   ${ROOT_DIR}/scripts/download-ontologies.sh
 
