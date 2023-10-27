@@ -99,7 +99,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
 
       let parentIri = `${baseIri}${separator}parent`;
       if (organOwnerSex) {
-        parentIri = `https://purl.humanatlas.io/graph/ccf-body#VH${organOwnerSex}`;
+        parentIri = `https://purl.humanatlas.io/graph/hra-ccf-body#VH${organOwnerSex}`;
       }
 
       return {
