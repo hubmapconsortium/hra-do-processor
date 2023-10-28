@@ -6,8 +6,9 @@ import { reifyTurtle } from '../utils/reify.js';
 export function mergeCatalogs(context) {
   const graphs = listMetadataGraphs(context);
   const catalogPath = resolve(context.deploymentHome, 'catalog.ttl');
+  const graphName = context.lodIri.replace(/\/$/, '');
   mergeTurtles(catalogPath, undefined, graphs);
-  reifyTurtle(catalogPath, context.lodIri);
+  reifyTurtle(catalogPath, graphName);
 }
 
 function listMetadataGraphs(context) {
