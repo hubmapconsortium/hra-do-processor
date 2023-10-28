@@ -58,7 +58,7 @@ export function reifyCatalog(context, graphName, catalog) {
   reifyTurtle(inputPath, graphName);
 }
 
-function reifyTurtle(inputPath, graphName) {
+export function reifyTurtle(inputPath, graphName) {
   const basePath = inputPath.slice(0, inputPath.lastIndexOf('.'));
   for (const [extension, type] of Object.entries(FORMATS)) {
     convert(inputPath, `${basePath}.${extension}`, type, graphName);
