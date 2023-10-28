@@ -9,6 +9,7 @@ import { enrich } from './enrichment/enrich.js';
 import { finalize } from './finalizing/finalize.js';
 import { list } from './list.js';
 import { migrateCcfLandmarks } from './migration/ccf-landmarks/migrate.js';
+import { migrateCcfOwl } from './migration/ccf-owl/migrate.js';
 import { migrateCcfReleases } from './migration/ccf-releases/migrate.js';
 import { normalize } from './normalization/normalize.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
@@ -112,6 +113,13 @@ program
   .argument('<ccf-releases-path>', 'Path to the ccf-releases repository checked out locally', parseDirectory)
   .action((ccfReleasesPath, _options, command) => {
     migrateCcfReleases({ ...getContext(program, command), ccfReleasesPath });
+  });
+
+program
+  .command('migrate-ccf-owl')
+  .description('Migrate CCF.OWL to HRA Digital Object format')
+  .action((_options, command) => {
+    migrateCcfOwl(getContext(program, command));
   });
 
 program
