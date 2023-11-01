@@ -8,7 +8,9 @@ import { newDraft } from './drafting/new-draft.js';
 import { enrich } from './enrichment/enrich.js';
 import { finalize } from './finalizing/finalize.js';
 import { list } from './list.js';
-import { migrateLandmarks } from './migration/ccf-landmarks/migrate.js';
+import { migrateCcfLandmarks } from './migration/ccf-landmarks/migrate.js';
+import { migrateCcfOwl } from './migration/ccf-owl/migrate.js';
+import { migrateCcfReleases } from './migration/ccf-releases/migrate.js';
 import { normalize } from './normalization/normalize.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
 import { error } from './utils/logging.js';
@@ -100,9 +102,24 @@ program
 
 program
   .command('migrate-ccf-landmarks')
-  .description('Migrate ccf landmarks to HRA Digital Object')
+  .description('Migrate ccf landmarks to HRA Digital Object format')
   .action((_options, command) => {
-    migrateLandmarks(getContext(program, command));
+    migrateCcfLandmarks(getContext(program, command));
+  });
+
+program
+  .command('migrate-ccf-releases')
+  .description('Migrate ccf releases to HRA Digital Object format')
+  .argument('<ccf-releases-path>', 'Path to the ccf-releases repository checked out locally', parseDirectory)
+  .action((ccfReleasesPath, _options, command) => {
+    migrateCcfReleases({ ...getContext(program, command), ccfReleasesPath });
+  });
+
+program
+  .command('migrate-ccf-owl')
+  .description('Migrate CCF.OWL to HRA Digital Object format')
+  .action((_options, command) => {
+    migrateCcfOwl(getContext(program, command));
   });
 
 program

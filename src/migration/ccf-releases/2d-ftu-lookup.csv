@@ -1,0 +1,26 @@
+id,representation_of,label,old_id,organ_label,organ_id
+kidney-ascending-thin-loop-of-henle,UBERON:0004193,loop of Henle ascending limb thin segment,#FTUAscendingThinLimb
+kidney-cortical-collecting-duct,UBERON:0004203,Cortical Collecting Duct,#FTUCorticalCollectingDuct
+kidney-descending-thin-loop-of-henle,UBERON:0001289,descending limb of loop of Henle,#FTUDescendingThinLimb
+kidney-inner-medullary-collecting-duct,UBERON:0004205,inner medullary collecting duct,#FTUInnerMedullaryCollectingDuct
+kidney-nephron,UBERON:0001285,nephron,#FTUNephron,Kidney,UBERON:0002113
+kidney-outer-medullary-collecting-duct,UBERON:0004204,outer medullary collecting duct,#FTUOuterMedullaryCollectingDuct
+kidney-renal-corpuscle,UBERON:0001229,renal corpuscle,#FTURenalCorpuscle,Kidney,UBERON:0002113
+kidney-thick-ascending-loop-of-henle,UBERON:0001291,thick ascending limb of loop of Henle,#FTUThickAscendingLimb
+large-intestine-crypt-lieberkuhn,UBERON:0001984,crypt of Lieberkuhn of large intestine,#FTUCryptOfLieberkuhn,Large Intestine,UBERON:0000059
+liver-liver-lobule,UBERON:0004647,liver lobule,#FTULiverLobule_inset1,Liver,UBERON:0002107
+liver-liver-lobule,UBERON:0004647,liver lobule,#FTULiverLobule_inset2,Liver,UBERON:0002107
+lung-bronchial-submucosal-gland,UBERON_8410043,bronchus submucosal gland,#FTUBronchialSubmucosalGland
+lung-pulmonary-alveolus,UBERON:0002299,alveolus of lung,#FTUAlveoli,Lung,UBERON:0002048
+pancreas-intercalated-duct,UBERON:0014726,intercalated duct of pancreas,#FTUIntercalatedDuct
+pancreas-islets-langerhans,UBERON:0000006,islet of Langerhans,#FTUIsletOfLangerhans,Pancreas,UBERON:0001264
+pancreas-pancreatic-acinus,UBERON:0001263,pancreatic acinus,#FTUAcinus
+prostate-prostate-glandular-acinus,UBERON:0004179,prostate glandular acinus,#FTUProstateGlandularAcinus,Prostate Gland,UBERON:0002367
+skin-dermal-papilla,UBERON:0001992,papillary layer of dermis,#FTUDermalPapilla
+skin-epidermal-ridge,UBERON:0013487,epidermal ridge of digit,#FTUEpidermalRidge
+spleen-red-pulp,UBERON:0001250,red pulp of spleen,#FTURedPulp_Inset1
+spleen-red-pulp,UBERON:0001250,red pulp of spleen,#FTURedPulp_Inset2
+spleen-white-pulp,UBERON:0001959,white pulp of spleen,#FTUWhitePulp_Inset1
+spleen-white-pulp,UBERON:0001959,white pulp of spleen,#FTUWhitePulp_Inset2
+thymus-thymus-lobule,UBERON:0002125,thymus lobule,#FTUThymusLobule_Inset1,Thymus,UBERON:0002370
+thymus-thymus-lobule,UBERON:0002125,thymus lobule,#FTUThymusLobule_Inset2,Thymus,UBERON:0002370

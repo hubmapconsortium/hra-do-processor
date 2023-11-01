@@ -31,6 +31,10 @@ export function buildBlazegraphJournal(context) {
     }
   }
 
+  const catalog = resolve(context.deploymentHome, 'catalog.ttl');
+  const catalogGraph = context.lodIri.replace(/\/$/, '');
+  sparqlUpdate += `LOAD <file://${catalog}> INTO GRAPH <${catalogGraph}>;\n`;
+
   const loadScript = resolve(context.deploymentHome, 'blazegraph.load.rq');
   writeFileSync(loadScript, sparqlUpdate);
   update(loadScript, journal);

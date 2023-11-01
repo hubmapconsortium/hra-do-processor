@@ -58,7 +58,7 @@ export function reifyCatalog(context, graphName, catalog) {
   reifyTurtle(inputPath, graphName);
 }
 
-function reifyTurtle(inputPath, graphName) {
+export function reifyTurtle(inputPath, graphName) {
   const basePath = inputPath.slice(0, inputPath.lastIndexOf('.'));
   for (const [extension, type] of Object.entries(FORMATS)) {
     convert(inputPath, `${basePath}.${extension}`, type, graphName);
@@ -68,7 +68,7 @@ function reifyTurtle(inputPath, graphName) {
 export function convert(inputPath, outputPath, outputFormat, graphName) {
   let command = `rdfpipe --output-format ${outputFormat} ${inputPath}`;
   if (isJsonLd(inputPath)) {
-    command = `cat ${inputPath} | jsonld expand | rdfpipe --input-format json-ld --output-format ${outputFormat}`;
+    command = `cat ${inputPath} | jsonld expand | rdfpipe --input-format json-ld --output-format ${outputFormat} -`;
   }
   if (graphName && outputFormat === 'application/n-quads') {
     command += ` | perl -pe 's|\\Qfile://${inputPath}\\E|${graphName}|g'`;
