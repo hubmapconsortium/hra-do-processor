@@ -7,6 +7,9 @@ import {
   cleanTemporaryFiles, 
   convertNormalizedMetadataToRdf,
   convertNormalizedDataToOwl,
+  isFileEmpty,
+  collectEntities,
+  extractClassHierarchy,
   logOutput 
 } from './utils.js';
 
@@ -37,7 +40,12 @@ export function enrich2dFtuData(context) {
     const uberonEntitiesPath = collectEntities(context, 'uberon', baseInputPath);
     if (!isFileEmpty(uberonEntitiesPath)) {
       info('Extracting UBERON.');
-      const uberonExtractPath = filterClasses(context, 'uberon', uberonEntitiesPath);
+      const uberonExtractPath = extractClassHierarchy(
+        context,
+        'uberon',
+        'http://purl.obolibrary.org/obo/UBERON_0001062',
+        uberonEntitiesPath
+      );
       logOutput(uberonExtractPath);
       inputPaths.push(uberonExtractPath);
     }
@@ -45,7 +53,11 @@ export function enrich2dFtuData(context) {
     const fmaEntitiesPath = collectEntities(context, 'fma', baseInputPath);
     if (!isFileEmpty(fmaEntitiesPath)) {
       info('Extracting FMA.');
-      const fmaExtractPath = filterClasses(context, 'fma', fmaEntitiesPath);
+      const fmaExtractPath = extractClassHierarchy(
+        context, 
+        'fma', 
+        'http://purl.org/sig/ont/fma/fma62955', 
+        fmaEntitiesPath);
       logOutput(fmaExtractPath);
       inputPaths.push(fmaExtractPath);
     }
@@ -53,7 +65,11 @@ export function enrich2dFtuData(context) {
     const clEntitiesPath = collectEntities(context, 'cl', baseInputPath);
     if (!isFileEmpty(clEntitiesPath)) {
       info('Extracting CL.');
-      const clExtractPath = filterClasses(context, 'cl', clEntitiesPath);
+      const clExtractPath = extractClassHierarchy(
+        context, 
+        'cl', 
+        'http://purl.obolibrary.org/obo/CL_0000000', 
+        clEntitiesPath);
       logOutput(clExtractPath);
       inputPaths.push(clExtractPath);
     }
@@ -61,7 +77,12 @@ export function enrich2dFtuData(context) {
     const pclEntitiesPath = collectEntities(context, 'pcl', baseInputPath);
     if (!isFileEmpty(pclEntitiesPath)) {
       info('Extracting PCL.');
-      const pclExtractPath = filterClasses(context, 'pcl', clEntitiesPath);
+      const pclExtractPath = extractClassHierarchy(
+        context,
+        'pcl',
+        'http://purl.obolibrary.org/obo/CL_0000000',
+        pclEntitiesPath
+      );
       logOutput(pclExtractPath);
       inputPaths.push(pclExtractPath);
     }
@@ -88,29 +109,3 @@ export function enrich2dFtuData(context) {
   }
 }
 
-function isFileEmpty(path) {
-  return fs.statSync(path).size === 0;
-}
-
-function collectEntities(context, ontologyName, inputPath) {
-  const { selectedDigitalObject: obj, processorHome } = context;
-
-  const queryPath = resolve(processorHome, `src/utils/get-${ontologyName}-terms.sparql`);
-  const outputPath = resolve(obj.path, `enriched/${ontologyName}-terms.csv`);
-
-  query(inputPath, queryPath, outputPath);
-  throwOnError(`sed -i '1d' ${outputPath}`, 'Collect entities failed.');
-
-  return outputPath;
-}
-
-function filterClasses(context, ontologyName, classTermFile) {
-  const { selectedDigitalObject: obj, processorHome } = context;
-
-  const ontologyPath = resolve(processorHome, `mirrors/${ontologyName}.owl`);
-  const outputPath = resolve(obj.path, `enriched/${ontologyName}-filter.owl`);
-
-  filter(ontologyPath, classTermFile, ['rdfs:label', 'http://www.geneontology.org/formats/oboInOwl#id', 'http://purl.obolibrary.org/obo/IAO_0000115'], outputPath);
-
-  return outputPath;
-}

@@ -1,12 +1,15 @@
 import fs from 'fs';
 import { resolve } from 'path';
 import { error, header, info, more } from '../utils/logging.js';
-import { convert, extract, merge, query } from '../utils/robot.js';
+import { convert, merge } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
 import { 
   cleanTemporaryFiles, 
   convertNormalizedMetadataToRdf,
   convertNormalizedDataToOwl,
+  isFileEmpty,
+  collectEntities,
+  extractClassHierarchy,
   logOutput 
 } from './utils.js';
 
@@ -190,31 +193,4 @@ function findOrganName(name) {
     outputName = 'Spinal_Cord';
   }
   return outputName;
-}
-
-function isFileEmpty(path) {
-  return fs.statSync(path).size === 0;
-}
-
-function collectEntities(context, ontologyName, inputPath) {
-  const { selectedDigitalObject: obj, processorHome } = context;
-
-  const queryPath = resolve(processorHome, `src/utils/get-${ontologyName}-terms.sparql`);
-  const outputPath = resolve(obj.path, `enriched/${ontologyName}-terms.csv`);
-
-  query(inputPath, queryPath, outputPath);
-  throwOnError(`sed -i '1d' ${outputPath}`, 'Collect entities failed.');
-
-  return outputPath;
-}
-
-function extractClassHierarchy(context, ontologyName, upperTerm, lowerTerms) {
-  const { selectedDigitalObject: obj, processorHome } = context;
-
-  const ontologyPath = resolve(processorHome, `mirrors/${ontologyName}.owl`);
-  const outputPath = resolve(obj.path, `enriched/${ontologyName}-extract.owl`);
-
-  extract(ontologyPath, upperTerm, lowerTerms, outputPath);
-
-  return outputPath;
 }

@@ -1,9 +1,11 @@
+import fs from 'fs';
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { info, more } from '../utils/logging.js';
+import { convert, extract, filter, merge, query } from '../utils/robot.js';
 import { mergeTurtles } from '../utils/owl-cli.js';
 import { redundant } from '../utils/relation-graph.js';
 import { throwOnError } from '../utils/sh-exec.js';
+import { info, more } from '../utils/logging.js';
 
 export function convertNormalizedMetadataToRdf(context, inputPath, outputPath, overrideType) {
   const { selectedDigitalObject: obj, processorHome } = context;
@@ -67,6 +69,44 @@ export function convertNormalizedDataToOwl(context, inputPath, outputPath, overr
     'Converting to OWL ontology failed.',
     (message) => message.replace(/(.*\n)+TypeError:(.*)/, '$2').trim()
   );
+}
+
+export function isFileEmpty(path) {
+  return fs.statSync(path).size === 0;
+}
+
+export function collectEntities(context, ontologyName, inputPath) {
+  const { selectedDigitalObject: obj, processorHome } = context;
+
+  const queryPath = resolve(processorHome, `src/utils/get-${ontologyName}-terms.sparql`);
+  const outputPath = resolve(obj.path, `enriched/${ontologyName}-terms.csv`);
+
+  query(inputPath, queryPath, outputPath);
+  throwOnError(`sed -i '1d' ${outputPath}`, 'Collect entities failed.');
+
+  return outputPath;
+}
+
+export function filterClasses(context, ontologyName, classTermFile) {
+  const { selectedDigitalObject: obj, processorHome } = context;
+
+  const ontologyPath = resolve(processorHome, `mirrors/${ontologyName}.owl`);
+  const outputPath = resolve(obj.path, `enriched/${ontologyName}-filter.owl`);
+
+  filter(ontologyPath, classTermFile, ['rdfs:label', 'http://www.geneontology.org/formats/oboInOwl#id', 'http://purl.obolibrary.org/obo/IAO_0000115'], outputPath);
+
+  return outputPath;
+}
+
+export function extractClassHierarchy(context, ontologyName, upperTerm, lowerTerms) {
+  const { selectedDigitalObject: obj, processorHome } = context;
+
+  const ontologyPath = resolve(processorHome, `mirrors/${ontologyName}.owl`);
+  const outputPath = resolve(obj.path, `enriched/${ontologyName}-extract.owl`);
+
+  extract(ontologyPath, upperTerm, lowerTerms, outputPath);
+
+  return outputPath;
 }
 
 export function runCompleteClosure(inputPath, outputPath) {
