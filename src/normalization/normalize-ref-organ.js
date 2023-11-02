@@ -109,7 +109,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         class_type: 'SpatialEntity',
         typeOf: typeOf,
         representation_of: typeOf[0],
-        organ_donor_sex: organOwnerSex || undefined,
+        organ_owner_sex: organOwnerSex || undefined,
         organ_side: organSide || undefined,
         reference_organ: primaryId,
         creator: metadata.creators.map((c) => {

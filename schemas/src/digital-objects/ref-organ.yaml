@@ -43,7 +43,7 @@ classes:
       - z_dimension
       - dimension_unit
       - representation_of
-      - organ_donor_sex
+      - organ_owner_sex
       - organ_side
       - object_reference
       - placements
@@ -286,7 +286,7 @@ slots:
     inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  organ_donor_sex:
+  organ_owner_sex:
     required: false
     range: DonorSexEnum
     annotations:
