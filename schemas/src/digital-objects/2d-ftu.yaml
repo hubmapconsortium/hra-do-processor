@@ -51,7 +51,7 @@ classes:
       owl: NamedIndividual
 
   FtuIllustrationFile:
-    class_uri: ccf:FtuIllustrationFile
+    class_uri: ccf:ImageFile
     mixins:
       - Named
       - Instance

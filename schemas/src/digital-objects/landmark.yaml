@@ -297,12 +297,14 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   placement:
     required: true
+    slot_uri: ccf:has_placement
     range: SpatialPlacement
     inlined: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   placements:
     required: false
+    slot_uri: ccf:has_placements
     range: SpatialPlacement
     inlined: true
     multivalued: true
