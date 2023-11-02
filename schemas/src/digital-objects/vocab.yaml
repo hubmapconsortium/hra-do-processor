@@ -1,0 +1,53 @@
+id: https://purl.humanatlas.io/specs/vocab
+name: vocab
+prefixes:
+  ccf: http://purl.org/ccf/
+  dcterms: http://purl.org/dc/terms/
+  pav: http://purl.org/pav/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  obo: http://purl.obolibrary.org/obo/
+  linkml: https://w3id.org/linkml/
+
+default_prefix: ccf
+default_range: string
+
+imports:
+  - linkml:types
+  - ../shared/metadata-base
+
+classes:
+  BasicMetadata:
+    class_uri: dcat:Dataset
+    slots:
+      - title
+      - description
+      - creators
+      - version
+      - creation_date
+      - license
+      - publisher
+      - see_also
+  Container:
+    tree_root: true
+    attributes:
+      iri:
+        range: uriorcurie
+      metadata:
+        range: BasicMetadata
+      data:
+        required: true
+        multivalued: true
+        inlined_as_list: true
+    annotations:
+      owl.template: |-
+        AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
+        AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
+        {% for c in metadata.creators %}
+        AnnotationAssertion( dct:creator {{iri}} "{{c.fullName|e}} ({{c.orcid}})" )
+        {% endfor %}
+        AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
+        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
+        AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
+        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
+        AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
