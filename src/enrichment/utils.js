@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { convert, extract, filter, merge, query } from '../utils/robot.js';
+import { convert, extract, filter, merge, query, exclude } from '../utils/robot.js';
 import { mergeTurtles } from '../utils/owl-cli.js';
 import { redundant } from '../utils/relation-graph.js';
 import { throwOnError } from '../utils/sh-exec.js';
@@ -107,6 +107,13 @@ export function extractClassHierarchy(context, ontologyName, upperTerm, lowerTer
   extract(ontologyPath, upperTerm, lowerTerms, outputPath);
 
   return outputPath;
+}
+
+export function excludeTerms(context, inputPath, outputPath) {
+  const { processorHome } = context;
+
+  const excludeTermsPath = resolve(processorHome, 'src/enrichment/exclude-terms.txt');
+  exclude(inputPath, excludeTermsPath, outputPath);
 }
 
 export function runCompleteClosure(inputPath, outputPath) {

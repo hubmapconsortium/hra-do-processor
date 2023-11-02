@@ -10,6 +10,7 @@ import {
   isFileEmpty,
   collectEntities,
   extractClassHierarchy,
+  excludeTerms,
   logOutput 
 } from './utils.js';
 
@@ -69,10 +70,13 @@ export function enrichRefOrganData(context) {
     merge(inputPaths, enrichedWithOntologyPath);
     logOutput(enrichedWithOntologyPath);
 
-    const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
+    const trimmedOutputPath = resolve(obj.path, 'enriched/trimmed-output.ttl');
+    info(`Excluding unwanted terms.`);
+    excludeTerms(context, enrichedWithOntologyPath, trimmedOutputPath);
 
+    const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating ref-organ: ${enrichedPath}`);
-    convert(enrichedWithOntologyPath, enrichedPath, 'ttl');
+    convert(trimmedOutputPath, enrichedPath, 'ttl');
   } catch (e) {
     error(e);
   } finally {
