@@ -18,8 +18,8 @@ export const RDF_EXTENSIONS = new Set([
   'rdf',
   'nq',
   'n3',
-  '.owl',
-  '.trig',
+  'owl',
+  'trig',
   'turtle',
 ]);
 
