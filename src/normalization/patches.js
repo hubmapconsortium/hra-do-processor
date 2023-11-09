@@ -2,7 +2,14 @@ export function getPatchesForAnatomicalStructure(context) {
   const patches = [{
       id: 'UBERON:0001062',
       class_type: 'AnatomicalStructure',
-      ccf_pref_label: 'anatomical entity',
+      ccf_pref_label: 'UBERON anatomical structure',
+      ccf_asctb_type: 'AS',
+      ccf_is_provisional: false,
+      ccf_designated_parent: 'ccf:AnatomicalStructure'
+    }, {
+      id: 'FMA:62955',
+      class_type: 'AnatomicalStructure',
+      ccf_pref_label: 'FMA anatomical structure',
       ccf_asctb_type: 'AS',
       ccf_is_provisional: false,
       ccf_designated_parent: 'ccf:AnatomicalStructure'
