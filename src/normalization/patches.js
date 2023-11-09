@@ -1,5 +1,12 @@
 export function getPatchesForAnatomicalStructure(context) {
   const patches = [{
+      id: 'UBERON:0001062',
+      class_type: 'AnatomicalStructure',
+      ccf_pref_label: 'anatomical entity',
+      ccf_asctb_type: 'AS',
+      ccf_is_provisional: false,
+      ccf_designated_parent: 'ccf:AnatomicalStructure'
+    }, {
       id: 'UBERON:0013702',
       class_type: 'AnatomicalStructure',
       ccf_pref_label: 'body proper',
@@ -214,12 +221,21 @@ export function getPatchesForCellType() {
     ccf_pref_label: 'cell type',
     ccf_asctb_type: 'CT',
     ccf_is_provisional: false,
+    ccf_designated_parent: 'ccf:CellType'
   }];
   return patches;
 }
 
 export function getPatchesForBiomarker() {
-  const patches = [];
+  const patches = [{
+    id: 'HGNCO:gene',
+    class_type: 'Biomarker',
+    ccf_pref_label: 'gene',
+    ccf_asctb_type: 'BM',
+    ccf_is_provisional: false,
+    ccf_biomarker_type: 'gene',
+    ccf_designated_parent: 'ccf:Biomarker'
+  }];
   return patches;
 }
 
