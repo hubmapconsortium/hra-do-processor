@@ -16,6 +16,7 @@ prefixes:
   FMA: http://purl.org/sig/ont/fma/fma
   HGNC: http://identifiers.org/hgnc/
   ASCTB-TEMP: http://purl.org/ccf/ASCTB-TEMP_
+  HGNCO: http://purl.bioontology.org/ontology/HGNC/
 
 default_prefix: ccf
 default_range: string
@@ -31,6 +32,7 @@ settings:
   pcl: "PCL"
   lmha: "LMHA"
   hgnc: "HGNC"
+  hgnco: "HGNCO"
   asctb_temp: "ASCTB-TEMP"
 
 classes:
@@ -42,6 +44,7 @@ classes:
       - ccf_pref_label
       - ccf_asctb_type
       - ccf_is_provisional
+      - ccf_designated_parent
     slot_usage:
       ccf_pref_label:
         annotations:
@@ -115,7 +118,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "{hgnc}:\\d+|{asctb_temp}:[a-zA-Z0-9-]+"
+          syntax: "{hgnc}:\\d+|{asctb_temp}:[a-zA-Z0-9-]+|{hgnco}:[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
       ccf_biomarker_type:
@@ -230,3 +233,8 @@ slots:
   ccf_biomarker_type:
     required: true
     slot_uri: ccf:ccf_biomarker_type
+  ccf_designated_parent:
+    required: false
+    annotations:
+      owl: SubClassOf
+

@@ -92,14 +92,18 @@ function normalizeAs(collector, { id: as_id, name: as_name, is_provisional }, in
     const newPartOf = [...oldPartOf, getPartOfEntity(array, index)];
     foundEntity.ccf_part_of = removeDuplicates(newPartOf);
   } else {
-    collector.push({
+    const obj = {
       id: as_id,
       class_type: 'AnatomicalStructure',
       ccf_pref_label: as_name,
       ccf_asctb_type: 'AS',
       ccf_is_provisional: is_provisional,
       ccf_part_of: [getPartOfEntity(array, index)],
-    });
+    };
+    if (is_provisional) {
+      obj['ccf_designated_parent'] = 'ccf:AnatomicalStructure';
+    }
+    collector.push(obj);
   }
   return collector;
 }
@@ -161,7 +165,7 @@ function normalizeCt(collector, { id: ct_id, name: ct_name, is_provisional }, in
     const newCtIsa = [...oldCtIsa, getCtIsaEntity(array, index)];
     foundEntity.ccf_ct_isa = removeDuplicates(newCtIsa);
   } else {
-    collector.push({
+    const obj = {
       id: ct_id,
       class_type: 'CellType',
       ccf_pref_label: ct_name,
@@ -170,7 +174,11 @@ function normalizeCt(collector, { id: ct_id, name: ct_name, is_provisional }, in
       ccf_ct_isa: [getCtIsaEntity(array, index)],
       ccf_located_in: [],
       ccf_has_biomarker_set: [],
-    });
+    };
+    if (is_provisional) {
+      obj['ccf_designated_parent'] = 'ccf:CellType';
+    }
+    collector.push(obj);
   }
   return collector;
 }
@@ -226,22 +234,27 @@ function normalizeBmData(context, data) {
 function normalizeBm(collector, { id: bm_id, name: bm_name, b_type, is_provisional }, index, array) {
   const foundEntity = collector.find((entityInCollector) => entityInCollector.id === bm_id);
   if (!foundEntity) {
-    collector.push({
+    const obj = {
       id: bm_id,
       class_type: 'Biomarker',
       ccf_pref_label: bm_name,
       ccf_asctb_type: 'BM',
       ccf_biomarker_type: b_type,
       ccf_is_provisional: is_provisional,
-    });
+    };
+    if (is_provisional) {
+      obj['ccf_designated_parent'] = 'ccf:Biomarker';
+    }
+    collector.push(obj);
   }
   return collector;
 }
 
 function generateIdWhenEmpty(id, name) {
-  if (checkNotEmpty(id)) {
-    return id;
-  }
+  return checkNotEmpty(id) ? id : generateId(name);
+}
+
+function generateId(name) {
   const suffix = name
     .trim()
     .toLowerCase()
@@ -249,7 +262,7 @@ function generateIdWhenEmpty(id, name) {
     .replace(/[^a-z0-9-]+/g, '')
     .replace(/^-/, '')
     .replace(/-$/, '');
-  return `ASCTB-TEMP:${suffix}`;
+  return `ASCTB-TEMP:${suffix}`
 }
 
 function checkNotEmpty(str) {
