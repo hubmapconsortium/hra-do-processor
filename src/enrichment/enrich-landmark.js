@@ -1,16 +1,14 @@
-import fs from 'fs';
 import { resolve } from 'path';
-import { error, header, info, more } from '../utils/logging.js';
-import { convert, filter, merge, query } from '../utils/robot.js';
-import { throwOnError } from '../utils/sh-exec.js';
+import { error, info } from '../utils/logging.js';
+import { convert } from '../utils/robot.js';
 import {
   cleanTemporaryFiles,
-  convertNormalizedMetadataToRdf,
-  convertNormalizedDataToOwl,
-  isFileEmpty,
   collectEntities,
+  convertNormalizedDataToOwl,
+  convertNormalizedMetadataToRdf,
   extractClassHierarchy,
-  logOutput 
+  isFileEmpty,
+  logOutput,
 } from './utils.js';
 
 export function enrichLandmarkMetadata(context) {
@@ -23,8 +21,9 @@ export function enrichLandmarkMetadata(context) {
 export function enrichLandmarkData(context) {
   try {
     const { selectedDigitalObject: obj } = context;
-    
+
     const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
+    const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     const ontologyPath = resolve(obj.path, 'enriched/ontology.ttl');
     const baseInputPath = resolve(obj.path, 'enriched/base-input.ttl');
     convertNormalizedDataToOwl(context, normalizedPath, baseInputPath);
@@ -36,7 +35,7 @@ export function enrichLandmarkData(context) {
 
     inputPaths.push(baseInputPath); // Set the enriched path as the initial
 
-    info('Getting concept details from reference ontologies...')
+    info('Getting concept details from reference ontologies...');
     const uberonEntitiesPath = collectEntities(context, 'uberon', baseInputPath);
     if (!isFileEmpty(uberonEntitiesPath)) {
       info('Extracting UBERON.');
@@ -54,10 +53,11 @@ export function enrichLandmarkData(context) {
     if (!isFileEmpty(fmaEntitiesPath)) {
       info('Extracting FMA.');
       const fmaExtractPath = extractClassHierarchy(
-        context, 
-        'fma', 
-        'http://purl.org/sig/ont/fma/fma62955', 
-        fmaEntitiesPath);
+        context,
+        'fma',
+        'http://purl.org/sig/ont/fma/fma62955',
+        fmaEntitiesPath
+      );
       logOutput(fmaExtractPath);
       inputPaths.push(fmaExtractPath);
     }
