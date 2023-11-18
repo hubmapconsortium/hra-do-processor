@@ -140,12 +140,13 @@ classes:
     slots:
       - title
       - description
-      - creators
-      - version
+      - creator_iri
       - creation_date
+      - version
       - license
       - publisher
       - see_also
+      - derived_from_iri
   Container:
     tree_root: true
     attributes:
@@ -159,14 +160,15 @@ classes:
       owl.template: |-
         AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
         AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
-        {% for c in metadata.creators %}
-        AnnotationAssertion( dct:creator {{iri}} "{{c.fullName|e}} ({{c.orcid}})" )
+        {% for creator in metadata.created_by %}
+        AnnotationAssertion( dct:creator {{iri}} "{{creator.creator_iri|e}}" )
         {% endfor %}
         AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
         AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
         AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
         AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
         AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
+        AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from_iri|e}}" )        
 
 slots:
   id:
@@ -176,6 +178,15 @@ slots:
   class_type:
     required: true
     designates_type: true
+  creator_iri:
+    required: true
+    multivalued: true
+    inlined_as_list: true
+    range: uriorcurie
+    slot_uri: dct:creator
+  derived_from_iri:
+    range: uriorcurie
+    slot_uri: prov:wasDerivedFrom
   anatomical_structures:
     multivalued: true
     inlined_as_list: true

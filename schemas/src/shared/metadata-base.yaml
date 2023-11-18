@@ -5,6 +5,7 @@ prefixes:
   owl: http://www.w3.org/2002/07/owl#
   pav: http://purl.org/pav/
   dcat: http://www.w3.org/ns/dcat#
+  prov: http://www.w3.org/ns/prov#
   dct: http://purl.org/dc/terms/
   dc: http://purl.org/dc/elements/1.1/
   foaf: http://xmlns.com/foaf/0.1/
@@ -20,13 +21,31 @@ imports:
   - linkml:types
 
 classes:
+  Creator:
+    abstract: true
+    slots:
+      - id
+      - name
+      - class_type
   Person:
+    is_a: Creator
     class_uri: schema:Person
     slots:
       - fullName
       - firstName
       - lastName
       - orcid
+  SoftwareApplication:
+    is_a: Creator
+    class_uri: schema:SoftwareApplication
+    slots:
+      - version
+      - target_product
+  SoftwareSourceCode:
+    class_uri: schema:SoftwareSourceCode
+    slots:
+      - code_repository
+      - see_also
   Grant:
     class_uri: schema:Grant
     slots:
@@ -39,21 +58,34 @@ classes:
       - downloadUrl
       - accessUrl
       - mediaType
-  DatasetMetadata:
+  Dataset:
     class_uri: dcat:Dataset
     slots:
+      - id
       - title
       - description
+      - derived_from
       - creators
-      - version
+      - reviewers
       - creation_date
+      - version
       - license
-      - publisher
       - see_also
+      - publisher
+      - citation
+      - citationOverall
+      - funders
+      - doi
+      - hubmapId
+      - project_leads
+      - externalReviewers
+      - distributions
 
 slots:
-  iri:
+  id:
     identifier: true
+  class_type:
+    designates_type: true
 
   # DCAT properties
   distributions:
@@ -71,6 +103,12 @@ slots:
     range: uriorcurie
     slot_uri: dcat:mediaType
 
+  # PROV-O properties
+  derived_from:
+    inlined: true
+    range: Dataset
+    slot_uri: prov:wasDerivedFrom
+
   # Dublin Core properties
   title:
     slot_uri: dct:title
@@ -83,7 +121,7 @@ slots:
   creators:
     multivalued: true
     inlined_as_list: true
-    range: Person
+    range: Creator
     slot_uri: dct:creator
 
   # Schema.org properties
@@ -91,6 +129,8 @@ slots:
     slot_uri: schema:about 
   version:
     slot_uri: schema:version
+  name:
+    slot_uri: schema:name
   fullName:
     slot_uri: schema:name
   firstName:
@@ -122,6 +162,12 @@ slots:
     inlined_as_list: true
     range: Grant
     slot_uri: schema:funding
+  target_product:
+    range: SoftwareSourceCode
+    slot_uri: schema:targetProduct
+  code_repository:
+    range: uriorcurie
+    slot_uri: schema:codeRepository
 
   # OWL properties
   versionInfo:
