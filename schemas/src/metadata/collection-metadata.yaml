@@ -20,6 +20,7 @@ imports:
 
 classes:
   Container:
+    is_a: Collection
     tree_root: true
     class_uri: dcat:Dataset
     slots:
@@ -33,7 +34,6 @@ classes:
       - license
       - see_also
       - distributions
-      - was_derived_from
     slot_usage:
       id:
         required: true

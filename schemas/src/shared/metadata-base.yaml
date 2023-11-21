@@ -21,6 +21,15 @@ imports:
   - linkml:types
 
 classes:
+  ProvEntity:
+    class_uri: prov:Entity
+    slots:
+      - was_derived_from
+  Collection:
+    is_a: ProvEntity
+    class_uri: prov:Collection
+    slots:
+      - had_member
   Creator:
     abstract: true
     slots:
@@ -64,7 +73,6 @@ classes:
       - id
       - title
       - description
-      - was_derived_from
       - creators
       - reviewers
       - creation_date
@@ -108,6 +116,11 @@ slots:
     inlined: true
     range: Dataset
     slot_uri: prov:wasDerivedFrom
+  had_member:
+    multivalued: true
+    inlined_as_list: true
+    range: uriorcurie
+    slot_uri: prov:hadMember
 
   # Dublin Core properties
   title:

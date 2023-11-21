@@ -17,18 +17,6 @@ imports:
   - ../shared/metadata-base
 
 classes:
-  CollectionMetadata:
-    class_uri: dcat:Dataset
-    slots:
-      - title
-      - description
-      - created_by
-      - version
-      - creation_date
-      - license
-      - publisher
-      - see_also
-      - derived_from
   Container:
     tree_root: true
     attributes:
@@ -53,6 +41,24 @@ classes:
         AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
         AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
         AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from|e}}" )  
+        {% for member_iri in metadata.had_member %}
+        AnnotationAssertion( prov:hadMember {{iri}} "{{member_iri|e}}" )  
+        {% endfor %}
+
+  CollectionMetadata:
+    is_a: Collection
+    class_uri: dcat:Dataset
+    slots:
+      - title
+      - description
+      - created_by
+      - version
+      - creation_date
+      - license
+      - publisher
+      - see_also
+      - derived_from
+      - had_member
 
 slots:
   created_by:
@@ -63,3 +69,4 @@ slots:
     slot_uri: dct:creator
   derived_from:
     range: uriorcurie
+    slot_uri: prov:wasDerivedFrom
