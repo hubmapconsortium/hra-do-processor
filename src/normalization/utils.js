@@ -85,7 +85,7 @@ export function normalizeMetadata(context, metadata) {
   return {
     ...generateGraphMetadata(context, metadata),
     was_derived_from: {
-      id: `${iri}#raw_data`,
+      id: `${getMetadataUrl(context)}#raw-data`,
       ...metadata,
       distributions: getDataTableDistributions(context, datatable)
     }
