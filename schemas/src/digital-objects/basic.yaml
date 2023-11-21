@@ -22,9 +22,9 @@ classes:
     slots:
       - title
       - description
-      - version
       - created_by
       - creation_date
+      - version
       - license
       - publisher
       - see_also
