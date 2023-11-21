@@ -38,13 +38,13 @@ function flatten(graphMetadata) {
   return { 
     title: graphMetadata.title, 
     description: graphMetadata.description, 
-    creator_iri: graphMetadata.creators.map((creator) => creator.id),
+    created_by: graphMetadata.creators.map((creator) => creator.id),
     creation_date: graphMetadata.creation_date, 
     version: graphMetadata.version,
     license: graphMetadata.license, 
     publisher: graphMetadata.publisher, 
     see_also: graphMetadata.see_also,
-    derived_from_iri: graphMetadata.derived_from?.id
+    derived_from: graphMetadata.was_derived_from?.id
   };
 }
 
@@ -52,22 +52,22 @@ export function normalizeMetadata(context, metadata) {
   const { iri } = context.selectedDigitalObject;  
   const datatable = metadata.datatable;
   delete metadata.datatable;
-  metadata.creators = metadata.creators.map((creator) => ({
+  metadata.creators = metadata.creators?.map((creator) => ({
       id: `https://orcid.org/${creator.orcid}`,
       class_type: "Person",
       ...creator
     }));
-  metadata.project_leads = metadata.project_leads.map((leader) => ({
+  metadata.project_leads = metadata.project_leads?.map((leader) => ({
     id: `https://orcid.org/${leader.orcid}`,
     ...leader
   }))
-  metadata.reviewers = metadata.reviewers.map((reviewer) => ({
+  metadata.reviewers = metadata.reviewers?.map((reviewer) => ({
     id: `https://orcid.org/${reviewer.orcid}`,
     ...reviewer
   }))
   return {
     ...generateGraphMetadata(context, metadata),
-    derived_from: {
+    was_derived_from: {
       id: `${iri}#raw_data`,
       ...metadata,
       distributions: getDataTableDistributions(context, datatable)

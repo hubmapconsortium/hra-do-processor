@@ -64,7 +64,7 @@ classes:
       - id
       - title
       - description
-      - derived_from
+      - was_derived_from
       - creators
       - reviewers
       - creation_date
@@ -104,7 +104,7 @@ slots:
     slot_uri: dcat:mediaType
 
   # PROV-O properties
-  derived_from:
+  was_derived_from:
     inlined: true
     range: Dataset
     slot_uri: prov:wasDerivedFrom

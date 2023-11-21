@@ -23,34 +23,29 @@ classes:
     tree_root: true
     class_uri: dcat:Dataset
     slots:
-      - iri
+      - id
       - title
       - description
-      - creators
-      - project_leads
-      - reviewers
-      - externalReviewers
       - version
+      - creators
       - creation_date
-      - license
       - publisher
-      - funders
-      - hubmapId
-      - doi
-      - citation
-      - citationOverall
-      - datatable
+      - license
+      - see_also
       - distributions
+      - was_derived_from
     slot_usage:
-      iri:
+      id:
         required: true
       title:
         required: true
       description:
         required: true
+      version:
+        required: true
       creators:
         required: true
-      version:
+      creation_date:
         required: true
       license:
         required: true

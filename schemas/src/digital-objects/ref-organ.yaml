@@ -114,12 +114,13 @@ classes:
     slots:
       - title
       - description
-      - creators
-      - version
+      - created_by
       - creation_date
+      - version
       - license
       - publisher
       - see_also
+      - derived_from
 
   Creator:
     class_uri: schema:Person
@@ -160,16 +161,26 @@ classes:
       owl.template: |-
         AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
         AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
-        {% for c in metadata.creators %}
-        AnnotationAssertion( dct:creator {{iri}} "{{c.fullName|e}} ({{c.orcid}})" )
+        {% for creator_iri in metadata.created_by %}
+        AnnotationAssertion( dct:creator {{iri}} "{{creator_iri|e}}" )
         {% endfor %}
         AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
         AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
         AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
         AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
         AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
+        AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from|e}}" ) 
 
 slots:
+  created_by:
+    required: true
+    multivalued: true
+    inlined_as_list: true
+    range: uriorcurie
+    slot_uri: dct:creator
+  derived_from:
+    range: uriorcurie
+    slot_uri: prov:wasDerivedFrom
   pref_label:
     required: true
     slot_uri: skos:prefLabel

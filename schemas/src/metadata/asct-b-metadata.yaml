@@ -33,7 +33,7 @@ classes:
       - license
       - see_also
       - distributions
-      - derived_from
+      - was_derived_from
     slot_usage:
       id:
         required: true
