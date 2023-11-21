@@ -25,27 +25,44 @@ export function writeNormalizedMetadata(context, metadata) {
   info(`Normalized metadata written to ${normalizedPath}`);
 }
 
+export function writeNormalizedMetadataOfCollection(context, metadata) {
+  writeNormalizedMetadata(context, metadata);
+}
+
 export function writeNormalizedData(context, data) {
   const { iri, path } = context.selectedDigitalObject;
-  const rawMetadata = readMetadata(context);
-  const metadata = flatten(normalizeMetadata(context, rawMetadata));
+  const metadata = flatten(normalizeMetadata(context, readMetadata(context)));
   const normalizedPath = resolve(path, 'normalized/normalized.yaml');
   writeFileSync(normalizedPath, dump({ iri, metadata, data }));
   info(`Normalized digital object written to ${normalizedPath}`);
 }
 
-function flatten(graphMetadata) {
-  return { 
-    title: graphMetadata.title, 
-    description: graphMetadata.description, 
-    created_by: graphMetadata.creators.map((creator) => creator.id),
-    creation_date: graphMetadata.creation_date, 
-    version: graphMetadata.version,
-    license: graphMetadata.license, 
-    publisher: graphMetadata.publisher, 
-    see_also: graphMetadata.see_also,
-    derived_from: graphMetadata.was_derived_from?.id
+export function writeNormalizedDataOfCollection(context, data) {
+  const { iri, path } = context.selectedDigitalObject;
+  const metadata = flatten(normalizeMetadataOfCollection(context, readMetadata(context), data));
+  const normalizedPath = resolve(path, 'normalized/normalized.yaml');
+  writeFileSync(normalizedPath, dump({ iri, metadata, data }));
+  info(`Normalized digital object written to ${normalizedPath}`);
+}
+
+function flatten(metadata) {
+  const output = { 
+    title: metadata.title, 
+    description: metadata.description, 
+    created_by: metadata.creators.map((creator) => creator.id),
+    creation_date: metadata.creation_date, 
+    version: metadata.version,
+    license: metadata.license, 
+    publisher: metadata.publisher, 
+    see_also: metadata.see_also
   };
+  if (metadata.was_derived_from) {
+    output.derived_from = metadata.was_derived_from.id;
+  }
+  if (metadata.had_member) {
+    output.had_member = metadata.had_member;
+  }
+  return output;
 }
 
 export function normalizeMetadata(context, metadata) {
@@ -72,6 +89,13 @@ export function normalizeMetadata(context, metadata) {
       ...metadata,
       distributions: getDataTableDistributions(context, datatable)
     }
+  }
+}
+
+export function normalizeMetadataOfCollection(context, metadata, doList) {
+  return {
+    ...normalizeMetadata(context, metadata),
+    had_member: doList.map((doItem) => `https://purl.humanatlas.io/${doItem}`)
   };
 }
 
@@ -100,7 +124,7 @@ function generateGraphMetadata(context, metadata) {
   };
 }
 
-export function getDataDistributions(context) {
+function getDataDistributions(context) {
   const { selectedDigitalObject: obj } = context;
   const accessUrl = getMetadataUrl(context);
   return [
@@ -155,7 +179,7 @@ function getDataTableDistributions(context, datatable) {
   });
 }
 
-export function getMetadataUrl(context) {
+function getMetadataUrl(context) {
   const { type, name, version } = context.selectedDigitalObject;
   return `${context.lodIri}${type}/${name}/${version}`;
 }
