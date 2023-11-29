@@ -19,8 +19,9 @@ None &#8594;  <sub>0..1</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Used by
 
- * [DatasetMetadata](DatasetMetadata.md)
+ * [Dataset](Dataset.md)
  * [LandmarkMetadata](LandmarkMetadata.md)
+ * [SoftwareSourceCode](SoftwareSourceCode.md)
 
 ## Other properties
 

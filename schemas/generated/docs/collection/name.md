@@ -19,7 +19,9 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Used by
 
- * [CollectionMetadata](CollectionMetadata.md)
+ * [Creator](Creator.md)
+ * [Person](Person.md)
+ * [SoftwareApplication](SoftwareApplication.md)
 
 ## Other properties
 

@@ -7,16 +7,22 @@
 URI: [ccf:Creator](http://purl.org/ccf/Creator)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Named],[Instance],[SpatialEntity]++-%20creator%201..*>[Creator&#124;fullName:string%20%3F;firstName:string%20%3F;lastName:string%20%3F;orcid:string%20%3F;id:string;label:string;class_type:string%20%3F],[Creator]uses%20-.->[Named],[Creator]uses%20-.->[Instance],[SpatialEntity])](https://yuml.me/diagram/nofunky;dir:TB/class/[Named],[Instance],[SpatialEntity]++-%20creator%201..*>[Creator&#124;fullName:string%20%3F;firstName:string%20%3F;lastName:string%20%3F;orcid:string%20%3F;id:string;label:string;class_type:string%20%3F],[Creator]uses%20-.->[Named],[Creator]uses%20-.->[Instance],[SpatialEntity])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SoftwareApplication],[Person],[Named],[Instance],[SpatialEntity]++-%20creator%201..*>[Creator&#124;fullName:string%20%3F;firstName:string%20%3F;lastName:string%20%3F;orcid:string%20%3F;id:string;label:string;class_type:string%20%3F],[Dataset]++-%20creators%200..*>[Creator],[Creator]uses%20-.->[Named],[Creator]uses%20-.->[Instance],[Creator]^-[SoftwareApplication],[Creator]^-[Person],[SpatialEntity],[Dataset])](https://yuml.me/diagram/nofunky;dir:TB/class/[SoftwareApplication],[Person],[Named],[Instance],[SpatialEntity]++-%20creator%201..*>[Creator&#124;fullName:string%20%3F;firstName:string%20%3F;lastName:string%20%3F;orcid:string%20%3F;id:string;label:string;class_type:string%20%3F],[Dataset]++-%20creators%200..*>[Creator],[Creator]uses%20-.->[Named],[Creator]uses%20-.->[Instance],[Creator]^-[SoftwareApplication],[Creator]^-[Person],[SpatialEntity],[Dataset])
 
 ## Uses Mixin
 
  *  mixin: [Named](Named.md)
  *  mixin: [Instance](Instance.md)
 
+## Children
+
+ * [Person](Person.md)
+ * [SoftwareApplication](SoftwareApplication.md)
+
 ## Referenced by Class
 
  *  **None** *[creator](creator.md)*  <sub>1..\*</sub>  **[Creator](Creator.md)**
+ *  **None** *[creators](creators.md)*  <sub>0..\*</sub>  **[Creator](Creator.md)**
 
 ## Attributes
 

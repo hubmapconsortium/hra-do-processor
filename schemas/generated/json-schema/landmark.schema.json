@@ -1,5 +1,22 @@
 {
     "$defs": {
+        "Collection": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "had_member": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "was_derived_from": {
+                    "$ref": "#/$defs/Dataset"
+                }
+            },
+            "title": "Collection",
+            "type": "object"
+        },
         "Container": {
             "additionalProperties": false,
             "description": "",
@@ -60,27 +77,82 @@
             "title": "Creator",
             "type": "object"
         },
-        "DatasetMetadata": {
+        "Dataset": {
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "citation": {
+                    "type": "string"
+                },
+                "citationOverall": {
+                    "type": "string"
+                },
                 "creation_date": {
                     "type": "string"
                 },
                 "creators": {
                     "items": {
-                        "$ref": "#/$defs/Person"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Creator"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/SoftwareApplication"
+                            }
+                        ]
                     },
                     "type": "array"
                 },
                 "description": {
                     "type": "string"
                 },
+                "distributions": {
+                    "items": {
+                        "$ref": "#/$defs/Distribution"
+                    },
+                    "type": "array"
+                },
+                "doi": {
+                    "type": "string"
+                },
+                "externalReviewers": {
+                    "items": {
+                        "$ref": "#/$defs/Person"
+                    },
+                    "type": "array"
+                },
+                "funders": {
+                    "items": {
+                        "$ref": "#/$defs/Grant"
+                    },
+                    "type": "array"
+                },
+                "hubmapId": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
                 "license": {
                     "type": "string"
                 },
+                "project_leads": {
+                    "items": {
+                        "$ref": "#/$defs/Person"
+                    },
+                    "type": "array"
+                },
                 "publisher": {
                     "type": "string"
+                },
+                "reviewers": {
+                    "items": {
+                        "$ref": "#/$defs/Person"
+                    },
+                    "type": "array"
                 },
                 "see_also": {
                     "type": "string"
@@ -92,7 +164,10 @@
                     "type": "string"
                 }
             },
-            "title": "DatasetMetadata",
+            "required": [
+                "id"
+            ],
+            "title": "Dataset",
             "type": "object"
         },
         "DimensionUnitEnum": {
@@ -185,21 +260,13 @@
             "properties": {
                 "landmarks": {
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/ExtractionSet"
-                            }
-                        ]
+                        "$ref": "#/$defs/ExtractionSet"
                     },
                     "type": "array"
                 },
                 "spatial_entities": {
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/SpatialEntity"
-                            }
-                        ]
+                        "$ref": "#/$defs/SpatialEntity"
                     },
                     "type": "array"
                 }
@@ -215,14 +282,17 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "created_by": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "creation_date": {
                     "type": "string"
                 },
-                "creators": {
-                    "items": {
-                        "$ref": "#/$defs/Person"
-                    },
-                    "type": "array"
+                "derived_from": {
+                    "type": "string"
                 },
                 "description": {
                     "type": "string"
@@ -243,6 +313,9 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "created_by"
+            ],
             "title": "LandmarkMetadata",
             "type": "object"
         },
@@ -250,10 +323,22 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "class_type": {
+                    "enum": [
+                        "Person"
+                    ],
+                    "type": "string"
+                },
                 "firstName": {
                     "type": "string"
                 },
                 "fullName": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
                     "type": "string"
                 },
                 "lastName": {
@@ -262,9 +347,30 @@
                 "orcid": {
                     "pattern": "^(\\d{4}-){3}\\d{3}(\\d|X)$",
                     "type": "string"
+                },
+                "typeOf": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 }
             },
+            "required": [
+                "id",
+                "label"
+            ],
             "title": "Person",
+            "type": "object"
+        },
+        "ProvEntity": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "was_derived_from": {
+                    "$ref": "#/$defs/Dataset"
+                }
+            },
+            "title": "ProvEntity",
             "type": "object"
         },
         "RotationUnitEnum": {
@@ -283,6 +389,69 @@
             "title": "ScalingUnitEnum",
             "type": "string"
         },
+        "SoftwareApplication": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "class_type": {
+                    "enum": [
+                        "SoftwareApplication"
+                    ],
+                    "type": "string"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "fullName": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "orcid": {
+                    "pattern": "^(\\d{4}-){3}\\d{3}(\\d|X)$",
+                    "type": "string"
+                },
+                "target_product": {
+                    "$ref": "#/$defs/SoftwareSourceCode"
+                },
+                "typeOf": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "label"
+            ],
+            "title": "SoftwareApplication",
+            "type": "object"
+        },
+        "SoftwareSourceCode": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "code_repository": {
+                    "type": "string"
+                },
+                "see_also": {
+                    "type": "string"
+                }
+            },
+            "title": "SoftwareSourceCode",
+            "type": "object"
+        },
         "SpatialEntity": {
             "additionalProperties": false,
             "description": "",
@@ -298,6 +467,12 @@
                         "anyOf": [
                             {
                                 "$ref": "#/$defs/Creator"
+                            },
+                            {
+                                "$ref": "#/$defs/Person"
+                            },
+                            {
+                                "$ref": "#/$defs/SoftwareApplication"
                             }
                         ]
                     },
@@ -316,19 +491,11 @@
                     "type": "string"
                 },
                 "object_reference": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/SpatialObjectReference"
-                        }
-                    ]
+                    "$ref": "#/$defs/SpatialObjectReference"
                 },
                 "placements": {
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/SpatialPlacement"
-                            }
-                        ]
+                        "$ref": "#/$defs/SpatialPlacement"
                     },
                     "type": "array"
                 },
@@ -397,11 +564,7 @@
                     "type": "string"
                 },
                 "placement": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/SpatialPlacement"
-                        }
-                    ]
+                    "$ref": "#/$defs/SpatialPlacement"
                 },
                 "typeOf": {
                     "items": {

@@ -7,7 +7,7 @@
 URI: [ccf:BasicMetadata](http://purl.org/ccf/BasicMetadata)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Person],[Person]<creators%200..*-++[BasicMetadata&#124;title:string%20%3F;description:string%20%3F;version:string%20%3F;creation_date:string%20%3F;license:string%20%3F;publisher:string%20%3F;see_also:uriorcurie%20%3F],[Container]++-%20metadata%200..1>[BasicMetadata],[Container])](https://yuml.me/diagram/nofunky;dir:TB/class/[Person],[Person]<creators%200..*-++[BasicMetadata&#124;title:string%20%3F;description:string%20%3F;version:string%20%3F;creation_date:string%20%3F;license:string%20%3F;publisher:string%20%3F;see_also:uriorcurie%20%3F],[Container]++-%20metadata%200..1>[BasicMetadata],[Container])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Container]++-%20metadata%200..1>[BasicMetadata&#124;title:string%20%3F;description:string%20%3F;created_by:uriorcurie%20%2B;version:string%20%3F;creation_date:string%20%3F;license:string%20%3F;publisher:string%20%3F;see_also:uriorcurie%20%3F;derived_from:uriorcurie%20%3F],[Container])](https://yuml.me/diagram/nofunky;dir:TB/class/[Container]++-%20metadata%200..1>[BasicMetadata&#124;title:string%20%3F;description:string%20%3F;created_by:uriorcurie%20%2B;version:string%20%3F;creation_date:string%20%3F;license:string%20%3F;publisher:string%20%3F;see_also:uriorcurie%20%3F;derived_from:uriorcurie%20%3F],[Container])
 
 ## Referenced by Class
 
@@ -22,8 +22,8 @@ URI: [ccf:BasicMetadata](http://purl.org/ccf/BasicMetadata)
      * Range: [String](types/String.md)
  * [description](description.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [creators](creators.md)  <sub>0..\*</sub>
-     * Range: [Person](Person.md)
+ * [created_by](created_by.md)  <sub>1..\*</sub>
+     * Range: [Uriorcurie](types/Uriorcurie.md)
  * [version](version.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [creation_date](creation_date.md)  <sub>0..1</sub>
@@ -33,6 +33,8 @@ URI: [ccf:BasicMetadata](http://purl.org/ccf/BasicMetadata)
  * [publisher](publisher.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [see_also](see_also.md)  <sub>0..1</sub>
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+ * [derived_from](derived_from.md)  <sub>0..1</sub>
      * Range: [Uriorcurie](types/Uriorcurie.md)
 
 ## Other properties

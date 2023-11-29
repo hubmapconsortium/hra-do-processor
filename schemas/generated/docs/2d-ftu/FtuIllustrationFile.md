@@ -52,5 +52,5 @@ URI: [ccf:FtuIllustrationFile](http://purl.org/ccf/FtuIllustrationFile)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | ccf:FtuIllustrationFile |
+| **Mappings:** | | ccf:ImageFile |
 

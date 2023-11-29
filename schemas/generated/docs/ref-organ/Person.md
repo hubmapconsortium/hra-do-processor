@@ -7,11 +7,14 @@
 URI: [ccf:Person](http://purl.org/ccf/Person)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RefOrganMetadata]++-%20creators%200..*>[Person&#124;fullName:string%20%3F;firstName:string%20%3F;lastName:string%20%3F;orcid:string%20%3F],[DatasetMetadata]++-%20creators%200..*>[Person],[RefOrganMetadata],[DatasetMetadata])](https://yuml.me/diagram/nofunky;dir:TB/class/[RefOrganMetadata]++-%20creators%200..*>[Person&#124;fullName:string%20%3F;firstName:string%20%3F;lastName:string%20%3F;orcid:string%20%3F],[DatasetMetadata]++-%20creators%200..*>[Person],[RefOrganMetadata],[DatasetMetadata])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Dataset]++-%20externalReviewers%200..*>[Person&#124;fullName:string%20%3F;firstName:string%20%3F;lastName:string%20%3F;orcid:string%20%3F;id(i):string;label(i):string;class_type(i):string%20%3F],[Dataset]++-%20project_leads%200..*>[Person],[Dataset]++-%20reviewers%200..*>[Person],[Creator]^-[Person],[Named],[Dataset],[Creator])](https://yuml.me/diagram/nofunky;dir:TB/class/[Dataset]++-%20externalReviewers%200..*>[Person&#124;fullName:string%20%3F;firstName:string%20%3F;lastName:string%20%3F;orcid:string%20%3F;id(i):string;label(i):string;class_type(i):string%20%3F],[Dataset]++-%20project_leads%200..*>[Person],[Dataset]++-%20reviewers%200..*>[Person],[Creator]^-[Person],[Named],[Dataset],[Creator])
+
+## Parents
+
+ *  is_a: [Creator](Creator.md)
 
 ## Referenced by Class
 
- *  **None** *[creators](creators.md)*  <sub>0..\*</sub>  **[Person](Person.md)**
  *  **None** *[externalReviewers](externalReviewers.md)*  <sub>0..\*</sub>  **[Person](Person.md)**
  *  **None** *[project_leads](project_leads.md)*  <sub>0..\*</sub>  **[Person](Person.md)**
  *  **None** *[reviewers](reviewers.md)*  <sub>0..\*</sub>  **[Person](Person.md)**

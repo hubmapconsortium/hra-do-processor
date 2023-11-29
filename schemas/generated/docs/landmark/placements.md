@@ -20,3 +20,10 @@ None &#8594;  <sub>0..\*</sub> [SpatialPlacement](SpatialPlacement.md)
 ## Used by
 
  * [SpatialEntity](SpatialEntity.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | ccf:has_placements |
+

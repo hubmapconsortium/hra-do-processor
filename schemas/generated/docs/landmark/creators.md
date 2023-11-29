@@ -9,7 +9,7 @@ URI: [ccf:creators](http://purl.org/ccf/creators)
 
 ## Domain and Range
 
-None &#8594;  <sub>0..\*</sub> [Person](Person.md)
+None &#8594;  <sub>0..\*</sub> [Creator](Creator.md)
 
 ## Parents
 
@@ -19,8 +19,7 @@ None &#8594;  <sub>0..\*</sub> [Person](Person.md)
 
 ## Used by
 
- * [DatasetMetadata](DatasetMetadata.md)
- * [LandmarkMetadata](LandmarkMetadata.md)
+ * [Dataset](Dataset.md)
 
 ## Other properties
 

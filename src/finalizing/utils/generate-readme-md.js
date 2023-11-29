@@ -7,7 +7,7 @@ const TYPE_MAPPINGS = {
   cite_model_mappings: { 'asct-b': 'Data Table', '2d-ftu': '2D Data', omap: 'OMAP Tables', 'ref-organ': '3D Data' }
 };
 
-export function renderReadmeMd(templateFile, metadata) {
+export function renderReadmeMd(templateFile, context, metadata) {
   const env = new Environment(undefined, { autoescape: false });
 
   env.addFilter('authorList', (list) => {
@@ -23,13 +23,13 @@ export function renderReadmeMd(templateFile, metadata) {
     }).join(' ');
   }) ?? '';
   const template = readFileSync(templateFile).toString();
-  return env.renderString(template, { ...TYPE_MAPPINGS, ...metadata });
+  return env.renderString(template, { ...TYPE_MAPPINGS, ...metadata, ...context.selectedDigitalObject });
 }
 
 export function writeReadmeMd(context, metadata) {
   const obj = context.selectedDigitalObject;
   const templateFile = resolve(context.processorHome, 'src/finalizing/templates/readme-md.njk');
-  const mdString = renderReadmeMd(templateFile, metadata);
+  const mdString = renderReadmeMd(templateFile, context, metadata);
   const mdFile = resolve(context.deploymentHome, obj.doString, 'README.md');
   writeFileSync(mdFile, mdString);
 }

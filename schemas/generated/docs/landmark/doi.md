@@ -19,6 +19,7 @@ None &#8594;  <sub>0..1</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Used by
 
+ * [Dataset](Dataset.md)
 
 ## Other properties
 

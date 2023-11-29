@@ -23,3 +23,7 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 ## Used by
 
  * [AsctbConcept](AsctbConcept.md)
+ * [Creator](Creator.md)
+ * [Dataset](Dataset.md)
+ * [Person](Person.md)
+ * [SoftwareApplication](SoftwareApplication.md)

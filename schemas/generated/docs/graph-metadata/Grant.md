@@ -7,7 +7,7 @@
 URI: [dcat:Grant](http://www.w3.org/ns/dcat#Grant)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Container]++-%20funders%200..*>[Grant&#124;funder:string%20%3F;awardNumber:string%20%3F],[Container])](https://yuml.me/diagram/nofunky;dir:TB/class/[Container]++-%20funders%200..*>[Grant&#124;funder:string%20%3F;awardNumber:string%20%3F],[Container])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Dataset]++-%20funders%200..*>[Grant&#124;funder:string%20%3F;awardNumber:string%20%3F],[Dataset])](https://yuml.me/diagram/nofunky;dir:TB/class/[Dataset]++-%20funders%200..*>[Grant&#124;funder:string%20%3F;awardNumber:string%20%3F],[Dataset])
 
 ## Referenced by Class
 

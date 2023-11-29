@@ -1,6 +1,7 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix linkml: <https://w3id.org/linkml/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema1: <http://schema.org/> .
@@ -24,79 +25,113 @@ xsd:integer a rdfs:Datatype .
 
 xsd:time a rdfs:Datatype .
 
+dcat:Collection a owl:Class ;
+    rdfs:label "Collection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:had_member ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty dcat:had_member ],
+        dcat:ProvEntity ;
+    skos:exactMatch prov:Collection ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
 dcat:Container a owl:Class ;
     rdfs:label "Container" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dcat:iri ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dcat:description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dcat:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcat:creation_date ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dcat:iri ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcat:description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dcat:creation_date ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcat:title ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty dcat:title ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dcat:version ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty dcat:license ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty dcat:license ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
             owl:onProperty dcat:creators ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcat:iri ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty dcat:title ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcat:license ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcat:distributions ],
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:description ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty dcat:creation_date ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty dcat:version ],
+            owl:onProperty dcat:title ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty dcat:distributions ],
+            owl:onProperty dcat:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:license ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:see_also ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:publisher ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:publisher ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:creation_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:creation_date ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty dcat:version ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:see_also ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty dcat:see_also ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:was_derived_from ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dcat:Dataset ;
+            owl:onProperty dcat:was_derived_from ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:onProperty dcat:distributions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:license ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty dcat:creators ] ;
-    skos:exactMatch dcat:Dataset ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:DatasetMetadata a owl:Class ;
-    rdfs:label "DatasetMetadata" ;
+            owl:onProperty dcat:distributions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:creators ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:was_derived_from ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:publisher ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:version ] ;
     skos:exactMatch dcat:Dataset ;
     skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
 
@@ -104,100 +139,12 @@ dcat:about a owl:DatatypeProperty ;
     rdfs:label "about" ;
     skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
 
-dcat:accessUrl a owl:DatatypeProperty ;
-    rdfs:label "accessUrl" ;
-    rdfs:range xsd:anyURI ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:awardNumber a owl:DatatypeProperty ;
-    rdfs:label "awardNumber" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:citation a owl:DatatypeProperty ;
-    rdfs:label "citation" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:citationOverall a owl:DatatypeProperty ;
-    rdfs:label "citationOverall" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
 dcat:datatable a owl:DatatypeProperty ;
     rdfs:label "datatable" ;
     skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
 
-dcat:doi a owl:DatatypeProperty ;
-    rdfs:label "doi" ;
-    rdfs:range xsd:anyURI ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:downloadUrl a owl:DatatypeProperty ;
-    rdfs:label "downloadUrl" ;
-    rdfs:range xsd:anyURI ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:externalReviewers a owl:ObjectProperty ;
-    rdfs:label "externalReviewers" ;
-    rdfs:range dcat:Person ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:firstName a owl:DatatypeProperty ;
-    rdfs:label "firstName" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:fullName a owl:DatatypeProperty ;
-    rdfs:label "fullName" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:funder a owl:DatatypeProperty ;
-    rdfs:label "funder" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:funders a owl:ObjectProperty ;
-    rdfs:label "funders" ;
-    rdfs:range dcat:Grant ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:hubmapId a owl:DatatypeProperty ;
-    rdfs:label "hubmapId" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:lastName a owl:DatatypeProperty ;
-    rdfs:label "lastName" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:mediaType a owl:DatatypeProperty ;
-    rdfs:label "mediaType" ;
-    rdfs:range xsd:anyURI ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:orcid a owl:DatatypeProperty ;
-    rdfs:label "orcid" ;
-    rdfs:range [ a rdfs:Datatype ;
-            owl:onDatatype xsd:string ;
-            owl:withRestrictions ( [ xsd:pattern "^(\\d{4}-){3}\\d{3}(\\d|X)$" ] ) ] ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:project_leads a owl:ObjectProperty ;
-    rdfs:label "project_leads" ;
-    rdfs:range dcat:Person ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
 dcat:propertyId a owl:DatatypeProperty ;
     rdfs:label "propertyId" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:publisher a owl:DatatypeProperty ;
-    rdfs:label "publisher" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:reviewers a owl:ObjectProperty ;
-    rdfs:label "reviewers" ;
-    rdfs:range dcat:Person ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
-dcat:see_also a owl:DatatypeProperty ;
-    rdfs:label "see_also" ;
-    rdfs:range xsd:anyURI ;
     skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
 
 dcat:value a owl:DatatypeProperty ;
@@ -217,24 +164,421 @@ shex:nonLiteral a rdfs:Datatype .
 
 linkml:DateOrDatetime a rdfs:Datatype .
 
+dcat:ProvEntity a owl:Class ;
+    rdfs:label "ProvEntity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom dcat:Dataset ;
+            owl:onProperty dcat:was_derived_from ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:was_derived_from ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:was_derived_from ] ;
+    skos:exactMatch prov:Entity ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
 dcat:Grant a owl:Class ;
     rdfs:label "Grant" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:funder ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:awardNumber ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:awardNumber ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:awardNumber ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:funder ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:funder ] ;
     skos:exactMatch schema1:Grant ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:SoftwareApplication a owl:Class ;
+    rdfs:label "SoftwareApplication" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:target_product ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:target_product ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dcat:SoftwareSourceCode ;
+            owl:onProperty dcat:target_product ],
+        dcat:Creator ;
+    skos:exactMatch schema1:SoftwareApplication ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:SoftwareSourceCode a owl:Class ;
+    rdfs:label "SoftwareSourceCode" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:code_repository ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:see_also ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:code_repository ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty dcat:code_repository ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty dcat:see_also ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:see_also ] ;
+    skos:exactMatch schema1:SoftwareSourceCode ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:externalReviewers a owl:ObjectProperty ;
+    rdfs:label "externalReviewers" ;
+    rdfs:range dcat:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:funders a owl:ObjectProperty ;
+    rdfs:label "funders" ;
+    rdfs:range dcat:Grant ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:had_member a owl:DatatypeProperty ;
+    rdfs:label "had_member" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:project_leads a owl:ObjectProperty ;
+    rdfs:label "project_leads" ;
+    rdfs:range dcat:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:reviewers a owl:ObjectProperty ;
+    rdfs:label "reviewers" ;
+    rdfs:range dcat:Person ;
     skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
 
 dcat:Distribution a owl:Class ;
     rdfs:label "Distribution" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty dcat:mediaType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty dcat:accessUrl ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:mediaType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:accessUrl ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:mediaType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:downloadUrl ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:accessUrl ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:downloadUrl ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty dcat:downloadUrl ] ;
     skos:exactMatch dcat:Distribution ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:accessUrl a owl:DatatypeProperty ;
+    rdfs:label "accessUrl" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:awardNumber a owl:DatatypeProperty ;
+    rdfs:label "awardNumber" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:citation a owl:DatatypeProperty ;
+    rdfs:label "citation" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:citationOverall a owl:DatatypeProperty ;
+    rdfs:label "citationOverall" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:code_repository a owl:DatatypeProperty ;
+    rdfs:label "code_repository" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:doi a owl:DatatypeProperty ;
+    rdfs:label "doi" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:downloadUrl a owl:DatatypeProperty ;
+    rdfs:label "downloadUrl" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:firstName a owl:DatatypeProperty ;
+    rdfs:label "firstName" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:fullName a owl:DatatypeProperty ;
+    rdfs:label "fullName" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:funder a owl:DatatypeProperty ;
+    rdfs:label "funder" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:hubmapId a owl:DatatypeProperty ;
+    rdfs:label "hubmapId" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:lastName a owl:DatatypeProperty ;
+    rdfs:label "lastName" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:mediaType a owl:DatatypeProperty ;
+    rdfs:label "mediaType" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:orcid a owl:DatatypeProperty ;
+    rdfs:label "orcid" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^(\\d{4}-){3}\\d{3}(\\d|X)$" ] ) ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:target_product a owl:ObjectProperty ;
+    rdfs:label "target_product" ;
+    rdfs:range dcat:SoftwareSourceCode ;
     skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
 
 dcat:creators a owl:ObjectProperty ;
     rdfs:label "creators" ;
-    rdfs:range dcat:Person ;
+    rdfs:range dcat:Creator ;
     skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
 
 dcat:distributions a owl:ObjectProperty ;
     rdfs:label "distributions" ;
     rdfs:range dcat:Distribution ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:Dataset a owl:Class ;
+    rdfs:label "Dataset" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom dcat:Person ;
+            owl:onProperty dcat:reviewers ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dcat:Person ;
+            owl:onProperty dcat:project_leads ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:creation_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dcat:Person ;
+            owl:onProperty dcat:externalReviewers ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:license ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dcat:Creator ;
+            owl:onProperty dcat:creators ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:publisher ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:citation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:see_also ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:license ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:see_also ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty dcat:see_also ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:citationOverall ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty dcat:doi ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:publisher ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:creators ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:citation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:citationOverall ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:externalReviewers ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:publisher ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:hubmapId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:license ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:funders ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:hubmapId ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:distributions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:doi ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:citationOverall ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:project_leads ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:citation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:creation_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dcat:Distribution ;
+            owl:onProperty dcat:distributions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:doi ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:creation_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:reviewers ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:hubmapId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dcat:Grant ;
+            owl:onProperty dcat:funders ] ;
+    skos:exactMatch dcat:Dataset ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:Creator a owl:Class ;
+    rdfs:label "Creator" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:class_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty dcat:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:class_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:class_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:name ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:class_type a owl:DatatypeProperty ;
+    rdfs:label "class_type" ;
     skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
 
 dcat:creation_date a owl:DatatypeProperty ;
@@ -245,12 +589,70 @@ dcat:description a owl:DatatypeProperty ;
     rdfs:label "description" ;
     skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
 
-dcat:iri a owl:DatatypeProperty ;
-    rdfs:label "iri" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
 dcat:license a owl:DatatypeProperty ;
     rdfs:label "license" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:publisher a owl:DatatypeProperty ;
+    rdfs:label "publisher" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:was_derived_from a owl:ObjectProperty ;
+    rdfs:label "was_derived_from" ;
+    rdfs:range dcat:Dataset ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:lastName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:fullName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:firstName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:orcid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:fullName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:orcid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:string ;
+                    owl:withRestrictions ( [ xsd:pattern "^(\\d{4}-){3}\\d{3}(\\d|X)$" ] ) ] ;
+            owl:onProperty dcat:orcid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:lastName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty dcat:firstName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:firstName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcat:fullName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty dcat:lastName ],
+        dcat:Creator ;
+    skos:exactMatch schema1:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
+
+dcat:see_also a owl:DatatypeProperty ;
+    rdfs:label "see_also" ;
+    rdfs:range xsd:anyURI ;
     skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
 
 dcat:title a owl:DatatypeProperty ;
@@ -261,13 +663,23 @@ dcat:version a owl:DatatypeProperty ;
     rdfs:label "version" ;
     skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
 
-dcat:Person a owl:Class ;
-    rdfs:label "Person" ;
-    skos:exactMatch schema1:Person ;
-    skos:inScheme <https://purl.humanatlas.io/specs/asct-b-metadata> .
-
 xsd:anyURI a rdfs:Datatype .
 
 xsd:string a rdfs:Datatype .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf dcat:Creator ;
+    owl:onProperty dcat:class_type ;
+    owl:someValuesFrom dcat:Creator .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf dcat:SoftwareApplication ;
+    owl:onProperty dcat:class_type ;
+    owl:someValuesFrom dcat:SoftwareApplication .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf dcat:Person ;
+    owl:onProperty dcat:class_type ;
+    owl:someValuesFrom dcat:Person .
 
 

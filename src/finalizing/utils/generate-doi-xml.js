@@ -27,7 +27,7 @@ const TYPE_MAPPINGS = {
   extension_fixes: { ai: 'svg', xlsx: 'csv' }
 };
 
-export function renderDoiXml(templateFile, metadata) {
+export function renderDoiXml(templateFile, context, metadata) {
   const env = new Environment(undefined, { autoescape: false });
   env.addFilter('fileExtension', (str) => {
     str = Array.isArray(str) ? str[0] : str;
@@ -42,13 +42,13 @@ export function renderDoiXml(templateFile, metadata) {
   );
   env.addFilter('year', (str) => String(str || new Date().getFullYear()).match(/\d\d\d\d/)[0])
   const template = readFileSync(templateFile).toString();
-  return env.renderString(template, { ...TYPE_MAPPINGS, ...metadata });
+  return env.renderString(template, { ...TYPE_MAPPINGS, ...metadata, ...context.selectedDigitalObject });
 }
 
 export function writeDoiXml(context, metadata) {
   const obj = context.selectedDigitalObject;
   const templateFile = resolve(context.processorHome, 'src/finalizing/templates/doi-xml.njk');
-  const xmlString = renderDoiXml(templateFile, metadata);
+  const xmlString = renderDoiXml(templateFile, context, metadata);
   const doiXmlFile = resolve(context.deploymentHome, obj.doString, 'doi.xml');
   writeFileSync(doiXmlFile, xmlString);
 }

@@ -9,7 +9,7 @@ URI: [dcat:creators](http://www.w3.org/ns/dcat#creators)
 
 ## Domain and Range
 
-None &#8594;  <sub>0..\*</sub> [Person](Person.md)
+None &#8594;  <sub>0..\*</sub> [Creator](Creator.md)
 
 ## Parents
 
@@ -20,7 +20,7 @@ None &#8594;  <sub>0..\*</sub> [Person](Person.md)
 
 ## Used by
 
- * [DatasetMetadata](DatasetMetadata.md)
+ * [Dataset](Dataset.md)
 
 ## Other properties
 

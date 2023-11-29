@@ -7,11 +7,14 @@
 URI: [ccf:Person](http://purl.org/ccf/Person)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[AsctbMetadata]++-%20creators%200..*>[Person&#124;fullName:string%20%3F;firstName:string%20%3F;lastName:string%20%3F;orcid:string%20%3F],[DatasetMetadata]++-%20creators%200..*>[Person],[DatasetMetadata],[AsctbMetadata])](https://yuml.me/diagram/nofunky;dir:TB/class/[AsctbMetadata]++-%20creators%200..*>[Person&#124;fullName:string%20%3F;firstName:string%20%3F;lastName:string%20%3F;orcid:string%20%3F],[DatasetMetadata]++-%20creators%200..*>[Person],[DatasetMetadata],[AsctbMetadata])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Dataset]++-%20externalReviewers%200..*>[Person&#124;fullName:string%20%3F;firstName:string%20%3F;lastName:string%20%3F;orcid:string%20%3F;id(i):string;name(i):string%20%3F;class_type(i):string],[Dataset]++-%20project_leads%200..*>[Person],[Dataset]++-%20reviewers%200..*>[Person],[Creator]^-[Person],[Dataset],[Creator])](https://yuml.me/diagram/nofunky;dir:TB/class/[Dataset]++-%20externalReviewers%200..*>[Person&#124;fullName:string%20%3F;firstName:string%20%3F;lastName:string%20%3F;orcid:string%20%3F;id(i):string;name(i):string%20%3F;class_type(i):string],[Dataset]++-%20project_leads%200..*>[Person],[Dataset]++-%20reviewers%200..*>[Person],[Creator]^-[Person],[Dataset],[Creator])
+
+## Parents
+
+ *  is_a: [Creator](Creator.md)
 
 ## Referenced by Class
 
- *  **None** *[creators](creators.md)*  <sub>0..\*</sub>  **[Person](Person.md)**
  *  **None** *[externalReviewers](externalReviewers.md)*  <sub>0..\*</sub>  **[Person](Person.md)**
  *  **None** *[project_leads](project_leads.md)*  <sub>0..\*</sub>  **[Person](Person.md)**
  *  **None** *[reviewers](reviewers.md)*  <sub>0..\*</sub>  **[Person](Person.md)**
@@ -28,6 +31,15 @@ URI: [ccf:Person](http://purl.org/ccf/Person)
  * [lastName](lastName.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [orcid](orcid.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+
+### Inherited from Creator:
+
+ * [id](id.md)  <sub>1..1</sub>
+     * Range: [String](types/String.md)
+ * [name](name.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [class_type](class_type.md)  <sub>1..1</sub>
      * Range: [String](types/String.md)
 
 ## Other properties

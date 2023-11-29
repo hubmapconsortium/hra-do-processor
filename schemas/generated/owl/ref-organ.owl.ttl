@@ -3,6 +3,7 @@
 @prefix linkml: <https://w3id.org/linkml/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
@@ -10,24 +11,40 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+ccf:Collection a owl:Class ;
+    rdfs:label "Collection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:had_member ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:had_member ],
+        ccf:ProvEntity ;
+    skos:exactMatch prov:Collection ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
 ccf:Container a owl:Class ;
     rdfs:label "Container" ;
     ccf:owl.template """AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
 AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
-{% for c in metadata.creators %}
-AnnotationAssertion( dct:creator {{iri}} "{{c.fullName|e}} ({{c.orcid}})" )
+{% for creator_iri in metadata.created_by %}
+AnnotationAssertion( dct:creator {{iri}} "{{creator_iri|e}}" )
 {% endfor %}
 AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
 AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
 AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
 AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
-AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )""" ;
+AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
+AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from|e}}" ) """ ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:iri ],
+        [ a owl:Restriction ;
             owl:allValuesFrom ccf:SpatialEntity ;
             owl:onProperty ccf:data ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ccf:metadata ],
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:iri ],
         [ a owl:Restriction ;
             owl:allValuesFrom ccf:RefOrganMetadata ;
             owl:onProperty ccf:metadata ],
@@ -35,27 +52,524 @@ AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )""" ;
             owl:maxCardinality 1 ;
             owl:onProperty ccf:iri ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty ccf:metadata ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ccf:data ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty ccf:iri ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ccf:iri ] ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:DatasetMetadata a owl:Class ;
-    rdfs:label "DatasetMetadata" ;
-    skos:exactMatch dcat:Dataset ;
+            owl:onProperty ccf:metadata ] ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
 ccf:about a owl:DatatypeProperty ;
     rdfs:label "about" ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:datatable a owl:DatatypeProperty ;
+    rdfs:label "datatable" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:propertyId a owl:DatatypeProperty ;
+    rdfs:label "propertyId" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:value a owl:DatatypeProperty ;
+    rdfs:label "value" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:versionInfo a owl:DatatypeProperty ;
+    rdfs:label "versionInfo" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+xsd:boolean a rdfs:Datatype .
+
+xsd:dateTime a rdfs:Datatype .
+
+xsd:decimal a rdfs:Datatype .
+
+xsd:double a rdfs:Datatype .
+
+xsd:time a rdfs:Datatype .
+
+shex:iri a rdfs:Datatype .
+
+shex:nonLiteral a rdfs:Datatype .
+
+<https://purl.humanatlas.io/specs/ref-organ.owl.ttl> a owl:Ontology ;
+    rdfs:label "ref-organ" .
+
+linkml:DateOrDatetime a rdfs:Datatype .
+
+obo:UO_0000185 a owl:Class ;
+    rdfs:label "degree" ;
+    rdfs:subClassOf ccf:RotationUnitEnum .
+
+obo:UO_0010006 a owl:Class ;
+    rdfs:label "ratio" ;
+    rdfs:subClassOf ccf:ScalingUnitEnum .
+
+ccf:ProvEntity a owl:Class ;
+    rdfs:label "ProvEntity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Dataset ;
+            owl:onProperty ccf:was_derived_from ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:was_derived_from ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:was_derived_from ] ;
+    skos:exactMatch prov:Entity ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:RefOrganMetadata a owl:Class ;
+    rdfs:label "RefOrganMetadata" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:creation_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:license ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:derived_from ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:creation_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:created_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:license ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:created_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:license ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:publisher ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:publisher ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:publisher ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:derived_from ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:creation_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:derived_from ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:title ] ;
+    skos:exactMatch dcat:Dataset ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+obo:HP_0012834 a owl:Class ;
+    rdfs:label "Right" ;
+    rdfs:subClassOf ccf:OrganSideEnum .
+
+obo:HP_0012835 a owl:Class ;
+    rdfs:label "Left" ;
+    rdfs:subClassOf ccf:OrganSideEnum .
+
+ccf:Dataset a owl:Class ;
+    rdfs:label "Dataset" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Grant ;
+            owl:onProperty ccf:funders ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:creation_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:publisher ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:doi ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:citationOverall ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:reviewers ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:citationOverall ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:citationOverall ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Person ;
+            owl:onProperty ccf:reviewers ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:hubmapId ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:hubmapId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:citation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:citation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:creation_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Creator ;
+            owl:onProperty ccf:creators ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:project_leads ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:publisher ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:distributions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:citation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:license ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Person ;
+            owl:onProperty ccf:externalReviewers ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:doi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:publisher ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:license ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:externalReviewers ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:license ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:creation_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:hubmapId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Distribution ;
+            owl:onProperty ccf:distributions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:funders ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:creators ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:doi ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Person ;
+            owl:onProperty ccf:project_leads ] ;
+    skos:exactMatch dcat:Dataset ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:Distribution a owl:Class ;
+    rdfs:label "Distribution" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:mediaType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:accessUrl ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:accessUrl ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:mediaType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:mediaType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:downloadUrl ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:accessUrl ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:downloadUrl ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:downloadUrl ] ;
+    skos:exactMatch dcat:Distribution ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:Grant a owl:Class ;
+    rdfs:label "Grant" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:funder ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:funder ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:awardNumber ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:awardNumber ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:awardNumber ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:funder ] ;
+    skos:exactMatch schema:Grant ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:SoftwareApplication a owl:Class ;
+    rdfs:label "SoftwareApplication" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:target_product ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:target_product ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:SoftwareSourceCode ;
+            owl:onProperty ccf:target_product ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:version ],
+        ccf:Creator ;
+    skos:exactMatch schema:SoftwareApplication ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:SoftwareSourceCode a owl:Class ;
+    rdfs:label "SoftwareSourceCode" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:code_repository ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:code_repository ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:code_repository ] ;
+    skos:exactMatch schema:SoftwareSourceCode ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:created_by a owl:DatatypeProperty ;
+    rdfs:label "created_by" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:creator a owl:ObjectProperty ;
+    rdfs:label "creator" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:Creator ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:creators a owl:ObjectProperty ;
+    rdfs:label "creators" ;
+    rdfs:range ccf:Creator ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:data a owl:ObjectProperty ;
+    rdfs:label "data" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:distributions a owl:ObjectProperty ;
+    rdfs:label "distributions" ;
+    rdfs:range ccf:Distribution ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:externalReviewers a owl:ObjectProperty ;
+    rdfs:label "externalReviewers" ;
+    rdfs:range ccf:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:funders a owl:ObjectProperty ;
+    rdfs:label "funders" ;
+    rdfs:range ccf:Grant ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:had_member a owl:DatatypeProperty ;
+    rdfs:label "had_member" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:placements a owl:ObjectProperty ;
+    rdfs:label "placements" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range ccf:SpatialPlacement ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:project_leads a owl:ObjectProperty ;
+    rdfs:label "project_leads" ;
+    rdfs:range ccf:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:reviewers a owl:ObjectProperty ;
+    rdfs:label "reviewers" ;
+    rdfs:range ccf:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:typeOf a owl:ObjectProperty ;
+    rdfs:label "typeOf" ;
+    ccf:owl "ClassAssertion" ;
+    rdfs:range ccf:Named ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+obo:PATO_0000384 a owl:Class ;
+    rdfs:label "Female",
+        "Male" ;
+    rdfs:subClassOf ccf:DonorSexEnum .
+
+ccf:AnatomicalStructure a owl:Class ;
+    rdfs:label "AnatomicalStructure" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:string ;
+                    owl:withRestrictions ( [ xsd:pattern "(UBERON|FMA):\\d+" ] ) ] ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:id ] ;
+    skos:exactMatch ccf:AnatomicalStructure ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:DonorSexEnum a owl:Class ;
+    owl:unionOf ( obo:PATO_0000384 obo:PATO_0000384 ) ;
+    linkml:permissible_values obo:PATO_0000384 .
+
+ccf:RotationUnitEnum a owl:Class ;
+    linkml:permissible_values obo:UO_0000185 .
+
+ccf:ScalingUnitEnum a owl:Class ;
+    linkml:permissible_values obo:UO_0010006 .
 
 ccf:accessUrl a owl:DatatypeProperty ;
     rdfs:label "accessUrl" ;
@@ -74,8 +588,9 @@ ccf:citationOverall a owl:DatatypeProperty ;
     rdfs:label "citationOverall" ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-ccf:class_type a owl:DatatypeProperty ;
-    rdfs:label "class_type" ;
+ccf:code_repository a owl:DatatypeProperty ;
+    rdfs:label "code_repository" ;
+    rdfs:range xsd:anyURI ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
 ccf:create_date a owl:DatatypeProperty ;
@@ -84,38 +599,15 @@ ccf:create_date a owl:DatatypeProperty ;
     rdfs:range xsd:date ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-ccf:creation_date a owl:DatatypeProperty ;
-    rdfs:label "creation_date" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:creator a owl:ObjectProperty ;
-    rdfs:label "creator" ;
-    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
-    rdfs:range ccf:Creator ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:creators a owl:ObjectProperty ;
-    rdfs:label "creators" ;
-    rdfs:range ccf:Person ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:datatable a owl:DatatypeProperty ;
-    rdfs:label "datatable" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:description a owl:DatatypeProperty ;
-    rdfs:label "description" ;
+ccf:derived_from a owl:DatatypeProperty ;
+    rdfs:label "derived_from" ;
+    rdfs:range xsd:anyURI ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
 ccf:dimension_unit a owl:ObjectProperty ;
     rdfs:label "dimension_unit" ;
     ccf:owl "AnnotationProperty, AnnotationAssertion" ;
     rdfs:range ccf:DimensionUnitEnum ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:distributions a owl:ObjectProperty ;
-    rdfs:label "distributions" ;
-    rdfs:range ccf:Distribution ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
 ccf:doi a owl:DatatypeProperty ;
@@ -126,11 +618,6 @@ ccf:doi a owl:DatatypeProperty ;
 ccf:downloadUrl a owl:DatatypeProperty ;
     rdfs:label "downloadUrl" ;
     rdfs:range xsd:anyURI ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:externalReviewers a owl:ObjectProperty ;
-    rdfs:label "externalReviewers" ;
-    rdfs:range ccf:Person ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
 ccf:extraction_set a owl:ObjectProperty ;
@@ -164,27 +651,21 @@ ccf:funder a owl:DatatypeProperty ;
     rdfs:label "funder" ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-ccf:funders a owl:ObjectProperty ;
-    rdfs:label "funders" ;
-    rdfs:range ccf:Grant ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
 ccf:hubmapId a owl:DatatypeProperty ;
     rdfs:label "hubmapId" ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-ccf:label a owl:DatatypeProperty ;
-    rdfs:label "label" ;
-    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:license a owl:DatatypeProperty ;
-    rdfs:label "license" ;
+ccf:iri a owl:DatatypeProperty ;
+    rdfs:label "iri" ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
 ccf:mediaType a owl:DatatypeProperty ;
     rdfs:label "mediaType" ;
     rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:metadata a owl:ObjectProperty ;
+    rdfs:label "metadata" ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
 ccf:object_reference a owl:ObjectProperty ;
@@ -193,8 +674,8 @@ ccf:object_reference a owl:ObjectProperty ;
     rdfs:range ccf:SpatialObjectReference ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-ccf:organ_donor_sex a owl:ObjectProperty ;
-    rdfs:label "organ_donor_sex" ;
+ccf:organ_owner_sex a owl:ObjectProperty ;
+    rdfs:label "organ_owner_sex" ;
     ccf:owl "AnnotationProperty, AnnotationAssertion" ;
     rdfs:range ccf:DonorSexEnum ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
@@ -217,28 +698,9 @@ ccf:placement_date a owl:DatatypeProperty ;
     rdfs:range xsd:date ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-ccf:placements a owl:ObjectProperty ;
-    rdfs:label "placements" ;
-    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
-    rdfs:range ccf:SpatialPlacement ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
 ccf:pref_label a owl:DatatypeProperty ;
     rdfs:label "pref_label" ;
     ccf:owl "AnnotationProperty, AnnotationAssertion" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:project_leads a owl:ObjectProperty ;
-    rdfs:label "project_leads" ;
-    rdfs:range ccf:Person ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:propertyId a owl:DatatypeProperty ;
-    rdfs:label "propertyId" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:publisher a owl:DatatypeProperty ;
-    rdfs:label "publisher" ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
 ccf:reference_organ a owl:ObjectProperty ;
@@ -253,11 +715,6 @@ ccf:representation_of a owl:ObjectProperty ;
     rdfs:range ccf:AnatomicalStructure ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-ccf:reviewers a owl:ObjectProperty ;
-    rdfs:label "reviewers" ;
-    rdfs:range ccf:Person ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
 ccf:rotation_order a owl:DatatypeProperty ;
     rdfs:label "rotation_order" ;
     ccf:owl "AnnotationProperty, AnnotationAssertion" ;
@@ -269,21 +726,10 @@ ccf:rotation_unit a owl:ObjectProperty ;
     rdfs:range ccf:RotationUnitEnum ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-ccf:rui_rank a owl:DatatypeProperty ;
-    rdfs:label "rui_rank" ;
-    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
-    rdfs:range xsd:integer ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
 ccf:scaling_unit a owl:ObjectProperty ;
     rdfs:label "scaling_unit" ;
     ccf:owl "AnnotationProperty, AnnotationAssertion" ;
     rdfs:range ccf:ScalingUnitEnum ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:see_also a owl:DatatypeProperty ;
-    rdfs:label "see_also" ;
-    rdfs:range xsd:anyURI ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
 ccf:source a owl:ObjectProperty ;
@@ -298,8 +744,9 @@ ccf:target a owl:ObjectProperty ;
     rdfs:range ccf:SpatialEntity ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-ccf:title a owl:DatatypeProperty ;
-    rdfs:label "title" ;
+ccf:target_product a owl:ObjectProperty ;
+    rdfs:label "target_product" ;
+    rdfs:range ccf:SoftwareSourceCode ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
 ccf:translation_unit a owl:ObjectProperty ;
@@ -308,22 +755,9 @@ ccf:translation_unit a owl:ObjectProperty ;
     rdfs:range ccf:TranslationUnitEnum ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-ccf:typeOf a owl:ObjectProperty ;
-    rdfs:label "typeOf" ;
-    ccf:owl "ClassAssertion" ;
-    rdfs:range ccf:Named ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:value a owl:DatatypeProperty ;
-    rdfs:label "value" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:version a owl:DatatypeProperty ;
-    rdfs:label "version" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:versionInfo a owl:DatatypeProperty ;
-    rdfs:label "versionInfo" ;
+ccf:was_derived_from a owl:ObjectProperty ;
+    rdfs:label "was_derived_from" ;
+    rdfs:range ccf:Dataset ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
 ccf:x_dimension a owl:DatatypeProperty ;
@@ -416,165 +850,145 @@ ccf:z_translation a owl:DatatypeProperty ;
     rdfs:range xsd:float ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-xsd:boolean a rdfs:Datatype .
+obo:UO_0000015 a owl:Class ;
+    rdfs:label "centimeter" ;
+    rdfs:subClassOf ccf:DimensionUnitEnum,
+        ccf:TranslationUnitEnum .
 
-xsd:dateTime a rdfs:Datatype .
-
-xsd:decimal a rdfs:Datatype .
-
-xsd:double a rdfs:Datatype .
-
-xsd:time a rdfs:Datatype .
-
-shex:iri a rdfs:Datatype .
-
-shex:nonLiteral a rdfs:Datatype .
-
-<https://purl.humanatlas.io/specs/ref-organ.owl.ttl> a owl:Ontology ;
-    rdfs:label "ref-organ" .
-
-linkml:DateOrDatetime a rdfs:Datatype .
-
-obo:UO_0000185 a owl:Class ;
-    rdfs:label "degree" .
-
-obo:UO_0010006 a owl:Class ;
-    rdfs:label "ratio" .
-
-ccf:Creator a owl:Class ;
-    rdfs:label "Creator" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ccf:lastName ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ccf:lastName ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ccf:orcid ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ccf:orcid ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ccf:firstName ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ccf:lastName ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ccf:fullName ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ccf:firstName ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ccf:orcid ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ccf:fullName ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ccf:fullName ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ccf:firstName ],
-        ccf:Instance,
-        ccf:Named ;
-    skos:exactMatch schema:Person ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+obo:UO_0000016 a owl:Class ;
+    rdfs:label "millimeter" ;
+    rdfs:subClassOf ccf:DimensionUnitEnum,
+        ccf:TranslationUnitEnum .
 
 ccf:DimensionUnitEnum a owl:Class ;
     owl:unionOf ( obo:UO_0000015 obo:UO_0000016 ) ;
     linkml:permissible_values obo:UO_0000015,
         obo:UO_0000016 .
 
-ccf:Distribution a owl:Class ;
-    rdfs:label "Distribution" ;
-    skos:exactMatch dcat:Distribution ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:DonorSexEnum a owl:Class ;
-    owl:unionOf ( obo:PATO_0000384 obo:PATO_0000384 ) ;
-    linkml:permissible_values obo:PATO_0000384 .
-
-ccf:Grant a owl:Class ;
-    rdfs:label "Grant" ;
-    skos:exactMatch schema:Grant ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
 ccf:OrganSideEnum a owl:Class ;
     owl:unionOf ( obo:HP_0012835 obo:HP_0012834 ) ;
     linkml:permissible_values obo:HP_0012834,
         obo:HP_0012835 .
-
-ccf:RefOrganMetadata a owl:Class ;
-    rdfs:label "RefOrganMetadata" ;
-    skos:exactMatch dcat:Dataset ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:RotationUnitEnum a owl:Class ;
-    linkml:permissible_values obo:UO_0000185 .
-
-ccf:ScalingUnitEnum a owl:Class ;
-    linkml:permissible_values obo:UO_0010006 .
 
 ccf:TranslationUnitEnum a owl:Class ;
     owl:unionOf ( obo:UO_0000015 obo:UO_0000016 ) ;
     linkml:permissible_values obo:UO_0000015,
         obo:UO_0000016 .
 
-obo:HP_0012834 a owl:Class ;
-    rdfs:label "Right" .
+xsd:date a rdfs:Datatype .
 
-obo:HP_0012835 a owl:Class ;
-    rdfs:label "Left" .
-
-ccf:AnatomicalStructure a owl:Class ;
-    rdfs:label "AnatomicalStructure" ;
+ccf:ExtractionSet a owl:Class ;
+    rdfs:label "ExtractionSet" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:onDatatype xsd:string ;
-                    owl:withRestrictions ( [ xsd:pattern "(UBERON|FMA):\\d+" ] ) ] ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:rui_rank ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:extraction_set_for ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty ccf:id ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ccf:id ],
         [ a owl:Restriction ;
+            owl:allValuesFrom ccf:SpatialEntity ;
+            owl:onProperty ccf:extraction_set_for ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:label ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ccf:id ] ;
-    skos:exactMatch ccf:AnatomicalStructure ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:ExtractionSet a owl:Class ;
-    rdfs:label "ExtractionSet" ;
-    rdfs:subClassOf ccf:Instance,
+            owl:onProperty ccf:rui_rank ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:extraction_set_for ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ccf:rui_rank ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:label ],
+        ccf:Instance,
         ccf:Named ;
     skos:exactMatch ccf:ExtractionSet ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
+ccf:Instance a owl:Class ;
+    rdfs:label "Instance" ;
+    ccf:owl "Individual" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Named ;
+            owl:onProperty ccf:typeOf ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:typeOf ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
 ccf:SpatialObjectReference a owl:Class ;
     rdfs:label "SpatialObjectReference" ;
-    rdfs:subClassOf ccf:Instance,
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:file_subpath ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:file_subpath ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:file_format ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:placement ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:SpatialPlacement ;
+            owl:onProperty ccf:placement ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:file_format ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:file_subpath ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:placement ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:file_format ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:file ],
+        ccf:Instance,
         ccf:Named ;
     skos:exactMatch ccf:SpatialObjectReference ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-ccf:data a owl:ObjectProperty ;
-    rdfs:label "data" ;
+ccf:creation_date a owl:DatatypeProperty ;
+    rdfs:label "creation_date" ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-xsd:date a rdfs:Datatype .
-
-obo:PATO_0000384 a owl:Class ;
-    rdfs:label "Female",
-        "Male" .
-
-ccf:SpatialPlacement a owl:Class ;
-    rdfs:label "SpatialPlacement" ;
-    rdfs:subClassOf ccf:Instance,
-        ccf:Named ;
-    skos:exactMatch ccf:SpatialPlacement ;
+ccf:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
 ccf:firstName a owl:DatatypeProperty ;
@@ -585,20 +999,12 @@ ccf:fullName a owl:DatatypeProperty ;
     rdfs:label "fullName" ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-ccf:id a owl:DatatypeProperty ;
-    rdfs:label "id" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
-ccf:iri a owl:DatatypeProperty ;
-    rdfs:label "iri" ;
-    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
-
 ccf:lastName a owl:DatatypeProperty ;
     rdfs:label "lastName" ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-ccf:metadata a owl:ObjectProperty ;
-    rdfs:label "metadata" ;
+ccf:license a owl:DatatypeProperty ;
+    rdfs:label "license" ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
 ccf:orcid a owl:DatatypeProperty ;
@@ -608,39 +1014,538 @@ ccf:orcid a owl:DatatypeProperty ;
             owl:withRestrictions ( [ xsd:pattern "^(\\d{4}-){3}\\d{3}(\\d|X)$" ] ) ] ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-obo:UO_0000015 a owl:Class ;
-    rdfs:label "centimeter" .
+ccf:publisher a owl:DatatypeProperty ;
+    rdfs:label "publisher" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-obo:UO_0000016 a owl:Class ;
-    rdfs:label "millimeter" .
+ccf:rui_rank a owl:DatatypeProperty ;
+    rdfs:label "rui_rank" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    rdfs:range xsd:integer ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-ccf:Person a owl:Class ;
-    rdfs:label "Person" ;
+ccf:SpatialPlacement a owl:Class ;
+    rdfs:label "SpatialPlacement" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:rotation_unit ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty ccf:placement_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ccf:x_translation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:y_scaling ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:rotation_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ccf:y_rotation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:translation_unit ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:SpatialEntity ;
+            owl:onProperty ccf:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:TranslationUnitEnum ;
+            owl:onProperty ccf:translation_unit ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:x_rotation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:scaling_unit ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ccf:z_translation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:x_scaling ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ccf:x_rotation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:rotation_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:placement_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:ScalingUnitEnum ;
+            owl:onProperty ccf:scaling_unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:y_translation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:z_scaling ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:rotation_order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:target ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:rotation_unit ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:z_rotation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:x_scaling ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ccf:y_translation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:SpatialEntity ;
+            owl:onProperty ccf:target ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:y_rotation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:translation_unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:placement_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( xsd:float [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:integer ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] ) ] ;
+            owl:onProperty ccf:y_scaling ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:z_scaling ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:z_rotation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( xsd:float [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:integer ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] ) ] ;
+            owl:onProperty ccf:z_scaling ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( xsd:float [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:integer ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] ) ] ;
+            owl:onProperty ccf:x_scaling ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:x_translation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:y_translation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:x_translation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:z_translation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:scaling_unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:x_rotation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:target ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:y_scaling ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:RotationUnitEnum ;
+            owl:onProperty ccf:rotation_unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:y_rotation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:z_translation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ccf:z_rotation ],
+        ccf:Instance,
+        ccf:Named ;
+    skos:exactMatch ccf:SpatialPlacement ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:Creator a owl:Class ;
+    rdfs:label "Creator" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:fullName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:orcid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:firstName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:orcid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:firstName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:firstName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:orcid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:lastName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:lastName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:fullName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:lastName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:fullName ],
+        ccf:Instance,
+        ccf:Named ;
     skos:exactMatch schema:Person ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
-ccf:Instance a owl:Class ;
-    rdfs:label "Instance" ;
-    ccf:owl "Individual" ;
+ccf:Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:firstName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:fullName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:orcid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:lastName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:orcid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:firstName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:firstName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:fullName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:fullName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:string ;
+                    owl:withRestrictions ( [ xsd:pattern "^(\\d{4}-){3}\\d{3}(\\d|X)$" ] ) ] ;
+            owl:onProperty ccf:orcid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:lastName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:lastName ],
+        ccf:Creator ;
+    skos:exactMatch schema:Person ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
 ccf:Named a owl:Class ;
     rdfs:label "Named" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:label ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:class_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:label ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:label ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:class_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:class_type ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:label a owl:DatatypeProperty ;
+    rdfs:label "label" ;
+    ccf:owl "AnnotationProperty, AnnotationAssertion" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:see_also a owl:DatatypeProperty ;
+    rdfs:label "see_also" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:title a owl:DatatypeProperty ;
+    rdfs:label "title" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:version a owl:DatatypeProperty ;
+    rdfs:label "version" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
+ccf:class_type a owl:DatatypeProperty ;
+    rdfs:label "class_type" ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
 ccf:SpatialEntity a owl:Class ;
     rdfs:label "SpatialEntity" ;
-    rdfs:subClassOf ccf:Instance,
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ccf:DonorSexEnum ;
+            owl:onProperty ccf:organ_owner_sex ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty ccf:create_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:rui_rank ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:object_reference ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:dimension_unit ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:DimensionUnitEnum ;
+            owl:onProperty ccf:dimension_unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:x_dimension ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:organ_side ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:SpatialPlacement ;
+            owl:onProperty ccf:placements ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:rui_rank ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:object_reference ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:representation_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:SpatialObjectReference ;
+            owl:onProperty ccf:object_reference ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:organ_owner_sex ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( xsd:float [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:integer ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] ) ] ;
+            owl:onProperty ccf:y_dimension ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:OrganSideEnum ;
+            owl:onProperty ccf:organ_side ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( xsd:float [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:integer ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] ) ] ;
+            owl:onProperty ccf:z_dimension ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:pref_label ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:create_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:pref_label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:placements ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:ExtractionSet ;
+            owl:onProperty ccf:extraction_set ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:extraction_set ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( xsd:float [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:integer ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] ) ] ;
+            owl:onProperty ccf:x_dimension ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:dimension_unit ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:organ_side ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:z_dimension ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:pref_label ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:reference_organ ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:extraction_set ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:label ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:AnatomicalStructure ;
+            owl:onProperty ccf:representation_of ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:reference_organ ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ccf:rui_rank ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:y_dimension ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:organ_owner_sex ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:z_dimension ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:creator ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:representation_of ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:y_dimension ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Creator ;
+            owl:onProperty ccf:creator ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:x_dimension ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:create_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:SpatialEntity ;
+            owl:onProperty ccf:reference_organ ],
+        ccf:Instance,
         ccf:Named ;
     skos:exactMatch ccf:SpatialEntity ;
     skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
 
+xsd:integer a rdfs:Datatype .
+
+ccf:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/ref-organ> .
+
 xsd:anyURI a rdfs:Datatype .
+
+xsd:float a rdfs:Datatype .
 
 xsd:string a rdfs:Datatype .
 
-xsd:integer a rdfs:Datatype .
+[] a owl:Restriction ;
+    rdfs:subClassOf ccf:SpatialEntity ;
+    owl:onProperty ccf:class_type ;
+    owl:someValuesFrom ccf:SpatialEntity .
 
-xsd:float a rdfs:Datatype .
+[] a owl:Restriction ;
+    rdfs:subClassOf ccf:SoftwareApplication ;
+    owl:onProperty ccf:class_type ;
+    owl:someValuesFrom ccf:SoftwareApplication .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf ccf:ExtractionSet ;
+    owl:onProperty ccf:class_type ;
+    owl:someValuesFrom ccf:ExtractionSet .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf ccf:Creator ;
+    owl:onProperty ccf:class_type ;
+    owl:someValuesFrom ccf:Creator .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf ccf:Person ;
+    owl:onProperty ccf:class_type ;
+    owl:someValuesFrom ccf:Person .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf ccf:Named ;
+    owl:onProperty ccf:class_type ;
+    owl:someValuesFrom ccf:Named .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf ccf:SpatialPlacement ;
+    owl:onProperty ccf:class_type ;
+    owl:someValuesFrom ccf:SpatialPlacement .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf ccf:SpatialObjectReference ;
+    owl:onProperty ccf:class_type ;
+    owl:someValuesFrom ccf:SpatialObjectReference .
 
 

@@ -7,7 +7,7 @@
 URI: [ccf:Distribution](http://purl.org/ccf/Distribution)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Distribution&#124;title:string%20%3F;downloadUrl:uri%20%3F;accessUrl:uri%20%3F;mediaType:uriorcurie%20%3F])](https://yuml.me/diagram/nofunky;dir:TB/class/[Distribution&#124;title:string%20%3F;downloadUrl:uri%20%3F;accessUrl:uri%20%3F;mediaType:uriorcurie%20%3F])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Dataset]++-%20distributions%200..*>[Distribution&#124;title:string%20%3F;downloadUrl:uri%20%3F;accessUrl:uri%20%3F;mediaType:uriorcurie%20%3F],[Dataset])](https://yuml.me/diagram/nofunky;dir:TB/class/[Dataset]++-%20distributions%200..*>[Distribution&#124;title:string%20%3F;downloadUrl:uri%20%3F;accessUrl:uri%20%3F;mediaType:uriorcurie%20%3F],[Dataset])
 
 ## Referenced by Class
 
