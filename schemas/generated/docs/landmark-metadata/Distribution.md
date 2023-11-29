@@ -7,7 +7,7 @@
 URI: [dcat:Distribution](http://www.w3.org/ns/dcat#Distribution)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Container]++-%20distributions%201..*>[Distribution&#124;title:string%20%3F;downloadUrl:uri%20%3F;accessUrl:uri%20%3F;mediaType:uriorcurie%20%3F],[Container]++-%20distributions(i)%200..*>[Distribution],[Container])](https://yuml.me/diagram/nofunky;dir:TB/class/[Container]++-%20distributions%201..*>[Distribution&#124;title:string%20%3F;downloadUrl:uri%20%3F;accessUrl:uri%20%3F;mediaType:uriorcurie%20%3F],[Container]++-%20distributions(i)%200..*>[Distribution],[Container])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Container]++-%20distributions%201..*>[Distribution&#124;title:string%20%3F;downloadUrl:uri%20%3F;accessUrl:uri%20%3F;mediaType:uriorcurie%20%3F],[Container]++-%20distributions(i)%200..*>[Distribution],[Dataset]++-%20distributions%200..*>[Distribution],[Dataset],[Container])](https://yuml.me/diagram/nofunky;dir:TB/class/[Container]++-%20distributions%201..*>[Distribution&#124;title:string%20%3F;downloadUrl:uri%20%3F;accessUrl:uri%20%3F;mediaType:uriorcurie%20%3F],[Container]++-%20distributions(i)%200..*>[Distribution],[Dataset]++-%20distributions%200..*>[Distribution],[Dataset],[Container])
 
 ## Referenced by Class
 

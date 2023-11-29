@@ -20,7 +20,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 ## Used by
 
  * [Container](Container.md)
- * [DatasetMetadata](DatasetMetadata.md)
+ * [Dataset](Dataset.md)
 
 ## Other properties
 

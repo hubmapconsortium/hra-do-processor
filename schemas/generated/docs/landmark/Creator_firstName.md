@@ -21,6 +21,7 @@ URI: [ccf:Creator_firstName](http://purl.org/ccf/Creator_firstName)
 ## Used by
 
  * [Creator](Creator.md)
+ * [SoftwareApplication](SoftwareApplication.md)
 
 ## Other properties
 

@@ -20,7 +20,11 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 
 ## Used by
 
+ * [Creator](Creator.md)
+ * [Dataset](Dataset.md)
  * [FtuIllustration](FtuIllustration.md)
  * [FtuIllustrationFile](FtuIllustrationFile.md)
  * [FtuIllustrationNode](FtuIllustrationNode.md)
  * [Named](Named.md)
+ * [Person](Person.md)
+ * [SoftwareApplication](SoftwareApplication.md)

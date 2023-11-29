@@ -21,6 +21,7 @@ URI: [ccf:Creator_orcid](http://purl.org/ccf/Creator_orcid)
 ## Used by
 
  * [Creator](Creator.md)
+ * [SoftwareApplication](SoftwareApplication.md)
 
 ## Other properties
 

@@ -31,6 +31,9 @@ prefixes:
   owl:
     prefix_prefix: owl
     prefix_reference: http://www.w3.org/2002/07/owl#
+  prov:
+    prefix_prefix: prov
+    prefix_reference: http://www.w3.org/ns/prov#
   dc:
     prefix_prefix: dc
     prefix_reference: http://purl.org/dc/elements/1.1/
@@ -271,10 +274,14 @@ types:
     uri: xsd:string
     repr: str
 slots:
-  iri:
-    name: iri
+  id:
+    name: id
     from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
     identifier: true
+  class_type:
+    name: class_type
+    from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
+    designates_type: true
   distributions:
     name: distributions
     from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
@@ -297,6 +304,19 @@ slots:
     from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
     slot_uri: dcat:mediaType
     range: uriorcurie
+  was_derived_from:
+    name: was_derived_from
+    from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
+    slot_uri: prov:wasDerivedFrom
+    range: Dataset
+    inlined: true
+  had_member:
+    name: had_member
+    from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
+    slot_uri: prov:hadMember
+    multivalued: true
+    range: uriorcurie
+    inlined_as_list: true
   title:
     name: title
     from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
@@ -318,7 +338,7 @@ slots:
     from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
     slot_uri: dct:creator
     multivalued: true
-    range: Person
+    range: Creator
     inlined_as_list: true
   about:
     name: about
@@ -328,6 +348,10 @@ slots:
     name: version
     from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
     slot_uri: schema:version
+  name:
+    name: name
+    from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
+    slot_uri: schema:name
   fullName:
     name: fullName
     from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
@@ -383,6 +407,16 @@ slots:
     multivalued: true
     range: Grant
     inlined_as_list: true
+  target_product:
+    name: target_product
+    from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
+    slot_uri: schema:targetProduct
+    range: SoftwareSourceCode
+  code_repository:
+    name: code_repository
+    from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
+    slot_uri: schema:codeRepository
+    range: uriorcurie
   versionInfo:
     name: versionInfo
     from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
@@ -429,27 +463,20 @@ classes:
     name: Container
     from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
     slots:
-    - iri
+    - id
     - title
     - description
-    - creators
-    - project_leads
-    - reviewers
-    - externalReviewers
     - version
+    - creators
     - creation_date
-    - license
     - publisher
-    - funders
-    - hubmapId
-    - doi
-    - citation
-    - citationOverall
-    - datatable
+    - license
+    - see_also
     - distributions
+    - was_derived_from
     slot_usage:
-      iri:
-        name: iri
+      id:
+        name: id
         required: true
       title:
         name: title
@@ -457,11 +484,11 @@ classes:
       description:
         name: description
         required: true
-      creators:
-        name: creators
-        required: true
       version:
         name: version
+        required: true
+      creators:
+        name: creators
         required: true
       creation_date:
         name: creation_date
@@ -474,15 +501,52 @@ classes:
         required: true
     class_uri: dcat:Dataset
     tree_root: true
+  ProvEntity:
+    name: ProvEntity
+    from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
+    slots:
+    - was_derived_from
+    class_uri: prov:Entity
+  Collection:
+    name: Collection
+    from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
+    is_a: ProvEntity
+    slots:
+    - had_member
+    class_uri: prov:Collection
+  Creator:
+    name: Creator
+    from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
+    abstract: true
+    slots:
+    - id
+    - name
+    - class_type
   Person:
     name: Person
     from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
+    is_a: Creator
     slots:
     - fullName
     - firstName
     - lastName
     - orcid
     class_uri: schema:Person
+  SoftwareApplication:
+    name: SoftwareApplication
+    from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
+    is_a: Creator
+    slots:
+    - version
+    - target_product
+    class_uri: schema:SoftwareApplication
+  SoftwareSourceCode:
+    name: SoftwareSourceCode
+    from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
+    slots:
+    - code_repository
+    - see_also
+    class_uri: schema:SoftwareSourceCode
   Grant:
     name: Grant
     from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
@@ -499,18 +563,28 @@ classes:
     - accessUrl
     - mediaType
     class_uri: dcat:Distribution
-  DatasetMetadata:
-    name: DatasetMetadata
+  Dataset:
+    name: Dataset
     from_schema: https://purl.humanatlas.io/specs/asct-b-metadata
     slots:
+    - id
     - title
     - description
     - creators
-    - version
+    - reviewers
     - creation_date
+    - version
     - license
-    - publisher
     - see_also
+    - publisher
+    - citation
+    - citationOverall
+    - funders
+    - doi
+    - hubmapId
+    - project_leads
+    - externalReviewers
+    - distributions
     class_uri: dcat:Dataset
 source_file: schemas/src/metadata/asct-b-metadata.yaml
 

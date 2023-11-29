@@ -19,6 +19,7 @@ None &#8594;  <sub>0..\*</sub> [Distribution](Distribution.md)
 
 ## Used by
 
+ * [Dataset](Dataset.md)
 
 ## Other properties
 

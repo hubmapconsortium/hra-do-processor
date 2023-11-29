@@ -1,0 +1,732 @@
+@prefix ccf: <http://purl.org/ccf/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix shex: <http://www.w3.org/ns/shex#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ccf:Collection a owl:Class ;
+    rdfs:label "Collection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:had_member ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:had_member ],
+        ccf:ProvEntity ;
+    skos:exactMatch prov:Collection ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:Container a owl:Class ;
+    rdfs:label "Container" ;
+    ccf:owl.template """AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
+AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
+{% for creator_iri in metadata.created_by %}
+AnnotationAssertion( dct:creator {{iri}} "{{creator_iri|e}}" )
+{% endfor %}
+AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
+AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
+AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
+AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
+AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
+AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from|e}}" )""" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:data ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:BasicMetadata ;
+            owl:onProperty ccf:metadata ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:iri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:iri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:metadata ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:metadata ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:data ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:iri ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:about a owl:DatatypeProperty ;
+    rdfs:label "about" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:datatable a owl:DatatypeProperty ;
+    rdfs:label "datatable" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:propertyId a owl:DatatypeProperty ;
+    rdfs:label "propertyId" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:value a owl:DatatypeProperty ;
+    rdfs:label "value" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:versionInfo a owl:DatatypeProperty ;
+    rdfs:label "versionInfo" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+xsd:boolean a rdfs:Datatype .
+
+xsd:date a rdfs:Datatype .
+
+xsd:dateTime a rdfs:Datatype .
+
+xsd:decimal a rdfs:Datatype .
+
+xsd:double a rdfs:Datatype .
+
+xsd:float a rdfs:Datatype .
+
+xsd:integer a rdfs:Datatype .
+
+xsd:time a rdfs:Datatype .
+
+shex:iri a rdfs:Datatype .
+
+shex:nonLiteral a rdfs:Datatype .
+
+<https://purl.humanatlas.io/specs/vocab.owl.ttl> a owl:Ontology ;
+    rdfs:label "vocab" .
+
+linkml:DateOrDatetime a rdfs:Datatype .
+
+ccf:BasicMetadata a owl:Class ;
+    rdfs:label "BasicMetadata" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:license ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:derived_from ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:publisher ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:derived_from ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:license ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:publisher ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:created_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:license ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:derived_from ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:created_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:creation_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:creation_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:publisher ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:creation_date ] ;
+    skos:exactMatch dcat:Dataset ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:ProvEntity a owl:Class ;
+    rdfs:label "ProvEntity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:was_derived_from ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Dataset ;
+            owl:onProperty ccf:was_derived_from ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:was_derived_from ] ;
+    skos:exactMatch prov:Entity ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:Dataset a owl:Class ;
+    rdfs:label "Dataset" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:citationOverall ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:publisher ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:hubmapId ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:citationOverall ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:reviewers ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:creation_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:license ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Person ;
+            owl:onProperty ccf:project_leads ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:project_leads ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Distribution ;
+            owl:onProperty ccf:distributions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Creator ;
+            owl:onProperty ccf:creators ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Person ;
+            owl:onProperty ccf:reviewers ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:citation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:license ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:doi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:doi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:distributions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:hubmapId ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:funders ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:citation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:externalReviewers ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Grant ;
+            owl:onProperty ccf:funders ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:citation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:creation_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:publisher ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:Person ;
+            owl:onProperty ccf:externalReviewers ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:citationOverall ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:creators ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:license ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:creation_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:doi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:hubmapId ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:publisher ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:see_also ] ;
+    skos:exactMatch dcat:Dataset ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:Distribution a owl:Class ;
+    rdfs:label "Distribution" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:accessUrl ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:mediaType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:downloadUrl ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:mediaType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:downloadUrl ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:mediaType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:accessUrl ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:downloadUrl ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:accessUrl ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:title ] ;
+    skos:exactMatch dcat:Distribution ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:Grant a owl:Class ;
+    rdfs:label "Grant" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:awardNumber ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:funder ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:awardNumber ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:funder ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:awardNumber ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:funder ] ;
+    skos:exactMatch schema1:Grant ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:SoftwareApplication a owl:Class ;
+    rdfs:label "SoftwareApplication" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:target_product ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:target_product ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ccf:SoftwareSourceCode ;
+            owl:onProperty ccf:target_product ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:version ],
+        ccf:Creator ;
+    skos:exactMatch schema1:SoftwareApplication ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:SoftwareSourceCode a owl:Class ;
+    rdfs:label "SoftwareSourceCode" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:code_repository ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:code_repository ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty ccf:see_also ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:code_repository ] ;
+    skos:exactMatch schema1:SoftwareSourceCode ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:created_by a owl:DatatypeProperty ;
+    rdfs:label "created_by" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:creators a owl:ObjectProperty ;
+    rdfs:label "creators" ;
+    rdfs:range ccf:Creator ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:data a owl:DatatypeProperty ;
+    rdfs:label "data" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:distributions a owl:ObjectProperty ;
+    rdfs:label "distributions" ;
+    rdfs:range ccf:Distribution ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:externalReviewers a owl:ObjectProperty ;
+    rdfs:label "externalReviewers" ;
+    rdfs:range ccf:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:funders a owl:ObjectProperty ;
+    rdfs:label "funders" ;
+    rdfs:range ccf:Grant ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:had_member a owl:DatatypeProperty ;
+    rdfs:label "had_member" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:project_leads a owl:ObjectProperty ;
+    rdfs:label "project_leads" ;
+    rdfs:range ccf:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:reviewers a owl:ObjectProperty ;
+    rdfs:label "reviewers" ;
+    rdfs:range ccf:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:accessUrl a owl:DatatypeProperty ;
+    rdfs:label "accessUrl" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:awardNumber a owl:DatatypeProperty ;
+    rdfs:label "awardNumber" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:citation a owl:DatatypeProperty ;
+    rdfs:label "citation" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:citationOverall a owl:DatatypeProperty ;
+    rdfs:label "citationOverall" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:code_repository a owl:DatatypeProperty ;
+    rdfs:label "code_repository" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:derived_from a owl:DatatypeProperty ;
+    rdfs:label "derived_from" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:doi a owl:DatatypeProperty ;
+    rdfs:label "doi" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:downloadUrl a owl:DatatypeProperty ;
+    rdfs:label "downloadUrl" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:firstName a owl:DatatypeProperty ;
+    rdfs:label "firstName" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:fullName a owl:DatatypeProperty ;
+    rdfs:label "fullName" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:funder a owl:DatatypeProperty ;
+    rdfs:label "funder" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:hubmapId a owl:DatatypeProperty ;
+    rdfs:label "hubmapId" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:iri a owl:DatatypeProperty ;
+    rdfs:label "iri" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:lastName a owl:DatatypeProperty ;
+    rdfs:label "lastName" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:mediaType a owl:DatatypeProperty ;
+    rdfs:label "mediaType" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:metadata a owl:ObjectProperty ;
+    rdfs:label "metadata" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:orcid a owl:DatatypeProperty ;
+    rdfs:label "orcid" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^(\\d{4}-){3}\\d{3}(\\d|X)$" ] ) ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:target_product a owl:ObjectProperty ;
+    rdfs:label "target_product" ;
+    rdfs:range ccf:SoftwareSourceCode ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:was_derived_from a owl:ObjectProperty ;
+    rdfs:label "was_derived_from" ;
+    rdfs:range ccf:Dataset ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:Creator a owl:Class ;
+    rdfs:label "Creator" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:class_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:class_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:class_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ccf:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:name ] ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:class_type a owl:DatatypeProperty ;
+    rdfs:label "class_type" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:creation_date a owl:DatatypeProperty ;
+    rdfs:label "creation_date" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:license a owl:DatatypeProperty ;
+    rdfs:label "license" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:publisher a owl:DatatypeProperty ;
+    rdfs:label "publisher" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:firstName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:fullName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:lastName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:lastName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:orcid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:orcid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ccf:fullName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:lastName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:string ;
+                    owl:withRestrictions ( [ xsd:pattern "^(\\d{4}-){3}\\d{3}(\\d|X)$" ] ) ] ;
+            owl:onProperty ccf:orcid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:fullName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ccf:firstName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ccf:firstName ],
+        ccf:Creator ;
+    skos:exactMatch schema1:Person ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:see_also a owl:DatatypeProperty ;
+    rdfs:label "see_also" ;
+    rdfs:range xsd:anyURI ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:title a owl:DatatypeProperty ;
+    rdfs:label "title" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+ccf:version a owl:DatatypeProperty ;
+    rdfs:label "version" ;
+    skos:inScheme <https://purl.humanatlas.io/specs/vocab> .
+
+xsd:anyURI a rdfs:Datatype .
+
+xsd:string a rdfs:Datatype .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf ccf:Person ;
+    owl:onProperty ccf:class_type ;
+    owl:someValuesFrom ccf:Person .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf ccf:Creator ;
+    owl:onProperty ccf:class_type ;
+    owl:someValuesFrom ccf:Creator .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf ccf:SoftwareApplication ;
+    owl:onProperty ccf:class_type ;
+    owl:someValuesFrom ccf:SoftwareApplication .
+
+

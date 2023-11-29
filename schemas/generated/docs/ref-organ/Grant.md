@@ -7,7 +7,7 @@
 URI: [ccf:Grant](http://purl.org/ccf/Grant)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Grant&#124;funder:string%20%3F;awardNumber:string%20%3F])](https://yuml.me/diagram/nofunky;dir:TB/class/[Grant&#124;funder:string%20%3F;awardNumber:string%20%3F])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Dataset]++-%20funders%200..*>[Grant&#124;funder:string%20%3F;awardNumber:string%20%3F],[Dataset])](https://yuml.me/diagram/nofunky;dir:TB/class/[Dataset]++-%20funders%200..*>[Grant&#124;funder:string%20%3F;awardNumber:string%20%3F],[Dataset])
 
 ## Referenced by Class
 

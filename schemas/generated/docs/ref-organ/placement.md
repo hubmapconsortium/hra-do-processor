@@ -20,3 +20,10 @@ None &#8594;  <sub>1..1</sub> [SpatialPlacement](SpatialPlacement.md)
 ## Used by
 
  * [SpatialObjectReference](SpatialObjectReference.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | ccf:has_placement |
+

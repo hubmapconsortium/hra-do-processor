@@ -46,6 +46,9 @@ prefixes:
   dcat:
     prefix_prefix: dcat
     prefix_reference: http://www.w3.org/ns/dcat#
+  prov:
+    prefix_prefix: prov
+    prefix_reference: http://www.w3.org/ns/prov#
   dc:
     prefix_prefix: dc
     prefix_reference: http://purl.org/dc/elements/1.1/
@@ -329,6 +332,19 @@ enums:
         description: A length unit which is equal to one thousandth of a meter.
         meaning: obo:UO_0000016
 slots:
+  created_by:
+    name: created_by
+    from_schema: https://purl.humanatlas.io/specs/landmark
+    slot_uri: dct:creator
+    multivalued: true
+    range: uriorcurie
+    required: true
+    inlined_as_list: true
+  derived_from:
+    name: derived_from
+    from_schema: https://purl.humanatlas.io/specs/landmark
+    slot_uri: prov:wasDerivedFrom
+    range: uriorcurie
   landmarks:
     name: landmarks
     from_schema: https://purl.humanatlas.io/specs/landmark
@@ -577,6 +593,7 @@ slots:
         tag: owl
         value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/landmark
+    slot_uri: ccf:has_placement
     range: SpatialPlacement
     required: true
     inlined: true
@@ -587,6 +604,7 @@ slots:
         tag: owl
         value: AnnotationProperty, AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/landmark
+    slot_uri: ccf:has_placements
     multivalued: true
     range: SpatialPlacement
     required: false
@@ -660,10 +678,6 @@ slots:
     from_schema: https://purl.humanatlas.io/specs/landmark
     slot_uri: rdfs:label
     required: true
-  iri:
-    name: iri
-    from_schema: https://purl.humanatlas.io/specs/landmark
-    identifier: true
   distributions:
     name: distributions
     from_schema: https://purl.humanatlas.io/specs/landmark
@@ -686,6 +700,19 @@ slots:
     from_schema: https://purl.humanatlas.io/specs/landmark
     slot_uri: dcat:mediaType
     range: uriorcurie
+  was_derived_from:
+    name: was_derived_from
+    from_schema: https://purl.humanatlas.io/specs/landmark
+    slot_uri: prov:wasDerivedFrom
+    range: Dataset
+    inlined: true
+  had_member:
+    name: had_member
+    from_schema: https://purl.humanatlas.io/specs/landmark
+    slot_uri: prov:hadMember
+    multivalued: true
+    range: uriorcurie
+    inlined_as_list: true
   title:
     name: title
     from_schema: https://purl.humanatlas.io/specs/landmark
@@ -707,7 +734,7 @@ slots:
     from_schema: https://purl.humanatlas.io/specs/landmark
     slot_uri: dct:creator
     multivalued: true
-    range: Person
+    range: Creator
     inlined_as_list: true
   about:
     name: about
@@ -717,6 +744,10 @@ slots:
     name: version
     from_schema: https://purl.humanatlas.io/specs/landmark
     slot_uri: schema:version
+  name:
+    name: name
+    from_schema: https://purl.humanatlas.io/specs/landmark
+    slot_uri: schema:name
   fullName:
     name: fullName
     from_schema: https://purl.humanatlas.io/specs/landmark
@@ -772,6 +803,16 @@ slots:
     multivalued: true
     range: Grant
     inlined_as_list: true
+  target_product:
+    name: target_product
+    from_schema: https://purl.humanatlas.io/specs/landmark
+    slot_uri: schema:targetProduct
+    range: SoftwareSourceCode
+  code_repository:
+    name: code_repository
+    from_schema: https://purl.humanatlas.io/specs/landmark
+    slot_uri: schema:codeRepository
+    range: uriorcurie
   versionInfo:
     name: versionInfo
     from_schema: https://purl.humanatlas.io/specs/landmark
@@ -893,12 +934,13 @@ classes:
     slots:
     - title
     - description
-    - creators
-    - version
+    - created_by
     - creation_date
+    - version
     - license
     - publisher
     - see_also
+    - derived_from
     class_uri: dcat:Dataset
   Creator:
     name: Creator
@@ -947,10 +989,9 @@ classes:
           AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}"
           )
 
-          {% for c in metadata.creators %}
+          {% for creator_iri in metadata.created_by %}
 
-          AnnotationAssertion( dct:creator {{iri}} "{{c.fullName|e}} ({{c.orcid}})"
-          )
+          AnnotationAssertion( dct:creator {{iri}} "{{creator_iri|e}}" )
 
           {% endfor %}
 
@@ -963,7 +1004,10 @@ classes:
 
           AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
 
-          AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )'
+          AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
+
+          AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from|e}}"
+          ) '
     from_schema: https://purl.humanatlas.io/specs/landmark
     attributes:
       iri:
@@ -997,15 +1041,44 @@ classes:
     mixin: true
     slots:
     - typeOf
+  ProvEntity:
+    name: ProvEntity
+    from_schema: https://purl.humanatlas.io/specs/landmark
+    slots:
+    - was_derived_from
+    class_uri: prov:Entity
+  Collection:
+    name: Collection
+    from_schema: https://purl.humanatlas.io/specs/landmark
+    is_a: ProvEntity
+    slots:
+    - had_member
+    class_uri: prov:Collection
   Person:
     name: Person
     from_schema: https://purl.humanatlas.io/specs/landmark
+    is_a: Creator
     slots:
     - fullName
     - firstName
     - lastName
     - orcid
     class_uri: schema:Person
+  SoftwareApplication:
+    name: SoftwareApplication
+    from_schema: https://purl.humanatlas.io/specs/landmark
+    is_a: Creator
+    slots:
+    - version
+    - target_product
+    class_uri: schema:SoftwareApplication
+  SoftwareSourceCode:
+    name: SoftwareSourceCode
+    from_schema: https://purl.humanatlas.io/specs/landmark
+    slots:
+    - code_repository
+    - see_also
+    class_uri: schema:SoftwareSourceCode
   Grant:
     name: Grant
     from_schema: https://purl.humanatlas.io/specs/landmark
@@ -1022,18 +1095,28 @@ classes:
     - accessUrl
     - mediaType
     class_uri: dcat:Distribution
-  DatasetMetadata:
-    name: DatasetMetadata
+  Dataset:
+    name: Dataset
     from_schema: https://purl.humanatlas.io/specs/landmark
     slots:
+    - id
     - title
     - description
     - creators
-    - version
+    - reviewers
     - creation_date
+    - version
     - license
-    - publisher
     - see_also
+    - publisher
+    - citation
+    - citationOverall
+    - funders
+    - doi
+    - hubmapId
+    - project_leads
+    - externalReviewers
+    - distributions
     class_uri: dcat:Dataset
 source_file: schemas/src/digital-objects/landmark.yaml
 settings:

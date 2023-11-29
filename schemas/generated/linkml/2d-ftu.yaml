@@ -40,6 +40,9 @@ prefixes:
   dcat:
     prefix_prefix: dcat
     prefix_reference: http://www.w3.org/ns/dcat#
+  prov:
+    prefix_prefix: prov
+    prefix_reference: http://www.w3.org/ns/prov#
   dct:
     prefix_prefix: dct
     prefix_reference: http://purl.org/dc/terms/
@@ -316,6 +319,19 @@ slots:
     slot_uri: rdf:type
     multivalued: true
     range: Named
+  created_by:
+    name: created_by
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu
+    slot_uri: dct:creator
+    multivalued: true
+    range: uriorcurie
+    required: true
+    inlined_as_list: true
+  derived_from:
+    name: derived_from
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu
+    slot_uri: prov:wasDerivedFrom
+    range: uriorcurie
   located_in:
     name: located_in
     annotations:
@@ -374,10 +390,6 @@ slots:
         tag: owl
         value: AnnotationAssertion
     from_schema: https://purl.humanatlas.io/specs/2d-ftu
-  iri:
-    name: iri
-    from_schema: https://purl.humanatlas.io/specs/2d-ftu
-    identifier: true
   distributions:
     name: distributions
     from_schema: https://purl.humanatlas.io/specs/2d-ftu
@@ -400,6 +412,19 @@ slots:
     from_schema: https://purl.humanatlas.io/specs/2d-ftu
     slot_uri: dcat:mediaType
     range: uriorcurie
+  was_derived_from:
+    name: was_derived_from
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu
+    slot_uri: prov:wasDerivedFrom
+    range: Dataset
+    inlined: true
+  had_member:
+    name: had_member
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu
+    slot_uri: prov:hadMember
+    multivalued: true
+    range: uriorcurie
+    inlined_as_list: true
   title:
     name: title
     from_schema: https://purl.humanatlas.io/specs/2d-ftu
@@ -421,7 +446,7 @@ slots:
     from_schema: https://purl.humanatlas.io/specs/2d-ftu
     slot_uri: dct:creator
     multivalued: true
-    range: Person
+    range: Creator
     inlined_as_list: true
   about:
     name: about
@@ -431,6 +456,10 @@ slots:
     name: version
     from_schema: https://purl.humanatlas.io/specs/2d-ftu
     slot_uri: schema:version
+  name:
+    name: name
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu
+    slot_uri: schema:name
   fullName:
     name: fullName
     from_schema: https://purl.humanatlas.io/specs/2d-ftu
@@ -486,6 +515,16 @@ slots:
     multivalued: true
     range: Grant
     inlined_as_list: true
+  target_product:
+    name: target_product
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu
+    slot_uri: schema:targetProduct
+    range: SoftwareSourceCode
+  code_repository:
+    name: code_repository
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu
+    slot_uri: schema:codeRepository
+    range: uriorcurie
   versionInfo:
     name: versionInfo
     from_schema: https://purl.humanatlas.io/specs/2d-ftu
@@ -574,7 +613,7 @@ classes:
     slots:
     - file_url
     - file_format
-    class_uri: ccf:FtuIllustrationFile
+    class_uri: ccf:ImageFile
   FtuIllustrationNode:
     name: FtuIllustrationNode
     annotations:
@@ -602,6 +641,20 @@ classes:
           syntax: ({uberon}|{fma}):\d+
           interpolated: true
           partial_match: false
+  FtuMetadata:
+    name: FtuMetadata
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu
+    slots:
+    - title
+    - description
+    - created_by
+    - creation_date
+    - version
+    - license
+    - publisher
+    - see_also
+    - derived_from
+    class_uri: dcat:Dataset
   Container:
     name: Container
     annotations:
@@ -612,10 +665,9 @@ classes:
           AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}"
           )
 
-          {% for c in metadata.creators %}
+          {% for creator_iri in metadata.created_by %}
 
-          AnnotationAssertion( dct:creator {{iri}} "{{c.fullName|e}} ({{c.orcid}})"
-          )
+          AnnotationAssertion( dct:creator {{iri}} "{{creator_iri|e}}" )
 
           {% endfor %}
 
@@ -628,7 +680,10 @@ classes:
 
           AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
 
-          AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )'
+          AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
+
+          AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from|e}}"
+          ) '
     from_schema: https://purl.humanatlas.io/specs/2d-ftu
     attributes:
       iri:
@@ -638,7 +693,7 @@ classes:
       metadata:
         name: metadata
         from_schema: https://purl.humanatlas.io/specs/2d-ftu
-        range: DatasetMetadata
+        range: FtuMetadata
       data:
         name: data
         from_schema: https://purl.humanatlas.io/specs/2d-ftu
@@ -646,15 +701,52 @@ classes:
         range: FtuIllustration
         inlined_as_list: true
     tree_root: true
+  ProvEntity:
+    name: ProvEntity
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu
+    slots:
+    - was_derived_from
+    class_uri: prov:Entity
+  Collection:
+    name: Collection
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu
+    is_a: ProvEntity
+    slots:
+    - had_member
+    class_uri: prov:Collection
+  Creator:
+    name: Creator
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu
+    abstract: true
+    slots:
+    - id
+    - name
+    - class_type
   Person:
     name: Person
     from_schema: https://purl.humanatlas.io/specs/2d-ftu
+    is_a: Creator
     slots:
     - fullName
     - firstName
     - lastName
     - orcid
     class_uri: schema:Person
+  SoftwareApplication:
+    name: SoftwareApplication
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu
+    is_a: Creator
+    slots:
+    - version
+    - target_product
+    class_uri: schema:SoftwareApplication
+  SoftwareSourceCode:
+    name: SoftwareSourceCode
+    from_schema: https://purl.humanatlas.io/specs/2d-ftu
+    slots:
+    - code_repository
+    - see_also
+    class_uri: schema:SoftwareSourceCode
   Grant:
     name: Grant
     from_schema: https://purl.humanatlas.io/specs/2d-ftu
@@ -671,18 +763,28 @@ classes:
     - accessUrl
     - mediaType
     class_uri: dcat:Distribution
-  DatasetMetadata:
-    name: DatasetMetadata
+  Dataset:
+    name: Dataset
     from_schema: https://purl.humanatlas.io/specs/2d-ftu
     slots:
+    - id
     - title
     - description
     - creators
-    - version
+    - reviewers
     - creation_date
+    - version
     - license
-    - publisher
     - see_also
+    - publisher
+    - citation
+    - citationOverall
+    - funders
+    - doi
+    - hubmapId
+    - project_leads
+    - externalReviewers
+    - distributions
     class_uri: dcat:Dataset
 source_file: schemas/src/digital-objects/2d-ftu.yaml
 settings:

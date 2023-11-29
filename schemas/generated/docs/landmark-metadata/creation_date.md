@@ -16,11 +16,11 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
+ *  [Container➞creation_date](Container_creation_date.md)
 
 ## Used by
 
- * [Container](Container.md)
- * [DatasetMetadata](DatasetMetadata.md)
+ * [Dataset](Dataset.md)
 
 ## Other properties
 

@@ -9,7 +9,7 @@ URI: [dcat:Container_creators](http://www.w3.org/ns/dcat#Container_creators)
 
 ## Domain and Range
 
-[Container](Container.md) &#8594;  <sub>1..\*</sub> [Person](Person.md)
+[Container](Container.md) &#8594;  <sub>1..\*</sub> [Creator](Creator.md)
 
 ## Parents
 
