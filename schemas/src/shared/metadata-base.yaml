@@ -22,7 +22,7 @@ imports:
 
 classes:
   NamedEntity:
-    abstract: true
+    mixin: true
     slots:
       - id
   ProvEntity:
@@ -45,7 +45,8 @@ classes:
         annotations:
           owl: SubClassOf
   Person:
-    is_a: NamedEntity
+    mixins:
+      - NamedEntity
     class_uri: schema:Person
     slots:
       - fullName
@@ -53,7 +54,8 @@ classes:
       - lastName
       - orcid
   SoftwareApplication:
-    is_a: NamedEntity
+    mixins:
+      - NamedEntity
     class_uri: schema:SoftwareApplication
     slots:
       - name
@@ -77,7 +79,9 @@ classes:
       - accessUrl
       - mediaType
   Dataset:
-    is_a: NamedEntity
+    is_a: ProvEntity
+    mixins:
+      - NamedEntity
     class_uri: dcat:Dataset
     slots:
       - title
