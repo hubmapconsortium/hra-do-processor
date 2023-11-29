@@ -21,6 +21,7 @@ imports:
 classes:
   Container:
     tree_root: true
+    is_a: ProvEntity
     class_uri: dcat:Dataset
     slots:
       - id
@@ -35,7 +36,6 @@ classes:
       - license
       - see_also
       - distributions
-      - was_derived_from
     slot_usage:
       id:
         required: true
