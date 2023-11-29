@@ -144,6 +144,8 @@ slots:
     slot_uri: schema:version
   name:
     slot_uri: schema:name
+  type:
+    slot_uri: schema:additionalType
   fullName:
     slot_uri: schema:name
   firstName:

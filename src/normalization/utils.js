@@ -103,6 +103,8 @@ function generateGraphMetadata(context, metadata) {
   const { iri, type, name, version } = context.selectedDigitalObject;
   return {
     id: iri,
+    type,
+    name,
     title: `The ${type}/${name} ${version} graph data`,
     description: `The graph representation of the ${metadata.title} dataset.`,
     version,
