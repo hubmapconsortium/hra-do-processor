@@ -21,6 +21,10 @@ imports:
   - linkml:types
 
 classes:
+  NamedEntity:
+    abstract: true
+    slots:
+      - id
   ProvEntity:
     class_uri: prov:Entity
     slots:
@@ -31,13 +35,17 @@ classes:
     slots:
       - had_member
   Creator:
-    abstract: true
+    mixins:
+      - Person
+      - SoftwareApplication
     slots:
-      - id
-      - name
       - class_type
+    slot_usage:
+      class_type:
+        annotations:
+          owl: SubClassOf
   Person:
-    is_a: Creator
+    is_a: NamedEntity
     class_uri: schema:Person
     slots:
       - fullName
@@ -45,9 +53,10 @@ classes:
       - lastName
       - orcid
   SoftwareApplication:
-    is_a: Creator
+    is_a: NamedEntity
     class_uri: schema:SoftwareApplication
     slots:
+      - name
       - version
       - target_product
   SoftwareSourceCode:
@@ -68,9 +77,9 @@ classes:
       - accessUrl
       - mediaType
   Dataset:
+    is_a: NamedEntity
     class_uri: dcat:Dataset
     slots:
-      - id
       - title
       - description
       - creators
@@ -93,6 +102,7 @@ slots:
   id:
     identifier: true
   class_type:
+    required: true
     designates_type: true
 
   # DCAT properties
