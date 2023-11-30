@@ -168,7 +168,7 @@ function getDataDistributions(context) {
     },
     {
       title: `The data distribution of '${obj.doString}' in N-Quads format.`,
-      downloadUrl: getDataDownloadUrl(context, 'nquads'),
+      downloadUrl: getDataDownloadUrl(context, 'nq'),
       accessUrl: accessUrl,
       mediaType: 'application/n-quads',
     },
