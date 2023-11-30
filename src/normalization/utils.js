@@ -109,6 +109,7 @@ export function normalizeMetadataOfCollection(context, metadata, doList) {
 function generateGraphMetadata(context, metadata) {
   const { iri, type, name, version } = context.selectedDigitalObject;
   const graphName = `'${type}/${name}' (${version})`;
+  const processorHome = context.processorHome;
   return {
     id: iri,
     type,
@@ -125,8 +126,8 @@ function generateGraphMetadata(context, metadata) {
       name: "HRA Digital Object Processor",
       version: getProcessorVersion(),
       target_product: {
-        code_repository: getCodeRepository(),
-        see_also: getCommitUrl()
+        code_repository: getCodeRepository(processorHome),
+        see_also: getCommitUrl(processorHome)
       }
     }],
     creation_date: getTodayDate(),
