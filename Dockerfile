@@ -18,7 +18,7 @@ RUN apt-get update && \
 
 COPY scripts scripts
 COPY schemas schemas
-COPY requirements.txt package.json package-lock.json /build/
+COPY requirements.txt requirements-freeze.txt package.json package-lock.json /build/
 
 RUN ./scripts/setup-environment.sh /venv
 
