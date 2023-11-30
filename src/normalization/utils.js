@@ -145,31 +145,31 @@ function getDataDistributions(context) {
     {
       title: `The data distribution of '${obj.doString}' in Turtle format.`,
       downloadUrl: getDataDownloadUrl(context, 'ttl'),
-      accessUrl: accessUrl,
+      accessUrl: `${accessUrl}#turtle`,
       mediaType: 'text/turtle',
     },
     {
       title: `The data distribution of '${obj.doString}' in JSON-LD format.`,
       downloadUrl: getDataDownloadUrl(context, 'json'),
-      accessUrl: accessUrl,
+      accessUrl: `${accessUrl}#jsonld`,
       mediaType: 'application/ld+json',
     },
     {
       title: `The data distribution of '${obj.doString}' in RDF/XML format.`,
       downloadUrl: getDataDownloadUrl(context, 'xml'),
-      accessUrl: accessUrl,
+      accessUrl: `${accessUrl}#rdfxml`,
       mediaType: 'application/rdf+xml',
     },
     {
       title: `The data distribution of '${obj.doString}' in N-Triples format.`,
       downloadUrl: getDataDownloadUrl(context, 'nt'),
-      accessUrl: accessUrl,
+      accessUrl: `${accessUrl}#ntriples`,
       mediaType: 'application/n-triples',
     },
     {
       title: `The data distribution of '${obj.doString}' in N-Quads format.`,
       downloadUrl: getDataDownloadUrl(context, 'nq'),
-      accessUrl: accessUrl,
+      accessUrl: `${accessUrl}#nquads`,
       mediaType: 'application/n-quads',
     },
   ];
