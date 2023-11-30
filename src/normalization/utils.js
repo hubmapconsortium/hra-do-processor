@@ -87,6 +87,12 @@ export function normalizeMetadata(context, metadata) {
     type_of: "schema:Person",
     ...reviewer
   }))
+  metadata.externalReviewers = metadata.externalReviewers?.map((reviewer) => ({
+    id: `https://orcid.org/${reviewer.orcid}`,
+    class_type: "Person",
+    type_of: "schema:Person",
+    ...reviewer    
+  }))
   return {
     ...generateGraphMetadata(context, metadata),
     was_derived_from: {
