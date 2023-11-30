@@ -187,11 +187,11 @@ function getRawDataDistributions(context, datatable) {
   const { type, name, version } = context.selectedDigitalObject;
   const accessUrl = getMetadataUrl(context);
   return datatable.map((dataItem => {
-    const fileExtension = ${dataItem.split('.').slice(-1).join('')};
+    const fileExtension = dataItem.split('.').slice(-1).join('');
     const downloadUrl = `${context.cdnIri}${type}/${name}/${version}/assets/${dataItem}`;
     return {
       id: `${accessUrl}#raw-data-${fileExtension}`,
-      label: `The raw data distribution of '${dataItem} file.`
+      label: `The raw data distribution of '${dataItem} file.`,
       title: `The raw data distribution of '${dataItem} file.`,
       downloadUrl,
       accessUrl: `${accessUrl}#raw-data-${fileExtension}`,
