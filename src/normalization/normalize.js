@@ -18,7 +18,7 @@ export async function normalize(context) {
 
   // Clean up any existing files
   cleanDirectory(context);
-  
+
   let processedType = obj.name.endsWith('crosswalk') ? 'basic' : obj.type;
   switch (processedType) {
     case 'asct-b':
@@ -41,6 +41,7 @@ export async function normalize(context) {
       normalizeCollectionMetadata(context);
       normalizeCollectionData(context);
       break;
+    case 'ds-graph':
     case 'vocab':
     case 'graph':
     case 'g':

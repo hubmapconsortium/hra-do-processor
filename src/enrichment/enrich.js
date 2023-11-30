@@ -40,6 +40,7 @@ export function enrich(context) {
       enrichCollectionMetadata(context);
       enrichCollectionData(context);
       break;
+    case 'ds-graph':
     case 'vocab':
     case 'graph':
     case 'g':
