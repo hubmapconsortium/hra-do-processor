@@ -141,31 +141,41 @@ function getGraphDataDistributions(context) {
   const accessUrl = getMetadataUrl(context);
   return [
     {
-      title: `The data distribution of '${obj.doString}' in Turtle format.`,
+      id: `${accessUrl}#turtle`,
+      label: `The graph data distribution of '${obj.doString}' in Turtle format.`,
+      title: `The graph data distribution of '${obj.doString}' in Turtle format.`,
       downloadUrl: getDataDownloadUrl(context, 'ttl'),
       accessUrl: `${accessUrl}#turtle`,
       mediaType: 'text/turtle',
     },
     {
-      title: `The data distribution of '${obj.doString}' in JSON-LD format.`,
+      id: `${accessUrl}#jsonld`,
+      label: `The graph data distribution of '${obj.doString}' in JSON-LD format.`,
+      title: `The graph data distribution of '${obj.doString}' in JSON-LD format.`,
       downloadUrl: getDataDownloadUrl(context, 'json'),
       accessUrl: `${accessUrl}#jsonld`,
       mediaType: 'application/ld+json',
     },
     {
-      title: `The data distribution of '${obj.doString}' in RDF/XML format.`,
+      id: `${accessUrl}#rdfxml`,
+      label: `The graph data distribution of '${obj.doString}' in RDF/XML format.`,
+      title: `The graph data distribution of '${obj.doString}' in RDF/XML format.`,
       downloadUrl: getDataDownloadUrl(context, 'xml'),
       accessUrl: `${accessUrl}#rdfxml`,
       mediaType: 'application/rdf+xml',
     },
     {
-      title: `The data distribution of '${obj.doString}' in N-Triples format.`,
+      id: `${accessUrl}#ntriples`,
+      label: `The graph data distribution of '${obj.doString}' in N-Triples format.`,      
+      title: `The graph data distribution of '${obj.doString}' in N-Triples format.`,
       downloadUrl: getDataDownloadUrl(context, 'nt'),
       accessUrl: `${accessUrl}#ntriples`,
       mediaType: 'application/n-triples',
     },
     {
-      title: `The data distribution of '${obj.doString}' in N-Quads format.`,
+      id: `${accessUrl}#nquads`,
+      label: `The graph data distribution of '${obj.doString}' in N-Quads format.`,
+      title: `The graph data distribution of '${obj.doString}' in N-Quads format.`,
       downloadUrl: getDataDownloadUrl(context, 'nq'),
       accessUrl: `${accessUrl}#nquads`,
       mediaType: 'application/n-quads',
@@ -173,22 +183,21 @@ function getGraphDataDistributions(context) {
   ];
 }
 
-function getDatatableUrls(context, datatable) {
-  const { type, name, version } = context.selectedDigitalObject;
-  return datatable.map((item) => `${context.cdnIri}${type}/${name}/${version}/assets/${item}`);
-}
-
 function getRawDataDistributions(context, datatable) {
-  const { selectedDigitalObject: obj } = context;
+  const { type, name, version } = context.selectedDigitalObject;
   const accessUrl = getMetadataUrl(context);
-  return getDatatableUrls(context, datatable).map((url) => {
+  return datatable.map((dataItem => {
+    const fileExtension = ${dataItem.split('.').slice(-1).join('')};
+    const downloadUrl = `${context.cdnIri}${type}/${name}/${version}/assets/${dataItem}`;
     return {
-      title: `The raw data distribution of '${obj.doString}' in .${url.split('.').slice(-1).join('')} format.`,
-      downloadUrl: url,
-      accessUrl,
-      mediaType: lookup(url),
+      id: `${accessUrl}#raw-data-${fileExtension}`,
+      label: `The raw data distribution of '${dataItem} file.`
+      title: `The raw data distribution of '${dataItem} file.`,
+      downloadUrl,
+      accessUrl: `${accessUrl}#raw-data-${fileExtension}`,
+      mediaType: lookup(downloadUrl),
     };
-  });
+  }))
 }
 
 function getMetadataUrl(context) {

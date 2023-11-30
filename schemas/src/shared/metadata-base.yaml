@@ -81,6 +81,8 @@ classes:
       - funder
       - awardNumber
   Distribution:
+    mixins:
+      - NamedEntity
     class_uri: dcat:Distribution
     slots:
       - title
