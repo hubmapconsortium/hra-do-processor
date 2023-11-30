@@ -131,7 +131,7 @@ function generateGraphMetadata(context, metadata) {
     creation_date: getTodayDate(),
     publisher: "HuBMAP",
     license: "https://creativecommons.org/licenses/by/4.0/",
-    see_also: getMetadataUrl(context),
+    see_also: `${getMetadataUrl(context)}/`,
     distributions: getGraphDataDistributions(context)
   };
 }
