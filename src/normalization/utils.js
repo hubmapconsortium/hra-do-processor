@@ -46,7 +46,7 @@ export function writeNormalizedDataOfCollection(context, data) {
 }
 
 function flatten(metadata) {
-  const output = { 
+  const output = {
     title: metadata.title, 
     description: metadata.description, 
     created_by: metadata.creators.map((creator) => creator.id),
@@ -66,40 +66,36 @@ function flatten(metadata) {
 }
 
 export function normalizeMetadata(context, metadata) {
-  const { iri } = context.selectedDigitalObject;  
-  const datatable = metadata.datatable;
-  delete metadata.datatable;
-  metadata.creators = metadata.creators?.map((creator) => ({
-      id: `https://orcid.org/${creator.orcid}`,
-      class_type: "Person",
-      type_of: "schema:Person",
-      ...creator
-    }));
-  metadata.project_leads = metadata.project_leads?.map((leader) => ({
-    id: `https://orcid.org/${leader.orcid}`,
-    class_type: "Person",
-    type_of: "schema:Person",
-    ...leader
-  }))
-  metadata.reviewers = metadata.reviewers?.map((reviewer) => ({
-    id: `https://orcid.org/${reviewer.orcid}`,
-    class_type: "Person",
-    type_of: "schema:Person",
-    ...reviewer
-  }))
-  metadata.externalReviewers = metadata.externalReviewers?.map((reviewer) => ({
-    id: `https://orcid.org/${reviewer.orcid}`,
-    class_type: "Person",
-    type_of: "schema:Person",
-    ...reviewer    
-  }))
   return {
     ...generateGraphMetadata(context, metadata),
     was_derived_from: {
-      id: `${getMetadataUrl(context)}#raw-data`,
-      ...metadata,
-      distributions: getDataTableDistributions(context, datatable)
+      ...generateRawMetadata(context, metadata)
     }
+  }
+}
+
+function generateRawMetadata(context, metadata) {
+  const datatable = metadata.datatable;
+  delete metadata.datatable;
+  metadata.creators = metadata.creators?.map((creator) => normalizePersonData(creator));
+  metadata.project_leads = metadata.project_leads?.map((leader) => normalizePersonData(leader));
+  metadata.reviewers = metadata.reviewers?.map((reviewer) => normalizePersonData(reviewer));
+  metadata.externalReviewers = metadata.externalReviewers?.map((reviewer) => normalizePersonData(reviewer));
+  return {
+    id: `${getMetadataUrl(context)}#raw-data`,
+    label: metadata.title,
+    ...metadata,
+    distributions: getDataTableDistributions(context, datatable)
+  }
+}
+
+function normalizePersonData(person) {
+  return {
+    id: `https://orcid.org/${person.orcid}`,
+    class_type: "Person",
+    type_of: "schema:Person",
+    label: person.fullName,
+    ...person  
   }
 }
 
@@ -116,6 +112,7 @@ function generateGraphMetadata(context, metadata) {
     id: iri,
     type,
     name,
+    label: `The ${type}/${name} ${version} graph data`,
     title: `The ${type}/${name} ${version} graph data`,
     description: `The graph representation of the ${metadata.title} dataset.`,
     version,
@@ -123,6 +120,7 @@ function generateGraphMetadata(context, metadata) {
       id: "https://github.com/hubmapconsortium/hra-do-processor",
       class_type: "SoftwareApplication",
       type_of: "schema:SoftwareApplication",
+      label: "HRA Digital Object Processor",
       name: "HRA Digital Object Processor",
       version: getVersionTag(),
       target_product: {
