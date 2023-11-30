@@ -85,7 +85,7 @@ function generateRawMetadata(context, metadata) {
     id: `${getMetadataUrl(context)}#raw-data`,
     label: metadata.title,
     ...metadata,
-    distributions: getDataTableDistributions(context, datatable)
+    distributions: getRawDataDistributions(context, datatable)
   }
 }
 
@@ -132,11 +132,11 @@ function generateGraphMetadata(context, metadata) {
     publisher: "HuBMAP",
     license: "https://creativecommons.org/licenses/by/4.0/",
     see_also: getMetadataUrl(context),
-    distributions: getDataDistributions(context)
+    distributions: getGraphDataDistributions(context)
   };
 }
 
-function getDataDistributions(context) {
+function getGraphDataDistributions(context) {
   const { selectedDigitalObject: obj } = context;
   const accessUrl = getMetadataUrl(context);
   return [
@@ -178,7 +178,7 @@ function getDatatableUrls(context, datatable) {
   return datatable.map((item) => `${context.cdnIri}${type}/${name}/${version}/assets/${item}`);
 }
 
-function getDataTableDistributions(context, datatable) {
+function getRawDataDistributions(context, datatable) {
   const { selectedDigitalObject: obj } = context;
   const accessUrl = getMetadataUrl(context);
   return getDatatableUrls(context, datatable).map((url) => {
