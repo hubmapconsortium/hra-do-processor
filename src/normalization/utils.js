@@ -72,14 +72,19 @@ export function normalizeMetadata(context, metadata) {
   metadata.creators = metadata.creators?.map((creator) => ({
       id: `https://orcid.org/${creator.orcid}`,
       class_type: "Person",
+      type_of: "schema:Person",
       ...creator
     }));
   metadata.project_leads = metadata.project_leads?.map((leader) => ({
     id: `https://orcid.org/${leader.orcid}`,
+    class_type: "Person",
+    type_of: "schema:Person",
     ...leader
   }))
   metadata.reviewers = metadata.reviewers?.map((reviewer) => ({
     id: `https://orcid.org/${reviewer.orcid}`,
+    class_type: "Person",
+    type_of: "schema:Person",
     ...reviewer
   }))
   return {
@@ -111,6 +116,7 @@ function generateGraphMetadata(context, metadata) {
     creators: [{
       id: "https://github.com/hubmapconsortium/hra-do-processor",
       class_type: "SoftwareApplication",
+      type_of: "schema:SoftwareApplication",
       name: "HRA Digital Object Processor",
       version: getVersionTag(),
       target_product: {
