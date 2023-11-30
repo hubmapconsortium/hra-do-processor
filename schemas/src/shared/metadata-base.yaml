@@ -26,6 +26,12 @@ classes:
     mixin: true
     slots:
       - id
+      - label
+    slot_usage:
+      id:
+        required: true
+      label:
+        required: true
   Instance:
     mixin: true
     slots:
@@ -212,6 +218,8 @@ slots:
     slot_uri: owl:versionInfo
 
   # RDFS properties
+  label:
+    slot_uri: rdfs:label
   see_also:
     range: uriorcurie
     slot_uri: rdfs:seeAlso
