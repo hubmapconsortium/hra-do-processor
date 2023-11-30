@@ -3,7 +3,7 @@ import { dump, load } from 'js-yaml';
 import { lookup } from 'mime-types';
 import { resolve } from 'path';
 import { info } from '../utils/logging.js';
-import { throwOnError } from '../utils/sh-exec.js';
+import { exec, throwOnError } from '../utils/sh-exec.js';
 import { getVersionTag, getCodeRepository, getCommitUrl } from '../utils/git.js';
 
 export function readMetadata(context) {
@@ -122,7 +122,7 @@ function generateGraphMetadata(context, metadata) {
       type_of: "schema:SoftwareApplication",
       label: "HRA Digital Object Processor",
       name: "HRA Digital Object Processor",
-      version: getVersionTag(),
+      version: getProcessorVersion(),
       target_product: {
         code_repository: getCodeRepository(),
         see_also: getCommitUrl()
@@ -212,6 +212,10 @@ function getDataDownloadUrl(context, format = 'ttl') {
 
 function getTodayDate() {
   return new Date().toISOString().slice(0, 10);
+}
+
+function getProcessorVersion() {
+  return exec("do-processor --version");
 }
 
 export function cleanDirectory(context) {

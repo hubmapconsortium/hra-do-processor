@@ -3,6 +3,12 @@ import { dump } from 'js-yaml';
 import sh from 'shelljs';
 import { error, more } from './logging.js';
 
+export function exec(command) {
+  const response = sh.exec(command);
+  const { stdout, code } = response;
+  return (code === 1) ? null : stdout.trim();
+}
+
 export function throwOnError(command, message, errorParser=defaultParser) {
   const response = sh.exec(command);
   const { stdout, stderr, code } = response;
