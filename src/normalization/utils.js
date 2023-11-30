@@ -108,12 +108,13 @@ export function normalizeMetadataOfCollection(context, metadata, doList) {
 
 function generateGraphMetadata(context, metadata) {
   const { iri, type, name, version } = context.selectedDigitalObject;
+  const graphName = `'${type}/${name}' (${version})`;
   return {
     id: iri,
     type,
     name,
-    label: `The ${type}/${name} ${version} graph data`,
-    title: `The ${type}/${name} ${version} graph data`,
+    label: `Graph data ${graphName}`,
+    title: `Graph data ${graphName}`,
     description: `The graph representation of the ${metadata.title} dataset.`,
     version,
     creators: [{
@@ -137,45 +138,46 @@ function generateGraphMetadata(context, metadata) {
 }
 
 function getGraphDataDistributions(context) {
-  const { selectedDigitalObject: obj } = context;
+  const { iri, type, name, version } = context.selectedDigitalObject;
+  const graphName = `'${type}/${name}' (${version})`;
   const accessUrl = getMetadataUrl(context);
   return [
     {
       id: `${accessUrl}#turtle`,
-      label: `The graph data distribution of '${obj.doString}' in Turtle format.`,
-      title: `The graph data distribution of '${obj.doString}' in Turtle format.`,
+      label: `Graph data distribution ${graphName} in Turtle format`,
+      title: `Graph data distribution ${graphName} in Turtle format`,
       downloadUrl: getDataDownloadUrl(context, 'ttl'),
       accessUrl: `${accessUrl}#turtle`,
       mediaType: 'text/turtle',
     },
     {
       id: `${accessUrl}#jsonld`,
-      label: `The graph data distribution of '${obj.doString}' in JSON-LD format.`,
-      title: `The graph data distribution of '${obj.doString}' in JSON-LD format.`,
+      label: `Graph data distribution ${graphName} in JSON-LD format`,
+      title: `Graph data distribution ${graphName} in JSON-LD format`,
       downloadUrl: getDataDownloadUrl(context, 'json'),
       accessUrl: `${accessUrl}#jsonld`,
       mediaType: 'application/ld+json',
     },
     {
       id: `${accessUrl}#rdfxml`,
-      label: `The graph data distribution of '${obj.doString}' in RDF/XML format.`,
-      title: `The graph data distribution of '${obj.doString}' in RDF/XML format.`,
+      label: `Graph data distribution ${graphName} in RDF/XML format`,
+      title: `Graph data distribution ${graphName} in RDF/XML format`,
       downloadUrl: getDataDownloadUrl(context, 'xml'),
       accessUrl: `${accessUrl}#rdfxml`,
       mediaType: 'application/rdf+xml',
     },
     {
       id: `${accessUrl}#ntriples`,
-      label: `The graph data distribution of '${obj.doString}' in N-Triples format.`,      
-      title: `The graph data distribution of '${obj.doString}' in N-Triples format.`,
+      label: `Graph data distribution ${graphName} in N-Triples format`,      
+      title: `Graph data distribution ${graphName} in N-Triples format`,
       downloadUrl: getDataDownloadUrl(context, 'nt'),
       accessUrl: `${accessUrl}#ntriples`,
       mediaType: 'application/n-triples',
     },
     {
       id: `${accessUrl}#nquads`,
-      label: `The graph data distribution of '${obj.doString}' in N-Quads format.`,
-      title: `The graph data distribution of '${obj.doString}' in N-Quads format.`,
+      label: `Graph data distribution ${graphName} in N-Quads format`,
+      title: `Graph data distribution ${graphName} in N-Quads format`,
       downloadUrl: getDataDownloadUrl(context, 'nq'),
       accessUrl: `${accessUrl}#nquads`,
       mediaType: 'application/n-quads',
@@ -190,11 +192,11 @@ function getRawDataDistributions(context, datatable) {
     const fileExtension = dataItem.split('.').slice(-1).join('');
     const downloadUrl = `${context.cdnIri}${type}/${name}/${version}/assets/${dataItem}`;
     return {
-      id: `${accessUrl}#raw-data-${fileExtension}`,
-      label: `The raw data distribution of '${dataItem} file.`,
-      title: `The raw data distribution of '${dataItem} file.`,
+      id: `${accessUrl}#${dataItem}`,
+      label: `Raw data distribution '${dataItem}' file`,
+      title: `Raw data distribution '${dataItem}' file`,
       downloadUrl,
-      accessUrl: `${accessUrl}#raw-data-${fileExtension}`,
+      accessUrl: `${accessUrl}#${dataItem}`,
       mediaType: lookup(downloadUrl),
     };
   }))
