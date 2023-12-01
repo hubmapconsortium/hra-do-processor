@@ -37,10 +37,12 @@ classes:
     slots:
       - type_of
   ProvEntity:
+    mixin: true
     class_uri: prov:Entity
     slots:
       - was_derived_from
-  Collection:
+  ProvCollection:
+    mixin: true
     is_a: ProvEntity
     class_uri: prov:Collection
     slots:

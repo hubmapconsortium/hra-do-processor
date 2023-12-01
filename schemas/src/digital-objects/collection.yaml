@@ -46,7 +46,8 @@ classes:
         {% endfor %}
 
   CollectionMetadata:
-    is_a: Collection
+    mixins:
+      - ProvCollection
     class_uri: dcat:Dataset
     slots:
       - title
@@ -58,7 +59,6 @@ classes:
       - publisher
       - see_also
       - derived_from
-      - had_member
 
 slots:
   created_by:
