@@ -9,6 +9,7 @@ import {
   getPatchesForAnatomicalStructure,
   getPatchesForBiomarker,
   getPatchesForCellType,
+  isAsIdValid,
   isCtIdValid,
   isDoiValid,
   isIdValid,
@@ -80,7 +81,7 @@ function normalizeAsData(context, data) {
           is_provisional: !checkNotEmpty(id),
         };
       })
-      .filter(({ id }) => passIdFilterCriteria(context, id))
+      .filter(({ id }) => passAsIdFilterCriteria(context, id))
       .reduce(normalizeAs, collector);
     return collector;
   }, getPatchesForAnatomicalStructure(context));
@@ -133,7 +134,7 @@ function normalizeCtData(context, data) {
     const last_as = row.anatomical_structures
       .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
       .map(({ id, name }) => generateIdWhenEmpty(id, name))
-      .filter((id) => passIdFilterCriteria(context, id))
+      .filter((id) => passAsIdFilterCriteria(context, id))
       .pop();
     const last_ct = row.cell_types
       .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
@@ -276,6 +277,10 @@ function removeDuplicates(array) {
 
 function passIdFilterCriteria(context, id) {
   return isIdValid(id) || !context.excludeBadValues;
+}
+
+function passAsIdFilterCriteria(context, id) {
+  return isAsIdValid(id) || !context.excludeBadValues;
 }
 
 function passCtIdFilterCriteria(context, id) {
