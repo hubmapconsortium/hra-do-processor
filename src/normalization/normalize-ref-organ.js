@@ -196,7 +196,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
 function getOrganMetadata(name) {
   const sex = name.includes('female') ? 'Female' : name.includes('male') ? 'Male' : undefined;
   const side = name.includes('left') ? 'Left' : name.includes('right') ? 'Right' : undefined;
-  
+
   const exclude = new Set(['left', 'right', 'male', 'female']);
   const organName = name.split('-').filter(n => !exclude.has(n)).join(' ');
   return { organOwnerSex: sex, organSide: side, organName };
@@ -252,5 +252,5 @@ function excludeNodeId(node) {
 }
 
 function validNodeId(node, crosswalk) {
-  return crosswalk.find((value) => value['node_name'] === node['@id']);
+  return crosswalk.find((value) => value['node_name'] === node['@id'] && value['OntologyID'] && value['label']);
 }
