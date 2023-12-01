@@ -15,7 +15,9 @@ export function buildBlazegraphJournal(context) {
 
   let sparqlUpdate = '';
 
-  for (const obj of digitalObjects) {
+  const digitalObjectsToDeploy = digitalObjects.filter((o) => o.version === 'latest' || o.version === 'draft');
+
+  for (const obj of digitalObjectsToDeploy) {
     let doString = obj.doString;
     if (obj.version === 'latest') {
       doString = `${obj.type}/${obj.name}`;

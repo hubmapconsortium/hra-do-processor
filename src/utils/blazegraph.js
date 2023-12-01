@@ -1,3 +1,4 @@
+import { writeFileSync } from 'fs';
 import sh from 'shelljs';
 import { throwOnError } from './sh-exec.js';
 
@@ -33,15 +34,14 @@ export function dump(graphName, journalPath, outputPath, format) {
 }
 
 export function load(graphName, inputPath, journalPath) {
-  throwOnError(
-    `owl-cli write -i turtle -o ntriple ${inputPath} ${journalPath}.temp && \
-     blazegraph-runner load --journal=${journalPath} \
-        --use-ontology-graph=false \
-        --graph="${graphName}" \
-        --informat=ntriples ${journalPath}.temp && \
-     rm -f ${journalPath}.temp`,
-    `File ${inputPath} failed to load.`
-  );
+  const sparqlUpdate = `
+    CLEAR GRAPH <${graphName}> ;
+    LOAD <file://${inputPath}> INTO GRAPH <${graphName}> ;
+  `;
+  const loadScript = `${journalPath}.temp`;
+  writeFileSync(loadScript, sparqlUpdate);
+  update(loadScript, journalPath);
+  sh.rm('-f', loadScript);
 }
 
 export function update(script, journalPath) {

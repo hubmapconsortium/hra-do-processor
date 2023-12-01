@@ -4,7 +4,7 @@ import sh from 'shelljs';
 import { readMetadata } from '../normalization/utils.js';
 import { info } from '../utils/logging.js';
 import { reifyDoTurtle, reifyMetadataTurtle, reifyRedundantTurtle } from '../utils/reify.js';
-import { loadDoIntoTripleStore, loadMetadataIntoTripleStore, loadRedundantIntoTripleStore } from './utils.js';
+import { loadDoIntoTripleStore, loadRedundantIntoTripleStore } from './utils.js';
 
 export function deploy(context) {
   const obj = context.selectedDigitalObject;
@@ -29,9 +29,6 @@ export function deploy(context) {
 
   info(`Reifying "${obj.doString}" metadata`);
   reifyMetadataTurtle(context, metadataTtl);
-  if (context.updateDb) {
-    loadMetadataIntoTripleStore(context, resolve(context.deploymentHome, 'blazegraph.jnl'));
-  }
 
   // Check if the enrichment produces redundant graph
   const redundant = resolve(obj.path, 'enriched/redundant.ttl');
