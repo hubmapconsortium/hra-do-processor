@@ -1,5 +1,5 @@
-id: https://purl.humanatlas.io/specs/ref-organ-metadata
-name: ref-organ-metadata
+id: https://purl.humanatlas.io/specs/landmark-metadata
+name: landmark-metadata
 prefixes:
   ccf: http://purl.org/ccf/
   pav: http://purl.org/pav/
@@ -21,9 +21,11 @@ imports:
 classes:
   Container:
     tree_root: true
+    mixins:
+      - NamedEntity
+      - ProvEntity
     class_uri: dcat:Dataset
     slots:
-      - id
       - name
       - type
       - title
@@ -35,10 +37,7 @@ classes:
       - license
       - see_also
       - distributions
-      - was_derived_from
     slot_usage:
-      id:
-        required: true
       title:
         required: true
       description:

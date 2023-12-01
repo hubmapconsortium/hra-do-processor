@@ -3,7 +3,7 @@ import { dump, load } from 'js-yaml';
 import { lookup } from 'mime-types';
 import { resolve } from 'path';
 import { info } from '../utils/logging.js';
-import { throwOnError } from '../utils/sh-exec.js';
+import { exec, throwOnError } from '../utils/sh-exec.js';
 import { getVersionTag, getCodeRepository, getCommitUrl } from '../utils/git.js';
 
 export function readMetadata(context) {
@@ -46,7 +46,7 @@ export function writeNormalizedDataOfCollection(context, data) {
 }
 
 function flatten(metadata) {
-  const output = { 
+  const output = {
     title: metadata.title, 
     description: metadata.description, 
     created_by: metadata.creators.map((creator) => creator.id),
@@ -66,34 +66,36 @@ function flatten(metadata) {
 }
 
 export function normalizeMetadata(context, metadata) {
-  const { iri } = context.selectedDigitalObject;  
-  const datatable = metadata.datatable;
-  delete metadata.datatable;
-  metadata.creators = metadata.creators?.map((creator) => ({
-      id: `https://orcid.org/${creator.orcid}`,
-      class_type: "Person",
-      type_of: "schema:Person",
-      ...creator
-    }));
-  metadata.project_leads = metadata.project_leads?.map((leader) => ({
-    id: `https://orcid.org/${leader.orcid}`,
-    class_type: "Person",
-    type_of: "schema:Person",
-    ...leader
-  }))
-  metadata.reviewers = metadata.reviewers?.map((reviewer) => ({
-    id: `https://orcid.org/${reviewer.orcid}`,
-    class_type: "Person",
-    type_of: "schema:Person",
-    ...reviewer
-  }))
   return {
     ...generateGraphMetadata(context, metadata),
     was_derived_from: {
-      id: `${getMetadataUrl(context)}#raw-data`,
-      ...metadata,
-      distributions: getDataTableDistributions(context, datatable)
+      ...generateRawMetadata(context, metadata)
     }
+  }
+}
+
+function generateRawMetadata(context, metadata) {
+  const datatable = metadata.datatable;
+  delete metadata.datatable;
+  metadata.creators = metadata.creators?.map((creator) => normalizePersonData(creator));
+  metadata.project_leads = metadata.project_leads?.map((leader) => normalizePersonData(leader));
+  metadata.reviewers = metadata.reviewers?.map((reviewer) => normalizePersonData(reviewer));
+  metadata.externalReviewers = metadata.externalReviewers?.map((reviewer) => normalizePersonData(reviewer));
+  return {
+    id: `${getMetadataUrl(context)}#raw-data`,
+    label: metadata.title,
+    ...metadata,
+    distributions: getRawDataDistributions(context, datatable)
+  }
+}
+
+function normalizePersonData(person) {
+  return {
+    id: `https://orcid.org/${person.orcid}`,
+    class_type: "Person",
+    type_of: "schema:Person",
+    label: person.fullName,
+    ...person  
   }
 }
 
@@ -106,85 +108,99 @@ export function normalizeMetadataOfCollection(context, metadata, doList) {
 
 function generateGraphMetadata(context, metadata) {
   const { iri, type, name, version } = context.selectedDigitalObject;
+  const graphName = `'${type}/${name}' (${version})`;
+  const processorHome = context.processorHome;
   return {
     id: iri,
     type,
     name,
-    title: `The ${type}/${name} ${version} graph data`,
+    label: `Graph data ${graphName}`,
+    title: `Graph data ${graphName}`,
     description: `The graph representation of the ${metadata.title} dataset.`,
     version,
     creators: [{
       id: "https://github.com/hubmapconsortium/hra-do-processor",
       class_type: "SoftwareApplication",
       type_of: "schema:SoftwareApplication",
+      label: "HRA Digital Object Processor",
       name: "HRA Digital Object Processor",
-      version: getVersionTag(),
+      version: getProcessorVersion(),
       target_product: {
-        code_repository: getCodeRepository(),
-        see_also: getCommitUrl()
+        code_repository: getCodeRepository(processorHome),
+        see_also: getCommitUrl(processorHome)
       }
     }],
     creation_date: getTodayDate(),
     publisher: "HuBMAP",
     license: "https://creativecommons.org/licenses/by/4.0/",
-    see_also: getMetadataUrl(context),
-    distributions: getDataDistributions(context)
+    see_also: `${getMetadataUrl(context)}/`,
+    distributions: getGraphDataDistributions(context)
   };
 }
 
-function getDataDistributions(context) {
-  const { selectedDigitalObject: obj } = context;
+function getGraphDataDistributions(context) {
+  const { iri, type, name, version } = context.selectedDigitalObject;
+  const graphName = `'${type}/${name}' (${version})`;
   const accessUrl = getMetadataUrl(context);
   return [
     {
-      title: `The data distribution of '${obj.doString}' in Turtle format.`,
+      id: `${accessUrl}#turtle`,
+      label: `Graph data distribution ${graphName} in Turtle format`,
+      title: `Graph data distribution ${graphName} in Turtle format`,
       downloadUrl: getDataDownloadUrl(context, 'ttl'),
-      accessUrl: accessUrl,
+      accessUrl: `${accessUrl}#turtle`,
       mediaType: 'text/turtle',
     },
     {
-      title: `The data distribution of '${obj.doString}' in JSON-LD format.`,
+      id: `${accessUrl}#jsonld`,
+      label: `Graph data distribution ${graphName} in JSON-LD format`,
+      title: `Graph data distribution ${graphName} in JSON-LD format`,
       downloadUrl: getDataDownloadUrl(context, 'json'),
-      accessUrl: accessUrl,
+      accessUrl: `${accessUrl}#jsonld`,
       mediaType: 'application/ld+json',
     },
     {
-      title: `The data distribution of '${obj.doString}' in RDF/XML format.`,
+      id: `${accessUrl}#rdfxml`,
+      label: `Graph data distribution ${graphName} in RDF/XML format`,
+      title: `Graph data distribution ${graphName} in RDF/XML format`,
       downloadUrl: getDataDownloadUrl(context, 'xml'),
-      accessUrl: accessUrl,
+      accessUrl: `${accessUrl}#rdfxml`,
       mediaType: 'application/rdf+xml',
     },
     {
-      title: `The data distribution of '${obj.doString}' in N-Triples format.`,
+      id: `${accessUrl}#ntriples`,
+      label: `Graph data distribution ${graphName} in N-Triples format`,      
+      title: `Graph data distribution ${graphName} in N-Triples format`,
       downloadUrl: getDataDownloadUrl(context, 'nt'),
-      accessUrl: accessUrl,
+      accessUrl: `${accessUrl}#ntriples`,
       mediaType: 'application/n-triples',
     },
     {
-      title: `The data distribution of '${obj.doString}' in N-Quads format.`,
-      downloadUrl: getDataDownloadUrl(context, 'nquads'),
-      accessUrl: accessUrl,
+      id: `${accessUrl}#nquads`,
+      label: `Graph data distribution ${graphName} in N-Quads format`,
+      title: `Graph data distribution ${graphName} in N-Quads format`,
+      downloadUrl: getDataDownloadUrl(context, 'nq'),
+      accessUrl: `${accessUrl}#nquads`,
       mediaType: 'application/n-quads',
     },
   ];
 }
 
-function getDatatableUrls(context, datatable) {
+function getRawDataDistributions(context, datatable) {
   const { type, name, version } = context.selectedDigitalObject;
-  return datatable.map((item) => `${context.cdnIri}${type}/${name}/${version}/assets/${item}`);
-}
-
-function getDataTableDistributions(context, datatable) {
-  const { selectedDigitalObject: obj } = context;
   const accessUrl = getMetadataUrl(context);
-  return getDatatableUrls(context, datatable).map((url) => {
+  return datatable.map((dataItem => {
+    const fileExtension = dataItem.split('.').slice(-1).join('');
+    const downloadUrl = `${context.cdnIri}${type}/${name}/${version}/assets/${dataItem}`;
     return {
-      title: `The raw data distribution of '${obj.doString}' in .${url.split('.').slice(-1).join('')} format.`,
-      downloadUrl: url,
-      accessUrl,
-      mediaType: lookup(url),
+      id: `${accessUrl}#${dataItem}`,
+      label: `Raw data distribution '${dataItem}' file`,
+      title: `Raw data distribution '${dataItem}' file`,
+      downloadUrl,
+      accessUrl: `${accessUrl}#${dataItem}`,
+      mediaType: lookup(downloadUrl),
     };
-  });
+  }))
 }
 
 function getMetadataUrl(context) {
@@ -199,6 +215,10 @@ function getDataDownloadUrl(context, format = 'ttl') {
 
 function getTodayDate() {
   return new Date().toISOString().slice(0, 10);
+}
+
+function getProcessorVersion() {
+  return exec("do-processor --version");
 }
 
 export function cleanDirectory(context) {

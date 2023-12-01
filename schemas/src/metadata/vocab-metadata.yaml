@@ -21,9 +21,11 @@ imports:
 classes:
   Container:
     tree_root: true
+    mixins:
+      - NamedEntity
+      - ProvEntity
     class_uri: dcat:Dataset
     slots:
-      - id
       - name
       - type
       - title
@@ -35,10 +37,7 @@ classes:
       - license
       - see_also
       - distributions
-      - was_derived_from
     slot_usage:
-      id:
-        required: true
       title:
         required: true
       description:

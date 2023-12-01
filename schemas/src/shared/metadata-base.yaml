@@ -26,15 +26,23 @@ classes:
     mixin: true
     slots:
       - id
+      - label
+    slot_usage:
+      id:
+        required: true
+      label:
+        required: true
   Instance:
     mixin: true
     slots:
       - type_of
   ProvEntity:
+    mixin: true
     class_uri: prov:Entity
     slots:
       - was_derived_from
-  Collection:
+  ProvCollection:
+    mixin: true
     is_a: ProvEntity
     class_uri: prov:Collection
     slots:
@@ -75,6 +83,8 @@ classes:
       - funder
       - awardNumber
   Distribution:
+    mixins:
+      - NamedEntity
     class_uri: dcat:Distribution
     slots:
       - title
@@ -212,6 +222,8 @@ slots:
     slot_uri: owl:versionInfo
 
   # RDFS properties
+  label:
+    slot_uri: rdfs:label
   see_also:
     range: uriorcurie
     slot_uri: rdfs:seeAlso
