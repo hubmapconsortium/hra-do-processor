@@ -47,6 +47,7 @@ export async function normalize(context) {
     case 'g':
       normalizeGraphMetadata(context);
       normalizeGraphData(context);
+      processedType = 'graph';
       break;
     default:
       warning(`"${obj.type}" digital object type is using basic processing.`);
