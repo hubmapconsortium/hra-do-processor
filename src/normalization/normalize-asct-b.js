@@ -9,6 +9,7 @@ import {
   getPatchesForAnatomicalStructure,
   getPatchesForBiomarker,
   getPatchesForCellType,
+  isCtIdValid,
   isDoiValid,
   isIdValid,
   normalizeDoi,
@@ -95,7 +96,7 @@ function normalizeAs(collector, { id: as_id, name: as_name, is_provisional }, in
     const obj = {
       id: as_id,
       class_type: 'AnatomicalStructure',
-      ccf_pref_label: as_name,
+      ccf_pref_label: as_name.trim(),
       ccf_asctb_type: 'AS',
       ccf_is_provisional: is_provisional,
       ccf_part_of: [getPartOfEntity(array, index)],
@@ -125,7 +126,7 @@ function normalizeCtData(context, data) {
           is_provisional: !checkNotEmpty(id),
         };
       })
-      .filter(({ id }) => passIdFilterCriteria(context, id))
+      .filter(({ id }) => passCtIdFilterCriteria(context, id))
       .reduce(normalizeCt, collector);
 
     // Add ccf_located_in relationship that is between AS and CT
@@ -137,7 +138,7 @@ function normalizeCtData(context, data) {
     const last_ct = row.cell_types
       .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
       .map(({ id, name }) => generateIdWhenEmpty(id, name))
-      .filter((id) => passIdFilterCriteria(context, id))
+      .filter((id) => passCtIdFilterCriteria(context, id))
       .pop();
     if (last_ct) {
       addLocatedIn(collector, last_ct, last_as);
@@ -168,7 +169,7 @@ function normalizeCt(collector, { id: ct_id, name: ct_name, is_provisional }, in
     const obj = {
       id: ct_id,
       class_type: 'CellType',
-      ccf_pref_label: ct_name,
+      ccf_pref_label: ct_name.trim(),
       ccf_asctb_type: 'CT',
       ccf_is_provisional: is_provisional,
       ccf_ct_isa: [getCtIsaEntity(array, index)],
@@ -237,7 +238,7 @@ function normalizeBm(collector, { id: bm_id, name: bm_name, b_type, is_provision
     const obj = {
       id: bm_id,
       class_type: 'Biomarker',
-      ccf_pref_label: bm_name,
+      ccf_pref_label: bm_name.trim(),
       ccf_asctb_type: 'BM',
       ccf_biomarker_type: b_type,
       ccf_is_provisional: is_provisional,
@@ -275,6 +276,10 @@ function removeDuplicates(array) {
 
 function passIdFilterCriteria(context, id) {
   return isIdValid(id) || !context.excludeBadValues;
+}
+
+function passCtIdFilterCriteria(context, id) {
+  return isCtIdValid(id) || !context.excludeBadValues;
 }
 
 function passDoiFilterCriteria(context, doi) {

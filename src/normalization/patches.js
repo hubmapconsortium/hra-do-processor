@@ -260,6 +260,10 @@ export function isIdValid(id) {
   return /(UBERON|FMA|CL|PCL|LMHA|HGNC):\d+|ASCTB-TEMP:[a-zA-Z0-9\-]+/.test(id);
 }
 
+export function isCtIdValid(id) {
+  return /(CL|PCL|LMHA):\d+|ASCTB-TEMP:[a-zA-Z0-9\-]+/.test(id);
+}
+
 export function isDoiValid(doi) {
   const doiString = doi.replace(/\s+/g, '');
   return /^https:\/\/doi\.org\/10\.\d+\/.*/.test(doiString);
