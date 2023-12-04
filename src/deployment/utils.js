@@ -3,7 +3,7 @@ import { load } from '../utils/blazegraph.js';
 
 export function loadDoIntoTripleStore(context, journalPath) {
   const obj = context.selectedDigitalObject;
-  const graph = obj.iri;
+  const graph = obj.iri + (obj.version === 'draft' ? '/draft' : '');
   const data = resolve(obj.path, 'enriched/enriched.ttl');
   load(graph, data, journalPath);
 }
@@ -17,7 +17,7 @@ export function loadMetadataIntoTripleStore(context, journalPath) {
 
 export function loadRedundantIntoTripleStore(context, journalPath) {
   const obj = context.selectedDigitalObject;
-  const graph = `${obj.iri}/redundant`;
+  const graph = `${obj.iri}${obj.version === 'draft' ? '/draft' : ''}/redundant`;
   const data = resolve(obj.path, 'enriched/redundant.ttl');
   load(graph, data, journalPath);
 }
