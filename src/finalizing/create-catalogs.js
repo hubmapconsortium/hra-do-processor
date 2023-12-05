@@ -1,15 +1,15 @@
-import { listDeployed } from "../list.js";
 import { readFileSync, writeFileSync } from 'fs';
 import { Environment } from 'nunjucks';
 import { resolve } from 'path';
+import { listDeployed } from '../list.js';
 import { reifyCatalog } from '../utils/reify.js';
 
 export function createCatalogs(context) {
   const catalog = {};
   for (const dataset of listDeployed(context)) {
     const [doType, doName, doVersion] = dataset.split('/');
-    const types = catalog[doType] = catalog[doType] || {};
-    const versions = types[doName] = types[doName] || [];
+    const types = (catalog[doType] = catalog[doType] || {});
+    const versions = (types[doName] = types[doName] || []);
     versions.push(doVersion);
   }
 
@@ -29,7 +29,8 @@ export function createCatalogs(context) {
 
 function createListing(context, path, items, itemType) {
   const iri = `${context.lodIri}${path ? path + '/' : path}`;
-  writeIndexHtml(context, path, { iri, items, itemType });
+  const lodIri = context.lodIri;
+  writeIndexHtml(context, path, { iri, items, itemType, lodIri });
   reifyCatalog(context, iri, path);
 }
 

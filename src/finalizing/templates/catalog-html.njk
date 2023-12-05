@@ -4,48 +4,35 @@
                         dcat: http://www.w3.org/ns/dcat#
                         foaf: http://xmlns.com/foaf/0.1/">
   <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Catalog for {{ iri }}</title>
     <base href="{{ iri }}">
-    <script src="https://cdn.jsdelivr.net/gh/vanillawc/wc-markdown@1/index.js" type="module"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/styles.css">
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/img/favicon.png">
-    <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/img/apple-touch-icon-114x114.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <script src="https://apps.humanatlas.io/components/hra-app-shell.wc.js"></script>
   </head>
   <body>
-    <header class="main-header">
-      <div class="main-logo">
-        <a href="https://humanatlas.io" title="Link to HuBMAP HRA Portal"><img src="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/img/logo-hubmap.svg" alt="HuBMAP logo" class="logo"></a>
-      </div>
-    </header>
-    <div class="main" typeof="dcat:Catalog" resource="{{ iri }}">
-      <h1 property="dct:title">{{ iri }}</h1>
-
-      <ul>
-      {%- for item in items -%}
-      {% if itemType == 'Dataset' %}
-        <li property="dcat:dataset" typeof="dcat:Dataset" resource="{{ iri }}{{ item }}">
-          <a href="{{ item }}/" resource="{{ iri }}{{ item }}"><span property="dct:title">{{ item }}</span></a>
-        </li>
-      {% elif itemType == 'Catalog' %}
-        <li property="dcat:catalog" typeof="dcat:Catalog" resource="{{ iri }}{{ item }}">
-          <a href="{{ item }}/" resource="{{ iri }}{{ item }}"><span property="dct:title">{{ item }}</span></a>
-        </li>
-      {%- endif -%}
-      {%- endfor -%}
-      </ul>
-    </div>
-    <footer class="main-footer">
-      <p>
-        <small>©
-                    <script>
-            new Date().getFullYear() > 2010 && document.write(new Date().getFullYear());
-          </script> All Rights
-                    Reserved.</small>
-      </p>
-    </footer>
+    <hra-app-shell logo-text="Human Reference Atlas Knowledge Graph" logo-text-small="HRA KG"
+      logo-url="{{ lodIri }}" hide-menu>
+        <div class="main" typeof="dcat:Catalog" resource="{{ iri }}">
+          <h1 class="page-title" property="dct:title">{{ iri }}</h1>
+          <ul>
+          {%- for item in items -%}
+          {% if itemType == 'Dataset' %}
+            <li property="dcat:dataset" typeof="dcat:Dataset" resource="{{ iri }}{{ item }}">
+              <a href="{{ item }}/" resource="{{ iri }}{{ item }}"><span property="dct:title">{{ item }}</span></a>
+            </li>
+          {% elif itemType == 'Catalog' %}
+            <li property="dcat:catalog" typeof="dcat:Catalog" resource="{{ iri }}{{ item }}">
+              <a href="{{ item }}/" resource="{{ iri }}{{ item }}"><span property="dct:title">{{ item }}</span></a>
+            </li>
+          {%- endif -%}
+          {%- endfor -%}
+          </ul>
+        </div>
+    </hra-app-shell>
   </body>
 </html>

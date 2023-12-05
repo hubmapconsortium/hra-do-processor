@@ -1,35 +1,24 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>{{ title }}, {{ version }}</title>
     <base href="{{ iri }}/">
     <script type="application/ld+json">
     {{ getStructuredData() | json }}
     </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <script src="https://apps.humanatlas.io/components/hra-app-shell.wc.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/vanillawc/wc-markdown@1/index.js" type="module"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/styles.css">
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/img/favicon.png">
-    <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/img/apple-touch-icon-114x114.png">
   </head>
   <body>
-    <header class="main-header">
-      <div class="main-logo">
-        <a href="https://humanatlas.io" title="Link to HuBMAP HRA Portal"><img src="https://cdn.jsdelivr.net/gh/hubmapconsortium/ccf-releases/v1.3/docs/img/logo-hubmap.svg" alt="HuBMAP logo" class="logo"></a>
-      </div>
-    </header>
-    <wc-markdown src="README.md" class="main"></wc-markdown>
-    <footer class="main-footer">
-      <p>
-        <small>©
-                    <script>
-            new Date().getFullYear() > 2010 && document.write(new Date().getFullYear());
-          </script> All Rights
-                    Reserved.</small>
-      </p>
-    </footer>
+    <hra-app-shell logo-text="Human Reference Atlas Knowledge Graph" logo-text-small="HRA KG"
+      logo-url="{{ lodIri }}" hide-menu>
+        <wc-markdown src="README.md" class="main"></wc-markdown>
+    </hra-app-shell>
   </body>
 </html>
