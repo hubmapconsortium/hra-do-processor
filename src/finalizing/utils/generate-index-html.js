@@ -15,7 +15,9 @@ export function renderIndexHtml(templateFile, context, metadata) {
     return getStructuredData(context, metadata);
   });
   const template = readFileSync(templateFile).toString();
-  return env.renderString(template, metadata);
+  const doString = context.selectedDigitalObject.doString;
+  const iri = `${context.lodIri}${doString}`;
+  return env.renderString(template, { ...metadata, ...context.selectedDigitalObject, iri });
 }
 
 export function writeIndexHtml(context, metadata) {
@@ -32,10 +34,10 @@ function getStructuredData(context, metadata) {
   return {
     "@context": "https://schema.org/",
     "@type": "Dataset",
-    "@id": `https://purl.humanatlas.io/${type}/${name}/${version}`,
+    "@id": `${context.purlIri}${type}/${name}/${version}`,
     "name": title,
     "description": description,
-    "url": `https://lod.humanatlas.io/${type}/${name}/${version}`,
+    "url": `${context.lodIri}${type}/${name}/${version}`,
     "identifier": [doi, hubmapId],
     "license" : license.match(/(https?:\/\/[^ )]*)/)[0],
     "isAccessibleForFree" : true,
@@ -53,7 +55,7 @@ function getStructuredData(context, metadata) {
     "citation": citation,
     "includedInDataCatalog":{
        "@type": "DataCatalog",
-       "@id": `https://purl.humanatlas.io/${type}/${name}`,
+       "@id": `${context.purlIri}${type}/${name}`,
        "name": `Catalog of ${type}/${name}`
     },
     "version": version
