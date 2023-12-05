@@ -29,6 +29,6 @@ export function bumpDraft(context) {
   }
 
   sh.mkdir('-p', newVersionPath);
-  sh.mv(`${draftPath}/*`, newVersionPath);
+  sh.mv(`${draftPath}/raw/*`, newVersionPath);
   sh.rm('-rf', draftPath);
 }
