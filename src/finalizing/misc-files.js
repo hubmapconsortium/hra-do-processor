@@ -1,6 +1,6 @@
 import { resolve } from 'path';
 import { listDeployed } from '../list.js';
-import { readMetadata } from '../normalization/utils.js';
+import { readMetadata, readNormalizedMetadata } from '../normalization/utils.js';
 import { getDigitalObjectInformation } from '../utils/digital-object.js';
 import { writeDoiXml } from './utils/generate-doi-xml.js';
 import { writeIndexHtml } from './utils/generate-index-html.js';
@@ -9,7 +9,9 @@ import { writeReadmeMd } from './utils/generate-readme-md.js';
 export function miscDoFiles(context) {
   const metadata = readMetadata(context);
   writeDoiXml(context, metadata);
-  writeReadmeMd(context, metadata);
+
+  const normalizedMetadata = readNormalizedMetadata(context);
+  writeReadmeMd(context, normalizedMetadata);
   writeIndexHtml(context, metadata);
 }
 

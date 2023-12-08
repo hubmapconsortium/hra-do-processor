@@ -1,23 +1,78 @@
-<h1 class="page-title">{{ title }}, {{ version }}</h1>
+<h1 class="page-title">{{ title }}</h1>
 
-### Description
 {{ description }}
 
-| Label | Value |
+<hr />
+
+## Metadata
+
+| Property | Value |
 | :------------- |:-------------|
-| **Creator(s):** | {{ creators | authorList }} |
-| **Creator ORCID(s):** | {{ creators | orcidList }} |
-| **Project Lead:** | {{ project_leads | authorList }} |
-| **Project Lead ORCID:** | {{ project_leads | orcidList }} |
-| **Reviewer(s):** | {{ reviewers | authorList }}  |
-| **Reviewer ORCID(s):** | {{ reviewers | orcidList }} |
-| **Creation Date:** | {{ creation_date }} |
-| **License:** | {{ license }} |
+| **Version:** | {{ version }} |{% for creator in creators %}
+| **Creator:** | [{{ creator.name }}]({{ creator.id }}) |{% endfor %}
+| **Creation date:** | {{ creation_date }} |
 | **Publisher:** | {{ publisher }} |
-| **Funder:** | {{ funders[0].funder }} |
-| **Award Number:** | {{ funders[0].awardNumber }} |
-| **HuBMAP ID:** | {{ hubmapId }} |
-| **{{ cite_model_mappings[type] }}:** | {{ title }}, {{ version }} {{ datatable | downloadLinks }} |
-| **DOI:** | <{{ doi }}> |
-| **How to Cite This 2D Data:** | {{ citation }} |
-| **How to Cite 2D Data Overall:** | {{ citationOverall }} |
+| **License:** | {{ license }} |
+
+<hr />
+
+## Distributions
+
+{% for distribution in distributions %}
+<h3 id={{ distribution.mediaType | pageId }}>{{ distribution.mediaType | fileType }}</h3>
+
+[{{ distribution.downloadUrl }}]({{ distribution.downloadUrl }})
+{% endfor %}
+
+<hr />
+
+## Provenance
+
+<h3 id="raw-data">Source Data</h3>
+
+**Title:** 
+{{ was_derived_from.title }}
+
+**Description:**
+{{ was_derived_from.description }}
+
+**Creator(s):** 
+{% for person in was_derived_from.creators %}
+* [{{ person.fullName }}]({{ person.id }})
+{% endfor %}
+
+**Project Lead:**
+{% for person in was_derived_from.project_leads %}
+* [{{ person.fullName }}]({{ person.id }})
+{% endfor %}
+
+**Reviewer(s):** 
+{% for person in was_derived_from.reviewers %}
+* [{{ person.fullName }}]({{ person.id }})
+{% endfor %}
+
+**Creation Date:**
+{{ was_derived_from.creation_date }}
+
+**License:**
+{{ was_derived_from.license }}
+
+**Publisher:**
+{{ was_derived_from.publisher }}
+
+**Funder:**
+{{ was_derived_from.funders[0].funder }}
+
+**Award Number:**
+{{ was_derived_from.funders[0].awardNumber }}
+
+**HuBMAP ID:**
+{{ was_derived_from.hubmapId }}
+
+**DOI:**
+{{ was_derived_from.doi }}
+
+**Downloads:**
+{% for distribution in was_derived_from.distributions %}
+* [{{ distribution.title }}]({{ distribution.downloadUrl }})
+{% endfor %}

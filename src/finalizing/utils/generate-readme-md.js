@@ -10,18 +10,24 @@ const TYPE_MAPPINGS = {
 export function renderReadmeMd(templateFile, context, metadata) {
   const env = new Environment(undefined, { autoescape: false });
 
-  env.addFilter('authorList', (list) => {
-    return list?.map(a => a.fullName).join('; ') ?? '';
+  env.addFilter('fileType', (mediaType) => {
+    switch (mediaType) {
+      case 'text/turtle': return 'Turtle';
+      case 'application/ld+json': return 'JSON-LD';
+      case 'application/rdf+xml': return 'RDF/XML';
+      case 'application/n-triples': return 'N-Triples';
+      case 'application/n-quads': return 'N-Quads';
+    }
   });
-  env.addFilter('orcidList', (list) => {
-    return list?.map(a => `[${a.orcid}](https://orcid.org/${a.orcid})`).join('; ') ?? '';
+  env.addFilter('pageId', (mediaType) => {
+    switch (mediaType) {
+      case 'text/turtle': return 'turtle';
+      case 'application/ld+json': return 'jsonld';
+      case 'application/rdf+xml': return 'rdfxml';
+      case 'application/n-triples': return 'ntriples';
+      case 'application/n-quads': return 'nquads';
+    }
   });
-  env.addFilter('downloadLinks', (datatable) => {
-    return datatable?.map((str) => {
-      const ext = str !== undefined ? str.slice(str.replace('.zip', '').lastIndexOf('.') + 1).replace(')', '') : '';
-      return `[${ext.toUpperCase()}](assets/${str})`
-    }).join(' ');
-  }) ?? '';
   const template = readFileSync(templateFile).toString();
   return env.renderString(template, { ...TYPE_MAPPINGS, ...metadata, ...context.selectedDigitalObject });
 }

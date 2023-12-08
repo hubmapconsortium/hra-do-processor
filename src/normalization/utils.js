@@ -13,6 +13,13 @@ export function readMetadata(context) {
   };
 }
 
+export function readNormalizedMetadata(context) {
+  const { path } = context.selectedDigitalObject;
+  return {
+    ...load(readFileSync(resolve(path, 'normalized/normalized-metadata.yaml'))),
+  }; 
+}
+
 export function readLocalData(context, fileName, parse) {
   const { path } = context.selectedDigitalObject;
   return parse(readFileSync(resolve(path, `raw/${fileName}`)));
