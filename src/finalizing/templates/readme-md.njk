@@ -71,17 +71,22 @@
 **Publisher:**
 {{ was_derived_from.publisher }}
 
-**Funder:**
-{{ was_derived_from.funders[0].funder }}
+{% if 'funders' in was_derived_from %}
+**Funders:**
+{% for funder in was_derived_from.funders %}
+* {{ funder.funder }} (Award number: {{ funder.awardNumber or '-' }})
+{% endfor %}
+{% endif %}
 
-**Award Number:**
-{{ was_derived_from.funders[0].awardNumber }}
-
+{% if 'hubmapId' in was_derived_from %}
 **HuBMAP ID:**
 {{ was_derived_from.hubmapId }}
+{% endif %}
 
+{% if 'doi' in was_derived_from %}
 **DOI:**
 {{ was_derived_from.doi }}
+{% endif %}
 
 **Downloads:**
 {% for distribution in was_derived_from.distributions %}
