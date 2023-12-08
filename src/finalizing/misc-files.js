@@ -12,7 +12,7 @@ export function miscDoFiles(context) {
 
   const normalizedMetadata = readNormalizedMetadata(context);
   writeReadmeMd(context, normalizedMetadata);
-  writeIndexHtml(context, metadata);
+  writeIndexHtml(context, normalizedMetadata);
 }
 
 export function miscFiles(context) {

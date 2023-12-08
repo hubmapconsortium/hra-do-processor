@@ -30,7 +30,7 @@ export function writeIndexHtml(context, metadata) {
 }
 
 function getStructuredData(context, metadata) {
-  const { title, description, doi, hubmapId, license, citation, creators, funders } = metadata;
+  const { title, description, creators, creation_date, license, distributions, was_derived_from } = metadata;
   const { type, name, version } = context.selectedDigitalObject;
   return {
     '@context': 'https://schema.org/',
@@ -38,27 +38,58 @@ function getStructuredData(context, metadata) {
     '@id': `${context.purlIri}${type}/${name}/${version}`,
     name: title,
     description: description,
-    url: `${context.lodIri}${type}/${name}/${version}`,
-    identifier: [doi, hubmapId],
-    license: license.match(/(https?:\/\/[^ )]*)/)[0],
+    version: version,
+    dateCreated: creation_date,
+    license: license,
     isAccessibleForFree: true,
     creator: creators.map((creator) => ({
-      '@type': 'Person',
-      givenName: creator.firstName,
-      familyName: creator.lastName,
-      name: creator.fullName,
-      sameAs: `https://orcid.org/${creator.orcid}`,
+      '@type': 'SoftwareApplication',
+      name: creator.name,
+      version: creator.version,
+      applicationCategory: 'Data Processing',
+      operatingSystem: 'Windows, Linux, macOS',
+      target_product: creator.target_product,
+      sameAs: creator.id
     })),
-    funder: funders.map((funder) => ({
-      '@type': 'Organization',
-      name: funder.funder,
+    distribution: distributions.map((distribution) => ({
+      '@type': 'DataDownload',
+      name: distribution.title,
+      contentUrl: distribution.downloadUrl,
+      encodingFormat: distribution.mediaType,
+      sameAs: distribution.id
     })),
-    citation: citation,
-    includedInDataCatalog: {
-      '@type': 'DataCatalog',
-      '@id': `${context.purlIri}${type}/${name}`,
-      name: `Catalog of ${type}/${name}`,
-    },
-    version: version,
+    isBasedOn: {
+      '@type': 'Dataset',
+      name: was_derived_from.title,
+      description: was_derived_from.description,
+      identifier: [was_derived_from.doi, was_derived_from.hubmapId],
+      license: was_derived_from.license.match(/(https?:\/\/[^ )]*)/)[0],
+      isAccessibleForFree: true,
+      creator: was_derived_from.creators.map((creator) => ({
+        '@type': 'Person',
+        givenName: creator.firstName,
+        familyName: creator.lastName,
+        name: creator.fullName,
+        sameAs: creator.id,
+      })),
+      funder: was_derived_from.funders.map((funder) => ({
+        '@type': 'Organization',
+        name: funder.funder,
+      })),
+      citation: was_derived_from.citation,
+      includedInDataCatalog: {
+        '@type': 'DataCatalog',
+        '@id': `${context.purlIri}${type}/${name}`,
+        name: `Catalog of ${type}/${name}`,
+      },
+      version: was_derived_from.version,
+      distribution: was_derived_from.distributions.map((distribution) => ({
+        '@type': 'DataDownload',
+        name: distribution.title,
+        contentUrl: distribution.downloadUrl,
+        encodingFormat: distribution.mediaType,
+        sameAs: distribution.id
+      }))
+    }
   };
 }
