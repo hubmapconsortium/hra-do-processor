@@ -42,22 +42,8 @@ function getStructuredData(context, metadata) {
     dateCreated: creation_date,
     license: license,
     isAccessibleForFree: true,
-    creator: creators.map((creator) => ({
-      '@type': 'SoftwareApplication',
-      name: creator.name,
-      version: creator.version,
-      applicationCategory: 'Data Processing',
-      operatingSystem: 'Windows, Linux, macOS',
-      target_product: creator.target_product,
-      sameAs: creator.id
-    })),
-    distribution: distributions.map((distribution) => ({
-      '@type': 'DataDownload',
-      name: distribution.title,
-      contentUrl: distribution.downloadUrl,
-      encodingFormat: distribution.mediaType,
-      sameAs: distribution.id
-    })),
+    creator: creators.map((creator) => generateCreator(creator)),
+    distribution: distributions.map((distribution) => generateDataDownload(distribution)),
     isBasedOn: {
       '@type': 'Dataset',
       name: was_derived_from.title,
@@ -65,13 +51,7 @@ function getStructuredData(context, metadata) {
       identifier: [was_derived_from.doi, was_derived_from.hubmapId],
       license: was_derived_from.license.match(/(https?:\/\/[^ )]*)/)[0],
       isAccessibleForFree: true,
-      creator: was_derived_from.creators.map((creator) => ({
-        '@type': 'Person',
-        givenName: creator.firstName,
-        familyName: creator.lastName,
-        name: creator.fullName,
-        sameAs: creator.id,
-      })),
+      creator: was_derived_from.creators.map((creator) => generateCreator(creator)),
       funder: was_derived_from.funders.map((funder) => ({
         '@type': 'Organization',
         name: funder.funder,
@@ -83,13 +63,52 @@ function getStructuredData(context, metadata) {
         name: `Catalog of ${type}/${name}`,
       },
       version: was_derived_from.version,
-      distribution: was_derived_from.distributions.map((distribution) => ({
-        '@type': 'DataDownload',
-        name: distribution.title,
-        contentUrl: distribution.downloadUrl,
-        encodingFormat: distribution.mediaType,
-        sameAs: distribution.id
-      }))
+      distribution: was_derived_from.distributions.map((distribution) => generateDataDownload(distribution))
     }
+  };
+}
+
+function generateCreator(creator) {
+  switch (creator.class_type) {
+    case 'SoftwareApplication':
+      return {
+        '@type': 'SoftwareApplication',
+        name: creator.name,
+        version: creator.version,
+        applicationCategory: 'Data Processing',
+        operatingSystem: 'Windows, Linux, macOS',
+        target_product: creator?.target_product,
+        sameAs: creator.id
+      };
+    case 'Person':
+      return {
+        '@type': 'Person',
+        givenName: creator.firstName,
+        familyName: creator.lastName,
+        name: creator.fullName,
+        sameAs: creator.id,
+      };
+    case 'Organization':
+      return {
+        '@type': 'Organization',
+        name: creator.name,
+        sameAs: creator.id,
+      };
+    default:
+      return {
+        '@type': 'Thing',
+        name: creator.name,
+        sameAs: creator.id,
+      };
+  }
+}
+
+function generateDataDownload(distribution) {
+  return {
+    '@type': 'DataDownload',
+    name: distribution.title,
+    contentUrl: distribution.downloadUrl,
+    encodingFormat: distribution.mediaType,
+    sameAs: distribution.id
   };
 }
