@@ -14,6 +14,17 @@
 | **Publisher:** | {{ publisher }} |
 | **License:** | {{ license }} |
 
+{% if had_member %}
+<hr />
+
+## Collection Members
+
+{% for member in had_member %}
+* [{{ member }}]({{ member }})
+{% endfor %}
+
+{% endif %}
+
 <hr />
 
 ## Distributions
