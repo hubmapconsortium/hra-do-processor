@@ -8,8 +8,8 @@ kidney-outer-medullary-collecting-duct,UBERON:0004204,outer medullary collecting
 kidney-renal-corpuscle,UBERON:0001229,renal corpuscle,#FTURenalCorpuscle,Kidney,UBERON:0002113
 kidney-thick-ascending-loop-of-henle,UBERON:0001291,thick ascending limb of loop of Henle,#FTUThickAscendingLimb
 large-intestine-crypt-lieberkuhn,UBERON:0001984,crypt of Lieberkuhn of large intestine,#FTUCryptOfLieberkuhn,Large Intestine,UBERON:0000059
-liver-liver-lobule,UBERON:0004647,liver lobule,#FTULiverLobule_inset1,Liver,UBERON:0002107
-liver-liver-lobule,UBERON:0004647,liver lobule,#FTULiverLobule_inset2,Liver,UBERON:0002107
+liver-liver-lobule,UBERON:0004647,liver lobule,#FTULiverLobule_Inset1,Liver,UBERON:0002107
+liver-liver-lobule,UBERON:0004647,liver lobule,#FTULiverLobule_Inset2,Liver,UBERON:0002107
 lung-bronchial-submucosal-gland,UBERON_8410043,bronchus submucosal gland,#FTUBronchialSubmucosalGland
 lung-pulmonary-alveolus,UBERON:0002299,alveolus of lung,#FTUAlveoli,Lung,UBERON:0002048
 pancreas-intercalated-duct,UBERON:0014726,intercalated duct of pancreas,#FTUIntercalatedDuct
@@ -18,6 +18,7 @@ pancreas-pancreatic-acinus,UBERON:0001263,pancreatic acinus,#FTUAcinus
 prostate-prostate-glandular-acinus,UBERON:0004179,prostate glandular acinus,#FTUProstateGlandularAcinus,Prostate Gland,UBERON:0002367
 skin-dermal-papilla,UBERON:0001992,papillary layer of dermis,#FTUDermalPapilla
 skin-epidermal-ridge,UBERON:0013487,epidermal ridge of digit,#FTUEpidermalRidge
+small-intestine-villus,UBERON:0001213,intestinal villus,#FTUVillus
 spleen-red-pulp,UBERON:0001250,red pulp of spleen,#FTURedPulp_Inset1
 spleen-red-pulp,UBERON:0001250,red pulp of spleen,#FTURedPulp_Inset2
 spleen-white-pulp,UBERON:0001959,white pulp of spleen,#FTUWhitePulp_Inset1

@@ -66,7 +66,7 @@ export function migrateCcfReleases(context) {
   const srcDir = resolve(context.processorHome, 'src/migration/ccf-releases');
 
   const allMd = sh
-    .ls(resolve(inputDir, 'v1.*/markdown/*/*.md'))
+    .ls(resolve(inputDir, 'v2.*/markdown/*/*.md'))
     .map((s) => s.split('/').slice(-5))
     .map((s) => [s[1], s[3], s[4].replace('.md', '')]);
 

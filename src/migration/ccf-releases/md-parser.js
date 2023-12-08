@@ -72,9 +72,9 @@ export class HraMarkdownParser {
     const funders = this.getMultiValue(funderKey);
     const awards = this.getMultiValue(awardKey);
 
-    return funders.map((funder, index) => ({
-      funder,
-      awardNumber: awards[index],
+    return awards.map((awardNumber, index) => ({
+      funder: funders[index] || (funders?.slice(-1)[0] ?? undefined),
+      awardNumber,
     }));
   }
 

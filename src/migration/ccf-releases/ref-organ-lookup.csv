@@ -1,4 +1,5 @@
 glbFile,oldId
+3d-vh-m-allen-brain,#VHMAllenBrain
 Allen_M_Brain,#VHMAllenBrain
 SBU_M_Intestine_Large,#VHMColon
 SBU_Intestine_Large,#VHMColon
@@ -20,6 +21,7 @@ VH_M_Lung,#VHMLung
 NIH_M_Lymph_Node_Left,#VHMLeftLymphNode
 NIH_M_Lymph_Node_Right,#VHMRightLymphNode
 NIH_M_Lymph_Node,#VHMLymphNode
+3d-vh-m-pancreas,#VHMPancreas
 VH_M_Pancreas,#VHMPancreas
 VH_M_Pelvis,#VHMPelvis
 VH_M_Prostate,#VHMProstate
@@ -37,6 +39,7 @@ VH_M_Spinal_Cord,#VHMSpinalCord
 3d-vh-m-palatine-tonsil-r,#VHMRightPalatineTonsil
 3d-vh-m-trachea,#VHMTrachea
 Allen_F_Brain,#VHFAllenBrain
+3d-vh-f-allen-brain,#VHFAllenBrain
 NIH_F_Lymph_Node_Left,#VHFLeftLymphNode
 NIH_F_Lymph_Node_Right,#VHFRightLymphNode
 NIH_F_Lymph_Node,#VHFLymphNode
@@ -59,6 +62,7 @@ VH_F_Liver,#VHFLiver
 VH_F_Lung,#VHFLung
 VH_F_Ovary_L,#VHFLeftOvary
 VH_F_Ovary_R,#VHFRightOvary
+3d-vh-f-pancreas,#VHFPancreas
 VH_F_Pancreas,#VHFPancreas
 VH_F_Pelvis,#VHFPelvis
 3d-vh-f-skin,#VHFSkin

@@ -10,23 +10,23 @@
     <creatorName>{{ creator.fullName | safe }}</creatorName>
     <givenName>{{ creator.firstName | safe }}</givenName>
     <familyName>{{ creator.lastName | safe }}</familyName>
-    <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org/{{ creator.orcid }}">{{ creator.orcid }}<nameIdentifier>
+    <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org/{{ creator.orcid }}">{{ creator.orcid }}</nameIdentifier>
   </creator>
 {%- endfor %}
 </creators>
 <publisher>{{ publisher }}</publisher>
 <publicationYear>{{ creation_date | year }}</publicationYear>
-<resourceType resourceTypeGeneral="{{ resource_mappings[type] }}">{{ resource_title_mappings[type] }}</resourceType>
+<resourceType resourceTypeGeneral="{{ resource_mappings[resource_type] }}">{{ resource_title_mappings[resource_type] }}</resourceType>
 <subjects>
   <subject>{{ title }}, {{ version }}</subject>
-<subjects>
+</subjects>
 <contributors>
 {%- for creator in project_leads %}
   <contributor contributorType="ProjectLeader">
       <contributorName>{{ creator.fullName | safe }}</contributorName>
       <givenName>{{ creator.firstName | safe }}</givenName>
       <familyName>{{ creator.lastName | safe }}</familyName>
-      <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org/{{ creator.orcid }}">{{ creator.orcid }}<nameIdentifier>
+      <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org/{{ creator.orcid }}">{{ creator.orcid }}</nameIdentifier>
   </contributor>
 {%- endfor -%}
 {%- for creator in reviewers %}
@@ -34,7 +34,7 @@
     <contributorName>{{ creator.fullName | safe }}</contributorName>
     <givenName>{{ creator.firstName | safe }}</givenName>
     <familyName>{{ creator.lastName | safe }}</familyName>
-    <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org/{{ creator.orcid }}">{{ creator.orcid }}<nameIdentifier>
+    <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org/{{ creator.orcid }}">{{ creator.orcid }}</nameIdentifier>
   </contributor>
 {%- endfor %}
 {%- for creator in externalReviewers %}
@@ -42,7 +42,7 @@
     <contributorName>{{ creator.fullName | safe }}</contributorName>
     <givenName>{{ creator.firstName | safe }}</givenName>
     <familyName>{{ creator.lastName | safe }}</familyName>
-    <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org/{{ creator.orcid }}">{{ creator.orcid }}<nameIdentifier>
+    <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org/{{ creator.orcid }}">{{ creator.orcid }}</nameIdentifier>
   </contributor>
 {%- endfor %}
 </contributors>
@@ -50,14 +50,14 @@
   <date dateType="Available">{{ creation_date }}</date>
 </dates>
 <descriptions>
-  <description>{{ description }}</description>
-</decsriptions>
+  <description descriptionType="Abstract">{{ description }}</description>
+</descriptions>
 <language>EN</language>
-<alternateIdentfiers>
-  <alternateIdentfier alternateIdentiferType="HuBMAP ID">{{ hubmapId }}</alternateIdentfier>
-  <alternateIdentfier alternateIdentfierType="How to Cite This {{ cite_model_mappings[type] }}">{{ citation }}</alternateIdentfier>
-  <alternateIdentfier alternateIdentfierType="How to Cite {{ cite_overall_model_mappings[type] }} Overall">{{ citationOverall }}</alternateIdentfier>
-</alternateIdentfiers>
+<alternateIdentifiers>
+  <alternateIdentifier alternateIdentifierType="HuBMAP ID">{{ hubmapId }}</alternateIdentifier>
+  <alternateIdentifier alternateIdentifierType="How to Cite This {{ cite_model_mappings[type] }}">{{ citation }}</alternateIdentifier>
+  <alternateIdentifier alternateIdentifierType="How to Cite {{ cite_overall_model_mappings[type] }} Overall">{{ citationOverall }}</alternateIdentifier>
+</alternateIdentifiers>
 <formats>
 	<format>.{{ datatable | fileExtension }}</format>
 </formats>
