@@ -16,7 +16,7 @@ export function extract(input, upperTerm, lowerTerms, output, outputFormat="owl"
               --method MIREOT \
               --upper-term ${upperTerm} \
               --lower-terms ${lowerTerms} \
-              --intermediates minimal \
+              --intermediates all \
            convert --format ${outputFormat} -o ${output}`,
     'Class hierarchy extraction failed. See errors above.'
   );
