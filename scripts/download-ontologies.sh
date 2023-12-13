@@ -41,7 +41,7 @@ robot convert -i "$MIRROR_DIR/cl.owl" \
      -o "$MIRROR_DIR/cl.owl"
 
 echo "Downloading the latest PCL ontology..."
-curl -L "$OBO_BASE_URL/pcl/pcl-base.owl" \
+curl -L "$OBO_BASE_URL/pcl/pcl.owl" \
      --create-dirs -o "$MIRROR_DIR/pcl.owl" \
      --retry 4 \
      --max-time 200 && \
