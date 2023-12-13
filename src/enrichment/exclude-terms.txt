@@ -1,3 +1,4 @@
+http://purl.obolibrary.org/obo/BFO_0000001
 http://purl.obolibrary.org/obo/BFO_0000002
 http://purl.obolibrary.org/obo/BFO_0000003
 http://purl.obolibrary.org/obo/BFO_0000004
@@ -15,7 +16,6 @@ http://purl.obolibrary.org/obo/BFO_0000040
 http://purl.obolibrary.org/obo/BFO_0000141
 http://purl.obolibrary.org/obo/CHEBI_50906
 http://purl.obolibrary.org/obo/CL_0000101
-http://purl.obolibrary.org/obo/CL_0000540
 http://purl.obolibrary.org/obo/ENVO_01000254
 http://purl.obolibrary.org/obo/ENVO_01000739
 http://purl.obolibrary.org/obo/GO_0003674
@@ -36,8 +36,6 @@ http://purl.obolibrary.org/obo/RO_0002532
 http://purl.obolibrary.org/obo/RO_0002533
 http://purl.obolibrary.org/obo/RO_0002534
 http://purl.obolibrary.org/obo/RO_0002577
-http://purl.obolibrary.org/obo/UBERON_0000122
-http://purl.obolibrary.org/obo/UBERON_0000466
 http://purl.obolibrary.org/obo/UPHENO_0001001
 http://purl.org/ccf/FMA64019
 http://www.w3.org/2002/07/owl#Nothing
