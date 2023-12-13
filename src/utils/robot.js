@@ -76,7 +76,7 @@ export function remove(input, output, subsetSelector) {
 
 export function exclude(input, exclude_file, output) {
   throwOnError(
-    `robot remove --input ${input} --term-file ${exclude_file} --preserve-structure false -o ${output}`,
+    `robot remove --input ${input} --term-file ${exclude_file} --select "self" --preserve-structure false -o ${output}`,
     'Data exclusion failed.'
   );
 }
