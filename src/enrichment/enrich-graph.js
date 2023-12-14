@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
-import { error, info } from '../utils/logging.js';
+import { error, info, more } from '../utils/logging.js';
 import { RDF_EXTENSIONS, convert } from '../utils/reify.js';
 import { merge } from '../utils/robot.js';
 import {
@@ -31,12 +31,14 @@ export function enrichGraphData(context) {
     info(`Reading data: ${normalizedPath}`);
     const digitalObjects = load(readFileSync(normalizedPath))['data'];
 
-    info('Validating digital objects in the graph...');
+    info('Validating graph objects...');
     validateGraph(context, digitalObjects);
 
+    info('Converting graph objects to Turtle format...');
     const toMerge = [baseGraphPath];
     for (const inputRdfFile of digitalObjects) {
       const inputRdf = resolve(obj.path, 'raw', inputRdfFile);
+      more(` -> ${inputRdf}`);
       const extension = inputRdfFile.split('.').slice(-1)[0];
       if (extension === 'ttl') {
         toMerge.push(inputRdf);
@@ -47,6 +49,7 @@ export function enrichGraphData(context) {
       }
     }
 
+    info('Merging graph objects...')
     const enrichedMergePath = resolve(obj.path, 'enriched/enriched-merge.owl');
     merge(toMerge, enrichedMergePath);
     logOutput(enrichedMergePath);
