@@ -115,14 +115,13 @@ export function normalizeMetadataOfCollection(context, metadata, doList) {
 
 function generateGraphMetadata(context, metadata) {
   const { iri, type, name, version } = context.selectedDigitalObject;
-  const graphName = `'${type}/${name}' (${version})`;
   const processorHome = context.processorHome;
   return {
     id: iri,
     type,
     name,
-    label: `Graph data ${graphName}`,
-    title: `Graph data ${graphName}`,
+    label: getGraphTitle(name, version),
+    title: getGraphTitle(name, version),
     description: `The graph representation of the ${metadata.title} dataset.`,
     version,
     creators: [{
@@ -145,52 +144,59 @@ function generateGraphMetadata(context, metadata) {
   };
 }
 
+function getGraphTitle(name, version) {
+  return `${name} (${version}) graph data`;
+}
+
 function getGraphDataDistributions(context) {
   const { iri, type, name, version } = context.selectedDigitalObject;
-  const graphName = `'${type}/${name}' (${version})`;
   const accessUrl = getMetadataUrl(context);
   return [
     {
       id: `${accessUrl}#turtle`,
-      label: `Graph data distribution ${graphName} in Turtle format`,
-      title: `Graph data distribution ${graphName} in Turtle format`,
+      label: getGraphDataDistributionTitle(name, version, "Turtle"),
+      title: getGraphDataDistributionTitle(name, version, "Turtle"),
       downloadUrl: getDataDownloadUrl(context, 'ttl'),
       accessUrl: `${accessUrl}#turtle`,
       mediaType: 'text/turtle',
     },
     {
       id: `${accessUrl}#jsonld`,
-      label: `Graph data distribution ${graphName} in JSON-LD format`,
-      title: `Graph data distribution ${graphName} in JSON-LD format`,
+      label: getGraphDataDistributionTitle(name, version, "JSON-LD"),
+      title: getGraphDataDistributionTitle(name, version, "JSON-LD"),
       downloadUrl: getDataDownloadUrl(context, 'json'),
       accessUrl: `${accessUrl}#jsonld`,
       mediaType: 'application/ld+json',
     },
     {
       id: `${accessUrl}#rdfxml`,
-      label: `Graph data distribution ${graphName} in RDF/XML format`,
-      title: `Graph data distribution ${graphName} in RDF/XML format`,
+      label: getGraphDataDistributionTitle(name, version, "RDF/XML"),
+      title: getGraphDataDistributionTitle(name, version, "RDF/XML"),
       downloadUrl: getDataDownloadUrl(context, 'xml'),
       accessUrl: `${accessUrl}#rdfxml`,
       mediaType: 'application/rdf+xml',
     },
     {
       id: `${accessUrl}#ntriples`,
-      label: `Graph data distribution ${graphName} in N-Triples format`,      
-      title: `Graph data distribution ${graphName} in N-Triples format`,
+      label: getGraphDataDistributionTitle(name, version, "N-Triples"),      
+      title: getGraphDataDistributionTitle(name, version, "N-Triples"),
       downloadUrl: getDataDownloadUrl(context, 'nt'),
       accessUrl: `${accessUrl}#ntriples`,
       mediaType: 'application/n-triples',
     },
     {
       id: `${accessUrl}#nquads`,
-      label: `Graph data distribution ${graphName} in N-Quads format`,
-      title: `Graph data distribution ${graphName} in N-Quads format`,
+      label: getGraphDataDistributionTitle(name, version, "N-Quads"),
+      title: getGraphDataDistributionTitle(name, version, "N-Quads"),
       downloadUrl: getDataDownloadUrl(context, 'nq'),
       accessUrl: `${accessUrl}#nquads`,
       mediaType: 'application/n-quads',
     },
   ];
+}
+
+function getGraphDataDistributionTitle(name, version, format) {
+  return `Graph data distribution ${name} (${version}) in ${format} format`
 }
 
 function getRawDataDistributions(context, datatable) {
