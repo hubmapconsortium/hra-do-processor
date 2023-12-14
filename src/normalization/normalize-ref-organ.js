@@ -89,7 +89,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
       const { organOwnerSex, organSide } = getOrganMetadata(obj.name);
       const nodeLabel = getNodeLabel(nodeId);
       let organLabel = `${organOwnerSex} ${nodeLabel}`.trim();
-      if (organSide !== '') {
+      if (organSide) {
         if (organLabel.includes(organSide)) {
           organLabel = `${organOwnerSex} ${nodeLabel}`.trim();
         } else {
@@ -199,7 +199,11 @@ function getOrganMetadata(name) {
 
   const exclude = new Set(['left', 'right', 'male', 'female']);
   const organName = name.split('-').filter(n => !exclude.has(n)).join(' ');
-  return { organOwnerSex: sex, organSide: side, organName };
+  return { 
+    organOwnerSex: sex && sex.toLowerCase(),
+    organSide: side && side.toLowerCase(),
+    organName: organName.toLowerCase() 
+  };
 }
 
 function getOrganName(nodeId, crosswalk) {

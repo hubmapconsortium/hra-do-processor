@@ -392,18 +392,18 @@ slots:
 enums:
   OrganSideEnum:
     permissible_values:
-      Left:
+      left:
         description: Being located on the left side of the body.
         meaning: obo:HP_0012835
-      Right:
+      right:
         description: Being located on the right side of the body.
         meaning: obo:HP_0012834
   DonorSexEnum:
     permissible_values:
-      Female:
+      female:
         description: A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes.
         meaning: obo:PATO_0000384
-      Male:
+      male:
         description: A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes.
         meaning: obo:PATO_0000384
   DimensionUnitEnum:
