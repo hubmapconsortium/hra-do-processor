@@ -37,6 +37,14 @@ http://purl.obolibrary.org/obo/RO_0002533
 http://purl.obolibrary.org/obo/RO_0002534
 http://purl.obolibrary.org/obo/RO_0002577
 http://purl.obolibrary.org/obo/UPHENO_0001001
+http://identifiers.org/hgnc/1662P28906
 http://purl.org/ccf/FMA64019
+http://purl.org/ccf/FMA46564
+http://purl.org/sig/ont/fma/fma44984
+http://purl.org/sig/ont/fma/fma81216
+http://purl.org/sig/ont/fma/fma81226
+http://purl.org/sig/ont/fma/fma85802
+http://purl.org/ccf/FMA46564
+http://purl.org/ccf/UBERON_8410043
 http://www.w3.org/2002/07/owl#Nothing
 http://xmlns.com/foaf/0.1/image
