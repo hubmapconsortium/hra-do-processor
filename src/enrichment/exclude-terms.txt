@@ -31,6 +31,7 @@ http://purl.obolibrary.org/obo/PATO_0000001
 http://purl.obolibrary.org/obo/PATO_0000402
 http://purl.obolibrary.org/obo/PATO_0001199
 http://purl.obolibrary.org/obo/PATO_0002124
+http://purl.obolibrary.org/obo/PR_000050567
 http://purl.obolibrary.org/obo/RO_0002310
 http://purl.obolibrary.org/obo/RO_0002532
 http://purl.obolibrary.org/obo/RO_0002533
