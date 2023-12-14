@@ -50,8 +50,8 @@ export function enrichGraphData(context) {
     }
 
     info('Merging graph objects...')
-    const enrichedMergePath = resolve(obj.path, 'enriched/enriched-merge.owl');
-    merge(toMerge, enrichedMergePath);
+    const enrichedMergePath = resolve(obj.path, 'enriched/enriched-merge.ttl');
+    merge(toMerge, enrichedMergePath, 'ttl');
     logOutput(enrichedMergePath);
 
     const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
