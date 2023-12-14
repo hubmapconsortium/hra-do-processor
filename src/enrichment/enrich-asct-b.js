@@ -131,10 +131,6 @@ export function enrichAsctbData(context) {
       inputPaths.push(hgncExtractPath);
     }
 
-    info('Merging RO terms.');
-    const roPath = resolve(processorHome, `mirrors/ro.owl`);
-    inputPaths.push(roPath);
-
     info('Merging files:');
     for (const inputPath of inputPaths) {
       more(` -> ${inputPath}`);
