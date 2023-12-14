@@ -2,8 +2,8 @@ import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
 import { error, info, more } from '../utils/logging.js';
-import { RDF_EXTENSIONS, convert } from '../utils/reify.js';
-import { merge } from '../utils/robot.js';
+import { RDF_EXTENSIONS, convert as rdfPipeConvert } from '../utils/reify.js';
+import { merge, convert as robotConvert } from '../utils/robot.js';
 import {
   cleanTemporaryFiles,
   convertNormalizedDataToOwl,
@@ -42,9 +42,13 @@ export function enrichGraphData(context) {
       const extension = inputRdfFile.split('.').slice(-1)[0];
       if (extension === 'ttl') {
         toMerge.push(inputRdf);
+      } else if (extension === 'owl') {
+        const outputTtl = resolve(obj.path, 'enriched', inputRdfFile + '.ttl');
+        robotConvert(inputRdf, outputTtl, 'ttl');
+        toMerge.push(outputTtl);        
       } else if (RDF_EXTENSIONS.has(extension)) {
         const outputTtl = resolve(obj.path, 'enriched', inputRdfFile + '.ttl');
-        convert(inputRdf, outputTtl, 'ttl');
+        rdfPipeConvert(inputRdf, outputTtl, 'ttl');
         toMerge.push(outputTtl);
       }
     }
@@ -56,7 +60,7 @@ export function enrichGraphData(context) {
 
     const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating graph: ${enrichedPath}`);
-    convert(enrichedMergePath, enrichedPath, 'ttl');
+    rdfPipeConvert(enrichedMergePath, enrichedPath, 'ttl');
 
     info('Optimizing graph...');
     const redundantPath = resolve(obj.path, 'enriched/redundant.ttl');
