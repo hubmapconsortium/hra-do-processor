@@ -57,7 +57,7 @@ curl -L "https://data.bioontology.org/ontologies/LUNGMAP_H_CELL/submissions/6/do
 mv "$MIRROR_DIR/LMHA_20190728_Cell.owl" "$MIRROR_DIR/lmha.owl" && \
 robot convert -i "$MIRROR_DIR/lmha.owl" \
      --format owl \
-     -o "$MIRROR_DIR/lmha.owl" && \
+     -o "$MIRROR_DIR/lmha.owl"
 
 echo "Downloading the latest HGNC ontology..."
 curl -L "https://github.com/musen-lab/hgnc2owl/raw/main/hgnc.owl.gz" \
