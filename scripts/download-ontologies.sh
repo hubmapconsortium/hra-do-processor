@@ -50,16 +50,14 @@ robot convert -i "$MIRROR_DIR/pcl.owl" \
      -o "$MIRROR_DIR/pcl.owl"
 
 echo "Downloading the latest LHMA ontology..."
-curl -L "https://www.lungmap.net/assets/Uploads/ontology/558488ae7f/LMHA_20190512_Cell.zip" \
-     --create-dirs -o "$MIRROR_DIR/lmha.zip" \
+curl -L "https://data.bioontology.org/ontologies/LUNGMAP_H_CELL/submissions/6/download?apikey=8b5b7825-538d-40e0-9e9e-5ab9274a9aeb" \
+     --create-dirs -o "$MIRROR_DIR/LMHA_20190728_Cell.owl" \
      --retry 4 \
      --max-time 200 && \
-unzip -o "$MIRROR_DIR/lmha.zip" -d $MIRROR_DIR && \
-mv "$MIRROR_DIR/LMHA_20190512_Cell.owl" "$MIRROR_DIR/lmha.owl" && \
+mv "$MIRROR_DIR/LMHA_20190728_Cell.owl" "$MIRROR_DIR/lmha.owl" && \
 robot convert -i "$MIRROR_DIR/lmha.owl" \
      --format owl \
      -o "$MIRROR_DIR/lmha.owl" && \
-rm -rf "$MIRROR_DIR/lmha.zip"
 
 echo "Downloading the latest HGNC ontology..."
 curl -L "https://github.com/musen-lab/hgnc2owl/raw/main/hgnc.owl.gz" \
