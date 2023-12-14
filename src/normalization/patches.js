@@ -14,6 +14,13 @@ export function getPatchesForAnatomicalStructure(context) {
       ccf_is_provisional: false,
       ccf_designated_parent: 'ccf:AnatomicalStructure'
     }, {
+      id: 'FMA:29733',
+      class_type: 'AnatomicalStructure',
+      ccf_pref_label: 'General anatomical term',
+      ccf_asctb_type: 'AS',
+      ccf_is_provisional: false,
+      ccf_designated_parent: 'ccf:AnatomicalStructure'
+    }, {
       id: 'UBERON:0013702',
       class_type: 'AnatomicalStructure',
       ccf_pref_label: 'body proper',
