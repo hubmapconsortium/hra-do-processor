@@ -12,7 +12,6 @@ http://purl.obolibrary.org/obo/BFO_0000023
 http://purl.obolibrary.org/obo/BFO_0000031
 http://purl.obolibrary.org/obo/BFO_0000034
 http://purl.obolibrary.org/obo/BFO_0000040
-http://purl.obolibrary.org/obo/BFO_0000040
 http://purl.obolibrary.org/obo/BFO_0000141
 http://purl.obolibrary.org/obo/CHEBI_50906
 http://purl.obolibrary.org/obo/CL_0000101
