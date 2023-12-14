@@ -232,7 +232,14 @@ export function getPatchesForCellType() {
   const patches = [{
     id: 'CL:0000000',
     class_type: 'CellType',
-    ccf_pref_label: 'cell type',
+    ccf_pref_label: 'CL cell type',
+    ccf_asctb_type: 'CT',
+    ccf_is_provisional: false,
+    ccf_designated_parent: 'ccf:CellType'
+  }, {
+    id: 'LMHA:00135',
+    class_type: 'CellType',
+    ccf_pref_label: 'LMHA cell type',
     ccf_asctb_type: 'CT',
     ccf_is_provisional: false,
     ccf_designated_parent: 'ccf:CellType'
