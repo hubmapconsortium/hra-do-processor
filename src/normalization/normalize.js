@@ -9,6 +9,7 @@ import { normalizeCollectionData, normalizeCollectionMetadata } from './normaliz
 import { normalizeGraphData, normalizeGraphMetadata } from './normalize-graph.js';
 import { normalizeRefOrganData, normalizeRefOrganMetadata } from './normalize-ref-organ.js';
 import { normalizeLandmarkData, normalizeLandmarkMetadata } from './normalize-landmark.js';
+import { normalizeOmapData, normalizeOmapMetadata } from './normalize-omap.js';
 import { cleanDirectory } from './utils.js';
 
 export async function normalize(context) {
@@ -36,6 +37,10 @@ export async function normalize(context) {
     case '2d-ftu':
       normalize2dFtuMetadata(context);
       await normalize2dFtuData(context);
+      break;
+    case 'omap':
+      normalizeOmapMetadata(context);
+      await normalizeOmapData(context);
       break;
     case 'collection':
       normalizeCollectionMetadata(context);

@@ -265,7 +265,7 @@ export function normalizeDoi(doi) {
   if (/^10\.\d+\/.*/.test(normDoi)) {
     normDoi = normDoi.replace(/^(10\.\d+\/.*)/, 'https://doi.org/$1');
   } else {
-    normDoi = normDoi.replace(/^(DOI|doi):|^(https?:\/\/)?doi\.org\//, 'https://doi.org/');
+    normDoi = normDoi.replace(/^(DOI|doi):\s*|^(https?:\/\/)?doi\.org\//, 'https://doi.org/');
   }
   return normDoi;
 }
