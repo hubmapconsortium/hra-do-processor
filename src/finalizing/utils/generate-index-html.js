@@ -42,7 +42,7 @@ function getStructuredData(context, metadata) {
     dateCreated: creation_date,
     license: license,
     isAccessibleForFree: true,
-    creator: creators.map((creator) => generateCreator(creator)),
+    creator: creators?.map((creator) => generateCreator(creator)),
     distribution: distributions.map((distribution) => generateDataDownload(distribution)),
     isBasedOn: {
       '@type': 'Dataset',
@@ -51,8 +51,8 @@ function getStructuredData(context, metadata) {
       identifier: [was_derived_from.doi, was_derived_from.hubmapId],
       license: was_derived_from.license.match(/(https?:\/\/[^ )]*)/)[0],
       isAccessibleForFree: true,
-      creator: was_derived_from.creators.map((creator) => generateCreator(creator)),
-      funder: was_derived_from.funders.map((funder) => ({
+      creator: was_derived_from.creators?.map((creator) => generateCreator(creator)),
+      funder: was_derived_from.funders?.map((funder) => ({
         '@type': 'Organization',
         name: funder.funder,
       })),
