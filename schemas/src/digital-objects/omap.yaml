@@ -1,0 +1,324 @@
+id: https://purl.humanatlas.io/specs/omap
+name: omap
+prefixes:
+  ccf: http://purl.org/ccf/
+  owl: http://www.w3.org/2002/07/owl#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  dct: http://purl.org/dc/terms/
+  linkml: https://w3id.org/linkml/
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  CL: http://purl.obolibrary.org/obo/CL_
+  PCL: http://purl.obolibrary.org/obo/PCL_
+  FMA: http://purl.org/sig/ont/fma/fma
+  HGNC: http://identifiers.org/hgnc/
+
+default_prefix: ccf
+default_range: string
+
+imports:
+  - linkml:types
+  - ../shared/metadata-base
+  - ../shared/instance-base
+
+settings:
+  uberon: "UBERON"
+  fma: "FMA"
+
+classes:
+  Antibody:
+    slots:
+      - antibody_id
+      - parent_class
+      - host
+      - isotype
+      - clonality
+      - clone_id
+      - conjugate
+      - fluorescent
+      - recombinant
+      - producer
+      - catalog_number
+      - detects
+      - rationale
+    annotations:
+      owl: Class
+      owl.template: |-
+        {% for protein in detects %}
+        SubClassOf(
+          Annotation(ccf:rationale "{{rationale}}")
+          {{antibody_id}} 
+          ObjectSomeValuesFrom(ccf:detects {{protein}})
+        )
+        {% endfor %}
+    slot_usage:
+      detects:
+        structured_pattern:
+          syntax: "(HGNC:\\d+)(,\\s*HGNC:\\d+)*"
+          interpolated: true
+          partial_match: false
+
+  ExperimentUsedAntibody:
+    class_uri: ccf:ExperimentUsedAntibody
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - concentration
+      - dilution
+      - based_on
+
+  RegisteredAntibody:
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - lot_number
+
+  MultiplexedAntibodyBasedImagingExperiment:
+    class_uri: ccf:MultiplexedAntibodyBasedImagingExperiment
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - method
+      - tissue_preservation
+      - protocol_doi
+      - author_orcid
+      - has_cycle
+      - sample_organ
+    slot_usage:
+      protocol_doi:
+        structured_pattern:
+          syntax: "https:\/\/(?:dx\\.)?doi\\.org\/.*"
+          interpolated: true
+          partial_match: false
+      author_orcid:
+        structured_pattern:
+          syntax: "^(\\d{4}-){3}\\d{3}(\\d|X)$"
+          interpolated: true
+          partial_match: false
+
+  AnatomicalStructure:
+    slots:
+      - id
+    slot_usage:
+      id:
+        structured_pattern:
+          syntax: "{uberon}:\\d+"
+          interpolated: true
+          partial_match: false
+
+  ExperimentCycle:
+    class_uri: ccf:ExperimentCycle
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - cycle_number
+      - uses_antibody
+
+  CoreAntibodyPanel:
+    class_uri: ccf:CoreAntibodyPanel
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - has_antibody_component
+
+  OmapDataset:
+    slots:
+      - antibody
+      - experiment
+      - cycles
+      - core_antibody_panel
+
+  OmapMetadata:
+    class_uri: dcat:Dataset
+    slots:
+      - title
+      - description
+      - created_by
+      - creation_date
+      - version
+      - license
+      - publisher
+      - see_also
+      - derived_from
+
+  Container:
+    tree_root: true
+    attributes:
+      iri:
+        range: uriorcurie
+      metadata:
+        range: OmapMetadata
+      data:
+        range: OmapDataset
+    annotations:
+      owl.template: |-
+        AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
+        AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
+        {% for creator_iri in metadata.created_by %}
+        AnnotationAssertion( dct:creator {{iri}} "{{creator_iri|e}}" )
+        {% endfor %}
+        AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
+        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
+        AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
+        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
+        AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
+        AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from|e}}" )
+
+slots:
+  created_by:
+    required: true
+    multivalued: true
+    inlined_as_list: true
+    range: uriorcurie
+    slot_uri: dct:creator
+  derived_from:
+    range: uriorcurie
+    slot_uri: prov:wasDerivedFrom   
+  antibody:
+    required: true
+    range: Antibody
+    multivalued: true
+    inlined_as_list: true 
+  experiment:
+    required: true
+    range: MultiplexedAntibodyBasedImagingExperiment
+    inlined: true
+  cycles:
+    required: true
+    range: ExperimentCycle
+    multivalued: true
+    inlined_as_list: true
+  core_antibody_panel:
+    required: true
+    range: CoreAntibodyPanel
+    inlined: true      
+  concentration:
+    required: false
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  dilution:
+    required: false
+    range: integer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  conjugate:
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  fluorescent:
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  based_on:
+    required: true
+    range: RegisteredAntibody
+    inlined: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion    
+  method:
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  tissue_preservation:
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  protocol_doi:
+    required: false
+    range: uriorcurie
+    multivalued: true
+    inlined_as_list: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  author_orcid:
+    required: true
+    range: uriorcurie
+    multivalued: true
+    inlined_as_list: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  has_cycle:
+    required: true
+    range: uriorcurie
+    multivalued: true
+    inlined_as_list: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  sample_organ:
+    required: true
+    range: AnatomicalStructure
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion    
+  cycle_number:
+    required: true
+    range: integer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  uses_antibody:
+    required: true
+    range: ExperimentUsedAntibody
+    multivalued: true
+    inlined_as_list: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion    
+  has_antibody_component:
+    required: true
+    range: ExperimentUsedAntibody
+    multivalued: true
+    inlined_as_list: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  clone_id:
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  lot_number:
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  catalog_number:
+    required: true  
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  antibody_id:
+    identifier: true
+    required: true
+    range: uriorcurie
+  host:
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  isotype:
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion   
+  clonality:
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  recombinant:
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion    
+  producer:
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion      
+  detects:
+    required: false
+    range: uriorcurie 
+    multivalued: true
+    inlined_as_list: true
+  rationale:
+    required: true
+  parent_class:
+    required: true
+    range: uriorcurie
+    annotations:
+      owl: SubClassOf
