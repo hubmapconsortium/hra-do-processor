@@ -7,9 +7,9 @@ import { normalizeAsctbData, normalizeAsctbMetadata } from './normalize-asct-b.j
 import { normalizeBasicData, normalizeBasicMetadata } from './normalize-basic.js';
 import { normalizeCollectionData, normalizeCollectionMetadata } from './normalize-collection.js';
 import { normalizeGraphData, normalizeGraphMetadata } from './normalize-graph.js';
-import { normalizeRefOrganData, normalizeRefOrganMetadata } from './normalize-ref-organ.js';
 import { normalizeLandmarkData, normalizeLandmarkMetadata } from './normalize-landmark.js';
 import { normalizeOmapData, normalizeOmapMetadata } from './normalize-omap.js';
+import { normalizeRefOrganData, normalizeRefOrganMetadata } from './normalize-ref-organ.js';
 import { cleanDirectory } from './utils.js';
 
 export async function normalize(context) {
@@ -40,7 +40,7 @@ export async function normalize(context) {
       break;
     case 'omap':
       normalizeOmapMetadata(context);
-      await normalizeOmapData(context);
+      processedType = await normalizeOmapData(context);
       break;
     case 'collection':
       normalizeCollectionMetadata(context);
