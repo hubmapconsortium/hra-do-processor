@@ -8,6 +8,7 @@ import { enrichCollectionData, enrichCollectionMetadata } from './enrich-collect
 import { enrichGraphData, enrichGraphMetadata } from './enrich-graph.js';
 import { enrichRefOrganData, enrichRefOrganMetadata } from './enrich-ref-organ.js';
 import { enrichLandmarkData, enrichLandmarkMetadata } from './enrich-landmark.js';
+import { enrichOmapData, enrichOmapMetadata } from './enrich-omap.js';
 import { cleanDirectory } from './utils.js';
 
 export function enrich(context) {
@@ -35,6 +36,10 @@ export function enrich(context) {
     case '2d-ftu':
       enrich2dFtuMetadata(context);
       enrich2dFtuData(context);
+      break;
+    case 'omap':
+      enrichOmapMetadata(context);
+      enrichOmapData(context);
       break;
     case 'collection':
       enrichCollectionMetadata(context);

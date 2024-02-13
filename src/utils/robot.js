@@ -10,13 +10,13 @@ export function query(input, query, output) {
   );
 }
 
-export function extract(input, upperTerm, lowerTerms, output, outputFormat="owl") {
+export function extract(input, upperTerm, lowerTerms, output, intermediates="all", outputFormat="owl") {
   throwOnError(
     `robot extract -i ${input} \
               --method MIREOT \
               --upper-term ${upperTerm} \
               --lower-terms ${lowerTerms} \
-              --intermediates all \
+              --intermediates ${intermediates} \
            convert --format ${outputFormat} -o ${output}`,
     'Class hierarchy extraction failed. See errors above.'
   );
