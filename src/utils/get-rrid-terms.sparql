@@ -1,0 +1,16 @@
+SELECT DISTINCT ?entity
+WHERE {
+   {
+      SELECT (?s AS ?entity) WHERE { 
+         ?s ?p ?o .
+         FILTER(STRSTARTS(STR(?s),"http://identifiers.org/rrid/RRID:"))
+      }
+   }
+   UNION
+   {
+      SELECT (?o AS ?entity) WHERE {
+         ?s ?p ?o .
+         FILTER(STRSTARTS(STR(?o),"http://identifiers.org/rrid/RRID:"))
+      }
+   }
+}
