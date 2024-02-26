@@ -15,7 +15,7 @@ prefixes:
   RO: http://purl.obolibrary.org/obo/RO_
   FMA: http://purl.org/sig/ont/fma/fma
   HGNC: http://identifiers.org/hgnc/
-  ASCTB-TEMP: http://purl.org/ccf/ASCTB-TEMP_
+  ASCTB-TEMP: https://purl.org/ccf/ASCTB-TEMP_
   HGNCO: http://purl.bioontology.org/ontology/HGNC/
 
 default_prefix: ccf

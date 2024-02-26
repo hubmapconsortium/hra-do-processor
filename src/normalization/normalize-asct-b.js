@@ -258,12 +258,10 @@ function generateIdWhenEmpty(id, name) {
 
 function generateId(name) {
   const suffix = name
-    .trim()
     .toLowerCase()
+    .trim()
     .replace(/\W+/g, '-')
     .replace(/[^a-z0-9-]+/g, '')
-    .replace(/^-/, '')
-    .replace(/-$/, '');
   return `ASCTB-TEMP:${suffix}`
 }
 
