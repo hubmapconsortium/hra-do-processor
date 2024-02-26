@@ -52,7 +52,7 @@ export async function enrichOmapData(context) {
         const builder = await retrieveAntibody(rrids).then((response) => {
           return response.reduce((accum, item) => {
             const antibody = item["_source"]["item"];
-            const antibodyIri = `http://identifiers.org/rrid/RRID:${antibody.identifier}`;
+            const antibodyIri = `https://identifiers.org/RRID:${antibody.identifier}`;
             return accum
               .add(
                 iri(antibodyIri),
