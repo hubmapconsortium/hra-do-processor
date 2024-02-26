@@ -11,7 +11,7 @@ import { enrichLandmarkData, enrichLandmarkMetadata } from './enrich-landmark.js
 import { enrichOmapData, enrichOmapMetadata } from './enrich-omap.js';
 import { cleanDirectory } from './utils.js';
 
-export function enrich(context) {
+export async function enrich(context) {
   const obj = context.selectedDigitalObject;
   sh.mkdir('-p', resolve(obj.path, 'enriched'));
   header(context, 'run-enrich');
@@ -39,7 +39,7 @@ export function enrich(context) {
       break;
     case 'omap':
       enrichOmapMetadata(context);
-      enrichOmapData(context);
+      await enrichOmapData(context);
       break;
     case 'collection':
       enrichCollectionMetadata(context);
