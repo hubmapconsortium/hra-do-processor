@@ -4,13 +4,13 @@ const API_BASE = "https://api.scicrunch.io/elastic/v1";
 const ANTIBODY_INDEX = "RIN_Antibody_pr";
 const TOOL_INDEX = "RIN_Tool_pr";
 
-export function retrieveAntibody(rrids) {
+export function retrieveAntibody(rrids, apikey) {
   const url = `${API_BASE}/${ANTIBODY_INDEX}/_search`;
   const options = {
     method: "POST",
     headers: {
       'Content-Type': "application/json",
-      apikey: process.env.SCICRUNCH_API_KEY
+      apikey: apikey
     },
     body: JSON.stringify(createQuery(rrids))
   };
