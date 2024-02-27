@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { error } from 'console';
 import { resolve } from 'path';
 import { getRawData } from '../normalization/normalize-omap.js';
-import { info, more } from '../utils/logging.js';
+import { info, warning, more } from '../utils/logging.js';
 import { RdfBuilder, iri, literal } from '../utils/rdf-builder.js';
 import { retrieveAntibody } from '../utils/scicrunch-client.js';
 import { convert, merge } from '../utils/robot.js';
@@ -41,36 +41,41 @@ export async function enrichOmapData(context) {
       const ontologyExtractionPaths = [];
       ontologyExtractionPaths.push(baseInputPath); // Set the base input path as the initial
 
-      const rridEntitiesPath = collectEntities(context, 'rrid', baseInputPath);
-      if (!isFileEmpty(rridEntitiesPath)) {
-        const rridExtractPath = resolve(obj.path, `enriched/rrid-extract.ttl`);
-        const rrids = readFileSync(rridEntitiesPath).toString()
-          .split(/[\n\r]/)
-          .filter((str) => str)
-          .map((str) => /.*RRID:(?<rrid>.*)/.exec(str).groups.rrid)
-          .map((str) => str.toLowerCase());
-        const builder = await retrieveAntibody(rrids).then((response) => {
-          return response.reduce((accum, item) => {
-            const antibody = item["_source"]["item"];
-            const antibodyIri = `http://identifiers.org/rrid/RRID:${antibody.identifier}`;
-            return accum
-              .add(
-                iri(antibodyIri),
-                iri("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
-                iri("http://www.w3.org/2002/07/owl#Class"))
-              .add(
-                iri(antibodyIri), 
-                iri("http://www.w3.org/2000/01/rdf-schema#label"),
-                literal(antibody.name))
-              .add(
-                iri(antibodyIri), 
-                iri("http://www.w3.org/2000/01/rdf-schema#comment"),
-                literal(antibody.description));
-          }, new RdfBuilder(`${context.purlIri}/rrid/antibody`));
-        });
-        builder.save(rridExtractPath);
-        logOutput(rridExtractPath);
-        ontologyExtractionPaths.push(rridExtractPath);
+      const apikey = process.env.SCICRUNCH_API_KEY;
+      if (!apikey) {
+        warning("SCICRUNCH_API_KEY not found, unable to enrich the antibody concepts.");
+      } else {
+        const rridEntitiesPath = collectEntities(context, 'rrid', baseInputPath);
+        if (!isFileEmpty(rridEntitiesPath)) {
+          const rridExtractPath = resolve(obj.path, `enriched/rrid-extract.ttl`);
+          const rrids = readFileSync(rridEntitiesPath).toString()
+            .split(/[\n\r]/)
+            .filter((str) => str)
+            .map((str) => /.*RRID:(?<rrid>.*)/.exec(str).groups.rrid)
+            .map((str) => str.toLowerCase());
+          const builder = await retrieveAntibody(rrids, apikey).then((response) => {
+            return response.reduce((accum, item) => {
+              const antibody = item["_source"]["item"];
+              const antibodyIri = `https://identifiers.org/RRID:${antibody.identifier}`;
+              return accum
+                .add(
+                  iri(antibodyIri),
+                  iri("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
+                  iri("http://www.w3.org/2002/07/owl#Class"))
+                .add(
+                  iri(antibodyIri), 
+                  iri("http://www.w3.org/2000/01/rdf-schema#label"),
+                  literal(antibody.name))
+                .add(
+                  iri(antibodyIri), 
+                  iri("http://www.w3.org/2000/01/rdf-schema#comment"),
+                  literal(antibody.description));
+            }, new RdfBuilder(`${context.purlIri}/rrid/antibody`));
+          });
+          builder.save(rridExtractPath);
+          logOutput(rridExtractPath);
+          ontologyExtractionPaths.push(rridExtractPath);
+        }
       }
 
       const uberonEntitiesPath = collectEntities(context, 'uberon', baseInputPath);

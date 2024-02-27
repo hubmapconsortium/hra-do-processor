@@ -196,7 +196,7 @@ function getCoreAntibodyPanelLabel(omapId) {
 }
 
 function getAntibodyIri(antibodyId) {
-  return `http://identifiers.org/rrid/RRID:${antibodyId}`;
+  return `https://identifiers.org/RRID:${antibodyId}`;
 }
 
 function normalizeProteinId(text) {
