@@ -99,7 +99,11 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
 
       let parentIri = `${baseIri}${separator}parent`;
       if (organOwnerSex) {
-        parentIri = `https://purl.humanatlas.io/graph/hra-ccf-body#VH${organOwnerSex}`;
+        if (organOwnerSex === 'female') {
+          parentIri = `https://purl.humanatlas.io/graph/hra-ccf-body#VHFemale`;
+        } else {
+          parentIri = `https://purl.humanatlas.io/graph/hra-ccf-body#VHMale`;
+        }
       }
 
       return {
@@ -199,10 +203,10 @@ function getOrganMetadata(name) {
 
   const exclude = new Set(['left', 'right', 'male', 'female']);
   const organName = name.split('-').filter(n => !exclude.has(n)).join(' ');
-  return { 
+  return {
     organOwnerSex: sex && sex.toLowerCase(),
     organSide: side && side.toLowerCase(),
-    organName: organName.toLowerCase() 
+    organName: organName.toLowerCase()
   };
 }
 

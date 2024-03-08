@@ -169,7 +169,7 @@ classes:
         AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
         AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
         AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
-        AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from|e}}" ) 
+        AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from|e}}" )
 
 slots:
   created_by:
@@ -402,7 +402,7 @@ enums:
     permissible_values:
       female:
         description: A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes.
-        meaning: obo:PATO_0000384
+        meaning: obo:PATO_0000383
       male:
         description: A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes.
         meaning: obo:PATO_0000384
