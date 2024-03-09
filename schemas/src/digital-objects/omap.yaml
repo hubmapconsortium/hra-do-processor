@@ -66,6 +66,9 @@ classes:
     slots:
       - concentration
       - dilution
+      - cycle_number
+      - is_core_panel
+      - used_by_experiment
       - based_on
 
   RegisteredAntibody:
@@ -207,6 +210,16 @@ slots:
     range: integer
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
+  is_core_panel:
+    required: true
+    range: boolean
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  used_by_experiment:
+    required: true
+    range: uriorcurie
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion       
   conjugate:
     required: false
     annotations:
