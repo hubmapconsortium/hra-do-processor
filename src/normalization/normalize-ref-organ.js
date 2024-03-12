@@ -86,24 +86,15 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
       ].concat(['SpatialEntity']);
 
       const organName = getOrganName(nodeId, crosswalk);
-      const { organOwnerSex, organSide } = getOrganMetadata(obj.name);
+      const organMetadata = getOrganMetadata(obj.name);
       const nodeLabel = getNodeLabel(nodeId);
-      let organLabel = `${organOwnerSex} ${nodeLabel}`.trim();
-      if (organSide) {
-        if (organLabel.includes(organSide)) {
-          organLabel = `${organOwnerSex} ${nodeLabel}`.trim();
-        } else {
-          organLabel = `${organOwnerSex} ${organSide} ${nodeLabel}`.trim();
-        }
-      }
+      const organLabel = getOrganLabel(organMetadata, nodeLabel);
 
       let parentIri = `${baseIri}${separator}parent`;
-      if (organOwnerSex) {
-        if (organOwnerSex === 'female') {
-          parentIri = `https://purl.humanatlas.io/graph/hra-ccf-body#VHFemale`;
-        } else {
-          parentIri = `https://purl.humanatlas.io/graph/hra-ccf-body#VHMale`;
-        }
+      if (organMetadata.sex === 'Female') {
+        parentIri = `https://purl.humanatlas.io/graph/hra-ccf-body#VHFemale`;
+      } else if (organMetadata.sex === 'Male') {
+        parentIri = `https://purl.humanatlas.io/graph/hra-ccf-body#VHMale`;
       }
 
       return {
@@ -113,8 +104,8 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         class_type: 'SpatialEntity',
         typeOf: typeOf,
         representation_of: typeOf[0],
-        organ_owner_sex: organOwnerSex || undefined,
-        organ_side: organSide || undefined,
+        organ_owner_sex: organMetadata.sex || undefined,
+        organ_side: organMetadata.side || undefined,
         reference_organ: primaryId,
         creator: metadata.creators.map((c) => {
           return {
@@ -139,7 +130,8 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
           label: `3D object of ${organLabel}`,
           class_type: 'SpatialObjectReference',
           typeOf: ['SpatialObjectReference'],
-          file: gltfFile,
+          file_name: gltfFile.replace(/^.*[\\/]/, ''),
+          file_url: gltfFile,
           file_format: 'model/gltf-binary',
           file_subpath: node['@id'],
 
@@ -148,19 +140,17 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
             label: `Local placement of ${organLabel}`,
             class_type: 'SpatialPlacement',
             typeOf: ['SpatialPlacement'],
+            source: `${id}_obj`,
             target: id,
             placement_date: creationDate,
-
             x_scaling: 1,
             y_scaling: 1,
             z_scaling: 1,
             scaling_unit: 'ratio',
-
             x_rotation: -90,
             y_rotation: 0,
             z_rotation: 0,
             rotation_unit: 'degree',
-
             x_translation: -T.x,
             y_translation: -T.y,
             z_translation: -T.z,
@@ -176,17 +166,14 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
             typeOf: ['SpatialPlacement'],
             target: parentIri,
             placement_date: creationDate,
-
             x_scaling: 1,
             y_scaling: 1,
             z_scaling: 1,
             scaling_unit: 'ratio',
-
             x_rotation: 0,
             y_rotation: 0,
             z_rotation: 0,
             rotation_unit: 'degree',
-
             x_translation: T.x,
             y_translation: T.y,
             z_translation: T.z,
@@ -197,22 +184,28 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
     });
 }
 
-function getOrganMetadata(name) {
-  const sex = name.includes('female') ? 'Female' : name.includes('male') ? 'Male' : undefined;
-  const side = name.includes('left') ? 'Left' : name.includes('right') ? 'Right' : undefined;
+function getOrganMetadata(doName) {
+  const sex = doName.includes('female') ? 'Female' : doName.includes('male') ? 'Male' : undefined;
+  const side = doName.includes('left') ? 'Left' : doName.includes('right') ? 'Right' : undefined;
 
   const exclude = new Set(['left', 'right', 'male', 'female']);
-  const organName = name.split('-').filter(n => !exclude.has(n)).join(' ');
-  return {
-    organOwnerSex: sex && sex.toLowerCase(),
-    organSide: side && side.toLowerCase(),
-    organName: organName.toLowerCase()
-  };
+  const name = doName.split('-').filter(n => !exclude.has(n)).join(' ');
+  return { name, sex, side };
 }
 
 function getOrganName(nodeId, crosswalk) {
   const organ = crosswalk.filter((value) => value['node_name'] === nodeId);
   return organ[0]['label'];
+}
+
+function getOrganLabel({sex, side}, nodeLabel) {
+  const organOwnerSex = sex.toLowerCase();
+  const organSide = side.toLowerCase();
+  let organLabel = `${organOwnerSex} ${nodeLabel}`.trim();
+  if (organSide && !organLabel.includes(organSide)) {
+    organLabel = `${organOwnerSex} ${organSide} ${nodeLabel}`.trim();
+  }
+  return organLabel;
 }
 
 function getNodeLabel(nodeId) {

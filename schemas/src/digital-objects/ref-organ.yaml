@@ -13,6 +13,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   FMA: http://purl.org/sig/ont/fma/fma
+  LOINC: http://purl.bioontology.org/ontology/LNC/
 
 default_prefix: ccf
 default_range: string
@@ -25,6 +26,7 @@ imports:
 settings:
   uberon: "UBERON"
   fma: "FMA"
+  loinc: "LOINC"
 
 classes:
   SpatialEntity:
@@ -50,6 +52,13 @@ classes:
       - reference_organ
       - extraction_set
       - rui_rank
+    slot_usage:
+      dimension_unit:
+        pattern: (centimeter|millimeter)
+      organ_owner_sex:
+        pattern: (Male|Female)
+      organ_side:
+        pattern: (Left|Right)
 
   SpatialObjectReference:
     class_uri: ccf:SpatialObjectReference
@@ -58,7 +67,8 @@ classes:
       - Instance
     slots:
       - id
-      - file
+      - file_name
+      - file_url
       - file_subpath
       - file_format
       - placement
@@ -86,6 +96,15 @@ classes:
       - y_translation
       - z_translation
       - translation_unit
+    slot_usage:
+      scaling_unit:
+        pattern: ratio
+      rotation_unit:
+        pattern: degree
+      rotation_order:
+        pattern: XYZ
+      translation_unit:
+        pattern: (centimeter|millimeter)
 
   ExtractionSet:
     class_uri: ccf:ExtractionSet
@@ -197,7 +216,7 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   create_date:
     required: true
-    slot_uri: ccf:creation_date
+    slot_uri: dct:created
     range: date
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -221,7 +240,6 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   dimension_unit:
     required: true
-    range: DimensionUnitEnum
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   x_scaling:
@@ -244,7 +262,6 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   scaling_unit:
     required: true
-    range: ScalingUnitEnum
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   x_rotation:
@@ -264,7 +281,6 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   rotation_unit:
     required: true
-    range: RotationUnitEnum
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   rotation_order:
@@ -288,7 +304,6 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   translation_unit:
     required: true
-    range: TranslationUnitEnum
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   representation_of:
@@ -299,17 +314,18 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   organ_owner_sex:
     required: false
-    range: DonorSexEnum
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   organ_side:
     required: false
-    range: OrganSideEnum
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  file:
+  file_name:
     required: true
-    slot_uri: ccf:file_url
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  file_url:
+    required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   file_subpath:
@@ -322,6 +338,7 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   placement_date:
     required: true
+    slot_uri: dct:created
     range: date
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -355,7 +372,7 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   placements:
     required: false
-    slot_uri: ccf:has_placements
+    slot_uri: ccf:has_placement
     range: SpatialPlacement
     inlined: true
     multivalued: true
@@ -398,14 +415,12 @@ enums:
       right:
         description: Being located on the right side of the body.
         meaning: obo:HP_0012834
-  DonorSexEnum:
+  SexEnum:
     permissible_values:
       female:
-        description: A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes.
-        meaning: obo:PATO_0000383
+        meaning: loinc:LA3-6
       male:
-        description: A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes.
-        meaning: obo:PATO_0000384
+        meaning: loinc:LA2-8
   DimensionUnitEnum:
     permissible_values:
       centimeter:
