@@ -62,7 +62,8 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
   const baseIri = obj.iri;
   const name = obj.name;
   const separator = baseIri?.indexOf('#') === -1 ? '#' : '_' ?? '#';
-  const { organOwnerSex, organLabel } = getOrganMetadata(name);
+  const organMetadata = getOrganMetadata(name);
+  const organLabel = getOrganLabel(organMetadata);
 
   const extractionSets = {};
   const spatialEntities = Object.values(nodes)
@@ -84,8 +85,8 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
       }
 
       let parentIri = `${baseIri}${separator}parent`;
-      if (organOwnerSex) {
-        parentIri = `https://purl.humanatlas.io/graph/hra-ccf-body#VH${organOwnerSex}`;
+      if (organMetadata.sex) {
+        parentIri = `https://purl.humanatlas.io/graph/hra-ccf-body#VH${organMetadata.sex}`;
       }
 
       return {
@@ -116,27 +117,25 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
           label: `3D object of ${landmarkLabel}`,
           class_type: 'SpatialObjectReference',
           typeOf: ['SpatialObjectReference'],
-          file: gltfFile,
+          file_name: gltfFile.replace(/^.*[\\/]/, ''),
+          file_url: gltfFile,
           file_format: 'model/gltf-binary',
           file_subpath: node['@id'],
-
           placement: {
             id: `${id}ObjPlacement`,
             label: `Local placement of ${landmarkLabel}`,
             class_type: 'SpatialPlacement',
             typeOf: ['SpatialPlacement'],
+            source: `${id}_obj`,
             target: id,
-
             x_scaling: 1,
             y_scaling: 1,
             z_scaling: 1,
             scaling_unit: 'ratio',
-
             x_rotation: -90,
             y_rotation: 0,
             z_rotation: 0,
             rotation_unit: 'degree',
-
             x_translation: -T.x,
             y_translation: -T.y,
             z_translation: -T.z,
@@ -151,17 +150,14 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
             class_type: 'SpatialPlacement',
             typeOf: ['SpatialPlacement'],
             target: parentIri,
-
             x_scaling: 1,
             y_scaling: 1,
             z_scaling: 1,
             scaling_unit: 'ratio',
-
             x_rotation: 0,
             y_rotation: 0,
             z_rotation: 0,
             rotation_unit: 'degree',
-
             x_translation: T.x,
             y_translation: T.y,
             z_translation: T.z,
@@ -178,21 +174,22 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
   };
 }
 
-function getOrganMetadata(name) {
-  const sex = name.includes('female') ? 'Female' : name.includes('male') ? 'Male' : undefined;
-  const side = name.includes('left') ? 'Left' : name.includes('right') ? 'Right' : undefined;
-  const bothSides = name.includes('both');
+function getOrganMetadata(doName) {
+  const sex = doName.includes('female') ? 'Female' : doName.includes('male') ? 'Male' : undefined;
+  const side = doName.includes('left') ? 'Left' : doName.includes('right') ? 'Right' : doName.includes('both') ? 'Both' : undefined;
 
   const exclude = new Set(['left', 'right', 'male', 'female', 'both', 'landmarks', 'extraction sites']);
-  const organName = name
+  const name = doName
     .split('-')
     .filter((n) => !exclude.has(n))
     .join(' ');
 
-  const sideLabel = bothSides ? 'left and right' : side;
-  const organLabel = sideLabel ? `${sex} ${sideLabel} ${organName}` : `${sex} ${organName}`;
+  return { sex, side, name };
+}
 
-  return { organOwnerSex: sex, organLabel };
+function getOrganLabel({ sex, side, name }) {
+  const sideLabel = side && side === 'Both' ? 'Left and right' : side;
+  return sideLabel ? `${sex} ${sideLabel.toLowerCase()} ${name.toLowerCase()}` : `${sex} ${name.toLowerCase()}`;
 }
 
 function getLandmarkName(nodeId, crosswalk) {

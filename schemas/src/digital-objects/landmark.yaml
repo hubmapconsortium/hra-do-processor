@@ -44,6 +44,9 @@ classes:
       - placements
       - extraction_set
       - rui_rank
+    slot_usage:
+      dimension_unit:
+        pattern: (centimeter|millimeter)    
 
   SpatialObjectReference:
     class_uri: ccf:SpatialObjectReference
@@ -52,7 +55,8 @@ classes:
       - Instance
     slots:
       - id
-      - file
+      - file_name
+      - file_url
       - file_subpath
       - file_format
       - placement
@@ -64,6 +68,7 @@ classes:
       - Instance
     slots:
       - id
+      - source
       - target
       - x_scaling
       - y_scaling
@@ -78,6 +83,15 @@ classes:
       - y_translation
       - z_translation
       - translation_unit
+    slot_usage:
+      scaling_unit:
+        pattern: ratio
+      rotation_unit:
+        pattern: degree
+      rotation_order:
+        pattern: XYZ
+      translation_unit:
+        pattern: (centimeter|millimeter)
 
   ExtractionSet:
     class_uri: ccf:ExtractionSet
@@ -209,7 +223,6 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   dimension_unit:
     required: true
-    range: DimensionUnitEnum
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   x_scaling:
@@ -232,7 +245,6 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   scaling_unit:
     required: true
-    range: ScalingUnitEnum
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   x_rotation:
@@ -252,7 +264,6 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   rotation_unit:
     required: true
-    range: RotationUnitEnum
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   rotation_order:
@@ -276,12 +287,14 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   translation_unit:
     required: true
-    range: TranslationUnitEnum
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  file:
+  file_name:
     required: true
-    slot_uri: ccf:file_url
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion    
+  file_url:
+    required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   file_subpath:
@@ -290,6 +303,13 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   file_format:
     required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  source:
+    required: false
+    slot_uri: ccf:placement_for
+    range: SpatialObjectReference
+    inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   target:
@@ -315,7 +335,7 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   placements:
     required: false
-    slot_uri: ccf:has_placements
+    slot_uri: ccf:has_placement
     range: SpatialPlacement
     inlined: true
     multivalued: true
