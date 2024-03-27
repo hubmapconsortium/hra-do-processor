@@ -41,7 +41,7 @@ if [ -e "$ENV/bin/activate" ]; then
   if [ ! -e "$ENV/bin/robot" ]; then
     curl https://raw.githubusercontent.com/ontodev/robot/master/bin/robot -o $ENV/bin/robot
     chmod +x $ENV/bin/robot
-    curl -L https://github.com/ontodev/robot/releases/download/v1.9.3/robot.jar -o $ENV/bin/robot.jar
+    curl -L https://github.com/ontodev/robot/releases/latest/download/robot.jar -o $ENV/bin/robot.jar
   fi
 
   # Intall Relation-Graph
