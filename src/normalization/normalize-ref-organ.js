@@ -200,7 +200,7 @@ function getOrganName(nodeId, crosswalk) {
 
 function getOrganLabel({sex, side}, nodeLabel) {
   const organOwnerSex = sex.toLowerCase();
-  const organSide = side.toLowerCase();
+  const organSide = side?.toLowerCase();
   let organLabel = `${organOwnerSex} ${nodeLabel}`.trim();
   if (organSide && !organLabel.includes(organSide)) {
     organLabel = `${organOwnerSex} ${organSide} ${nodeLabel}`.trim();
