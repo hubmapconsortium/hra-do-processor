@@ -15,7 +15,6 @@ prefixes:
   RO: http://purl.obolibrary.org/obo/RO_
   FMA: http://purl.org/sig/ont/fma/fma
   HGNC: http://identifiers.org/hgnc/
-  ASCTB-TEMP: https://purl.org/ccf/ASCTB-TEMP_
   HGNCO: http://purl.bioontology.org/ontology/HGNC/
 
 default_prefix: ccf
@@ -33,7 +32,7 @@ settings:
   lmha: "LMHA"
   hgnc: "HGNC"
   hgnco: "HGNCO"
-  asctb_temp: "ASCTB-TEMP"
+  asctb_temp: "https://purl.org/ccf/ASCTB-TEMP_"
 
 classes:
   AsctbConcept:
@@ -62,7 +61,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "({uberon}|{fma}):\\d+|{asctb_temp}:[a-zA-Z0-9-]+"
+          syntax: "({uberon}|{fma}):\\d+|{asctb_temp}[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
       ccf_part_of:
@@ -79,7 +78,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "({cl}|{pcl}|{lmha}):\\d+|{asctb_temp}:[a-zA-Z0-9-]+"
+          syntax: "({cl}|{pcl}|{lmha}):\\d+|{asctb_temp}[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
       ccf_ct_isa:
@@ -110,7 +109,7 @@ classes:
             )
           )
         )
-        {% endfor %} 
+        {% endfor %}
   Biomarker:
     is_a: AsctbConcept
     slots:
@@ -118,7 +117,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "{hgnc}:\\d+|{asctb_temp}:[a-zA-Z0-9-]+|{hgnco}:[a-zA-Z0-9-]+"
+          syntax: "{hgnc}:\\d+|{asctb_temp}[a-zA-Z0-9-]+|{hgnco}:[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
       ccf_biomarker_type:
@@ -168,7 +167,7 @@ classes:
         AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
         AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
         AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
-        AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from|e}}" )        
+        AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from|e}}" )
 
 slots:
   id:
@@ -194,7 +193,7 @@ slots:
   cell_types:
     multivalued: true
     inlined_as_list: true
-    range: CellType    
+    range: CellType
   biomarkers:
     multivalued: true
     inlined_as_list: true
@@ -210,7 +209,7 @@ slots:
     structured_pattern:
       syntax: "^https:\\/\\/doi\\.org\\/10\\.\\d+\\/.*"
       interpolated: true
-      partial_match: false    
+      partial_match: false
     slot_uri: dct:reference
   ccf_has_biomarker_set:
     required: false

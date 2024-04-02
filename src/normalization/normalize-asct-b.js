@@ -261,8 +261,8 @@ function generateId(name) {
     .toLowerCase()
     .trim()
     .replace(/\W+/g, '-')
-    .replace(/[^a-z0-9-]+/g, '')
-  return `ASCTB-TEMP:${suffix}`
+    .replace(/[^a-z0-9-]+/g, '');
+  return `https://purl.org/ccf/ASCTB-TEMP_${suffix}`;
 }
 
 function checkNotEmpty(str) {

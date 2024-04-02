@@ -1,17 +1,16 @@
-import fs from 'fs';
 import { resolve } from 'path';
-import { error, header, info, more } from '../utils/logging.js';
+import { error, info, more } from '../utils/logging.js';
 import { convert, merge } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
-import { 
-  cleanTemporaryFiles, 
-  convertNormalizedMetadataToRdf,
-  convertNormalizedDataToOwl,
-  isFileEmpty,
+import {
+  cleanTemporaryFiles,
   collectEntities,
-  extractClassHierarchy,
+  convertNormalizedDataToOwl,
+  convertNormalizedMetadataToRdf,
   excludeTerms,
-  logOutput 
+  extractClassHierarchy,
+  isFileEmpty,
+  logOutput,
 } from './utils.js';
 
 export function enrichAsctbMetadata(context) {
@@ -54,7 +53,7 @@ export function enrichAsctbData(context) {
 
     inputPaths.push(enrichedWithValidationPath); // Set the enriched path as the initial
 
-    info('Building class hierarchy from reference ontologies...')
+    info('Building class hierarchy from reference ontologies...');
     const uberonEntitiesPath = collectEntities(context, 'uberon', enrichedWithValidationPath);
     if (!isFileEmpty(uberonEntitiesPath)) {
       info('Extracting UBERON.');
@@ -72,10 +71,11 @@ export function enrichAsctbData(context) {
     if (!isFileEmpty(fmaEntitiesPath)) {
       info('Extracting FMA.');
       const fmaExtractPath = extractClassHierarchy(
-        context, 
-        'fma', 
-        'http://purl.org/sig/ont/fma/fma62955', 
-        fmaEntitiesPath);
+        context,
+        'fma',
+        'http://purl.org/sig/ont/fma/fma62955',
+        fmaEntitiesPath
+      );
       logOutput(fmaExtractPath);
       inputPaths.push(fmaExtractPath);
     }
@@ -84,10 +84,11 @@ export function enrichAsctbData(context) {
     if (!isFileEmpty(clEntitiesPath)) {
       info('Extracting CL.');
       const clExtractPath = extractClassHierarchy(
-        context, 
-        'cl', 
-        'http://purl.obolibrary.org/obo/CL_0000000', 
-        clEntitiesPath);
+        context,
+        'cl',
+        'http://purl.obolibrary.org/obo/CL_0000000',
+        clEntitiesPath
+      );
       logOutput(clExtractPath);
       inputPaths.push(clExtractPath);
     }
@@ -145,14 +146,13 @@ export function enrichAsctbData(context) {
     const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating asct-b: ${enrichedPath}`);
     convert(trimmedOutputPath, enrichedPath, 'ttl');
-
   } catch (e) {
     error(e);
   } finally {
     // Clean up
     info('Cleaning up temporary files...');
     cleanTemporaryFiles(context);
-    more("Done.")
+    more('Done.');
   }
 }
 
@@ -173,7 +173,7 @@ function downloadValidationResult(context, useNightlyBuild = true) {
   const downloadPath = resolve(path, `enriched/${organName}_extended.owl`);
   const outputPath = resolve(path, `enriched/${name}-validation.owl`);
   throwOnError(`wget -nc -nv -q ${input} -O ${downloadPath}`, 'Download validation result failed.');
-  
+
   convert(downloadPath, outputPath, 'owl');
   logOutput(outputPath);
 
