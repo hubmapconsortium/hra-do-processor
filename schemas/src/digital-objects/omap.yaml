@@ -21,10 +21,6 @@ imports:
   - ../shared/metadata-base
   - ../shared/instance-base
 
-settings:
-  uberon: "UBERON"
-  fma: "FMA"
-
 classes:
   Antibody:
     slots:
@@ -181,12 +177,12 @@ slots:
     slot_uri: dct:creator
   derived_from:
     range: uriorcurie
-    slot_uri: prov:wasDerivedFrom   
+    slot_uri: prov:wasDerivedFrom
   antibody:
     required: true
     range: Antibody
     multivalued: true
-    inlined_as_list: true 
+    inlined_as_list: true
   experiment:
     required: true
     range: MultiplexedAntibodyBasedImagingExperiment
@@ -199,7 +195,7 @@ slots:
   core_antibody_panel:
     required: true
     range: CoreAntibodyPanel
-    inlined: true      
+    inlined: true
   concentration:
     required: false
     range: float
@@ -219,7 +215,7 @@ slots:
     required: true
     range: uriorcurie
     annotations:
-      owl: AnnotationProperty, AnnotationAssertion       
+      owl: AnnotationProperty, AnnotationAssertion
   conjugate:
     required: false
     annotations:
@@ -233,7 +229,7 @@ slots:
     range: RegisteredAntibody
     inlined: true
     annotations:
-      owl: AnnotationProperty, AnnotationAssertion    
+      owl: AnnotationProperty, AnnotationAssertion
   method:
     required: true
     annotations:
@@ -267,7 +263,7 @@ slots:
     required: true
     range: AnatomicalStructure
     annotations:
-      owl: AnnotationProperty, AnnotationAssertion    
+      owl: AnnotationProperty, AnnotationAssertion
   cycle_number:
     required: true
     range: integer
@@ -279,7 +275,7 @@ slots:
     multivalued: true
     inlined_as_list: true
     annotations:
-      owl: AnnotationProperty, AnnotationAssertion    
+      owl: AnnotationProperty, AnnotationAssertion
   has_antibody_component:
     required: true
     range: ExperimentUsedAntibody
@@ -296,7 +292,7 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   catalog_number:
-    required: true  
+    required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   antibody_id:
@@ -310,7 +306,7 @@ slots:
   isotype:
     required: false
     annotations:
-      owl: AnnotationProperty, AnnotationAssertion   
+      owl: AnnotationProperty, AnnotationAssertion
   clonality:
     required: false
     annotations:
@@ -318,14 +314,14 @@ slots:
   recombinant:
     required: true
     annotations:
-      owl: AnnotationProperty, AnnotationAssertion    
+      owl: AnnotationProperty, AnnotationAssertion
   producer:
     required: false
     annotations:
-      owl: AnnotationProperty, AnnotationAssertion      
+      owl: AnnotationProperty, AnnotationAssertion
   detects:
     required: false
-    range: uriorcurie 
+    range: uriorcurie
     multivalued: true
     inlined_as_list: true
   rationale:
