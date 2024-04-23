@@ -1,5 +1,6 @@
 import { resolve } from 'path';
-import { info } from './logging.js';
+import { validateIri, IriValidationStrategy } from 'validate-iri';
+import { info, warning } from './logging.js';
 import { logOnError } from './sh-exec.js';
 
 export function validateNormalizedMetadata(context, overrideType) {
@@ -42,4 +43,25 @@ function validate(context, dataFile, schemaFile, errorFile) {
     info('No error found.');
   }
   return success;
+}
+
+export function checkIfValidIri(iri, hint = null) {
+  try {
+    validateIri(yourIri, IriValidationStrategy.Pragmatic);
+    return iri;
+  } catch (e) {
+    warning(`The ${hint || 'ID'} '${iri}' is not a vaid IRI. Please check the source metadata.`);
+    return null;
+  }
+}
+
+export function checkIfValidUrl(url, hint = null) {
+  const regex = /^(http|https):\/\/[^ "]+$/;
+  const isValid = regex.test(url);
+  if (isValid) {
+    return url;
+  } else {
+    warning(`The ${hint || 'ID'} '${url}' is not a vaid URL. Please check the source metadata.`);
+    return null;
+  }
 }
