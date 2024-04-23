@@ -149,6 +149,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
             label: `Global placement of ${landmarkLabel}`,
             class_type: 'SpatialPlacement',
             typeOf: ['SpatialPlacement'],
+            source: id,
             target: parentIri,
             x_scaling: 1,
             y_scaling: 1,

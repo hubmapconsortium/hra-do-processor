@@ -164,6 +164,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
             label: `Global placement of ${organLabel}`,
             class_type: 'SpatialPlacement',
             typeOf: ['SpatialPlacement'],
+            source: id,
             target: parentIri,
             placement_date: creationDate,
             x_scaling: 1,
