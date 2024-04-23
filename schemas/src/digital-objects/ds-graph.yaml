@@ -1,0 +1,462 @@
+id: https://purl.humanatlas.io/specs/ds-graph
+name: ds-graph
+prefixes:
+  ccf: http://purl.org/ccf/
+  owl: http://www.w3.org/2002/07/owl#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  dct: http://purl.org/dc/terms/
+  skos: http://www.w3.org/2004/02/skos/core#
+  oboInOwl: http://www.geneontology.org/formats/oboInOwl#
+  loinc: http://purl.bioontology.org/ontology/LNC/
+  linkml: https://w3id.org/linkml/
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  FMA: http://purl.org/sig/ont/fma/fma
+  ASCTB-TEMP: https://purl.org/ccf/ASCTB-TEMP_
+  SO: http://purl.obolibrary.org/obo/SO_
+  RO: http://purl.obolibrary.org/obo/RO_
+
+default_prefix: ccf
+default_range: string
+
+imports:
+  - linkml:types
+  - ../shared/metadata-base
+  - ../shared/instance-base
+
+classes:
+  Donor:
+    class_uri: ccf:Donor
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - pref_label
+      - description
+      - external_link
+      - age
+      - bmi
+      - sex
+      - sex_id
+      - race
+      - race_id
+      - consortium_name
+      - provider_name
+      - provider_uuid
+      - samples
+    slot_usage:
+      sex:
+        annotations:
+          owl.template: |-
+            AnnotationAssertion(
+              Annotation(oboInOwl:hasDbXref {{sex_id}})
+              ccf:sex
+              {{id}}
+              "{{sex}}"
+            )
+      race:
+        annotations:
+          owl.template: |-
+            AnnotationAssertion(
+              Annotation(oboInOwl:hasDbXref {{race_id}})
+              ccf:has_race
+              {{id}}
+              "{{race}}"
+            )
+      sex_id:
+        pattern: (loinc:LA3-6|loinc:LA2-8|loinc:LA4489-6)
+      race_id:
+        pattern: (loinc:LA10608-0|loinc:LA6156-9|loinc:LA10610-6|loinc:LA10611-4|loinc:LA4457-3|loinc:LA4489-6)
+  TissueBlock:
+    class_uri: ccf:TissueBlock
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - partially_overlaps
+      - pref_label
+      - description
+      - rui_location
+      - extraction_site
+      - external_link
+      - sections
+      - datasets
+      - section_count
+      - section_size # block_dimension
+      - section_size_unit # block_dimension_unit
+      - linked_back_to
+  TissueSection:
+    class_uri: ccf:TissueSection
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - pref_label
+      - description
+      - external_link
+      - samples
+      - datasets
+      - section_number
+      - linked_back_to
+  Dataset:
+    class_uri: ccf:Dataset
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - pref_label
+      - description
+      - external_link
+      - technology
+      - thumbnail
+      - linked_back_to
+  SpatialEntity:
+    class_uri: ccf:SpatialEntity
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - pref_label
+      - creator
+      - create_date
+      - x_dimension
+      - y_dimension
+      - z_dimension
+      - dimension_unit
+      - collides_with
+      - slice_count
+      - slice_thickness
+      - placement
+    slot_usage:
+      dimension_unit:
+        pattern: (centimeter|millimeter)
+  SpatialPlacement:
+    class_uri: ccf:SpatialPlacement
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - target
+      - placement_date
+      - x_scaling
+      - y_scaling
+      - z_scaling
+      - scaling_unit
+      - x_rotation
+      - y_rotation
+      - z_rotation
+      - rotation_unit
+      - rotation_order
+      - x_translation
+      - y_translation
+      - z_translation
+      - translation_unit
+    slot_usage:
+      scaling_unit:
+        pattern: ratio
+      rotation_unit:
+        pattern: degree
+      rotation_order:
+        pattern: XYZ
+      translation_unit:
+        pattern: (centimeter|millimeter)
+  DatasetGraphMetadata:
+    class_uri: dcat:Dataset
+    slots:
+      - title
+      - description
+      - created_by
+      - creation_date
+      - version
+      - license
+      - publisher
+      - see_also
+      - derived_from
+  DatasetGraphData:
+    slots:
+      - donor
+      - sample
+      - dataset
+      - spatial_entity
+  Container:
+    tree_root: true
+    attributes:
+      iri:
+        range: uriorcurie
+      metadata:
+        range: DatasetGraphMetadata
+      data:
+        range: DatasetGraphData
+    annotations:
+      owl.template: |-
+        AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
+        AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
+        {% for creator_iri in metadata.created_by %}
+        AnnotationAssertion( dct:creator {{iri}} "{{creator_iri|e}}" )
+        {% endfor %}
+        AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
+        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
+        AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
+        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
+        AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
+        AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from|e}}" )
+
+slots:
+  partially_overlaps:
+    multivalued: true
+    range: Named
+    slot_uri: rdf:type
+    annotations:
+      owl.template: |-
+        {% for organ_part in partially_overlaps %}
+        ClassAssertion(ObjectSomeValuesFrom(RO:0002151 {{organ_part}}) {{id}})
+        {% endfor %}
+  derived_from:
+    range: uriorcurie
+    slot_uri: prov:wasDerivedFrom
+  donor:
+    multivalued: true
+    inlined_as_list: true
+    range: Donor
+  sample:
+    multivalued: true
+    inlined_as_list: true
+    range: TissueBlock
+  dataset:
+    multivalued: true
+    inlined_as_list: true
+    range: Dataset
+  spatial_entity:
+    multivalued: true
+    inlined_as_list: true
+    range: SpatialEntity
+  pref_label:
+    slot_uri: skos:prefLabel
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  external_link:
+    slot_uri: ccf:url
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  age:
+    range: integer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  bmi:
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  sex:
+    annotations:
+      owl: AnnotationProperty
+  sex_id:
+    slot_uri: loinc:46098-0
+  race:
+    slot_uri: ccf:has_race
+    annotations:
+      owl: AnnotationProperty
+  race_id:
+    slot_uri: loinc:32624-9
+  consortium_name:
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  provider_name:
+    slot_uri: ccf:tissue_provider_name
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  provider_uuid:
+    slot_uri: ccf:tissue_provider_uuid
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  samples:
+    slot_uri: ccf:provides
+    multivalued: true
+    inlined: false
+    range: TissueBlock
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  rui_location:
+    required: true
+    slot_uri: ccf:has_registration_location
+    range: SpatialEntity
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  extraction_site:
+    required: true
+    slot_uri: ccf:extraction_site
+    range: SpatialEntity
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  sections:
+    slot_uri: ccf:subdivided_into_sections
+    range: TissueSection
+    multivalued: true
+    inlined_as_list: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  datasets:
+    slot_uri: ccf:generates_dataset
+    range: Dataset
+    multivalued: true
+    inlined: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  section_count:
+    required: true
+    range: integer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  section_size:
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  section_size_unit:
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  section_number:
+    required: true
+    range: integer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  technology:
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  thumbnail:
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  linked_back_to:
+    required: true
+    range: uriorcurie
+    annotations:
+      owl: ObjectProperty, ObjectPropertyAssertion, TransitiveProperty
+  creator:
+    required: true
+    slot_uri: dct:creator
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  create_date:
+    required: true
+    slot_uri: dct:created
+    range: date
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  x_dimension:
+    required: true
+    range: float
+    minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  y_dimension:
+    required: true
+    range: float
+    minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  z_dimension:
+    required: true
+    range: float
+    minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  dimension_unit:
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  collides_with:
+    multivalued: true
+    range: uriorcurie
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  slice_count:
+    range: integer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  slice_thickness:
+    range: integer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  placement:
+    required: true
+    slot_uri: ccf:has_placement
+    inlined: true
+    range: SpatialPlacement
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  target:
+    required: true
+    slot_uri: ccf:placement_relative_to
+    range: uriorcurie
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  placement_date:
+    required: true
+    range: date
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  x_scaling:
+    required: true
+    range: float
+    minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  y_scaling:
+    required: true
+    range: float
+    minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  z_scaling:
+    required: true
+    range: float
+    minimum_value: 0.0
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  scaling_unit:
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  x_rotation:
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  y_rotation:
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  z_rotation:
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  rotation_unit:
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  rotation_order:
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  x_translation:
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  y_translation:
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  z_translation:
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  translation_unit:
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
