@@ -19,25 +19,13 @@ default_range: string
 imports:
   - linkml:types
   - ../shared/metadata-base
+  - ../shared/instance-base
 
 settings:
   uberon: "UBERON"
   fma: "FMA"
 
 classes:
-  Named:
-    mixin: true
-    slots:
-      - id
-      - label
-      - class_type
-  Instance:
-    mixin: true
-    slots:
-      - typeOf
-    annotations:
-      owl: Individual
-
   FtuIllustration:
     class_uri: ccf:FtuIllustration
     mixins:
