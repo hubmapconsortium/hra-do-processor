@@ -17,7 +17,7 @@ export function readNormalizedMetadata(context) {
   const { path } = context.selectedDigitalObject;
   return {
     ...load(readFileSync(resolve(path, 'normalized/normalized-metadata.yaml'))),
-  }; 
+  };
 }
 
 export function readLocalData(context, fileName, parse) {
@@ -54,13 +54,13 @@ export function writeNormalizedDataOfCollection(context, data) {
 
 function flatten(metadata) {
   const output = {
-    title: metadata.title, 
-    description: metadata.description, 
+    title: metadata.title,
+    description: metadata.description,
     created_by: metadata.creators.map((creator) => creator.id),
-    creation_date: metadata.creation_date, 
+    creation_date: metadata.creation_date,
     version: metadata.version,
-    license: metadata.license, 
-    publisher: metadata.publisher, 
+    license: metadata.license,
+    publisher: metadata.publisher,
     see_also: metadata.see_also
   };
   if (metadata.was_derived_from) {
@@ -102,7 +102,7 @@ function normalizePersonData(person) {
     class_type: "Person",
     type_of: "schema:Person",
     label: person.fullName,
-    ...person  
+    ...person
   }
 }
 
@@ -178,7 +178,7 @@ function getGraphDataDistributions(context) {
     },
     {
       id: `${accessUrl}#ntriples`,
-      label: getGraphDataDistributionTitle(name, version, "N-Triples"),      
+      label: getGraphDataDistributionTitle(name, version, "N-Triples"),
       title: getGraphDataDistributionTitle(name, version, "N-Triples"),
       downloadUrl: getDataDownloadUrl(context, 'nt'),
       accessUrl: `${accessUrl}#ntriples`,
@@ -240,5 +240,11 @@ export function cleanDirectory(context) {
   throwOnError(
     `find ${path} -type f -exec rm -f {} +`,
     'Clean normalized directory failed.'
+  );
+}
+
+export function removeDuplicate(data, distinctProperties) {
+  return data.filter((value, index, self) =>
+    self.findIndex(v => distinctProperties.every(k => v[k] === value[k])) === index
   );
 }

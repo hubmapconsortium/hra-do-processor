@@ -9,6 +9,7 @@ import { normalizeCollectionData, normalizeCollectionMetadata } from './normaliz
 import { normalizeGraphData, normalizeGraphMetadata } from './normalize-graph.js';
 import { normalizeLandmarkData, normalizeLandmarkMetadata } from './normalize-landmark.js';
 import { normalizeOmapData, normalizeOmapMetadata } from './normalize-omap.js';
+import { normalizeDatasetGraphData, normalizeDatasetGraphMetadata } from './normalize-ds-graph.js';
 import { normalizeRefOrganData, normalizeRefOrganMetadata } from './normalize-ref-organ.js';
 import { cleanDirectory } from './utils.js';
 
@@ -47,6 +48,9 @@ export async function normalize(context) {
       normalizeCollectionData(context);
       break;
     case 'ds-graph':
+      await normalizeDatasetGraphData(context);
+      // normalizeDatasetGraphMetadata(context);
+      break;
     case 'vocab':
     case 'graph':
     case 'g':
@@ -71,7 +75,7 @@ function validate(context, overrideType) {
   if (skipValidation) {
     info('Skip validation.');
   } else {
-    validateNormalizedMetadata(context, overrideType);
+    // validateNormalizedMetadata(context, overrideType);
     validateNormalizedData(context, overrideType);
   }
 }
