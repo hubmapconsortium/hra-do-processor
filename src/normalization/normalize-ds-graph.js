@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { info } from '../utils/logging.js';
+import { checkIfValidUrl } from '../utils/validation.js';
 import { ObjectBuilder } from '../utils/object-builder.js';
 import {
   normalizeMetadata,
@@ -43,46 +44,58 @@ export async function getRawData(context) {
 function normalizeData(context, data) {
   const metadata = readMetadata(context);
   return {
-    donor: normalizeDonorData(data),
-    sample: normalizeSampleData(data),
+    donor: removeDuplicate(normalizeDonorData(data), ['id']),
+    sample: removeDuplicate(normalizeSampleData(data), ['id']),
     dataset: removeDuplicate(normalizeDatasetData(data), ['id']),
     spatial_entity: removeDuplicate(normalizeExtractionSiteData(data), ['id'])
   }
 }
 
 function normalizeDonorData(data) {
-  return data['@graph'].map((donor) => {
-    return new ObjectBuilder()
-      .append('id', donor['@id'])
-      .append('label', getDonorLabel(donor))
-      .append('class_type', 'Donor')
-      .append('typeOf', ['Donor'])
-      .append('pref_label', donor.label)
-      .append('description', donor.description)
-      .append('external_link', donor.link)
-      .append('age', donor.age)
-      .append('sex', donor.sex)
-      .append('sex_id', getSexId(donor.sex))
-      .append('bmi', donor.bmi)
-      .append('race', donor.race)
-      .append('race_id', getRaceId(donor.race))
-      .append('consortium_name', donor.consortium_name)
-      .append('provider_name', donor.provider_name)
-      .append('provider_uuid', donor.provider_uuid)
-      .append('samples', donor.samples.map((sample) => sample['@id']))
-      .build();
-  });
+  return data['@graph'].map(createDonorObject).filter(onlyNonNull);
+}
+
+function createDonorObject(donor) {
+  if (!checkDonorId(donor['@id'])) {
+    return null;
+  }
+  return new ObjectBuilder()
+    .append('id', donor['@id'])
+    .append('label', getDonorLabel(donor))
+    .append('class_type', 'Donor')
+    .append('typeOf', ['Donor'])
+    .append('pref_label', donor.label)
+    .append('description', donor.description)
+    .append('external_link', donor.link)
+    .append('age', donor.age)
+    .append('sex', donor.sex)
+    .append('sex_id', getSexId(donor.sex))
+    .append('bmi', donor.bmi)
+    .append('race', donor.race)
+    .append('race_id', getRaceId(donor.race))
+    .append('consortium_name', donor.consortium_name)
+    .append('provider_name', donor.provider_name)
+    .append('provider_uuid', donor.provider_uuid)
+    .append('samples',
+      donor.samples
+        .map((sample) => sample['@id'])
+        .filter(checkSampleId))
+    .build();
 }
 
 function normalizeSampleData(data) {
   const donors = data['@graph'];
   return donors.map((donor) => {
-    return donor['samples'].map((block) =>
-      createTissueBlockData(donor, block)).flat();
+    return donor['samples']
+      .map((block) => createTissueBlockObject(donor, block))
+      .filter(onlyNonNull)
   }).flat();
 }
 
-function createTissueBlockData(donor, block) {
+function createTissueBlockObject(donor, block) {
+  if (!checkTissueBlockId(block['@id'])) {
+    return null;
+  }
   return new ObjectBuilder()
     .append('id', block['@id'])
     .append('label', getSampleLabel(block))
@@ -94,16 +107,23 @@ function createTissueBlockData(donor, block) {
     .append('rui_location', block.rui_location['@id'])
     .append('extraction_site', block.rui_location['@id'])
     .append('external_link', block.link)
-    .append('sections', block.sections?.map((section) => createTissueSectionData(block, section)))
-    .append('datasets', block.datasets.map((dataset) => dataset['@id']))
+    .append('sections', block.sections
+      ?.map((section) => createTissueSectionObject(block, section))
+      .filter(onlyNonNull))
+    .append('datasets', block.datasets
+      ?.map((dataset) => dataset['@id'])
+      .filter(checkDatasetId))
     .append('section_count', block.section_count)
     .append('section_size', block.section_size)
     .append('section_size_unit', block.section_size_unit)
-    .append('linked_back_to', donor['@id'])
+    .append('linked_back_to', checkDonorId(donor['@id']))
     .build();
 }
 
-function createTissueSectionData(block, section) {
+function createTissueSectionObject(block, section) {
+  if (!checkTissueSectionId(section['@id'])) {
+    return null;
+  }
   return new ObjectBuilder()
     .append('id', section['@id'])
     .append('label', getSampleLabel(section))
@@ -113,8 +133,10 @@ function createTissueSectionData(block, section) {
     .append('description', section.description)
     .append('external_link', section.link)
     .append('section_number', section.section_number)
-    .append('datasets', section.datasets.map((dataset) => dataset['@id']))
-    .append('linked_back_to', block['@id'])
+    .append('datasets', section.datasets
+      ?.map((dataset) => dataset['@id'])
+      .filter(checkDatasetId))
+    .append('linked_back_to', checkTissueBlockId(block['@id']))
     .build();
 }
 
@@ -122,20 +144,23 @@ function normalizeDatasetData(data) {
   const donors = data['@graph']
   const sampleBlockDatasets = donors.map((donor) => {
     return donor['samples'].map((block) => {
-      return block['datasets'].map((dataset) => createDatasetObject(block, dataset)).flat();
+      return block['datasets']?.map((dataset) => createDatasetObject(block, dataset))
     }).flat();
   }).flat();
   const sampleSectionDatasets = donors.map((donor) => {
     return donor['samples'].map((block) => {
       return block['sections']?.map((section) => {
-        return section['datasets'].map((dataset) => createDatasetObject(section, dataset)).flat();
+        return section['datasets']?.map((dataset) => createDatasetObject(section, dataset))
       }).flat();
     }).flat();
   }).flat();
-  return [...sampleBlockDatasets, ...sampleSectionDatasets];
+  return [...sampleBlockDatasets, ...sampleSectionDatasets].filter(onlyNonNull);
 }
 
 function createDatasetObject(sample, dataset) {
+  if (!checkDatasetId(dataset['@id'])) {
+    return null;
+  }
   return new ObjectBuilder()
     .append('id', dataset['@id'])
     .append('label', getDatasetLabel(dataset))
@@ -146,37 +171,46 @@ function createDatasetObject(sample, dataset) {
     .append('external_link', dataset.link)
     .append('technology', dataset.technology)
     .append('thumbnail', dataset.thumbnail)
-    .append('linked_back_to', sample['@id'])
+    .append('linked_back_to', checkSampleId(sample['@id']))
     .build();
 }
 
 function normalizeExtractionSiteData(data) {
   const donors = data['@graph'];
   return donors.map((donor) => {
-    return donor['samples'].map((block) => {
-      const spatialEntity = block['rui_location'];
-      return new ObjectBuilder()
-        .append('id', spatialEntity['@id'])
-        .append('label', getSpatialEntityLabel(block))
-        .append('pref_label', spatialEntity.label)
-        .append('class_type', 'SpatialEntity')
-        .append('typeOf', ['SpatialEntity'])
-        .append('collides_with', spatialEntity.ccf_annotations)
-        .append('create_date', normalizeDate(spatialEntity.creation_date))
-        .append('creator', spatialEntity.creator)
-        .append('x_dimension', spatialEntity.x_dimension)
-        .append('y_dimension', spatialEntity.y_dimension)
-        .append('z_dimension', spatialEntity.z_dimension)
-        .append('dimension_unit', spatialEntity.dimension_units)
-        .append('slice_count', spatialEntity.slice_count)
-        .append('slice_thickness', spatialEntity.slice_thickness)
-        .append('placement', normalizePlacementData(block, spatialEntity.placement))
-        .build();
-    }).flat();
+    return donor['samples'].map((block) =>
+      createExtractionSiteObject(block, block['rui_location'])
+    ).filter(onlyNonNull);
   }).flat();
 }
 
-function normalizePlacementData(block, placement) {
+function createExtractionSiteObject(block, spatialEntity) {
+  if (!checkExtractionSiteId(spatialEntity['@id'])) {
+    return null;
+  }
+  return new ObjectBuilder()
+    .append('id', spatialEntity['@id'])
+    .append('label', getSpatialEntityLabel(block))
+    .append('pref_label', spatialEntity.label)
+    .append('class_type', 'SpatialEntity')
+    .append('typeOf', ['SpatialEntity'])
+    .append('collides_with', spatialEntity.ccf_annotations)
+    .append('create_date', normalizeDate(spatialEntity.creation_date))
+    .append('creator', spatialEntity.creator)
+    .append('x_dimension', spatialEntity.x_dimension)
+    .append('y_dimension', spatialEntity.y_dimension)
+    .append('z_dimension', spatialEntity.z_dimension)
+    .append('dimension_unit', spatialEntity.dimension_units)
+    .append('slice_count', spatialEntity.slice_count)
+    .append('slice_thickness', spatialEntity.slice_thickness)
+    .append('placement', createPlacementObject(block, spatialEntity.placement))
+    .build();
+}
+
+function createPlacementObject(block, placement) {
+  if (!checkPlacementId(placement['@id'])) {
+    return null;
+  }
   return new ObjectBuilder()
     .append('id', placement['@id'])
     .append('label', getPlacementLabel(block))
@@ -216,7 +250,7 @@ function normalizeDate(originalDate) {
 
 function getDonorLabel(donor) {
   const { race, sex, age, bmi, provider_name } = donor;
-  return `Donor ${race} ${sex}, Age ${age}, BMI ${bmi} from ${provider_name}`;
+  return `Donor ${sex}, Race ${race}, Age ${age}, BMI ${bmi} from ${provider_name}`;
 }
 
 function getSampleLabel(sample) {
@@ -238,6 +272,9 @@ function getPlacementLabel(sample) {
 }
 
 function getSexId(sex) {
+  if (!sex) {
+    return null;
+  }
   switch (sex.toLowerCase) {
     case "male": return "loinc:LA2-8";
     case "female": return "loinc:LA3-6";
@@ -246,6 +283,9 @@ function getSexId(sex) {
 }
 
 function getRaceId(race) {
+  if (!race) {
+    return null;
+  }
   const raceLabel = race.toLowerCase();
   if (raceLabel.includes("white")) {
     return "loinc:LA4457-3";
@@ -260,4 +300,36 @@ function getRaceId(race) {
   } else {
     return "loinc:LA4489-6"
   }
+}
+
+function onlyNonNull(item) {
+  return item;
+}
+
+function checkDonorId(id) {
+  return checkIfValidUrl(id, 'Donor ID');
+}
+
+function checkSampleId(id) {
+  return checkIfValidUrl(id, 'Sample ID');
+}
+
+function checkTissueBlockId(id) {
+  return checkIfValidUrl(id, 'Tissue Block ID');
+}
+
+function checkTissueSectionId(id) {
+  return checkIfValidUrl(id, 'Tissue Section ID');
+}
+
+function checkDatasetId(id) {
+  return checkIfValidUrl(id, 'Dataset ID');
+}
+
+function checkExtractionSiteId(id) {
+  return checkIfValidUrl(id, 'Extraction Site ID');
+}
+
+function checkPlacementId(id) {
+  return checkIfValidUrl(id, 'Placement ID');
 }
