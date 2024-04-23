@@ -1,6 +1,4 @@
-import { resolve } from 'path';
 import sh from 'shelljs';
-import { more } from './logging.js';
 import { throwOnError } from './sh-exec.js';
 
 export function query(input, query, output) {
@@ -10,7 +8,7 @@ export function query(input, query, output) {
   );
 }
 
-export function extract(input, upperTerm, lowerTerms, output, intermediates="all", outputFormat="owl") {
+export function extract(input, upperTerm, lowerTerms, output, intermediates = "all", outputFormat = "owl") {
   throwOnError(
     `robot extract -i ${input} \
               --method MIREOT \
@@ -22,7 +20,27 @@ export function extract(input, upperTerm, lowerTerms, output, intermediates="all
   );
 }
 
-export function filter(input, anyTerms, annotationTerms=['rdfs:label'], output, outputFormat="owl") {
+export function subset(input, seedTerms, output, outputFormat = "owl") {
+  throwOnError(
+    `robot extract -i ${input} \
+                --method subset \
+                --term-file ${seedTerms} \
+           convert --format ${outputFormat} -o ${output}`,
+    'Sub-ontology extraction failed. See errors above.'
+  );
+}
+
+export function module(input, seedTerms, output, method = "BOT", outputFormat = "owl") {
+  throwOnError(
+    `robot extract -i ${input} \
+                --method ${method} \
+                --term-file ${seedTerms} \
+           convert --format ${outputFormat} -o ${output}`,
+    'Ontology module extraction failed. See errors above.'
+  );
+}
+
+export function filter(input, anyTerms, annotationTerms = ['rdfs:label'], output, outputFormat = "owl") {
   const termArguments = annotationTerms.map(term => `--term ${term}`).join(" ");
   throwOnError(
     `robot filter -i ${input} \
@@ -33,7 +51,7 @@ export function filter(input, anyTerms, annotationTerms=['rdfs:label'], output, 
   );
 }
 
-export function merge(inputs, output, outputFormat="owl") {
+export function merge(inputs, output, outputFormat = "owl") {
   // Convert the inputs to OWL/XML format to avoid blank node collisions
   const owlInputs = [];
   for (const input of inputs) {

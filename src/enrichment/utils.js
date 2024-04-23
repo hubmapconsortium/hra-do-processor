@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { convert, extract, filter, merge, query, exclude } from '../utils/robot.js';
+import { extract, subset, module, filter, query, exclude } from '../utils/robot.js';
 import { mergeTurtles } from '../utils/owl-cli.js';
 import { redundant } from '../utils/relation-graph.js';
 import { throwOnError } from '../utils/sh-exec.js';
@@ -98,13 +98,35 @@ export function filterClasses(context, ontologyName, classTermFile) {
   return outputPath;
 }
 
-export function extractClassHierarchy(context, ontologyName, upperTerm, lowerTerms, intermediates="all") {
+export function extractClassHierarchy(context, ontologyName, upperTerm, lowerTerms, intermediates = "all") {
   const { selectedDigitalObject: obj, processorHome } = context;
 
   const ontologyPath = resolve(processorHome, `mirrors/${ontologyName}.owl`);
   const outputPath = resolve(obj.path, `enriched/${ontologyName}-extract.owl`);
 
   extract(ontologyPath, upperTerm, lowerTerms, outputPath, intermediates);
+
+  return outputPath;
+}
+
+export function extractOntologySubset(context, ontologyName, seedTerms) {
+  const { selectedDigitalObject: obj, processorHome } = context;
+
+  const ontologyPath = resolve(processorHome, `mirrors/${ontologyName}.owl`);
+  const outputPath = resolve(obj.path, `enriched/${ontologyName}-extract.owl`);
+
+  subset(ontologyPath, seedTerms, outputPath);
+
+  return outputPath;
+}
+
+export function extractOntologyModule(context, ontologyName, seedTerms) {
+  const { selectedDigitalObject: obj, processorHome } = context;
+
+  const ontologyPath = resolve(processorHome, `mirrors/${ontologyName}.owl`);
+  const outputPath = resolve(obj.path, `enriched/${ontologyName}-extract.owl`);
+
+  module(ontologyPath, seedTerms, outputPath);
 
   return outputPath;
 }
