@@ -169,10 +169,16 @@ slots:
     inlined_as_list: true
     range: Creator
     slot_uri: dct:creator
+  created_by:
+    required: true
+    multivalued: true
+    inlined_as_list: true
+    range: uriorcurie
+    slot_uri: dct:creator
 
   # Schema.org properties
   about:
-    slot_uri: schema:about 
+    slot_uri: schema:about
   version:
     slot_uri: schema:version
   name:
@@ -247,5 +253,5 @@ slots:
   externalReviewers:
     multivalued: true
     inlined_as_list: true
-    range: Person    
+    range: Person
     slot_uri: ccf:external_reviewer
