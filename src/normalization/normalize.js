@@ -49,7 +49,7 @@ export async function normalize(context) {
       break;
     case 'ds-graph':
       await normalizeDatasetGraphData(context);
-      // normalizeDatasetGraphMetadata(context);
+      normalizeDatasetGraphMetadata(context);
       break;
     case 'vocab':
     case 'graph':
@@ -75,7 +75,7 @@ function validate(context, overrideType) {
   if (skipValidation) {
     info('Skip validation.');
   } else {
-    // validateNormalizedMetadata(context, overrideType);
+    validateNormalizedMetadata(context, overrideType);
     validateNormalizedData(context, overrideType);
   }
 }

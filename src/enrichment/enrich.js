@@ -9,7 +9,7 @@ import { enrichGraphData, enrichGraphMetadata } from './enrich-graph.js';
 import { enrichRefOrganData, enrichRefOrganMetadata } from './enrich-ref-organ.js';
 import { enrichLandmarkData, enrichLandmarkMetadata } from './enrich-landmark.js';
 import { enrichOmapData, enrichOmapMetadata } from './enrich-omap.js';
-import { enrichDatasetGraphData } from './enrich-ds-graph.js';
+import { enrichDatasetGraphData, enrichDatasetGraphMetadata } from './enrich-ds-graph.js';
 import { cleanDirectory } from './utils.js';
 
 export async function enrich(context) {
@@ -48,6 +48,7 @@ export async function enrich(context) {
       break;
     case 'ds-graph':
       await enrichDatasetGraphData(context);
+      enrichDatasetGraphMetadata(context);
       break;
     case 'vocab':
     case 'graph':
