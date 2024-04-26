@@ -131,19 +131,19 @@ function normalizeCtData(context, data) {
       .reduce(normalizeCt, collector);
 
     // Add ccf_located_in relationship that is between AS and CT
-    const last_as = row.anatomical_structures
+    const valid_as = row.anatomical_structures
       .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
       .map(({ id, name }) => generateIdWhenEmpty(id, name))
-      .filter((id) => passAsIdFilterCriteria(context, id))
-      .pop();
-    const last_ct = row.cell_types
+      .filter((id) => passAsIdFilterCriteria(context, id));
+    const valid_ct = row.cell_types
       .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
       .map(({ id, name }) => generateIdWhenEmpty(id, name))
-      .filter((id) => passCtIdFilterCriteria(context, id))
-      .pop();
-    if (last_ct) {
-      addLocatedIn(collector, last_ct, last_as);
-    }
+      .filter((id) => passCtIdFilterCriteria(context, id));
+    // Each CT will be associated with all AS via the ccf_located_in relationship
+    valid_ct.forEach((ct) => {
+      valid_as.forEach((as) => addLocatedIn(collector, ct, as))
+    });
+
     // Add has_biomarker relationship between CT and BM
     const biomarkers = row.biomarkers
       .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
@@ -153,6 +153,7 @@ function normalizeCtData(context, data) {
       .filter(({ doi }) => checkNotEmpty(doi))
       .map(({ doi }) => normalizeDoi(doi))
       .filter((doi) => passDoiFilterCriteria(context, doi));
+    const last_ct = valid_ct.pop();
     if (last_ct) {
       addCharacterizingBiomarkers(collector, last_ct, biomarkers, references);
     }
