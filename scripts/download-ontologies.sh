@@ -20,6 +20,9 @@ robot convert -i "$MIRROR_DIR/uberon.owl" \
      --format owl \
      -o "$MIRROR_DIR/uberon.owl"
 
+echo "Downloading the latest UBERON Sqlite database..."
+semsql download uberon -o "$MIRROR_DIR/uberon.db"
+
 echo "Downloading the latest FMA ontology..."
 curl -L "http://sig.biostr.washington.edu/share/downloads/fma/release/latest/fma.zip" \
      --create-dirs -o "$MIRROR_DIR/fma.zip" \
