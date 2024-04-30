@@ -70,7 +70,7 @@ robot convert -i "$MIRROR_DIR/hgnc.owl" \
      -o "$MIRROR_DIR/hgnc.owl"
 
 echo "Downloading the latest RO ontology..."
-curl -L "$OBO_BASE_URL/ro/ro-base.owl" \
+curl -L "$OBO_BASE_URL/ro/core.owl" \
      --create-dirs -o "$MIRROR_DIR/ro.owl" \
      --retry 4 \
      --max-time 200 && \
