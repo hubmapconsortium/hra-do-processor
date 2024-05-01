@@ -14,7 +14,7 @@ import {
     convertNormalizedMetadataToRdf,
     excludeTerms,
     extractClassHierarchy,
-    extractOntologyModule,
+    extractOntologySubset,
     isFileEmpty,
     logOutput,
 } from './utils.js';
@@ -38,17 +38,17 @@ export async function enrichDatasetGraphData(context) {
         const ontologyExtractionPaths = [];
         ontologyExtractionPaths.push(baseInputPath); // Set the base input path as the initial
 
-        const uberonEntitiesPath = collectEntities(context, 'uberon', baseInputPath);
+        const uberonEntitiesPath = collectEntities(context, 'uberon', baseInputPath, true);
         if (!isFileEmpty(uberonEntitiesPath)) {
-            info('Extracting UBERON.');
-            const uberonExtractPath = extractClassHierarchy(
+            info('Extracting a subset of UBERON ontology.');
+            const uberonSubsetPath = extractOntologySubset(
                 context,
                 'uberon',
-                'http://purl.obolibrary.org/obo/UBERON_0001062',
-                uberonEntitiesPath
+                uberonEntitiesPath,
+                ["BFO:0000050"]
             );
-            logOutput(uberonExtractPath);
-            ontologyExtractionPaths.push(uberonExtractPath);
+            logOutput(uberonSubsetPath);
+            ontologyExtractionPaths.push(uberonSubsetPath);
         }
 
         const fmaEntitiesPath = collectEntities(context, 'fma', baseInputPath);

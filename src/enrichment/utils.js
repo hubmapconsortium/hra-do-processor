@@ -6,6 +6,7 @@ import { mergeTurtles } from '../utils/owl-cli.js';
 import { redundant } from '../utils/relation-graph.js';
 import { throwOnError } from '../utils/sh-exec.js';
 import { info, more } from '../utils/logging.js';
+import { ancestors } from '../utils/oaktool.js';
 
 export function convertNormalizedMetadataToRdf(context, inputPath, outputPath, overrideType) {
   const { selectedDigitalObject: obj, processorHome } = context;
@@ -52,7 +53,7 @@ export function convertNormalizedDataToOwl(context, inputPath, outputPath, overr
   const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${overrideType || obj.type}.yaml`);
   const schemaBackupPath = resolve(processorHome, 'schemas/generated/linkml', `${overrideType || obj.type}.yaml.bak`);
 
-  info(`Using 'linkml-data2owl' to transform ${inputPath}`);
+  info(`Using 'linkml-data2owl' to transform ${inputPath} to OWL format`);
   /*
    * The steps:
    *  1. Substitute the "id" parameter in the schema file (LinkML) with the digital object's IRI,
@@ -75,13 +76,16 @@ export function isFileEmpty(path) {
   return fs.statSync(path).size === 0;
 }
 
-export function collectEntities(context, ontologyName, inputPath) {
+export function collectEntities(context, ontologyName, inputPath, useOboId = false) {
   const { selectedDigitalObject: obj, processorHome } = context;
 
   const queryPath = resolve(processorHome, `src/utils/get-${ontologyName}-terms.sparql`);
   const outputPath = resolve(obj.path, `enriched/${ontologyName}-terms.csv`);
 
   query(inputPath, queryPath, outputPath);
+  if (useOboId) {
+    throwOnError(`sed -ri 's|^http://purl.obolibrary.org/obo/([A-Z]+)_([0-9]+)|\\1:\\2|g' ${outputPath}`, 'Convert to OBO ID failed.');
+  }
   throwOnError(`sed -i '1d' ${outputPath}`, 'Collect entities failed.');
 
   return outputPath;
@@ -109,15 +113,28 @@ export function extractClassHierarchy(context, ontologyName, upperTerm, lowerTer
   return outputPath;
 }
 
-export function extractOntologySubset(context, ontologyName, seedTerms) {
+export function extractOntologySubset(context, ontologyName, seedTerms, predicates) {
   const { selectedDigitalObject: obj, processorHome } = context;
+
+  const ontologyDbFile = resolve(processorHome, `mirrors/${ontologyName}.db`);
+  const ancestorTerms = resolve(obj.path, `enriched/ancestor-terms.csv`);
+  ancestors('sqlite:', ontologyDbFile, seedTerms, predicates, ancestorTerms);
+
+  const subsetSeedTerms = resolve(obj.path, `enriched/subset-terms.csv`);
+  generateSubsetSeedTerms(predicates, ancestorTerms, subsetSeedTerms);
 
   const ontologyPath = resolve(processorHome, `mirrors/${ontologyName}.owl`);
   const outputPath = resolve(obj.path, `enriched/${ontologyName}-extract.owl`);
-
-  subset(ontologyPath, seedTerms, outputPath);
+  subset(ontologyPath, subsetSeedTerms, outputPath);
 
   return outputPath;
+}
+
+function generateSubsetSeedTerms(predicates, inputPath, outputPath) {
+  throwOnError(
+    `awk -F'\t' 'NR > 1 {print $1} END {print "${predicates.join('\\n')}"}' ${inputPath} > ${outputPath}`,
+    'Collect subset entities failed.'
+  );
 }
 
 export function extractOntologyModule(context, ontologyName, seedTerms) {
