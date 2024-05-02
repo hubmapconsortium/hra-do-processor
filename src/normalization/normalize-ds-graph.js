@@ -116,7 +116,7 @@ function createTissueBlockObject(donor, block) {
     .append('section_count', block.section_count)
     .append('section_size', block.section_size)
     .append('section_size_unit', block.section_size_unit)
-    .append('linked_back_to', checkDonorId(donor['@id']))
+    .append('links_back_to', checkDonorId(donor['@id']))
     .build();
 }
 
@@ -136,7 +136,7 @@ function createTissueSectionObject(block, section) {
     .append('datasets', section.datasets
       ?.map((dataset) => dataset['@id'])
       .filter(checkDatasetId))
-    .append('linked_back_to', checkTissueBlockId(block['@id']))
+    .append('links_back_to', checkTissueBlockId(block['@id']))
     .build();
 }
 
@@ -171,7 +171,7 @@ function createDatasetObject(sample, dataset) {
     .append('external_link', dataset.link)
     .append('technology', dataset.technology)
     .append('thumbnail', dataset.thumbnail)
-    .append('linked_back_to', checkSampleId(sample['@id']))
+    .append('links_back_to', checkSampleId(sample['@id']))
     .build();
 }
 

@@ -88,7 +88,7 @@ classes:
       - section_count
       - section_size # block_dimension
       - section_size_unit # block_dimension_unit
-      - linked_back_to
+      - links_back_to
     slot_usage:
       partially_overlaps:
         annotations:
@@ -108,7 +108,7 @@ classes:
       - samples
       - datasets
       - section_number
-      - linked_back_to
+      - links_back_to
   Dataset:
     class_uri: ccf:Dataset
     mixins:
@@ -120,7 +120,7 @@ classes:
       - external_link
       - technology
       - thumbnail
-      - linked_back_to
+      - links_back_to
   SpatialEntity:
     class_uri: ccf:SpatialEntity
     mixins:
@@ -336,11 +336,13 @@ slots:
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  linked_back_to:
+  links_back_to:
     required: false
     range: uriorcurie
     annotations:
       owl: ObjectProperty, ObjectPropertyAssertion, TransitiveProperty
+      owl.template: |-
+        AnnotationAssertion( rdfs:label ccf:links_back_to "links back to" )
   creator:
     required: true
     slot_uri: dct:creator
