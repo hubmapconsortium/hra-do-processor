@@ -340,9 +340,10 @@ slots:
     required: false
     range: uriorcurie
     annotations:
-      owl: ObjectProperty, ObjectPropertyAssertion, TransitiveProperty
+      owl: ObjectProperty, ObjectPropertyAssertion
       owl.template: |-
         AnnotationAssertion( rdfs:label ccf:links_back_to "links back to" )
+        TransitiveObjectProperty( ccf:links_back_to )
   creator:
     required: true
     slot_uri: dct:creator
