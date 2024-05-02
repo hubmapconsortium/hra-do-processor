@@ -12,7 +12,7 @@ echo "Cleaning directory..."
 rm -rf $MIRROR_DIR/*.*
 
 echo "Downloading the latest UBERON ontology..."
-curl -L "$OBO_BASE_URL/uberon/uberon-base.owl" \
+curl -L "$OBO_BASE_URL/uberon/uberon.owl" \
      --create-dirs -o "$MIRROR_DIR/uberon.owl" \
      --retry 4 \
      --max-time 200 && \
