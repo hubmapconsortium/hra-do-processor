@@ -45,7 +45,7 @@ export async function enrichDatasetGraphData(context) {
                 context,
                 'uberon',
                 uberonEntitiesPath,
-                ["BFO:0000050"]
+                ["BFO:0000050", "RO:0001025"] // part of, located in
             );
             logOutput(uberonSubsetPath);
             ontologyExtractionPaths.push(uberonSubsetPath);
