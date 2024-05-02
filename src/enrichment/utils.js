@@ -113,18 +113,24 @@ export function extractClassHierarchy(context, ontologyName, upperTerm, lowerTer
   return outputPath;
 }
 
-export function extractOntologySubset(context, ontologyName, seedTerms, predicates) {
-  const { selectedDigitalObject: obj, processorHome } = context;
+export function extractOntologySubset(context, ontologyName, inputPath, predicates) {
+  info('Extracting a subset of UBERON ontology.');
 
-  const ontologyDbFile = resolve(processorHome, `mirrors/${ontologyName}.db`);
+  const seedTerms = collectEntities(context, ontologyName, inputPath, true);
+  if (isFileEmpty(seedTerms)) {
+    return null;
+  }
+
+  const { selectedDigitalObject: obj, processorHome } = context;
+  const ontologyDbPath = resolve(processorHome, `mirrors/${ontologyName}.db`);
   const ancestorTerms = resolve(obj.path, `enriched/ancestor-terms.csv`);
-  ancestors('sqlite:', ontologyDbFile, seedTerms, predicates, ancestorTerms);
+  ancestors('sqlite:', ontologyDbPath, seedTerms, predicates, ancestorTerms);
 
   const subsetSeedTerms = resolve(obj.path, `enriched/subset-terms.csv`);
   generateSubsetSeedTerms(predicates, ancestorTerms, subsetSeedTerms);
 
   const ontologyPath = resolve(processorHome, `mirrors/${ontologyName}.owl`);
-  const outputPath = resolve(obj.path, `enriched/${ontologyName}-extract.owl`);
+  const outputPath = resolve(obj.path, `enriched/${ontologyName}-subset.owl`);
   subset(ontologyPath, subsetSeedTerms, outputPath);
 
   return outputPath;
@@ -179,4 +185,10 @@ export function cleanDirectory(context) {
 
 export function logOutput(outputPath) {
   more(`==> ${outputPath}`);
+}
+
+export function push(arr, item) {
+  if (item) {
+    arr.push(item);
+  }
 }

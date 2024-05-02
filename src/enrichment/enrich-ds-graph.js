@@ -1,12 +1,7 @@
-import { readFileSync } from 'fs';
 import { error } from 'console';
 import { resolve } from 'path';
-import { getRawData } from '../normalization/normalize-omap.js';
-import { info, warning, more } from '../utils/logging.js';
-import { RdfBuilder, iri, literal } from '../utils/rdf-builder.js';
-import { retrieveAntibody } from '../utils/scicrunch-client.js';
+import { info, more } from '../utils/logging.js';
 import { convert, merge } from '../utils/robot.js';
-import { enrichBasicData } from './enrich-basic.js';
 import {
     cleanTemporaryFiles,
     collectEntities,
@@ -17,6 +12,7 @@ import {
     extractOntologySubset,
     isFileEmpty,
     logOutput,
+    push
 } from './utils.js';
 
 export function enrichDatasetGraphMetadata(context) {
@@ -32,24 +28,14 @@ export async function enrichDatasetGraphData(context) {
         const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
         const baseInputPath = resolve(obj.path, 'enriched/base-input.ttl');
         convertNormalizedDataToOwl(context, normalizedPath, baseInputPath);
-        logOutput(baseInputPath);
 
         // Extract terms from reference ontologies to enrich the graph data
         const ontologyExtractionPaths = [];
-        ontologyExtractionPaths.push(baseInputPath); // Set the base input path as the initial
-
-        const uberonEntitiesPath = collectEntities(context, 'uberon', baseInputPath, true);
-        if (!isFileEmpty(uberonEntitiesPath)) {
-            info('Extracting a subset of UBERON ontology.');
-            const uberonSubsetPath = extractOntologySubset(
-                context,
-                'uberon',
-                uberonEntitiesPath,
-                ["BFO:0000050", "RO:0001025"] // part of, located in
-            );
-            logOutput(uberonSubsetPath);
-            ontologyExtractionPaths.push(uberonSubsetPath);
-        }
+        push(ontologyExtractionPaths, baseInputPath); // Set the base input path as the initial
+        push(ontologyExtractionPaths, extractOntologySubset(
+            context, 'uberon', baseInputPath,
+            ["BFO:0000050", "RO:0001025"] // part of, located in
+        ));
 
         const fmaEntitiesPath = collectEntities(context, 'fma', baseInputPath);
         if (!isFileEmpty(fmaEntitiesPath)) {
@@ -60,8 +46,7 @@ export async function enrichDatasetGraphData(context) {
                 'http://purl.org/sig/ont/fma/fma62955',
                 fmaEntitiesPath
             );
-            logOutput(fmaExtractPath);
-            ontologyExtractionPaths.push(fmaExtractPath);
+            push(ontologyExtractionPaths, fmaExtractPath);
         }
 
         info('Merging files:');
@@ -70,7 +55,6 @@ export async function enrichDatasetGraphData(context) {
         }
         const enrichedWithOntologyPath = resolve(obj.path, 'enriched/enriched-with-ontology.owl');
         merge(ontologyExtractionPaths, enrichedWithOntologyPath);
-        logOutput(enrichedWithOntologyPath);
 
         const trimmedOutputPath = resolve(obj.path, 'enriched/trimmed-output.ttl');
         info(`Excluding unwanted terms.`);
