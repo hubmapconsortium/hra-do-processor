@@ -89,6 +89,13 @@ classes:
       - section_size # block_dimension
       - section_size_unit # block_dimension_unit
       - linked_back_to
+    slot_usage:
+      partially_overlaps:
+        annotations:
+          owl.template: |-
+            {% for organ_part in partially_overlaps %}
+            ClassAssertion(ObjectSomeValuesFrom(RO:0002151 {{organ_part}}) {{id}})
+            {% endfor %}
   TissueSection:
     class_uri: ccf:TissueSection
     mixins:
@@ -209,12 +216,10 @@ slots:
   partially_overlaps:
     multivalued: true
     range: Named
-    slot_uri: rdf:type
+    slot_uri: RO:0002151
     annotations:
       owl.template: |-
-        {% for organ_part in partially_overlaps %}
-        ClassAssertion(ObjectSomeValuesFrom(RO:0002151 {{organ_part}}) {{id}})
-        {% endfor %}
+        AnnotationAssertion( rdfs:label RO:0002151 "partially overlaps" )
   derived_from:
     range: uriorcurie
     slot_uri: prov:wasDerivedFrom
