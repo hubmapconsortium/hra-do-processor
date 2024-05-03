@@ -1,5 +1,5 @@
 import { existsSync } from 'fs';
-import { resolve } from 'path';
+import { dirname, resolve } from 'path';
 import sh from 'shelljs';
 import { readMetadata } from '../normalization/utils.js';
 import { info } from '../utils/logging.js';
@@ -18,6 +18,9 @@ export function deploy(context) {
   sh.cp(resolve(obj.path, 'enriched/enriched-metadata.ttl'), metadataTtl);
 
   for (const file of metadata.datatable) {
+    if (file.includes('/')) {
+      sh.mkdir('-p', resolve(deployPath, 'assets', dirname(file)));
+    }
     sh.cp(resolve(obj.path, 'raw', file), resolve(deployPath, 'assets', file));
   }
 
