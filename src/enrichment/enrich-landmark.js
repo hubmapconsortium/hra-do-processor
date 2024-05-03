@@ -7,8 +7,10 @@ import {
   convertNormalizedDataToOwl,
   convertNormalizedMetadataToRdf,
   extractClassHierarchy,
+  extractOntologySubset,
   isFileEmpty,
   logOutput,
+  push
 } from './utils.js';
 
 export function enrichLandmarkMetadata(context) {
@@ -33,21 +35,13 @@ export function enrichLandmarkData(context) {
 
     const enrichedWithOntologyPath = resolve(obj.path, 'enriched/enriched-with-ontology.owl');
 
-    inputPaths.push(baseInputPath); // Set the enriched path as the initial
+    push(inputPaths, baseInputPath); // Set the enriched path as the initial
 
     info('Getting concept details from reference ontologies...');
-    const uberonEntitiesPath = collectEntities(context, 'uberon', baseInputPath);
-    if (!isFileEmpty(uberonEntitiesPath)) {
-      info('Extracting UBERON.');
-      const uberonExtractPath = extractClassHierarchy(
-        context,
-        'uberon',
-        'http://purl.obolibrary.org/obo/UBERON_0001062',
-        uberonEntitiesPath
-      );
-      logOutput(uberonExtractPath);
-      inputPaths.push(uberonExtractPath);
-    }
+    push(inputPaths, extractOntologySubset(
+      context, 'uberon', baseInputPath,
+      ["BFO:0000050", "RO:0001025"] // part of, located in
+    ));
 
     const fmaEntitiesPath = collectEntities(context, 'fma', baseInputPath);
     if (!isFileEmpty(fmaEntitiesPath)) {
@@ -59,7 +53,7 @@ export function enrichLandmarkData(context) {
         fmaEntitiesPath
       );
       logOutput(fmaExtractPath);
-      inputPaths.push(fmaExtractPath);
+      push(inputPaths, fmaExtractPath);
     }
 
     info(`Creating landmark: ${enrichedPath}`);
@@ -70,5 +64,6 @@ export function enrichLandmarkData(context) {
     // Clean up
     info('Cleaning up temporary files.');
     cleanTemporaryFiles(context);
+    info('Done.');
   }
 }

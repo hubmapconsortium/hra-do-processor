@@ -10,8 +10,10 @@ import {
   isFileEmpty,
   collectEntities,
   extractClassHierarchy,
+  extractOntologySubset,
   excludeTerms,
-  logOutput 
+  logOutput,
+  push
 } from './utils.js';
 
 export function enrichRefOrganMetadata(context) {
@@ -24,7 +26,6 @@ export function enrichRefOrganMetadata(context) {
 export function enrichRefOrganData(context) {
   try {
     const { selectedDigitalObject: obj } = context;
-    
     const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
     const ontologyPath = resolve(obj.path, 'enriched/ontology.ttl');
     const baseInputPath = resolve(obj.path, 'enriched/base-input.ttl');
@@ -35,32 +36,22 @@ export function enrichRefOrganData(context) {
 
     const enrichedWithOntologyPath = resolve(obj.path, 'enriched/enriched-with-ontology.owl');
 
-    inputPaths.push(baseInputPath); // Set the enriched path as the initial
-
-    info('Getting concept details from reference ontologies...')
-    const uberonEntitiesPath = collectEntities(context, 'uberon', baseInputPath);
-    if (!isFileEmpty(uberonEntitiesPath)) {
-      info('Extracting UBERON.');
-      const uberonExtractPath = extractClassHierarchy(
-        context,
-        'uberon',
-        'http://purl.obolibrary.org/obo/UBERON_0001062',
-        uberonEntitiesPath
-      );
-      logOutput(uberonExtractPath);
-      inputPaths.push(uberonExtractPath);
-    }
+    push(inputPaths, baseInputPath); // Set the enriched path as the initial
+    push(inputPaths, extractOntologySubset(
+      context, 'uberon', baseInputPath,
+      ["BFO:0000050", "RO:0001025"] // part of, located in
+    ));
 
     const fmaEntitiesPath = collectEntities(context, 'fma', baseInputPath);
     if (!isFileEmpty(fmaEntitiesPath)) {
       info('Extracting FMA.');
       const fmaExtractPath = extractClassHierarchy(
-        context, 
-        'fma', 
-        'http://purl.org/sig/ont/fma/fma62955', 
+        context,
+        'fma',
+        'http://purl.org/sig/ont/fma/fma62955',
         fmaEntitiesPath);
       logOutput(fmaExtractPath);
-      inputPaths.push(fmaExtractPath);
+      push(inputPaths, fmaExtractPath);
     }
 
     info('Merging files:');
@@ -83,5 +74,6 @@ export function enrichRefOrganData(context) {
     // Clean up
     info('Cleaning up temporary files.');
     cleanTemporaryFiles(context);
+    info('Done.');
   }
 }

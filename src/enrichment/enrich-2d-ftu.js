@@ -3,15 +3,17 @@ import { resolve } from 'path';
 import { error, header, info, more } from '../utils/logging.js';
 import { convert, filter, merge, query } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
-import { 
-  cleanTemporaryFiles, 
+import {
+  cleanTemporaryFiles,
   convertNormalizedMetadataToRdf,
   convertNormalizedDataToOwl,
   isFileEmpty,
   collectEntities,
   extractClassHierarchy,
+  extractOntologySubset,
   excludeTerms,
-  logOutput 
+  logOutput,
+  push
 } from './utils.js';
 
 export function enrich2dFtuMetadata(context) {
@@ -29,50 +31,39 @@ export function enrich2dFtuData(context) {
     const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
     const baseInputPath = resolve(obj.path, 'enriched/base-input.ttl');
     convertNormalizedDataToOwl(context, normalizedPath, baseInputPath);
-    logOutput(baseInputPath);
 
     let inputPaths = []; // variable to hold input files for merging
 
     const enrichedWithOntologyPath = resolve(obj.path, 'enriched/enriched-with-ontology.owl');
 
-    inputPaths.push(baseInputPath); // Set the enriched path as the initial
-
-    info('Getting concept details from reference ontologies...')
-    const uberonEntitiesPath = collectEntities(context, 'uberon', baseInputPath);
-    if (!isFileEmpty(uberonEntitiesPath)) {
-      info('Extracting UBERON.');
-      const uberonExtractPath = extractClassHierarchy(
-        context,
-        'uberon',
-        'http://purl.obolibrary.org/obo/UBERON_0001062',
-        uberonEntitiesPath
-      );
-      logOutput(uberonExtractPath);
-      inputPaths.push(uberonExtractPath);
-    }
+    push(inputPaths, baseInputPath); // Set the enriched path as the initial
+    push(inputPaths, extractOntologySubset(
+      context, 'uberon', baseInputPath,
+      ["BFO:0000050", "RO:0001025"] // part of, located in
+    ));
 
     const fmaEntitiesPath = collectEntities(context, 'fma', baseInputPath);
     if (!isFileEmpty(fmaEntitiesPath)) {
       info('Extracting FMA.');
       const fmaExtractPath = extractClassHierarchy(
-        context, 
-        'fma', 
-        'http://purl.org/sig/ont/fma/fma62955', 
+        context,
+        'fma',
+        'http://purl.org/sig/ont/fma/fma62955',
         fmaEntitiesPath);
       logOutput(fmaExtractPath);
-      inputPaths.push(fmaExtractPath);
+      push(inputPaths, fmaExtractPath);
     }
 
     const clEntitiesPath = collectEntities(context, 'cl', baseInputPath);
     if (!isFileEmpty(clEntitiesPath)) {
       info('Extracting CL.');
       const clExtractPath = extractClassHierarchy(
-        context, 
-        'cl', 
-        'http://purl.obolibrary.org/obo/CL_0000000', 
+        context,
+        'cl',
+        'http://purl.obolibrary.org/obo/CL_0000000',
         clEntitiesPath);
       logOutput(clExtractPath);
-      inputPaths.push(clExtractPath);
+      push(inputPaths, clExtractPath);
     }
 
     const pclEntitiesPath = collectEntities(context, 'pcl', baseInputPath);
@@ -85,7 +76,7 @@ export function enrich2dFtuData(context) {
         pclEntitiesPath
       );
       logOutput(pclExtractPath);
-      inputPaths.push(pclExtractPath);
+      push(inputPaths, pclExtractPath);
     }
 
     info('Merging files:');
@@ -109,7 +100,7 @@ export function enrich2dFtuData(context) {
     // Clean up
     info('Cleaning up temporary files...');
     cleanTemporaryFiles(context);
-    more("Done.")
+    info('Done.');
   }
 }
 
