@@ -62,6 +62,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
   const baseIri = obj.iri;
   const separator = baseIri?.indexOf('#') === -1 ? '#' : '_' ?? '#';
   const primaryId = `${baseIri}${separator}primary`;
+  const refOrganName = getRefOrganName(obj.name);
 
   return Object.values(nodes)
     .filter((node) => excludeNodeType(node))
@@ -88,6 +89,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
       const organName = getOrganName(nodeId, crosswalk);
       const organMetadata = getOrganMetadata(obj.name);
       const nodeLabel = getNodeLabel(nodeId);
+      const nodeRank = getNodeRank(nodeId, crosswalk);
       const organLabel = getOrganLabel(organMetadata, nodeLabel);
 
       let parentIri = `${baseIri}${separator}parent`;
@@ -100,7 +102,8 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
       return {
         id,
         label: `Spatial entity of ${organLabel}`,
-        pref_label: organName,
+        pref_label: nodeId === primaryNodeId ? refOrganName : organName,
+        rui_rank: nodeRank,
         class_type: 'SpatialEntity',
         typeOf: typeOf,
         representation_of: typeOf[0],
@@ -194,6 +197,11 @@ function getOrganMetadata(doName) {
   return { name, sex, side };
 }
 
+function getRefOrganName(doName) {
+  const { name, side } = getOrganMetadata(doName);
+  return [side, name].filter(s => !!s).join(' ');
+}
+
 function getOrganName(nodeId, crosswalk) {
   const organ = crosswalk.filter((value) => value['node_name'] === nodeId);
   return organ[0]['label'];
@@ -207,6 +215,11 @@ function getOrganLabel({sex, side}, nodeLabel) {
     organLabel = `${organOwnerSex} ${organSide} ${nodeLabel}`.trim();
   }
   return organLabel;
+}
+
+function getNodeRank(nodeId, crosswalk) {
+  const rank = crosswalk.findIndex((value) => value['node_name'] === nodeId);
+  return rank !== -1 ? rank : crosswalk.length;
 }
 
 function getNodeLabel(nodeId) {

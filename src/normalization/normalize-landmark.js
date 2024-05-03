@@ -77,6 +77,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
       const T = { x: node.bbox.lowerBound.x, y: node.bbox.lowerBound.y, z: node.bbox.lowerBound.z };
 
       const landmarkName = getLandmarkName(nodeId, crosswalk);
+      const landmarkRank = getLandmarkRank(nodeId, crosswalk);
       const landmarkLabel = `${landmarkName} landmark in ${organLabel.toLowerCase()}`.trim();
 
       const extractionSetIri = getExtractionSetIri(nodeId, crosswalk, baseIri);
@@ -93,6 +94,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         id,
         label: `Spatial entity of ${landmarkLabel}`,
         pref_label: landmarkName,
+        rui_rank: landmarkRank,
         class_type: 'SpatialEntity',
         typeOf: ['SpatialEntity'],
         creator: metadata.creators.map((c) => {
@@ -196,6 +198,11 @@ function getOrganLabel({ sex, side, name }) {
 function getLandmarkName(nodeId, crosswalk) {
   const results = crosswalk.find((value) => value['node_name'] === nodeId);
   return results.label || '';
+}
+
+function getLandmarkRank(nodeId, crosswalk) {
+  const rank = crosswalk.findIndex((value) => value['node_name'] === nodeId);
+  return rank !== -1 ? rank : crosswalk.length;
 }
 
 function getExtractionSet(nodeId, crosswalk, baseIri, organLabel) {
