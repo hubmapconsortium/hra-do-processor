@@ -147,6 +147,7 @@ classes:
       - Named
       - Instance
     slots:
+      - source
       - target
       - placement_date
       - x_scaling
@@ -401,6 +402,13 @@ slots:
     required: true
     slot_uri: ccf:placement_relative_to
     range: uriorcurie
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  source:
+    required: false
+    slot_uri: ccf:placement_for
+    range: SpatialEntity
+    inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   placement_date:

@@ -352,7 +352,7 @@ slots:
   source:
     required: false
     slot_uri: ccf:placement_for
-    range: SpatialObjectReference
+    range: SpatialEntity
     inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

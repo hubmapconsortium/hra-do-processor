@@ -46,7 +46,7 @@ classes:
       - rui_rank
     slot_usage:
       dimension_unit:
-        pattern: (centimeter|millimeter)    
+        pattern: (centimeter|millimeter)
 
   SpatialObjectReference:
     class_uri: ccf:SpatialObjectReference
@@ -167,7 +167,7 @@ classes:
         AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
         AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
         AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
-        AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from|e}}" ) 
+        AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from|e}}" )
 
 slots:
   created_by:
@@ -292,7 +292,7 @@ slots:
   file_name:
     required: true
     annotations:
-      owl: AnnotationProperty, AnnotationAssertion    
+      owl: AnnotationProperty, AnnotationAssertion
   file_url:
     required: true
     annotations:
@@ -308,7 +308,7 @@ slots:
   source:
     required: false
     slot_uri: ccf:placement_for
-    range: SpatialObjectReference
+    range: SpatialEntity
     inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

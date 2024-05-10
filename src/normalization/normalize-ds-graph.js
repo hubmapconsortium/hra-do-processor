@@ -203,11 +203,11 @@ function createExtractionSiteObject(block, spatialEntity) {
     .append('dimension_unit', spatialEntity.dimension_units)
     .append('slice_count', spatialEntity.slice_count)
     .append('slice_thickness', spatialEntity.slice_thickness)
-    .append('placement', createPlacementObject(block, spatialEntity.placement))
+    .append('placement', createPlacementObject(block, spatialEntity, spatialEntity.placement))
     .build();
 }
 
-function createPlacementObject(block, placement) {
+function createPlacementObject(block, spatialEntity, placement) {
   if (!checkPlacementId(placement['@id'])) {
     return null;
   }
@@ -218,6 +218,7 @@ function createPlacementObject(block, placement) {
     .append('typeOf', ['SpatialPlacement'])
     .append('pref_label', placement.label)
     .append('placement_date', normalizeDate(placement.placement_date))
+    .append('source', spatialEntity['@id'])
     .append('target', placement.target)
     .append('x_rotation', placement.x_rotation)
     .append('y_rotation', placement.y_rotation)
@@ -275,7 +276,7 @@ function getSexId(sex) {
   if (!sex) {
     return null;
   }
-  switch (sex.toLowerCase) {
+  switch (sex.toLowerCase()) {
     case "male": return "loinc:LA2-8";
     case "female": return "loinc:LA3-6";
     default: return "loinc:LA4489-6"

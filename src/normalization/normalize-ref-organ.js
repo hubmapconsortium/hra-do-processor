@@ -59,7 +59,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
   const nodes = await processSceneNodes(gltfFile, scalar, undefined, cache);
 
   const obj = context.selectedDigitalObject;
-  const baseIri = obj.iri;
+  const baseIri = `${obj.iri}/${obj.version}`;
   const separator = baseIri?.indexOf('#') === -1 ? '#' : '_' ?? '#';
   const primaryId = `${baseIri}${separator}primary`;
   const refOrganName = getRefOrganName(obj.name);
