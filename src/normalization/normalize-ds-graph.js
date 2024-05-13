@@ -101,11 +101,11 @@ function createTissueBlockObject(donor, block) {
     .append('label', getSampleLabel(block))
     .append('class_type', 'TissueBlock')
     .append('typeOf', ['TissueBlock'])
-    .append('partially_overlaps', block.rui_location.ccf_annotations?.map((organ) => organ))
+    .append('partially_overlaps', block.rui_location?.ccf_annotations?.map((organ) => organ))
     .append('pref_label', block.label)
     .append('description', block.description)
-    .append('rui_location', block.rui_location['@id'])
-    .append('extraction_site', block.rui_location['@id'])
+    .append('rui_location', block.rui_location?.['@id'])
+    .append('extraction_site', block.rui_location?.['@id'])
     .append('external_link', block.link)
     .append('sections', block.sections
       ?.map((section) => createTissueSectionObject(block, section))
@@ -185,7 +185,7 @@ function normalizeExtractionSiteData(data) {
 }
 
 function createExtractionSiteObject(block, spatialEntity) {
-  if (!checkExtractionSiteId(spatialEntity['@id'])) {
+  if (!spatialEntity || !checkExtractionSiteId(spatialEntity['@id'])) {
     return null;
   }
   return new ObjectBuilder()
