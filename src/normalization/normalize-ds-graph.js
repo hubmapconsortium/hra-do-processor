@@ -67,10 +67,10 @@ function createDonorObject(donor) {
     .append('pref_label', donor.label)
     .append('description', donor.description)
     .append('external_link', donor.link)
-    .append('age', donor.age)
+    .append('age', ensureNumber(donor.age))
     .append('sex', donor.sex)
     .append('sex_id', getSexId(donor.sex))
-    .append('bmi', donor.bmi)
+    .append('bmi', ensureNumber(donor.bmi))
     .append('race', donor.race)
     .append('race_id', getRaceId(donor.race))
     .append('consortium_name', donor.consortium_name)
@@ -169,8 +169,8 @@ function createDatasetObject(sample, dataset) {
     .append('pref_label', dataset.label)
     .append('description', dataset.description)
     .append('external_link', dataset.link)
-    .append('technology', dataset.technology)
-    .append('thumbnail', dataset.thumbnail)
+    .append('technology', dataset.technology || 'OTHER')
+    .append('thumbnail', dataset.thumbnail || 'assets/icons/ico-unknown.svg')
     .append('links_back_to', checkSampleId(sample['@id']))
     .build();
 }
@@ -300,6 +300,14 @@ function getRaceId(race) {
     return "loinc:LA10611-4";
   } else {
     return "loinc:LA4489-6"
+  }
+}
+
+function ensureNumber(value) {
+  if (typeof value === 'string') {
+    return Number(value);
+  } else {
+    return value ?? null;
   }
 }
 

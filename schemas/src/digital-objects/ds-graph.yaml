@@ -286,13 +286,13 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   rui_location:
-    required: true
+    required: false
     slot_uri: ccf:has_registration_location
     range: SpatialEntity
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   extraction_site:
-    required: true
+    required: false
     slot_uri: ccf:extraction_site
     range: SpatialEntity
     annotations:
@@ -312,7 +312,7 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   section_count:
-    required: true
+    required: false
     range: integer
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
