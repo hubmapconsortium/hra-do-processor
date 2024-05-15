@@ -46,7 +46,7 @@ export async function enrich(context) {
       enrichCollectionMetadata(context);
       enrichCollectionData(context);
       break;
-    // case 'ds-graph':
+    case 'ds-graph':
     //   await enrichDatasetGraphData(context);
     //   enrichDatasetGraphMetadata(context);
     //   break;
