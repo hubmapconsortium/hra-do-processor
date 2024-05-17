@@ -18,7 +18,7 @@ export async function migrateCcfLandmarks(context) {
     const nodes = await getSceneNodes(url);
     const filteredCrosswalk = fullCrosswalk.filter((row) => nodes.has(row.node_name));
     const { refOrgans, name, version, title } = getLandmarkMetadata(url);
-    const refOrganIris = refOrgans.map((n) => `${context.purlIri}ref-organ/${n}#primary`);
+    const refOrganIris = refOrgans.map((n) => `${context.purlIri}ref-organ/${n}`);
     const crosswalk = deriveCrosswalk(filteredCrosswalk, refOrganIris);
 
     const doPath = resolve(context.doHome, 'landmark', name, version);
