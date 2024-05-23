@@ -151,7 +151,7 @@ slots:
   had_member:
     multivalued: true
     inlined_as_list: true
-    range: Dataset
+    range: uriorcurie
     slot_uri: prov:hadMember
 
   # Dublin Core properties
@@ -172,7 +172,7 @@ slots:
     required: true
     multivalued: true
     inlined_as_list: true
-    range: Creator
+    range: uriorcurie
     slot_uri: dct:creator
 
   # Schema.org properties

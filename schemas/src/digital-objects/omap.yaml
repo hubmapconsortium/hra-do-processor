@@ -43,7 +43,7 @@ classes:
         {% for protein in detects %}
         SubClassOf(
           Annotation(ccf:rationale "{{rationale}}")
-          {{antibody_id}} 
+          {{antibody_id}}
           ObjectSomeValuesFrom(ccf:detects {{protein}})
         )
         {% endfor %}
@@ -159,14 +159,14 @@ classes:
         AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
         AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
         {% for creator_iri in metadata.created_by %}
-        AnnotationAssertion( dct:creator {{iri}} "{{creator_iri|e}}" )
+        AnnotationAssertion( dct:creator {{iri}} {{creator_iri|e}} )
         {% endfor %}
         AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
         AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
         AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
         AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
-        AnnotationAssertion( rdfs:seeAlso {{iri}} "{{metadata.see_also|e}}" )
-        AnnotationAssertion( prov:wasDerivedFrom {{iri}} "{{metadata.derived_from|e}}" )
+        AnnotationAssertion( rdfs:seeAlso {{iri}} {{metadata.see_also|e}} )
+        AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
 
 slots:
   created_by:
