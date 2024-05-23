@@ -141,7 +141,6 @@ slots:
     range: uri
     slot_uri: dcat:accessURL
   mediaType:
-    range: uriorcurie
     slot_uri: dcat:mediaType
 
   # PROV-O properties
@@ -152,7 +151,7 @@ slots:
   had_member:
     multivalued: true
     inlined_as_list: true
-    range: uriorcurie
+    range: Dataset
     slot_uri: prov:hadMember
 
   # Dublin Core properties
@@ -173,7 +172,7 @@ slots:
     required: true
     multivalued: true
     inlined_as_list: true
-    range: uriorcurie
+    range: Creator
     slot_uri: dct:creator
 
   # Schema.org properties

@@ -114,10 +114,10 @@ export function normalizeMetadataOfCollection(context, metadata, doList) {
 }
 
 function generateGraphMetadata(context, metadata) {
-  const { iri, type, name, version } = context.selectedDigitalObject;
+  const { type, name, version } = context.selectedDigitalObject;
   const processorHome = context.processorHome;
   return {
-    id: iri,
+    id: getDatasetIri(context),
     type,
     name,
     label: getGraphTitle(name, version),
@@ -214,6 +214,11 @@ function getRawDataDistributions(context, datatable) {
       mediaType: lookup(downloadUrl),
     };
   }))
+}
+
+function getDatasetIri(context) {
+  const { type, name, version } = context.selectedDigitalObject;
+  return `${context.purlIri}${type}/${name}/${version}`;
 }
 
 function getMetadataUrl(context) {
