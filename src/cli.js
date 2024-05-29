@@ -12,6 +12,7 @@ import { migrateCcfLandmarks } from './migration/ccf-landmarks/migrate.js';
 import { migrateCcfOwl } from './migration/ccf-owl/migrate.js';
 import { migrateCcfReleases } from './migration/ccf-releases/migrate.js';
 import { normalize } from './normalization/normalize.js';
+import { updateCollection } from './update-collection.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
 import { error } from './utils/logging.js';
 
@@ -61,6 +62,14 @@ program
   .option('--patch', 'Increments the latest digital object version by 0.0.1', false)
   .action((str, _options, command) => {
     bumpDraft(getContext(program, command, str));
+  });
+
+program
+  .command('update-collection')
+  .description("Update a collection to the latest version of each digital object in it's metadata")
+  .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
+  .action((str, _options, command) => {
+    updateCollection(getContext(program, command, str));
   });
 
 program
