@@ -91,7 +91,7 @@ function normalizeExperimentData(context, metadata, data) {
       'protocol_doi',
       split(referenceData.protocol_doi)?.map((text) => normalizeDoi(text))
     )
-    .append('author_orcid', split(referenceData.author_orcid))
+    .append('author_orcid', split(referenceData.author_orcids || referenceData.author_orcid))
     .append('has_cycle', [...new Set(cycle_ids)])
     .append('sample_organ', referenceData.organ_uberon)
     .build();
