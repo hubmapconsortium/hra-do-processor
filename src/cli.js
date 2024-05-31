@@ -13,6 +13,7 @@ import { migrateCcfOwl } from './migration/ccf-owl/migrate.js';
 import { migrateCcfReleases } from './migration/ccf-releases/migrate.js';
 import { normalize } from './normalization/normalize.js';
 import { updateCollection } from './update-collection.js';
+import { updateRefOrganCrosswalk } from './update-ref-organ-crosswalk.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
 import { error } from './utils/logging.js';
 
@@ -70,6 +71,15 @@ program
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     updateCollection(getContext(program, command, str));
+  });
+
+program
+  .command('update-ref-organ-crosswalk')
+  .description("Update a reference organ's individual crosswalk file with information from the collated version.")
+  .argument('<ref-organ-path>', 'Path to the reference organ digital object relative to DO_HOME')
+  .option('-C, --crosswalk <crosswalk-path>', 'Path to the crosswalk digital object relative to DO_HOME')
+  .action((str, _options, command) => {
+    updateRefOrganCrosswalk(getContext(program, command, str));
   });
 
 program
