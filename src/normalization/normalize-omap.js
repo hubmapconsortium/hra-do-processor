@@ -215,7 +215,7 @@ function removeWhitespaces(s) {
 
 function split(text) {
   if (text) {
-    return text.split(',').map((s) => s.trim());
+    return text.split(/[\,\;]/).map((s) => s.trim()).filter(s => !!s);
   }
   return null;
 }
