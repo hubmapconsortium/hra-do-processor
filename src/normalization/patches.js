@@ -2,34 +2,34 @@ export function getPatchesForAnatomicalStructure(context) {
   const patches = [
     {
       id: 'UBERON:0001062',
-      class_type: 'AnatomicalStructure',
+      conforms_to: 'AnatomicalStructure',
+      parent_class: 'ccf:AnatomicalStructure',
       ccf_pref_label: 'UBERON anatomical structure',
       ccf_asctb_type: 'AS',
-      ccf_is_provisional: false,
-      ccf_designated_parent: 'ccf:AnatomicalStructure',
+      ccf_is_provisional: false
     },
     {
       id: 'FMA:62955',
-      class_type: 'AnatomicalStructure',
+      conforms_to: 'AnatomicalStructure',
+      parent_class: 'ccf:AnatomicalStructure',
       ccf_pref_label: 'FMA anatomical structure',
       ccf_asctb_type: 'AS',
-      ccf_is_provisional: false,
-      ccf_designated_parent: 'ccf:AnatomicalStructure',
+      ccf_is_provisional: false
     },
     {
       id: 'FMA:29733',
-      class_type: 'AnatomicalStructure',
+      conforms_to: 'AnatomicalStructure',
+      parent_class: 'ccf:AnatomicalStructure',
       ccf_pref_label: 'General anatomical term',
       ccf_asctb_type: 'AS',
-      ccf_is_provisional: false,
-      ccf_designated_parent: 'ccf:AnatomicalStructure',
+      ccf_is_provisional: false
     },
     {
       id: 'UBERON:0013702',
-      class_type: 'AnatomicalStructure',
+      conforms_to: 'AnatomicalStructure',
       ccf_pref_label: 'body proper',
       ccf_asctb_type: 'AS',
-      ccf_is_provisional: false,
+      ccf_is_provisional: false
     },
   ];
   const { selectedDigitalObject: obj } = context;
@@ -39,7 +39,7 @@ export function getPatchesForAnatomicalStructure(context) {
     organSpecificPatches = [
       {
         id: 'UBERON:0004538',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'left kidney',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -47,7 +47,7 @@ export function getPatchesForAnatomicalStructure(context) {
       },
       {
         id: 'UBERON:0004539',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'right kidney',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -58,7 +58,7 @@ export function getPatchesForAnatomicalStructure(context) {
     organSpecificPatches = [
       {
         id: 'UBERON:0001270',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'pelvis',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -66,7 +66,7 @@ export function getPatchesForAnatomicalStructure(context) {
       },
       {
         id: 'UBERON:0002371',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'bone marrow',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -77,7 +77,7 @@ export function getPatchesForAnatomicalStructure(context) {
     organSpecificPatches = [
       {
         id: 'UBERON:0001270',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'pelvis',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -85,7 +85,7 @@ export function getPatchesForAnatomicalStructure(context) {
       },
       {
         id: 'UBERON:0000178',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'blood',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -96,7 +96,7 @@ export function getPatchesForAnatomicalStructure(context) {
     organSpecificPatches = [
       {
         id: 'UBERON:0004537',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'blood vasculature',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -107,7 +107,7 @@ export function getPatchesForAnatomicalStructure(context) {
     organSpecificPatches = [
       {
         id: 'UBERON:0002048',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'lung',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -115,7 +115,7 @@ export function getPatchesForAnatomicalStructure(context) {
       },
       {
         id: 'UBERON:0001004',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'respiratory system',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -126,7 +126,7 @@ export function getPatchesForAnatomicalStructure(context) {
     organSpecificPatches = [
       {
         id: 'UBERON:0002509',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'mesenteric lymph node',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -137,7 +137,7 @@ export function getPatchesForAnatomicalStructure(context) {
     organSpecificPatches = [
       {
         id: 'UBERON:0004548',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'left eye',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -145,7 +145,7 @@ export function getPatchesForAnatomicalStructure(context) {
       },
       {
         id: 'UBERON:0004549',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'right eye',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -156,7 +156,7 @@ export function getPatchesForAnatomicalStructure(context) {
     organSpecificPatches = [
       {
         id: 'UBERON:0001303',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'left fallopian tube',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -164,7 +164,7 @@ export function getPatchesForAnatomicalStructure(context) {
       },
       {
         id: 'UBERON:0001302',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'right fallopian tube',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -175,7 +175,7 @@ export function getPatchesForAnatomicalStructure(context) {
     organSpecificPatches = [
       {
         id: 'FMA:24978',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'left knee',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -183,7 +183,7 @@ export function getPatchesForAnatomicalStructure(context) {
       },
       {
         id: 'FMA:24977',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'right knee',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -194,7 +194,7 @@ export function getPatchesForAnatomicalStructure(context) {
     organSpecificPatches = [
       {
         id: 'UBERON:0001911',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'mammary gland',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -202,7 +202,7 @@ export function getPatchesForAnatomicalStructure(context) {
       },
       {
         id: 'FMA:57991',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'left mammary gland',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -210,7 +210,7 @@ export function getPatchesForAnatomicalStructure(context) {
       },
       {
         id: 'FMA:57987',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'right mammary gland',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -221,7 +221,7 @@ export function getPatchesForAnatomicalStructure(context) {
     organSpecificPatches = [
       {
         id: 'FMA:7214',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'left ovary',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -229,7 +229,7 @@ export function getPatchesForAnatomicalStructure(context) {
       },
       {
         id: 'FMA:7213',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'right ovary',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -240,7 +240,7 @@ export function getPatchesForAnatomicalStructure(context) {
     organSpecificPatches = [
       {
         id: 'UBERON:0001223',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'left ureter',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -248,7 +248,7 @@ export function getPatchesForAnatomicalStructure(context) {
       },
       {
         id: 'UBERON:0001222',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'right ureter',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -259,7 +259,7 @@ export function getPatchesForAnatomicalStructure(context) {
     organSpecificPatches = [
       {
         id: 'UBERON:0002240',
-        class_type: 'AnatomicalStructure',
+        conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'spinal cord',
         ccf_asctb_type: 'AS',
         ccf_is_provisional: false,
@@ -274,19 +274,19 @@ export function getPatchesForCellType() {
   const patches = [
     {
       id: 'CL:0000000',
-      class_type: 'CellType',
+      conforms_to: 'CellType',
+      parent_class: 'ccf:CellType',
       ccf_pref_label: 'CL cell type',
       ccf_asctb_type: 'CT',
-      ccf_is_provisional: false,
-      ccf_designated_parent: 'ccf:CellType',
+      ccf_is_provisional: false
     },
     {
       id: 'LMHA:00135',
-      class_type: 'CellType',
+      conforms_to: 'CellType',
+      parent_class: 'ccf:CellType',
       ccf_pref_label: 'LMHA cell type',
       ccf_asctb_type: 'CT',
-      ccf_is_provisional: false,
-      ccf_designated_parent: 'ccf:CellType',
+      ccf_is_provisional: false
     },
   ];
   return patches;
@@ -296,12 +296,12 @@ export function getPatchesForBiomarker() {
   const patches = [
     {
       id: 'HGNCO:gene',
-      class_type: 'Biomarker',
+      conforms_to: 'Biomarker',
+      parent_class: 'ccf:Biomarker',
       ccf_pref_label: 'gene',
       ccf_asctb_type: 'BM',
       ccf_is_provisional: false,
-      ccf_biomarker_type: 'gene',
-      ccf_designated_parent: 'ccf:Biomarker',
+      ccf_biomarker_type: 'gene'
     },
   ];
   return patches;

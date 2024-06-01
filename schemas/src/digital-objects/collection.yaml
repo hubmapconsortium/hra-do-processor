@@ -2,11 +2,6 @@ id: https://purl.humanatlas.io/specs/collection
 name: collection
 prefixes:
   ccf: http://purl.org/ccf/
-  dcterms: http://purl.org/dc/terms/
-  pav: http://purl.org/pav/
-  rdfs: http://www.w3.org/2000/01/rdf-schema#
-  xsd: http://www.w3.org/2001/XMLSchema#
-  obo: http://purl.obolibrary.org/obo/
   linkml: https://w3id.org/linkml/
 
 default_prefix: ccf
@@ -17,6 +12,20 @@ imports:
   - ../shared/metadata-base
 
 classes:
+  CollectionMetadata:
+    class_uri: dcat:Dataset
+    slots:
+      - title
+      - description
+      - created_by
+      - version
+      - creation_date
+      - license
+      - publisher
+      - see_also
+      - derived_from
+      - had_member
+
   Container:
     tree_root: true
     attributes:
@@ -44,29 +53,3 @@ classes:
         {% for member_iri in metadata.had_member %}
         AnnotationAssertion( prov:hadMember {{iri}} {{member_iri|e}} )
         {% endfor %}
-
-  CollectionMetadata:
-    mixins:
-      - ProvCollection
-    class_uri: dcat:Dataset
-    slots:
-      - title
-      - description
-      - created_by
-      - version
-      - creation_date
-      - license
-      - publisher
-      - see_also
-      - derived_from
-
-slots:
-  created_by:
-    required: true
-    multivalued: true
-    inlined_as_list: true
-    range: uriorcurie
-    slot_uri: dct:creator
-  derived_from:
-    range: uriorcurie
-    slot_uri: prov:wasDerivedFrom

@@ -2,10 +2,6 @@ id: https://purl.humanatlas.io/specs/asct-b
 name: asct-b
 prefixes:
   ccf: http://purl.org/ccf/
-  owl: http://www.w3.org/2002/07/owl#
-  rdfs: http://www.w3.org/2000/01/rdf-schema#
-  xsd: http://www.w3.org/2001/XMLSchema#
-  dct: http://purl.org/dc/terms/
   linkml: https://w3id.org/linkml/
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   CL: http://purl.obolibrary.org/obo/CL_
@@ -22,6 +18,7 @@ default_range: string
 
 imports:
   - linkml:types
+  - ../shared/entity-base
   - ../shared/metadata-base
 
 settings:
@@ -39,11 +36,11 @@ classes:
     abstract: true
     slots:
       - id
-      - class_type
+      - conforms_to
+      - parent_class
       - ccf_pref_label
       - ccf_asctb_type
       - ccf_is_provisional
-      - ccf_designated_parent
     slot_usage:
       ccf_pref_label:
         annotations:
@@ -54,6 +51,7 @@ classes:
       ccf_is_provisional:
         annotations:
           owl: AnnotationAssertion, AnnotationProperty
+
   AnatomicalStructure:
     is_a: AsctbConcept
     slots:
@@ -69,6 +67,7 @@ classes:
           owl: AnnotationAssertion, AnnotationProperty
     annotations:
       owl: Class
+
   CellType:
     is_a: AsctbConcept
     slots:
@@ -110,6 +109,7 @@ classes:
           )
         )
         {% endfor %}
+
   Biomarker:
     is_a: AsctbConcept
     slots:
@@ -125,15 +125,24 @@ classes:
           owl: AnnotationAssertion, AnnotationProperty
     annotations:
       owl: Class
+
   BiomarkerSet:
     slots:
       - members
       - references
+    slot_usage:
+      references:
+        structured_pattern:
+          syntax: "^https:\\/\\/doi\\.org\\/10\\.\\d+\\/.*"
+          interpolated: true
+          partial_match: false
+
   AsctbDataset:
     slots:
       - anatomical_structures
       - cell_types
       - biomarkers
+
   AsctbMetadata:
     class_uri: dcat:Dataset
     slots:
@@ -146,6 +155,7 @@ classes:
       - publisher
       - see_also
       - derived_from
+
   Container:
     tree_root: true
     attributes:
@@ -170,22 +180,6 @@ classes:
         AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
 
 slots:
-  id:
-    required: true
-    identifier: true
-    range: string
-  class_type:
-    required: true
-    designates_type: true
-  created_by:
-    required: true
-    multivalued: true
-    inlined_as_list: true
-    range: uriorcurie
-    slot_uri: dct:creator
-  derived_from:
-    range: uriorcurie
-    slot_uri: prov:wasDerivedFrom
   anatomical_structures:
     multivalued: true
     inlined_as_list: true
@@ -203,14 +197,6 @@ slots:
     range: Biomarker
     annotations:
       owl: SomeValuesFrom
-  references:
-    multivalued: true
-    range: string
-    structured_pattern:
-      syntax: "^https:\\/\\/doi\\.org\\/10\\.\\d+\\/.*"
-      interpolated: true
-      partial_match: false
-    slot_uri: dct:reference
   ccf_has_biomarker_set:
     required: false
     range: BiomarkerSet
@@ -243,8 +229,3 @@ slots:
   ccf_biomarker_type:
     required: true
     slot_uri: ccf:ccf_biomarker_type
-  ccf_designated_parent:
-    required: false
-    annotations:
-      owl: SubClassOf
-

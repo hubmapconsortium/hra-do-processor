@@ -13,32 +13,17 @@ imports:
   - linkml:types
 
 classes:
-  Named:
-    mixin: true
-    slots:
-      - id
-      - label
-      - class_type
   Instance:
     mixin: true
     slots:
-      - typeOf
+      - type_of
     annotations:
       owl: Individual
 
 slots:
-  id:
-    identifier: true
-  typeOf:
+  type_of:
     multivalued: true
     range: Named
     slot_uri: rdf:type
     annotations:
       owl: ClassAssertion
-  class_type:
-    designates_type: true
-  label:
-    required: true
-    slot_uri: rdfs:label
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion

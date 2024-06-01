@@ -2,14 +2,8 @@ id: https://purl.humanatlas.io/specs/omap
 name: omap
 prefixes:
   ccf: http://purl.org/ccf/
-  owl: http://www.w3.org/2002/07/owl#
-  rdfs: http://www.w3.org/2000/01/rdf-schema#
-  xsd: http://www.w3.org/2001/XMLSchema#
-  dct: http://purl.org/dc/terms/
   linkml: https://w3id.org/linkml/
   UBERON: http://purl.obolibrary.org/obo/UBERON_
-  CL: http://purl.obolibrary.org/obo/CL_
-  PCL: http://purl.obolibrary.org/obo/PCL_
   FMA: http://purl.org/sig/ont/fma/fma
   HGNC: http://identifiers.org/hgnc/
 
@@ -21,10 +15,15 @@ imports:
   - ../shared/metadata-base
   - ../shared/instance-base
 
+settings:
+  uberon: "UBERON"
+  fma: "FMA"
+  hgnc: "HGNC"
+
 classes:
   Antibody:
     slots:
-      - antibody_id
+      - id
       - parent_class
       - host
       - isotype
@@ -37,22 +36,22 @@ classes:
       - catalog_number
       - detects
       - rationale
+    slot_usage:
+      detects:
+        structured_pattern:
+          syntax: "({hgnc}:\\d+)(,\\s*{hgnc}:\\d+)*"
+          interpolated: true
+          partial_match: false
     annotations:
       owl: Class
       owl.template: |-
         {% for protein in detects %}
         SubClassOf(
           Annotation(ccf:rationale "{{rationale}}")
-          {{antibody_id}}
+          {{id}}
           ObjectSomeValuesFrom(ccf:detects {{protein}})
         )
         {% endfor %}
-    slot_usage:
-      detects:
-        structured_pattern:
-          syntax: "(HGNC:\\d+)(,\\s*HGNC:\\d+)*"
-          interpolated: true
-          partial_match: false
 
   ExperimentUsedAntibody:
     class_uri: ccf:ExperimentUsedAntibody
@@ -98,16 +97,6 @@ classes:
           interpolated: true
           partial_match: false
 
-  AnatomicalStructure:
-    slots:
-      - id
-    slot_usage:
-      id:
-        structured_pattern:
-          syntax: "{uberon}:\\d+"
-          interpolated: true
-          partial_match: false
-
   ExperimentCycle:
     class_uri: ccf:ExperimentCycle
     mixins:
@@ -124,6 +113,16 @@ classes:
       - Instance
     slots:
       - has_antibody_component
+
+  AnatomicalStructure:
+    slots:
+      - id
+    slot_usage:
+      id:
+        structured_pattern:
+          syntax: "({uberon}|{fma}):\\d+"
+          interpolated: true
+          partial_match: false
 
   OmapDataset:
     slots:
@@ -169,15 +168,6 @@ classes:
         AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
 
 slots:
-  created_by:
-    required: true
-    multivalued: true
-    inlined_as_list: true
-    range: uriorcurie
-    slot_uri: dct:creator
-  derived_from:
-    range: uriorcurie
-    slot_uri: prov:wasDerivedFrom
   antibody:
     required: true
     range: Antibody
@@ -295,10 +285,6 @@ slots:
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  antibody_id:
-    identifier: true
-    required: true
-    range: uriorcurie
   host:
     required: true
     annotations:
@@ -326,8 +312,3 @@ slots:
     inlined_as_list: true
   rationale:
     required: true
-  parent_class:
-    required: true
-    range: uriorcurie
-    annotations:
-      owl: SubClassOf

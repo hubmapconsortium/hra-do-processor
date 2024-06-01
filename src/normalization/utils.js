@@ -99,8 +99,8 @@ function generateRawMetadata(context, metadata) {
 function normalizePersonData(person) {
   return {
     id: `https://orcid.org/${person.orcid}`,
-    class_type: "Person",
-    type_of: "schema:Person",
+    conforms_to: "Person",
+    type_of: ["schema:Person"],
     label: person.fullName,
     ...person
   }
@@ -126,8 +126,8 @@ function generateGraphMetadata(context, metadata) {
     version,
     creators: [{
       id: "https://github.com/hubmapconsortium/hra-do-processor",
-      class_type: "SoftwareApplication",
-      type_of: "schema:SoftwareApplication",
+      conforms_to: "SoftwareApplication",
+      type_of: ["schema:SoftwareApplication"],
       label: "HRA Digital Object Processor",
       name: "HRA Digital Object Processor",
       version: getProcessorVersion(),

@@ -96,14 +96,14 @@ function normalizeAs(collector, { id: as_id, name: as_name, is_provisional }, in
   } else {
     const obj = {
       id: as_id,
-      class_type: 'AnatomicalStructure',
+      conforms_to: 'AnatomicalStructure',
       ccf_pref_label: as_name.trim(),
       ccf_asctb_type: 'AS',
       ccf_is_provisional: is_provisional,
       ccf_part_of: [getPartOfEntity(array, index)],
     };
     if (is_provisional) {
-      obj['ccf_designated_parent'] = 'ccf:AnatomicalStructure';
+      obj['parent_class'] = 'ccf:AnatomicalStructure';
     }
     collector.push(obj);
   }
@@ -170,7 +170,7 @@ function normalizeCt(collector, { id: ct_id, name: ct_name, is_provisional }, in
   } else {
     const obj = {
       id: ct_id,
-      class_type: 'CellType',
+      conforms_to: 'CellType',
       ccf_pref_label: ct_name.trim(),
       ccf_asctb_type: 'CT',
       ccf_is_provisional: is_provisional,
@@ -179,7 +179,7 @@ function normalizeCt(collector, { id: ct_id, name: ct_name, is_provisional }, in
       ccf_has_biomarker_set: [],
     };
     if (is_provisional) {
-      obj['ccf_designated_parent'] = 'ccf:CellType';
+      obj['parent_class'] = 'ccf:CellType';
     }
     collector.push(obj);
   }
@@ -239,14 +239,14 @@ function normalizeBm(collector, { id: bm_id, name: bm_name, b_type, is_provision
   if (!foundEntity) {
     const obj = {
       id: bm_id,
-      class_type: 'Biomarker',
+      conforms_to: 'Biomarker',
       ccf_pref_label: bm_name.trim(),
       ccf_asctb_type: 'BM',
       ccf_biomarker_type: b_type,
       ccf_is_provisional: is_provisional,
     };
     if (is_provisional) {
-      obj['ccf_designated_parent'] = 'ccf:Biomarker';
+      obj['parent_class'] = 'ccf:Biomarker';
     }
     collector.push(obj);
   }

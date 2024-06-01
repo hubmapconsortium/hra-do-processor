@@ -2,18 +2,9 @@ id: https://purl.humanatlas.io/specs/ds-graph
 name: ds-graph
 prefixes:
   ccf: http://purl.org/ccf/
-  owl: http://www.w3.org/2002/07/owl#
-  rdfs: http://www.w3.org/2000/01/rdf-schema#
-  xsd: http://www.w3.org/2001/XMLSchema#
-  dct: http://purl.org/dc/terms/
-  skos: http://www.w3.org/2004/02/skos/core#
   oboInOwl: http://www.geneontology.org/formats/oboInOwl#
   loinc: http://purl.bioontology.org/ontology/LNC/
   linkml: https://w3id.org/linkml/
-  UBERON: http://purl.obolibrary.org/obo/UBERON_
-  FMA: http://purl.org/sig/ont/fma/fma
-  ASCTB-TEMP: https://purl.org/ccf/ASCTB-TEMP_
-  SO: http://purl.obolibrary.org/obo/SO_
   RO: http://purl.obolibrary.org/obo/RO_
 
 default_prefix: ccf
@@ -21,8 +12,8 @@ default_range: string
 
 imports:
   - linkml:types
-  - ../shared/metadata-base
   - ../shared/instance-base
+  - ../shared/metadata-base
 
 classes:
   Donor:
@@ -71,6 +62,7 @@ classes:
         pattern: (loinc:LA3-6|loinc:LA2-8|loinc:LA4489-6)
       race_id:
         pattern: (loinc:LA10608-0|loinc:LA6156-9|loinc:LA10610-6|loinc:LA10611-4|loinc:LA4457-3|loinc:LA4489-6)
+
   TissueBlock:
     class_uri: ccf:TissueBlock
     mixins:
@@ -96,6 +88,7 @@ classes:
             {% for organ_part in partially_overlaps %}
             ClassAssertion(ObjectSomeValuesFrom(RO:0002151 {{organ_part}}) {{id}})
             {% endfor %}
+
   TissueSection:
     class_uri: ccf:TissueSection
     mixins:
@@ -109,6 +102,7 @@ classes:
       - datasets
       - section_number
       - links_back_to
+
   Dataset:
     class_uri: ccf:Dataset
     mixins:
@@ -121,6 +115,7 @@ classes:
       - technology
       - thumbnail
       - links_back_to
+
   SpatialEntity:
     class_uri: ccf:SpatialEntity
     mixins:
@@ -128,7 +123,7 @@ classes:
       - Instance
     slots:
       - pref_label
-      - creator
+      - creator_name
       - create_date
       - x_dimension
       - y_dimension
@@ -141,6 +136,7 @@ classes:
     slot_usage:
       dimension_unit:
         pattern: (centimeter|millimeter)
+
   SpatialPlacement:
     class_uri: ccf:SpatialPlacement
     mixins:
@@ -172,6 +168,14 @@ classes:
         pattern: XYZ
       translation_unit:
         pattern: (centimeter|millimeter)
+
+  DatasetGraphData:
+    slots:
+      - donor
+      - sample
+      - dataset
+      - spatial_entity
+
   DatasetGraphMetadata:
     class_uri: dcat:Dataset
     slots:
@@ -184,12 +188,7 @@ classes:
       - publisher
       - see_also
       - derived_from
-  DatasetGraphData:
-    slots:
-      - donor
-      - sample
-      - dataset
-      - spatial_entity
+
   Container:
     tree_root: true
     attributes:
@@ -221,9 +220,6 @@ slots:
     annotations:
       owl.template: |-
         AnnotationAssertion( rdfs:label RO:0002151 "partially overlaps" )
-  derived_from:
-    range: uriorcurie
-    slot_uri: prov:wasDerivedFrom
   donor:
     multivalued: true
     inlined_as_list: true
@@ -240,10 +236,6 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: SpatialEntity
-  pref_label:
-    slot_uri: skos:prefLabel
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
   external_link:
     slot_uri: ccf:url
     annotations:
@@ -260,13 +252,13 @@ slots:
     annotations:
       owl: AnnotationProperty
   sex_id:
-    slot_uri: loinc:46098-0
+    slot_uri: loinc:46098-0 # Sex
   race:
     slot_uri: ccf:has_race
     annotations:
       owl: AnnotationProperty
   race_id:
-    slot_uri: loinc:32624-9
+    slot_uri: loinc:32624-9 # Race
   consortium_name:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -345,17 +337,6 @@ slots:
       owl.template: |-
         AnnotationAssertion( rdfs:label ccf:links_back_to "links back to" )
         TransitiveObjectProperty( ccf:links_back_to )
-  creator:
-    required: true
-    slot_uri: dct:creator
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  create_date:
-    required: true
-    slot_uri: dct:created
-    range: date
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
   x_dimension:
     required: true
     range: float

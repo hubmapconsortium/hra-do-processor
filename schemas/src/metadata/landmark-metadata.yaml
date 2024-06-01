@@ -22,7 +22,6 @@ classes:
   Container:
     tree_root: true
     mixins:
-      - NamedEntity
       - ProvEntity
     class_uri: dcat:Dataset
     slots:

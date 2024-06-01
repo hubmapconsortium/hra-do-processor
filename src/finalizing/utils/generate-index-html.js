@@ -69,7 +69,7 @@ function getStructuredData(context, metadata) {
 }
 
 function generateCreator(creator) {
-  switch (creator.class_type) {
+  switch (creator.conforms_to) {
     case 'SoftwareApplication':
       return {
         '@type': 'SoftwareApplication',

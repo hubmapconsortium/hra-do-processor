@@ -2,11 +2,6 @@ id: https://purl.humanatlas.io/specs/vocab
 name: vocab
 prefixes:
   ccf: http://purl.org/ccf/
-  dcterms: http://purl.org/dc/terms/
-  pav: http://purl.org/pav/
-  rdfs: http://www.w3.org/2000/01/rdf-schema#
-  xsd: http://www.w3.org/2001/XMLSchema#
-  obo: http://purl.obolibrary.org/obo/
   linkml: https://w3id.org/linkml/
 
 default_prefix: ccf
@@ -29,6 +24,7 @@ classes:
       - publisher
       - see_also
       - derived_from
+
   Container:
     tree_root: true
     attributes:
@@ -53,14 +49,3 @@ classes:
         AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
         AnnotationAssertion( rdfs:seeAlso {{iri}} {{metadata.see_also|e}} )
         AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
-
-slots:
-  created_by:
-    required: true
-    multivalued: true
-    inlined_as_list: true
-    range: uriorcurie
-    slot_uri: dct:creator
-  derived_from:
-    range: uriorcurie
-    slot_uri: prov:wasDerivedFrom

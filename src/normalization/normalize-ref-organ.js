@@ -104,18 +104,17 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         label: `Spatial entity of ${organLabel}`,
         pref_label: nodeId === primaryNodeId ? refOrganName : organName,
         rui_rank: nodeRank,
-        class_type: 'SpatialEntity',
-        typeOf: typeOf,
+        type_of: typeOf,
         representation_of: typeOf[0],
         organ_owner_sex: organMetadata.sex || undefined,
         organ_side: organMetadata.side || undefined,
         reference_organ: primaryId,
-        creator: metadata.creators.map((c) => {
+        creators: metadata.creators.map((c) => {
           return {
             id: `https://orcid.org/${c.orcid}`,
             label: c.fullName,
-            class_type: 'Creator',
-            typeOf: ['schema:Person'],
+            conforms_to: 'Person',
+            type_of: ['schema:Person'],
             fullName: c.fullName,
             firstName: c.firstName,
             lastName: c.lastName,
@@ -127,22 +126,18 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         y_dimension: node.size.y,
         z_dimension: node.size.z,
         dimension_unit: 'millimeter',
-
         object_reference: {
           id: `${id}_obj`,
           label: `3D object of ${organLabel}`,
-          class_type: 'SpatialObjectReference',
-          typeOf: ['SpatialObjectReference'],
+          type_of: ['SpatialObjectReference'],
           file_name: gltfFile.replace(/^.*[\\/]/, ''),
           file_url: gltfFile,
           file_format: 'model/gltf-binary',
           file_subpath: node['@id'],
-
           placement: {
             id: `${id}_obj_placement`,
             label: `Local placement of ${organLabel}`,
-            class_type: 'SpatialPlacement',
-            typeOf: ['SpatialPlacement'],
+            type_of: ['SpatialPlacement'],
             source: `${id}_obj`,
             target: id,
             placement_date: creationDate,
@@ -165,8 +160,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
           {
             id: `${id}_global_placement`,
             label: `Global placement of ${organLabel}`,
-            class_type: 'SpatialPlacement',
-            typeOf: ['SpatialPlacement'],
+            type_of: ['SpatialPlacement'],
             source: id,
             target: parentIri,
             placement_date: creationDate,
@@ -207,7 +201,7 @@ function getOrganName(nodeId, crosswalk) {
   return organ[0]['label'];
 }
 
-function getOrganLabel({sex, side}, nodeLabel) {
+function getOrganLabel({ sex, side }, nodeLabel) {
   const organOwnerSex = sex.toLowerCase();
   const organSide = side?.toLowerCase();
   let organLabel = `${organOwnerSex} ${nodeLabel}`.trim();

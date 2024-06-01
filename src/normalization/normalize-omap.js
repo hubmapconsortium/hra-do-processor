@@ -57,7 +57,7 @@ function normalizeData(context, data) {
 function normalizeAntibodyData(context, data) {
   return data.map((row) => {
     return new ObjectBuilder()
-      .append('antibody_id', getAntibodyIri(row.rrid))
+      .append('id', getAntibodyIri(row.rrid))
       .append('parent_class', 'ccf:Antibody')
       .append('host', row.host)
       .append('isotype', row.isotype)
@@ -83,8 +83,7 @@ function normalizeExperimentData(context, metadata, data) {
   return new ObjectBuilder()
     .append('id', getExperimentIri(context, referenceData.omap_id))
     .append('label', `${referenceData.omap_id} experiment`)
-    .append('class_type', 'MultiplexedAntibodyBasedImagingExperiment')
-    .append('typeOf', ['MultiplexedAntibodyBasedImagingExperiment'])
+    .append('type_of', ['MultiplexedAntibodyBasedImagingExperiment'])
     .append('method', referenceData.method)
     .append('tissue_preservation', referenceData.tissue_preservation)
     .append(
@@ -107,8 +106,7 @@ function normalizeExperimentCycleData(context, data) {
       new ObjectBuilder()
         .append('id', getExperimentCycleIri(context, omapId, cycleNumber))
         .append('label', `${omapId} experiment, Cycle ${cycleNumber}`)
-        .append('class_type', 'ExperimentCycle')
-        .append('typeOf', ['ExperimentCycle'])
+        .append('type_of', ['ExperimentCycle'])
         .append('cycle_number', cycleNumber)
         .append(
           'uses_antibody',
@@ -116,10 +114,9 @@ function normalizeExperimentCycleData(context, data) {
             .filter((row) => row.cycle_number === cycleNumber)
             .map((row) => {
               return new ObjectBuilder()
-                .append('id', getExperimentalAntibodyIri(context, omapId, cycleNumber, row.rrid, row.dilution))
-                .append('label', getExperimentalAntibodyLabel(omapId, cycleNumber, row.rrid, row.dilution))
-                .append('class_type', 'ExperimentUsedAntibody')
-                .append('typeOf', ['ExperimentUsedAntibody'])
+                .append('id', getExperimentalAntibodyIri(context, row.rrid, row.lot_number, row.dilution))
+                .append('label', getExperimentalAntibodyLabel(row.rrid, row.lot_number, row.dilution))
+                .append('type_of', ['ExperimentUsedAntibody'])
                 .append('concentration', row.concentration_value)
                 .append('dilution', row.dilution)
                 .append('cycle_number', cycleNumber)
@@ -130,8 +127,7 @@ function normalizeExperimentCycleData(context, data) {
                   new ObjectBuilder()
                     .append('id', getCustomOrCommercialAntibodyIri(context, row.rrid, row.lot_number))
                     .append('label', getCustomOrCommercialAntibodyLabel(row.rrid, row.lot_number))
-                    .append('class_type', 'RegisteredAntibody')
-                    .append('typeOf', [getAntibodyIri(row.rrid)])
+                    .append('type_of', [getAntibodyIri(row.rrid)])
                     .append('lot_number', `${row.lot_number ? row.lot_number : ''}`)
                     .build()
                 )
@@ -148,12 +144,11 @@ function normalizeCoreAntibodyPanelData(context, data) {
   const omapId = data[0].omap_id;
   const antibodyComponents = data
     .filter((row) => row.core_panel === 'Y')
-    .map((row) => getExperimentalAntibodyIri(context, omapId, row.rrid, row.dilution));
+    .map((row) => getExperimentalAntibodyIri(context, row.rrid, row.lot_number, row.dilution));
   return new ObjectBuilder()
     .append('id', getCoreAntibodyPanelIri(context, antibodyComponents))
     .append('label', getCoreAntibodyPanelLabel(omapId))
-    .append('class_type', 'CoreAntibodyPanel')
-    .append('typeOf', ['CoreAntibodyPanel'])
+    .append('type_of', ['CoreAntibodyPanel'])
     .append('has_antibody_component', antibodyComponents)
     .build();
 }
@@ -171,13 +166,13 @@ function getExperimentCycleIri(context, omapId, cycleNumber) {
   return `${getPurl(context)}#${omapId}-cycle-${cycleNumber}`;
 }
 
-function getExperimentalAntibodyIri(context, omapId, cycleNumber, antibodyId, dilution) {
-  const label = getExperimentalAntibodyLabel(omapId, antibodyId, dilution);
+function getExperimentalAntibodyIri(context, antibodyId, lotNumber, dilution) {
+  const label = getExperimentalAntibodyLabel(antibodyId, lotNumber, dilution);
   return `${getPurl(context)}#${hash(label)}`;
 }
 
-function getExperimentalAntibodyLabel(omapId, cycleNumber, antibodyId, dilution) {
-  return `${antibodyId} antibody, diluted by ${dilution ? dilution : 'unknown'}, used in ${omapId} experiment (cycle ${cycleNumber})`;
+function getExperimentalAntibodyLabel(antibodyId, lotNumber, dilution) {
+  return `${antibodyId} antibody, ${lotNumber ? `lot number ${lotNumber}` : 'no lot number'}, diluted by ${dilution ? dilution : '(unknown)'}`;
 }
 
 function getCustomOrCommercialAntibodyIri(context, antibodyId, lotNumber) {
@@ -186,7 +181,7 @@ function getCustomOrCommercialAntibodyIri(context, antibodyId, lotNumber) {
 }
 
 function getCustomOrCommercialAntibodyLabel(antibodyId, lotNumber) {
-  return `${antibodyId} antibody, lot number ${lotNumber ? lotNumber : 'unknown'}`;
+  return `${antibodyId} antibody, ${lotNumber ? `lot number ${lotNumber}` : 'no lot number'}`;
 }
 
 function getCoreAntibodyPanelIri(context, antibodyComponents) {

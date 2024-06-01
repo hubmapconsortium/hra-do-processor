@@ -12,6 +12,7 @@ prefixes:
   schema: http://schema.org/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  skos: http://www.w3.org/2004/02/skos/core#
   xsd: http://www.w3.org/2001/XMLSchema#
   linkml: https://w3id.org/linkml/
 
@@ -20,41 +21,26 @@ default_range: string
 
 imports:
   - linkml:types
+  - ../shared/entity-base
+  - ../shared/instance-base
 
 classes:
-  NamedEntity:
-    mixin: true
-    slots:
-      - id
-      - label
-    slot_usage:
-      id:
-        required: true
-      label:
-        required: true
-  Instance:
-    mixin: true
-    slots:
-      - type_of
   ProvEntity:
-    mixin: true
+    mixins:
+      - Named
+    abstract: true
     class_uri: prov:Entity
     slots:
       - was_derived_from
-  ProvCollection:
-    mixin: true
-    is_a: ProvEntity
-    class_uri: prov:Collection
-    slots:
-      - had_member
   Creator:
+    mixins:
+      - Named
     abstract: true
     slots:
-      - class_type
+      - conforms_to
   Person:
     is_a: Creator
     mixins:
-      - NamedEntity
       - Instance
     class_uri: schema:Person
     slots:
@@ -65,7 +51,6 @@ classes:
   SoftwareApplication:
     is_a: Creator
     mixins:
-      - NamedEntity
       - Instance
     class_uri: schema:SoftwareApplication
     slots:
@@ -84,7 +69,7 @@ classes:
       - awardNumber
   Distribution:
     mixins:
-      - NamedEntity
+      - Named
     class_uri: dcat:Distribution
     slots:
       - title
@@ -93,8 +78,6 @@ classes:
       - mediaType
   Dataset:
     is_a: ProvEntity
-    mixins:
-      - NamedEntity
     class_uri: dcat:Dataset
     slots:
       - title
@@ -116,18 +99,6 @@ classes:
       - distributions
 
 slots:
-  id:
-    identifier: true
-  class_type:
-    required: true
-    designates_type: true
-    slot_uri: ccf:class_type
-  type_of:
-    range: NamedEntity
-    slot_uri: rdf:type
-    annotations:
-      owl: ClassAssertion
-
   # DCAT properties
   distributions:
     multivalued: true
@@ -148,6 +119,9 @@ slots:
     inlined: true
     range: Dataset
     slot_uri: prov:wasDerivedFrom
+  derived_from:
+    range: uriorcurie
+    slot_uri: prov:wasDerivedFrom
   had_member:
     multivalued: true
     inlined_as_list: true
@@ -163,17 +137,26 @@ slots:
     slot_uri: dct:license
   publisher:
     slot_uri: dct:publisher
+  create_date:
+    range: date
+    slot_uri: dct:created
+  creator_name:
+    slot_uri: dct:creator
   creators:
     multivalued: true
     inlined_as_list: true
     range: Creator
     slot_uri: dct:creator
   created_by:
-    required: true
     multivalued: true
     inlined_as_list: true
     range: uriorcurie
     slot_uri: dct:creator
+  references:
+    multivalued: true
+    inlined_as_list: true
+    range: string
+    slot_uri: dct:reference
 
   # Schema.org properties
   about:
@@ -232,6 +215,10 @@ slots:
   see_also:
     range: uriorcurie
     slot_uri: rdfs:seeAlso
+
+  # SKOS properties
+  pref_label:
+    slot_uri: skos:prefLabel
 
   # HRA properties
   hubmapId:

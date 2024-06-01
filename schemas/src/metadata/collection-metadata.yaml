@@ -22,9 +22,7 @@ classes:
   Container:
     tree_root: true
     mixins:
-      - NamedEntity
       - ProvEntity
-      - ProvCollection
     class_uri: dcat:Dataset
     slots:
       - name
@@ -38,6 +36,7 @@ classes:
       - license
       - see_also
       - distributions
+      - had_member
     slot_usage:
       title:
         required: true
@@ -52,4 +51,6 @@ classes:
       license:
         required: true
       distributions:
+        required: true
+      had_member:
         required: true

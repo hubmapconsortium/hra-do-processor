@@ -95,14 +95,13 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         label: `Spatial entity of ${landmarkLabel}`,
         pref_label: landmarkName,
         rui_rank: landmarkRank,
-        class_type: 'SpatialEntity',
-        typeOf: ['SpatialEntity'],
-        creator: metadata.creators.map((c) => {
+        type_of: ['SpatialEntity'],
+        creators: metadata.creators.map((c) => {
           return {
             id: `https://orcid.org/${c.orcid}`,
             label: c.fullName,
-            class_type: 'Creator',
-            typeOf: ['schema:Person'],
+            conforms_to: 'Person',
+            type_of: ['schema:Person'],
             fullName: c.fullName,
             firstName: c.firstName,
             lastName: c.lastName,
@@ -113,12 +112,10 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         y_dimension: node.size.y,
         z_dimension: node.size.z,
         dimension_unit: 'millimeter',
-
         object_reference: {
           id: `${id}_obj`,
           label: `3D object of ${landmarkLabel}`,
-          class_type: 'SpatialObjectReference',
-          typeOf: ['SpatialObjectReference'],
+          type_of: ['SpatialObjectReference'],
           file_name: gltfFile.replace(/^.*[\\/]/, ''),
           file_url: gltfFile,
           file_format: 'model/gltf-binary',
@@ -126,8 +123,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
           placement: {
             id: `${id}ObjPlacement`,
             label: `Local placement of ${landmarkLabel}`,
-            class_type: 'SpatialPlacement',
-            typeOf: ['SpatialPlacement'],
+            type_of: ['SpatialPlacement'],
             source: `${id}_obj`,
             target: id,
             x_scaling: 1,
@@ -149,8 +145,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
           {
             id: `${id}_global_placement`,
             label: `Global placement of ${landmarkLabel}`,
-            class_type: 'SpatialPlacement',
-            typeOf: ['SpatialPlacement'],
+            type_of: ['SpatialPlacement'],
             source: id,
             target: parentIri,
             x_scaling: 1,
@@ -210,8 +205,7 @@ function getExtractionSet(nodeId, crosswalk, baseIri, organLabel) {
   const extractionSetIri = `${baseIri}#${encodeURIComponent(results.extraction_set_id.replace('#', ''))}`;
   return {
     id: extractionSetIri,
-    class_type: 'ExtractionSet',
-    typeOf: ['ExtractionSet'],
+    type_of: ['ExtractionSet'],
     label: `Landmarks in ${organLabel.toLowerCase()}`,
     pref_label: results.extraction_set_label,
     extraction_set_for: results.extraction_set_for,
