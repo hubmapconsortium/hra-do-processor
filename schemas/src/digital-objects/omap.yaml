@@ -25,6 +25,7 @@ classes:
     slots:
       - id
       - parent_class
+      - antibody_type
       - host
       - isotype
       - clonality
@@ -35,23 +36,55 @@ classes:
       - producer
       - catalog_number
       - detects
-      - rationale
+      - binds_to
     slot_usage:
-      detects:
+      id:
         structured_pattern:
-          syntax: "({hgnc}:\\d+)(,\\s*{hgnc}:\\d+)*"
+          syntax: "AB_\\d+"
           interpolated: true
           partial_match: false
+      antibody_type:
+        pattern: (Primary|Secondary)
     annotations:
-      owl: Class
       owl.template: |-
-        {% for protein in detects %}
-        SubClassOf(
-          Annotation(ccf:rationale "{{rationale}}")
+        {% for statement in detects %}
+          {% for protein_id in statement.protein_id %}
+          AnnotationAssertion(
+            Annotation(ccf:rationale "{{statement.rationale}}")
+            ccf:detects
+            {{id}}
+            {{protein_id}}
+          )
+          {% endfor %}
+        {% endfor %}
+        {% for statement in binds_to %}
+        AnnotationAssertion(
+          Annotation(ccf:rationale "{{statement.rationale}}")
+          ccf:binds_to
           {{id}}
-          ObjectSomeValuesFrom(ccf:detects {{protein}})
+          {{statement.antibody_id}}
         )
         {% endfor %}
+
+  Protein:
+    slots:
+      - id
+    slot_usage:
+      id:
+        structured_pattern:
+          syntax: "{hgnc}:\\d+"
+          interpolated: true
+          partial_match: false
+
+  DetectStatement:
+    slots:
+      - protein_id
+      - rationale
+
+  BindsToStatement:
+    slots:
+      - antibody_id
+      - rationale
 
   ExperimentUsedAntibody:
     class_uri: ccf:ExperimentUsedAntibody
@@ -173,6 +206,10 @@ slots:
     range: Antibody
     multivalued: true
     inlined_as_list: true
+  antibody_type:
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   experiment:
     required: true
     range: MultiplexedAntibodyBasedImagingExperiment
@@ -307,8 +344,25 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   detects:
     required: false
-    range: uriorcurie
+    range: DetectStatement
     multivalued: true
     inlined_as_list: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  protein_id:
+    required: true
+    range: Protein
+    multivalued: true
+    inlined_as_list: false
+  binds_to:
+    required: false
+    range: BindsToStatement
+    multivalued: true
+    inlined_as_list: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  antibody_id:
+    required: true
+    range: Antibody
   rationale:
     required: true

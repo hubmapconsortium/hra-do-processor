@@ -55,8 +55,8 @@ function normalizeData(context, data) {
 }
 
 function normalizeAntibodyData(context, data) {
-  return data.map((row) => {
-    return new ObjectBuilder()
+  return data.map((row, idx, arr) => {
+    const obj = new ObjectBuilder()
       .append('id', getAntibodyIri(row.rrid))
       .append('parent_class', 'ccf:Antibody')
       .append('host', row.host)
@@ -68,13 +68,43 @@ function normalizeAntibodyData(context, data) {
       .append('recombinant', row.recombinant)
       .append('producer', row.vendor)
       .append('catalog_number', `${row.catalog_number}`)
-      .append(
-        'detects',
-        split(row.HGNC_ID)?.map((text) => normalizeProteinId(text))
-      )
       .append('rationale', row.rationale)
       .build();
-  });
+    if (row.HGNC_ID) {
+      obj['antibody_type'] = "Primary";
+      obj['detects'] = split(row.HGNC_ID).map((text) => normalizeProteinId(text));
+    } else {
+      const prevRow = arr[idx - 1];
+      obj['antibody_type'] = "Secondary";
+      obj['binds_to'] = getAntibodyIri(prevRow.rrid);
+    }
+    return obj;
+  }).reduce(mergeDuplicateAntibodyData, []);
+}
+
+function mergeDuplicateAntibodyData(acc, item) {
+  // Find if the item with the same id already exists in the output array
+  let existingItem = acc.find(el => el.id === item.id);
+  if (!existingItem) {
+    // Create new structure
+    const { detects, binds_to, rationale, ...rest } = item;
+    existingItem = rest;
+    acc.push(existingItem);
+  }
+  // Add detects or binds_to to the existing structure
+  if (item.antibody_type === "Primary") {
+    if (!('detects' in existingItem)) {
+      existingItem['detects'] = [];
+    }
+    existingItem.detects.push({ protein_id: item.detects, rationale: item.rationale });
+  }
+  if (item.antibody_type === "Secondary") {
+    if (!('binds_to' in existingItem)) {
+      existingItem['binds_to'] = [];
+    }
+    existingItem.binds_to.push({ antibody_id: item.binds_to, rationale: item.rationale });
+  }
+  return acc;
 }
 
 function normalizeExperimentData(context, metadata, data) {
