@@ -3,7 +3,7 @@ export function ObjectBuilder() {
 
   this.append = function (key, value) {
     if (key && value != null && (!Array.isArray(value) || value.length)) {
-      this.object[key] = typeof value === 'string' ? value.trim() : value;
+      this.object[key] = value;
     }
     return this;
   };
