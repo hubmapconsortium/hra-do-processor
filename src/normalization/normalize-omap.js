@@ -142,6 +142,7 @@ function normalizeExperimentCycleData(context, data) {
           'uses_antibody',
           data
             .filter((row) => row.cycle_number === cycleNumber)
+            .filter((row, index, arr) => arr.findIndex(obj => obj.id === row.id) === index) // remove duplicates
             .map((row) => {
               return new ObjectBuilder()
                 .append('id', getExperimentalAntibodyIri(context, row.rrid, row.lot_number, row.dilution))
