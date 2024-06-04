@@ -1,7 +1,8 @@
+import { error } from 'console';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { hash } from '../utils/hash.js';
-import { info } from '../utils/logging.js';
+import { info, warning } from '../utils/logging.js';
 import { ObjectBuilder } from '../utils/object-builder.js';
 import { normalizeBasicData } from './normalize-basic.js';
 import { makeOMAPData } from './omap-utils/api.functions.js';
@@ -20,9 +21,17 @@ export async function normalizeOmapData(context) {
     normalizeBasicData(context);
     return 'basic';
   } else {
-    const normalizedData = normalizeData(context, rawData);
-    writeNormalizedData(context, normalizedData);
-    return 'omap';
+    try {
+      const normalizedData = normalizeData(context, rawData);
+      writeNormalizedData(context, normalizedData);
+      return 'omap';
+    } catch (err) {
+      const doString = context.selectedDigitalObject.doString;
+      error(err);
+      warning(`Failed to process OMAP data (${err.message}), switching to Basic Processing for ${doString}.`);
+      normalizeBasicData(context);
+      return 'basic';
+    }
   }
 }
 
@@ -271,7 +280,7 @@ function getAntibodyIri(antibodyId) {
   if (antibodyId) {
     return `https://identifiers.org/RRID:${antibodyId}`;
   } else {
-    return undefined;
+    throw new Error('Antibody IDs are required for each row');
   }
 }
 
