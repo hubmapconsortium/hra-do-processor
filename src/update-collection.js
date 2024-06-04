@@ -23,7 +23,7 @@ export async function updateCollection(context) {
   const refOrgans = updated.filter((d) => d !== refOrganCrosswalk && d.startsWith('ref-organ/'));
 
   for (const refOrgan of refOrgans) {
-    console.log(`Updating crosswalk for ${refOrgan}`);
+    console.log(`Updating crosswalk for ${refOrgan} using ${refOrganCrosswalk}`);
     await updateRefOrganCrosswalk({
       ...context,
       selectedDigitalObject: getDigitalObjectInformation(resolve(context.doHome, refOrgan), context.purlIri),

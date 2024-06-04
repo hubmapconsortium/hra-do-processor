@@ -20,14 +20,14 @@ export async function updateRefOrganCrosswalk(context) {
 function subsetCrosswalk(crosswalkRows, gltf) {
   const results = [];
   for (const node of gltf.nodes) {
-    const row = crosswalkRows.find((n) => (n.node_name = node.name));
+    const row = crosswalkRows.find((n) => (n.node_name === node.name));
     if (row) {
       results.push({
         node_name: node.name,
         OntologyID: row.OntologyID,
         label: row.label,
       });
-    } else if (node.extras?.ontologyid) {
+    } else if (node.extras?.ontologyid && node.extras.ontologyid !== '-') {
       results.push({
         node_name: node.name,
         OntologyID: node.extras.ontologyid,
