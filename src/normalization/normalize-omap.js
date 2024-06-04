@@ -55,36 +55,38 @@ function normalizeData(context, data) {
 }
 
 function normalizeAntibodyData(context, data) {
-  return data.map((row, idx, arr) => {
-    const obj = new ObjectBuilder()
-      .append('id', getAntibodyIri(row.rrid))
-      .append('parent_class', 'ccf:Antibody')
-      .append('host', row.host)
-      .append('isotype', row.isotype)
-      .append('clonality', row.clonality)
-      .append('clone_id', `${row.clone_id}`)
-      .append('conjugate', row.conjugate)
-      .append('fluorescent', row.fluorescent_reporter)
-      .append('recombinant', row.recombinant)
-      .append('producer', row.vendor)
-      .append('catalog_number', `${row.catalog_number}`)
-      .append('rationale', row.rationale)
-      .build();
-    if (row.HGNC_ID) {
-      obj['antibody_type'] = "Primary";
-      obj['detects'] = split(row.HGNC_ID).map((text) => normalizeProteinId(text));
-    } else {
-      const prevRow = arr[idx - 1];
-      obj['antibody_type'] = "Secondary";
-      obj['binds_to'] = getAntibodyIri(prevRow.rrid);
-    }
-    return obj;
-  }).reduce(mergeDuplicateAntibodyData, []);
+  return data
+    .map((row, idx, arr) => {
+      const obj = new ObjectBuilder()
+        .append('id', getAntibodyIri(row.rrid))
+        .append('parent_class', 'ccf:Antibody')
+        .append('host', row.host)
+        .append('isotype', row.isotype)
+        .append('clonality', row.clonality)
+        .append('clone_id', `${row.clone_id}`)
+        .append('conjugate', row.conjugate)
+        .append('fluorescent', row.fluorescent_reporter)
+        .append('recombinant', row.recombinant)
+        .append('producer', row.vendor)
+        .append('catalog_number', `${row.catalog_number}`)
+        .append('rationale', row.rationale)
+        .build();
+      if (row.HGNC_ID) {
+        obj['antibody_type'] = 'Primary';
+        obj['detects'] = split(row.HGNC_ID).map((text) => normalizeProteinId(text));
+      } else {
+        const prevRow = arr[idx - 1];
+        obj['antibody_type'] = 'Secondary';
+        obj['binds_to'] = getAntibodyIri(prevRow.rrid);
+      }
+      return obj;
+    })
+    .reduce(mergeDuplicateAntibodyData, []);
 }
 
 function mergeDuplicateAntibodyData(acc, item) {
   // Find if the item with the same id already exists in the output array
-  let existingItem = acc.find(el => el.id === item.id);
+  let existingItem = acc.find((el) => el.id === item.id);
   if (!existingItem) {
     // Create new structure
     const { detects, binds_to, rationale, ...rest } = item;
@@ -92,13 +94,13 @@ function mergeDuplicateAntibodyData(acc, item) {
     acc.push(existingItem);
   }
   // Add detects or binds_to to the existing structure
-  if (item.antibody_type === "Primary") {
+  if (item.antibody_type === 'Primary') {
     if (!('detects' in existingItem)) {
       existingItem['detects'] = [];
     }
     existingItem.detects.push({ protein_id: item.detects, rationale: item.rationale });
   }
-  if (item.antibody_type === "Secondary") {
+  if (item.antibody_type === 'Secondary') {
     if (!('binds_to' in existingItem)) {
       existingItem['binds_to'] = [];
     }
@@ -142,15 +144,34 @@ function normalizeExperimentCycleData(context, data) {
           'uses_antibody',
           data
             .filter((row) => row.cycle_number === cycleNumber)
-            .filter((row, idx, arr) => arr.findIndex(
-              obj => obj.rrid === row.rrid
-                && obj.lot_number === row.lot_number
-                && obj.dilution === row.dilution
-                && obj.concentration_value === row.concentration_value) === idx) // remove duplicates
+            .filter(
+              (row, idx, arr) =>
+                arr.findIndex(
+                  (obj) =>
+                    obj.rrid === row.rrid &&
+                    obj.lot_number === row.lot_number &&
+                    obj.dilution === row.dilution &&
+                    obj.concentration_value === row.concentration_value
+                ) === idx
+            ) // remove duplicates
             .map((row) => {
               return new ObjectBuilder()
-                .append('id', getDilutedAntibodyInstanceIri(context, omapId, cycleNumber, row.rrid, row.lot_number, row.dilution, row.concentration_value))
-                .append('label', getDilutedAntibodyInstanceLabel(row.rrid, row.lot_number, row.dilution, row.concentration_value))
+                .append(
+                  'id',
+                  getDilutedAntibodyInstanceIri(
+                    context,
+                    omapId,
+                    cycleNumber,
+                    row.rrid,
+                    row.lot_number,
+                    row.dilution,
+                    row.concentration_value
+                  )
+                )
+                .append(
+                  'label',
+                  getDilutedAntibodyInstanceLabel(row.rrid, row.lot_number, row.dilution, row.concentration_value)
+                )
                 .append('type_of', ['ExperimentUsedAntibody'])
                 .append('concentration', row.concentration_value)
                 .append('dilution', row.dilution)
@@ -179,7 +200,17 @@ function normalizeCoreAntibodyPanelData(context, data) {
   const omapId = data[0].omap_id;
   const antibodyComponents = data
     .filter((row) => row.core_panel === 'Y')
-    .map((row) => getDilutedAntibodyInstanceIri(context, omapId, data.cycle_number, row.rrid, row.lot_number, row.dilution, row.concentration_value));
+    .map((row) =>
+      getDilutedAntibodyInstanceIri(
+        context,
+        omapId,
+        data.cycle_number,
+        row.rrid,
+        row.lot_number,
+        row.dilution,
+        row.concentration_value
+      )
+    );
   return new ObjectBuilder()
     .append('id', getCoreAntibodyPanelIri(context, omapId))
     .append('label', getCoreAntibodyPanelLabel(omapId))
@@ -194,25 +225,33 @@ function getPurl(context) {
 }
 
 function getExperimentIri(context, omapId) {
-  return `${getPurl(context)}#${omapId.trim()}`;
+  return `${getPurl(context)}#${omapId?.trim() ?? ''}`;
 }
 
 function getExperimentCycleIri(context, omapId, cycleNumber) {
-  return `${getPurl(context)}#${omapId.trim()}-cycle-${cycleNumber}`;
+  return `${getPurl(context)}#${omapId?.trim() ?? ''}-cycle-${cycleNumber}`;
 }
 
 function getDilutedAntibodyInstanceIri(context, omapId, cycleNumber, antibodyId, lotNumber, dilution, concentration) {
-  const instanceKey = `${omapId}${cycleNumber}${antibodyId.trim()}${lotNumber ? `${lotNumber}`.trim() : 'NotAvailable'}${dilution ? dilution : (concentration ? concentration : 'NotAvailable')}`;
-  return `${getPurl(context)}#${antibodyId.trim()}-${hash(instanceKey)}`;
+  const instanceKey = `${omapId}${cycleNumber}${antibodyId?.trim() ?? ''}${
+    lotNumber ? `${lotNumber}`?.trim() ?? '' : 'NotAvailable'
+  }${dilution ? dilution : concentration ? concentration : 'NotAvailable'}`;
+  return `${getPurl(context)}#${antibodyId?.trim() ?? ''}-${hash(instanceKey)}`;
 }
 
 function getDilutedAntibodyInstanceLabel(antibodyId, lotNumber, dilution, concentration) {
-  return `${antibodyId} antibody, ${lotNumber ? `lot number ${lotNumber}` : 'no lot number'}, ${dilution ? `with dilution ${dilution}` : (concentration ? `with concentration ${concentration}` : 'unknown dilution factor or concentration value')}`;
+  return `${antibodyId} antibody, ${lotNumber ? `lot number ${lotNumber}` : 'no lot number'}, ${
+    dilution
+      ? `with dilution ${dilution}`
+      : concentration
+      ? `with concentration ${concentration}`
+      : 'unknown dilution factor or concentration value'
+  }`;
 }
 
 function getAntibodyInstanceIri(context, antibodyId, lotNumber) {
-  const instanceKey = `${antibodyId.trim()}${lotNumber ? `${lotNumber}`.trim() : 'NotAvailable'}`;
-  return `${getPurl(context)}#${antibodyId.trim()}-${hash(instanceKey)}`;
+  const instanceKey = `${antibodyId?.trim() ?? ''}${lotNumber ? `${lotNumber}`?.trim() ?? '' : 'NotAvailable'}`;
+  return `${getPurl(context)}#${antibodyId?.trim() ?? ''}-${hash(instanceKey)}`;
 }
 
 function getAntibodyInstanceLabel(antibodyId, lotNumber) {
@@ -220,7 +259,7 @@ function getAntibodyInstanceLabel(antibodyId, lotNumber) {
 }
 
 function getCoreAntibodyPanelIri(context, omapId) {
-  return `${getPurl(context)}#${omapId.trim()}-core-antibody-panel`;
+  return `${getPurl(context)}#${omapId?.trim() ?? ''}-core-antibody-panel`;
 }
 
 function getCoreAntibodyPanelLabel(omapId) {
@@ -228,7 +267,12 @@ function getCoreAntibodyPanelLabel(omapId) {
 }
 
 function getAntibodyIri(antibodyId) {
-  return `https://identifiers.org/RRID:${antibodyId.trim()}`;
+  antibodyId = antibodyId?.trim() ?? '';
+  if (antibodyId) {
+    return `https://identifiers.org/RRID:${antibodyId}`;
+  } else {
+    return undefined;
+  }
 }
 
 function normalizeProteinId(text) {
@@ -244,7 +288,10 @@ function removeWhitespaces(s) {
 
 function split(text) {
   if (text) {
-    return text.split(/[\,\;]/).map((s) => s.trim()).filter(s => !!s);
+    return text
+      .split(/[\,\;]/)
+      .map((s) => s.trim())
+      .filter((s) => !!s);
   }
   return null;
 }
