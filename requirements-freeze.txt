@@ -10,7 +10,7 @@ certifi==2023.11.17
 CFGraph==0.2.1
 chardet==5.2.0
 charset-normalizer==3.3.2
-check-jsonschema==0.27.2
+check-jsonschema==0.28.4
 click==8.1.7
 colorama==0.4.6
 coloredlogs==15.0.1
@@ -43,17 +43,17 @@ jsonpath-ng==1.6.0
 jsonpointer==2.4
 jsonschema==4.20.0
 jsonschema-specifications==2023.11.1
-linkml==1.6.3
+linkml==1.7.10
 linkml-dataops==0.1.0
-linkml-runtime==1.6.2
-linkml_owl @ git+https://github.com/linkml/linkml-owl@3ea977a73d68624e4be94793e69acc79a2672c29
+linkml-runtime==1.7.5
+linkml_owl @ git+https://github.com/linkml/linkml-owl@2a9d6943035d28af69d91dcd8778a2da9274c03f
 lxml==4.9.3
 MarkupSafe==2.1.3
 mistune==2.0.5
 msgpack==1.0.7
 mypy-extensions==1.0.0
 networkx==3.2.1
-nodeenv==1.8.0
+nodeenv==1.9.0
 openpyxl==3.1.2
 packaging==23.2
 parse==1.20.0
@@ -61,7 +61,7 @@ platformdirs==4.0.0
 pluggy==1.3.0
 ply==3.11
 prefixcommons==0.1.12
-prefixmaps==0.2.0
+prefixmaps==0.2.4
 prov==1.5.1
 psutil==5.9.6
 pydantic==2.5.2
@@ -86,7 +86,7 @@ requests==2.31.0
 rfc3339-validator==0.1.4
 rfc3987==1.3.8
 rpds-py==0.13.1
-ruamel.yaml==0.18.5
+ruamel.yaml==0.18.6
 ruamel.yaml.clib==0.2.8
 schema-salad==8.4.20231117150958
 semsql==0.3.3
