@@ -54,3 +54,5 @@ classes:
         required: true
       had_member:
         required: true
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion

@@ -105,20 +105,30 @@ slots:
     inlined_as_list: true
     range: Distribution
     slot_uri: dcat:distribution
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   downloadUrl:
     range: uri
     slot_uri: dcat:downloadURL
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   accessUrl:
     range: uri
     slot_uri: dcat:accessURL
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   mediaType:
     slot_uri: dcat:mediaType
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
 
   # PROV-O properties
   was_derived_from:
     inlined: true
     range: Dataset
     slot_uri: prov:wasDerivedFrom
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   derived_from:
     range: uriorcurie
     slot_uri: prov:wasDerivedFrom
@@ -140,13 +150,19 @@ slots:
   create_date:
     range: date
     slot_uri: dct:created
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   creator_name:
     slot_uri: dct:creator
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   creators:
     multivalued: true
     inlined_as_list: true
     range: Creator
     slot_uri: dct:creator
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   created_by:
     multivalued: true
     inlined_as_list: true
@@ -157,61 +173,99 @@ slots:
     inlined_as_list: true
     range: string
     slot_uri: dct:reference
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
 
   # Schema.org properties
   about:
     slot_uri: schema:about
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   version:
     slot_uri: schema:version
   name:
     slot_uri: schema:name
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   type:
     slot_uri: schema:additionalType
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   fullName:
     slot_uri: schema:name
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   firstName:
     slot_uri: schema:givenName
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   lastName:
     slot_uri: schema:familyName
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   orcid:
     slot_uri: schema:identifier
     pattern: "^(\\d{4}-){3}\\d{3}(\\d|X)$"
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   funder:
     slot_uri: schema:funder
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   awardNumber:
     slot_uri: schema:award
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   citation:
     slot_uri: schema:citation
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   creation_date:
     slot_uri: schema:dateCreated
   propertyId:
     slot_uri: schema:propertyID
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   value:
     slot_uri: schema:value
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   reviewers:
     multivalued: true
     inlined_as_list: true
     range: Person
     slot_uri: schema:reviewedBy
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   funders:
     multivalued: true
     inlined_as_list: true
     range: Grant
     slot_uri: schema:funding
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   target_product:
     range: SoftwareSourceCode
     slot_uri: schema:targetProduct
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   code_repository:
     range: uriorcurie
     slot_uri: schema:codeRepository
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
 
   # OWL properties
   versionInfo:
     slot_uri: owl:versionInfo
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
 
   # RDFS properties
   label:
     slot_uri: rdfs:label
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   see_also:
     range: uriorcurie
     slot_uri: rdfs:seeAlso
@@ -219,25 +273,39 @@ slots:
   # SKOS properties
   pref_label:
     slot_uri: skos:prefLabel
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
 
   # HRA properties
   hubmapId:
     slot_uri: ccf:hubmap_id
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   doi:
     range: uriorcurie
     slot_uri: ccf:doi
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   citationOverall:
     slot_uri: ccf:citation_overall
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   datatable:
     multivalued: true
     slot_uri: ccf:data_table
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   project_leads:
     multivalued: true
     inlined_as_list: true
     range: Person
     slot_uri: ccf:project_lead
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   externalReviewers:
     multivalued: true
     inlined_as_list: true
     range: Person
     slot_uri: ccf:external_reviewer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
