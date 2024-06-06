@@ -173,8 +173,6 @@ slots:
     inlined_as_list: true
     range: string
     slot_uri: dct:reference
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
 
   # Schema.org properties
   about:
