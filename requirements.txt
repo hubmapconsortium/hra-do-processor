@@ -1,6 +1,6 @@
 nodeenv
 check-jsonschema
 # cwltool # Causes problems when installed all at once, so this is installed in the setup-environment.sh script
-linkml-owl @ git+https://github.com/linkml/linkml-owl
+linkml-owl
 linkml # use version required by linkml-owl above
 semsql
