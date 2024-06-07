@@ -56,7 +56,8 @@ async function getRawData(context) {
 
 async function processSpatialEntities(context, metadata, gltfFile, cache, crosswalk) {
   const scalar = new Matrix4(Matrix4.IDENTITY).scale([1000, 1000, 1000]);
-  const nodes = await processSceneNodes(gltfFile, scalar, undefined, cache);
+  const primaryNodeId = crosswalk?.[0]?.['node_name'] ?? undefined;
+  const nodes = await processSceneNodes(gltfFile, scalar, primaryNodeId, cache);
 
   const obj = context.selectedDigitalObject;
   const baseIri = `${obj.iri}/${obj.version}`;
@@ -70,7 +71,6 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
     .filter((node) => validNodeId(node, crosswalk))
     .map((node) => {
       const nodeId = node['@id'];
-      const primaryNodeId = crosswalk[0]['node_name'];
       const id =
         nodeId === primaryNodeId
           ? primaryId
