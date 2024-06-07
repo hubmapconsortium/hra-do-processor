@@ -33,7 +33,7 @@ function getStructuredData(context, metadata) {
   const { title, description, creators, creation_date, license, distributions, was_derived_from } = metadata;
   const { type, name, version } = context.selectedDigitalObject;
   return {
-    '@context': 'https://schema.org/',
+    '@context': 'http://schema.org/',
     '@type': 'Dataset',
     '@id': `${context.purlIri}${type}/${name}/${version}`,
     name: title,
