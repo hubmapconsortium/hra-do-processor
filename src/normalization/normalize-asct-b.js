@@ -25,11 +25,11 @@ export function normalizeAsctbMetadata(context) {
 
 export async function normalizeAsctbData(context) {
   const rawData = await getRawData(context);
-  const normalizedData = normalizeData(context, rawData);
+  const normalizedData = normalizeData(context, rawData).data;
   writeNormalizedData(context, normalizedData);
 }
 
-async function getRawData(context) {
+export async function getRawData(context) {
   const { path } = context.selectedDigitalObject;
 
   const metadata = readMetadata(context);
@@ -53,7 +53,7 @@ async function getRawData(context) {
     more(`Please review the warnings at ${warningsFile}`);
   }
 
-  return data.data;
+  return data;
 }
 
 function normalizeData(context, data) {

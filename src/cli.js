@@ -7,6 +7,7 @@ import { bumpDraft } from './drafting/bump-draft.js';
 import { newDraft } from './drafting/new-draft.js';
 import { enrich } from './enrichment/enrich.js';
 import { finalize } from './finalizing/finalize.js';
+import { genAsctbCollectionJson } from './gen-asctb-collection-json.js';
 import { list } from './list.js';
 import { migrateCcfLandmarks } from './migration/ccf-landmarks/migrate.js';
 import { migrateCcfOwl } from './migration/ccf-owl/migrate.js';
@@ -80,6 +81,15 @@ program
   .option('-C, --crosswalk <crosswalk-path>', 'Path to the crosswalk digital object relative to DO_HOME')
   .action((str, _options, command) => {
     updateRefOrganCrosswalk(getContext(program, command, str));
+  });
+
+program
+  .command('gen-asct-b-collection-json')
+  .description('Generate a json file of all raw ASCT+B data in json format from a given collection.')
+  .argument('<collection-path>', 'Path to the collection digital object relative to DO_HOME')
+  .option('-o, --output <json-path>', 'Path to the output JSON file to generate')
+  .action((str, _options, command) => {
+    genAsctbCollectionJson(getContext(program, command, str));
   });
 
 program
