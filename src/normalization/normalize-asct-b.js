@@ -24,8 +24,8 @@ export function normalizeAsctbMetadata(context) {
 }
 
 export async function normalizeAsctbData(context) {
-  const rawData = await getRawData(context);
-  const normalizedData = normalizeData(context, rawData).data;
+  const rawData = (await getRawData(context)).data;
+  const normalizedData = normalizeData(context, rawData);
   writeNormalizedData(context, normalizedData);
 }
 
