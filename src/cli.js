@@ -2,6 +2,7 @@
 
 import { Command } from 'commander';
 import { build } from './building/build.js';
+import { createDb } from './create-db.js';
 import { deploy } from './deployment/deploy.js';
 import { bumpDraft } from './drafting/bump-draft.js';
 import { newDraft } from './drafting/new-draft.js';
@@ -127,6 +128,13 @@ program
   .option('--skip-db', 'Skip recreating the blazegraph database.')
   .action((_options, command) => {
     finalize(getContext(program, command));
+  });
+
+program
+  .command('create-db')
+  .description('Create a blazegraph database from select digital objects')
+  .action((_options, command) => {
+    createDb(getContext(program, command));
   });
 
 program
