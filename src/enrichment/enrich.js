@@ -50,6 +50,7 @@ export async function enrich(context) {
     //   await enrichDatasetGraphData(context);
     //   enrichDatasetGraphMetadata(context);
     //   break;
+    case 'millitome':
     case 'vocab':
     case 'graph':
     case 'g':

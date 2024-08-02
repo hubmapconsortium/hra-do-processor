@@ -51,6 +51,7 @@ export async function normalize(context) {
       // await normalizeDatasetGraphData(context);
       // normalizeDatasetGraphMetadata(context);
       // break;
+    case 'millitome':
     case 'vocab':
     case 'graph':
     case 'g':
