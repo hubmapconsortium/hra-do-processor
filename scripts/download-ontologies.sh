@@ -36,21 +36,24 @@ rm -rf $MIRROR_DIR/fma.zip
 
 echo "Downloading the latest CL ontology..."
 curl -L "$OBO_BASE_URL/cl/cl-base.owl" \
-     --create-dirs -o "$MIRROR_DIR/cl.owl" \
+     --create-dirs -o "$MIRROR_DIR/cl-base.owl" \
      --retry 4 \
      --max-time 200 && \
-robot convert -i "$MIRROR_DIR/cl.owl" \
+robot convert -i "$MIRROR_DIR/cl-base.owl" \
      --format owl \
-     -o "$MIRROR_DIR/cl.owl"
+     -o "$MIRROR_DIR/cl-base.owl"
 
 echo "Downloading the latest PCL ontology..."
 curl -L "$OBO_BASE_URL/pcl/pcl-base.owl" \
-     --create-dirs -o "$MIRROR_DIR/pcl.owl" \
+     --create-dirs -o "$MIRROR_DIR/pcl-base.owl" \
      --retry 4 \
      --max-time 200 && \
-robot convert -i "$MIRROR_DIR/pcl.owl" \
+robot convert -i "$MIRROR_DIR/pcl-base.owl" \
      --format owl \
-     -o "$MIRROR_DIR/pcl.owl"
+     -o "$MIRROR_DIR/pcl-base.owl"
+
+echo "Merging CL and PCL ontologies to create a full CL ontology..."
+robot merge --input "$MIRROR_DIR/cl-base.owl" --input "$MIRROR_DIR/pcl-base.owl" -o "$MIRROR_DIR/cl.owl"
 
 echo "Downloading the latest LHMA ontology..."
 curl -L "https://data.bioontology.org/ontologies/LUNGMAP_H_CELL/submissions/6/download?apikey=8b5b7825-538d-40e0-9e9e-5ab9274a9aeb" \

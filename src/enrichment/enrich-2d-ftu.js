@@ -66,19 +66,6 @@ export function enrich2dFtuData(context) {
       push(inputPaths, clExtractPath);
     }
 
-    const pclEntitiesPath = collectEntities(context, 'pcl', baseInputPath);
-    if (!isFileEmpty(pclEntitiesPath)) {
-      info('Extracting PCL.');
-      const pclExtractPath = extractClassHierarchy(
-        context,
-        'pcl',
-        'http://purl.obolibrary.org/obo/CL_0000000',
-        pclEntitiesPath
-      );
-      logOutput(pclExtractPath);
-      push(inputPaths, pclExtractPath);
-    }
-
     info('Merging files:');
     for (const inputPath of inputPaths) {
       more(` -> ${inputPath}`);

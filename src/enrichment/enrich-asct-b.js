@@ -93,19 +93,6 @@ export function enrichAsctbData(context) {
       inputPaths.push(clExtractPath);
     }
 
-    const pclEntitiesPath = collectEntities(context, 'pcl', enrichedWithValidationPath);
-    if (!isFileEmpty(pclEntitiesPath)) {
-      info('Extracting PCL.');
-      const pclExtractPath = extractClassHierarchy(
-        context,
-        'pcl',
-        'http://purl.obolibrary.org/obo/CL_0000000',
-        pclEntitiesPath
-      );
-      logOutput(pclExtractPath);
-      inputPaths.push(pclExtractPath);
-    }
-
     const lmhaEntitiesPath = collectEntities(context, 'lmha', enrichedWithValidationPath);
     if (!isFileEmpty(lmhaEntitiesPath)) {
       info('Extracting LMHA.');
