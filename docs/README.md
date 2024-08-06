@@ -1,6 +1,6 @@
 # Digital Object Schemas
 
-[All ER Diagrams](er-diagrams.md)
+[All ER Diagrams](er-diagrams/)
 
 ## Digital Object Types:
 - [2d-ftu-metadata](2d-ftu-metadata/)

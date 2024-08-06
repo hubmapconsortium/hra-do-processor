@@ -16,7 +16,7 @@ README=schemas/generated/docs/README.md
 mkdir -p schemas/generated/docs
 echo "# Digital Object Schemas" > $README
 echo "" >> $README
-echo "[All ER Diagrams](er-diagrams.md)" >> $README
+echo "[All ER Diagrams](er-diagrams/)" >> $README
 echo "" >> $README
 echo "## Digital Object Types:" >> $README
 
