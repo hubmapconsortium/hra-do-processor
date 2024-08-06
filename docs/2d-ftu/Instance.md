@@ -1,0 +1,28 @@
+
+# Class: Instance
+
+
+
+URI: [ccf:Instance](http://purl.org/ccf/Instance)
+
+
+[![img](images/Instance.svg)](images/Instance.svg)
+
+## Mixin for
+
+ * [FtuIllustration](FtuIllustration.md) (mixin) 
+ * [FtuIllustrationFile](FtuIllustrationFile.md) (mixin) 
+ * [FtuIllustrationNode](FtuIllustrationNode.md) (mixin) 
+ * [Person](Person.md) (mixin) 
+ * [SoftwareApplication](SoftwareApplication.md) (mixin) 
+
+## Referenced by Class
+
+
+## Attributes
+
+
+### Own
+
+ * [type_of](type_of.md)  <sub>0..\*</sub>
+     * Range: [Named](Named.md)

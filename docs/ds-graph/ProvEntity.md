@@ -1,0 +1,37 @@
+
+# Class: ProvEntity
+
+
+
+URI: [ccf:ProvEntity](http://purl.org/ccf/ProvEntity)
+
+
+[![img](images/ProvEntity.svg)](images/ProvEntity.svg)
+
+## Uses Mixin
+
+ *  mixin: [Named](Named.md)
+
+## Attributes
+
+
+### Own
+
+ * [was_derived_from](was_derived_from.md)  <sub>0..1</sub>
+     * Range: [ExperimentalDataset](ExperimentalDataset.md)
+
+### Mixed in from Named:
+
+ * [id](id.md)  <sub>1..1</sub>
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+
+### Mixed in from Named:
+
+ * [label](label.md)  <sub>1..1</sub>
+     * Range: [String](types/String.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | prov:Entity |

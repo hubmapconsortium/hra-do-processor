@@ -27,6 +27,7 @@
     "@loaders.gl/draco": "^3.4.0",
     "@loaders.gl/gltf": "^3.4.0",
     "@math.gl/core": "^3.6.3",
+    "@mermaid-js/mermaid-cli": "^10.9.1",
     "cannon-es": "^0.18.0",
     "chalk": "^5.2.0",
     "commander": "^10.0.0",

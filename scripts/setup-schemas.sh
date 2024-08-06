@@ -25,9 +25,15 @@ for genSchemaFile in schemas/generated/linkml/*.yaml; do
 
   # Generate Markdown documentation
   mkdir -p schemas/generated/docs
-  gen-markdown $genSchemaFile -d schemas/generated/docs/${type}
+  gen-markdown $genSchemaFile --img --index-file README.md -d schemas/generated/docs/${type}
 
   # Generate OWL schema definitions
   mkdir -p schemas/generated/owl
   gen-owl $genSchemaFile > schemas/generated/owl/${type}.owl.ttl
+
+  # Generate Mermaid diagrams
+  mkdir -p schemas/generated/erdiagram
+  gen-erdiagram --format mermaid $genSchemaFile > schemas/generated/erdiagram/${type}.mmd
+  mmdc -b transparent -i schemas/generated/erdiagram/${type}.mmd -o schemas/generated/erdiagram/${type}.svg
+  mmdc -b white -i schemas/generated/erdiagram/${type}.mmd -o schemas/generated/erdiagram/${type}.png
 done
