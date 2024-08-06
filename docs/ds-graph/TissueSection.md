@@ -31,7 +31,7 @@ URI: [ccf:TissueSection](http://purl.org/ccf/TissueSection)
  * [samples](samples.md)  <sub>0..\*</sub>
      * Range: [TissueBlock](TissueBlock.md)
  * [datasets](datasets.md)  <sub>0..\*</sub>
-     * Range: [ExperimentalDataset](ExperimentalDataset.md)
+     * Range: [Dataset](Dataset.md)
  * [section_number](section_number.md)  <sub>0..1</sub>
      * Range: [Integer](types/Integer.md)
  * [links_back_to](links_back_to.md)  <sub>0..1</sub>

@@ -11,9 +11,9 @@ URI: [ccf:Named](http://purl.org/ccf/Named)
 ## Mixin for
 
  * [Creator](Creator.md) (mixin) 
+ * [Dataset](Dataset.md) (mixin) 
  * [Distribution](Distribution.md) (mixin) 
  * [Donor](Donor.md) (mixin) 
- * [ExperimentalDataset](ExperimentalDataset.md) (mixin) 
  * [ProvEntity](ProvEntity.md) (mixin) 
  * [SpatialEntity](SpatialEntity.md) (mixin) 
  * [SpatialPlacement](SpatialPlacement.md) (mixin) 

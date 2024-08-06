@@ -22,6 +22,6 @@ URI: [ccf:DatasetGraphData](http://purl.org/ccf/DatasetGraphData)
  * [sample](sample.md)  <sub>0..\*</sub>
      * Range: [TissueBlock](TissueBlock.md)
  * [dataset](dataset.md)  <sub>0..\*</sub>
-     * Range: [ExperimentalDataset](ExperimentalDataset.md)
+     * Range: [Dataset](Dataset.md)
  * [spatial_entity](spatial_entity.md)  <sub>0..\*</sub>
      * Range: [SpatialEntity](SpatialEntity.md)

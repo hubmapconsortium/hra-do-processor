@@ -212,7 +212,7 @@ SpatialPlacement {
     uriorcurie id  
     string label  
 }
-ExperimentalDataset {
+Dataset {
     string pref_label  
     string description  
     string external_link  
@@ -274,21 +274,21 @@ Container ||--|o DatasetGraphMetadata : "metadata"
 Container ||--|o DatasetGraphData : "data"
 DatasetGraphData ||--}o Donor : "donor"
 DatasetGraphData ||--}o TissueBlock : "sample"
-DatasetGraphData ||--}o ExperimentalDataset : "dataset"
+DatasetGraphData ||--}o Dataset : "dataset"
 DatasetGraphData ||--}o SpatialEntity : "spatial_entity"
 SpatialEntity ||--|| SpatialPlacement : "placement"
 SpatialEntity ||--}o Named : "type_of"
 SpatialPlacement ||--|o SpatialEntity : "source"
 SpatialPlacement ||--}o Named : "type_of"
-ExperimentalDataset ||--}o Named : "type_of"
+Dataset ||--}o Named : "type_of"
 TissueBlock ||--}o Named : "partially_overlaps"
 TissueBlock ||--|o SpatialEntity : "rui_location"
 TissueBlock ||--|o SpatialEntity : "extraction_site"
 TissueBlock ||--}o TissueSection : "sections"
-TissueBlock ||--}o ExperimentalDataset : "datasets"
+TissueBlock ||--}o Dataset : "datasets"
 TissueBlock ||--}o Named : "type_of"
 TissueSection ||--}o TissueBlock : "samples"
-TissueSection ||--}o ExperimentalDataset : "datasets"
+TissueSection ||--}o Dataset : "datasets"
 TissueSection ||--}o Named : "type_of"
 Donor ||--}o TissueBlock : "samples"
 Donor ||--}o Named : "type_of"

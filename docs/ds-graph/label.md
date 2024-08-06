@@ -19,9 +19,9 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 ## Used by
 
  * [Creator](Creator.md)
+ * [Dataset](Dataset.md)
  * [Distribution](Distribution.md)
  * [Donor](Donor.md)
- * [ExperimentalDataset](ExperimentalDataset.md)
  * [Named](Named.md)
  * [Person](Person.md)
  * [ProvEntity](ProvEntity.md)

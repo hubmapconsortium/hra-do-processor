@@ -18,8 +18,8 @@ None &#8594;  <sub>0..\*</sub> [Named](Named.md)
 
 ## Used by
 
+ * [Dataset](Dataset.md)
  * [Donor](Donor.md)
- * [ExperimentalDataset](ExperimentalDataset.md)
  * [Instance](Instance.md)
  * [Person](Person.md)
  * [SoftwareApplication](SoftwareApplication.md)

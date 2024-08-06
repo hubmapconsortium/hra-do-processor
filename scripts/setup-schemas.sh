@@ -11,9 +11,20 @@ for schemaFile in schemas/src/{metadata,digital-objects}/*.yaml; do
   gen-linkml -f yaml --no-materialize-attributes --materialize-patterns $schemaFile > schemas/generated/linkml/${type}.yaml
 done
 
+# Initialize README.md for docs dir
+README=schemas/generated/docs/README.md
+mkdir -p schemas/generated/docs
+echo "# Digital Object Schemas" > $README
+echo "" >> $README
+echo "[All ER Diagrams](er-diagrams.md)" >> $README
+echo "" >> $README
+echo "## Digital Object Types:" >> $README
+
 # Use the resolved LinkML schema to generate the other data schemas
 for genSchemaFile in schemas/generated/linkml/*.yaml; do
   type=$(basename ${genSchemaFile%.yaml})
+
+  echo "- [$type]($type/)" >> $README
 
   # Generate JSON Schema for validation
   mkdir -p schemas/generated/json-schema
@@ -37,3 +48,20 @@ for genSchemaFile in schemas/generated/linkml/*.yaml; do
   mmdc -b transparent -i schemas/generated/erdiagram/${type}.mmd -o schemas/generated/erdiagram/${type}.svg
   mmdc -b white -i schemas/generated/erdiagram/${type}.mmd -o schemas/generated/erdiagram/${type}.png
 done
+
+# Generate ER diagrams
+OUT=er-diagrams.md
+
+echo "# HRA DO Processor Diagrams" > $OUT
+
+for genSchemaFile in `ls schemas/generated/linkml/*.yaml | grep -v 'metadata'` schemas/generated/linkml/basic-metadata.yaml; do
+  type=$(basename ${genSchemaFile%.yaml})
+  echo "## $type" >> $OUT
+
+  echo "" >> $OUT
+  gen-erdiagram $genSchemaFile >> $OUT
+  echo "" >> $OUT
+done
+
+mkdir -p schemas/generated/docs/er-diagrams
+mmdc -i er-diagrams.md -o docs/er-diagrams/index.md

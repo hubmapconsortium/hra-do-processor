@@ -8,7 +8,7 @@ URI: [ccf:datasets](http://purl.org/ccf/datasets)
 
 ## Domain and Range
 
-None &#8594;  <sub>0..\*</sub> [ExperimentalDataset](ExperimentalDataset.md)
+None &#8594;  <sub>0..\*</sub> [Dataset](Dataset.md)
 
 ## Parents
 

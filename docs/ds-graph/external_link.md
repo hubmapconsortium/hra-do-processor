@@ -18,8 +18,8 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Used by
 
+ * [Dataset](Dataset.md)
  * [Donor](Donor.md)
- * [ExperimentalDataset](ExperimentalDataset.md)
  * [TissueBlock](TissueBlock.md)
  * [TissueSection](TissueSection.md)
 

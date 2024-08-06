@@ -91,6 +91,9 @@ if [ -e "$ENV/bin/activate" ]; then
   # Install the JSON-LD CLI (a better JSON-LD converter)
   npm install -g jsonld-cli
 
+  # Install the mermaid CLI
+  npm install -g @mermaid-js/mermaid-cli
+
   # Download ontologies
   ${ROOT_DIR}/scripts/download-ontologies.sh
 

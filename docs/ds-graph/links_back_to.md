@@ -18,6 +18,6 @@ None &#8594;  <sub>0..1</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Used by
 
- * [ExperimentalDataset](ExperimentalDataset.md)
+ * [Dataset](Dataset.md)
  * [TissueBlock](TissueBlock.md)
  * [TissueSection](TissueSection.md)

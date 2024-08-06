@@ -8,7 +8,7 @@ URI: [ccf:was_derived_from](http://purl.org/ccf/was_derived_from)
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [ExperimentalDataset](ExperimentalDataset.md)
+None &#8594;  <sub>0..1</sub> [Dataset](Dataset.md)
 
 ## Parents
 

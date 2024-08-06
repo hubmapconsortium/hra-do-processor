@@ -18,7 +18,7 @@ URI: [ccf:ProvEntity](http://purl.org/ccf/ProvEntity)
 ### Own
 
  * [was_derived_from](was_derived_from.md)  <sub>0..1</sub>
-     * Range: [ExperimentalDataset](ExperimentalDataset.md)
+     * Range: [Dataset](Dataset.md)
 
 ### Mixed in from Named:
 

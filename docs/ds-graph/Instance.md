@@ -10,8 +10,8 @@ URI: [ccf:Instance](http://purl.org/ccf/Instance)
 
 ## Mixin for
 
+ * [Dataset](Dataset.md) (mixin) 
  * [Donor](Donor.md) (mixin) 
- * [ExperimentalDataset](ExperimentalDataset.md) (mixin) 
  * [Person](Person.md) (mixin) 
  * [SoftwareApplication](SoftwareApplication.md) (mixin) 
  * [SpatialEntity](SpatialEntity.md) (mixin) 
