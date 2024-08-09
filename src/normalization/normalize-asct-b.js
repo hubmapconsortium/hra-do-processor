@@ -67,6 +67,7 @@ function normalizeData(context, data) {
     anatomical_structures: normalizeAsData(context, data),
     cell_types: normalizeCtData(context, data),
     biomarkers: normalizeBmData(context, data),
+    cell_type_instances: normalizeCtInstanceData(context, data),
   };
 }
 
@@ -176,7 +177,7 @@ function normalizeCt(collector, { id: ct_id, name: ct_name, is_provisional }, in
       ccf_is_provisional: is_provisional,
       ccf_ct_isa: [getCtIsaEntity(array, index)],
       ccf_located_in: [],
-      ccf_has_biomarker_set: [],
+      has_characterizing_marker_set: [],
     };
     if (is_provisional) {
       obj['parent_class'] = 'ccf:CellType';
@@ -204,7 +205,7 @@ function addLocatedIn(collector, cellType, anatomicalStructure) {
 function addCharacterizingBiomarkers(collector, cellType, biomarkers, references) {
   const foundEntity = collector.find((entityInCollector) => entityInCollector.id === cellType);
   if (foundEntity) {
-    const oldHasBiomarker = foundEntity.ccf_has_biomarker_set;
+    const oldHasBiomarker = foundEntity.has_characterizing_marker_set;
     const newHasBiomarker = [
       ...oldHasBiomarker,
       {
@@ -212,7 +213,7 @@ function addCharacterizingBiomarkers(collector, cellType, biomarkers, references
         references: removeDuplicates(references),
       },
     ];
-    foundEntity.ccf_has_biomarker_set = removeDuplicates(newHasBiomarker);
+    foundEntity.has_characterizing_marker_set = removeDuplicates(newHasBiomarker);
   }
 }
 
@@ -253,17 +254,107 @@ function normalizeBm(collector, { id: bm_id, name: bm_name, b_type, is_provision
   return collector;
 }
 
+function normalizeCtInstanceData(context, data) {
+  return data.reduce((collector, row, index) => {
+    console.log(row.cell_types);
+    row.cell_types
+      .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
+      .map(({ id, name }) => {
+        return {
+          id: generateInstanceId(context, name, index),
+          type_of: generateIdWhenEmpty(id, name),
+          label: generateInstanceLabel(context, name, index),
+        };
+      })
+      .filter(({ type_of }) => passCtIdFilterCriteria(context, type_of))
+      .reduce(normalizeCtInstance, collector);
+
+    // Add ccf_located_in relationship that is between AS and CT
+    const valid_as = row.anatomical_structures
+      .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
+      .map(({ id, name }) => generateIdWhenEmpty(id, name))
+      .filter((id) => passAsIdFilterCriteria(context, id));
+    const valid_ct_instance = row.cell_types
+      .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
+      .map(({ id, name }) => ({ id: generateIdWhenEmpty(id, name), name }))
+      .filter(({ id }) => passCtIdFilterCriteria(context, id))
+      .map(({ name }) => generateInstanceId(context, name, index));
+    // Each CT instance will be associated with all AS via the ccf_located_in relationship
+    valid_ct_instance.forEach((ct_instance) => {
+      valid_as.forEach((as) => addLocatedIn(collector, ct_instance, as))
+    });
+
+    // Add has_biomarker relationship between CT and BM
+    const biomarkers = row.biomarkers
+      .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
+      .map(({ id, name }) => generateIdWhenEmpty(id, name))
+      .filter((id) => passIdFilterCriteria(context, id));
+    const references = row.references
+      .filter(({ doi }) => checkNotEmpty(doi))
+      .map(({ doi }) => normalizeDoi(doi))
+      .filter((doi) => passDoiFilterCriteria(context, doi));
+    const last_ct_instance = valid_ct_instance.pop();
+    if (last_ct_instance) {
+      addBiomarkerSetInstances(collector, last_ct_instance, biomarkers, references);
+    }
+    return collector;
+  }, []);
+}
+
+function normalizeCtInstance(collector, { id, label, type_of }) {
+  const obj = {
+    id,
+    label,
+    type_of: [type_of],
+    ccf_located_in: [],
+    ccf_has_biomarker_set: [],
+  };
+  collector.push(obj);
+  return collector;
+}
+
+function addBiomarkerSetInstances(collector, ctInstance, biomarkers, references) {
+  const foundInstance = collector.find((instanceInCollector) => instanceInCollector.id === ctInstance);
+  if (foundInstance) {
+    const oldHasBiomarker = foundInstance.ccf_has_biomarker_set;
+    const newHasBiomarker = [
+      ...oldHasBiomarker,
+      {
+        id: `${ctInstance}_biomarker_set`,
+        label: 'Biomarker Set',
+        type_of: ['BiomarkerSet'],
+        members: removeDuplicates(biomarkers),
+        references: removeDuplicates(references),
+      },
+    ];
+    foundInstance.ccf_has_biomarker_set = removeDuplicates(newHasBiomarker);
+  }
+}
+
+function generateInstanceId(context, ctName, ctIndex) {
+  const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
+  return `${context.purlIri}${doType}/${doName}#${normalizeName(ctName)}_${doVersion}_R${ctIndex}`;
+}
+
+function generateInstanceLabel(context, ctName, ctIndex) {
+  const { name: doName, version: doVersion } = context.selectedDigitalObject;
+  return `Instance of ${ctName} in ${doName} (${doVersion}) [R${ctIndex}]`;
+}
+
 function generateIdWhenEmpty(id, name) {
   return checkNotEmpty(id) ? id : generateId(name);
 }
 
 function generateId(name) {
-  const suffix = name
+  return `https://purl.org/ccf/ASCTB-TEMP_${normalizeName(name)}`;
+}
+
+function normalizeName(name) {
+  return name
     .toLowerCase()
     .trim()
     .replace(/\W+/g, '-')
     .replace(/[^a-z0-9-]+/g, '');
-  return `https://purl.org/ccf/ASCTB-TEMP_${suffix}`;
 }
 
 function checkNotEmpty(str) {
