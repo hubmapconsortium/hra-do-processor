@@ -256,7 +256,6 @@ function normalizeBm(collector, { id: bm_id, name: bm_name, b_type, is_provision
 
 function normalizeCtInstanceData(context, data) {
   return data.reduce((collector, row, index) => {
-    console.log(row.cell_types);
     row.cell_types
       .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
       .map(({ id, name }) => {
