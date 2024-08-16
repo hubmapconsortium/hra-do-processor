@@ -73,7 +73,7 @@ classes:
     slots:
       - ccf_ct_isa
       - ccf_located_in
-      - ccf_has_biomarker_set
+      - has_characterizing_marker_set
     slot_usage:
       id:
         structured_pattern:
@@ -86,13 +86,10 @@ classes:
       ccf_located_in:
         annotations:
           owl: AnnotationAssertion, AnnotationProperty
-      ccf_has_biomarker_set:
-        annotations:
-          owl: AnnotationAssertion, AnnotationProperty
     annotations:
       owl: Class
       owl.template: |-
-        {% for s in ccf_has_biomarker_set %}
+        {% for s in has_characterizing_marker_set %}
         SubClassOf(
           {% for r in s.references %}
             Annotation(dct:reference {{r}})
@@ -126,7 +123,7 @@ classes:
     annotations:
       owl: Class
 
-  BiomarkerSet:
+  CharacterizingMarkerSet:
     slots:
       - members
       - references
@@ -137,11 +134,46 @@ classes:
           interpolated: true
           partial_match: false
 
+  CellTypeInstance:
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - ccf_located_in
+      - ccf_has_biomarker_set
+    slot_usage:
+      ccf_located_in:
+        annotations:
+          owl: AnnotationAssertion, AnnotationProperty
+      ccf_has_biomarker_set:
+        annotations:
+          owl: AnnotationAssertion, AnnotationProperty
+
+  BiomarkerSet:
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - members
+      - references
+    slot_usage:
+      members:
+        annotations:
+          owl: AnnotationAssertion, AnnotationProperty
+      references:
+        structured_pattern:
+          syntax: "^https:\\/\\/doi\\.org\\/10\\.\\d+\\/.*"
+          interpolated: true
+          partial_match: false
+        annotations:
+          owl: AnnotationAssertion, AnnotationProperty
+
   AsctbDataset:
     slots:
       - anatomical_structures
       - cell_types
       - biomarkers
+      - cell_type_instances
 
   AsctbMetadata:
     class_uri: dcat:Dataset
@@ -192,15 +224,24 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: Biomarker
+  cell_type_instances:
+    multivalued: true
+    inlined_as_list: true
+    range: CellTypeInstance
   members:
     multivalued: true
     range: Biomarker
     annotations:
       owl: SomeValuesFrom
+  has_characterizing_marker_set:
+    required: false
+    range: CharacterizingMarkerSet
+    multivalued: true
   ccf_has_biomarker_set:
     required: false
     range: BiomarkerSet
     multivalued: true
+    inlined_as_list: true
   ccf_pref_label:
     required: true
     slot_uri: ccf:ccf_pref_label
