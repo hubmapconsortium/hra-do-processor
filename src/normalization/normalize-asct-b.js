@@ -150,8 +150,8 @@ function normalizeCtData(context, data) {
       .map(({ id, name }) => generateIdWhenEmpty(id, name))
       .filter((id) => passIdFilterCriteria(context, id));
     const references = row.references
-      .filter(({ doi }) => checkNotEmpty(doi))
-      .map(({ doi }) => normalizeDoi(doi))
+      .filter(({ id }) => checkNotEmpty(id))
+      .map(({ id }) => normalizeDoi(id))
       .filter((doi) => passDoiFilterCriteria(context, doi));
     const last_ct = valid_ct.pop();
     if (last_ct) {

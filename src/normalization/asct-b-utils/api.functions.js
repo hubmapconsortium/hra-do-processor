@@ -86,7 +86,7 @@ function setData(column, columnNumber, row, value, warnings) {
         if (arrayIndex < objectArray.length) {
           switch (fieldName) {
             case 'id':
-              value = fixOntologyId(value);
+              value = originalArrayName !== 'REF' ? fixOntologyId(value) : value;
               break;
           }
           if (objectArray[arrayIndex]) {
