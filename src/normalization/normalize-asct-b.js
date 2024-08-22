@@ -5,13 +5,13 @@ import { resolve } from 'path';
 import sh from 'shelljs';
 import { info, more, warning } from '../utils/logging.js';
 import { makeASCTBData } from './asct-b-utils/api.functions.js';
+import { BM_TYPE } from './asct-b-utils/api.model.js';
 import {
   getPatchesForAnatomicalStructure,
   getPatchesForBiomarker,
   getPatchesForCellType,
   isAsIdValid,
   isCtIdValid,
-  isDoiValid,
   isIdValid,
   normalizeDoi,
 } from './patches.js';
@@ -67,7 +67,8 @@ function normalizeData(context, data) {
     anatomical_structures: normalizeAsData(context, data),
     cell_types: normalizeCtData(context, data),
     biomarkers: normalizeBmData(context, data),
-    cell_type_instances: normalizeCtInstanceData(context, data),
+    asctb_record: normalizeAsctbRecord(context, data),
+    cell_marker_descriptor: normalizeCellMarkerDescriptor(context, data)
   };
 }
 
@@ -150,10 +151,15 @@ function normalizeCtData(context, data) {
       .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
       .map(({ id, name }) => generateIdWhenEmpty(id, name))
       .filter((id) => passIdFilterCriteria(context, id));
+
+    // Get the references
     const references = row.references
-      .filter(({ id }) => checkNotEmpty(id))
-      .map(({ id }) => normalizeDoi(id))
-      .filter((doi) => passDoiFilterCriteria(context, doi));
+      .map((ref) => {
+        const refId = checkNotEmpty(ref.id) ? ref.id : "N/A";
+        return checkIsDoi(refId) ? normalizeDoi(refId) : refId;
+      });
+
+    // Get the last cell type as the primary cell
     const last_ct = valid_ct.pop();
     if (last_ct) {
       addCharacterizingBiomarkers(collector, last_ct, biomarkers, references);
@@ -254,90 +260,120 @@ function normalizeBm(collector, { id: bm_id, name: bm_name, b_type, is_provision
   return collector;
 }
 
-function normalizeCtInstanceData(context, data) {
+function normalizeAsctbRecord(context, data) {
   return data.reduce((collector, row, index) => {
-    row.cell_types
-      .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
-      .map(({ id, name }) => {
-        return {
-          id: generateInstanceId(context, name, index),
-          type_of: generateIdWhenEmpty(id, name),
-          label: generateInstanceLabel(context, name, index),
-        };
-      })
-      .filter(({ type_of }) => passCtIdFilterCriteria(context, type_of))
-      .reduce(normalizeCtInstance, collector);
+    // Determine record number
+    const recordNumber = index + 1;
 
-    // Add ccf_located_in relationship that is between AS and CT
-    const valid_as = row.anatomical_structures
+    // Populate all valid anatomical structure concepts
+    const validAs = row.anatomical_structures
       .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
       .map(({ id, name }) => generateIdWhenEmpty(id, name))
       .filter((id) => passAsIdFilterCriteria(context, id));
-    const valid_ct_instance = row.cell_types
-      .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
-      .map(({ id, name }) => ({ id: generateIdWhenEmpty(id, name), name }))
-      .filter(({ id }) => passCtIdFilterCriteria(context, id))
-      .map(({ name }) => generateInstanceId(context, name, index));
-    // Each CT instance will be associated with all AS via the ccf_located_in relationship
-    valid_ct_instance.forEach((ct_instance) => {
-      valid_as.forEach((as) => addLocatedIn(collector, ct_instance, as))
-    });
 
-    // Add has_biomarker relationship between CT and BM
-    const biomarkers = row.biomarkers
+    // Populate all valid cell type concepts
+    const validCt = row.cell_types
       .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
       .map(({ id, name }) => generateIdWhenEmpty(id, name))
-      .filter((id) => passIdFilterCriteria(context, id));
-    const references = row.references
-      .filter(({ doi }) => checkNotEmpty(doi))
-      .map(({ doi }) => normalizeDoi(doi))
-      .filter((doi) => passDoiFilterCriteria(context, doi));
-    const last_ct_instance = valid_ct_instance.pop();
-    if (last_ct_instance) {
-      addBiomarkerSetInstances(collector, last_ct_instance, biomarkers, references);
-    }
+      .filter((id) => passCtIdFilterCriteria(context, id));
+
+    // Populate all valid biomarker concepts
+    const validBm = row.biomarkers
+      .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
+      .map(({ id, name, b_type }) => ({
+        id: generateIdWhenEmpty(id, name),
+        b_type
+      }))
+      .filter(({ id }) => passIdFilterCriteria(context, id));
+
+    // Populate all valid references
+    const validReferences = row.references
+      .map((ref) => {
+        const refId = checkNotEmpty(ref.id) ? ref.id : "N/A";
+        return checkIsDoi(refId) ? normalizeDoi(refId) : refId;
+      });
+
+    // Collect all the items
+    collector.push({
+      id: generateAsctbRecordId(context, recordNumber),
+      label: `Record ${recordNumber}`,
+      type_of: [`AsctbRecord`],
+      record_number: recordNumber,
+      anatomical_structure_list: validAs,
+      cell_type_list: validCt,
+      gene_marker_list: validBm.filter(({ b_type }) => b_type === BM_TYPE.G).map(getConceptId),
+      protein_marker_list: validBm.filter(({ b_type }) => b_type === BM_TYPE.P).map(getConceptId),
+      lipid_marker_list: validBm.filter(({ b_type }) => b_type === BM_TYPE.BL).map(getConceptId),
+      metabolites_marker_list: validBm.filter(({ b_type }) => b_type === BM_TYPE.BM).map(getConceptId),
+      proteoforms_marker_list: validBm.filter(({ b_type }) => b_type === BM_TYPE.BF).map(getConceptId),
+      references: validReferences
+    });
     return collector;
   }, []);
 }
 
-function normalizeCtInstance(collector, { id, label, type_of }) {
-  const obj = {
-    id,
-    label,
-    type_of: [type_of],
-    ccf_located_in: [],
-    ccf_has_biomarker_set: [],
-  };
-  collector.push(obj);
-  return collector;
+function normalizeCellMarkerDescriptor(context, data) {
+  return data.reduce((collector, row, index) => {
+    // Determine record number
+    const recordNumber = index + 1;
+
+    // Populate all valid anatomical structure concepts
+    const validAs = row.anatomical_structures
+      .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
+      .map(({ id, name }) => generateIdWhenEmpty(id, name))
+      .filter((id) => passAsIdFilterCriteria(context, id));
+    const lastAs = validAs.pop();
+
+    // Populate all valid cell type concepts
+    const validCt = row.cell_types
+      .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
+      .map(({ id, name }) => ({
+        id: generateIdWhenEmpty(id, name),
+        name
+      }))
+      .filter(({ id }) => passCtIdFilterCriteria(context, id));
+    const lastCt = validCt.pop();
+
+    // Populate all valid biomarker concepts
+    const validBm = row.biomarkers
+      .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
+      .map(({ id, name }) => generateIdWhenEmpty(id, name))
+      .filter((id) => passIdFilterCriteria(context, id));
+
+    // Populate all valid references
+    const validReferences = row.references
+      .map((ref) => {
+        const refId = checkNotEmpty(ref.id) ? ref.id : "N/A";
+        return checkIsDoi(refId) ? normalizeDoi(refId) : refId;
+      });
+
+    // Collect all the items
+    collector.push({
+      id: generateCellMarkerDescriptorId(context, recordNumber),
+      label: `Cell marker descriptor for ${lastCt.name}`,
+      type_of: [`CellMarkerDescriptor`],
+      target_cell_type: lastCt.id,
+      cell_type_location: lastAs,
+      biomarker_set: validBm,
+      references: validReferences,
+      derived_from: generateAsctbRecordId(context, recordNumber)
+    });
+    return collector;
+  }, []);
 }
 
-function addBiomarkerSetInstances(collector, ctInstance, biomarkers, references) {
-  const foundInstance = collector.find((instanceInCollector) => instanceInCollector.id === ctInstance);
-  if (foundInstance) {
-    const oldHasBiomarker = foundInstance.ccf_has_biomarker_set;
-    const newHasBiomarker = [
-      ...oldHasBiomarker,
-      {
-        id: `${ctInstance}_biomarker_set`,
-        label: 'Biomarker Set',
-        type_of: ['BiomarkerSet'],
-        members: removeDuplicates(biomarkers),
-        references: removeDuplicates(references),
-      },
-    ];
-    foundInstance.ccf_has_biomarker_set = removeDuplicates(newHasBiomarker);
-  }
+function getConceptId({ id }) {
+  return id;
 }
 
-function generateInstanceId(context, ctName, ctIndex) {
+function generateAsctbRecordId(context, recordNumber) {
   const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
-  return `${context.purlIri}${doType}/${doName}#${normalizeName(ctName)}_${doVersion}_R${ctIndex}`;
+  return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}`;
 }
 
-function generateInstanceLabel(context, ctName, ctIndex) {
-  const { name: doName, version: doVersion } = context.selectedDigitalObject;
-  return `Instance of ${ctName} in ${doName} (${doVersion}) [R${ctIndex}]`;
+function generateCellMarkerDescriptorId(context, recordNumber) {
+  const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
+  return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}-cell-marker-descriptor`;
 }
 
 function generateIdWhenEmpty(id, name) {
@@ -360,6 +396,11 @@ function checkNotEmpty(str) {
   return str && str.trim() !== '';
 }
 
+function checkIsDoi(str) {
+  const doiRegex = /(10\.\d{4,9}\/[\w\-._;()/:]+)/i;
+  return doiRegex.test(str);
+}
+
 function removeDuplicates(array) {
   return Array.from(new Set(array.map(JSON.stringify)), JSON.parse);
 }
@@ -374,8 +415,4 @@ function passAsIdFilterCriteria(context, id) {
 
 function passCtIdFilterCriteria(context, id) {
   return isCtIdValid(id) || !context.excludeBadValues;
-}
-
-function passDoiFilterCriteria(context, doi) {
-  return isDoiValid(doi) || !context.excludeBadValues;
 }

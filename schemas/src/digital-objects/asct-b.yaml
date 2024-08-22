@@ -41,16 +41,6 @@ classes:
       - ccf_pref_label
       - ccf_asctb_type
       - ccf_is_provisional
-    slot_usage:
-      ccf_pref_label:
-        annotations:
-          owl: AnnotationAssertion, AnnotationProperty
-      ccf_asctb_type:
-        annotations:
-          owl: AnnotationAssertion, AnnotationProperty
-      ccf_is_provisional:
-        annotations:
-          owl: AnnotationAssertion, AnnotationProperty
 
   AnatomicalStructure:
     is_a: AsctbConcept
@@ -62,9 +52,6 @@ classes:
           syntax: "({uberon}|{fma}):\\d+|{asctb_temp}[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
-      ccf_part_of:
-        annotations:
-          owl: AnnotationAssertion, AnnotationProperty
     annotations:
       owl: Class
 
@@ -80,12 +67,6 @@ classes:
           syntax: "({cl}|{pcl}|{lmha}):\\d+|{asctb_temp}[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
-      ccf_ct_isa:
-        annotations:
-          owl: AnnotationAssertion, AnnotationProperty
-      ccf_located_in:
-        annotations:
-          owl: AnnotationAssertion, AnnotationProperty
     annotations:
       owl: Class
       owl.template: |-
@@ -117,9 +98,6 @@ classes:
           syntax: "{hgnc}:\\d+|{asctb_temp}[a-zA-Z0-9-]+|{hgnco}:[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
-      ccf_biomarker_type:
-        annotations:
-          owl: AnnotationAssertion, AnnotationProperty
     annotations:
       owl: Class
 
@@ -127,44 +105,42 @@ classes:
     slots:
       - members
       - references
-    slot_usage:
-      references:
-        structured_pattern:
-          syntax: "^https:\\/\\/doi\\.org\\/10\\.\\d+\\/.*"
-          interpolated: true
-          partial_match: false
 
-  CellTypeInstance:
+  AsctbRecord:
     mixins:
       - Named
       - Instance
     slots:
-      - ccf_located_in
-      - ccf_has_biomarker_set
-    slot_usage:
-      ccf_located_in:
-        annotations:
-          owl: AnnotationAssertion, AnnotationProperty
-      ccf_has_biomarker_set:
-        annotations:
-          owl: AnnotationAssertion, AnnotationProperty
-
-  BiomarkerSet:
-    mixins:
-      - Named
-      - Instance
-    slots:
-      - members
+      - record_number
+      - anatomical_structure_list
+      - cell_type_list
+      - gene_marker_list
+      - protein_marker_list
+      - lipid_marker_list
+      - metabolites_marker_list
+      - proteoforms_marker_list
       - references
     slot_usage:
-      members:
+      references:
         annotations:
           owl: AnnotationAssertion, AnnotationProperty
+
+  CellMarkerDescriptor:
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - target_cell_type
+      - cell_type_location
+      - biomarker_set
+      - references
+      - derived_from
+    slot_usage:
       references:
-        structured_pattern:
-          syntax: "^https:\\/\\/doi\\.org\\/10\\.\\d+\\/.*"
-          interpolated: true
-          partial_match: false
+        annotations:
+          owl: AnnotationAssertion, AnnotationProperty
+      derived_from:
+        range: AsctbRecord
         annotations:
           owl: AnnotationAssertion, AnnotationProperty
 
@@ -173,7 +149,8 @@ classes:
       - anatomical_structures
       - cell_types
       - biomarkers
-      - cell_type_instances
+      - asctb_record
+      - cell_marker_descriptor
 
   AsctbMetadata:
     class_uri: dcat:Dataset
@@ -224,10 +201,14 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: Biomarker
-  cell_type_instances:
+  asctb_record:
     multivalued: true
     inlined_as_list: true
-    range: CellTypeInstance
+    range: AsctbRecord
+  cell_marker_descriptor:
+    multivalued: true
+    inlined_as_list: true
+    range: CellMarkerDescriptor
   members:
     multivalued: true
     range: Biomarker
@@ -237,36 +218,118 @@ slots:
     required: false
     range: CharacterizingMarkerSet
     multivalued: true
-  ccf_has_biomarker_set:
-    required: false
-    range: BiomarkerSet
-    multivalued: true
-    inlined_as_list: true
   ccf_pref_label:
     required: true
     slot_uri: ccf:ccf_pref_label
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
   ccf_asctb_type:
     required: true
     slot_uri: ccf:ccf_asctb_type
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
   ccf_is_provisional:
     required: true
     slot_uri: ccf:ccf_is_provisional
     range: boolean
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
   ccf_part_of:
     required: false
     slot_uri: ccf:ccf_part_of
     range: AnatomicalStructure
     multivalued: true
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
   ccf_located_in:
     required: false
     slot_uri: ccf:ccf_located_in
     range: AnatomicalStructure
     multivalued: true
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
   ccf_ct_isa:
     required: false
     slot_uri: ccf:ccf_ct_isa
     range: CellType
     multivalued: true
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
   ccf_biomarker_type:
     required: true
     slot_uri: ccf:ccf_biomarker_type
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  record_number:
+    required: true
+    slot_uri: ccf:record_number
+    range: integer
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  anatomical_structure_list:
+    required: true
+    multivalued: true
+    range: AnatomicalStructure
+    slot_uri: ccf:anatomical_structure_item
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  cell_type_list:
+    required: true
+    multivalued: true
+    range: CellType
+    slot_uri: ccf:cell_type_item
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  gene_marker_list:
+    required: true
+    multivalued: true
+    range: Biomarker
+    slot_uri: ccf:gene_marker_item
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  protein_marker_list:
+    required: false
+    multivalued: true
+    range: Biomarker
+    slot_uri: ccf:protein_marker_item
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  lipid_marker_list:
+    required: false
+    multivalued: true
+    range: Biomarker
+    slot_uri: ccf:lipid_marker_item
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  metabolites_marker_list:
+    required: false
+    multivalued: true
+    range: Biomarker
+    slot_uri: ccf:metabolites_marker_item
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  proteoforms_marker_list:
+    required: false
+    multivalued: true
+    range: Biomarker
+    slot_uri: ccf:proteoforms_marker_item
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  target_cell_type:
+    required: true
+    slot_uri: ccf:target_cell_type
+    range: CellType
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  cell_type_location:
+    required: true
+    slot_uri: ccf:cell_type_location
+    range: AnatomicalStructure
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  biomarker_set:
+    multivalued: true
+    range: Biomarker
+    slot_uri: ccf:biomarker
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty

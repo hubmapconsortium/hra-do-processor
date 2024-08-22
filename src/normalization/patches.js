@@ -309,10 +309,18 @@ export function getPatchesForBiomarker() {
 
 export function normalizeDoi(doi) {
   let normDoi = doi.replace(/\s+/g, '');
+
+  // Case 1: 10.1016/j.exphem.2018.09.004
   if (/^10\.\d+\/.*/.test(normDoi)) {
     normDoi = normDoi.replace(/^(10\.\d+\/.*)/, 'https://doi.org/$1');
-  } else {
-    normDoi = normDoi.replace(/^(DOI|doi):\s*|^(https?:\/\/)?doi\.org\//, 'https://doi.org/');
+  }
+  // Case 2: DOI:10.1016/j.exphem.2018.09.004
+  else if (/^(?:DOI|doi):.*/.test(normDoi)) {
+    normDoi = normDoi.replace(/^(DOI|doi):\s*/, 'https://doi.org/');
+  }
+  // Case 3: doi.org/10.1016/j.exphem.2018.09.004
+  else if (/^doi\.org\/.*/.test(normDoi)) {
+    normDoi = normDoi.replace(/^doi\.org\//, 'https://doi.org/');
   }
   return normDoi;
 }
@@ -327,9 +335,4 @@ export function isAsIdValid(id) {
 
 export function isCtIdValid(id) {
   return /(CL|PCL|LMHA):\d+|https\:\/\/purl.org\/ccf\/ASCTB\-TEMP\_[a-zA-Z0-9\-]+/.test(id);
-}
-
-export function isDoiValid(doi) {
-  const doiString = doi.replace(/\s+/g, '');
-  return /^https:\/\/doi\.org\/10\.\d+\/.*/.test(doiString);
 }
