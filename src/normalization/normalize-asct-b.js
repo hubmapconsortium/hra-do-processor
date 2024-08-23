@@ -265,29 +265,23 @@ function normalizeAsctbRecord(context, data) {
     // Determine record number
     const recordNumber = index + 1;
 
-    // Populate all valid anatomical structure concepts
-    const validAs = row.anatomical_structures
-      .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
-      .map(({ id, name }) => generateIdWhenEmpty(id, name))
-      .filter((id) => passAsIdFilterCriteria(context, id));
+    // Generate anatomical structure instances
+    const asInstances = row.anatomical_structures
+      .map((item, order) => generateAsInstance(context, recordNumber, item, order))
+      .filter(({ source_concept }) => passAsIdFilterCriteria(context, source_concept));
 
-    // Populate all valid cell type concepts
-    const validCt = row.cell_types
-      .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
-      .map(({ id, name }) => generateIdWhenEmpty(id, name))
-      .filter((id) => passCtIdFilterCriteria(context, id));
+    // Generate cell type instances
+    const ctInstances = row.cell_types
+      .map((item, order) => generateCtInstance(context, recordNumber, item, order))
+      .filter(({ source_concept }) => passCtIdFilterCriteria(context, source_concept));
 
-    // Populate all valid biomarker concepts
-    const validBm = row.biomarkers
-      .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
-      .map(({ id, name, b_type }) => ({
-        id: generateIdWhenEmpty(id, name),
-        b_type
-      }))
-      .filter(({ id }) => passIdFilterCriteria(context, id));
+    // Generate biomarker instances
+    const bmInstances = row.biomarkers
+      .map((item, order) => generateBmInstance(context, recordNumber, item, order))
+      .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept));
 
     // Populate all valid references
-    const validReferences = row.references
+    const references = row.references
       .map((ref) => {
         const refId = checkNotEmpty(ref.id) ? ref.id : "N/A";
         return checkIsDoi(refId) ? normalizeDoi(refId) : refId;
@@ -299,14 +293,14 @@ function normalizeAsctbRecord(context, data) {
       label: `Record ${recordNumber}`,
       type_of: [`AsctbRecord`],
       record_number: recordNumber,
-      anatomical_structure_list: validAs,
-      cell_type_list: validCt,
-      gene_marker_list: validBm.filter(({ b_type }) => b_type === BM_TYPE.G).map(getConceptId),
-      protein_marker_list: validBm.filter(({ b_type }) => b_type === BM_TYPE.P).map(getConceptId),
-      lipid_marker_list: validBm.filter(({ b_type }) => b_type === BM_TYPE.BL).map(getConceptId),
-      metabolites_marker_list: validBm.filter(({ b_type }) => b_type === BM_TYPE.BM).map(getConceptId),
-      proteoforms_marker_list: validBm.filter(({ b_type }) => b_type === BM_TYPE.BF).map(getConceptId),
-      references: validReferences
+      anatomical_structure_list: asInstances,
+      cell_type_list: ctInstances,
+      gene_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.G),
+      protein_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.P),
+      lipid_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.BL),
+      metabolites_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.BM),
+      proteoforms_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.BF),
+      references: references
     });
     return collector;
   }, []);
@@ -317,31 +311,31 @@ function normalizeCellMarkerDescriptor(context, data) {
     // Determine record number
     const recordNumber = index + 1;
 
-    // Populate all valid anatomical structure concepts
-    const validAs = row.anatomical_structures
+    // Get the last anatomical structure from the list as the primary
+    const primaryAs = row.anatomical_structures
       .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
       .map(({ id, name }) => generateIdWhenEmpty(id, name))
-      .filter((id) => passAsIdFilterCriteria(context, id));
-    const lastAs = validAs.pop();
+      .filter((id) => passAsIdFilterCriteria(context, id))
+      .pop();
 
-    // Populate all valid cell type concepts
-    const validCt = row.cell_types
+    // Get the last cell type from the list as the primary
+    const primaryCt = row.cell_types
       .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
       .map(({ id, name }) => ({
         id: generateIdWhenEmpty(id, name),
         name
       }))
-      .filter(({ id }) => passCtIdFilterCriteria(context, id));
-    const lastCt = validCt.pop();
+      .filter(({ id }) => passCtIdFilterCriteria(context, id))
+      .pop();
 
     // Populate all valid biomarker concepts
-    const validBm = row.biomarkers
+    const biomarkers = row.biomarkers
       .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
       .map(({ id, name }) => generateIdWhenEmpty(id, name))
       .filter((id) => passIdFilterCriteria(context, id));
 
     // Populate all valid references
-    const validReferences = row.references
+    const references = row.references
       .map((ref) => {
         const refId = checkNotEmpty(ref.id) ? ref.id : "N/A";
         return checkIsDoi(refId) ? normalizeDoi(refId) : refId;
@@ -350,25 +344,82 @@ function normalizeCellMarkerDescriptor(context, data) {
     // Collect all the items
     collector.push({
       id: generateCellMarkerDescriptorId(context, recordNumber),
-      label: `Cell marker descriptor for ${lastCt.name}`,
+      label: `Cell marker descriptor for ${primaryCt.name}`,
       type_of: [`CellMarkerDescriptor`],
-      primary_cell_type: lastCt.id,
-      primary_anatomical_structure: lastAs,
-      biomarker_set: validBm,
-      references: validReferences,
+      primary_cell_type: primaryCt.id,
+      primary_anatomical_structure: primaryAs,
+      biomarker_set: biomarkers,
+      references: references,
       derived_from: generateAsctbRecordId(context, recordNumber)
     });
     return collector;
   }, []);
 }
 
-function getConceptId({ id }) {
-  return id;
+function generateAsInstance(context, recordNumber, data, index) {
+  const { name: doName } = context.selectedDigitalObject
+  const { id, name: asName } = data;
+  const orderNumber = index + 1
+  return {
+    id: generateAsInstanceId(context, recordNumber, orderNumber),
+    label: `${asName} (${doName}-R${recordNumber}-AS${orderNumber})`,
+    type_of: [generateIdWhenEmpty(id, asName)],
+    ccf_pref_label: asName,
+    source_concept: generateIdWhenEmpty(id, asName),
+    record_number: recordNumber,
+    order_number: orderNumber
+  }
+}
+
+function generateCtInstance(context, recordNumber, data, index) {
+  const { name: doName } = context.selectedDigitalObject
+  const { id, name: ctName } = data;
+  const orderNumber = index + 1
+  return {
+    id: generateCtInstanceId(context, recordNumber, orderNumber),
+    label: `${ctName} (${doName}-R${recordNumber}-CT${orderNumber})`,
+    type_of: [generateIdWhenEmpty(id, ctName)],
+    ccf_pref_label: ctName,
+    source_concept: generateIdWhenEmpty(id, ctName),
+    record_number: recordNumber,
+    order_number: orderNumber
+  }
+}
+
+function generateBmInstance(context, recordNumber, data, index) {
+  const { name: doName } = context.selectedDigitalObject
+  const { id, name: bmName, b_type } = data;
+  const orderNumber = index + 1
+  return {
+    id: generateBmInstanceId(context, recordNumber, orderNumber),
+    label: `${bmName} (${doName}-R${recordNumber}-BM${orderNumber})`,
+    type_of: [generateIdWhenEmpty(id, bmName)],
+    ccf_pref_label: bmName,
+    ccf_biomarker_type: b_type,
+    source_concept: generateIdWhenEmpty(id, bmName),
+    record_number: recordNumber,
+    order_number: orderNumber
+  }
 }
 
 function generateAsctbRecordId(context, recordNumber) {
   const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
   return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}`;
+}
+
+function generateAsInstanceId(context, recordNumber, orderNumber) {
+  const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
+  return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}-AS${orderNumber}`;
+}
+
+function generateCtInstanceId(context, recordNumber, orderNumber) {
+  const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
+  return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}-CT${orderNumber}`;
+}
+
+function generateBmInstanceId(context, recordNumber, orderNumber) {
+  const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
+  return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}-BM${orderNumber}`;
 }
 
 function generateCellMarkerDescriptorId(context, recordNumber) {
