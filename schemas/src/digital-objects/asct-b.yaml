@@ -130,8 +130,8 @@ classes:
       - Named
       - Instance
     slots:
-      - target_cell_type
-      - cell_type_location
+      - primary_cell_type
+      - primary_anatomical_structure
       - biomarker_set
       - references
       - derived_from
@@ -315,15 +315,15 @@ slots:
     slot_uri: ccf:proteoforms_marker_item
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
-  target_cell_type:
+  primary_cell_type:
     required: true
-    slot_uri: ccf:target_cell_type
+    slot_uri: ccf:primary_cell_type
     range: CellType
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
-  cell_type_location:
+  primary_anatomical_structure:
     required: true
-    slot_uri: ccf:cell_type_location
+    slot_uri: ccf:primary_anatomical_structure
     range: AnatomicalStructure
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
