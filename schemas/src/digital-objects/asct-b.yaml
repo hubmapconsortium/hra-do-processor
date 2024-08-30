@@ -73,7 +73,7 @@ classes:
         {% for s in has_characterizing_marker_set %}
         SubClassOf(
           {% for r in s.references %}
-            Annotation(dct:reference {{r}})
+            Annotation(dct:reference "{{r}}")
           {% endfor %}
           {{id}}
           ObjectSomeValuesFrom(
@@ -105,6 +105,9 @@ classes:
     slots:
       - members
       - references
+    slot_usage:
+      references:
+        range: string
 
   AsctbRecord:
     mixins:
@@ -122,6 +125,7 @@ classes:
       - references
     slot_usage:
       references:
+        range: string
         annotations:
           owl: AnnotationAssertion, AnnotationProperty
 
@@ -168,6 +172,7 @@ classes:
       - derived_from
     slot_usage:
       references:
+        range: string
         annotations:
           owl: AnnotationAssertion, AnnotationProperty
       derived_from:
@@ -310,7 +315,7 @@ slots:
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   anatomical_structure_list:
-    required: true
+    required: false
     multivalued: true
     inlined_as_list: true
     range: AnatomicalStructureInstance
@@ -318,7 +323,7 @@ slots:
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   cell_type_list:
-    required: true
+    required: false
     multivalued: true
     inlined_as_list: true
     range: CellTypeInstance
@@ -326,7 +331,7 @@ slots:
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   gene_marker_list:
-    required: true
+    required: false
     multivalued: true
     inlined_as_list: true
     range: BiomarkerInstance

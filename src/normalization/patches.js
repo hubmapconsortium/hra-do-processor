@@ -325,6 +325,13 @@ export function normalizeDoi(doi) {
   return normDoi;
 }
 
+export function normalizeString(str) {
+  return str.replace(/"/g, "'")  // Replace all double quotes with single quotes
+    .replace(/\r/g, "")  // Remove carriage return characters
+    .replace(/\s+/g, " ")  // Replace multiple spaces (including leading/trailing spaces) with a single space
+    .trim();
+}
+
 export function isIdValid(id) {
   return /(UBERON|FMA|CL|PCL|LMHA|HGNC):\d+|https\:\/\/purl.org\/ccf\/ASCTB\-TEMP\_[a-zA-Z0-9\-]+/.test(id);
 }

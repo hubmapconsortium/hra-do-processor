@@ -14,6 +14,7 @@ import {
   isCtIdValid,
   isIdValid,
   normalizeDoi,
+  normalizeString
 } from './patches.js';
 import { normalizeMetadata, readMetadata, writeNormalizedData, writeNormalizedMetadata } from './utils.js';
 
@@ -155,8 +156,8 @@ function normalizeCtData(context, data) {
     // Get the references
     const references = row.references
       .map((ref) => {
-        const refId = checkNotEmpty(ref.id) ? ref.id : "N/A";
-        return checkIsDoi(refId) ? normalizeDoi(refId) : refId;
+        const refString = checkNotEmpty(ref.id) ? ref.id : "N/A";
+        return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
       });
 
     // Get the last cell type as the primary cell
@@ -283,8 +284,8 @@ function normalizeAsctbRecord(context, data) {
     // Populate all valid references
     const references = row.references
       .map((ref) => {
-        const refId = checkNotEmpty(ref.id) ? ref.id : "N/A";
-        return checkIsDoi(refId) ? normalizeDoi(refId) : refId;
+        const refString = checkNotEmpty(ref.id) ? ref.id : "N/A";
+        return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
       });
 
     // Collect all the items
@@ -337,28 +338,31 @@ function normalizeCellMarkerDescriptor(context, data) {
     // Populate all valid references
     const references = row.references
       .map((ref) => {
-        const refId = checkNotEmpty(ref.id) ? ref.id : "N/A";
-        return checkIsDoi(refId) ? normalizeDoi(refId) : refId;
+        const refString = checkNotEmpty(ref.id) ? ref.id : "N/A";
+        return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
       });
 
-    // Collect all the items
-    collector.push({
-      id: generateCellMarkerDescriptorId(context, recordNumber),
-      label: `Cell marker descriptor for ${primaryCt.name}`,
-      type_of: [`CellMarkerDescriptor`],
-      primary_cell_type: primaryCt.id,
-      primary_anatomical_structure: primaryAs,
-      biomarker_set: biomarkers,
-      references: references,
-      derived_from: generateAsctbRecordId(context, recordNumber)
-    });
+    // Collect all the items if the components are complete.
+    if (primaryAs && primaryCt && biomarkers) {
+      collector.push({
+        id: generateCellMarkerDescriptorId(context, recordNumber),
+        label: `Cell marker descriptor for ${primaryCt.name}`,
+        type_of: [`CellMarkerDescriptor`],
+        primary_cell_type: primaryCt.id,
+        primary_anatomical_structure: primaryAs,
+        biomarker_set: biomarkers,
+        references: references,
+        derived_from: generateAsctbRecordId(context, recordNumber)
+      });
+    }
     return collector;
   }, []);
 }
 
 function generateAsInstance(context, recordNumber, data, index) {
   const { name: doName } = context.selectedDigitalObject
-  const { id, name: asName } = data;
+  const { id, name } = data;
+  const asName = normalizeString(name);
   const orderNumber = index + 1
   return {
     id: generateAsInstanceId(context, recordNumber, orderNumber),
@@ -373,7 +377,8 @@ function generateAsInstance(context, recordNumber, data, index) {
 
 function generateCtInstance(context, recordNumber, data, index) {
   const { name: doName } = context.selectedDigitalObject
-  const { id, name: ctName } = data;
+  const { id, name } = data;
+  const ctName = normalizeString(name);
   const orderNumber = index + 1
   return {
     id: generateCtInstanceId(context, recordNumber, orderNumber),
@@ -388,7 +393,8 @@ function generateCtInstance(context, recordNumber, data, index) {
 
 function generateBmInstance(context, recordNumber, data, index) {
   const { name: doName } = context.selectedDigitalObject
-  const { id, name: bmName, b_type } = data;
+  const { id, name, b_type } = data;
+  const bmName = normalizeString(name);
   const orderNumber = index + 1
   return {
     id: generateBmInstanceId(context, recordNumber, orderNumber),
