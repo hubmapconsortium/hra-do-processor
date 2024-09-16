@@ -84,9 +84,9 @@ export function collectEntities(context, ontologyName, inputPath, useOboId = fal
 
   query(inputPath, queryPath, outputPath);
   if (useOboId) {
-    throwOnError(`sed -ri 's|^http://purl.obolibrary.org/obo/([A-Z]+)_([0-9]+)|\\1:\\2|g' ${outputPath}`, 'Convert to OBO ID failed.');
+    throwOnError(`sed -i.bak -r 's|^http://purl.obolibrary.org/obo/([A-Z]+)_([0-9]+)|\\1:\\2|g' ${outputPath}`, 'Convert to OBO ID failed.');
   }
-  throwOnError(`sed -i '1d' ${outputPath}`, 'Collect entities failed.');
+  throwOnError(`sed -i.bak '1d' ${outputPath}`, 'Collect entities failed.');
 
   return outputPath;
 }
