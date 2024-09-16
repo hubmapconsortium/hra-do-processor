@@ -42,7 +42,8 @@
     "semver": "^7.5.3",
     "shelljs": "^0.8.5",
     "tslib": "^2.5.0",
-    "validate-iri": "^1.0.1"
+    "validate-iri": "^1.0.1",
+    "jsonld-cli": "^0.2.0"
   },
   "devDependencies": {
     "eslint": "^8.35.0",
