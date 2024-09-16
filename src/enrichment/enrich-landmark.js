@@ -1,6 +1,6 @@
 import { resolve } from 'path';
-import { error, info } from '../utils/logging.js';
-import { convert } from '../utils/robot.js';
+import { error, info, more } from '../utils/logging.js';
+import { convert, merge } from '../utils/robot.js';
 import {
   cleanTemporaryFiles,
   collectEntities,
@@ -56,8 +56,15 @@ export function enrichLandmarkData(context) {
       push(inputPaths, fmaExtractPath);
     }
 
+    info('Merging files:');
+    for (const inputPath of inputPaths) {
+      more(` -> ${inputPath}`);
+    }
+    merge(inputPaths, enrichedWithOntologyPath);
+    logOutput(enrichedWithOntologyPath);
+
     info(`Creating landmark: ${enrichedPath}`);
-    convert(baseInputPath, enrichedPath, 'ttl');
+    convert(enrichedWithOntologyPath, enrichedPath, 'ttl');
   } catch (e) {
     error(e);
   } finally {
