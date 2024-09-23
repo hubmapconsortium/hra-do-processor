@@ -359,7 +359,7 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: BiomarkerInstance
-    slot_uri: ccf:metabolites_marker
+    slot_uri: ccf:metabolite_marker
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   proteoforms_marker_list:
@@ -367,7 +367,7 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: BiomarkerInstance
-    slot_uri: ccf:proteoforms_marker
+    slot_uri: ccf:proteoform_marker
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   primary_cell_type:
