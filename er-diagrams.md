@@ -60,8 +60,61 @@ Container {
 AsctbDataset {
 
 }
+CellMarkerDescriptor {
+    stringList references  
+    uriorcurie id  
+    string label  
+}
+Named {
+    uriorcurie id  
+    string label  
+}
+AsctbRecord {
+    integer record_number  
+    stringList references  
+    uriorcurie id  
+    string label  
+}
+BiomarkerInstance {
+    string ccf_pref_label  
+    string ccf_biomarker_type  
+    integer record_number  
+    integer order_number  
+    uriorcurie id  
+    string label  
+}
+AsctbConcept {
+    uriorcurie id  
+    string conforms_to  
+    uriorcurie parent_class  
+    string ccf_pref_label  
+    string ccf_asctb_type  
+    boolean ccf_is_provisional  
+}
+CellTypeInstance {
+    string ccf_pref_label  
+    integer record_number  
+    integer order_number  
+    uriorcurie id  
+    string label  
+}
+AnatomicalStructureInstance {
+    string ccf_pref_label  
+    integer record_number  
+    integer order_number  
+    uriorcurie id  
+    string label  
+}
 Biomarker {
     string ccf_biomarker_type  
+    uriorcurie id  
+    string conforms_to  
+    uriorcurie parent_class  
+    string ccf_pref_label  
+    string ccf_asctb_type  
+    boolean ccf_is_provisional  
+}
+AnatomicalStructure {
     uriorcurie id  
     string conforms_to  
     uriorcurie parent_class  
@@ -77,16 +130,8 @@ CellType {
     string ccf_asctb_type  
     boolean ccf_is_provisional  
 }
-BiomarkerSet {
+CharacterizingMarkerSet {
     stringList references  
-}
-AnatomicalStructure {
-    uriorcurie id  
-    string conforms_to  
-    uriorcurie parent_class  
-    string ccf_pref_label  
-    string ccf_asctb_type  
-    boolean ccf_is_provisional  
 }
 AsctbMetadata {
     string title  
@@ -105,11 +150,32 @@ Container ||--|o AsctbDataset : "data"
 AsctbDataset ||--}o AnatomicalStructure : "anatomical_structures"
 AsctbDataset ||--}o CellType : "cell_types"
 AsctbDataset ||--}o Biomarker : "biomarkers"
+AsctbDataset ||--}o AsctbRecord : "asctb_record"
+AsctbDataset ||--}o CellMarkerDescriptor : "cell_marker_descriptor"
+CellMarkerDescriptor ||--|| CellType : "primary_cell_type"
+CellMarkerDescriptor ||--|| AnatomicalStructure : "primary_anatomical_structure"
+CellMarkerDescriptor ||--}o Biomarker : "biomarker_set"
+CellMarkerDescriptor ||--|o AsctbRecord : "derived_from"
+CellMarkerDescriptor ||--}o Named : "type_of"
+AsctbRecord ||--}o AnatomicalStructureInstance : "anatomical_structure_list"
+AsctbRecord ||--}o CellTypeInstance : "cell_type_list"
+AsctbRecord ||--}o BiomarkerInstance : "gene_marker_list"
+AsctbRecord ||--}o BiomarkerInstance : "protein_marker_list"
+AsctbRecord ||--}o BiomarkerInstance : "lipid_marker_list"
+AsctbRecord ||--}o BiomarkerInstance : "metabolites_marker_list"
+AsctbRecord ||--}o BiomarkerInstance : "proteoforms_marker_list"
+AsctbRecord ||--}o Named : "type_of"
+BiomarkerInstance ||--|| AsctbConcept : "source_concept"
+BiomarkerInstance ||--}o Named : "type_of"
+CellTypeInstance ||--|| AsctbConcept : "source_concept"
+CellTypeInstance ||--}o Named : "type_of"
+AnatomicalStructureInstance ||--|| AsctbConcept : "source_concept"
+AnatomicalStructureInstance ||--}o Named : "type_of"
+AnatomicalStructure ||--}o AnatomicalStructure : "ccf_part_of"
 CellType ||--}o CellType : "ccf_ct_isa"
 CellType ||--}o AnatomicalStructure : "ccf_located_in"
-CellType ||--}o BiomarkerSet : "ccf_has_biomarker_set"
-BiomarkerSet ||--}o Biomarker : "members"
-AnatomicalStructure ||--}o AnatomicalStructure : "ccf_part_of"
+CellType ||--}o CharacterizingMarkerSet : "has_characterizing_marker_set"
+CharacterizingMarkerSet ||--}o Biomarker : "members"
 
 ```
 
