@@ -6,6 +6,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   FMA: http://purl.org/sig/ont/fma/fma
+  IAO: http://purl.obolibrary.org/obo/IAO_
 
 default_prefix: ccf
 default_range: string
@@ -133,6 +134,9 @@ classes:
         AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
         AnnotationAssertion( rdfs:seeAlso {{iri}} {{metadata.see_also|e}} )
         AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:ExtractionSet )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:SpatialEntity )
+        
 
 slots:
   landmarks:

@@ -6,6 +6,7 @@ prefixes:
   loinc: http://purl.bioontology.org/ontology/LNC/
   linkml: https://w3id.org/linkml/
   RO: http://purl.obolibrary.org/obo/RO_
+  IAO: http://purl.obolibrary.org/obo/IAO_
 
 default_prefix: ccf
 default_range: string
@@ -211,6 +212,10 @@ classes:
         AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
         AnnotationAssertion( rdfs:seeAlso {{iri}} {{metadata.see_also|e}} )
         AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Donor )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:TissueBlock )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:TissueSection )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Dataset )
 
 slots:
   partially_overlaps:

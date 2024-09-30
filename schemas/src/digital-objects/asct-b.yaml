@@ -9,6 +9,7 @@ prefixes:
   LMHA: http://purl.obolibrary.org/obo/LMHA_
   SO: http://purl.obolibrary.org/obo/SO_
   RO: http://purl.obolibrary.org/obo/RO_
+  IAO: http://purl.obolibrary.org/obo/IAO_
   FMA: http://purl.org/sig/ont/fma/fma
   HGNC: http://identifiers.org/hgnc/
   HGNCO: http://purl.bioontology.org/ontology/HGNC/
@@ -223,7 +224,9 @@ classes:
         AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
         AnnotationAssertion( rdfs:seeAlso {{iri}} {{metadata.see_also|e}} )
         AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
-
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:AnatomicalStructure )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:CellType )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Biomarker )
 slots:
   anatomical_structures:
     multivalued: true
