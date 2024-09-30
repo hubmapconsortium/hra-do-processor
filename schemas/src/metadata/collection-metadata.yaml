@@ -37,6 +37,7 @@ classes:
       - see_also
       - distributions
       - had_member
+      - ontology_root
     slot_usage:
       title:
         required: true
@@ -54,5 +55,9 @@ classes:
         required: true
       had_member:
         required: true
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      ontology_root:
+        required: false
         annotations:
           owl: AnnotationProperty, AnnotationAssertion

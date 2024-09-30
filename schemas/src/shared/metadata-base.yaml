@@ -3,6 +3,7 @@ name: metadata-base
 prefixes:
   ccf: http://purl.org/ccf/
   owl: http://www.w3.org/2002/07/owl#
+  obo: http://purl.obolibrary.org/obo/
   pav: http://purl.org/pav/
   dcat: http://www.w3.org/ns/dcat#
   prov: http://www.w3.org/ns/prov#
@@ -273,6 +274,12 @@ slots:
     slot_uri: skos:prefLabel
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
+
+  # IAO properties
+  ontology_root:
+    multivalued: true
+    range: uriorcurie
+    slot_uri: obo:IAO_0000700
 
   # HRA properties
   hubmapId:

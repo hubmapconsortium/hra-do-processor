@@ -66,6 +66,9 @@ function flatten(metadata) {
   if (metadata.was_derived_from) {
     output.derived_from = metadata.was_derived_from.id;
   }
+  if (metadata.ontology_root) {
+    output.ontology_root = metadata.ontology_root;
+  }
   if (metadata.had_member) {
     output.had_member = metadata.had_member;
   }
@@ -83,6 +86,7 @@ export function normalizeMetadata(context, metadata) {
 
 function generateRawMetadata(context, metadata) {
   const datatable = metadata.datatable;
+  delete metadata.ontologyRoot;
   delete metadata.datatable;
   metadata.creators = metadata.creators?.map((creator) => normalizePersonData(creator));
   metadata.project_leads = metadata.project_leads?.map((leader) => normalizePersonData(leader));
@@ -108,7 +112,8 @@ function normalizePersonData(person) {
 
 export function normalizeMetadataOfCollection(context, metadata, doList) {
   return {
-    ...normalizeMetadata(context, metadata),
+    ...normalizeMetadata(context, structuredClone(metadata)),
+    ontology_root: metadata.ontologyRoot,
     had_member: doList.map((doItem) => `https://purl.humanatlas.io/${doItem}`)
   };
 }
