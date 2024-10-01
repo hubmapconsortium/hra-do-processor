@@ -12,6 +12,7 @@ import {
   extractClassHierarchy,
   extractOntologySubset,
   excludeTerms,
+  removeIndividuals,
   logOutput,
   push
 } from './utils.js';
@@ -25,7 +26,7 @@ export function enrich2dFtuMetadata(context) {
 
 export function enrich2dFtuData(context) {
   try {
-    const { selectedDigitalObject: obj, processorHome } = context;
+    const { selectedDigitalObject: obj } = context;
 
     // Convert normalized data to graph data (.ttl)
     const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
@@ -80,7 +81,10 @@ export function enrich2dFtuData(context) {
     const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating 2d-ftu: ${enrichedPath}`);
     convert(trimmedOutputPath, enrichedPath, 'ttl');
-
+    if (context.removeIndividuals) {
+      info("Removing OWL individuals from the enriched output.");
+      removeIndividuals(enrichedPath, enrichedPath);
+    }
   } catch (e) {
     error(e);
   } finally {

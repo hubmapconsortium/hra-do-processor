@@ -13,6 +13,7 @@ import {
   convertNormalizedDataToOwl,
   convertNormalizedMetadataToRdf,
   excludeTerms,
+  removeIndividuals,
   extractClassHierarchy,
   isFileEmpty,
   logOutput,
@@ -119,6 +120,10 @@ export async function enrichOmapData(context) {
       const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
       info(`Creating omap: ${enrichedPath}`);
       convert(trimmedOutputPath, enrichedPath, 'ttl');
+      if (context.removeIndividuals) {
+         info("Removing OWL individuals from the enriched output.");
+         removeIndividuals(enrichedPath, enrichedPath);
+       }
     } catch (e) {
       error(e);
       const { selectedDigitalObject: obj } = context;

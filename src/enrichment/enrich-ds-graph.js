@@ -8,10 +8,10 @@ import {
   convertNormalizedDataToOwl,
   convertNormalizedMetadataToRdf,
   excludeTerms,
+  removeIndividuals,
   extractClassHierarchy,
   extractOntologySubset,
   isFileEmpty,
-  logOutput,
   push
 } from './utils.js';
 
@@ -63,6 +63,10 @@ export async function enrichDatasetGraphData(context) {
     const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating ds-graph: ${enrichedPath}`);
     convert(trimmedOutputPath, enrichedPath, 'ttl');
+    if (context.removeIndividuals) {
+      info("Removing OWL individuals from the enriched output.");
+      removeIndividuals(enrichedPath, enrichedPath);
+    }
   } catch (e) {
     error(e);
   } finally {

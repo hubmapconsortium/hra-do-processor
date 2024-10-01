@@ -30,7 +30,8 @@ program
   .option('--processor-home <string>', 'DO Processor home', parseDirectory)
   .option('--deployment-home <string>', 'DO deployment home', parseDirectory)
   .option('--skip-validation', 'Skip validation in each command', false)
-  .option('--exclude-bad-values', 'Do not pass invalid values from data processors', false);
+  .option('--exclude-bad-values', 'Do not pass invalid values from data processors', false)
+  .option('--remove-individuals', 'Remove OWL individuals (data instances) from the graph', false);
 
 program
   .command('normalize')

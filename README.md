@@ -86,6 +86,7 @@ Options:
   --deployment-home <string>             DO deployment home
   --skip-validation                      Skip validation in each command (default: false)
   --exclude-bad-values                   Do not pass invalid values from data processors (default: false)
+  --remove-individuals                   Remove OWL individuals (data instances) from the graph (default: false)
   -h, --help                             display help for command
 
 Commands:
