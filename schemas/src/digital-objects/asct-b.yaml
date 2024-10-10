@@ -19,7 +19,6 @@ default_range: string
 
 imports:
   - linkml:types
-  - ../shared/entity-base
   - ../shared/metadata-base
 
 settings:
@@ -37,6 +36,7 @@ classes:
     abstract: true
     slots:
       - id
+      - label
       - conforms_to
       - parent_class
       - ccf_pref_label
@@ -257,6 +257,15 @@ slots:
     required: false
     range: CharacterizingMarkerSet
     multivalued: true
+  id:
+    required: true
+    range: uriorcurie
+    identifier: true
+  label:
+    required: false
+    slot_uri: rdfs:label
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion   
   ccf_pref_label:
     required: true
     slot_uri: ccf:ccf_pref_label

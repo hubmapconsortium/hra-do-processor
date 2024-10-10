@@ -107,6 +107,7 @@ function normalizeAs(collector, { id: as_id, name: as_name, is_provisional }, in
     };
     if (is_provisional) {
       obj['parent_class'] = 'ccf:AnatomicalStructure';
+      obj['label'] = as_name.trim();
     }
     collector.push(obj);
   }
@@ -188,6 +189,7 @@ function normalizeCt(collector, { id: ct_id, name: ct_name, is_provisional }, in
     };
     if (is_provisional) {
       obj['parent_class'] = 'ccf:CellType';
+      obj['label'] = ct_name.trim();
     }
     collector.push(obj);
   }
@@ -255,6 +257,7 @@ function normalizeBm(collector, { id: bm_id, name: bm_name, b_type, is_provision
     };
     if (is_provisional) {
       obj['parent_class'] = 'ccf:Biomarker';
+      obj['label'] = bm_name.trim();
     }
     collector.push(obj);
   }
