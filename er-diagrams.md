@@ -224,6 +224,7 @@ CollectionMetadata {
     uriorcurie see_also  
     uriorcurie derived_from  
     uriorcurieList had_member  
+    uriorcurieList ontology_root  
 }
 
 Container ||--|o CollectionMetadata : "metadata"
