@@ -45,8 +45,10 @@ for genSchemaFile in schemas/generated/linkml/*.yaml; do
   # Generate Mermaid diagrams
   mkdir -p schemas/generated/erdiagram
   gen-erdiagram --format mermaid $genSchemaFile > schemas/generated/erdiagram/${type}.mmd
-  mmdc -b transparent -i schemas/generated/erdiagram/${type}.mmd -o schemas/generated/erdiagram/${type}.svg
-  mmdc -b white -i schemas/generated/erdiagram/${type}.mmd -o schemas/generated/erdiagram/${type}.png
+
+  # In headless environments, these optional commands will fail
+  mmdc -p puppeteer-config.json -b transparent -i schemas/generated/erdiagram/${type}.mmd -o schemas/generated/erdiagram/${type}.svg
+  mmdc -p puppeteer-config.json -b white -i schemas/generated/erdiagram/${type}.mmd -o schemas/generated/erdiagram/${type}.png
 done
 
 # Generate ER diagrams
@@ -63,5 +65,5 @@ for genSchemaFile in `ls schemas/generated/linkml/*.yaml | grep -v 'metadata'` s
   echo "" >> $OUT
 done
 
-mkdir -p schemas/generated/docs/er-diagrams
-mmdc -i er-diagrams.md -o docs/er-diagrams/index.md
+mkdir -p schemas/generated/docs/er-diagrams docs/er-diagrams
+mmdc -p puppeteer-config.json -i er-diagrams.md -o docs/er-diagrams/index.md
