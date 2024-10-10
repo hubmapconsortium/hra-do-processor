@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import { load } from '../utils/blazegraph.js';
+import { remove } from '../utils/robot.js';
 
 export function loadDoIntoTripleStore(context, journalPath) {
   const obj = context.selectedDigitalObject;
@@ -21,3 +22,7 @@ export function loadRedundantIntoTripleStore(context, journalPath) {
   const data = resolve(obj.path, 'enriched/redundant.ttl');
   load(graph, data, journalPath);
 }
+
+export function removeIndividuals(inputPath, outputPath) {
+   remove(inputPath, outputPath, "individuals");
+ }

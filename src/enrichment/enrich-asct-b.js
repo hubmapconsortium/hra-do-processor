@@ -8,7 +8,6 @@ import {
   convertNormalizedDataToOwl,
   convertNormalizedMetadataToRdf,
   excludeTerms,
-  removeIndividuals,
   extractClassHierarchy,
   isFileEmpty,
   logOutput,
@@ -134,10 +133,6 @@ export function enrichAsctbData(context) {
     const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating asct-b: ${enrichedPath}`);
     convert(trimmedOutputPath, enrichedPath, 'ttl');
-    if (context.removeIndividuals) {
-      info("Removing OWL individuals from the enriched output.");
-      removeIndividuals(enrichedPath, enrichedPath);
-    }
   } catch (e) {
     error(e);
   } finally {

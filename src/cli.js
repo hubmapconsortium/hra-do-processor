@@ -30,8 +30,7 @@ program
   .option('--processor-home <string>', 'DO Processor home', parseDirectory)
   .option('--deployment-home <string>', 'DO deployment home', parseDirectory)
   .option('--skip-validation', 'Skip validation in each command', false)
-  .option('--exclude-bad-values', 'Do not pass invalid values from data processors', false)
-  .option('--remove-individuals', 'Remove OWL individuals (data instances) from the graph', false);
+  .option('--exclude-bad-values', 'Do not pass invalid values from data processors', false);
 
 program
   .command('normalize')
@@ -118,6 +117,7 @@ program
   .command('deploy')
   .description('Deploys a given Digital Object to the deployment home (default ./site)')
   .option('--update-db', 'Create or update the blazegraph database in the deployment home.')
+  .option('--remove-individuals', 'Remove OWL individuals (data instances) from the graph', false)
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     deploy(getContext(program, command, str));

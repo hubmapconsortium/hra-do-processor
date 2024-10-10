@@ -8,7 +8,6 @@ import {
   convertNormalizedMetadataToRdf,
   extractClassHierarchy,
   extractOntologySubset,
-  removeIndividuals,
   isFileEmpty,
   logOutput,
   push
@@ -66,10 +65,6 @@ export function enrichLandmarkData(context) {
 
     info(`Creating landmark: ${enrichedPath}`);
     convert(enrichedWithOntologyPath, enrichedPath, 'ttl');
-    if (context.removeIndividuals) {
-      info("Removing OWL individuals from the enriched output.");
-      removeIndividuals(enrichedPath, enrichedPath);
-    }
   } catch (e) {
     error(e);
   } finally {

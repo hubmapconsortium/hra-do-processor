@@ -12,7 +12,6 @@ import {
   extractClassHierarchy,
   extractOntologySubset,
   excludeTerms,
-  removeIndividuals,
   logOutput,
   push
 } from './utils.js';
@@ -69,10 +68,6 @@ export function enrichRefOrganData(context) {
     const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating ref-organ: ${enrichedPath}`);
     convert(trimmedOutputPath, enrichedPath, 'ttl');
-    if (context.removeIndividuals) {
-      info("Removing OWL individuals from the enriched output.");
-      removeIndividuals(enrichedPath, enrichedPath);
-    }
   } catch (e) {
     error(e);
   } finally {

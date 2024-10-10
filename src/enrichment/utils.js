@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { extract, subset, module, filter, query, remove, exclude } from '../utils/robot.js';
+import { extract, subset, module, filter, query, exclude } from '../utils/robot.js';
 import { mergeTurtles } from '../utils/owl-cli.js';
 import { redundant } from '../utils/relation-graph.js';
 import { throwOnError } from '../utils/sh-exec.js';
@@ -159,10 +159,6 @@ export function excludeTerms(context, inputPath, outputPath) {
 
   const excludeTermsPath = resolve(processorHome, 'src/enrichment/exclude-terms.txt');
   exclude(inputPath, excludeTermsPath, outputPath);
-}
-
-export function removeIndividuals(inputPath, outputPath) {
-  remove(inputPath, outputPath, "individuals");
 }
 
 export function runCompleteClosure(inputPath, outputPath) {

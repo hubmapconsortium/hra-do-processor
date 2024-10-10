@@ -4,7 +4,7 @@ import sh from 'shelljs';
 import { readMetadata } from '../normalization/utils.js';
 import { info } from '../utils/logging.js';
 import { reifyDoTurtle, reifyMetadataTurtle, reifyRedundantTurtle } from '../utils/reify.js';
-import { loadDoIntoTripleStore, loadRedundantIntoTripleStore } from './utils.js';
+import { loadDoIntoTripleStore, loadRedundantIntoTripleStore, removeIndividuals } from './utils.js';
 
 export function deploy(context) {
   const obj = context.selectedDigitalObject;
@@ -24,6 +24,11 @@ export function deploy(context) {
     sh.cp(resolve(obj.path, 'raw', file), resolve(deployPath, 'assets', file));
   }
 
+  if (context.removeIndividuals) {
+    info("Removing OWL individuals from the graph output.");
+    removeIndividuals(graph, graph);
+  }
+  
   info(`Reifying "${obj.doString}"`);
   reifyDoTurtle(context, graph);
   if (context.updateDb) {
