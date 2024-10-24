@@ -55,7 +55,7 @@ export function merge(inputs, output, outputFormat = "owl") {
   // Convert the inputs to OWL/XML format to avoid blank node collisions
   const owlInputs = [];
   for (const input of inputs) {
-    const output = `${input}.owl`
+    const output = `${input}.owl`;
     throwOnError(
       `robot convert -i ${input} --format owl -o ${output}`,
       'Convert to OWL during merging failed.'
