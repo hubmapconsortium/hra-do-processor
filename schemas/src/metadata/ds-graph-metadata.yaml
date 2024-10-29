@@ -1,4 +1,4 @@
-id: https://purl.humanatlas.io/specs/ds-graph-metadata
+id: https://purl.humanatlas.io/schema/ds-graph-metadata
 name: ds-graph-metadata
 prefixes:
   ccf: http://purl.org/ccf/

@@ -13,7 +13,9 @@ import {
   extractOntologySubset,
   excludeTerms,
   logOutput,
-  push
+  push,
+  convertNormalizedDataToJson,
+  convertNormalizedMetadataToJson
 } from './utils.js';
 
 export function enrich2dFtuMetadata(context) {
@@ -21,6 +23,8 @@ export function enrich2dFtuMetadata(context) {
   const normalizedPath = resolve(obj.path, 'normalized/normalized-metadata.yaml');
   const enrichedPath = resolve(obj.path, 'enriched/enriched-metadata.ttl');
   convertNormalizedMetadataToRdf(context, normalizedPath, enrichedPath);
+  const enrichedJson = resolve(obj.path, 'enriched/enriched-metadata.json');
+  convertNormalizedMetadataToJson(context, normalizedPath, enrichedJson);
 }
 
 export function enrich2dFtuData(context) {
@@ -80,6 +84,9 @@ export function enrich2dFtuData(context) {
     const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating 2d-ftu: ${enrichedPath}`);
     convert(trimmedOutputPath, enrichedPath, 'ttl');
+
+    const enrichedJsonPath = resolve(obj.path, 'enriched/enriched.json');
+    convertNormalizedDataToJson(context, normalizedPath, enrichedJsonPath);
   } catch (e) {
     error(e);
   } finally {

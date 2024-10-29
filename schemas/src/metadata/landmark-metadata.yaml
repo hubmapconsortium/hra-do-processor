@@ -1,4 +1,4 @@
-id: https://purl.humanatlas.io/specs/landmark-metadata
+id: https://purl.humanatlas.io/schema/landmark-metadata
 name: landmark-metadata
 prefixes:
   ccf: http://purl.org/ccf/

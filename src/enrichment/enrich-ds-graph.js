@@ -6,12 +6,15 @@ import {
   cleanTemporaryFiles,
   collectEntities,
   convertAsyncNormalizedDataToOwl,
+  convertNormalizedDataToJson,
+  convertNormalizedDataToOwl,
+  convertNormalizedMetadataToJson,
   convertNormalizedMetadataToRdf,
   excludeTerms,
   extractClassHierarchy,
   extractOntologySubset,
   isFileEmpty,
-  push
+  push,
 } from './utils.js';
 
 export function enrichDatasetGraphMetadata(context) {
@@ -19,6 +22,8 @@ export function enrichDatasetGraphMetadata(context) {
   const normalizedPath = resolve(obj.path, 'normalized/normalized-metadata.yaml');
   const enrichedPath = resolve(obj.path, 'enriched/enriched-metadata.ttl');
   convertNormalizedMetadataToRdf(context, normalizedPath, enrichedPath);
+  const enrichedJson = resolve(obj.path, 'enriched/enriched-metadata.json');
+  convertNormalizedMetadataToJson(context, normalizedPath, enrichedJson);
 }
 
 export async function enrichDatasetGraphData(context) {
@@ -55,10 +60,15 @@ export async function enrichDatasetGraphData(context) {
     // Extract terms from reference ontologies to enrich the graph data
     const ontologyExtractionPaths = [];
     push(ontologyExtractionPaths, baseInputPath); // Set the base input path as the initial
-    push(ontologyExtractionPaths, extractOntologySubset(
-        context, 'uberon', baseInputPath,
-        ["BFO:0000050", "RO:0001025"] // part of, located in
-    ));
+    push(
+      ontologyExtractionPaths,
+      extractOntologySubset(
+        context,
+        'uberon',
+        baseInputPath,
+        ['BFO:0000050', 'RO:0001025'] // part of, located in
+      )
+    );
 
     const fmaEntitiesPath = collectEntities(context, 'fma', baseInputPath);
     if (!isFileEmpty(fmaEntitiesPath)) {
@@ -87,6 +97,8 @@ export async function enrichDatasetGraphData(context) {
     info(`Creating ds-graph: ${enrichedPath}`);
     convert(trimmedOutputPath, enrichedPath, 'ttl');
 
+    const enrichedJsonPath = resolve(obj.path, 'enriched/enriched.json');
+    convertNormalizedDataToJson(context, normalizedPath, enrichedJsonPath);
   } catch (e) {
     error(e);
   } finally {

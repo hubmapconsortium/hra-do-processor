@@ -6,7 +6,9 @@ import { RDF_EXTENSIONS, convert as rdfPipeConvert } from '../utils/reify.js';
 import { merge, convert as robotConvert } from '../utils/robot.js';
 import {
   cleanTemporaryFiles,
+  convertNormalizedDataToJson,
   convertNormalizedDataToOwl,
+  convertNormalizedMetadataToJson,
   convertNormalizedMetadataToRdf,
   logOutput,
   runCompleteClosure,
@@ -17,6 +19,8 @@ export function enrichGraphMetadata(context) {
   const normalizedPath = resolve(obj.path, 'normalized/normalized-metadata.yaml');
   const enrichedPath = resolve(obj.path, 'enriched/enriched-metadata.ttl');
   convertNormalizedMetadataToRdf(context, normalizedPath, enrichedPath, 'basic');
+  const enrichedJson = resolve(obj.path, 'enriched/enriched-metadata.json');
+  convertNormalizedMetadataToJson(context, normalizedPath, enrichedJson, 'basic');
 }
 
 export function enrichGraphData(context) {
@@ -45,7 +49,7 @@ export function enrichGraphData(context) {
       } else if (extension === 'owl') {
         const outputTtl = resolve(obj.path, 'enriched', inputRdfFile + '.ttl');
         robotConvert(inputRdf, outputTtl, 'ttl');
-        toMerge.push(outputTtl);        
+        toMerge.push(outputTtl);
       } else if (RDF_EXTENSIONS.has(extension)) {
         const outputTtl = resolve(obj.path, 'enriched', inputRdfFile + '.ttl');
         rdfPipeConvert(inputRdf, outputTtl, 'ttl');
@@ -53,7 +57,7 @@ export function enrichGraphData(context) {
       }
     }
 
-    info('Merging graph objects...')
+    info('Merging graph objects...');
     const enrichedMergePath = resolve(obj.path, 'enriched/enriched-merge.ttl');
     merge(toMerge, enrichedMergePath, 'ttl');
     logOutput(enrichedMergePath);
@@ -66,6 +70,9 @@ export function enrichGraphData(context) {
     const redundantPath = resolve(obj.path, 'enriched/redundant.ttl');
     runCompleteClosure(enrichedPath, redundantPath);
     logOutput(redundantPath);
+
+    const enrichedJsonPath = resolve(obj.path, 'enriched/enriched.json');
+    convertNormalizedDataToJson(context, normalizedPath, enrichedJsonPath);
   } catch (e) {
     error(e);
   } finally {

@@ -1,14 +1,16 @@
 import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
-import { error, header, info, more } from '../utils/logging.js';
+import { error, info, more } from '../utils/logging.js';
 import { convert, merge } from '../utils/robot.js';
 import {
   cleanTemporaryFiles,
-  convertNormalizedMetadataToRdf,
+  convertNormalizedDataToJson,
   convertNormalizedDataToOwl,
+  convertNormalizedMetadataToJson,
+  convertNormalizedMetadataToRdf,
+  logOutput,
   runCompleteClosure,
-  logOutput
 } from './utils.js';
 
 export function enrichCollectionMetadata(context) {
@@ -16,6 +18,8 @@ export function enrichCollectionMetadata(context) {
   const normalizedPath = resolve(obj.path, 'normalized/normalized-metadata.yaml');
   const enrichedPath = resolve(obj.path, 'enriched/enriched-metadata.ttl');
   convertNormalizedMetadataToRdf(context, normalizedPath, enrichedPath);
+  const enrichedJson = resolve(obj.path, 'enriched/enriched-metadata.json');
+  convertNormalizedMetadataToJson(context, normalizedPath, enrichedJson);
 }
 
 export function enrichCollectionData(context) {
@@ -33,7 +37,7 @@ export function enrichCollectionData(context) {
     info('Validating digital objects in the collection...');
     validateCollection(context, digitalObjects);
 
-    info('Consolidating all collection members...')
+    info('Consolidating all collection members...');
     info('Merging files:');
     const doPaths = [];
     doPaths.push(baseInputPath);
@@ -49,11 +53,13 @@ export function enrichCollectionData(context) {
     info(`Creating collection: ${enrichedPath}`);
     convert(enrichedMergePath, enrichedPath, 'ttl');
 
-    info('Optimizing collection graph...')
+    info('Optimizing collection graph...');
     const redundantPath = resolve(obj.path, 'enriched/redundant.ttl');
     runCompleteClosure(enrichedPath, redundantPath);
     logOutput(redundantPath);
 
+    const enrichedJsonPath = resolve(obj.path, 'enriched/enriched.json');
+    convertNormalizedDataToJson(context, normalizedPath, enrichedJsonPath);
   } catch (e) {
     error(e);
   } finally {

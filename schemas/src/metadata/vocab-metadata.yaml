@@ -1,4 +1,4 @@
-id: https://purl.humanatlas.io/specs/vocab-metadata
+id: https://purl.humanatlas.io/schema/vocab-metadata
 name: vocab-metadata
 prefixes:
   ccf: http://purl.org/ccf/

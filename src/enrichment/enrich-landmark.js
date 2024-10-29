@@ -4,13 +4,15 @@ import { convert, merge } from '../utils/robot.js';
 import {
   cleanTemporaryFiles,
   collectEntities,
+  convertNormalizedDataToJson,
   convertNormalizedDataToOwl,
+  convertNormalizedMetadataToJson,
   convertNormalizedMetadataToRdf,
   extractClassHierarchy,
   extractOntologySubset,
   isFileEmpty,
   logOutput,
-  push
+  push,
 } from './utils.js';
 
 export function enrichLandmarkMetadata(context) {
@@ -18,6 +20,8 @@ export function enrichLandmarkMetadata(context) {
   const normalizedPath = resolve(obj.path, 'normalized/normalized-metadata.yaml');
   const enrichedPath = resolve(obj.path, 'enriched/enriched-metadata.ttl');
   convertNormalizedMetadataToRdf(context, normalizedPath, enrichedPath);
+  const enrichedJson = resolve(obj.path, 'enriched/enriched-metadata.json');
+  convertNormalizedMetadataToJson(context, normalizedPath, enrichedJson);
 }
 
 export function enrichLandmarkData(context) {
@@ -38,10 +42,15 @@ export function enrichLandmarkData(context) {
     push(inputPaths, baseInputPath); // Set the enriched path as the initial
 
     info('Getting concept details from reference ontologies...');
-    push(inputPaths, extractOntologySubset(
-      context, 'uberon', baseInputPath,
-      ["BFO:0000050", "RO:0001025"] // part of, located in
-    ));
+    push(
+      inputPaths,
+      extractOntologySubset(
+        context,
+        'uberon',
+        baseInputPath,
+        ['BFO:0000050', 'RO:0001025'] // part of, located in
+      )
+    );
 
     const fmaEntitiesPath = collectEntities(context, 'fma', baseInputPath);
     if (!isFileEmpty(fmaEntitiesPath)) {
@@ -65,6 +74,9 @@ export function enrichLandmarkData(context) {
 
     info(`Creating landmark: ${enrichedPath}`);
     convert(enrichedWithOntologyPath, enrichedPath, 'ttl');
+
+    const enrichedJsonPath = resolve(obj.path, 'enriched/enriched.json');
+    convertNormalizedDataToJson(context, normalizedPath, enrichedJsonPath);
   } catch (e) {
     error(e);
   } finally {

@@ -1,4 +1,4 @@
-id: https://purl.humanatlas.io/specs/omap-metadata
+id: https://purl.humanatlas.io/schema/omap-metadata
 name: omap-metadata
 prefixes:
   ccf: http://purl.org/ccf/

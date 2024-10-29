@@ -1,0 +1,36 @@
+title: HRA asct-b linkml schema
+description: 'Human Reference Atlas (HRA) <https://humanatlas.io> LinkML Schema for asct-b'
+creators:
+  - fullName: Josef Hardi
+    firstName: Josef
+    lastName: Hardi
+    orcid: 0000-0002-2533-6681
+  - fullName: Bruce W. Herr II
+    firstName: Bruce
+    lastName: Herr
+    orcid: 0000-0002-6703-7647
+project_leads:
+  - fullName: Katy Börner
+    firstName: Katy
+    lastName: Börner
+    orcid: 0000-0002-3321-6137
+reviewers:
+  - fullName: Ellen M. Quardokus
+    firstName: Ellen
+    lastName: Quardokus
+    orcid: 0000-0001-7655-4833
+creation_date: '2024-12-13'
+license: >-
+  Creative Commons Attribution 4.0 International ([CC BY
+  4.0](https://creativecommons.org/licenses/by/4.0/))
+publisher: HuBMAP
+funders:
+  - funder: National Institutes of Health
+    awardNumber: OT2OD026671
+datatable:
+  - schema.yaml
+  - schema.context.jsonld
+  - schema.json
+  - schema.mmd
+  - schema.png
+  - schema.svg

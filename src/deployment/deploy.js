@@ -11,11 +11,15 @@ export function deploy(context) {
   const deployPath = resolve(context.deploymentHome, obj.doString);
   const metadata = readMetadata(context);
   const graph = resolve(deployPath, 'graph.ttl');
+  const json = resolve(deployPath, 'graph.json');
   const metadataTtl = resolve(deployPath, 'metadata.ttl');
+  const metadataJson = resolve(deployPath, 'metadata.json');
 
   sh.mkdir('-p', resolve(deployPath, 'assets'));
   sh.cp(resolve(obj.path, 'enriched/enriched.ttl'), graph);
+  sh.cp(resolve(obj.path, 'enriched/enriched.json'), json);
   sh.cp(resolve(obj.path, 'enriched/enriched-metadata.ttl'), metadataTtl);
+  sh.cp(resolve(obj.path, 'enriched/enriched-metadata.json'), metadataJson);
 
   for (const file of metadata.datatable) {
     if (file.includes('/')) {
@@ -28,7 +32,7 @@ export function deploy(context) {
     info("Removing OWL individuals from the graph output.");
     removeIndividuals(graph, graph);
   }
-  
+
   info(`Reifying "${obj.doString}"`);
   reifyDoTurtle(context, graph);
   if (context.updateDb) {

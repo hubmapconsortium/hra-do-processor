@@ -1,9 +1,10 @@
 import { resolve } from 'path';
+import sh from 'shelljs';
 import { info } from './logging.js';
 import { throwOnError } from './sh-exec.js';
 
 const FORMATS = {
-  json: 'application/ld+json',
+  jsonld: 'application/ld+json',
   nt: 'application/n-triples',
   xml: 'application/rdf+xml',
   nq: 'application/n-quads',
@@ -42,7 +43,7 @@ export function reifyMetadataTurtle(context, inputPath) {
 
 export function reifyRedundantTurtle(context, inputPath) {
   const graphName = `${context.selectedDigitalObject.iri}/redundant`;
-  reifyTurtle(inputPath, graphName);
+  reifyTurtle(inputPath, graphName, true);
 }
 
 export function reifyCatalog(context, graphName, catalog) {
@@ -55,13 +56,16 @@ export function reifyCatalog(context, graphName, catalog) {
     --ns=dc=http://purl.org/dc/terms/ `,
     `Unable to convert catalog ${catalogPath}`
   );
-  reifyTurtle(inputPath, graphName);
+  reifyTurtle(inputPath, graphName, true);
 }
 
-export function reifyTurtle(inputPath, graphName) {
+export function reifyTurtle(inputPath, graphName, jsonldIsJson = false) {
   const basePath = inputPath.slice(0, inputPath.lastIndexOf('.'));
   for (const [extension, type] of Object.entries(FORMATS)) {
     convert(inputPath, `${basePath}.${extension}`, type, graphName);
+  }
+  if (jsonldIsJson) {
+    sh.cp(`${basePath}.jsonld`, `${basePath}.json`);
   }
 }
 
