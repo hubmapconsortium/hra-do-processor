@@ -33,12 +33,12 @@ export function isJsonLd(fileOrUrl) {
 
 export function reifyDoTurtle(context, inputPath) {
   const graphName = context.selectedDigitalObject.iri;
-  reifyTurtle(inputPath, graphName, false);
+  reifyTurtle(inputPath, graphName);
 }
 
 export function reifyMetadataTurtle(context, inputPath) {
   const graphName = `${context.lodIri}${context.selectedDigitalObject.doString}`;
-  reifyTurtle(inputPath, graphName, true);
+  reifyTurtle(inputPath, graphName);
 }
 
 export function reifyRedundantTurtle(context, inputPath) {

@@ -6,6 +6,7 @@ import {
   cleanTemporaryFiles,
   convertNormalizedDataToJson,
   convertNormalizedDataToOwl,
+  convertNormalizedMetadataToJson,
   convertNormalizedMetadataToRdf,
   logOutput,
 } from './utils.js';
@@ -15,6 +16,8 @@ export function enrichBasicMetadata(context) {
   const normalizedPath = resolve(obj.path, 'normalized/normalized-metadata.yaml');
   const enrichedPath = resolve(obj.path, 'enriched/enriched-metadata.ttl');
   convertNormalizedMetadataToRdf(context, normalizedPath, enrichedPath, 'basic');
+  const enrichedJson = resolve(obj.path, 'enriched/enriched-metadata.json');
+  convertNormalizedMetadataToJson(context, normalizedPath, enrichedJson, 'basic');
 }
 
 export function enrichBasicData(context) {

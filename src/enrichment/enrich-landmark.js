@@ -6,6 +6,7 @@ import {
   collectEntities,
   convertNormalizedDataToJson,
   convertNormalizedDataToOwl,
+  convertNormalizedMetadataToJson,
   convertNormalizedMetadataToRdf,
   extractClassHierarchy,
   extractOntologySubset,
@@ -19,6 +20,8 @@ export function enrichLandmarkMetadata(context) {
   const normalizedPath = resolve(obj.path, 'normalized/normalized-metadata.yaml');
   const enrichedPath = resolve(obj.path, 'enriched/enriched-metadata.ttl');
   convertNormalizedMetadataToRdf(context, normalizedPath, enrichedPath);
+  const enrichedJson = resolve(obj.path, 'enriched/enriched-metadata.json');
+  convertNormalizedMetadataToJson(context, normalizedPath, enrichedJson);
 }
 
 export function enrichLandmarkData(context) {

@@ -14,7 +14,8 @@ import {
   excludeTerms,
   logOutput,
   push,
-  convertNormalizedDataToJson
+  convertNormalizedDataToJson,
+  convertNormalizedMetadataToJson
 } from './utils.js';
 
 export function enrich2dFtuMetadata(context) {
@@ -22,6 +23,8 @@ export function enrich2dFtuMetadata(context) {
   const normalizedPath = resolve(obj.path, 'normalized/normalized-metadata.yaml');
   const enrichedPath = resolve(obj.path, 'enriched/enriched-metadata.ttl');
   convertNormalizedMetadataToRdf(context, normalizedPath, enrichedPath);
+  const enrichedJson = resolve(obj.path, 'enriched/enriched-metadata.json');
+  convertNormalizedMetadataToJson(context, normalizedPath, enrichedJson);
 }
 
 export function enrich2dFtuData(context) {

@@ -16,6 +16,24 @@ export function convertNormalizedMetadataToRdf(context, inputPath, outputPath, o
   linkmlConvert(context, inputPath, outputPath, schemaPath);
 }
 
+export function convertNormalizedMetadataToJson(context, inputPath, outputPath, overrideType) {
+  const { selectedDigitalObject: obj, processorHome } = context;
+
+  const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${overrideType || obj.type}-metadata.yaml`);
+  linkmlConvert(context, inputPath, outputPath, schemaPath);
+
+  const convertedData = JSON.parse(fs.readFileSync(outputPath, 'utf8'));
+  const data = {
+    $schema: `${context.cdnIri}schema/${overrideType || obj.type}-metadata/latest/assets/schema.json`,
+    '@context': `${context.cdnIri}schema/${overrideType || obj.type}-metadata/latest/assets/schema.context.jsonld`,
+    '@type': convertedData['@type'],
+    iri: convertedData['iri'],
+    ...convertedData,
+  };
+
+  fs.writeFileSync(outputPath, JSON.stringify(data, null, 2));
+}
+
 export function convertNormalizedDataToRdf(context, inputPath, outputPath, overrideType) {
   const { selectedDigitalObject: obj, processorHome } = context;
 

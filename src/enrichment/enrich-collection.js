@@ -7,6 +7,7 @@ import {
   cleanTemporaryFiles,
   convertNormalizedDataToJson,
   convertNormalizedDataToOwl,
+  convertNormalizedMetadataToJson,
   convertNormalizedMetadataToRdf,
   logOutput,
   runCompleteClosure,
@@ -17,6 +18,8 @@ export function enrichCollectionMetadata(context) {
   const normalizedPath = resolve(obj.path, 'normalized/normalized-metadata.yaml');
   const enrichedPath = resolve(obj.path, 'enriched/enriched-metadata.ttl');
   convertNormalizedMetadataToRdf(context, normalizedPath, enrichedPath);
+  const enrichedJson = resolve(obj.path, 'enriched/enriched-metadata.json');
+  convertNormalizedMetadataToJson(context, normalizedPath, enrichedJson);
 }
 
 export function enrichCollectionData(context) {
