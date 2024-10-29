@@ -13,7 +13,8 @@ import {
   extractOntologySubset,
   excludeTerms,
   logOutput,
-  push
+  push,
+  convertNormalizedDataToJson
 } from './utils.js';
 
 export function enrich2dFtuMetadata(context) {
@@ -80,6 +81,9 @@ export function enrich2dFtuData(context) {
     const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating 2d-ftu: ${enrichedPath}`);
     convert(trimmedOutputPath, enrichedPath, 'ttl');
+
+    const enrichedJsonPath = resolve(obj.path, 'enriched/enriched.json');
+    convertNormalizedDataToJson(context, normalizedPath, enrichedJsonPath);
   } catch (e) {
     error(e);
   } finally {

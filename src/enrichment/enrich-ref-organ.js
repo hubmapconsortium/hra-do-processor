@@ -1,19 +1,18 @@
-import fs from 'fs';
 import { resolve } from 'path';
-import { error, header, info, more } from '../utils/logging.js';
+import { error, info, more } from '../utils/logging.js';
 import { convert, merge } from '../utils/robot.js';
-import { throwOnError } from '../utils/sh-exec.js';
 import {
   cleanTemporaryFiles,
-  convertNormalizedMetadataToRdf,
-  convertNormalizedDataToOwl,
-  isFileEmpty,
   collectEntities,
+  convertNormalizedDataToJson,
+  convertNormalizedDataToOwl,
+  convertNormalizedMetadataToRdf,
+  excludeTerms,
   extractClassHierarchy,
   extractOntologySubset,
-  excludeTerms,
+  isFileEmpty,
   logOutput,
-  push
+  push,
 } from './utils.js';
 
 export function enrichRefOrganMetadata(context) {
@@ -37,10 +36,15 @@ export function enrichRefOrganData(context) {
     const enrichedWithOntologyPath = resolve(obj.path, 'enriched/enriched-with-ontology.owl');
 
     push(inputPaths, baseInputPath); // Set the enriched path as the initial
-    push(inputPaths, extractOntologySubset(
-      context, 'uberon', baseInputPath,
-      ["BFO:0000050", "RO:0001025"] // part of, located in
-    ));
+    push(
+      inputPaths,
+      extractOntologySubset(
+        context,
+        'uberon',
+        baseInputPath,
+        ['BFO:0000050', 'RO:0001025'] // part of, located in
+      )
+    );
 
     const fmaEntitiesPath = collectEntities(context, 'fma', baseInputPath);
     if (!isFileEmpty(fmaEntitiesPath)) {
@@ -49,7 +53,8 @@ export function enrichRefOrganData(context) {
         context,
         'fma',
         'http://purl.org/sig/ont/fma/fma62955',
-        fmaEntitiesPath);
+        fmaEntitiesPath
+      );
       logOutput(fmaExtractPath);
       push(inputPaths, fmaExtractPath);
     }
@@ -68,6 +73,9 @@ export function enrichRefOrganData(context) {
     const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating ref-organ: ${enrichedPath}`);
     convert(trimmedOutputPath, enrichedPath, 'ttl');
+
+    const enrichedJsonPath = resolve(obj.path, 'enriched/enriched.json');
+    convertNormalizedDataToJson(context, normalizedPath, enrichedJsonPath);
   } catch (e) {
     error(e);
   } finally {

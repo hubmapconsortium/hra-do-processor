@@ -10,6 +10,7 @@ import { enrichBasicData } from './enrich-basic.js';
 import {
   cleanTemporaryFiles,
   collectEntities,
+  convertNormalizedDataToJson,
   convertNormalizedDataToOwl,
   convertNormalizedMetadataToRdf,
   excludeTerms,
@@ -119,6 +120,9 @@ export async function enrichOmapData(context) {
       const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
       info(`Creating omap: ${enrichedPath}`);
       convert(trimmedOutputPath, enrichedPath, 'ttl');
+
+      const enrichedJsonPath = resolve(obj.path, 'enriched/enriched.json');
+      convertNormalizedDataToJson(context, normalizedPath, enrichedJsonPath);
     } catch (e) {
       error(e);
       const { selectedDigitalObject: obj } = context;

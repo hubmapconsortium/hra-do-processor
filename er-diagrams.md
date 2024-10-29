@@ -85,6 +85,7 @@ BiomarkerInstance {
 }
 AsctbConcept {
     uriorcurie id  
+    string label  
     string conforms_to  
     uriorcurie parent_class  
     string ccf_pref_label  
@@ -108,6 +109,7 @@ AnatomicalStructureInstance {
 Biomarker {
     string ccf_biomarker_type  
     uriorcurie id  
+    string label  
     string conforms_to  
     uriorcurie parent_class  
     string ccf_pref_label  
@@ -116,6 +118,7 @@ Biomarker {
 }
 AnatomicalStructure {
     uriorcurie id  
+    string label  
     string conforms_to  
     uriorcurie parent_class  
     string ccf_pref_label  
@@ -124,6 +127,7 @@ AnatomicalStructure {
 }
 CellType {
     uriorcurie id  
+    string label  
     string conforms_to  
     uriorcurie parent_class  
     string ccf_pref_label  

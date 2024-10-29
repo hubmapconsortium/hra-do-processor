@@ -1,4 +1,4 @@
-id: https://purl.humanatlas.io/specs/asct-b
+id: https://purl.humanatlas.io/schema/asct-b
 name: asct-b
 prefixes:
   ccf: http://purl.org/ccf/
@@ -265,7 +265,7 @@ slots:
     required: false
     slot_uri: rdfs:label
     annotations:
-      owl: AnnotationProperty, AnnotationAssertion   
+      owl: AnnotationProperty, AnnotationAssertion
   ccf_pref_label:
     required: true
     slot_uri: ccf:ccf_pref_label

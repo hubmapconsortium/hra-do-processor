@@ -2,7 +2,13 @@ import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
 import { error, info } from '../utils/logging.js';
-import { cleanTemporaryFiles, convertNormalizedDataToOwl, convertNormalizedMetadataToRdf, logOutput } from './utils.js';
+import {
+  cleanTemporaryFiles,
+  convertNormalizedDataToJson,
+  convertNormalizedDataToOwl,
+  convertNormalizedMetadataToRdf,
+  logOutput,
+} from './utils.js';
 
 export function enrichBasicMetadata(context) {
   const { selectedDigitalObject: obj } = context;
@@ -25,6 +31,9 @@ export function enrichBasicData(context) {
 
     info('Validating digital objects in the basic...');
     validateBasic(context, digitalObjects);
+
+    const enrichedJsonPath = resolve(obj.path, 'enriched/enriched.json');
+    convertNormalizedDataToJson(context, normalizedPath, enrichedJsonPath, 'basic');
   } catch (e) {
     error(e);
   } finally {

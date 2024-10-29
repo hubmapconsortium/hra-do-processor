@@ -1,4 +1,4 @@
-id: https://purl.humanatlas.io/specs/instance-base
+id: https://purl.humanatlas.io/schema/instance-base
 name: instance-base
 prefixes:
   ccf: http://purl.org/ccf/

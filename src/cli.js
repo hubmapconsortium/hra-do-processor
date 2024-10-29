@@ -13,6 +13,7 @@ import { list } from './list.js';
 import { migrateCcfLandmarks } from './migration/ccf-landmarks/migrate.js';
 import { migrateCcfOwl } from './migration/ccf-owl/migrate.js';
 import { migrateCcfReleases } from './migration/ccf-releases/migrate.js';
+import { migrateSchemas } from './migration/schemas/migrate.js';
 import { normalize } from './normalization/normalize.js';
 import { updateCollection } from './update-collection.js';
 import { updateRefOrganCrosswalk } from './update-ref-organ-crosswalk.js';
@@ -136,6 +137,13 @@ program
   .description('Create a blazegraph database from select digital objects')
   .action((_options, command) => {
     createDb(getContext(program, command));
+  });
+
+program
+  .command('migrate-schemas')
+  .description('Migrate linkml schemas to HRA Digital Object format for publishing')
+  .action((_options, command) => {
+    migrateSchemas(getContext(program, command));
   });
 
 program

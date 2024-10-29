@@ -5,6 +5,7 @@ import { throwOnError } from '../utils/sh-exec.js';
 import {
   cleanTemporaryFiles,
   collectEntities,
+  convertNormalizedDataToJson,
   convertNormalizedDataToOwl,
   convertNormalizedMetadataToRdf,
   excludeTerms,
@@ -133,6 +134,9 @@ export function enrichAsctbData(context) {
     const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating asct-b: ${enrichedPath}`);
     convert(trimmedOutputPath, enrichedPath, 'ttl');
+
+    const enrichedJsonPath = resolve(obj.path, 'enriched/enriched.json');
+    convertNormalizedDataToJson(context, normalizedPath, enrichedJsonPath);
   } catch (e) {
     error(e);
   } finally {

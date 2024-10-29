@@ -1,12 +1,11 @@
 import fs from 'fs';
 import { resolve } from 'path';
-import sh from 'shelljs';
-import { extract, subset, module, filter, query, exclude } from '../utils/robot.js';
-import { mergeTurtles } from '../utils/owl-cli.js';
-import { redundant } from '../utils/relation-graph.js';
-import { throwOnError } from '../utils/sh-exec.js';
 import { info, more } from '../utils/logging.js';
 import { ancestors } from '../utils/oaktool.js';
+import { mergeTurtles } from '../utils/owl-cli.js';
+import { redundant } from '../utils/relation-graph.js';
+import { exclude, extract, filter, module, query, subset } from '../utils/robot.js';
+import { throwOnError } from '../utils/sh-exec.js';
 
 export function convertNormalizedMetadataToRdf(context, inputPath, outputPath, overrideType) {
   const { selectedDigitalObject: obj, processorHome } = context;
@@ -14,23 +13,36 @@ export function convertNormalizedMetadataToRdf(context, inputPath, outputPath, o
   const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${overrideType || obj.type}-metadata.yaml`);
   const errorPath = resolve(obj.path, 'enriched/metadata-enrichment-errors.yaml');
 
-  convertNormalizedToRdf(context, inputPath, outputPath, schemaPath);
+  linkmlConvert(context, inputPath, outputPath, schemaPath);
 }
 
 export function convertNormalizedDataToRdf(context, inputPath, outputPath, overrideType) {
   const { selectedDigitalObject: obj, processorHome } = context;
 
   const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${overrideType || obj.type}.yaml`);
-  const errorPath = resolve(obj.path, 'enriched/data-enrichment-errors.yaml');
-
-  convertNormalizedToRdf(context, inputPath, outputPath, schemaPath);
+  linkmlConvert(context, inputPath, outputPath, schemaPath);
 }
 
-function convertNormalizedToRdf(context, inputPath, outputPath, schemaPath, objectIri) {
-  const { selectedDigitalObject: obj, processorHome, skipValidation } = context;
+export function convertNormalizedDataToJson(context, inputPath, outputPath, overrideType) {
+  const { selectedDigitalObject: obj, processorHome } = context;
 
-  const schemaBackupPath = resolve(processorHome, 'schemas/generated/linkml', `schema.yaml.bak`);
-  sh.cp(schemaPath, schemaBackupPath);
+  const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${overrideType || obj.type}.yaml`);
+  linkmlConvert(context, inputPath, outputPath, schemaPath);
+
+  const convertedData = JSON.parse(fs.readFileSync(outputPath, 'utf8'));
+  const data = {
+    $schema: `${context.cdnIri}schema/${overrideType || obj.type}/latest/assets/schema.json`,
+    '@context': `${context.cdnIri}schema/${overrideType || obj.type}/latest/assets/schema.context.jsonld`,
+    '@type': convertedData['@type'],
+    iri: convertedData['iri'],
+    ...convertedData,
+  };
+
+  fs.writeFileSync(outputPath, JSON.stringify(data, null, 2));
+}
+
+function linkmlConvert(context, inputPath, outputPath, schemaPath) {
+  const { skipValidation } = context;
 
   info(`Using 'linkml-convert' to transform ${inputPath}`);
   throwOnError(
@@ -84,7 +96,10 @@ export function collectEntities(context, ontologyName, inputPath, useOboId = fal
 
   query(inputPath, queryPath, outputPath);
   if (useOboId) {
-    throwOnError(`sed -i.bak -r 's|^http://purl.obolibrary.org/obo/([A-Z]+)_([0-9]+)|\\1:\\2|g' ${outputPath}`, 'Convert to OBO ID failed.');
+    throwOnError(
+      `sed -i.bak -r 's|^http://purl.obolibrary.org/obo/([A-Z]+)_([0-9]+)|\\1:\\2|g' ${outputPath}`,
+      'Convert to OBO ID failed.'
+    );
   }
   throwOnError(`sed -i.bak '1d' ${outputPath}`, 'Collect entities failed.');
 
@@ -97,12 +112,17 @@ export function filterClasses(context, ontologyName, classTermFile) {
   const ontologyPath = resolve(processorHome, `mirrors/${ontologyName}.owl`);
   const outputPath = resolve(obj.path, `enriched/${ontologyName}-filter.owl`);
 
-  filter(ontologyPath, classTermFile, ['rdfs:label', 'http://www.geneontology.org/formats/oboInOwl#id', 'http://purl.obolibrary.org/obo/IAO_0000115'], outputPath);
+  filter(
+    ontologyPath,
+    classTermFile,
+    ['rdfs:label', 'http://www.geneontology.org/formats/oboInOwl#id', 'http://purl.obolibrary.org/obo/IAO_0000115'],
+    outputPath
+  );
 
   return outputPath;
 }
 
-export function extractClassHierarchy(context, ontologyName, upperTerm, lowerTerms, intermediates = "all") {
+export function extractClassHierarchy(context, ontologyName, upperTerm, lowerTerms, intermediates = 'all') {
   const { selectedDigitalObject: obj, processorHome } = context;
 
   const ontologyPath = resolve(processorHome, `mirrors/${ontologyName}.owl`);
@@ -169,7 +189,7 @@ export function cleanTemporaryFiles(context) {
   const { selectedDigitalObject: obj } = context;
   const enrichedPath = resolve(obj.path, 'enriched/');
   throwOnError(
-    `find ${enrichedPath} ! -name 'enriched.ttl' ! -name 'enriched-metadata.ttl' ! -name 'redundant.ttl' -type f -exec rm -f {} +`,
+    `find ${enrichedPath} ! -name 'enriched.json' ! -name 'enriched.ttl' ! -name 'enriched-metadata.ttl' ! -name 'redundant.ttl' -type f -exec rm -f {} +`,
     'Clean temporary files failed.'
   );
 }
@@ -177,10 +197,7 @@ export function cleanTemporaryFiles(context) {
 export function cleanDirectory(context) {
   const { selectedDigitalObject: obj } = context;
   const path = resolve(obj.path, 'enriched/');
-  throwOnError(
-    `find ${path} -type f -exec rm -f {} +`,
-    'Clean enriched directory failed.'
-  );
+  throwOnError(`find ${path} -type f -exec rm -f {} +`, 'Clean enriched directory failed.');
 }
 
 export function logOutput(outputPath) {

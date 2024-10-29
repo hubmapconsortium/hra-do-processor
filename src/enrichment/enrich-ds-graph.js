@@ -5,13 +5,14 @@ import { convert, merge } from '../utils/robot.js';
 import {
   cleanTemporaryFiles,
   collectEntities,
+  convertNormalizedDataToJson,
   convertNormalizedDataToOwl,
   convertNormalizedMetadataToRdf,
   excludeTerms,
   extractClassHierarchy,
   extractOntologySubset,
   isFileEmpty,
-  push
+  push,
 } from './utils.js';
 
 export function enrichDatasetGraphMetadata(context) {
@@ -31,10 +32,15 @@ export async function enrichDatasetGraphData(context) {
     // Extract terms from reference ontologies to enrich the graph data
     const ontologyExtractionPaths = [];
     push(ontologyExtractionPaths, baseInputPath); // Set the base input path as the initial
-    push(ontologyExtractionPaths, extractOntologySubset(
-      context, 'uberon', baseInputPath,
-      ["BFO:0000050", "RO:0001025"] // part of, located in
-    ));
+    push(
+      ontologyExtractionPaths,
+      extractOntologySubset(
+        context,
+        'uberon',
+        baseInputPath,
+        ['BFO:0000050', 'RO:0001025'] // part of, located in
+      )
+    );
 
     const fmaEntitiesPath = collectEntities(context, 'fma', baseInputPath);
     if (!isFileEmpty(fmaEntitiesPath)) {
@@ -62,6 +68,9 @@ export async function enrichDatasetGraphData(context) {
     const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating ds-graph: ${enrichedPath}`);
     convert(trimmedOutputPath, enrichedPath, 'ttl');
+
+    const enrichedJsonPath = resolve(obj.path, 'enriched/enriched.json');
+    convertNormalizedDataToJson(context, normalizedPath, enrichedJsonPath);
   } catch (e) {
     error(e);
   } finally {

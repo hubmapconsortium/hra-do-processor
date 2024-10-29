@@ -1,4 +1,4 @@
-id: https://purl.humanatlas.io/specs/landmark
+id: https://purl.humanatlas.io/schema/landmark
 name: landmark
 prefixes:
   ccf: http://purl.org/ccf/
@@ -136,7 +136,7 @@ classes:
         AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
         AnnotationAssertion( IAO:0000700 {{iri}} ccf:ExtractionSet )
         AnnotationAssertion( IAO:0000700 {{iri}} ccf:SpatialEntity )
-        
+
 
 slots:
   landmarks:
