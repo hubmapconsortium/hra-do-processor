@@ -207,7 +207,7 @@ export function cleanTemporaryFiles(context) {
   const { selectedDigitalObject: obj } = context;
   const enrichedPath = resolve(obj.path, 'enriched/');
   throwOnError(
-    `find ${enrichedPath} ! -name 'enriched.json' ! -name 'enriched.ttl' ! -name 'enriched-metadata.ttl' ! -name 'redundant.ttl' -type f -exec rm -f {} +`,
+    `find ${enrichedPath} ! -name 'enriched.json' ! -name 'enriched.ttl' ! -name 'enriched-metadata.json' ! -name 'enriched-metadata.ttl' ! -name 'redundant.ttl' -type f -exec rm -f {} +`,
     'Clean temporary files failed.'
   );
 }
