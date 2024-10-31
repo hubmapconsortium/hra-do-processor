@@ -8,7 +8,7 @@ export function mergeCatalogs(context) {
   const catalogPath = resolve(context.deploymentHome, 'catalog.ttl');
   const graphName = context.lodIri.replace(/\/$/, '');
   mergeTurtles(catalogPath, undefined, graphs);
-  reifyTurtle(catalogPath, graphName);
+  reifyTurtle(catalogPath, graphName, true);
 }
 
 function listMetadataGraphs(context) {
