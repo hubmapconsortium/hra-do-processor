@@ -5,6 +5,7 @@ import { convert, merge } from '../utils/robot.js';
 import {
   cleanTemporaryFiles,
   collectEntities,
+  convertAsyncNormalizedDataToOwl,
   convertNormalizedDataToJson,
   convertNormalizedDataToOwl,
   convertNormalizedMetadataToJson,
@@ -29,8 +30,32 @@ export async function enrichDatasetGraphData(context) {
   try {
     const { selectedDigitalObject: obj } = context;
     const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
-    const baseInputPath = resolve(obj.path, 'enriched/base-input.ttl');
-    convertNormalizedDataToOwl(context, normalizedPath, baseInputPath);
+
+    // Define paths for each module
+    const moduleDonorPath = resolve(obj.path, 'enriched/module-donor.ttl');
+    const moduleSamplePath = resolve(obj.path, 'enriched/module-sample.ttl');
+    const moduleDatasetPath = resolve(obj.path, 'enriched/module-dataset.ttl');
+    const moduleSpatialPath = resolve(obj.path, 'enriched/module-spatial.ttl');
+    const modulePaths = [moduleDonorPath, moduleSamplePath, moduleDatasetPath, moduleSpatialPath];
+
+    // Run the conversion functions in parallel
+    await Promise.all([
+      convertToOwlPromise(context, normalizedPath, moduleDonorPath, 'donor'),
+      convertToOwlPromise(context, normalizedPath, moduleSamplePath, 'sample'),
+      convertToOwlPromise(context, normalizedPath, moduleDatasetPath, 'dataset'),
+      convertToOwlPromise(context, normalizedPath, moduleSpatialPath, 'spatial')
+    ]);
+
+    // Ensure merge is only executed after all conversions are complete
+    info('All conversions complete. Starting merge.');
+
+    info('Merging module files:');
+    for (const modulePath of modulePaths) {
+      more(` -> ${modulePath}`);
+    }
+    // Once all conversions are done, merge the results
+    const baseInputPath = resolve(obj.path, 'enriched/base-input.owl');
+    merge(modulePaths, baseInputPath);
 
     // Extract terms from reference ontologies to enrich the graph data
     const ontologyExtractionPaths = [];
@@ -49,10 +74,10 @@ export async function enrichDatasetGraphData(context) {
     if (!isFileEmpty(fmaEntitiesPath)) {
       info('Extracting FMA.');
       const fmaExtractPath = extractClassHierarchy(
-        context,
-        'fma',
-        'http://purl.org/sig/ont/fma/fma62955',
-        fmaEntitiesPath
+          context,
+          'fma',
+          'http://purl.org/sig/ont/fma/fma62955',
+          fmaEntitiesPath
       );
       push(ontologyExtractionPaths, fmaExtractPath);
     }
@@ -82,4 +107,13 @@ export async function enrichDatasetGraphData(context) {
     cleanTemporaryFiles(context);
     info('Done.');
   }
+}
+
+function convertToOwlPromise(context, normalizedPath, modulePath, moduleType) {
+  return new Promise((resolve, reject) => {
+    convertAsyncNormalizedDataToOwl(context, normalizedPath, modulePath, moduleType, (err) => {
+      if (err) reject(error);
+      else resolve();
+    });
+  });
 }

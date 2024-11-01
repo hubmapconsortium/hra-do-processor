@@ -1,11 +1,14 @@
 import fs from 'fs';
 import { resolve } from 'path';
-import { info, more } from '../utils/logging.js';
-import { ancestors } from '../utils/oaktool.js';
+import { exec } from 'child_process';
+import { promisify } from 'util';
+import { extract, subset, module, filter, query, exclude } from '../utils/robot.js';
 import { mergeTurtles } from '../utils/owl-cli.js';
 import { redundant } from '../utils/relation-graph.js';
-import { exclude, extract, filter, module, query, subset } from '../utils/robot.js';
 import { throwOnError } from '../utils/sh-exec.js';
+import { info, more } from '../utils/logging.js';
+import { ancestors } from '../utils/oaktool.js';
+const execPromise = promisify(exec);
 
 export function convertNormalizedMetadataToRdf(context, inputPath, outputPath, overrideType) {
   const { selectedDigitalObject: obj, processorHome } = context;
@@ -78,28 +81,45 @@ export function prettifyEnriched(context) {
 }
 
 export function convertNormalizedDataToOwl(context, inputPath, outputPath, overrideType) {
-  const { selectedDigitalObject: obj, processorHome } = context;
-
-  const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${overrideType || obj.type}.yaml`);
-  const schemaBackupPath = resolve(processorHome, 'schemas/generated/linkml', `${overrideType || obj.type}.yaml.bak`);
-
-  info(`Using 'linkml-data2owl' to transform ${inputPath} to OWL format`);
-  /*
-   * The steps:
-   *  1. Substitute the "id" parameter in the schema file (LinkML) with the digital object's IRI,
-   *     ensuring that the resulting OWL ontology uses the digital object IRI as its ontology IRI.
-   *  2. Employ the linkml-data2owl tool to transform the normalized digital object from YAML into
-   *     OWL format.
-   *  3. Restore the original schema file to its initial state, thereby reinstating the original
-   *     "id" parameter.
-   */
-  throwOnError(
-    `sed -i.bak 's|^id:.*|id: ${obj.iri}|' ${schemaPath} && \
-     linkml-data2owl --output-type ttl --schema ${schemaPath} ${inputPath} -o ${outputPath} && \
-     mv ${schemaBackupPath} ${schemaPath}`,
-    'Converting to OWL ontology failed.',
-    (message) => message.replace(/(.*\n)+TypeError:(.*)/, '$2').trim()
+  const command = getConversionCommand(context, inputPath, outputPath, overrideType);
+  throwOnError(command, 'OWL conversion failed.',
+   (message) => message.replace(/(.*\n)+TypeError:(.*)/, '$2').trim()
   );
+  info(`Successfully transformed to OWL format at ${outputPath}`);
+}
+
+export async function convertAsyncNormalizedDataToOwl(context, inputPath, outputPath, overrideType, callback) {
+  try {
+    const command = getConversionCommand(context, inputPath, outputPath, overrideType);
+    await execPromise(command);
+    info(`Successfully transformed to OWL format at ${outputPath}`);
+    callback(null);
+  } 
+  catch (error) {
+    error("OWL conversion failed.")
+    callback(error);
+  }
+}
+
+function getConversionCommand(context, inputPath, outputPath, overrideType) {
+  const { selectedDigitalObject: obj, processorHome } = context;
+  const schemaName = overrideType || obj.type;
+  const schemaPath = resolve(processorHome, 'schemas/generated/linkml', `${schemaName}.yaml`);
+  const schemaBackupPath = resolve(processorHome, 'schemas/generated/linkml', `${schemaName}.yaml.bak`);
+  
+  info(`Using 'linkml-data2owl' to transform ${inputPath} to OWL format using the '${schemaName}' schema`);
+  
+  // Step 1: Substitute the "id" in the schema file with the digital object's IRI
+  const sedCommand = `sed -i.bak 's|^id:.*|id: ${obj.iri}|' ${schemaPath}`;
+
+  // Step 2: Transform the normalized data from YAML to OWL using linkml-data2owl
+  const linkmlCommand = `linkml-data2owl --output-type ttl --schema ${schemaPath} ${inputPath} -o ${outputPath}`;
+
+  // Step 3: Restore the original schema file to its original state
+  const restoreCommand = `mv ${schemaBackupPath} ${schemaPath} 2>/dev/null`;
+
+  // Combine all commands into a single shell script to be executed sequentially
+  return `${sedCommand} && ${linkmlCommand} && ${restoreCommand}`;
 }
 
 export function isFileEmpty(path) {

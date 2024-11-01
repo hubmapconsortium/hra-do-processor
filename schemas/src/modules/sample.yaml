@@ -1,0 +1,150 @@
+id: https://purl.humanatlas.io/specs/sample
+name: sample
+prefixes:
+  ccf: http://purl.org/ccf/
+  oboInOwl: http://www.geneontology.org/formats/oboInOwl#
+  loinc: http://purl.bioontology.org/ontology/LNC/
+  linkml: https://w3id.org/linkml/
+  RO: http://purl.obolibrary.org/obo/RO_
+  IAO: http://purl.obolibrary.org/obo/IAO_
+
+default_prefix: ccf
+default_range: string
+
+imports:
+  - linkml:types
+  - ../shared/metadata-base
+
+classes:
+  TissueBlock:
+    class_uri: ccf:TissueBlock
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - partially_overlaps
+      - pref_label
+      - description
+      - rui_location
+      - extraction_site
+      - external_link
+      - sections
+      - datasets
+      - section_count
+      - section_size # block_dimension
+      - section_size_unit # block_dimension_unit
+      - links_back_to
+    slot_usage:
+      partially_overlaps:
+        annotations:
+          owl.template: |-
+            {% for organ_part in partially_overlaps %}
+            ClassAssertion(ObjectSomeValuesFrom(RO:0002151 {{organ_part}}) {{id}})
+            {% endfor %}
+
+  TissueSection:
+    class_uri: ccf:TissueSection
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - pref_label
+      - description
+      - external_link
+      - samples
+      - datasets
+      - section_number
+      - links_back_to
+
+  SampleData:
+    attributes:
+      donor:
+        required: false
+      sample:
+        multivalued: true
+        inlined_as_list: true
+        range: TissueBlock
+      dataset:
+        required: false
+      spatial_entity:
+        required: false 
+
+  Container:
+    tree_root: true
+    attributes:
+      iri:
+      metadata:
+      data:
+        range: SampleData
+
+slots:
+  external_link:
+    slot_uri: ccf:url
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  samples:
+    slot_uri: ccf:provides
+    multivalued: true
+    inlined: false
+    range: TissueBlock
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  partially_overlaps:
+    multivalued: true
+    range: Named
+    slot_uri: RO:0002151
+    annotations:
+      owl.template: |-
+        AnnotationAssertion( rdfs:label RO:0002151 "partially overlaps" )
+  rui_location:
+    required: false
+    slot_uri: ccf:has_registration_location
+    range: uriorcurie
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  extraction_site:
+    required: false
+    slot_uri: ccf:extraction_site
+    range: uriorcurie
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  sections:
+    slot_uri: ccf:subdivided_into_sections
+    range: TissueSection
+    multivalued: true
+    inlined_as_list: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  datasets:
+    slot_uri: ccf:generates_dataset
+    range: Dataset
+    multivalued: true
+    inlined: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  section_count:
+    required: false
+    range: integer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  section_size:
+    required: false
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  section_size_unit:
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  section_number:
+    required: false
+    range: integer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  links_back_to:
+    required: false
+    range: uriorcurie
+    annotations:
+      owl: ObjectProperty, ObjectPropertyAssertion
+      owl.template: |-
+        AnnotationAssertion( rdfs:label ccf:links_back_to "links back to" )
+        TransitiveObjectProperty( ccf:links_back_to )
