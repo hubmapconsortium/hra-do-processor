@@ -33,6 +33,8 @@ classes:
       - section_count
       - section_size # block_dimension
       - section_size_unit # block_dimension_unit
+      - collision_summaries
+      - corridors
       - links_back_to
     slot_usage:
       partially_overlaps:
@@ -68,6 +70,12 @@ classes:
         required: false
       spatial_entity:
         required: false 
+      cell_summary:
+        required: false
+      collision:
+        required: false
+      corridor:
+        required: false
 
   Container:
     tree_root: true
@@ -138,6 +146,20 @@ slots:
   section_number:
     required: false
     range: integer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  collision_summaries:
+    slot_uri: ccf:has_collision_summary
+    required: false
+    multivalued: true
+    range: uriorcurie
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  corridors:
+    slot_uri: ccf:has_corridor
+    required: false
+    multivalued: true
+    range: uriorcurie
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   links_back_to:

@@ -1,5 +1,5 @@
-id: https://purl.humanatlas.io/schema/ds-graph
-name: ds-graph
+id: https://purl.humanatlas.io/specs/corridor
+name: corridor
 prefixes:
   ccf: http://purl.org/ccf/
   oboInOwl: http://www.geneontology.org/formats/oboInOwl#
@@ -14,26 +14,37 @@ default_range: string
 imports:
   - linkml:types
   - ../shared/metadata-base
-  - ../modules/donor
-  - ../modules/sample
-  - ../modules/dataset
-  - ../modules/spatial
-  - ../modules/cell-summary
-  - ../modules/collision
-  - ../modules/corridor
 
 classes:
-  DatasetGraphData:
+  Corridor:
+    class_uri: ccf:Corridor
+    mixins:
+      - Named
+      - Instance
     slots:
-      - donor
-      - sample
-      - dataset
-      - spatial_entity
-      - cell_summary
-      - collision
-      - corridor
+      - file_format
+      - file_url
 
-  DatasetGraphMetadata:
+  CorridorData:
+    attributes:
+      donor:
+        required: false
+      sample:
+        required: false
+      dataset:
+        required: false
+      spatial_entity:
+        required: false
+      cell_summary:
+        required: false
+      collision:
+        required: false
+      corridor:
+        multivalued: true
+        inlined_as_list: true
+        range: Corridor
+
+  CorridorMetadata:
     class_uri: dcat:Dataset
     slots:
       - title
@@ -52,9 +63,9 @@ classes:
       iri:
         range: uriorcurie
       metadata:
-        range: DatasetGraphMetadata
+        range: CorridorMetadata
       data:
-        range: DatasetGraphData
+        range: CorridorData
     annotations:
       owl.template: |-
         AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
@@ -72,36 +83,16 @@ classes:
         AnnotationAssertion( IAO:0000700 {{iri}} ccf:TissueBlock )
         AnnotationAssertion( IAO:0000700 {{iri}} ccf:TissueSection )
         AnnotationAssertion( IAO:0000700 {{iri}} ccf:Dataset )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:CellSummary )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Collision )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Corridor )
 
 slots:
-  donor:
-    multivalued: true
-    inlined_as_list: true
-    range: Donor
-  sample:
-    multivalued: true
-    inlined_as_list: true
-    range: TissueBlock
-  dataset:
-    multivalued: true
-    inlined_as_list: true
-    range: AssayDataset
-  spatial_entity:
-    multivalued: true
-    inlined_as_list: true
-    range: SpatialEntity
-  cell_summary:
-    required: false
-    multivalued: true
-    inlined_as_list: true
-    range: CellSummary
-  collision:
-    required: false
-    multivalued: true
-    inlined_as_list: true
-    range: CollisionSummary
-  corridor:
-    required: false
-    multivalued: true
-    inlined_as_list: true
-    range: Corridor
+  file_format:
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  file_url:
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion

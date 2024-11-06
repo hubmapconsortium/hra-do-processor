@@ -75,6 +75,12 @@ classes:
         required: false
       spatial_entity:
         required: false 
+      cell_summary:
+        required: false
+      collision:
+        required: false
+      corridor:
+        required: false
 
   Container:
     tree_root: true

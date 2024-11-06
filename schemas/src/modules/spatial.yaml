@@ -81,6 +81,12 @@ classes:
         multivalued: true
         inlined_as_list: true
         range: SpatialEntity
+      cell_summary:
+        required: false
+      collision:
+        required: false
+      corridor:
+        required: false
 
   Container:
     tree_root: true

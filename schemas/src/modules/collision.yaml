@@ -1,0 +1,134 @@
+id: https://purl.humanatlas.io/specs/collision
+name: collision
+prefixes:
+  ccf: http://purl.org/ccf/
+  oboInOwl: http://www.geneontology.org/formats/oboInOwl#
+  loinc: http://purl.bioontology.org/ontology/LNC/
+  linkml: https://w3id.org/linkml/
+  RO: http://purl.obolibrary.org/obo/RO_
+  IAO: http://purl.obolibrary.org/obo/IAO_
+
+default_prefix: ccf
+default_range: string
+
+imports:
+  - linkml:types
+  - ../shared/metadata-base
+
+classes:
+  CollisionSummary:
+    class_uri: ccf:CollisionSummary
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - collision_method
+      - collision_items
+  
+  CollisionItem:
+    class_uri: ccf:CollisionItem
+    mixins:
+      - Named
+      - Instance
+    slots: 
+      - spatial_entity_reference
+      - volume
+      - percentage
+
+  CollisionData:
+    attributes:
+      donor:
+        required: false
+      sample:
+        required: false
+      dataset:
+        required: false
+      spatial_entity:
+        required: false
+      cell_summary:
+        required: false
+      collision:
+        multivalued: true
+        inlined_as_list: true
+        range: CollisionSummary
+      corridor:
+        required: false
+
+  CollisionMetadata:
+    class_uri: dcat:Dataset
+    slots:
+      - title
+      - description
+      - created_by
+      - creation_date
+      - version
+      - license
+      - publisher
+      - see_also
+      - derived_from
+
+  Container:
+    tree_root: true
+    attributes:
+      iri:
+        range: uriorcurie
+      metadata:
+        range: CollisionMetadata
+      data:
+        range: CollisionData
+    annotations:
+      owl.template: |-
+        AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
+        AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
+        {% for creator_iri in metadata.created_by %}
+        AnnotationAssertion( dct:creator {{iri}} {{creator_iri|e}} )
+        {% endfor %}
+        AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
+        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
+        AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
+        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
+        AnnotationAssertion( rdfs:seeAlso {{iri}} {{metadata.see_also|e}} )
+        AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Donor )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:TissueBlock )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:TissueSection )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Dataset )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:CellSummary )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Collision )
+        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Corridor )
+
+slots:
+  collision_method:
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  collision_items:
+    slot_uri: ccf:has_collision_item
+    required: true
+    range: CollisionItem
+    multivalued: true
+    inlined_as_list: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  reference_organ:
+    required: true
+    range: uriorcurie
+    inlined: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  spatial_entity_reference:
+    slot_uri: ccf:has_spatial_entity
+    required: true
+    range: uriorcurie
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  volume:
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  percentage:
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion

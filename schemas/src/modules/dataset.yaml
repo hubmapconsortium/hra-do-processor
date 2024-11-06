@@ -27,6 +27,7 @@ classes:
       - external_link
       - technology
       - thumbnail
+      - cell_summaries
       - links_back_to
   
   AssayDatasetData:
@@ -40,7 +41,13 @@ classes:
         inlined_as_list: true
         range: AssayDataset
       spatial_entity:
-        required: false     
+        required: false
+      cell_summary:
+        required: false
+      collision:
+        required: false
+      corridor:
+        required: false
 
   Container:
     tree_root: true
@@ -61,6 +68,13 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   thumbnail:
     required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  cell_summaries:
+    slot_uri: ccf:has_cell_summary
+    required: false
+    multivalued: true
+    range: uriorcurie
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   links_back_to:
