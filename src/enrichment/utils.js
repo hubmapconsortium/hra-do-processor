@@ -6,7 +6,7 @@ import { extract, subset, module, filter, query, exclude } from '../utils/robot.
 import { mergeTurtles } from '../utils/owl-cli.js';
 import { redundant } from '../utils/relation-graph.js';
 import { throwOnError } from '../utils/sh-exec.js';
-import { info, more } from '../utils/logging.js';
+import { info, error, more } from '../utils/logging.js';
 import { ancestors } from '../utils/oaktool.js';
 const execPromise = promisify(exec);
 
@@ -95,9 +95,11 @@ export async function convertAsyncNormalizedDataToOwl(context, inputPath, output
     info(`Successfully transformed to OWL format at ${outputPath}`);
     callback(null);
   } 
-  catch (error) {
-    error("OWL conversion failed.")
-    callback(error);
+  catch (err) {
+    const errorMessage = `OWL conversion failed. ${err.message || "Unknown error occurred."}`;
+    const errorStack = err.stack ? `\nStack trace:\n${err.stack}` : "";
+    error(`${errorMessage}${errorStack}`);
+    callback(err);
   }
 }
 
