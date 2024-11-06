@@ -327,7 +327,7 @@ function normalizeCellMarkerDescriptor(context, data) {
       .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
       .map(({ id, name }) => ({
         id: generateIdWhenEmpty(id, name),
-        name
+        name: normalizeString(name)
       }))
       .filter(({ id }) => passCtIdFilterCriteria(context, id))
       .pop();
