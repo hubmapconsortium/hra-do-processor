@@ -21,18 +21,26 @@ classes:
 
 slots:
   id:
+    title: concept identifier
+    description: A unique identifier for the entity
     required: true
     range: uriorcurie
     identifier: true
   label:
-    required: true
+    title: concept label
     slot_uri: rdfs:label
+    description: A human-readable label or name associated with the entity.
+    required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   parent_class:
+    title: subclass of
+    description: Specifies the parent or superclass of the entity.
     slot_uri: rdfs:subClassOf
     range: uriorcurie
     annotations:
       owl: SubClassOf
   conforms_to:
+    title: conforms to
+    description: Indicates the type or specification that the entity adheres to.
     designates_type: true

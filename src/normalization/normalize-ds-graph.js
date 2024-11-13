@@ -83,7 +83,7 @@ function createDonorObject(donor) {
     .append('consortium_name', donor.consortium_name)
     .append('provider_name', donor.provider_name)
     .append('provider_uuid', donor.provider_uuid)
-    .append('samples',
+    .append('provides_samples',
       donor.samples
         .map((sample) => sample['@id'])
         .filter(checkSampleId))

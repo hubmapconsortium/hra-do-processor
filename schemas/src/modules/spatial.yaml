@@ -98,126 +98,178 @@ classes:
 
 slots:
   x_dimension:
+    title: dimension in x-axis
+    description: The length of the spatial entity along the X-axis.
     required: true
     range: float
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   y_dimension:
+    title: dimension in y-axis
+    description: The length of the spatial entity along the Y-axis.
     required: true
     range: float
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   z_dimension:
+    title: dimension in z-axis
+    description: The length of the spatial entity along the Z-axis.
     required: true
     range: float
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   dimension_unit:
+    title: dimension unit
+    description: The unit of measurement used for the spatial entity's dimensions.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   collides_with:
+    title: collides with
+    description: >-
+      Identifies other anatomical structures that intersect or collide with
+      this spatial entity.
     multivalued: true
     range: uriorcurie
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   slice_count:
+    title: slice count
+    description: The number of slices or layers within the spatial entity.
     range: integer
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   slice_thickness:
+    title: slice thickness
+    description: The thickness of each slice within the spatial entity.
     range: integer
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   placement:
-    required: true
+    title: spatial entity placement
+    description: Reference to the placement of the spatial entity.
     slot_uri: ccf:has_placement
+    required: true
     inlined: true
     range: SpatialPlacement
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   target:
-    required: true
+    title: placement relative to
+    description: The spatial entity relative to which the placement is defined.
     slot_uri: ccf:placement_relative_to
+    required: true
     range: uriorcurie
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   source:
-    required: false
+    title: placement for
+    description: >-
+      The originating spatial entity that serves as the source for a placement
+      relationship.
     slot_uri: ccf:placement_for
+    required: false
     range: SpatialEntity
     inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   placement_date:
+    title: placement date
+    description: The date when the placement of the entity was established.
     required: true
     range: date
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   x_scaling:
+    title: scaling in x-axis
+    description: Scaling factor applied along the X-axis.
     required: true
     range: float
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   y_scaling:
+    title: scaling in y-axis
+    description: Scaling factor applied along the Y-axis.
     required: true
     range: float
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   z_scaling:
+    title: scaling in z-axis
+    description: Scaling factor applied along the Z-axis.
     required: true
     range: float
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   scaling_unit:
+    title: scaling unit
+    description: The unit of measurement for scaling, usually represented as a ratio.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   x_rotation:
+    title: rotation in x-axis
+    description: Rotation of the spatial entity around the X-axis.
     required: true
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   y_rotation:
+    title: rotation in y-axis
+    description: Rotation of the spatial entity around the Y-axis.
     required: true
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   z_rotation:
+    title: rotation in z-axis
+    description: Rotation of the spatial entity around the Z-axis.
     required: true
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   rotation_unit:
+    title: rotation unit
+    description: The unit for rotation, typically measured in degrees.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   rotation_order:
+    title: rotation order
+    description: The sequence of axis rotations applied to the spatial entity.
     required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   x_translation:
+    title: translation in x-axis
+    description: The positional offset along the X-axis.
     required: true
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   y_translation:
+    title: translation in y-axis
+    description: The positional offset along the Y-axis.
     required: true
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   z_translation:
+    title: translation in z-axis
+    description: The positional offset along the Z-axis.
     required: true
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   translation_unit:
+    title: translation unit
+    description: The unit for translation distances.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

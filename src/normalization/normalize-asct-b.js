@@ -351,9 +351,9 @@ function normalizeCellMarkerDescriptor(context, data) {
         id: generateCellMarkerDescriptorId(context, recordNumber),
         label: `Cell marker descriptor for ${primaryCt.name}`,
         type_of: [`CellMarkerDescriptor`],
-        primary_cell_type: primaryCt.id,
-        primary_anatomical_structure: primaryAs,
-        biomarker_set: biomarkers,
+        targeted_cell_type: primaryCt.id,
+        cell_type_location: primaryAs,
+        characterizing_biomarkers: biomarkers,
         references: references,
         derived_from: generateAsctbRecordId(context, recordNumber)
       });

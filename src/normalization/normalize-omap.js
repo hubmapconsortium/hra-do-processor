@@ -59,7 +59,7 @@ function normalizeData(context, data) {
     antibody: normalizeAntibodyData(context, data),
     experiment: normalizeExperimentData(context, metadata, data),
     cycles: normalizeExperimentCycleData(context, data),
-    core_antibody_panel: normalizeCoreAntibodyPanelData(context, data),
+    antibody_panel: normalizeAntibodyPanelData(context, data),
   };
 }
 
@@ -125,7 +125,7 @@ function normalizeExperimentData(context, metadata, data) {
     .append('id', getExperimentIri(context, referenceData.omap_id))
     .append('label', `${referenceData.omap_id} experiment`)
     .append('type_of', ['MultiplexedAntibodyBasedImagingExperiment'])
-    .append('method', referenceData.method)
+    .append('study_method', referenceData.method)
     .append('tissue_preservation', referenceData.tissue_preservation)
     .append(
       'protocol_doi',
@@ -150,7 +150,7 @@ function normalizeExperimentCycleData(context, data) {
         .append('type_of', ['ExperimentCycle'])
         .append('cycle_number', cycleNumber)
         .append(
-          'uses_antibody',
+          'uses_antibodies',
           data
             .filter((row) => row.cycle_number === cycleNumber)
             .filter(
@@ -205,15 +205,14 @@ function normalizeExperimentCycleData(context, data) {
   return cycles;
 }
 
-function normalizeCoreAntibodyPanelData(context, data) {
+function normalizeAntibodyPanelData(context, data) {
   const omapId = data[0].omap_id;
   const antibodyComponents = data
-    .filter((row) => row.core_panel === 'Y')
     .map((row) =>
       getDilutedAntibodyInstanceIri(
         context,
         omapId,
-        data.cycle_number,
+        row.cycle_number,
         row.rrid,
         row.lot_number,
         row.dilution,
@@ -221,10 +220,10 @@ function normalizeCoreAntibodyPanelData(context, data) {
       )
     );
   return new ObjectBuilder()
-    .append('id', getCoreAntibodyPanelIri(context, omapId))
-    .append('label', getCoreAntibodyPanelLabel(omapId))
-    .append('type_of', ['CoreAntibodyPanel'])
-    .append('has_antibody_component', antibodyComponents)
+    .append('id', getAntibodyPanelIri(context, omapId))
+    .append('label', getAntibodyPanelLabel(omapId))
+    .append('type_of', ['AntibodyPanel'])
+    .append('contains_antibodies', antibodyComponents)
     .build();
 }
 
@@ -267,12 +266,12 @@ function getAntibodyInstanceLabel(antibodyId, lotNumber) {
   return `${antibodyId} antibody, ${lotNumber ? `lot number ${lotNumber}` : 'no lot number'}`;
 }
 
-function getCoreAntibodyPanelIri(context, omapId) {
-  return `${getPurl(context)}#${omapId?.trim() ?? ''}-core-antibody-panel`;
+function getAntibodyPanelIri(context, omapId) {
+  return `${getPurl(context)}#${omapId?.trim() ?? ''}-antibody-panel`;
 }
 
-function getCoreAntibodyPanelLabel(omapId) {
-  return `${omapId} core antibody panel`;
+function getAntibodyPanelLabel(omapId) {
+  return `${omapId} antibody panel`;
 }
 
 function getAntibodyIri(antibodyId) {

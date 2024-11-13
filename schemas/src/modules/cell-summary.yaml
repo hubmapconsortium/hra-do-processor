@@ -93,11 +93,19 @@ classes:
 
 slots:
   annotation_method:
+    title: annotation method
+    description: >-
+      Method used to annotate cells, detailing how each cell was identified or 
+      labeled in the dataset.
     slot_uri: ccf:cell_annotation_method
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   aggregated_summaries:
+    title: aggregated summary
+    description: >-
+      Collection of summaries derived by aggregating data across various 
+      samples or cells.
     slot_uri: ccf:aggregates
     required: false
     multivalued: true
@@ -105,14 +113,24 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion    
   modality:
+    title: modality
+    description: >-
+      Type or method of data collection, such as imaging or sequencing.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   donor_sex:
+    title: donor biological sex
+    description: >-
+      Biological sex of the donor from which the tissue samples were derived.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   summary_rows:
+    title: cell summary row
+    description: >-
+      Collection of detailed cell summary entries, listing each cell's 
+      specifics like count and gene expression.
     slot_uri: ccf:has_cell_summary_row
     required: true
     range: CellSummaryRow
@@ -121,15 +139,22 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   cell_id:
+    title: cell type identifier
+    description: Unique identifier assigned to a cell type.
     required: true
     range: uriorcurie
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   cell_label:
+    title: cell label
+    description: Descriptive label assigned to a cell type.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   gene_expressions:
+    title: gene expression
+    description: List of gene expression profiles for the cell type.
+    slot_uri: ccf:has_gene_expression
     required: false
     range: GeneExpression
     multivalued: true
@@ -137,31 +162,45 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion    
   count:
+    title: cell count
+    description: Number of occurrences of this cell type within the sample.
     slot_uri: ccf:cell_count
     required: true
     range: integer
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   percentage:
+    title: percentage
+    description: Percentage of the total sample that this cell type represents.
     slot_uri: ccf:percentage_of_total
     required: true
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   gene_id:
+    title: gene identifier
+    description: Unique identifier assigned to a gene symbol.
     required: true
     range: uriorcurie
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   gene_label:
+    title: gene label
+    description: Descriptive label assigned to a gene symbol.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   ensembl_id:
+    title: ensembl identifier
+    description: >-
+      Ensembl database identifier for the gene, used for cross-referencing.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   mean_gene_expression_value:
+    title: mean gene expression value
+    description: >-
+      Average expression level of the gene across the sample or dataset.
     required: true
     range: float
     annotations:

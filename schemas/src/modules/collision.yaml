@@ -99,10 +99,16 @@ classes:
 
 slots:
   collision_method:
+    title: collision method
+    description: >-
+      Method used to determine or calculate collisions between spatial entities.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   collision_items:
+    title: collision item
+    description: >-
+      List of collision instances detailing specific spatial entity interactions.
     slot_uri: ccf:has_collision_item
     required: true
     range: CollisionItem
@@ -110,24 +116,25 @@ slots:
     inlined_as_list: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  reference_organ:
-    required: true
-    range: uriorcurie
-    inlined: false
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
   spatial_entity_reference:
+    title: spatial entity
+    description: Reference to the spatial entity involved in the collision.
     slot_uri: ccf:has_spatial_entity
     required: true
     range: uriorcurie
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   volume:
+    title: volume
+    description: Volume of the spatial entity in the collision.
     required: true
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   percentage:
+    title: percentage
+    description: >-
+      Percentage of total collision area that this spatial entity represents.
     required: true
     range: float
     annotations:

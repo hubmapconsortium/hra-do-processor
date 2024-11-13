@@ -59,18 +59,29 @@ classes:
 
 slots:
   external_link:
+    title: external link
+    description: >-
+      URL link directing to external resources or pages associated with 
+      the dataset.
     slot_uri: ccf:url
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   technology:
+    title: assay technology
+    description: >-
+      Type of technology or technique used to collect or analyze the data.
     required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   thumbnail:
+    title: thumbnail
+    description: Image or icon used in user interfaces.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   cell_summaries:
+    title: cell summary
+    description: List of cell summary data associated with this dataset.
     slot_uri: ccf:has_cell_summary
     required: false
     multivalued: true
@@ -78,6 +89,9 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   links_back_to:
+    title: links back to
+    description: >-
+      URI that links back to a related resource as a reference connection.
     required: false
     range: uriorcurie
     annotations:

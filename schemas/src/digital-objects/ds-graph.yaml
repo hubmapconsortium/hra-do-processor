@@ -75,32 +75,53 @@ classes:
 
 slots:
   donor:
+    title: donor data
+    description: >-
+      List of donors referenced in the experiment dataset metadata records.
     multivalued: true
     inlined_as_list: true
     range: Donor
   sample:
+    title: tissue sample data
+    description: >-
+      List of tissue samples referenced in the experiment dataset metadata records.
     multivalued: true
     inlined_as_list: true
     range: TissueBlock
   dataset:
+    title: dataset data
+    description: >-
+      List of datasets referenced in the experiment dataset metadata records.
     multivalued: true
     inlined_as_list: true
     range: AssayDataset
   spatial_entity:
+    title: spatial entity data
+    description: >-
+      List of spatial entities referenced in the experiment dataset metadata records.
     multivalued: true
     inlined_as_list: true
     range: SpatialEntity
   cell_summary:
+    title: cell summary data
+    description: >-
+      List of cell summaries referenced in the experiment dataset metadata records.
     required: false
     multivalued: true
     inlined_as_list: true
     range: CellSummary
   collision:
+    title: collision data
+    description: >-
+      List of collisions referenced in the experiment dataset metadata records.
     required: false
     multivalued: true
     inlined_as_list: true
     range: CollisionSummary
   corridor:
+    title: corridor data
+    description: >-
+      List of corridors referenced in the experiment dataset metadata records.
     required: false
     multivalued: true
     inlined_as_list: true

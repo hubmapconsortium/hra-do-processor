@@ -166,9 +166,9 @@ classes:
       - Named
       - Instance
     slots:
-      - primary_cell_type
-      - primary_anatomical_structure
-      - biomarker_set
+      - targeted_cell_type
+      - cell_type_location
+      - characterizing_biomarkers
       - references
       - derived_from
     slot_usage:
@@ -229,60 +229,88 @@ classes:
         AnnotationAssertion( IAO:0000700 {{iri}} ccf:Biomarker )
 slots:
   anatomical_structures:
+    title: anatomical structure data
+    description: List of anatomical structures referenced in the ASCT-B records.
     multivalued: true
     inlined_as_list: true
     range: AnatomicalStructure
   cell_types:
+    title: cell type data
+    description: List of cell types referenced in the ASCT-B records.
     multivalued: true
     inlined_as_list: true
     range: CellType
   biomarkers:
+    title: biomarker data
+    description: >-
+      List of biomarkers (i.e., gene, protein, lipid, metabolites, proteoforms) 
+      referenced in the ASCT-B records.
     multivalued: true
     inlined_as_list: true
     range: Biomarker
   asctb_record:
+    title: ASCT+B record
+    description: Records containing ASCT-B concepts and related data.
     multivalued: true
     inlined_as_list: true
     range: AsctbRecord
   cell_marker_descriptor:
+    title: cell marker descriptor
+    description: Descriptors for cell markers within the ASCT-B dataset.
     multivalued: true
     inlined_as_list: true
     range: CellMarkerDescriptor
   members:
+    title: contains biomarker
+    description: Biomarkers that are members of a characterizing marker set.
+    slot_uri: ccf:contains_biomarker
     multivalued: true
     range: Biomarker
     annotations:
       owl: SomeValuesFrom
   has_characterizing_marker_set:
+    title: has characterizing marker set
+    description: Sets of markers characterizing a specific cell type.
     required: false
     range: CharacterizingMarkerSet
     multivalued: true
   id:
+    title:
+    description: Unique identifier for ASCT-B concepts.
     required: true
     range: uriorcurie
     identifier: true
   label:
+    description: Human-readable label or name for the concept.
     required: false
     slot_uri: rdfs:label
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   ccf_pref_label:
+    title: preferred label
+    description: Specifies the preferred label of a concept.
     required: true
     slot_uri: ccf:ccf_pref_label
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   ccf_asctb_type:
+    title: asct+b type
+    description: Data category classification within the ASCT+B framework.
     required: true
     slot_uri: ccf:ccf_asctb_type
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   ccf_is_provisional:
+    title: is provisional?
+    description: Flag indicating whether the concept is in provisional status.
     required: true
     slot_uri: ccf:ccf_is_provisional
     range: boolean
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   ccf_part_of:
+    title: part of
+    description: Defines part-whole relationships within anatomical structures.
     required: false
     slot_uri: ccf:ccf_part_of
     range: AnatomicalStructure
@@ -290,6 +318,8 @@ slots:
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   ccf_located_in:
+    title: located in
+    description: Specifies the anatomical location of a cell type.
     required: false
     slot_uri: ccf:ccf_located_in
     range: AnatomicalStructure
@@ -297,6 +327,8 @@ slots:
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   ccf_ct_isa:
+    title: parent cell type
+    description: Specifies subclass relationships for cell types.
     required: false
     slot_uri: ccf:ccf_ct_isa
     range: CellType
@@ -304,29 +336,41 @@ slots:
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   ccf_biomarker_type:
+    title: biomarker type
+    description: Type of biomarker as per the ASCT-B specification.
     required: true
     slot_uri: ccf:ccf_biomarker_type
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   source_concept:
+    title: source concept
+    description: >-
+      Source concept providing the origin of this record within the 
+      ASCT-B model.
     required: true
     slot_uri: ccf:source_concept
     range: AsctbConcept
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   record_number:
+    title: record number
+    description: Numerical identifier for individual records.
     required: true
     slot_uri: ccf:record_number
     range: integer
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   order_number:
+    title: order number
+    description: Order position within a defined sequence.
     required: true
     slot_uri: ccf:order_number
     range: integer
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   anatomical_structure_list:
+    title: anatomical structure
+    description: List of anatomical structure instances related to ASCT+B records.
     required: false
     multivalued: true
     inlined_as_list: true
@@ -335,6 +379,8 @@ slots:
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   cell_type_list:
+    title: cell type
+    description: List of cell type instances associated with ASCT+B records.
     required: false
     multivalued: true
     inlined_as_list: true
@@ -343,6 +389,8 @@ slots:
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   gene_marker_list:
+    title: gene marker
+    description: List of gene markers referenced within ASCT+B records.
     required: false
     multivalued: true
     inlined_as_list: true
@@ -351,6 +399,8 @@ slots:
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   protein_marker_list:
+    title: protein marker
+    description: List of protein markers referenced within ASCT+B records.
     required: false
     multivalued: true
     inlined_as_list: true
@@ -359,6 +409,8 @@ slots:
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   lipid_marker_list:
+    title: lipid marker
+    description: List of lipid markers referenced within ASCT+B records.
     required: false
     multivalued: true
     inlined_as_list: true
@@ -367,6 +419,8 @@ slots:
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   metabolites_marker_list:
+    title: metabolite marker
+    description: List of metabolites markers referenced within ASCT+B records.
     required: false
     multivalued: true
     inlined_as_list: true
@@ -375,6 +429,8 @@ slots:
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   proteoforms_marker_list:
+    title: proteoform marker
+    description: List of proteoforms markers referenced within ASCT-B records.
     required: false
     multivalued: true
     inlined_as_list: true
@@ -382,21 +438,28 @@ slots:
     slot_uri: ccf:proteoform_marker
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
-  primary_cell_type:
+  targeted_cell_type:
+    title: targeted cell type
+    description: >-
+      Targeted cell type associated with a cell marker descriptor.
     required: true
-    slot_uri: ccf:primary_cell_type
     range: CellType
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
-  primary_anatomical_structure:
+  cell_type_location:
+    title: cell type location
+    description: >-
+      The anatomical structure associated with a cell marker descriptor.
     required: true
-    slot_uri: ccf:primary_anatomical_structure
     range: AnatomicalStructure
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
-  biomarker_set:
+  characterizing_biomarkers:
+    title: characterizing biomarker
+    description: >-
+      Collection of biomarkers in the ASCT-B cell marker descriptor.
+    slot_uri: ccf:characterizing_biomarker
     multivalued: true
     range: Biomarker
-    slot_uri: ccf:biomarker
     annotations:
       owl: AnnotationAssertion, AnnotationProperty

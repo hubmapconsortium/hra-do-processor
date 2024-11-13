@@ -34,7 +34,7 @@ classes:
       - consortium_name
       - provider_name
       - provider_uuid
-      - samples
+      - provides_samples
     slot_usage:
       sex:
         annotations:
@@ -92,40 +92,69 @@ classes:
 
 slots:
   external_link:
+    title: external link
+    description: A link to an external resource to provide more information.
     slot_uri: ccf:url
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   age:
+    title: age
+    description: The age of the donor.
     range: integer
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   bmi:
+    title: body mass index
+    description: The Body Mass Index (BMI) of the donor.
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   sex:
+    title: biological sex
+    description: The biological sex of the donor.
     annotations:
       owl: AnnotationProperty
   sex_id:
+    title: biological sex identifier
     slot_uri: loinc:46098-0 # Sex
+    description: >-
+      A code representing the donor's sex according to the LOINC vocabulary.
   race:
+    title: race
     slot_uri: ccf:has_race
+    description: The race of the donor.
     annotations:
       owl: AnnotationProperty
   race_id:
+    title: race identifier
     slot_uri: loinc:32624-9 # Race
+    description: >-
+      A code representing the donor's race according to the LOINC vocabulary.
   consortium_name:
+    title: consortium name
+    description: The name of the consortium associated with the data.
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   provider_name:
+    title: provider name
     slot_uri: ccf:tissue_provider_name
+    description: >-
+      The name of the tissue provider responsible for supplying the tissue 
+      sample data.
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   provider_uuid:
+    title: provider UUID
     slot_uri: ccf:tissue_provider_uuid
+    description: >-
+      A unique identifier for the tissue provider linked to the tissue
+      sample data.
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  samples:
+  provides_samples:
+    title: provides
+    description: >-
+      A collection of references to tissue samples associated with the donor.
     slot_uri: ccf:provides
     multivalued: true
     inlined: false

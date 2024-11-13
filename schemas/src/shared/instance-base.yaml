@@ -22,8 +22,10 @@ classes:
 
 slots:
   type_of:
+    title: type of
+    description: Defines the class type that this instance belongs to.
+    slot_uri: rdf:type
     multivalued: true
     range: Named
-    slot_uri: rdf:type
     annotations:
       owl: ClassAssertion

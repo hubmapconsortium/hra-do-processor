@@ -89,10 +89,14 @@ classes:
 
 slots:
   file_format:
+    title: file format
+    description: The format of the file to read.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   file_url:
+    title: file link
+    description: The URL of the file to download or viewing.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

@@ -53,7 +53,7 @@ classes:
       - pref_label
       - description
       - external_link
-      - samples
+      - related_samples
       - datasets
       - section_number
       - links_back_to
@@ -87,17 +87,25 @@ classes:
 
 slots:
   external_link:
+    title: external link
+    description: A link to an external resource to provide more information.
     slot_uri: ccf:url
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  samples:
-    slot_uri: ccf:provides
+  related_samples:
+    title: related sample
+    description: A collection of references to additional related samples.
+    slot_uri: ccf:related_sample
     multivalued: true
     inlined: false
     range: TissueBlock
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   partially_overlaps:
+    title: partially overlaps
+    description: >-
+      Identifies other anatomical structures that partially overlap with
+      the spatial positioning of the tissue block.
     multivalued: true
     range: Named
     slot_uri: RO:0002151
@@ -105,18 +113,28 @@ slots:
       owl.template: |-
         AnnotationAssertion( rdfs:label RO:0002151 "partially overlaps" )
   rui_location:
-    required: false
+    title: registration location
+    description: >-
+      Reference to the registration location for the tissue block within
+      the reference atlas.
     slot_uri: ccf:has_registration_location
+    required: false
     range: uriorcurie
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   extraction_site:
+    title: extraction site
+    description: >-
+      Reference to the anatomical site from which the tissue was extracted.
+    slot_uri: ccf:has_extraction_site
     required: false
-    slot_uri: ccf:extraction_site
     range: uriorcurie
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   sections:
+    title: subdivided into sections
+    description: >-
+      References to individual tissue sections that are part of the tissue block.
     slot_uri: ccf:subdivided_into_sections
     range: TissueSection
     multivalued: true
@@ -124,6 +142,8 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   datasets:
+    title: generates dataset
+    description: Datasets generated from the tissue block or section.
     slot_uri: ccf:generates_dataset
     range: Dataset
     multivalued: true
@@ -131,24 +151,35 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   section_count:
+    title: section count
+    description: The number of sections contained within the tissue block.
     required: false
     range: integer
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   section_size:
+    title: section size
+    description: The physical size of each tissue section.
     required: false
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   section_size_unit:
+    title: section size unit
+    description: The unit of measurement used for the section size.
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   section_number:
+    title: section number
+    description: The order number of a specific section within a tissue block.
     required: false
     range: integer
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   collision_summaries:
+    title: collision summary
+    description: >-
+      Summaries of collision data indicating spatial collisions with other organs.
     slot_uri: ccf:has_collision_summary
     required: false
     multivalued: true
@@ -156,6 +187,10 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   corridors:
+    title: corridor
+    description: >-
+      References to corridor structures linked to the spatial positioning of the 
+      tissue block.
     slot_uri: ccf:has_corridor
     required: false
     multivalued: true
@@ -163,6 +198,9 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   links_back_to:
+    title: links back to
+    description: >-
+      URI that links back to a related resource as a reference connection.
     required: false
     range: uriorcurie
     annotations:

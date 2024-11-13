@@ -113,7 +113,7 @@ classes:
       - Named
       - Instance
     slots:
-      - method
+      - study_method
       - tissue_preservation
       - protocol_doi
       - author_orcid
@@ -138,15 +138,15 @@ classes:
       - Instance
     slots:
       - cycle_number
-      - uses_antibody
+      - uses_antibodies
 
-  CoreAntibodyPanel:
-    class_uri: ccf:CoreAntibodyPanel
+  AntibodyPanel:
+    class_uri: ccf:AntibodyPanel
     mixins:
       - Named
       - Instance
     slots:
-      - has_antibody_component
+      - contains_antibodies
 
   AnatomicalStructure:
     slots:
@@ -163,7 +163,7 @@ classes:
       - antibody
       - experiment
       - cycles
-      - core_antibody_panel
+      - antibody_panel
 
   OmapMetadata:
     class_uri: dcat:Dataset
@@ -205,70 +205,104 @@ classes:
 
 slots:
   antibody:
+    title: antibody data
+    description: List of antibodies referenced in the OMAP records.
     required: true
     range: Antibody
     multivalued: true
     inlined_as_list: true
   antibody_type:
+    title: antibody type
+    description: The type of antibody, specified as either Primary or Secondary.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   experiment:
+    title: experiment data
+    description: List of experiments referenced in the OMAP records.
     required: true
     range: MultiplexedAntibodyBasedImagingExperiment
     inlined: true
   cycles:
+    title: cycle data
+    description: List of experiment cycles referenced in the OMAP records.
     required: true
     range: ExperimentCycle
     multivalued: true
     inlined_as_list: true
-  core_antibody_panel:
+  antibody_panel:
+    title: antibody panel data
+    description: >-
+      List of antibodies in the panel referenced in the OMAP records.
     required: true
-    range: CoreAntibodyPanel
+    range: AntibodyPanel
     inlined: true
   concentration:
+    title: concentration
+    description: The concentration of the antibody used in the experiment.
     required: false
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   dilution:
+    title: dilution
+    description: The dilution factor applied to the antibody in the experiment.
     required: false
     range: integer
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   is_core_panel:
+    title: is core panel?
+    description: >-
+      Specifies if the antibody is part of the core panel for the experiment.
     required: true
     range: boolean
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   used_by_experiment:
+    title: is used by experiment
+    description: References to the experiment where the antibody was used.
     required: true
     range: uriorcurie
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   conjugate:
+    title: conjugate
+    description: >-
+      A substance attached to the antibody to aid in detection, such as
+      a fluorescent marker.
     required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   fluorescent:
+    title: is fluorescent?
+    description: Indicates whether the antibody is fluorescently labeled.
     required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   based_on:
+    title: based on
+    description: Reference to the antibody on which this instance is based.
     required: true
     range: RegisteredAntibody
     inlined: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  method:
+  study_method:
+    title: study method
+    description: The study method used in the experiment involving the antibody.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   tissue_preservation:
+    title: tissue preservation method
+    description: Method used on the tissue to preserve it prior to analysis.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   protocol_doi:
+    title: protocol DOI
+    description: Reference DOI for the experimental protocol used.
     required: false
     range: uriorcurie
     multivalued: true
@@ -276,6 +310,8 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   author_orcid:
+    title: author ORCID
+    description: Reference to the author by the ORCID identifier.
     required: true
     range: uriorcurie
     multivalued: true
@@ -283,6 +319,10 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   has_cycle:
+    title: has cycle
+    description: >- 
+      A reference to the experimental cycles within which the antibody
+      was used.
     required: true
     range: uriorcurie
     multivalued: true
@@ -290,23 +330,36 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   sample_organ:
+    title: sample organ
+    description: The anatomical structure or organ sampled in the experiment.
     required: true
     range: AnatomicalStructure
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   cycle_number:
+    title: cycle number
+    description: >-
+      The specific cycle number within the experiment where the antibody
+      was used.
     required: true
     range: integer
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  uses_antibody:
+  uses_antibodies:
+    title: uses antibody
+    description: Reference to the antibodies applied in each experiment cycle.
+    slot_uri: ccf:uses_antibody
     required: true
     range: ExperimentUsedAntibody
     multivalued: true
     inlined_as_list: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  has_antibody_component:
+  contains_antibodies:
+    title: contains antibody
+    description: >-
+      Reference to the antibodies that are part of the core antibody panel.
+    slot_uri: ccf:contains_antibody
     required: true
     range: ExperimentUsedAntibody
     multivalued: true
@@ -314,38 +367,61 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   clone_id:
+    title: clone identifier
+    description: The unique identifier for the specific clone of the antibody.
     required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   lot_number:
+    title: lot number
+    description: The lot number associated with a particular batch of the antibody.
     required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   catalog_number:
+    title: catalog number
+    description: >-
+      The catalog number associated with the antibody in the supplier's
+      catalog.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   host:
+    title: host
+    description: The host organism in which the antibody was produced.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   isotype:
+    title: isotype
+    description: Classifies the antibody by isotype.
     required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   clonality:
+    title: clonality
+    description: Indicates whether the antibody is monoclonal or polyclonal.
     required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   recombinant:
+    title: recombinant
+    description: >-
+      Indicates if the antibody was created through recombinant DNA technology.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   producer:
+    title: antibody manufacturer
+    description: The manufacturer or producer of the antibody.
+    slot_uri: ccf:antibody_manufacturer
     required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   detects:
+    title: detects
+    description: Reference to the proteins or antigens that the antibody
+      can detect.
     required: false
     range: DetectStatement
     multivalued: true
@@ -353,11 +429,17 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   protein_id:
+    title: protein identifier
+    description: Reference to the protein.
     required: true
     range: Protein
     multivalued: true
     inlined_as_list: false
   binds_to:
+    title: binds to
+    description: >- 
+      Reference to the secondary antibodies or molecules that this antibody
+      binds to.
     required: false
     range: BindsToStatement
     multivalued: true
@@ -365,7 +447,13 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   antibody_id:
+    title: antibody identifier
+    description: Reference to the antibody concept.
     required: true
     range: Antibody
   rationale:
+    title: rationale
+    description: >-
+      The justification or purpose behind the use of the antibody in the
+      experiment.
     required: true

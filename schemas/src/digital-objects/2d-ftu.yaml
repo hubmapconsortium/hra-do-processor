@@ -96,32 +96,51 @@ classes:
 
 slots:
   located_in:
+    title: located in
+    description: Specifies the anatomical location of a cell type.
     slot_uri: ccf:ccf_located_in
     range: uriorcurie
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   image_file:
+    title: image file
+    description: >-
+      Specifies the illustration file that represents the functional tissue unit.
     range: FtuIllustrationFile
     multivalued: true
     inlined_as_list: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   file_url:
+    title: file link
+    description: The URL of the file to download or viewing.
     range: uri
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   file_format:
+    title: file format
+    description: The format of the file to read.
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   illustration_node:
+    title: has illustration node
+    description: Specifies the format of the illustration file (e.g., PNG, JPEG).
     range: FtuIllustrationNode
     multivalued: true
     inlined_as_list: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   node_name:
+    title: node name
+    description: >-
+      The name assigned to each node within the FTU illustration, identifying 
+      its anatomical or structural role.
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   part_of_illustration:
+    title: is part of illustration
+    description: >-
+      Indicates the part of the illustration to which this node belongs to 
+      connect to the overall FTU structure.
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

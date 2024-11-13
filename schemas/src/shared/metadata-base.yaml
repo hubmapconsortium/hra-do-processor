@@ -102,215 +102,365 @@ classes:
 slots:
   # DCAT properties
   distributions:
+    title: dataset distribution
+    description: An available distribution of the dataset.
+    slot_uri: dcat:distribution
+    range: Distribution
     multivalued: true
     inlined_as_list: true
-    range: Distribution
-    slot_uri: dcat:distribution
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   downloadUrl:
-    range: uri
+    title: download URL
+    description: The URL of the downloadable file in a given format.
     slot_uri: dcat:downloadURL
+    range: uri
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   accessUrl:
-    range: uri
+    title: access URL
+    description: >-
+      A URL of the resource that gives access to a distribution of the
+      dataset. E.g. landing page, feed, SPARQL endpoint.
     slot_uri: dcat:accessURL
+    range: uri
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   mediaType:
+    title: media type
+    description: The media type of the distribution as defined by IANA.
     slot_uri: dcat:mediaType
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
 
   # PROV-O properties
   was_derived_from:
-    inlined: true
-    range: Dataset
+    title: was derived from
+    description: >-
+      A derivation is a transformation of an entity into another, an 
+      update of an entity resulting in a new one, or the construction 
+      of a new entity based on a pre-existing entity.
     slot_uri: prov:wasDerivedFrom
+    range: Dataset
+    inlined: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   derived_from:
-    range: uriorcurie
+    title: was derived from
+    description: >-
+      A derivation is a transformation of an entity into another, an 
+      update of an entity resulting in a new one, or the construction 
+      of a new entity based on a pre-existing entity.    
     slot_uri: prov:wasDerivedFrom
+    range: uriorcurie
   had_member:
+    title: had member
+    description: >-
+      A collection is an entity that provides a structure to some 
+      constituents, which are themselves entities. These constituents 
+      are said to be member of the collections.
+    slot_uri: prov:hadMember
+    range: uriorcurie
     multivalued: true
     inlined_as_list: true
-    range: uriorcurie
-    slot_uri: prov:hadMember
 
   # Dublin Core properties
   title:
+    title: title
+    description: A name given to the resource.
     slot_uri: dct:title
   description:
+    title: description
+    description: An account of the resource.
     slot_uri: dct:description
   license:
+    title: license
+    description: >- 
+      A legal document giving official permission to do something 
+      with the resource.
     slot_uri: dct:license
   publisher:
+    title: publisher
+    description: >-
+      An entity responsible for making the resource available.
     slot_uri: dct:publisher
   create_date:
-    range: date
+    title: date created
+    description: Date of creation of the resource.
     slot_uri: dct:created
+    range: date
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   creator_name:
+    title: creator
+    description: An entity responsible for making the resource.
     slot_uri: dct:creator
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   creators:
+    title: creator
+    description: An entity responsible for making the resource.
+    slot_uri: dct:creator
+    range: Creator
     multivalued: true
     inlined_as_list: true
-    range: Creator
-    slot_uri: dct:creator
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   created_by:
-    multivalued: true
-    inlined_as_list: true
-    range: uriorcurie
+    title: creator
+    description: An entity responsible for making the resource.    
     slot_uri: dct:creator
-  references:
+    range: uriorcurie
     multivalued: true
     inlined_as_list: true
+  references:
+    title: references
+    description: >-
+      A related resource that is referenced, cited, or otherwise 
+      pointed to by the described resource.
+    slot_uri: dct:references
     range: string
-    slot_uri: dct:reference
+    multivalued: true
+    inlined_as_list: true
 
   # Schema.org properties
   about:
+    title: about
+    description: The subject matter of the content.
     slot_uri: schema:about
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   version:
+    title: version
+    description: >-
+      The version of the CreativeWork embodied by a specified 
+      resource.
     slot_uri: schema:version
   name:
+    title: name
+    description: The name of the item.
     slot_uri: schema:name
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   type:
+    title: type
+    description: >-
+      An additional type for the item, typically used for 
+      adding more specific types from external vocabularies 
+      in microdata syntax. 
     slot_uri: schema:additionalType
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   fullName:
+    title: full name
+    description: The full name of a person.
     slot_uri: schema:name
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   firstName:
+    title: first name
+    description: >-
+      Given name. In the U.S., the first name of a person.
     slot_uri: schema:givenName
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   lastName:
+    title: last name
+    description: >-
+      Family name. In the U.S., the last name of a person.
     slot_uri: schema:familyName
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   orcid:
+    title: orcid
+    description: ORCID identifier.
     slot_uri: schema:identifier
     pattern: "^(\\d{4}-){3}\\d{3}(\\d|X)$"
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   funder:
+    title: funder
+    description: >-
+      A person or organization that supports (sponsors) 
+      something through some kind of financial contribution.
     slot_uri: schema:funder
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   awardNumber:
+    title: award
+    description: An award won by or for this item.
     slot_uri: schema:award
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   citation:
+    title: citation
+    description: >-
+      A citation or reference to another creative work, such 
+      as another publication, web page, scholarly article, etc.
     slot_uri: schema:citation
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   creation_date:
+    title: created date
+    description: >-
+      The date on which the CreativeWork was created or the 
+      item was added to a DataFeed.
     slot_uri: schema:dateCreated
   propertyId:
+    title: property ID
+    description: >-
+      A commonly used identifier for the characteristic 
+      represented by the property, e.g. a manufacturer or a 
+      standard code for a property. 
     slot_uri: schema:propertyID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   value:
+    title: value
+    description: The value of a property value node.
     slot_uri: schema:value
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   reviewers:
+    title: reviewer
+    description: >-
+      People or organizations that have reviewed the 
+      content on this web page for accuracy and/or 
+      completeness.
+    slot_uri: schema:reviewedBy
+    range: Person
     multivalued: true
     inlined_as_list: true
-    range: Person
-    slot_uri: schema:reviewedBy
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   funders:
+    title: funding
+    description: >-
+      A Grant that directly or indirectly provide 
+      funding or sponsorship for this item.
+    slot_uri: schema:funding
+    range: Grant
     multivalued: true
     inlined_as_list: true
-    range: Grant
-    slot_uri: schema:funding
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   target_product:
-    range: SoftwareSourceCode
+    title: target product
+    description: >-
+      Target Operating System / Product to which 
+      the code applies. If applies to several versions, 
+      just the product name can be used.
     slot_uri: schema:targetProduct
+    range: SoftwareSourceCode
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   code_repository:
-    range: uriorcurie
+    title: code repository
+    description: >-
+      Link to the repository where the un-compiled, 
+      human readable code and related code is located 
+      (SVN, GitHub, CodePlex).
     slot_uri: schema:codeRepository
+    range: uriorcurie
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
 
   # OWL properties
   versionInfo:
+    title: version info
+    description: A string giving information about this version.
     slot_uri: owl:versionInfo
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
 
   # RDFS properties
   label:
+    title: label
+    description: >-
+      A string used to provide a human-readable version of 
+      a resource's name.
     slot_uri: rdfs:label
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   see_also:
-    range: uriorcurie
+    title: see also
+    description: >-
+      A reference used to indicate a resource that might 
+      provide additional information about the subject resource.
     slot_uri: rdfs:seeAlso
+    range: uriorcurie
 
   # SKOS properties
   pref_label:
+    title: preferred label
     slot_uri: skos:prefLabel
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
 
   # IAO properties
   ontology_root:
-    multivalued: true
-    range: uriorcurie
+    title: has ontology root term
+    description: >-
+      Relates an ontology to a term that is a designated 
+      root term of the ontology. 
     slot_uri: obo:IAO_0000700
+    range: uriorcurie
+    multivalued: true
 
   # HRA properties
   hubmapId:
+    title: HuBMAP identifier
+    description: HuBMAP identifier.
     slot_uri: ccf:hubmap_id
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   doi:
-    range: uriorcurie
+    title: DOI
+    description: >-
+      A DOI, or Digital Object Identifier, is a 
+      unique string of numbers, letters, and symbols 
+      that identifies a specific publication.
     slot_uri: ccf:doi
+    range: uriorcurie
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   citationOverall:
+    title: citation
+    description: >-
+      A written reference to a source, such as a 
+      book, article, or website, that identifies 
+      the original source of information in a work.
     slot_uri: ccf:citation_overall
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   datatable:
-    multivalued: true
+    title: data table
+    description: A list of table resources.
     slot_uri: ccf:data_table
+    multivalued: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   project_leads:
+    title: project lead
+    description: >-
+      A person who is responsible for leading a project 
+      or a specific aspect of a project, including
+      planning, implementation, and tracking. 
+    slot_uri: ccf:project_lead
+    range: Person
     multivalued: true
     inlined_as_list: true
-    range: Person
-    slot_uri: ccf:project_lead
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   externalReviewers:
+    title: external reviewer
+    description: >-
+      An independent expert from outside an organization 
+      who provides critical feedback and evaluation on 
+      a program, project, or proposal.
+    slot_uri: ccf:external_reviewer
+    range: Person
     multivalued: true
     inlined_as_list: true
-    range: Person
-    slot_uri: ccf:external_reviewer
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
