@@ -116,48 +116,49 @@ classes:
       - Instance
     slots:
       - record_number
-      - anatomical_structure_list
-      - cell_type_list
-      - gene_marker_list
-      - protein_marker_list
-      - lipid_marker_list
-      - metabolites_marker_list
-      - proteoforms_marker_list
-      - references
-    slot_usage:
-      references:
-        range: string
-        annotations:
-          owl: AnnotationAssertion, AnnotationProperty
+      - as_records
+      - ct_records
+      - bg_records
+      - bp_records
+      - bl_records
+      - bm_records
+      - bf_records
+      - ref_records
 
-  AnatomicalStructureInstance:
+  AnatomicalStructureRecord:
     mixins:
       - Named
       - Instance
     slots:
-      - ccf_pref_label
-      - source_concept
+      - concept_value
       - record_number
       - order_number
 
-  CellTypeInstance:
+  CellTypeRecord:
     mixins:
       - Named
       - Instance
     slots:
-      - ccf_pref_label
-      - source_concept
+      - concept_value
       - record_number
       - order_number
 
-  BiomarkerInstance:
+  BiomarkerRecord:
     mixins:
       - Named
       - Instance
     slots:
-      - ccf_pref_label
+      - concept_value
       - ccf_biomarker_type
-      - source_concept
+      - record_number
+      - order_number
+
+  ReferenceRecord:
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - string_value
       - record_number
       - order_number
 
@@ -338,14 +339,18 @@ slots:
     slot_uri: ccf:ccf_biomarker_type
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
-  source_concept:
-    title: source concept
-    description: >-
-      Source concept providing the origin of this record within the 
-      ASCT-B model.
-    required: true
-    slot_uri: ccf:source_concept
+  concept_value:
+    title: concept value
+    description: Reference to a concept by its standard URI.
+    slot_uri: ccf:concept_value
     range: AsctbConcept
+    required: true
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  string_value:
+    title: string value
+    description: A string-typed value.
+    slot_uri: ccf:string_value
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   record_number:
@@ -364,74 +369,84 @@ slots:
     range: integer
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
-  anatomical_structure_list:
-    title: anatomical structure
-    description: List of anatomical structure instances related to ASCT+B records.
+  as_records:
+    title: anatomical structure record
+    description: List of anatomical structures in an ASCT+B record instance.
+    slot_uri: ccf:as_record
+    range: AnatomicalStructureRecord
     required: false
     multivalued: true
     inlined_as_list: true
-    range: AnatomicalStructureInstance
-    slot_uri: ccf:anatomical_structure
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
-  cell_type_list:
-    title: cell type
-    description: List of cell type instances associated with ASCT+B records.
+  ct_records:
+    title: cell type record
+    description: List of cell types in an ASCT+B record instance.
+    slot_uri: ccf:ct_record
+    range: CellTypeRecord
     required: false
     multivalued: true
     inlined_as_list: true
-    range: CellTypeInstance
-    slot_uri: ccf:cell_type
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
-  gene_marker_list:
-    title: gene marker
-    description: List of gene markers referenced within ASCT+B records.
+  bg_records:
+    title: gene marker record
+    description: List of gene markers in an ASCT+B record instance.
+    slot_uri: ccf:bg_record
+    range: BiomarkerRecord
     required: false
     multivalued: true
     inlined_as_list: true
-    range: BiomarkerInstance
-    slot_uri: ccf:gene_marker
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
-  protein_marker_list:
-    title: protein marker
-    description: List of protein markers referenced within ASCT+B records.
+  bp_records:
+    title: protein marker record
+    description: List of protein markers in an ASCT+B record instance.
+    slot_uri: ccf:bp_record
+    range: BiomarkerRecord
     required: false
     multivalued: true
     inlined_as_list: true
-    range: BiomarkerInstance
-    slot_uri: ccf:protein_marker
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
-  lipid_marker_list:
-    title: lipid marker
-    description: List of lipid markers referenced within ASCT+B records.
+  bl_records:
+    title: lipid marker record
+    description: List of lipid markers in an ASCT+B record instance.
+    slot_uri: ccf:bl_record
+    range: BiomarkerRecord
     required: false
     multivalued: true
     inlined_as_list: true
-    range: BiomarkerInstance
-    slot_uri: ccf:lipid_marker
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
-  metabolites_marker_list:
-    title: metabolite marker
-    description: List of metabolites markers referenced within ASCT+B records.
+  bm_records:
+    title: metabolite marker record
+    description: List of metabolites markers in an ASCT+B record instance.
+    slot_uri: ccf:bm_record
+    range: BiomarkerRecord
     required: false
     multivalued: true
     inlined_as_list: true
-    range: BiomarkerInstance
-    slot_uri: ccf:metabolite_marker
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
-  proteoforms_marker_list:
-    title: proteoform marker
-    description: List of proteoforms markers referenced within ASCT-B records.
+  bf_records:
+    title: proteoform marker record
+    description: List of proteoforms markers in an ASCT+B record instance.
+    slot_uri: ccf:bf_record
+    range: BiomarkerRecord
     required: false
     multivalued: true
     inlined_as_list: true
-    range: BiomarkerInstance
-    slot_uri: ccf:proteoform_marker
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  ref_records:
+    title: reference record
+    description: List of references in an ASCT+B record instance.
+    slot_uri: ccf:ref_record
+    range: ReferenceRecord
+    required: false
+    multivalued: true
+    inlined_as_list: true
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   targeted_cell_type:
