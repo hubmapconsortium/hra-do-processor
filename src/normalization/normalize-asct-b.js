@@ -355,7 +355,7 @@ function normalizeCellMarkerDescriptor(context, data) {
         cell_type_location: primaryAs,
         characterizing_biomarkers: biomarkers,
         references: references,
-        derived_from: generateAsctbRecordId(context, recordNumber)
+        source_record: generateAsctbRecordId(context, recordNumber)
       });
     }
     return collector;

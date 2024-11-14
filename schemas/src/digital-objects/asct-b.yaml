@@ -170,14 +170,10 @@ classes:
       - cell_type_location
       - characterizing_biomarkers
       - references
-      - derived_from
+      - source_record
     slot_usage:
       references:
         range: string
-        annotations:
-          owl: AnnotationAssertion, AnnotationProperty
-      derived_from:
-        range: AsctbRecord
         annotations:
           owl: AnnotationAssertion, AnnotationProperty
 
@@ -461,5 +457,12 @@ slots:
     slot_uri: ccf:characterizing_biomarker
     multivalued: true
     range: Biomarker
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  source_record:
+    title: source record
+    description: >- 
+      Reference to the ASCT+B record that contains the actual information.
+    range: AsctbRecord
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
