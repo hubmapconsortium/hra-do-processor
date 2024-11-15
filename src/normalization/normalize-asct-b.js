@@ -265,6 +265,7 @@ function normalizeBm(collector, { id: bm_id, name: bm_name, b_type, is_provision
 }
 
 function normalizeAsctbRecord(context, data) {
+  const { name: doName } = context.selectedDigitalObject
   return data.reduce((collector, row, index) => {
     // Determine record number
     const recordNumber = index + 1;
@@ -294,7 +295,7 @@ function normalizeAsctbRecord(context, data) {
     // Collect all the items
     collector.push({
       id: generateAsctbRecordId(context, recordNumber),
-      label: `Record ${recordNumber}`,
+      label: `Table ${doName}, Record ${recordNumber}`,
       type_of: [`AsctbRecord`],
       record_number: recordNumber,
       anatomical_structure_list: asInstances,
@@ -369,7 +370,7 @@ function generateAsInstance(context, recordNumber, data, index) {
   const orderNumber = index + 1
   return {
     id: generateAsInstanceId(context, recordNumber, orderNumber),
-    label: `${asName} (${doName}-R${recordNumber}-AS${orderNumber})`,
+    label: `${asName} (Table ${doName}, Record ${recordNumber}, Column AS/${orderNumber})`,
     type_of: ['AnatomicalStructureColumnInstance'],
     ccf_pref_label: asName,
     source_concept: generateIdWhenEmpty(id, asName),
@@ -385,7 +386,7 @@ function generateCtInstance(context, recordNumber, data, index) {
   const orderNumber = index + 1
   return {
     id: generateCtInstanceId(context, recordNumber, orderNumber),
-    label: `${ctName} (${doName}-R${recordNumber}-CT${orderNumber})`,
+    label: `${ctName} (Table ${doName}, Record ${recordNumber}, Column CT/${orderNumber})`,
     type_of: ['CellTypeColumnInstance'],
     ccf_pref_label: ctName,
     source_concept: generateIdWhenEmpty(id, ctName),
@@ -401,7 +402,7 @@ function generateBmInstance(context, recordNumber, data, index) {
   const orderNumber = index + 1
   return {
     id: generateBmInstanceId(context, recordNumber, orderNumber),
-    label: `${bmName} (${doName}-R${recordNumber}-BM${orderNumber})`,
+    label: `${bmName} (Table ${doName}, Record ${recordNumber}, Column BM/${orderNumber})`,
     type_of: ['BiomarkerColumnInstance'],
     ccf_pref_label: bmName,
     ccf_biomarker_type: b_type,
