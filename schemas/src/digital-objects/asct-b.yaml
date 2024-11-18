@@ -130,7 +130,7 @@ classes:
         annotations:
           owl: AnnotationAssertion, AnnotationProperty
 
-  AnatomicalStructureColumnInstance:
+  AnatomicalStructureRecord:
     mixins:
       - Named
       - Instance
@@ -140,7 +140,7 @@ classes:
       - record_number
       - order_number
 
-  CellTypeColumnInstance:
+  CellTypeRecord:
     mixins:
       - Named
       - Instance
@@ -150,7 +150,7 @@ classes:
       - record_number
       - order_number
 
-  BiomarkerColumnInstance:
+  BiomarkerRecord:
     mixins:
       - Named
       - Instance
@@ -370,7 +370,7 @@ slots:
     required: false
     multivalued: true
     inlined_as_list: true
-    range: AnatomicalStructureColumnInstance
+    range: AnatomicalStructureRecord
     slot_uri: ccf:anatomical_structure
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -380,7 +380,7 @@ slots:
     required: false
     multivalued: true
     inlined_as_list: true
-    range: CellTypeColumnInstance
+    range: CellTypeRecord
     slot_uri: ccf:cell_type
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -390,7 +390,7 @@ slots:
     required: false
     multivalued: true
     inlined_as_list: true
-    range: BiomarkerColumnInstance
+    range: BiomarkerRecord
     slot_uri: ccf:gene_marker
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -400,7 +400,7 @@ slots:
     required: false
     multivalued: true
     inlined_as_list: true
-    range: BiomarkerColumnInstance
+    range: BiomarkerRecord
     slot_uri: ccf:protein_marker
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -410,7 +410,7 @@ slots:
     required: false
     multivalued: true
     inlined_as_list: true
-    range: BiomarkerColumnInstance
+    range: BiomarkerRecord
     slot_uri: ccf:lipid_marker
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -420,7 +420,7 @@ slots:
     required: false
     multivalued: true
     inlined_as_list: true
-    range: BiomarkerColumnInstance
+    range: BiomarkerRecord
     slot_uri: ccf:metabolite_marker
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -430,7 +430,7 @@ slots:
     required: false
     multivalued: true
     inlined_as_list: true
-    range: BiomarkerColumnInstance
+    range: BiomarkerRecord
     slot_uri: ccf:proteoform_marker
     annotations:
       owl: AnnotationAssertion, AnnotationProperty

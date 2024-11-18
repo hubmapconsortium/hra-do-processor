@@ -371,7 +371,7 @@ function generateAsInstance(context, recordNumber, data, index) {
   return {
     id: generateAsInstanceId(context, recordNumber, orderNumber),
     label: `${asName} (Table ${doName}, Record ${recordNumber}, Column AS/${orderNumber})`,
-    type_of: ['AnatomicalStructureColumnInstance'],
+    type_of: ['AnatomicalStructureRecord'],
     ccf_pref_label: asName,
     source_concept: generateIdWhenEmpty(id, asName),
     record_number: recordNumber,
@@ -387,7 +387,7 @@ function generateCtInstance(context, recordNumber, data, index) {
   return {
     id: generateCtInstanceId(context, recordNumber, orderNumber),
     label: `${ctName} (Table ${doName}, Record ${recordNumber}, Column CT/${orderNumber})`,
-    type_of: ['CellTypeColumnInstance'],
+    type_of: ['CellTypeRecord'],
     ccf_pref_label: ctName,
     source_concept: generateIdWhenEmpty(id, ctName),
     record_number: recordNumber,
@@ -403,7 +403,7 @@ function generateBmInstance(context, recordNumber, data, index) {
   return {
     id: generateBmInstanceId(context, recordNumber, orderNumber),
     label: `${bmName} (Table ${doName}, Record ${recordNumber}, Column BM/${orderNumber})`,
-    type_of: ['BiomarkerColumnInstance'],
+    type_of: ['BiomarkerRecord'],
     ccf_pref_label: bmName,
     ccf_biomarker_type: b_type,
     source_concept: generateIdWhenEmpty(id, bmName),
