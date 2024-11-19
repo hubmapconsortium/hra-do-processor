@@ -72,7 +72,7 @@ export function enrichGraphData(context) {
     logOutput(redundantPath);
 
     const enrichedJsonPath = resolve(obj.path, 'enriched/enriched.json');
-    convertNormalizedDataToJson(context, normalizedPath, enrichedJsonPath);
+    convertNormalizedDataToJson(context, normalizedPath, enrichedJsonPath, 'graph');
   } catch (e) {
     error(e);
   } finally {
