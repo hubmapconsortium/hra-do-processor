@@ -14,43 +14,78 @@
 ![diagram](./index-3.svg)
 
 
-## collection
+## cell-summary
 
 ![diagram](./index-4.svg)
 
 
-## ds-graph
+## collection
 
 ![diagram](./index-5.svg)
 
 
-## graph
+## collision
 
 ![diagram](./index-6.svg)
 
 
-## landmark
+## corridor
 
 ![diagram](./index-7.svg)
 
 
-## omap
+## dataset
 
 ![diagram](./index-8.svg)
 
 
-## ref-organ
+## donor
 
 ![diagram](./index-9.svg)
 
 
-## vocab
+## ds-graph
 
 ![diagram](./index-10.svg)
 
 
-## basic-metadata
+## graph
 
 ![diagram](./index-11.svg)
+
+
+## landmark
+
+![diagram](./index-12.svg)
+
+
+## omap
+
+![diagram](./index-13.svg)
+
+
+## ref-organ
+
+![diagram](./index-14.svg)
+
+
+## sample
+
+![diagram](./index-15.svg)
+
+
+## spatial
+
+![diagram](./index-16.svg)
+
+
+## vocab
+
+![diagram](./index-17.svg)
+
+
+## basic-metadata
+
+![diagram](./index-18.svg)
 
 

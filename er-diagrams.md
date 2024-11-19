@@ -75,7 +75,7 @@ AsctbRecord {
     uriorcurie id  
     string label  
 }
-BiomarkerInstance {
+BiomarkerRecord {
     string ccf_pref_label  
     string ccf_biomarker_type  
     integer record_number  
@@ -92,14 +92,14 @@ AsctbConcept {
     string ccf_asctb_type  
     boolean ccf_is_provisional  
 }
-CellTypeInstance {
+CellTypeRecord {
     string ccf_pref_label  
     integer record_number  
     integer order_number  
     uriorcurie id  
     string label  
 }
-AnatomicalStructureInstance {
+AnatomicalStructureRecord {
     string ccf_pref_label  
     integer record_number  
     integer order_number  
@@ -159,22 +159,22 @@ AsctbDataset ||--}o CellMarkerDescriptor : "cell_marker_descriptor"
 CellMarkerDescriptor ||--|| CellType : "primary_cell_type"
 CellMarkerDescriptor ||--|| AnatomicalStructure : "primary_anatomical_structure"
 CellMarkerDescriptor ||--}o Biomarker : "biomarker_set"
-CellMarkerDescriptor ||--|o AsctbRecord : "derived_from"
+CellMarkerDescriptor ||--|o AsctbRecord : "source_record"
 CellMarkerDescriptor ||--}o Named : "type_of"
-AsctbRecord ||--}o AnatomicalStructureInstance : "anatomical_structure_list"
-AsctbRecord ||--}o CellTypeInstance : "cell_type_list"
-AsctbRecord ||--}o BiomarkerInstance : "gene_marker_list"
-AsctbRecord ||--}o BiomarkerInstance : "protein_marker_list"
-AsctbRecord ||--}o BiomarkerInstance : "lipid_marker_list"
-AsctbRecord ||--}o BiomarkerInstance : "metabolites_marker_list"
-AsctbRecord ||--}o BiomarkerInstance : "proteoforms_marker_list"
+AsctbRecord ||--}o AnatomicalStructureRecord : "anatomical_structure_list"
+AsctbRecord ||--}o CellTypeRecord : "cell_type_list"
+AsctbRecord ||--}o BiomarkerRecord : "gene_marker_list"
+AsctbRecord ||--}o BiomarkerRecord : "protein_marker_list"
+AsctbRecord ||--}o BiomarkerRecord : "lipid_marker_list"
+AsctbRecord ||--}o BiomarkerRecord : "metabolites_marker_list"
+AsctbRecord ||--}o BiomarkerRecord : "proteoforms_marker_list"
 AsctbRecord ||--}o Named : "type_of"
-BiomarkerInstance ||--|| AsctbConcept : "source_concept"
-BiomarkerInstance ||--}o Named : "type_of"
-CellTypeInstance ||--|| AsctbConcept : "source_concept"
-CellTypeInstance ||--}o Named : "type_of"
-AnatomicalStructureInstance ||--|| AsctbConcept : "source_concept"
-AnatomicalStructureInstance ||--}o Named : "type_of"
+BiomarkerRecord ||--|| AsctbConcept : "source_concept"
+BiomarkerRecord ||--}o Named : "type_of"
+CellTypeRecord ||--|| AsctbConcept : "source_concept"
+CellTypeRecord ||--}o Named : "type_of"
+AnatomicalStructureRecord ||--|| AsctbConcept : "source_concept"
+AnatomicalStructureRecord ||--}o Named : "type_of"
 AnatomicalStructure ||--}o AnatomicalStructure : "ccf_part_of"
 CellType ||--}o CellType : "ccf_ct_isa"
 CellType ||--}o AnatomicalStructure : "ccf_located_in"
@@ -209,6 +209,62 @@ Container ||--|o BasicMetadata : "metadata"
 ```
 
 
+## cell-summary
+
+```mermaid
+erDiagram
+Container {
+    string iri  
+    string metadata  
+}
+CellSummaryData {
+    string donor  
+    string sample  
+    string dataset  
+    string spatial_entity  
+    string collision  
+    string corridor  
+}
+CellSummary {
+    string annotation_method  
+    uriorcurieList aggregated_summaries  
+    string modality  
+    string donor_sex  
+    uriorcurie id  
+    string label  
+}
+Named {
+    uriorcurie id  
+    string label  
+}
+CellSummaryRow {
+    uriorcurie cell_id  
+    string cell_label  
+    integer count  
+    float percentage  
+    uriorcurie id  
+    string label  
+}
+GeneExpression {
+    uriorcurie gene_id  
+    string gene_label  
+    string ensembl_id  
+    float mean_gene_expression_value  
+    uriorcurie id  
+    string label  
+}
+
+Container ||--|o CellSummaryData : "data"
+CellSummaryData ||--}o CellSummary : "cell_summary"
+CellSummary ||--}| CellSummaryRow : "summary_rows"
+CellSummary ||--}o Named : "type_of"
+CellSummaryRow ||--}o GeneExpression : "gene_expressions"
+CellSummaryRow ||--}o Named : "type_of"
+GeneExpression ||--}o Named : "type_of"
+
+```
+
+
 ## collection
 
 ```mermaid
@@ -236,6 +292,188 @@ Container ||--|o CollectionMetadata : "metadata"
 ```
 
 
+## collision
+
+```mermaid
+erDiagram
+Container {
+    uriorcurie iri  
+}
+CollisionData {
+    string donor  
+    string sample  
+    string dataset  
+    string spatial_entity  
+    string cell_summary  
+    string corridor  
+}
+CollisionSummary {
+    string collision_method  
+    uriorcurie id  
+    string label  
+}
+Named {
+    uriorcurie id  
+    string label  
+}
+CollisionItem {
+    uriorcurie spatial_entity_reference  
+    float volume  
+    float percentage  
+    uriorcurie id  
+    string label  
+}
+CollisionMetadata {
+    string title  
+    string description  
+    uriorcurieList created_by  
+    string creation_date  
+    string version  
+    string license  
+    string publisher  
+    uriorcurie see_also  
+    uriorcurie derived_from  
+}
+
+Container ||--|o CollisionMetadata : "metadata"
+Container ||--|o CollisionData : "data"
+CollisionData ||--}o CollisionSummary : "collision"
+CollisionSummary ||--}| CollisionItem : "collision_items"
+CollisionSummary ||--}o Named : "type_of"
+CollisionItem ||--}o Named : "type_of"
+
+```
+
+
+## corridor
+
+```mermaid
+erDiagram
+Container {
+    uriorcurie iri  
+}
+CorridorData {
+    string donor  
+    string sample  
+    string dataset  
+    string spatial_entity  
+    string cell_summary  
+    string collision  
+}
+Corridor {
+    string file_format  
+    string file_url  
+    uriorcurie id  
+    string label  
+}
+Named {
+    uriorcurie id  
+    string label  
+}
+CorridorMetadata {
+    string title  
+    string description  
+    uriorcurieList created_by  
+    string creation_date  
+    string version  
+    string license  
+    string publisher  
+    uriorcurie see_also  
+    uriorcurie derived_from  
+}
+
+Container ||--|o CorridorMetadata : "metadata"
+Container ||--|o CorridorData : "data"
+CorridorData ||--}o Corridor : "corridor"
+Corridor ||--}o Named : "type_of"
+
+```
+
+
+## dataset
+
+```mermaid
+erDiagram
+Container {
+    string iri  
+    string metadata  
+}
+AssayDatasetData {
+    string donor  
+    string sample  
+    string spatial_entity  
+    string cell_summary  
+    string collision  
+    string corridor  
+}
+AssayDataset {
+    string pref_label  
+    string description  
+    string external_link  
+    string technology  
+    string thumbnail  
+    uriorcurieList cell_summaries  
+    uriorcurie links_back_to  
+    uriorcurie id  
+    string label  
+}
+Named {
+    uriorcurie id  
+    string label  
+}
+
+Container ||--|o AssayDatasetData : "data"
+AssayDatasetData ||--}o AssayDataset : "dataset"
+AssayDataset ||--}o Named : "type_of"
+
+```
+
+
+## donor
+
+```mermaid
+erDiagram
+Container {
+    string iri  
+    string metadata  
+}
+DonorData {
+    string sample  
+    string dataset  
+    string spatial_entity  
+    string cell_summary  
+    string collision  
+    string corridor  
+}
+Donor {
+    string pref_label  
+    string description  
+    string external_link  
+    integer age  
+    float bmi  
+    string sex  
+    string sex_id  
+    string race  
+    string race_id  
+    string consortium_name  
+    string provider_name  
+    string provider_uuid  
+    uriorcurieList provides_samples  
+    uriorcurie id  
+    string label  
+}
+Named {
+    uriorcurie id  
+    string label  
+}
+
+Container ||--|o DonorData : "data"
+DonorData ||--}o Donor : "donor"
+Donor ||--}o Named : "type_of"
+
+```
+
+
 ## ds-graph
 
 ```mermaid
@@ -245,6 +483,52 @@ Container {
 }
 DatasetGraphData {
 
+}
+Corridor {
+    string file_format  
+    string file_url  
+    uriorcurie id  
+    string label  
+}
+Named {
+    uriorcurie id  
+    string label  
+}
+CollisionSummary {
+    string collision_method  
+    uriorcurie id  
+    string label  
+}
+CollisionItem {
+    uriorcurie spatial_entity_reference  
+    float volume  
+    float percentage  
+    uriorcurie id  
+    string label  
+}
+CellSummary {
+    string annotation_method  
+    uriorcurieList aggregated_summaries  
+    string modality  
+    string donor_sex  
+    uriorcurie id  
+    string label  
+}
+CellSummaryRow {
+    uriorcurie cell_id  
+    string cell_label  
+    integer count  
+    float percentage  
+    uriorcurie id  
+    string label  
+}
+GeneExpression {
+    uriorcurie gene_id  
+    string gene_label  
+    string ensembl_id  
+    float mean_gene_expression_value  
+    uriorcurie id  
+    string label  
 }
 SpatialEntity {
     string pref_label  
@@ -257,10 +541,6 @@ SpatialEntity {
     uriorcurieList collides_with  
     integer slice_count  
     integer slice_thickness  
-    uriorcurie id  
-    string label  
-}
-Named {
     uriorcurie id  
     string label  
 }
@@ -283,12 +563,13 @@ SpatialPlacement {
     uriorcurie id  
     string label  
 }
-Dataset {
+AssayDataset {
     string pref_label  
     string description  
     string external_link  
     string technology  
     string thumbnail  
+    uriorcurieList cell_summaries  
     uriorcurie links_back_to  
     uriorcurie id  
     string label  
@@ -296,11 +577,56 @@ Dataset {
 TissueBlock {
     string pref_label  
     string description  
+    uriorcurie rui_location  
+    uriorcurie extraction_site  
     string external_link  
     integer section_count  
     float section_size  
     string section_size_unit  
+    uriorcurieList collision_summaries  
+    uriorcurieList corridors  
     uriorcurie links_back_to  
+    uriorcurie id  
+    string label  
+}
+Dataset {
+    string title  
+    string description  
+    string creation_date  
+    string version  
+    string license  
+    uriorcurie see_also  
+    string publisher  
+    string citation  
+    string citationOverall  
+    uriorcurie doi  
+    string hubmapId  
+    uriorcurie id  
+    string label  
+}
+Distribution {
+    string title  
+    uri downloadUrl  
+    uri accessUrl  
+    string mediaType  
+    uriorcurie id  
+    string label  
+}
+Person {
+    string fullName  
+    string firstName  
+    string lastName  
+    string orcid  
+    string conforms_to  
+    uriorcurie id  
+    string label  
+}
+Grant {
+    string funder  
+    string awardNumber  
+}
+Creator {
+    string conforms_to  
     uriorcurie id  
     string label  
 }
@@ -326,6 +652,7 @@ Donor {
     string consortium_name  
     string provider_name  
     string provider_uuid  
+    uriorcurieList provides_samples  
     uriorcurie id  
     string label  
 }
@@ -345,23 +672,40 @@ Container ||--|o DatasetGraphMetadata : "metadata"
 Container ||--|o DatasetGraphData : "data"
 DatasetGraphData ||--}o Donor : "donor"
 DatasetGraphData ||--}o TissueBlock : "sample"
-DatasetGraphData ||--}o Dataset : "dataset"
+DatasetGraphData ||--}o AssayDataset : "dataset"
 DatasetGraphData ||--}o SpatialEntity : "spatial_entity"
+DatasetGraphData ||--}o CellSummary : "cell_summary"
+DatasetGraphData ||--}o CollisionSummary : "collision"
+DatasetGraphData ||--}o Corridor : "corridor"
+Corridor ||--}o Named : "type_of"
+CollisionSummary ||--}| CollisionItem : "collision_items"
+CollisionSummary ||--}o Named : "type_of"
+CollisionItem ||--}o Named : "type_of"
+CellSummary ||--}| CellSummaryRow : "summary_rows"
+CellSummary ||--}o Named : "type_of"
+CellSummaryRow ||--}o GeneExpression : "gene_expressions"
+CellSummaryRow ||--}o Named : "type_of"
+GeneExpression ||--}o Named : "type_of"
 SpatialEntity ||--|| SpatialPlacement : "placement"
 SpatialEntity ||--}o Named : "type_of"
 SpatialPlacement ||--|o SpatialEntity : "source"
 SpatialPlacement ||--}o Named : "type_of"
-Dataset ||--}o Named : "type_of"
+AssayDataset ||--}o Named : "type_of"
 TissueBlock ||--}o Named : "partially_overlaps"
-TissueBlock ||--|o SpatialEntity : "rui_location"
-TissueBlock ||--|o SpatialEntity : "extraction_site"
 TissueBlock ||--}o TissueSection : "sections"
 TissueBlock ||--}o Dataset : "datasets"
 TissueBlock ||--}o Named : "type_of"
-TissueSection ||--}o TissueBlock : "samples"
+Dataset ||--}o Creator : "creators"
+Dataset ||--}o Person : "reviewers"
+Dataset ||--}o Grant : "funders"
+Dataset ||--}o Person : "project_leads"
+Dataset ||--}o Person : "externalReviewers"
+Dataset ||--}o Distribution : "distributions"
+Dataset ||--|o Dataset : "was_derived_from"
+Person ||--}o Named : "type_of"
+TissueSection ||--}o TissueBlock : "related_samples"
 TissueSection ||--}o Dataset : "datasets"
 TissueSection ||--}o Named : "type_of"
-Donor ||--}o TissueBlock : "samples"
 Donor ||--}o Named : "type_of"
 
 ```
@@ -494,7 +838,7 @@ Container {
 OmapDataset {
 
 }
-CoreAntibodyPanel {
+AntibodyPanel {
     uriorcurie id  
     string label  
 }
@@ -522,7 +866,7 @@ ExperimentCycle {
     string label  
 }
 MultiplexedAntibodyBasedImagingExperiment {
-    string method  
+    string study_method  
     string tissue_preservation  
     uriorcurieList protocol_doi  
     uriorcurieList author_orcid  
@@ -573,13 +917,13 @@ Container ||--|o OmapDataset : "data"
 OmapDataset ||--}| Antibody : "antibody"
 OmapDataset ||--|| MultiplexedAntibodyBasedImagingExperiment : "experiment"
 OmapDataset ||--}| ExperimentCycle : "cycles"
-OmapDataset ||--|| CoreAntibodyPanel : "core_antibody_panel"
-CoreAntibodyPanel ||--}| ExperimentUsedAntibody : "has_antibody_component"
-CoreAntibodyPanel ||--}o Named : "type_of"
+OmapDataset ||--|| AntibodyPanel : "antibody_panel"
+AntibodyPanel ||--}| ExperimentUsedAntibody : "contains_antibodies"
+AntibodyPanel ||--}o Named : "type_of"
 ExperimentUsedAntibody ||--|| RegisteredAntibody : "based_on"
 ExperimentUsedAntibody ||--}o Named : "type_of"
 RegisteredAntibody ||--}o Named : "type_of"
-ExperimentCycle ||--}| ExperimentUsedAntibody : "uses_antibody"
+ExperimentCycle ||--}| ExperimentUsedAntibody : "uses_antibodies"
 ExperimentCycle ||--}o Named : "type_of"
 MultiplexedAntibodyBasedImagingExperiment ||--|| AnatomicalStructure : "sample_organ"
 MultiplexedAntibodyBasedImagingExperiment ||--}o Named : "type_of"
@@ -682,6 +1026,177 @@ SpatialPlacement ||--|o SpatialEntity : "source"
 SpatialPlacement ||--}o Named : "type_of"
 SpatialObjectReference ||--|| SpatialPlacement : "placement"
 SpatialObjectReference ||--}o Named : "type_of"
+
+```
+
+
+## sample
+
+```mermaid
+erDiagram
+Container {
+    string iri  
+    string metadata  
+}
+SampleData {
+    string donor  
+    string dataset  
+    string spatial_entity  
+    string cell_summary  
+    string collision  
+    string corridor  
+}
+TissueBlock {
+    string pref_label  
+    string description  
+    uriorcurie rui_location  
+    uriorcurie extraction_site  
+    string external_link  
+    integer section_count  
+    float section_size  
+    string section_size_unit  
+    uriorcurieList collision_summaries  
+    uriorcurieList corridors  
+    uriorcurie links_back_to  
+    uriorcurie id  
+    string label  
+}
+Named {
+    uriorcurie id  
+    string label  
+}
+Dataset {
+    string title  
+    string description  
+    string creation_date  
+    string version  
+    string license  
+    uriorcurie see_also  
+    string publisher  
+    string citation  
+    string citationOverall  
+    uriorcurie doi  
+    string hubmapId  
+    uriorcurie id  
+    string label  
+}
+Distribution {
+    string title  
+    uri downloadUrl  
+    uri accessUrl  
+    string mediaType  
+    uriorcurie id  
+    string label  
+}
+Person {
+    string fullName  
+    string firstName  
+    string lastName  
+    string orcid  
+    string conforms_to  
+    uriorcurie id  
+    string label  
+}
+Grant {
+    string funder  
+    string awardNumber  
+}
+Creator {
+    string conforms_to  
+    uriorcurie id  
+    string label  
+}
+TissueSection {
+    string pref_label  
+    string description  
+    string external_link  
+    integer section_number  
+    uriorcurie links_back_to  
+    uriorcurie id  
+    string label  
+}
+
+Container ||--|o SampleData : "data"
+SampleData ||--}o TissueBlock : "sample"
+TissueBlock ||--}o Named : "partially_overlaps"
+TissueBlock ||--}o TissueSection : "sections"
+TissueBlock ||--}o Dataset : "datasets"
+TissueBlock ||--}o Named : "type_of"
+Dataset ||--}o Creator : "creators"
+Dataset ||--}o Person : "reviewers"
+Dataset ||--}o Grant : "funders"
+Dataset ||--}o Person : "project_leads"
+Dataset ||--}o Person : "externalReviewers"
+Dataset ||--}o Distribution : "distributions"
+Dataset ||--|o Dataset : "was_derived_from"
+Person ||--}o Named : "type_of"
+TissueSection ||--}o TissueBlock : "related_samples"
+TissueSection ||--}o Dataset : "datasets"
+TissueSection ||--}o Named : "type_of"
+
+```
+
+
+## spatial
+
+```mermaid
+erDiagram
+Container {
+    string iri  
+    string metadata  
+}
+SpatialData {
+    string donor  
+    string sample  
+    string dataset  
+    string cell_summary  
+    string collision  
+    string corridor  
+}
+SpatialEntity {
+    string pref_label  
+    string creator_name  
+    date create_date  
+    float x_dimension  
+    float y_dimension  
+    float z_dimension  
+    string dimension_unit  
+    uriorcurieList collides_with  
+    integer slice_count  
+    integer slice_thickness  
+    uriorcurie id  
+    string label  
+}
+Named {
+    uriorcurie id  
+    string label  
+}
+SpatialPlacement {
+    uriorcurie target  
+    date placement_date  
+    float x_scaling  
+    float y_scaling  
+    float z_scaling  
+    string scaling_unit  
+    float x_rotation  
+    float y_rotation  
+    float z_rotation  
+    string rotation_unit  
+    string rotation_order  
+    float x_translation  
+    float y_translation  
+    float z_translation  
+    string translation_unit  
+    uriorcurie id  
+    string label  
+}
+
+Container ||--|o SpatialData : "data"
+SpatialData ||--}o SpatialEntity : "spatial_entity"
+SpatialEntity ||--|| SpatialPlacement : "placement"
+SpatialEntity ||--}o Named : "type_of"
+SpatialPlacement ||--|o SpatialEntity : "source"
+SpatialPlacement ||--}o Named : "type_of"
 
 ```
 
