@@ -16,6 +16,7 @@ imports:
   - linkml:types
   - ../shared/instance-base
   - ../shared/metadata-base
+  - ../modules/spatial
 
 settings:
   uberon: "UBERON"
@@ -51,50 +52,6 @@ classes:
         pattern: (Male|Female)
       organ_side:
         pattern: (Left|Right)
-
-  SpatialObjectReference:
-    class_uri: ccf:SpatialObjectReference
-    mixins:
-      - Named
-      - Instance
-    slots:
-      - file_name
-      - file_url
-      - file_subpath
-      - file_format
-      - placement
-
-  SpatialPlacement:
-    class_uri: ccf:SpatialPlacement
-    mixins:
-      - Named
-      - Instance
-    slots:
-      - target
-      - source
-      - placement_date
-      - x_scaling
-      - y_scaling
-      - z_scaling
-      - scaling_unit
-      - x_rotation
-      - y_rotation
-      - z_rotation
-      - rotation_unit
-      - rotation_order
-      - x_translation
-      - y_translation
-      - z_translation
-      - translation_unit
-    slot_usage:
-      scaling_unit:
-        pattern: ratio
-      rotation_unit:
-        pattern: degree
-      rotation_order:
-        pattern: XYZ
-      translation_unit:
-        pattern: (centimeter|millimeter)
 
   ExtractionSet:
     class_uri: ccf:ExtractionSet
@@ -156,157 +113,30 @@ classes:
         AnnotationAssertion( IAO:0000700 {{iri}} ccf:SpatialEntity )
 
 slots:
-  x_dimension:
-    required: true
-    range: float
-    minimum_value: 0.0
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  y_dimension:
-    required: true
-    range: float
-    minimum_value: 0.0
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  z_dimension:
-    required: true
-    range: float
-    minimum_value: 0.0
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  dimension_unit:
-    required: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  x_scaling:
-    required: true
-    range: float
-    minimum_value: 0.0
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  y_scaling:
-    required: true
-    range: float
-    minimum_value: 0.0
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  z_scaling:
-    required: true
-    range: float
-    minimum_value: 0.0
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  scaling_unit:
-    required: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  x_rotation:
-    required: true
-    range: float
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  y_rotation:
-    required: true
-    range: float
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  z_rotation:
-    required: true
-    range: float
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  rotation_unit:
-    required: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  rotation_order:
-    required: false
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  x_translation:
-    required: true
-    range: float
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  y_translation:
-    required: true
-    range: float
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  z_translation:
-    required: true
-    range: float
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  translation_unit:
-    required: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
   organ_owner_sex:
+    title: organ owner sex
+    description: The biological sex of the organ's owner.
     required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   organ_side:
+    title: organ side
+    description: The side of the body where an organ is located. 
     required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   representation_of:
+    title: representation of
+    description: The way that something is shown or described.
     required: false
     range: AnatomicalStructure
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  file_name:
-    required: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  file_url:
-    required: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  file_subpath:
-    required: false
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  file_format:
-    required: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  placement_date:
-    required: true
-    slot_uri: dct:created
-    range: date
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  target:
-    required: true
-    slot_uri: ccf:placement_relative_to
-    range: SpatialEntity
-    inlined: false
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  source:
-    required: false
-    slot_uri: ccf:placement_for
-    range: SpatialEntity
-    inlined: false
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  object_reference:
-    required: false
-    slot_uri: ccf:has_object_reference
-    range: SpatialObjectReference
-    inlined: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  placement:
-    required: true
-    slot_uri: ccf:has_placement
-    range: SpatialPlacement
-    inlined: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
   placements:
-    required: false
+    title: spatial entity placement
+    description: >-
+      A collection of references to the placement of the 
+      spatial entity.
     slot_uri: ccf:has_placement
     range: SpatialPlacement
     inlined: true
@@ -315,70 +145,36 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   reference_organ:
-    required: false
+    title: reference organ
+    description: >-
+      Reference to the reference organ's spatial entity.
     slot_uri: ccf:has_reference_organ
     range: SpatialEntity
     inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   extraction_set:
-    required: false
+    title: extraction set
+    description: Reference to an extraction set.
     slot_uri: ccf:has_extraction_set
     range: ExtractionSet
     inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   extraction_set_for:
+    title: extraction set for
+    description: >-
+      Reference to the spatial entity associated with the extraction set.
     required: true
     range: SpatialEntity
     inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   rui_rank:
+    title: RUI rank
+    description: Registration rank.
     required: false
     recommended: true
     range: integer
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-
-enums:
-  OrganSideEnum:
-    permissible_values:
-      left:
-        description: Being located on the left side of the body.
-        meaning: obo:HP_0012835
-      right:
-        description: Being located on the right side of the body.
-        meaning: obo:HP_0012834
-  SexEnum:
-    permissible_values:
-      female:
-        meaning: loinc:LA3-6
-      male:
-        meaning: loinc:LA2-8
-  DimensionUnitEnum:
-    permissible_values:
-      centimeter:
-        description: A length unit which is equal to one hundredth of a meter.
-        meaning: obo:UO_0000015
-      millimeter:
-        description: A length unit which is equal to one thousandth of a meter.
-        meaning: obo:UO_0000016
-  ScalingUnitEnum:
-    permissible_values:
-      ratio:
-        description: A dimensionless ratio unit which, given a pair of quantities a and b, for which b is a multiple of a, denotes b by giving the multiplier (coefficient) c for a to result in b.
-        meaning: obo:UO_0010006
-  RotationUnitEnum:
-    permissible_values:
-      degree:
-        description: A plane angle unit which is equal to 1/360 of a full rotation.
-        meaning: obo:UO_0000185
-  TranslationUnitEnum:
-    permissible_values:
-      centimeter:
-        description: A length unit which is equal to one hundredth of a meter.
-        meaning: obo:UO_0000015
-      millimeter:
-        description: A length unit which is equal to one thousandth of a meter.
-        meaning: obo:UO_0000016

@@ -15,6 +15,7 @@ imports:
   - linkml:types
   - ../shared/instance-base
   - ../shared/metadata-base
+  - ../modules/spatial
 
 settings:
   uberon: "UBERON"
@@ -40,18 +41,6 @@ classes:
     slot_usage:
       dimension_unit:
         pattern: (centimeter|millimeter)
-
-  SpatialObjectReference:
-    class_uri: ccf:SpatialObjectReference
-    mixins:
-      - Named
-      - Instance
-    slots:
-      - file_name
-      - file_url
-      - file_subpath
-      - file_format
-      - placement
 
   SpatialPlacement:
     class_uri: ccf:SpatialPlacement
@@ -149,138 +138,11 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: SpatialEntity
-  x_dimension:
-    required: true
-    range: float
-    minimum_value: 0.0
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  y_dimension:
-    required: true
-    range: float
-    minimum_value: 0.0
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  z_dimension:
-    required: true
-    range: float
-    minimum_value: 0.0
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  dimension_unit:
-    required: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  x_scaling:
-    required: true
-    range: float
-    minimum_value: 0.0
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  y_scaling:
-    required: true
-    range: float
-    minimum_value: 0.0
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  z_scaling:
-    required: true
-    range: float
-    minimum_value: 0.0
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  scaling_unit:
-    required: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  x_rotation:
-    required: true
-    range: float
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  y_rotation:
-    required: true
-    range: float
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  z_rotation:
-    required: true
-    range: float
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  rotation_unit:
-    required: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  rotation_order:
-    required: false
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  x_translation:
-    required: true
-    range: float
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  y_translation:
-    required: true
-    range: float
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  z_translation:
-    required: true
-    range: float
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  translation_unit:
-    required: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  file_name:
-    required: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  file_url:
-    required: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  file_subpath:
-    required: false
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  file_format:
-    required: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  source:
-    required: false
-    slot_uri: ccf:placement_for
-    range: SpatialEntity
-    inlined: false
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  target:
-    required: true
-    slot_uri: ccf:placement_relative_to
-    range: SpatialEntity
-    inlined: false
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  object_reference:
-    required: false
-    slot_uri: ccf:has_object_reference
-    range: SpatialObjectReference
-    inlined: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  placement:
-    required: true
-    slot_uri: ccf:has_placement
-    range: SpatialPlacement
-    inlined: true
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
   placements:
-    required: false
+    title: spatial entity placement
+    description: >-
+      A collection of references to the placement of the 
+      spatial entity.
     slot_uri: ccf:has_placement
     range: SpatialPlacement
     inlined: true
@@ -289,55 +151,36 @@ slots:
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   reference_organ:
-    required: false
+    title: reference organ
+    description: >-
+      Reference to the reference organ's spatial entity.
     slot_uri: ccf:has_reference_organ
     range: SpatialEntity
     inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   extraction_set:
+    title: extraction set
+    description: Reference to an extraction set.
     required: true
     range: uriorcurie
     inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   extraction_set_for:
+    title: extraction set for
+    description: >-
+      Reference to the spatial entity associated with the extraction set.
     required: true
     range: uriorcurie
     inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   rui_rank:
+    title: RUI rank
+    description: Registration rank.
     required: false
     recommended: true
     range: integer
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-
-enums:
-  DimensionUnitEnum:
-    permissible_values:
-      centimeter:
-        description: A length unit which is equal to one hundredth of a meter.
-        meaning: obo:UO_0000015
-      millimeter:
-        description: A length unit which is equal to one thousandth of a meter.
-        meaning: obo:UO_0000016
-  ScalingUnitEnum:
-    permissible_values:
-      ratio:
-        description: A dimensionless ratio unit which, given a pair of quantities a and b, for which b is a multiple of a, denotes b by giving the multiplier (coefficient) c for a to result in b.
-        meaning: obo:UO_0010006
-  RotationUnitEnum:
-    permissible_values:
-      degree:
-        description: A plane angle unit which is equal to 1/360 of a full rotation.
-        meaning: obo:UO_0000185
-  TranslationUnitEnum:
-    permissible_values:
-      centimeter:
-        description: A length unit which is equal to one hundredth of a meter.
-        meaning: obo:UO_0000015
-      millimeter:
-        description: A length unit which is equal to one thousandth of a meter.
-        meaning: obo:UO_0000016
