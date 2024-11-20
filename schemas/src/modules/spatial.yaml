@@ -69,6 +69,18 @@ classes:
       translation_unit:
         pattern: (centimeter|millimeter)
 
+  SpatialObjectReference:
+    class_uri: ccf:SpatialObjectReference
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - file_name
+      - file_url
+      - file_subpath
+      - file_format
+      - placement
+
   SpatialData:
     attributes:
       donor:
@@ -146,6 +158,14 @@ slots:
     title: slice thickness
     description: The thickness of each slice within the spatial entity.
     range: integer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  object_reference:
+    title: object reference
+    description: Reference to the object reference.
+    slot_uri: ccf:has_object_reference
+    range: SpatialObjectReference
+    inlined: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   placement:
@@ -270,6 +290,30 @@ slots:
   translation_unit:
     title: translation unit
     description: The unit for translation distances.
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  file_name:
+    title: file name
+    description: The name of the file.
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  file_url:
+    title: file link
+    description: The URL of the file to download or viewing.
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  file_subpath:
+    title: file subpath
+    description: A relative path.
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  file_format:
+    title: file format
+    description: The format of the file to read.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
