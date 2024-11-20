@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import { resolve } from 'path';
 import { error, info, more } from '../utils/logging.js';
-import { RDF_EXTENSIONS, convert as rdfPipeConvert } from '../utils/reify.js';
+import { RDF_EXTENSIONS, convert as rdfConvert } from '../utils/reify.js';
 import { merge, convert as robotConvert } from '../utils/robot.js';
 import {
   cleanTemporaryFiles,
@@ -52,7 +52,7 @@ export function enrichGraphData(context) {
         toMerge.push(outputTtl);
       } else if (RDF_EXTENSIONS.has(extension)) {
         const outputTtl = resolve(obj.path, 'enriched', inputRdfFile + '.ttl');
-        rdfPipeConvert(inputRdf, outputTtl, 'ttl');
+        rdfConvert(inputRdf, outputTtl, 'ttl');
         toMerge.push(outputTtl);
       }
     }
@@ -64,7 +64,7 @@ export function enrichGraphData(context) {
 
     const enrichedPath = resolve(obj.path, 'enriched/enriched.ttl');
     info(`Creating graph: ${enrichedPath}`);
-    rdfPipeConvert(enrichedMergePath, enrichedPath, 'ttl');
+    rdfConvert(enrichedMergePath, enrichedPath, 'ttl');
 
     info('Optimizing graph...');
     const redundantPath = resolve(obj.path, 'enriched/redundant.ttl');

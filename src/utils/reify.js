@@ -5,9 +5,9 @@ import { throwOnError } from './sh-exec.js';
 
 const FORMATS = {
   jsonld: 'application/ld+json',
-  nt: 'application/n-triples',
-  xml: 'application/rdf+xml',
-  nq: 'application/n-quads',
+  nt: 'n-triples',
+  xml: 'rdf/xml',
+  nq: 'n-quads',
 };
 
 export const RDF_EXTENSIONS = new Set([
@@ -70,12 +70,12 @@ export function reifyTurtle(inputPath, graphName, jsonldIsJson = false) {
 }
 
 export function convert(inputPath, outputPath, outputFormat, graphName) {
-  let command = `rdfpipe --output-format ${outputFormat} ${inputPath}`;
+  let command = `riot --merge --output=${outputFormat} "${inputPath}"`;
   if (isJsonLd(inputPath)) {
-    command = `cat ${inputPath} | jsonld expand | rdfpipe --input-format json-ld --output-format ${outputFormat} -`;
+    command = `cat "${inputPath}" | jsonld toRdf -q | riot --merge --output=turtle`
   }
-  if (graphName && outputFormat === 'application/n-quads') {
-    command += ` | perl -pe 's|\\Qfile://${inputPath}\\E|${graphName}|g'`;
+  if (graphName && outputFormat === FORMATS.nq) {
+    command += ` | perl -pe 's|\ \.\n|\ <${graphName}> .\n|g'`;
   }
   throwOnError(`${command} > ${outputPath}`, `Failed to convert to '${outputFormat}' format.`);
 }

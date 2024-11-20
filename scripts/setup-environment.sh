@@ -66,6 +66,17 @@ if [ -e "$ENV/bin/activate" ]; then
     rm -f blazegraph-runner-$BR.tgz
   fi
 
+  # Install Apache Jena
+  if [ ! -e "$ENV/opt/apache-jena" ]; then
+    mkdir -p $ENV/opt
+    VER=4.9.0
+    wget -nv https://archive.apache.org/dist/jena/binaries/apache-jena-$VER.tar.gz \
+      && tar -zxvf apache-jena-$VER.tar.gz \
+      && mv apache-jena-$VER $ENV/opt/apache-jena;
+    ln -s ../opt/apache-jena/bin/riot $ENV/bin/riot
+    rm -f apache-jena-$VER.tar.gz
+  fi
+
   # Install OWL CLI (for pretty turtle)
   if [ ! -e "$ENV/bin/owl-cli" ]; then
     if [ $machine == "Mac" ]; then
