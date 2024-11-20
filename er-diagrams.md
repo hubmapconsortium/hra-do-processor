@@ -762,6 +762,7 @@ Named {
     string label  
 }
 SpatialPlacement {
+    uriorcurie target  
     float x_scaling  
     float y_scaling  
     float z_scaling  
@@ -819,7 +820,6 @@ SpatialEntity ||--|o SpatialObjectReference : "object_reference"
 SpatialEntity ||--}o SpatialPlacement : "placements"
 SpatialEntity ||--}o Named : "type_of"
 SpatialPlacement ||--|o SpatialEntity : "source"
-SpatialPlacement ||--|| SpatialEntity : "target"
 SpatialPlacement ||--}o Named : "type_of"
 SpatialObjectReference ||--|| SpatialPlacement : "placement"
 SpatialObjectReference ||--}o Named : "type_of"
@@ -965,6 +965,7 @@ ExtractionSet {
     string label  
 }
 SpatialPlacement {
+    uriorcurie target  
     date placement_date  
     float x_scaling  
     float y_scaling  
@@ -1021,7 +1022,6 @@ SpatialEntity ||--|o ExtractionSet : "extraction_set"
 SpatialEntity ||--}o Named : "type_of"
 ExtractionSet ||--|| SpatialEntity : "extraction_set_for"
 ExtractionSet ||--}o Named : "type_of"
-SpatialPlacement ||--|| SpatialEntity : "target"
 SpatialPlacement ||--|o SpatialEntity : "source"
 SpatialPlacement ||--}o Named : "type_of"
 SpatialObjectReference ||--|| SpatialPlacement : "placement"
