@@ -14,7 +14,7 @@ import {
   isCtIdValid,
   isIdValid,
   normalizeDoi,
-  normalizeString
+  normalizeString,
 } from './patches.js';
 import { normalizeMetadata, readMetadata, writeNormalizedData, writeNormalizedMetadata } from './utils.js';
 
@@ -39,8 +39,9 @@ export async function getRawData(context) {
   if (dataUrl.startsWith('http')) {
     csvData = await fetch(dataUrl).then((r) => r.text());
   } else {
-    csvData = readFileSync(resolve(path, 'raw', dataUrl)).toString();
+    csvData = readFileSync(resolve(path, 'raw', dataUrl), 'utf8').toString();
   }
+  csvData = csvData.replace(/\uFFFD/g, ' '); // Remove bad unicode character
   const csvRows = Papa.parse(csvData, { skipEmptyLines: 'greedy' }).data;
   const data = makeASCTBData(csvRows);
   info(`Reading data: ${dataUrl}`);
@@ -69,7 +70,7 @@ function normalizeData(context, data) {
     cell_types: normalizeCtData(context, data),
     biomarkers: normalizeBmData(context, data),
     asctb_record: normalizeAsctbRecord(context, data),
-    cell_marker_descriptor: normalizeCellMarkerDescriptor(context, data)
+    cell_marker_descriptor: normalizeCellMarkerDescriptor(context, data),
   };
 }
 
@@ -145,7 +146,7 @@ function normalizeCtData(context, data) {
       .filter((id) => passCtIdFilterCriteria(context, id));
     // Each CT will be associated with all AS via the ccf_located_in relationship
     valid_ct.forEach((ct) => {
-      valid_as.forEach((as) => addLocatedIn(collector, ct, as))
+      valid_as.forEach((as) => addLocatedIn(collector, ct, as));
     });
 
     // Add has_biomarker relationship between CT and BM
@@ -155,11 +156,10 @@ function normalizeCtData(context, data) {
       .filter((id) => passIdFilterCriteria(context, id));
 
     // Get the references
-    const references = row.references
-      .map((ref) => {
-        const refString = checkNotEmpty(ref.id) ? ref.id : "N/A";
-        return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
-      });
+    const references = row.references.map((ref) => {
+      const refString = checkNotEmpty(ref.id) ? ref.id : 'N/A';
+      return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
+    });
 
     // Get the last cell type as the primary cell
     const last_ct = valid_ct.pop();
@@ -265,7 +265,7 @@ function normalizeBm(collector, { id: bm_id, name: bm_name, b_type, is_provision
 }
 
 function normalizeAsctbRecord(context, data) {
-  const { name: doName } = context.selectedDigitalObject
+  const { name: doName } = context.selectedDigitalObject;
   return data.reduce((collector, row, index) => {
     // Determine record number
     const recordNumber = index + 1;
@@ -286,11 +286,10 @@ function normalizeAsctbRecord(context, data) {
       .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept));
 
     // Populate all valid references
-    const references = row.references
-      .map((ref) => {
-        const refString = checkNotEmpty(ref.id) ? ref.id : "N/A";
-        return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
-      });
+    const references = row.references.map((ref) => {
+      const refString = checkNotEmpty(ref.id) ? ref.id : 'N/A';
+      return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
+    });
 
     // Collect all the items
     collector.push({
@@ -305,7 +304,7 @@ function normalizeAsctbRecord(context, data) {
       lipid_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.BL),
       metabolites_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.BM),
       proteoforms_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.BF),
-      references: references
+      references: references,
     });
     return collector;
   }, []);
@@ -328,7 +327,7 @@ function normalizeCellMarkerDescriptor(context, data) {
       .filter(({ id, name }) => checkNotEmpty(id) || checkNotEmpty(name))
       .map(({ id, name }) => ({
         id: generateIdWhenEmpty(id, name),
-        name: normalizeString(name)
+        name: normalizeString(name),
       }))
       .filter(({ id }) => passCtIdFilterCriteria(context, id))
       .pop();
@@ -340,11 +339,10 @@ function normalizeCellMarkerDescriptor(context, data) {
       .filter((id) => passIdFilterCriteria(context, id));
 
     // Populate all valid references
-    const references = row.references
-      .map((ref) => {
-        const refString = checkNotEmpty(ref.id) ? ref.id : "N/A";
-        return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
-      });
+    const references = row.references.map((ref) => {
+      const refString = checkNotEmpty(ref.id) ? ref.id : 'N/A';
+      return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
+    });
 
     // Collect all the items if the components are complete.
     if (primaryAs && primaryCt && biomarkers) {
@@ -356,7 +354,7 @@ function normalizeCellMarkerDescriptor(context, data) {
         primary_anatomical_structure: primaryAs,
         biomarker_set: biomarkers,
         references: references,
-        source_record: generateAsctbRecordId(context, recordNumber)
+        source_record: generateAsctbRecordId(context, recordNumber),
       });
     }
     return collector;
@@ -364,10 +362,10 @@ function normalizeCellMarkerDescriptor(context, data) {
 }
 
 function generateAsInstance(context, recordNumber, data, index) {
-  const { name: doName } = context.selectedDigitalObject
+  const { name: doName } = context.selectedDigitalObject;
   const { id, name } = data;
   const asName = normalizeString(name);
-  const orderNumber = index + 1
+  const orderNumber = index + 1;
   return {
     id: generateAsInstanceId(context, recordNumber, orderNumber),
     label: `${asName} (Table ${doName}, Record ${recordNumber}, Column AS/${orderNumber})`,
@@ -375,15 +373,15 @@ function generateAsInstance(context, recordNumber, data, index) {
     ccf_pref_label: asName,
     source_concept: generateIdWhenEmpty(id, asName),
     record_number: recordNumber,
-    order_number: orderNumber
-  }
+    order_number: orderNumber,
+  };
 }
 
 function generateCtInstance(context, recordNumber, data, index) {
-  const { name: doName } = context.selectedDigitalObject
+  const { name: doName } = context.selectedDigitalObject;
   const { id, name } = data;
   const ctName = normalizeString(name);
-  const orderNumber = index + 1
+  const orderNumber = index + 1;
   return {
     id: generateCtInstanceId(context, recordNumber, orderNumber),
     label: `${ctName} (Table ${doName}, Record ${recordNumber}, Column CT/${orderNumber})`,
@@ -391,15 +389,15 @@ function generateCtInstance(context, recordNumber, data, index) {
     ccf_pref_label: ctName,
     source_concept: generateIdWhenEmpty(id, ctName),
     record_number: recordNumber,
-    order_number: orderNumber
-  }
+    order_number: orderNumber,
+  };
 }
 
 function generateBmInstance(context, recordNumber, data, index) {
-  const { name: doName } = context.selectedDigitalObject
+  const { name: doName } = context.selectedDigitalObject;
   const { id, name, b_type } = data;
   const bmName = normalizeString(name);
-  const orderNumber = index + 1
+  const orderNumber = index + 1;
   return {
     id: generateBmInstanceId(context, recordNumber, orderNumber),
     label: `${bmName} (Table ${doName}, Record ${recordNumber}, Column BM/${orderNumber})`,
@@ -408,8 +406,8 @@ function generateBmInstance(context, recordNumber, data, index) {
     ccf_biomarker_type: b_type,
     source_concept: generateIdWhenEmpty(id, bmName),
     record_number: recordNumber,
-    order_number: orderNumber
-  }
+    order_number: orderNumber,
+  };
 }
 
 function generateAsctbRecordId(context, recordNumber) {
