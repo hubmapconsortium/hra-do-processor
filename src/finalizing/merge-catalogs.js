@@ -1,7 +1,6 @@
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { mergeTurtles } from '../utils/blazegraph.js';
-import { reifyTurtle } from '../utils/reify.js';
+import { mergeTurtles, reifyTurtle } from '../utils/reify.js';
 
 export function mergeCatalogs(context) {
   const graphs = listMetadataGraphs(context);

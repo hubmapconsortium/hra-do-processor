@@ -72,10 +72,15 @@ export function reifyTurtle(inputPath, graphName, jsonldIsJson = false) {
 export function convert(inputPath, outputPath, outputFormat, graphName) {
   let command = `riot --merge --nocheck --output=${outputFormat} "${inputPath}"`;
   if (isJsonLd(inputPath)) {
-    command = `cat "${inputPath}" | jsonld toRdf -q | riot --merge --nocheck --output=turtle`
+    command = `cat "${inputPath}" | jsonld toRdf -q | riot --merge --nocheck --output=turtle`;
   }
   if (graphName && outputFormat === FORMATS.nq) {
     command += ` | perl -pe 's|\ \.\n|\ <${graphName}> .\n|g'`;
   }
   throwOnError(`${command} > ${outputPath}`, `Failed to convert to '${outputFormat}' format.`);
+}
+
+export function mergeTurtles(outputPath, _prefixesPath, ontologyPaths) {
+  const inputFiles = ontologyPaths.join(' ');
+  throwOnError(`riot --merge --nocheck --output=turtle ${inputFiles} > ${outputPath}`, `${inputFiles} failed to load`);
 }
