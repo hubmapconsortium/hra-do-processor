@@ -70,9 +70,9 @@ export function reifyTurtle(inputPath, graphName, jsonldIsJson = false) {
 }
 
 export function convert(inputPath, outputPath, outputFormat, graphName) {
-  let command = `riot --merge --output=${outputFormat} "${inputPath}"`;
+  let command = `riot --merge --nocheck --output=${outputFormat} "${inputPath}"`;
   if (isJsonLd(inputPath)) {
-    command = `cat "${inputPath}" | jsonld toRdf -q | riot --merge --output=turtle`
+    command = `cat "${inputPath}" | jsonld toRdf -q | riot --merge --nocheck --output=turtle`
   }
   if (graphName && outputFormat === FORMATS.nq) {
     command += ` | perl -pe 's|\ \.\n|\ <${graphName}> .\n|g'`;
