@@ -12,7 +12,9 @@ imports:
   - ../shared/metadata-base
 
 classes:
-  BasicMetadata:
+  VocabMetadata:
+    title: Vocabulary Metadata
+    description: The metadata section for the "vocab" digital object.
     class_uri: dcat:Dataset
     slots:
       - title
@@ -31,7 +33,7 @@ classes:
       iri:
         range: uriorcurie
       metadata:
-        range: BasicMetadata
+        range: VocabMetadata
       data:
         required: true
         multivalued: true

@@ -13,6 +13,8 @@ imports:
 
 classes:
   BasicMetadata:
+    title: Basic Metadata
+    description: The metadata section for the "basic" digital object.
     class_uri: dcat:Dataset
     slots:
       - title

@@ -17,6 +17,12 @@ imports:
 
 classes:
   Donor:
+    title: Donor
+    description: >-
+      A donor refers to an individual from whom biological samples or 
+      data are obtained for research, with associated information 
+      including age, BMI, sex, race, the providers supplying the sample, 
+      and the consortium responsible for its collection.
     class_uri: ccf:Donor
     mixins:
       - Named

@@ -17,6 +17,13 @@ imports:
 
 classes:
   TissueBlock:
+    title: Tissue Block
+    description: >-
+      A tissue block is a defined piece of tissue extracted from a 
+      specific location for research or analysis, with detailed 
+      information about its extraction site, tissue sections, 
+      associated datasets, section counts and sizes, and collision 
+      summaries related to spatial overlaps.
     class_uri: ccf:TissueBlock
     mixins:
       - Named
@@ -45,6 +52,11 @@ classes:
             {% endfor %}
 
   TissueSection:
+    title: Tissue Section
+    description: >-
+      A tissue section is a thin slice or layer derived from a tissue block, 
+      associated with a specific section number, and linked to datasets 
+      generated from its analysis. 
     class_uri: ccf:TissueSection
     mixins:
       - Named

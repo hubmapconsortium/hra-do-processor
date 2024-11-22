@@ -12,7 +12,9 @@ imports:
   - ../shared/metadata-base
 
 classes:
-  BasicMetadata:
+  GraphMetadata:
+    title: Graph Metadata
+    description: The metadata section for the "graph" digital object.
     class_uri: dcat:Dataset
     slots:
       - title
@@ -31,7 +33,7 @@ classes:
       iri:
         range: uriorcurie
       metadata:
-        range: BasicMetadata
+        range: GraphMetadata
       data:
         required: true
         multivalued: true

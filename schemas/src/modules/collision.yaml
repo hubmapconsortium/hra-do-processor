@@ -17,6 +17,11 @@ imports:
 
 classes:
   CollisionSummary:
+    title: Collision Summary
+    description: >-
+      A collision summary provides an overview of detected collisions, 
+      including the method used for collision detection and details 
+      about the specific collision items identified.
     class_uri: ccf:CollisionSummary
     mixins:
       - Named
@@ -26,6 +31,12 @@ classes:
       - collision_items
   
   CollisionItem:
+    title: Collision Item
+    description: >-
+      A collision item is a detailed record of a spatial overlap, including 
+      information about the spatial entity involved, the volume of the 
+      collision, and the percentage of overlap relative to the entity's 
+      total volume.
     class_uri: ccf:CollisionItem
     mixins:
       - Named
