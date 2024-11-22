@@ -28,7 +28,7 @@ for genSchemaFile in schemas/generated/linkml/*.yaml; do
 
   # Generate JSON Schema for validation
   mkdir -p schemas/generated/json-schema
-  gen-json-schema $genSchemaFile > schemas/generated/json-schema/${type}.schema.json
+  gen-json-schema --title-from title $genSchemaFile > schemas/generated/json-schema/${type}.schema.json
 
   # Generate JSON-LD Context
   mkdir -p schemas/generated/json-ld
