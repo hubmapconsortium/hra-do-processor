@@ -719,7 +719,7 @@ Container {
     uriorcurie iri  
     stringList data  
 }
-BasicMetadata {
+GraphMetadata {
     string title  
     string description  
     uriorcurieList created_by  
@@ -731,7 +731,7 @@ BasicMetadata {
     uriorcurie derived_from  
 }
 
-Container ||--|o BasicMetadata : "metadata"
+Container ||--|o GraphMetadata : "metadata"
 
 ```
 
@@ -1209,7 +1209,7 @@ Container {
     uriorcurie iri  
     stringList data  
 }
-BasicMetadata {
+VocabMetadata {
     string title  
     string description  
     uriorcurieList created_by  
@@ -1221,7 +1221,7 @@ BasicMetadata {
     uriorcurie derived_from  
 }
 
-Container ||--|o BasicMetadata : "metadata"
+Container ||--|o VocabMetadata : "metadata"
 
 ```
 
