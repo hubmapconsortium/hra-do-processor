@@ -45,6 +45,11 @@ classes:
 
   AnatomicalStructure:
     is_a: AsctbConcept
+    title: Anatomical Structure
+    description: >-
+      An anatomical structure is a distinct biological entity, such as 
+      an organ or tissue with a defined form and function within an 
+      organism.
     slots:
       - ccf_part_of
     slot_usage:
@@ -58,6 +63,11 @@ classes:
 
   CellType:
     is_a: AsctbConcept
+    title: Cell Type
+    description: >-
+      A cell type is a distinct classification of cells defined by 
+      specific structural, functional, and molecular characteristics 
+      within an organism.
     slots:
       - ccf_ct_isa
       - ccf_located_in
@@ -91,6 +101,11 @@ classes:
 
   Biomarker:
     is_a: AsctbConcept
+    title: Biomarker
+    description: >-
+      A biomarker is a specific molecule or feature, such as a gene, 
+      protein, or surface marker, that uniquely identifies or 
+      distinguishes a particular cell type.
     slots:
       - ccf_biomarker_type
     slot_usage:
@@ -103,6 +118,10 @@ classes:
       owl: Class
 
   CharacterizingMarkerSet:
+    title: Characterizing Marker Set
+    description: >-
+      A characterizing marker set is a group of biomarkers used collectively 
+      to define and distinguish a specific cell type or state.
     slots:
       - members
       - references
@@ -111,6 +130,11 @@ classes:
         range: string
 
   AsctbRecord:
+    title: ASCT+B Record
+    description: >-
+      An ASCT+B record is a single row in the ASCT+B table that documents 
+      anatomical structures (AS), cell types (CT), and biomarkers (B), 
+      providing a structured representation of their relationships.
     mixins:
       - Named
       - Instance
@@ -131,6 +155,11 @@ classes:
           owl: AnnotationAssertion, AnnotationProperty
 
   AnatomicalStructureRecord:
+    title: Anatomical Structure Record
+    description: >-
+      An anatomical structure record represents a specific value 
+      in the ASCT+B table, located in the "AS" column, identified 
+      by its row (record number) and column (order number).
     mixins:
       - Named
       - Instance
@@ -141,6 +170,11 @@ classes:
       - order_number
 
   CellTypeRecord:
+    title: Cell Type Record
+    description: >-
+      An cell type record represents a specific value in the ASCT+B table, 
+      located in the "CT" column, identified by its row (record number) 
+      and column (order number).
     mixins:
       - Named
       - Instance
@@ -151,6 +185,11 @@ classes:
       - order_number
 
   BiomarkerRecord:
+    title: Biomarker Record
+    description: >-
+      An biomarker record represents a specific value in the ASCT+B table, 
+      located in the "B" column, identified by its row (record number) and 
+      column (order number).
     mixins:
       - Named
       - Instance
@@ -162,6 +201,11 @@ classes:
       - order_number
 
   CellMarkerDescriptor:
+    title: Cell Marker Descriptor
+    description: >-
+      A cell marker descriptor is study-derived information about a set 
+      of biomarkers used to identify a specific cell type within a particular 
+      tissue location, supported by associated scientific references.
     mixins:
       - Named
       - Instance
@@ -178,6 +222,8 @@ classes:
           owl: AnnotationAssertion, AnnotationProperty
 
   AsctbDataset:
+    title: ASCT+B Data
+    description: The data section for the "asct-b" digital object.
     slots:
       - anatomical_structures
       - cell_types
@@ -186,6 +232,8 @@ classes:
       - cell_marker_descriptor
 
   AsctbMetadata:
+    title: ASCT+B Metadata
+    description: The metadata section for the "asct-b" digital object.
     class_uri: dcat:Dataset
     slots:
       - title
@@ -226,13 +274,13 @@ classes:
 slots:
   anatomical_structures:
     title: anatomical structure data
-    description: List of anatomical structures referenced in the ASCT-B records.
+    description: List of anatomical structures referenced in the ASCT+B records.
     multivalued: true
     inlined_as_list: true
     range: AnatomicalStructure
   cell_types:
     title: cell type data
-    description: List of cell types referenced in the ASCT-B records.
+    description: List of cell types referenced in the ASCT+B records.
     multivalued: true
     inlined_as_list: true
     range: CellType
@@ -240,19 +288,19 @@ slots:
     title: biomarker data
     description: >-
       List of biomarkers (i.e., gene, protein, lipid, metabolites, proteoforms) 
-      referenced in the ASCT-B records.
+      referenced in the ASCT+B records.
     multivalued: true
     inlined_as_list: true
     range: Biomarker
   asctb_record:
     title: ASCT+B record
-    description: Records containing ASCT-B concepts and related data.
+    description: Records containing ASCT+B concepts and related data.
     multivalued: true
     inlined_as_list: true
     range: AsctbRecord
   cell_marker_descriptor:
     title: cell marker descriptor
-    description: Descriptors for cell markers within the ASCT-B dataset.
+    description: Descriptors for cell markers within the ASCT+B dataset.
     multivalued: true
     inlined_as_list: true
     range: CellMarkerDescriptor
@@ -271,12 +319,13 @@ slots:
     range: CharacterizingMarkerSet
     multivalued: true
   id:
-    title:
-    description: Unique identifier for ASCT-B concepts.
+    title: concept identifier
+    description: Unique identifier for ASCT+B concepts.
     required: true
     range: uriorcurie
     identifier: true
   label:
+    title: label
     description: Human-readable label or name for the concept.
     required: false
     slot_uri: rdfs:label
@@ -333,7 +382,7 @@ slots:
       owl: AnnotationAssertion, AnnotationProperty
   ccf_biomarker_type:
     title: biomarker type
-    description: Type of biomarker as per the ASCT-B specification.
+    description: Type of biomarker as per the ASCT+B specification.
     required: true
     slot_uri: ccf:ccf_biomarker_type
     annotations:
@@ -342,7 +391,7 @@ slots:
     title: source concept
     description: >-
       Source concept providing the origin of this record within the 
-      ASCT-B model.
+      ASCT+B model.
     required: true
     slot_uri: ccf:source_concept
     range: AsctbConcept
@@ -426,7 +475,7 @@ slots:
       owl: AnnotationAssertion, AnnotationProperty
   proteoforms_marker_list:
     title: proteoform marker
-    description: List of proteoforms markers referenced within ASCT-B records.
+    description: List of proteoforms markers referenced within ASCT+B records.
     required: false
     multivalued: true
     inlined_as_list: true

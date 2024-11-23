@@ -13,6 +13,8 @@ imports:
 
 classes:
   CollectionMetadata:
+    title: Collection Metadata
+    description: The metadata section for the "collection" digital object.
     class_uri: dcat:Dataset
     slots:
       - title

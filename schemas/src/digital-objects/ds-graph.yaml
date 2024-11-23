@@ -24,6 +24,8 @@ imports:
 
 classes:
   DatasetGraphData:
+    title: Dataset Graph Data
+    description: The data section for the "ds-graph" digital object.
     slots:
       - donor
       - sample
@@ -34,6 +36,8 @@ classes:
       - corridor
 
   DatasetGraphMetadata:
+    title: Dataset Graph Metadata
+    description: The metadadata section for the "ds-graph" digital object.
     class_uri: dcat:Dataset
     slots:
       - title

@@ -17,6 +17,12 @@ imports:
 
 classes:
   Corridor:
+    title: Corridor
+    description: >-
+      A corridor is a spatial data representation or model, often used 
+      to describe pathways or regions of interest in a given space. 
+      It includes details about the file format and the file URL for 
+      accessing the data.
     class_uri: ccf:Corridor
     mixins:
       - Named

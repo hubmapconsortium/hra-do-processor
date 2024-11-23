@@ -17,6 +17,12 @@ imports:
 
 classes:
   CellSummary:
+    title: Cell Summary
+    description: >-
+      A cell summary is a detailed overview of cell-related data, including 
+      the annotation method used, summary rows with cell types and their 
+      counts, the modality (e.g., scRNA-seq), aggregated summaries of 
+      findings, and contextual information such as the donor tissue's sex.
     class_uri: ccf:CellSummary
     mixins:
       - Named
@@ -29,6 +35,12 @@ classes:
       - summary_rows
   
   CellSummaryRow:
+    title: Cell Summary Row
+    description: >-
+      A cell summary row is a single entry in a cell summary table that 
+      provides information about a specific cell type, including its name, 
+      count, and any related attributes such as tissue, modality, or donor 
+      characteristics.
     class_uri: ccf:CellSummaryRow
     mixins:
       - Named
@@ -41,6 +53,12 @@ classes:
       - percentage
 
   GeneExpression:
+    title: Gene Expression
+    description: >-
+      Gene expression refers to data that captures the activity levels of 
+      specific genes within a summarized cell population, including details 
+      like gene ID, label, Ensembl ID, and the mean expression value across 
+      the cells.
     class_uri: ccf:GeneExpression
     mixins:
      - Named

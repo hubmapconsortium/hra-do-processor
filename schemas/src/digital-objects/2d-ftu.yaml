@@ -22,6 +22,11 @@ settings:
 
 classes:
   FtuIllustration:
+    title: FTU Illustration
+    description: >-
+      A two-dimensional illustration of an organ's functional tissue 
+      unit, featuring image assets and labeled nodes that highlight 
+      the constituent cell types.
     class_uri: ccf:FtuIllustration
     mixins:
       - Named
@@ -38,6 +43,8 @@ classes:
           partial_match: false
 
   FtuIllustrationFile:
+    title: FTU Illustration File
+    description: An image file that shows the functional tissue unit.
     class_uri: ccf:ImageFile
     mixins:
       - Named
@@ -47,6 +54,11 @@ classes:
       - file_format
 
   FtuIllustrationNode:
+    title: FTU Illustration Node
+    description: >-
+      A section of the illustration image representing a highlighted 
+      cell type, annotated with the corresponding Cell Ontology ID 
+      using the type_of relationship.
     class_uri: ccf:FtuIllustrationNode
     mixins:
       - Named
@@ -56,6 +68,8 @@ classes:
       - part_of_illustration
 
   FtuMetadata:
+    title: FTU Metadata
+    description: The metadata section for the "2d-ftu"" digital object.
     class_uri: dcat:Dataset
     slots:
       - title

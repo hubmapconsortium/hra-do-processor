@@ -17,6 +17,13 @@ imports:
 
 classes:
   AssayDataset:
+    title: Assay Dataset
+    description: >-
+      An assay dataset is a collection of data generated from a specific 
+      experimental assay, providing details about the description of 
+      the dataset, the technology or methodology used, and the 
+      associated cell summaries that outline the analyzed cell types a
+      nd their attributes.
     class_uri: ccf:Dataset
     mixins:
       - Named

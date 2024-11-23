@@ -23,6 +23,11 @@ settings:
 
 classes:
   SpatialEntity:
+    title: Spatial Entity
+    description: >-
+      A spatial entity is a defined object or structure with a specific 
+      location, boundary, and orientation in physical or conceptual 
+      space, such as an organ, tissue, or cell in anatomical studies.
     class_uri: ccf:SpatialEntity
     mixins:
       - Named
@@ -43,6 +48,11 @@ classes:
         pattern: (centimeter|millimeter)
 
   SpatialPlacement:
+    title: Spatial Placement
+    description: >-
+      Spatial placement refers to the positioning and orientation of 
+      an entity within a defined space or context, often describing 
+      its location relative to other entities or a coordinate system.
     class_uri: ccf:SpatialPlacement
     mixins:
       - Named
@@ -74,6 +84,11 @@ classes:
         pattern: (centimeter|millimeter)
 
   ExtractionSet:
+    title: Extraction Set
+    description: >-
+      An extraction set is a curated collection of specific data or 
+      items extracted from a specific source, often  based on specific 
+      locations or features, for targeted analysis or integration.
     class_uri: ccf:ExtractionSet
     mixins:
       - Named
@@ -84,11 +99,15 @@ classes:
       - rui_rank
 
   LandmarkData:
+    title: Landmark Data
+    description: The data section for the "landmark" digital object.
     slots:
       - landmarks
       - spatial_entities
 
   LandmarkMetadata:
+    title: Landmark Metadata
+    description: The metadata section for the "landmark" digital object.
     class_uri: dcat:Dataset
     slots:
       - title
