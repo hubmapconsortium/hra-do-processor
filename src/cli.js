@@ -135,6 +135,8 @@ program
 program
   .command('create-db')
   .description('Create a blazegraph database from select digital objects')
+  .option('--include-all-versions', 'Include all versions of all digital objects when building', false)
+  .option('--journal <journal>', 'override journal output path')
   .action((_options, command) => {
     createDb(getContext(program, command));
   });

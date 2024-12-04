@@ -10,12 +10,14 @@ import { getDeployedDigitalObjects, getRedundantGraph } from './utils.js';
  */
 export function buildBlazegraphJournal(context) {
   const digitalObjects = getDeployedDigitalObjects(context, false);
-  const journal = resolve(context.deploymentHome, 'blazegraph.jnl');
+  const journal = context.journal ?? resolve(context.deploymentHome, 'blazegraph.jnl');
   sh.rm('-f', journal);
 
   let sparqlUpdate = '';
 
-  const digitalObjectsToDeploy = digitalObjects.filter((o) => o.version === 'latest' || o.version === 'draft');
+  const digitalObjectsToDeploy = digitalObjects.filter(
+    (o) => context.includeAllVersions || o.version === 'latest' || o.version === 'draft'
+  );
 
   for (const obj of digitalObjectsToDeploy) {
     let doString = obj.doString;
