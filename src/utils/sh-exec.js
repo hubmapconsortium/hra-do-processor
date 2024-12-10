@@ -6,10 +6,10 @@ import { error, more } from './logging.js';
 export function exec(command) {
   const response = sh.exec(command);
   const { stdout, code } = response;
-  return (code === 1) ? null : stdout.trim();
+  return code === 1 ? null : stdout.trim();
 }
 
-export function throwOnError(command, message, errorParser=defaultParser) {
+export function throwOnError(command, message, errorParser = defaultParser) {
   const response = sh.exec(command);
   const { stdout, stderr, code } = response;
   const success = code !== 1;
@@ -24,11 +24,11 @@ export function throwOnError(command, message, errorParser=defaultParser) {
         errorMessage = errorParser(stdout);
       }
     }
-    throw new Error(errorMessage);
+    throw new Error(`"${command}" had an error: ${errorMessage}`);
   }
 }
 
-export function logOnError(command, message, { errorFile, errorParser=defaultParser }) {
+export function logOnError(command, message, { errorFile, errorParser = defaultParser }) {
   const response = sh.exec(command, { silent: true });
   const { stdout, stderr, code } = response;
   const success = code !== 1;
