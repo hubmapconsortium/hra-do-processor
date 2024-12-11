@@ -220,7 +220,7 @@ export function getPatchesForAnatomicalStructure(context) {
   } else if (organName === 'ovary') {
     organSpecificPatches = [
       {
-        id: 'FMA:7214',
+        id: 'UBERON:0002119',
         conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'left ovary',
         ccf_asctb_type: 'AS',
@@ -228,7 +228,7 @@ export function getPatchesForAnatomicalStructure(context) {
         ccf_part_of: ['UBERON:0000992'],
       },
       {
-        id: 'FMA:7213',
+        id: 'UBERON:0002118',
         conforms_to: 'AnatomicalStructure',
         ccf_pref_label: 'right ovary',
         ccf_asctb_type: 'AS',
