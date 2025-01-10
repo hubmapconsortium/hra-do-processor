@@ -37,7 +37,7 @@ function sortVersions(versions) {
 
 function createListing(context, path, items, itemType) {
   const iri = `${context.lodIri}${path ? path + '/' : path}`;
-  const noSlashIri = `${context.lodIri}${path ? path + '/' : path}`;
+  const noSlashIri = `${context.lodIri}${path ? path : path}`;
   const lodIri = context.lodIri;
   writeIndexHtml(context, path, { iri, items, itemType, lodIri, noSlashIri });
   reifyCatalog(context, iri, path);
