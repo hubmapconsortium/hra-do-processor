@@ -22,15 +22,24 @@ export function createCatalogs(context) {
 
     for (const doName of doNames.sort()) {
       const versions = catalog[doType][doName];
-      createListing(context, `${doType}/${doName}`, versions, 'Dataset');
+      createListing(context, `${doType}/${doName}`, sortVersions(versions), 'Dataset');
     }
   }
 }
 
+function sortVersions(versions) {
+  return [
+    versions.find((n) => n === 'latest'),
+    versions.find((n) => n === 'draft'),
+    ...versions.filter((n) => n !== 'latest' && n !== 'draft'),
+  ].filter((n) => !!n);
+}
+
 function createListing(context, path, items, itemType) {
   const iri = `${context.lodIri}${path ? path + '/' : path}`;
+  const noSlashIri = `${context.lodIri}${path ? path + '/' : path}`;
   const lodIri = context.lodIri;
-  writeIndexHtml(context, path, { iri, items, itemType, lodIri });
+  writeIndexHtml(context, path, { iri, items, itemType, lodIri, noSlashIri });
   reifyCatalog(context, iri, path);
 }
 

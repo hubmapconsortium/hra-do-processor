@@ -41,13 +41,13 @@
 
 <h3 id="raw-data">Source Data</h3>
 
-**Title:** 
+**Title:**
 {{ was_derived_from.title }}
 
 **Description:**
 {{ was_derived_from.description }}
 
-**Creator(s):** 
+**Creator(s):**
 {% for person in was_derived_from.creators %}
 * [{{ person.fullName }}]({{ person.id }})
 {% endfor %}
@@ -57,7 +57,7 @@
 * [{{ person.fullName }}]({{ person.id }})
 {% endfor %}
 
-**Reviewer(s):** 
+**Reviewer(s):**
 {% for person in was_derived_from.reviewers %}
 * [{{ person.fullName }}]({{ person.id }})
 {% endfor %}
