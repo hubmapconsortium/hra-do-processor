@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { dump, load } from 'js-yaml';
 import { resolve } from 'path';
+import { update2dFtuCrosswalk } from './update-2d-ftu-crosswalk.js';
 import { updateRefOrganCrosswalk } from './update-ref-organ-crosswalk.js';
 import { getDigitalObjectInformation } from './utils/digital-object.js';
 import { getLatestDigitalObject } from './utils/get-latest.js';
@@ -17,6 +18,19 @@ export async function updateCollection(context) {
   });
 
   writeFileSync(doListing, dump({ 'digital-objects': updated }));
+
+  // Update all reference organ crosswalk files
+  const ftuCrosswalk = updated.find((d) => d.startsWith('2d-ftu/asct-b-2d-models-crosswalk'));
+  const ftuIllustrations = updated.filter((d) => d !== ftuCrosswalk && d.startsWith('2d-ftu/'));
+
+  for (const ftu of ftuIllustrations) {
+    console.log(`Updating crosswalk for ${ftu} using ${ftuCrosswalk}`);
+    update2dFtuCrosswalk({
+      ...context,
+      selectedDigitalObject: getDigitalObjectInformation(resolve(context.doHome, ftu), context.purlIri),
+      crosswalk: ftuCrosswalk,
+    });
+  }
 
   // Update all reference organ crosswalk files
   const refOrganCrosswalk = updated.find((d) => d.startsWith('ref-organ/asct-b-3d-models-crosswalk'));

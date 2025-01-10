@@ -19,6 +19,7 @@ import { updateCollection } from './update-collection.js';
 import { updateRefOrganCrosswalk } from './update-ref-organ-crosswalk.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
 import { error } from './utils/logging.js';
+import { update2dFtuCrosswalk } from './update-2d-ftu-crosswalk.js';
 
 const program = new Command();
 
@@ -77,9 +78,18 @@ program
   });
 
 program
+  .command('update-2d-ftu-crosswalk')
+  .description("Update a 2d-ftu's individual crosswalk file with information from the collated version.")
+  .argument('<digital-object-path>', 'Path to the 2d-ftu digital object relative to DO_HOME')
+  .option('-C, --crosswalk <crosswalk-path>', 'Path to the crosswalk digital object relative to DO_HOME')
+  .action((str, _options, command) => {
+    update2dFtuCrosswalk(getContext(program, command, str));
+  });
+
+program
   .command('update-ref-organ-crosswalk')
   .description("Update a reference organ's individual crosswalk file with information from the collated version.")
-  .argument('<ref-organ-path>', 'Path to the reference organ digital object relative to DO_HOME')
+  .argument('<digital-object-path>', 'Path to the reference organ digital object relative to DO_HOME')
   .option('-C, --crosswalk <crosswalk-path>', 'Path to the crosswalk digital object relative to DO_HOME')
   .action((str, _options, command) => {
     updateRefOrganCrosswalk(getContext(program, command, str));
