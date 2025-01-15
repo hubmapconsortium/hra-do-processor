@@ -70,6 +70,26 @@ classes:
       - section_number
       - links_back_to
 
+  SpatialEntityID:
+    title: Spatial Entity Identifier
+    slots:
+      - id
+
+  CollisionSummaryID:
+    title: Collision Summary Identifier
+    slots:
+      - id
+
+  CorridorID:
+    title: Corridor Identifier
+    slots:
+      - id
+
+  SampleOrDonorID:
+    title: Sample or Donor Identifier
+    slots:
+      - id
+
   SampleData:
     attributes:
       donor:
@@ -131,7 +151,7 @@ slots:
       the reference atlas.
     slot_uri: ccf:has_registration_location
     required: false
-    range: uriorcurie
+    range: SpatialEntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   extraction_site:
@@ -140,7 +160,7 @@ slots:
       Reference to the anatomical site from which the tissue was extracted.
     slot_uri: ccf:has_extraction_site
     required: false
-    range: uriorcurie
+    range: SpatialEntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   sections:
@@ -195,7 +215,7 @@ slots:
     slot_uri: ccf:has_collision_summary
     required: false
     multivalued: true
-    range: uriorcurie
+    range: CollisionSummaryID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   corridors:
@@ -206,7 +226,7 @@ slots:
     slot_uri: ccf:has_corridor
     required: false
     multivalued: true
-    range: uriorcurie
+    range: CorridorID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   links_back_to:
@@ -214,7 +234,7 @@ slots:
     description: >-
       URI that links back to a related resource as a reference connection.
     required: false
-    range: uriorcurie
+    range: SampleOrDonorID
     annotations:
       owl: ObjectProperty, ObjectPropertyAssertion
       owl.template: |-

@@ -35,12 +35,6 @@ classes:
       - located_in
       - image_file
       - illustration_node
-    slot_usage:
-      located_in:
-        structured_pattern:
-          syntax: "({uberon}|{fma}):\\d+"
-          interpolated: true
-          partial_match: false
 
   FtuIllustrationFile:
     title: FTU Illustration File
@@ -66,6 +60,17 @@ classes:
     slots:
       - node_name
       - part_of_illustration
+
+  AnatomicalStructureID:
+    title: Anatomical Structure Identifier
+    slots:
+      - id
+    slot_usage:
+      id:
+        structured_pattern:
+          syntax: "({uberon}|{fma}):\\d+"
+          interpolated: true
+          partial_match: false
 
   FtuMetadata:
     title: FTU Metadata
@@ -113,7 +118,7 @@ slots:
     title: located in
     description: Specifies the anatomical location of a cell type.
     slot_uri: ccf:ccf_located_in
-    range: uriorcurie
+    range: AnatomicalStructureID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   image_file:

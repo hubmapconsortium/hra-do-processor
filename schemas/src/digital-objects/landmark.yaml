@@ -182,7 +182,7 @@ slots:
     title: extraction set
     description: Reference to an extraction set.
     required: true
-    range: uriorcurie
+    range: ExtractionSet
     inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -191,7 +191,7 @@ slots:
     description: >-
       Reference to the spatial entity associated with the extraction set.
     required: true
-    range: uriorcurie
+    range: SpatialEntity
     inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

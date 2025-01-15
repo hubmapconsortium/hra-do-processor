@@ -69,6 +69,11 @@ classes:
       race_id:
         pattern: (loinc:LA10608-0|loinc:LA6156-9|loinc:LA10610-6|loinc:LA10611-4|loinc:LA4457-3|loinc:LA4489-6)
 
+  SampleID:
+    title: Sample Identifier
+    slots:
+      - id
+
   DonorData:
     attributes:
       donor:
@@ -164,6 +169,6 @@ slots:
     slot_uri: ccf:provides
     multivalued: true
     inlined: false
-    range: uriorcurie
+    range: SampleID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

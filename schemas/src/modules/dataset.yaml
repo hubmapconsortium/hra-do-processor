@@ -36,6 +36,16 @@ classes:
       - thumbnail
       - cell_summaries
       - links_back_to
+
+  CellSummaryID:
+    title: Cell Summary Identifier
+    slots:
+      - id
+
+  SampleID:
+    title: Sample Identifier
+    slots:
+      - id
   
   AssayDatasetData:
     attributes:
@@ -92,7 +102,7 @@ slots:
     slot_uri: ccf:has_cell_summary
     required: false
     multivalued: true
-    range: uriorcurie
+    range: CellSummaryID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   links_back_to:
@@ -100,7 +110,7 @@ slots:
     description: >-
       URI that links back to a related resource as a reference connection.
     required: false
-    range: uriorcurie
+    range: SampleID
     annotations:
       owl: ObjectProperty, ObjectPropertyAssertion
       owl.template: |-
