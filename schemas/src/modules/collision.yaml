@@ -46,6 +46,11 @@ classes:
       - volume
       - percentage
 
+  SpatialEntityID:
+    title: Spatial Entity Identifier
+    slots:
+      - id
+
   CollisionData:
     attributes:
       donor:
@@ -132,7 +137,7 @@ slots:
     description: Reference to the spatial entity involved in the collision.
     slot_uri: ccf:has_spatial_entity
     required: true
-    range: uriorcurie
+    range: SpatialEntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   volume:

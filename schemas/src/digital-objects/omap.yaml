@@ -317,7 +317,7 @@ slots:
     title: is used by experiment
     description: References to the experiment where the antibody was used.
     required: true
-    range: uriorcurie
+    range: MultiplexedAntibodyBasedImagingExperiment
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   conjugate:
@@ -374,11 +374,11 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   has_cycle:
     title: has cycle
-    description: >- 
+    description: >-
       A reference to the experimental cycles within which the antibody
       was used.
     required: true
-    range: uriorcurie
+    range: ExperimentCycle
     multivalued: true
     inlined_as_list: false
     annotations:

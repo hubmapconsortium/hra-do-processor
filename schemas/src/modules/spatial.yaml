@@ -7,6 +7,9 @@ prefixes:
   linkml: https://w3id.org/linkml/
   RO: http://purl.obolibrary.org/obo/RO_
   IAO: http://purl.obolibrary.org/obo/IAO_
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  FMA: http://purl.org/sig/ont/fma/fma
+  ASCTB-TEMP: https://purl.org/ccf/ASCTB-TEMP_
 
 default_prefix: ccf
 default_range: string
@@ -14,6 +17,11 @@ default_range: string
 imports:
   - linkml:types
   - ../shared/metadata-base
+
+settings:
+  uberon: "UBERON"
+  fma: "FMA"
+  asctb_temp: "ASCTB-TEMP"
 
 classes:
   SpatialEntity:
@@ -96,6 +104,17 @@ classes:
       - file_format
       - placement
 
+  AnatomicalStructureID:
+    title: Anatomical Structure Identifier
+    slots:
+      - id
+    slot_usage:
+      id:
+        structured_pattern:
+          syntax: "({uberon}|{fma}):\\d+|{asctb_temp}[a-zA-Z0-9-]+"
+          interpolated: true
+          partial_match: false
+
   SpatialData:
     attributes:
       donor:
@@ -160,7 +179,7 @@ slots:
       Identifies other anatomical structures that intersect or collide with
       this spatial entity.
     multivalued: true
-    range: uriorcurie
+    range: AnatomicalStructureID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   slice_count:
@@ -197,7 +216,7 @@ slots:
     description: The spatial entity relative to which the placement is defined.
     slot_uri: ccf:placement_relative_to
     required: true
-    range: uriorcurie
+    range: SpatialEntity
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   source:
