@@ -126,7 +126,7 @@ function createTissueBlockObject(context, donor, block) {
     .append('section_count', block.section_count)
     .append('section_size', block.section_size)
     .append('section_size_unit', block.section_size_unit)
-    .append('collision_summaries', block.rui_location?.['all_collisions'].map((collision, index) => 
+    .append('collision_summaries', block.rui_location?.['all_collisions']?.map((collision, index) =>
       generateCollisionId(context, block, collision, index)).filter(onlyNonNull) || [])
     .append('corridors', getCorridorId(context, block))
     .append('links_back_to', checkDonorId(donor['@id']))
@@ -264,7 +264,7 @@ function normalizeCellSummaryData(context, data) {
   const sampleBlockCellSummaries = donors.map((donor) => {
     return donor['samples'].map((block) => {
       return block['datasets']?.map((dataset) => {
-        return dataset['summaries']?.map((summary, index) => 
+        return dataset['summaries']?.map((summary, index) =>
           createCellSummaryObject(context, dataset, summary, index))
       }).flat();
     }).flat();
@@ -273,7 +273,7 @@ function normalizeCellSummaryData(context, data) {
     return donor['samples'].map((block) => {
       return block['sections']?.map((section) => {
         return section['datasets']?.map((dataset) => {
-          return dataset['summaries']?.map((summary, index) => 
+          return dataset['summaries']?.map((summary, index) =>
             createCellSummaryObject(context, dataset, summary, index))
         }).flat();
       }).flat();
@@ -302,7 +302,7 @@ function createCellSummaryRowObject(context, dataset, summary, summaryRow, index
     .append('type_of', ['CellSummaryRow'])
     .append('cell_id', summaryRow.cell_id)
     .append('cell_label', summaryRow.cell_label)
-    .append('gene_expressions', summaryRow['gene_expr']?.map((expr, itemIndex) => 
+    .append('gene_expressions', summaryRow['gene_expr']?.map((expr, itemIndex) =>
       createGeneExpressionObject(context, dataset, summary, summaryRow, expr, itemIndex)) || [])
     .append('count', summaryRow.count)
     .append('percentage', summaryRow.percentage)
@@ -318,7 +318,7 @@ function createGeneExpressionObject(context, dataset, summary, summaryRow, expr,
     .append('gene_label', expr.gene_label)
     .append('ensembl_id', expr.ensembl_id)
     .append('mean_gene_expression_value', expr.mean_gene_expr_value)
-    .build();  
+    .build();
 }
 
 // ---------------------------------------------------------------------------------
@@ -333,7 +333,7 @@ function normalizeCollisionData(context, data) {
         createCollisionObject(context, block, collision, index)
       ).filter(onlyNonNull) || []
     }).flat();
-  }).flat();  
+  }).flat();
 }
 
 function createCollisionObject(context, block, collision, index) {
@@ -346,9 +346,9 @@ function createCollisionObject(context, block, collision, index) {
     .append('label', getCollisionLabel(block, collision, index))
     .append('type_of', ['CollisionSummary'])
     .append('collision_method', collision.collision_method)
-    .append('collision_items', collision['collisions']?.map((collisionItem, itemIndex) => 
+    .append('collision_items', collision['collisions']?.map((collisionItem, itemIndex) =>
       createCollisionItemObject(context, block, collision, collisionItem, itemIndex)) || [])
-    .build();  
+    .build();
 }
 
 function createCollisionItemObject(context, block, collision, collisionItem, index) {
@@ -359,7 +359,7 @@ function createCollisionItemObject(context, block, collision, collisionItem, ind
     .append('spatial_entity_reference', collisionItem.as_3d_id)
     .append('volume', collisionItem.as_volume)
     .append('percentage', collisionItem.percentage)
-    .build();  
+    .build();
 }
 
 // ---------------------------------------------------------------------------------
@@ -373,7 +373,7 @@ function normalizeCorridorData(context, data) {
       const corridor = block['rui_location']['corridor'];
       return corridor ? createCorridorObject(context, block, corridor) : null;
     }).filter(onlyNonNull);
-  }).flat();  
+  }).flat();
 }
 
 function createCorridorObject(context, block, corridor) {
@@ -383,7 +383,7 @@ function createCorridorObject(context, block, corridor) {
     .append('type_of', ['Corridor'])
     .append('file_format', corridor.file_format)
     .append('file_url', corridor.file)
-    .build();   
+    .build();
 }
 
 // ---------------------------------------------------------------------------------
@@ -411,7 +411,7 @@ function getCorridorId(context, block) {
 function generateCorridorId(context, block, corridor) {
   const { iri, version } = context.selectedDigitalObject;
   const hashCode = getCorridorHash(block, corridor);
-  return `${iri}/${version}#${hashCode}`;  
+  return `${iri}/${version}#${hashCode}`;
 }
 
 function generateCollisionId(context, block, collision, index) {
@@ -420,13 +420,13 @@ function generateCollisionId(context, block, collision, index) {
   }
   const { iri, version } = context.selectedDigitalObject;
   const hashCode = getCollisionHash(block, collision, index);
-  return `${iri}/${version}#${hashCode}`;  
+  return `${iri}/${version}#${hashCode}`;
 }
 
 function generateCollisionItemId(context, block, collision, collisionItem, index) {
   const { iri, version } = context.selectedDigitalObject;
   const hashCode = getCollisionItemHash(block, collision, collisionItem, index);
-  return `${iri}/${version}#${hashCode}`;  
+  return `${iri}/${version}#${hashCode}`;
 }
 
 function generateCellSummaryId(context, dataset, summary, index) {
@@ -484,7 +484,7 @@ function getCollisionItemHash(block, collision, collisionItem, index, length=0) 
 function getCorridorHash(block, corridor, length=0) {
   const { file } = corridor;
   const primaryKey = `${block['@id']}-${file}`;
-  return getHashCode(primaryKey, length);  
+  return getHashCode(primaryKey, length);
 }
 
 function getHashCode(str, length=0) {
@@ -550,7 +550,7 @@ function getCollisionItemLabel(block, collision, collisionItem, index) {
 
 function getCorridorLabel(block, collision) {
   const hashCode = getCorridorHash(block, collision, 5);
-  return `Corridor of tissue block (#${hashCode})`; 
+  return `Corridor of tissue block (#${hashCode})`;
 }
 
 function getSexId(sex) {

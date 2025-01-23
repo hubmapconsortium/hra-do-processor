@@ -10,8 +10,8 @@ export function banner(title) {
 export function header(context, pipeline) {
   const { type, name, version, iri } = context.selectedDigitalObject;
   info('');
-  info(chalk.whiteBright('---') + ' ' + 
-       chalk.green(`${type}:${version}:${name}`) + ' ' + 
+  info(chalk.whiteBright('---') + ' ' +
+       chalk.green(`${type}:${version}:${name}`) + ' ' +
        chalk.whiteBright(`(${pipeline})`) + ' @ ' +
        chalk.cyanBright(iri) + ' ' +
        chalk.whiteBright('---'));
@@ -27,6 +27,7 @@ export function warning(message) {
 
 export function error(message) {
   console.log('[' + chalk.redBright('ERROR') + '] ' + chalk.redBright(message));
+  console.log(message);
 }
 
 export function more(message) {
