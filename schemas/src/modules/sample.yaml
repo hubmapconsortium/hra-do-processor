@@ -19,10 +19,10 @@ classes:
   TissueBlock:
     title: Tissue Block
     description: >-
-      A tissue block is a defined piece of tissue extracted from a 
-      specific location for research or analysis, with detailed 
-      information about its extraction site, tissue sections, 
-      associated datasets, section counts and sizes, and collision 
+      A tissue block is a defined piece of tissue extracted from a
+      specific location for research or analysis, with detailed
+      information about its extraction site, tissue sections,
+      associated datasets, section counts and sizes, and collision
       summaries related to spatial overlaps.
     class_uri: ccf:TissueBlock
     mixins:
@@ -46,17 +46,18 @@ classes:
     slot_usage:
       partially_overlaps:
         annotations:
-          owl.template: |-
-            {% for organ_part in partially_overlaps %}
-            ClassAssertion(ObjectSomeValuesFrom(RO:0002151 {{organ_part}}) {{id}})
-            {% endfor %}
+          owl: AnnotationProperty, AnnotationAssertion
+          # owl.template: |-
+          #   {% for organ_part in partially_overlaps %}
+          #   ClassAssertion(ObjectSomeValuesFrom(RO:0002151 {{organ_part}}) {{id}})
+          #   {% endfor %}
 
   TissueSection:
     title: Tissue Section
     description: >-
-      A tissue section is a thin slice or layer derived from a tissue block, 
-      associated with a specific section number, and linked to datasets 
-      generated from its analysis. 
+      A tissue section is a thin slice or layer derived from a tissue block,
+      associated with a specific section number, and linked to datasets
+      generated from its analysis.
     class_uri: ccf:TissueSection
     mixins:
       - Named
@@ -101,7 +102,7 @@ classes:
       dataset:
         required: false
       spatial_entity:
-        required: false 
+        required: false
       cell_summary:
         required: false
       collision:
@@ -142,8 +143,9 @@ slots:
     range: Named
     slot_uri: RO:0002151
     annotations:
-      owl.template: |-
-        AnnotationAssertion( rdfs:label RO:0002151 "partially overlaps" )
+      owl: AnnotationProperty, AnnotationAssertion
+      # owl.template: |-
+      #   AnnotationAssertion( rdfs:label RO:0002151 "partially overlaps" )
   rui_location:
     title: registration location
     description: >-
@@ -221,7 +223,7 @@ slots:
   corridors:
     title: corridor
     description: >-
-      References to corridor structures linked to the spatial positioning of the 
+      References to corridor structures linked to the spatial positioning of the
       tissue block.
     slot_uri: ccf:has_corridor
     required: false
@@ -237,6 +239,6 @@ slots:
     range: SampleOrDonorID
     annotations:
       owl: ObjectProperty, ObjectPropertyAssertion
-      owl.template: |-
-        AnnotationAssertion( rdfs:label ccf:links_back_to "links back to" )
-        TransitiveObjectProperty( ccf:links_back_to )
+      # owl.template: |-
+      #   AnnotationAssertion( rdfs:label ccf:links_back_to "links back to" )
+      #   TransitiveObjectProperty( ccf:links_back_to )
