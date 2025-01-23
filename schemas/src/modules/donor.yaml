@@ -44,26 +44,28 @@ classes:
     slot_usage:
       sex:
         annotations:
-          owl.template: |-
-            {% if sex %}
-            AnnotationAssertion(
-              Annotation(oboInOwl:hasDbXref {{sex_id}})
-              ccf:sex
-              {{id}}
-              "{{sex}}"
-            )
-            {% endif %}
+          owl: AnnotationProperty, AnnotationAssertion
+          # owl.template: |-
+          #   {% if sex %}
+          #   AnnotationAssertion(
+          #     Annotation(oboInOwl:hasDbXref {{sex_id}})
+          #     ccf:sex
+          #     {{id}}
+          #     "{{sex}}"
+          #   )
+          #   {% endif %}
       race:
         annotations:
-          owl.template: |-
-            {% if race %}
-            AnnotationAssertion(
-              Annotation(oboInOwl:hasDbXref {{race_id}})
-              ccf:has_race
-              {{id}}
-              "{{race}}"
-            )
-            {% endif %}
+          owl: AnnotationProperty, AnnotationAssertion
+          # owl.template: |-
+          #   {% if race %}
+          #   AnnotationAssertion(
+          #     Annotation(oboInOwl:hasDbXref {{race_id}})
+          #     ccf:has_race
+          #     {{id}}
+          #     "{{race}}"
+          #   )
+          #   {% endif %}
       sex_id:
         pattern: (loinc:LA3-6|loinc:LA2-8|loinc:LA4489-6)
       race_id:
