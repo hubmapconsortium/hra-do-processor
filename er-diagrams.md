@@ -7,7 +7,6 @@ Container {
     uriorcurie iri  
 }
 FtuIllustration {
-    uriorcurie located_in  
     uriorcurie id  
     string label  
 }
@@ -27,6 +26,9 @@ FtuIllustrationFile {
     uriorcurie id  
     string label  
 }
+AnatomicalStructureID {
+    uriorcurie id  
+}
 FtuMetadata {
     string title  
     string description  
@@ -41,6 +43,7 @@ FtuMetadata {
 
 Container ||--|o FtuMetadata : "metadata"
 Container ||--}o FtuIllustration : "data"
+FtuIllustration ||--|o AnatomicalStructureID : "located_in"
 FtuIllustration ||--}o FtuIllustrationFile : "image_file"
 FtuIllustration ||--}o FtuIllustrationNode : "illustration_node"
 FtuIllustration ||--}o Named : "type_of"
@@ -238,7 +241,6 @@ Named {
     string label  
 }
 CellSummaryRow {
-    uriorcurie cell_id  
     string cell_label  
     integer count  
     float percentage  
@@ -246,20 +248,27 @@ CellSummaryRow {
     string label  
 }
 GeneExpression {
-    uriorcurie gene_id  
     string gene_label  
     string ensembl_id  
     float mean_gene_expression_value  
     uriorcurie id  
     string label  
 }
+GeneID {
+    uriorcurie id  
+}
+CellID {
+    uriorcurie id  
+}
 
 Container ||--|o CellSummaryData : "data"
 CellSummaryData ||--}o CellSummary : "cell_summary"
 CellSummary ||--}| CellSummaryRow : "summary_rows"
 CellSummary ||--}o Named : "type_of"
+CellSummaryRow ||--|| CellID : "cell_id"
 CellSummaryRow ||--}o GeneExpression : "gene_expressions"
 CellSummaryRow ||--}o Named : "type_of"
+GeneExpression ||--|| GeneID : "gene_id"
 GeneExpression ||--}o Named : "type_of"
 
 ```
@@ -317,11 +326,13 @@ Named {
     string label  
 }
 CollisionItem {
-    uriorcurie spatial_entity_reference  
     float volume  
     float percentage  
     uriorcurie id  
     string label  
+}
+SpatialEntityID {
+    uriorcurie id  
 }
 CollisionMetadata {
     string title  
@@ -340,6 +351,7 @@ Container ||--|o CollisionData : "data"
 CollisionData ||--}o CollisionSummary : "collision"
 CollisionSummary ||--}| CollisionItem : "collision_items"
 CollisionSummary ||--}o Named : "type_of"
+CollisionItem ||--|| SpatialEntityID : "spatial_entity_reference"
 CollisionItem ||--}o Named : "type_of"
 
 ```
@@ -412,8 +424,6 @@ AssayDataset {
     string external_link  
     string technology  
     string thumbnail  
-    uriorcurieList cell_summaries  
-    uriorcurie links_back_to  
     uriorcurie id  
     string label  
 }
@@ -421,9 +431,17 @@ Named {
     uriorcurie id  
     string label  
 }
+SampleID {
+    uriorcurie id  
+}
+CellSummaryID {
+    uriorcurie id  
+}
 
 Container ||--|o AssayDatasetData : "data"
 AssayDatasetData ||--}o AssayDataset : "dataset"
+AssayDataset ||--}o CellSummaryID : "cell_summaries"
+AssayDataset ||--|o SampleID : "links_back_to"
 AssayDataset ||--}o Named : "type_of"
 
 ```
@@ -458,7 +476,6 @@ Donor {
     string consortium_name  
     string provider_name  
     string provider_uuid  
-    uriorcurieList provides_samples  
     uriorcurie id  
     string label  
 }
@@ -466,9 +483,13 @@ Named {
     uriorcurie id  
     string label  
 }
+SampleID {
+    uriorcurie id  
+}
 
 Container ||--|o DonorData : "data"
 DonorData ||--}o Donor : "donor"
+Donor ||--}o SampleID : "provides_samples"
 Donor ||--}o Named : "type_of"
 
 ```
@@ -500,11 +521,13 @@ CollisionSummary {
     string label  
 }
 CollisionItem {
-    uriorcurie spatial_entity_reference  
     float volume  
     float percentage  
     uriorcurie id  
     string label  
+}
+SpatialEntityID {
+    uriorcurie id  
 }
 CellSummary {
     string annotation_method  
@@ -515,7 +538,6 @@ CellSummary {
     string label  
 }
 CellSummaryRow {
-    uriorcurie cell_id  
     string cell_label  
     integer count  
     float percentage  
@@ -523,12 +545,17 @@ CellSummaryRow {
     string label  
 }
 GeneExpression {
-    uriorcurie gene_id  
     string gene_label  
     string ensembl_id  
     float mean_gene_expression_value  
     uriorcurie id  
     string label  
+}
+GeneID {
+    uriorcurie id  
+}
+CellID {
+    uriorcurie id  
 }
 SpatialEntity {
     string pref_label  
@@ -538,14 +565,12 @@ SpatialEntity {
     float y_dimension  
     float z_dimension  
     string dimension_unit  
-    uriorcurieList collides_with  
     integer slice_count  
     integer slice_thickness  
     uriorcurie id  
     string label  
 }
 SpatialPlacement {
-    uriorcurie target  
     date placement_date  
     float x_scaling  
     float y_scaling  
@@ -563,31 +588,39 @@ SpatialPlacement {
     uriorcurie id  
     string label  
 }
+AnatomicalStructureID {
+    uriorcurie id  
+}
 AssayDataset {
     string pref_label  
     string description  
     string external_link  
     string technology  
     string thumbnail  
-    uriorcurieList cell_summaries  
-    uriorcurie links_back_to  
     uriorcurie id  
     string label  
+}
+SampleOrDonorID {
+    uriorcurie id  
+}
+CellSummaryID {
+    uriorcurie id  
 }
 TissueBlock {
     string pref_label  
     string description  
-    uriorcurie rui_location  
-    uriorcurie extraction_site  
     string external_link  
     integer section_count  
     float section_size  
     string section_size_unit  
-    uriorcurieList collision_summaries  
-    uriorcurieList corridors  
-    uriorcurie links_back_to  
     uriorcurie id  
     string label  
+}
+CorridorID {
+    uriorcurie id  
+}
+CollisionSummaryID {
+    uriorcurie id  
 }
 Dataset {
     string title  
@@ -635,7 +668,6 @@ TissueSection {
     string description  
     string external_link  
     integer section_number  
-    uriorcurie links_back_to  
     uriorcurie id  
     string label  
 }
@@ -652,9 +684,11 @@ Donor {
     string consortium_name  
     string provider_name  
     string provider_uuid  
-    uriorcurieList provides_samples  
     uriorcurie id  
     string label  
+}
+SampleID {
+    uriorcurie id  
 }
 DatasetGraphMetadata {
     string title  
@@ -680,20 +714,32 @@ DatasetGraphData ||--}o Corridor : "corridor"
 Corridor ||--}o Named : "type_of"
 CollisionSummary ||--}| CollisionItem : "collision_items"
 CollisionSummary ||--}o Named : "type_of"
+CollisionItem ||--|| SpatialEntityID : "spatial_entity_reference"
 CollisionItem ||--}o Named : "type_of"
 CellSummary ||--}| CellSummaryRow : "summary_rows"
 CellSummary ||--}o Named : "type_of"
+CellSummaryRow ||--|| CellID : "cell_id"
 CellSummaryRow ||--}o GeneExpression : "gene_expressions"
 CellSummaryRow ||--}o Named : "type_of"
+GeneExpression ||--|| GeneID : "gene_id"
 GeneExpression ||--}o Named : "type_of"
+SpatialEntity ||--}o AnatomicalStructureID : "collides_with"
 SpatialEntity ||--|| SpatialPlacement : "placement"
 SpatialEntity ||--}o Named : "type_of"
 SpatialPlacement ||--|o SpatialEntity : "source"
+SpatialPlacement ||--|| SpatialEntity : "target"
 SpatialPlacement ||--}o Named : "type_of"
+AssayDataset ||--}o CellSummaryID : "cell_summaries"
+AssayDataset ||--|o SampleOrDonorID : "links_back_to"
 AssayDataset ||--}o Named : "type_of"
 TissueBlock ||--}o Named : "partially_overlaps"
+TissueBlock ||--|o SpatialEntityID : "rui_location"
+TissueBlock ||--|o SpatialEntityID : "extraction_site"
 TissueBlock ||--}o TissueSection : "sections"
 TissueBlock ||--}o Dataset : "datasets"
+TissueBlock ||--}o CollisionSummaryID : "collision_summaries"
+TissueBlock ||--}o CorridorID : "corridors"
+TissueBlock ||--|o SampleOrDonorID : "links_back_to"
 TissueBlock ||--}o Named : "type_of"
 Dataset ||--}o Creator : "creators"
 Dataset ||--}o Person : "reviewers"
@@ -705,7 +751,9 @@ Dataset ||--|o Dataset : "was_derived_from"
 Person ||--}o Named : "type_of"
 TissueSection ||--}o TissueBlock : "related_samples"
 TissueSection ||--}o Dataset : "datasets"
+TissueSection ||--|o SampleOrDonorID : "links_back_to"
 TissueSection ||--}o Named : "type_of"
+Donor ||--}o SampleID : "provides_samples"
 Donor ||--}o Named : "type_of"
 
 ```
@@ -752,7 +800,6 @@ SpatialEntity {
     float y_dimension  
     float z_dimension  
     string dimension_unit  
-    uriorcurie extraction_set  
     integer rui_rank  
     uriorcurie id  
     string label  
@@ -761,8 +808,13 @@ Named {
     uriorcurie id  
     string label  
 }
+ExtractionSet {
+    string pref_label  
+    integer rui_rank  
+    uriorcurie id  
+    string label  
+}
 SpatialPlacement {
-    uriorcurie target  
     float x_scaling  
     float y_scaling  
     float z_scaling  
@@ -792,13 +844,6 @@ Creator {
     uriorcurie id  
     string label  
 }
-ExtractionSet {
-    string pref_label  
-    uriorcurie extraction_set_for  
-    integer rui_rank  
-    uriorcurie id  
-    string label  
-}
 LandmarkMetadata {
     string title  
     string description  
@@ -818,12 +863,15 @@ LandmarkData ||--}| SpatialEntity : "spatial_entities"
 SpatialEntity ||--}o Creator : "creators"
 SpatialEntity ||--|o SpatialObjectReference : "object_reference"
 SpatialEntity ||--}o SpatialPlacement : "placements"
+SpatialEntity ||--|| ExtractionSet : "extraction_set"
 SpatialEntity ||--}o Named : "type_of"
+ExtractionSet ||--|| SpatialEntity : "extraction_set_for"
+ExtractionSet ||--}o Named : "type_of"
 SpatialPlacement ||--|o SpatialEntity : "source"
+SpatialPlacement ||--|| SpatialEntity : "target"
 SpatialPlacement ||--}o Named : "type_of"
 SpatialObjectReference ||--|| SpatialPlacement : "placement"
 SpatialObjectReference ||--}o Named : "type_of"
-ExtractionSet ||--}o Named : "type_of"
 
 ```
 
@@ -851,7 +899,6 @@ ExperimentUsedAntibody {
     integer dilution  
     integer cycle_number  
     boolean is_core_panel  
-    uriorcurie used_by_experiment  
     uriorcurie id  
     string label  
 }
@@ -860,22 +907,21 @@ RegisteredAntibody {
     uriorcurie id  
     string label  
 }
-ExperimentCycle {
-    integer cycle_number  
-    uriorcurie id  
-    string label  
-}
 MultiplexedAntibodyBasedImagingExperiment {
     string study_method  
     string tissue_preservation  
     uriorcurieList protocol_doi  
     uriorcurieList author_orcid  
-    uriorcurieList has_cycle  
     uriorcurie id  
     string label  
 }
 AnatomicalStructure {
     uriorcurie id  
+}
+ExperimentCycle {
+    integer cycle_number  
+    uriorcurie id  
+    string label  
 }
 Antibody {
     uriorcurie id  
@@ -920,13 +966,15 @@ OmapDataset ||--}| ExperimentCycle : "cycles"
 OmapDataset ||--|| AntibodyPanel : "antibody_panel"
 AntibodyPanel ||--}| ExperimentUsedAntibody : "contains_antibodies"
 AntibodyPanel ||--}o Named : "type_of"
+ExperimentUsedAntibody ||--|| MultiplexedAntibodyBasedImagingExperiment : "used_by_experiment"
 ExperimentUsedAntibody ||--|| RegisteredAntibody : "based_on"
 ExperimentUsedAntibody ||--}o Named : "type_of"
 RegisteredAntibody ||--}o Named : "type_of"
-ExperimentCycle ||--}| ExperimentUsedAntibody : "uses_antibodies"
-ExperimentCycle ||--}o Named : "type_of"
+MultiplexedAntibodyBasedImagingExperiment ||--}| ExperimentCycle : "has_cycle"
 MultiplexedAntibodyBasedImagingExperiment ||--|| AnatomicalStructure : "sample_organ"
 MultiplexedAntibodyBasedImagingExperiment ||--}o Named : "type_of"
+ExperimentCycle ||--}| ExperimentUsedAntibody : "uses_antibodies"
+ExperimentCycle ||--}o Named : "type_of"
 Antibody ||--}o DetectStatement : "detects"
 Antibody ||--}o BindsToStatement : "binds_to"
 BindsToStatement ||--|| Antibody : "antibody_id"
@@ -965,7 +1013,6 @@ ExtractionSet {
     string label  
 }
 SpatialPlacement {
-    uriorcurie target  
     date placement_date  
     float x_scaling  
     float y_scaling  
@@ -1023,6 +1070,7 @@ SpatialEntity ||--}o Named : "type_of"
 ExtractionSet ||--|| SpatialEntity : "extraction_set_for"
 ExtractionSet ||--}o Named : "type_of"
 SpatialPlacement ||--|o SpatialEntity : "source"
+SpatialPlacement ||--|| SpatialEntity : "target"
 SpatialPlacement ||--}o Named : "type_of"
 SpatialObjectReference ||--|| SpatialPlacement : "placement"
 SpatialObjectReference ||--}o Named : "type_of"
@@ -1049,21 +1097,25 @@ SampleData {
 TissueBlock {
     string pref_label  
     string description  
-    uriorcurie rui_location  
-    uriorcurie extraction_site  
     string external_link  
     integer section_count  
     float section_size  
     string section_size_unit  
-    uriorcurieList collision_summaries  
-    uriorcurieList corridors  
-    uriorcurie links_back_to  
     uriorcurie id  
     string label  
 }
 Named {
     uriorcurie id  
     string label  
+}
+SampleOrDonorID {
+    uriorcurie id  
+}
+CorridorID {
+    uriorcurie id  
+}
+CollisionSummaryID {
+    uriorcurie id  
 }
 Dataset {
     string title  
@@ -1111,16 +1163,23 @@ TissueSection {
     string description  
     string external_link  
     integer section_number  
-    uriorcurie links_back_to  
     uriorcurie id  
     string label  
+}
+SpatialEntityID {
+    uriorcurie id  
 }
 
 Container ||--|o SampleData : "data"
 SampleData ||--}o TissueBlock : "sample"
 TissueBlock ||--}o Named : "partially_overlaps"
+TissueBlock ||--|o SpatialEntityID : "rui_location"
+TissueBlock ||--|o SpatialEntityID : "extraction_site"
 TissueBlock ||--}o TissueSection : "sections"
 TissueBlock ||--}o Dataset : "datasets"
+TissueBlock ||--}o CollisionSummaryID : "collision_summaries"
+TissueBlock ||--}o CorridorID : "corridors"
+TissueBlock ||--|o SampleOrDonorID : "links_back_to"
 TissueBlock ||--}o Named : "type_of"
 Dataset ||--}o Creator : "creators"
 Dataset ||--}o Person : "reviewers"
@@ -1132,6 +1191,7 @@ Dataset ||--|o Dataset : "was_derived_from"
 Person ||--}o Named : "type_of"
 TissueSection ||--}o TissueBlock : "related_samples"
 TissueSection ||--}o Dataset : "datasets"
+TissueSection ||--|o SampleOrDonorID : "links_back_to"
 TissueSection ||--}o Named : "type_of"
 
 ```
@@ -1161,7 +1221,6 @@ SpatialEntity {
     float y_dimension  
     float z_dimension  
     string dimension_unit  
-    uriorcurieList collides_with  
     integer slice_count  
     integer slice_thickness  
     uriorcurie id  
@@ -1172,7 +1231,6 @@ Named {
     string label  
 }
 SpatialPlacement {
-    uriorcurie target  
     date placement_date  
     float x_scaling  
     float y_scaling  
@@ -1190,12 +1248,17 @@ SpatialPlacement {
     uriorcurie id  
     string label  
 }
+AnatomicalStructureID {
+    uriorcurie id  
+}
 
 Container ||--|o SpatialData : "data"
 SpatialData ||--}o SpatialEntity : "spatial_entity"
+SpatialEntity ||--}o AnatomicalStructureID : "collides_with"
 SpatialEntity ||--|| SpatialPlacement : "placement"
 SpatialEntity ||--}o Named : "type_of"
 SpatialPlacement ||--|o SpatialEntity : "source"
+SpatialPlacement ||--|| SpatialEntity : "target"
 SpatialPlacement ||--}o Named : "type_of"
 
 ```

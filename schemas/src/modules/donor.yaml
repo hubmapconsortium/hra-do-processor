@@ -19,9 +19,9 @@ classes:
   Donor:
     title: Donor
     description: >-
-      A donor refers to an individual from whom biological samples or 
-      data are obtained for research, with associated information 
-      including age, BMI, sex, race, the providers supplying the sample, 
+      A donor refers to an individual from whom biological samples or
+      data are obtained for research, with associated information
+      including age, BMI, sex, race, the providers supplying the sample,
       and the consortium responsible for its collection.
     class_uri: ccf:Donor
     mixins:
@@ -85,7 +85,7 @@ classes:
       dataset:
         required: false
       spatial_entity:
-        required: false 
+        required: false
       cell_summary:
         required: false
       collision:
@@ -111,7 +111,7 @@ slots:
   age:
     title: age
     description: The age of the donor.
-    range: integer
+    range: double
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   bmi:
@@ -150,7 +150,7 @@ slots:
     title: provider name
     slot_uri: ccf:tissue_provider_name
     description: >-
-      The name of the tissue provider responsible for supplying the tissue 
+      The name of the tissue provider responsible for supplying the tissue
       sample data.
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
