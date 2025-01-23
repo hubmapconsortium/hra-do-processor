@@ -467,7 +467,7 @@ Donor {
     string pref_label  
     string description  
     string external_link  
-    integer age  
+    double age  
     float bmi  
     string sex  
     string sex_id  
@@ -675,7 +675,7 @@ Donor {
     string pref_label  
     string description  
     string external_link  
-    integer age  
+    double age  
     float bmi  
     string sex  
     string sex_id  
