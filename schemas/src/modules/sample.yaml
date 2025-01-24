@@ -29,7 +29,6 @@ classes:
       - Named
       - Instance
     slots:
-      - partially_overlaps
       - pref_label
       - description
       - rui_location
@@ -42,14 +41,6 @@ classes:
       - section_size_unit # block_dimension_unit
       - collision_summaries
       - corridors
-    slot_usage:
-      partially_overlaps:
-        annotations:
-          owl: AnnotationProperty, AnnotationAssertion
-          # owl.template: |-
-          #   {% for organ_part in partially_overlaps %}
-          #   ClassAssertion(ObjectSomeValuesFrom(RO:0002151 {{organ_part}}) {{id}})
-          #   {% endfor %}
 
   TissueSection:
     title: Tissue Section
@@ -132,18 +123,6 @@ slots:
     range: TissueBlock
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  partially_overlaps:
-    title: partially overlaps
-    description: >-
-      Identifies other anatomical structures that partially overlap with
-      the spatial positioning of the tissue block.
-    multivalued: true
-    range: Named
-    slot_uri: RO:0002151
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-      # owl.template: |-
-      #   AnnotationAssertion( rdfs:label RO:0002151 "partially overlaps" )
   rui_location:
     title: registration location
     description: >-

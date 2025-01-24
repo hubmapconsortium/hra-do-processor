@@ -111,7 +111,6 @@ function createTissueBlockObject(context, donor, block) {
     .append('id', block['@id'])
     .append('label', getSampleLabel(block))
     .append('type_of', ['TissueBlock'])
-    .append('partially_overlaps', block.rui_location?.ccf_annotations?.map((organ) => organ))
     .append('pref_label', block.label)
     .append('description', block.description)
     .append('rui_location', block.rui_location?.['@id'])
