@@ -114,7 +114,6 @@ function createTissueBlockObject(context, donor, block) {
     .append('pref_label', block.label)
     .append('description', block.description)
     .append('rui_location', block.rui_location?.['@id'])
-    .append('extraction_site', block.rui_location?.['@id'])
     .append('external_link', block.link)
     .append('sections', block.sections
       ?.map((section) => createTissueSectionObject(block, section))

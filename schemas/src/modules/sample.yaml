@@ -32,7 +32,6 @@ classes:
       - pref_label
       - description
       - rui_location
-      - extraction_site
       - external_link
       - sections
       - datasets
@@ -129,15 +128,6 @@ slots:
       Reference to the registration location for the tissue block within
       the reference atlas.
     slot_uri: ccf:has_registration_location
-    required: false
-    range: SpatialEntityID
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  extraction_site:
-    title: extraction site
-    description: >-
-      Reference to the anatomical site from which the tissue was extracted.
-    slot_uri: ccf:has_extraction_site
     required: false
     range: SpatialEntityID
     annotations:
