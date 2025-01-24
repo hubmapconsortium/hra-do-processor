@@ -42,30 +42,6 @@ classes:
       - provider_uuid
       - provides_samples
     slot_usage:
-      sex:
-        annotations:
-          owl: AnnotationProperty, AnnotationAssertion
-          # owl.template: |-
-          #   {% if sex %}
-          #   AnnotationAssertion(
-          #     Annotation(oboInOwl:hasDbXref {{sex_id}})
-          #     ccf:sex
-          #     {{id}}
-          #     "{{sex}}"
-          #   )
-          #   {% endif %}
-      race:
-        annotations:
-          owl: AnnotationProperty, AnnotationAssertion
-          # owl.template: |-
-          #   {% if race %}
-          #   AnnotationAssertion(
-          #     Annotation(oboInOwl:hasDbXref {{race_id}})
-          #     ccf:has_race
-          #     {{id}}
-          #     "{{race}}"
-          #   )
-          #   {% endif %}
       sex_id:
         pattern: (loinc:LA3-6|loinc:LA2-8|loinc:LA4489-6)
       race_id:
@@ -126,23 +102,29 @@ slots:
     title: biological sex
     description: The biological sex of the donor.
     annotations:
-      owl: AnnotationProperty
+      owl: AnnotationProperty, AnnotationAssertion
   sex_id:
     title: biological sex identifier
-    slot_uri: loinc:46098-0 # Sex
+    slot_uri: ccf:sex_id
+    range: Named
     description: >-
       A code representing the donor's sex according to the LOINC vocabulary.
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   race:
     title: race
-    slot_uri: ccf:has_race
+    slot_uri: ccf:race
     description: The race of the donor.
     annotations:
-      owl: AnnotationProperty
+      owl: AnnotationProperty, AnnotationAssertion
   race_id:
     title: race identifier
-    slot_uri: loinc:32624-9 # Race
+    slot_uri: ccf:race_id
+    range: Named
     description: >-
       A code representing the donor's race according to the LOINC vocabulary.
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   consortium_name:
     title: consortium name
     description: The name of the consortium associated with the data.
