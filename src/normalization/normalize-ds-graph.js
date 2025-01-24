@@ -129,7 +129,6 @@ function createTissueBlockObject(context, donor, block) {
     .append('collision_summaries', block.rui_location?.['all_collisions']?.map((collision, index) =>
       generateCollisionId(context, block, collision, index)).filter(onlyNonNull) || [])
     .append('corridors', getCorridorId(context, block))
-    .append('links_back_to', checkDonorId(donor['@id']))
     .build();
 }
 
@@ -148,7 +147,6 @@ function createTissueSectionObject(block, section) {
     .append('datasets', section.datasets
       ?.map((dataset) => dataset['@id'])
       .filter(checkDatasetId))
-    .append('links_back_to', checkTissueBlockId(block['@id']))
     .build();
 }
 
@@ -188,7 +186,6 @@ function createDatasetObject(context, sample, dataset) {
     .append('thumbnail', dataset.thumbnail || 'assets/icons/ico-unknown.svg')
     .append('cell_summaries', dataset.summaries?.map((summary, index) =>
       generateCellSummaryId(context, dataset, summary, index)) || [])
-    .append('links_back_to', checkSampleId(sample['@id']))
     .build();
 }
 

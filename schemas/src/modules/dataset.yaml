@@ -35,7 +35,6 @@ classes:
       - technology
       - thumbnail
       - cell_summaries
-      - links_back_to
 
   CellSummaryID:
     title: Cell Summary Identifier
@@ -105,14 +104,3 @@ slots:
     range: CellSummaryID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  links_back_to:
-    title: links back to
-    description: >-
-      URI that links back to a related resource as a reference connection.
-    required: false
-    range: SampleID
-    annotations:
-      owl: ObjectProperty, ObjectPropertyAssertion
-      # owl.template: |-
-      #   AnnotationAssertion( rdfs:label ccf:links_back_to "links back to" )
-      #   TransitiveObjectProperty( ccf:links_back_to )
