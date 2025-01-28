@@ -32,6 +32,7 @@ export async function enrichDatasetGraphData(context) {
     const normalizedPath = resolve(obj.path, 'normalized/normalized.yaml');
 
     // Define paths for each module
+    const moduleMetadataPath = resolve(obj.path, 'enriched/module-metadata.ttl');
     const moduleDonorPath = resolve(obj.path, 'enriched/module-donor.ttl');
     const moduleSamplePath = resolve(obj.path, 'enriched/module-sample.ttl');
     const moduleDatasetPath = resolve(obj.path, 'enriched/module-dataset.ttl');
@@ -39,11 +40,12 @@ export async function enrichDatasetGraphData(context) {
     const moduleCellSummaryPath = resolve(obj.path, 'enriched/module-cell-summary.ttl');
     const moduleCollisionPath = resolve(obj.path, 'enriched/module-collision.ttl');
     const moduleCorridorPath = resolve(obj.path, 'enriched/module-corridor.ttl');
-    const modulePaths = [moduleDonorPath, moduleSamplePath, moduleDatasetPath, moduleSpatialPath,
+    const modulePaths = [moduleMetadataPath, moduleDonorPath, moduleSamplePath, moduleDatasetPath, moduleSpatialPath,
       moduleCellSummaryPath, moduleCollisionPath, moduleCorridorPath];
 
     // Run the conversion functions in parallel
     await Promise.all([
+      convertToOwlPromise(context, normalizedPath, moduleMetadataPath, 'metadata'),
       convertToOwlPromise(context, normalizedPath, moduleDonorPath, 'donor'),
       convertToOwlPromise(context, normalizedPath, moduleSamplePath, 'sample'),
       convertToOwlPromise(context, normalizedPath, moduleDatasetPath, 'dataset'),

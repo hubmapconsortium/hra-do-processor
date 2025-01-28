@@ -14,6 +14,7 @@ default_range: string
 imports:
   - linkml:types
   - ../shared/metadata-base
+  - ../modules/metadata
   - ../modules/donor
   - ../modules/sample
   - ../modules/dataset
@@ -59,23 +60,6 @@ classes:
         range: DatasetGraphMetadata
       data:
         range: DatasetGraphData
-    annotations:
-      owl.template: |-
-        AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
-        AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
-        {% for creator_iri in metadata.created_by %}
-        AnnotationAssertion( dct:creator {{iri}} {{creator_iri|e}} )
-        {% endfor %}
-        AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
-        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
-        AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
-        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
-        AnnotationAssertion( rdfs:seeAlso {{iri}} {{metadata.see_also|e}} )
-        AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Donor )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:TissueBlock )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:TissueSection )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Dataset )
 
 slots:
   donor:
