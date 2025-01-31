@@ -19,9 +19,9 @@ classes:
   AssayDataset:
     title: Assay Dataset
     description: >-
-      An assay dataset is a collection of data generated from a specific 
-      experimental assay, providing details about the description of 
-      the dataset, the technology or methodology used, and the 
+      An assay dataset is a collection of data generated from a specific
+      experimental assay, providing details about the description of
+      the dataset, the technology or methodology used, and the
       associated cell summaries that outline the analyzed cell types a
       nd their attributes.
     class_uri: ccf:Dataset
@@ -35,7 +35,6 @@ classes:
       - technology
       - thumbnail
       - cell_summaries
-      - links_back_to
 
   CellSummaryID:
     title: Cell Summary Identifier
@@ -46,7 +45,7 @@ classes:
     title: Sample Identifier
     slots:
       - id
-  
+
   AssayDatasetData:
     attributes:
       donor:
@@ -78,7 +77,7 @@ slots:
   external_link:
     title: external link
     description: >-
-      URL link directing to external resources or pages associated with 
+      URL link directing to external resources or pages associated with
       the dataset.
     slot_uri: ccf:url
     annotations:
@@ -105,14 +104,3 @@ slots:
     range: CellSummaryID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  links_back_to:
-    title: links back to
-    description: >-
-      URI that links back to a related resource as a reference connection.
-    required: false
-    range: SampleID
-    annotations:
-      owl: ObjectProperty, ObjectPropertyAssertion
-      owl.template: |-
-        AnnotationAssertion( rdfs:label ccf:links_back_to "links back to" )
-        TransitiveObjectProperty( ccf:links_back_to )
