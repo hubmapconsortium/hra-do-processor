@@ -44,14 +44,19 @@ export async function getRawData(context) {
 
 function normalizeData(context, data) {
   const metadata = readMetadata(context);
-  return {
-    donor: removeDuplicate(normalizeDonorData(data), ['id']),
-    sample: removeDuplicate(normalizeSampleData(context, data), ['id']),
-    dataset: removeDuplicate(normalizeDatasetData(context, data), ['id']),
-    spatial_entity: removeDuplicate(normalizeExtractionSiteData(data), ['id']),
-    cell_summary: removeDuplicate(normalizeCellSummaryData(context, data), ['id']),
-    collision: removeDuplicate(normalizeCollisionData(context, data), ['id']),
-    corridor: removeDuplicate(normalizeCorridorData(context, data), ['id'])
+  try {
+    return {
+      donor: removeDuplicate(normalizeDonorData(data), ['id']),
+      sample: removeDuplicate(normalizeSampleData(context, data), ['id']),
+      dataset: removeDuplicate(normalizeDatasetData(context, data), ['id']),
+      spatial_entity: removeDuplicate(normalizeExtractionSiteData(data), ['id']),
+      cell_summary: removeDuplicate(normalizeCellSummaryData(context, data), ['id']),
+      collision: removeDuplicate(normalizeCollisionData(context, data), ['id']),
+      corridor: removeDuplicate(normalizeCorridorData(context, data), ['id'])
+    }
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
   }
 }
 
@@ -60,7 +65,11 @@ function normalizeData(context, data) {
 // ---------------------------------------------------------------------------------
 
 function normalizeDonorData(data) {
-  return data['@graph'].map(createDonorObject).filter(onlyNonNull);
+  try {
+    return data['@graph'].map(createDonorObject).filter(onlyNonNull);
+  } catch (error) {
+    throw new Error("Problem in normalizing donor data: ", { cause: error });
+  }
 }
 
 function createDonorObject(donor) {
@@ -95,12 +104,16 @@ function createDonorObject(donor) {
 // ---------------------------------------------------------------------------------
 
 function normalizeSampleData(context, data) {
-  const donors = data['@graph'];
-  return donors.map((donor) => {
-    return donor['samples']
-      .map((block) => createTissueBlockObject(context, donor, block))
-      .filter(onlyNonNull)
-  }).flat();
+  try {
+    const donors = data['@graph'];
+    return donors.map((donor) => {
+      return donor['samples']
+        .map((block) => createTissueBlockObject(context, donor, block))
+        .filter(onlyNonNull)
+    }).flat();
+  } catch (error) {
+    throw new Error("Problem in normalizing sample data", { cause: error });
+  }
 }
 
 function createTissueBlockObject(context, donor, block) {
@@ -153,20 +166,24 @@ function createTissueSectionObject(block, section) {
 // ---------------------------------------------------------------------------------
 
 function normalizeDatasetData(context, data) {
-  const donors = data['@graph']
-  const sampleBlockDatasets = donors.map((donor) => {
-    return donor['samples'].map((block) => {
-      return block['datasets']?.map((dataset) => createDatasetObject(context, block, dataset))
-    }).flat();
-  }).flat();
-  const sampleSectionDatasets = donors.map((donor) => {
-    return donor['samples'].map((block) => {
-      return block['sections']?.map((section) => {
-        return section['datasets']?.map((dataset) => createDatasetObject(context, section, dataset))
+  try {
+    const donors = data['@graph']
+    const sampleBlockDatasets = donors.map((donor) => {
+      return donor['samples'].map((block) => {
+        return block['datasets']?.map((dataset) => createDatasetObject(context, block, dataset))
       }).flat();
     }).flat();
-  }).flat();
-  return [...sampleBlockDatasets, ...sampleSectionDatasets].filter(onlyNonNull);
+    const sampleSectionDatasets = donors.map((donor) => {
+      return donor['samples'].map((block) => {
+        return block['sections']?.map((section) => {
+          return section['datasets']?.map((dataset) => createDatasetObject(context, section, dataset))
+        }).flat();
+      }).flat();
+    }).flat();
+    return [...sampleBlockDatasets, ...sampleSectionDatasets].filter(onlyNonNull);
+  } catch (error) {
+    throw new Error("Problem in normalizing dataset data: ", { cause: error });
+  }
 }
 
 function createDatasetObject(context, sample, dataset) {
@@ -192,12 +209,16 @@ function createDatasetObject(context, sample, dataset) {
 // ---------------------------------------------------------------------------------
 
 function normalizeExtractionSiteData(data) {
-  const donors = data['@graph'];
-  return donors.map((donor) => {
-    return donor['samples'].map((block) =>
-      createExtractionSiteObject(block, block['rui_location'])
-    ).filter(onlyNonNull);
-  }).flat();
+  try {
+    const donors = data['@graph'];
+    return donors.map((donor) => {
+      return donor['samples'].map((block) =>
+        createExtractionSiteObject(block, block['rui_location'])
+      ).filter(onlyNonNull);
+    }).flat();
+  } catch (error) {
+    throw new Error("Problem in normalizing extraction site data: ", { cause: error });
+  }  
 }
 
 function createExtractionSiteObject(block, spatialEntity) {
@@ -255,26 +276,30 @@ function createPlacementObject(block, spatialEntity, placement) {
 // ---------------------------------------------------------------------------------
 
 function normalizeCellSummaryData(context, data) {
-  const donors = data['@graph']
-  const sampleBlockCellSummaries = donors.map((donor) => {
-    return donor['samples'].map((block) => {
-      return block['datasets']?.map((dataset) => {
-        return dataset['summaries']?.map((summary, index) =>
-          createCellSummaryObject(context, dataset, summary, index))
-      }).flat();
-    }).flat();
-  }).flat();
-  const sampleSectionCellSummaries = donors.map((donor) => {
-    return donor['samples'].map((block) => {
-      return block['sections']?.map((section) => {
-        return section['datasets']?.map((dataset) => {
-          return dataset['summaries']?.map((summary, index) =>
+  try {
+    const donors = data['@graph'];
+    const sampleBlockCellSummaries = donors.map((donor) => {
+      return donor['samples'].map((block) => {
+        return block['datasets']?.map((dataset) => {
+          return dataset['summaries']?.map((summary, index) => 
             createCellSummaryObject(context, dataset, summary, index))
         }).flat();
       }).flat();
     }).flat();
-  }).flat();
-  return [...sampleBlockCellSummaries, ...sampleSectionCellSummaries].filter(onlyNonNull);
+    const sampleSectionCellSummaries = donors.map((donor) => {
+      return donor['samples'].map((block) => {
+        return block['sections']?.map((section) => {
+          return section['datasets']?.map((dataset) => {
+            return dataset['summaries']?.map((summary, index) => 
+              createCellSummaryObject(context, dataset, summary, index))
+          }).flat();
+        }).flat();
+      }).flat();
+    }).flat();
+    return [...sampleBlockCellSummaries, ...sampleSectionCellSummaries].filter(onlyNonNull);
+  } catch (error) {
+    throw new Error("Problem in normalizing cell summary data: ", { cause: error });
+  }
 }
 
 function createCellSummaryObject(context, dataset, summary, index) {
@@ -321,14 +346,18 @@ function createGeneExpressionObject(context, dataset, summary, summaryRow, expr,
 // ---------------------------------------------------------------------------------
 
 function normalizeCollisionData(context, data) {
-  const donors = data['@graph'];
-  return donors.map((donor) => {
-    return donor['samples'].map((block) => {
-      return block['rui_location']['all_collisions']?.map((collision, index) =>
-        createCollisionObject(context, block, collision, index)
-      ).filter(onlyNonNull) || []
+  try {
+    const donors = data['@graph'];
+    return donors.map((donor) => {
+      return donor['samples'].map((block) => {
+        return block['rui_location']['all_collisions']?.map((collision, index) =>
+          createCollisionObject(context, block, collision, index)
+        ).filter(onlyNonNull) || []
+      }).flat();
     }).flat();
-  }).flat();
+  } catch (error) {
+    throw new Error("Problem in normalizing collision data: ", { cause: error });
+  }
 }
 
 function createCollisionObject(context, block, collision, index) {
@@ -362,13 +391,17 @@ function createCollisionItemObject(context, block, collision, collisionItem, ind
 // ---------------------------------------------------------------------------------
 
 function normalizeCorridorData(context, data) {
-  const donors = data['@graph'];
-  return donors.map((donor) => {
-    return donor['samples'].map((block) => {
-      const corridor = block['rui_location']['corridor'];
-      return corridor ? createCorridorObject(context, block, corridor) : null;
-    }).filter(onlyNonNull);
-  }).flat();
+  try {
+    const donors = data['@graph'];
+    return donors.map((donor) => {
+      return donor['samples'].map((block) => {
+        const corridor = block['rui_location']['corridor'];
+        return corridor ? createCorridorObject(context, block, corridor) : null;
+      }).filter(onlyNonNull);
+    }).flat();
+  } catch (error) {
+    throw new Error("Problem in normalizing corridor data: ", { cause: error });
+  }
 }
 
 function createCorridorObject(context, block, corridor) {
