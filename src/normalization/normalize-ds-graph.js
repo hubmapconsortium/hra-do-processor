@@ -350,7 +350,7 @@ function normalizeCollisionData(context, data) {
     const donors = data['@graph'];
     return donors.map((donor) => {
       return donor['samples'].map((block) => {
-        return block['rui_location']['all_collisions']?.map((collision, index) =>
+        return block.rui_location?.all_collisions?.map((collision, index) =>
           createCollisionObject(context, block, collision, index)
         ).filter(onlyNonNull) || []
       }).flat();
@@ -395,7 +395,7 @@ function normalizeCorridorData(context, data) {
     const donors = data['@graph'];
     return donors.map((donor) => {
       return donor['samples'].map((block) => {
-        const corridor = block['rui_location']['corridor'];
+        const corridor = block.rui_location?.corridor;
         return corridor ? createCorridorObject(context, block, corridor) : null;
       }).filter(onlyNonNull);
     }).flat();
