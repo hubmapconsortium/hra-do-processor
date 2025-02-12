@@ -707,6 +707,19 @@ slots:
     see_also:
       - https://github.com/mapping-commons/sssom/issues/328
       - https://github.com/mapping-commons/sssom/blob/master/examples/schema/extension-slots.sssom.tsv
+  slot_name:
+    description: The name of the extension slot.
+    range: ncname
+    required: true
+  property:
+    description: The property associated with the extension slot. It is
+      intended to provide a non-ambiguous meaning to the slot (contrary
+      to the slot_name, which for brevity reasons may be ambiguous).
+    range: uriorcurie
+  type_hint:
+    description: Expected type of the values of the extension slot.
+    range: uriorcurie
+
 classes:
   mapping set:
     description: Represents a set of mappings.
@@ -858,19 +871,10 @@ classes:
       - prefix_url
   extension definition:
     description: A definition of an extension (non-standard) slot.
-    attributes:
-      slot_name:
-        description: The name of the extension slot.
-        range: ncname
-        required: true
-      property:
-        description: The property associated with the extension slot. It is
-          intended to provide a non-ambiguous meaning to the slot (contrary
-          to the slot_name, which for brevity reasons may be ambiguous).
-        range: uriorcurie
-      type_hint:
-        description: Expected type of the values of the extension slot.
-        range: uriorcurie
+    slots:
+      - slot_name
+      - property
+      - type_hint
   Propagatable:
     class_uri: sssom:Propagatable
     description: Metamodel extension class to describe slots whose value can be
