@@ -53,10 +53,10 @@ jsonschema-specifications==2023.12.1
 kgcl-rdflib==0.5.0
 kgcl_schema==0.6.9
 lark==1.2.2
-linkml==1.7.10
+linkml==1.8.7
 linkml-dataops==0.1.0
 linkml-renderer==0.3.1
-linkml-runtime==1.7.6
+linkml-runtime==1.8.3
 linkml_owl==0.4.2
 lxml==5.2.2
 MarkupSafe==2.1.5
