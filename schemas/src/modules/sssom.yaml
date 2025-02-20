@@ -279,20 +279,6 @@ slots:
     range: EntityReference
     pattern: "^semapv:(MappingReview|ManualMappingCuration|LogicalReasoning|LexicalMatching|CompositeMatching|UnspecifiedMatching|SemanticSimilarityThresholdMatching|LexicalSimilarityThresholdMatching|MappingChaining|MappingInversion|StructuralMatching|InstanceBasedMatching|BackgroundKnowledgeBasedMatching)$"
     required: true
-    any_of:
-      - equals_string: semapv:LexicalMatching
-      - equals_string: semapv:LogicalReasoning
-      - equals_string: semapv:CompositeMatching
-      - equals_string: semapv:UnspecifiedMatching
-      - equals_string: semapv:SemanticSimilarityThresholdMatching
-      - equals_string: semapv:LexicalSimilarityThresholdMatching
-      - equals_string: semapv:MappingChaining
-      - equals_string: semapv:MappingReview
-      - equals_string: semapv:ManualMappingCuration
-      - equals_string: semapv:MappingInversion
-      - equals_string: semapv:StructuralMatching
-      - equals_string: semapv:InstanceBasedMatching
-      - equals_string: semapv:BackgroundKnowledgeBasedMatching
     examples:
       - value: semapv:LexicalMatching
       - value: semapv:ManualMappingCuration
@@ -811,7 +797,6 @@ classes:
       - preconditions:
           slot_conditions:
             subject_type: 
-              equals_string: "rdfs literal"
         postconditions:
           slot_conditions:
             subject_label:
@@ -819,8 +804,6 @@ classes:
       - preconditions:
           slot_conditions:
             subject_type:
-              none_of:
-                equals_string: "rdfs literal"
         postconditions:
           slot_conditions:
             subject_id:
@@ -828,7 +811,6 @@ classes:
       - preconditions:
           slot_conditions:
             object_type: 
-              equals_string: "rdfs literal"
         postconditions:
           slot_conditions:
             object_label:
@@ -836,8 +818,6 @@ classes:
       - preconditions:
           slot_conditions:
             object_type:
-              none_of:
-                equals_string: "rdfs literal"
         postconditions:
           slot_conditions:
             object_id:
