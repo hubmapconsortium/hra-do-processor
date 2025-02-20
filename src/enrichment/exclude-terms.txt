@@ -24,6 +24,12 @@ http://purl.obolibrary.org/obo/GO_0008150
 http://purl.obolibrary.org/obo/GO_0016301
 http://purl.obolibrary.org/obo/GO_0019107
 http://purl.obolibrary.org/obo/NCBITaxon_9606
+http://purl.obolibrary.org/obo/NCBITaxon_1
+http://purl.obolibrary.org/obo/NCBITaxon_131567
+http://purl.obolibrary.org/obo/NCBITaxon_2759
+http://purl.obolibrary.org/obo/NCBITaxon_33154
+http://purl.obolibrary.org/obo/NCBITaxon_33208
+http://purl.obolibrary.org/obo/NCBITaxon_6072
 http://purl.obolibrary.org/obo/OBI_0100026
 http://purl.obolibrary.org/obo/OGMS_0000031
 http://purl.obolibrary.org/obo/PATO_0000001
