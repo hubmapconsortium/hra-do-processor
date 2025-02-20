@@ -84,11 +84,14 @@ types:
 
 slots:
   prefix_name:
+    slot_uri: sssom:prefix_name
     key: true
     range: ncname
   prefix_url:
+    slot_uri: sssom:prefix_url
     range: uri
   curie_map:
+    slot_uri: sssom:curie_map
     description: A dictionary that contains prefixes as keys and their URI expansions as values.
     range: prefix
     multivalued: true
@@ -98,43 +101,55 @@ slots:
       - https://github.com/mapping-commons/sssom/pull/349
       - https://github.com/mapping-commons/sssom/blob/master/examples/schema/curie_map.sssom.tsv
   mirror_from:
+    slot_uri: sssom:mirror_from
     description: A URL location from which to obtain a resource, such as a mapping set.
     range: uri
   registry_confidence:
+    slot_uri: sssom:registry_confidence
     description: This value is set by the registry that indexes the mapping set. It reflects the confidence the registry has in the correctness of the mappings in the mapping set.
     range: double
   last_updated:
+    slot_uri: sssom:last_updated
     description: The date this reference was last updated.
     range: date
   local_name:
+    slot_uri: sssom:local_name
     description: The local name assigned to file that corresponds to the downloaded mapping set.
     range: string
   mapping_set_references:
+    slot_uri: sssom:mapping_set_references
     description: A list of mapping set references.
     range: mapping set reference
     multivalued: true
     recommended: true
   mapping_registry_id:
+    slot_uri: sssom:mapping_registry_id
     description: The unique identifier of a mapping registry.
     range: EntityReference
     required: true
   mapping_registry_title:
+    slot_uri: sssom:mapping_registry_title
     description: The title of a mapping registry.
     range: string
   mapping_registry_description:
+    slot_uri: sssom:mapping_registry_description
     description: The description of a mapping registry.
     range: string
   imports:
+    slot_uri: sssom:imports
     description: A list of registries that should be imported into this one.
     multivalued: true
     range: uri
   documentation:
+    slot_uri: sssom:documentation
     description: A URL to the documentation of this mapping commons.
     range: uri
   homepage:
+    slot_uri: sssom:homepage
     description: A URL to a homepage of this mapping commons.
     range: uri
   mappings:
+    slot_uri: sssom:mappings
     description: Contains a list of mapping objects.
     range: mapping
     multivalued: true
@@ -150,12 +165,14 @@ slots:
       - value: HP:0009894
         description: The CURIE denoting the Human Phenotype Ontology concept of 'Thickened ears'
   subject_label:
+    slot_uri: sssom:subject_label
     description: The label of subject of the mapping.
     range: string
     examples:
       - value: Thickened ears
     recommended: true
   subject_category:
+    slot_uri: sssom:subject_category
     description: The conceptual category to which the subject belongs to. This can
       be a string denoting the category or a term from a controlled vocabulary.
       This slot is deliberately underspecified. Conceptual categories can range from
@@ -175,6 +192,7 @@ slots:
       - value: biolink:Gene
         description: The CURIE of the biolink class for genes.
   subject_type:
+    slot_uri: sssom:subject_type
     description: The type of entity that is being mapped.
     range: entity_type_enum
     instantiates: sssom:Propagatable
@@ -216,6 +234,7 @@ slots:
       - value: rdfs:seeAlso
         description: The subject and the object are associated in some unspecified way. The object IRI often resolves to a resource on the web that provides additional information.
   predicate_modifier:
+    slot_uri: sssom:predicate_modifier
     description: A modifier for negating the predicate. See https://github.com/mapping-commons/sssom/issues/40 for discussion
     range: predicate_modifier_enum
     see_also:
@@ -224,12 +243,14 @@ slots:
       - value: Not
         description: Negates the predicate, see documentation of predicate_modifier_enum
   predicate_label:
+    slot_uri: sssom:predicate_label
     description: The label of the predicate/relation of the mapping.
     range: string
     examples:
       - value: has cross-reference
         description: The label of the oboInOwl:hasDbXref property to represent cross-references.
   predicate_type:
+    slot_uri: sssom:predicate_type
     description: The type of the predicate used to map the subject and object entities.
     range: entity_type_enum
     see_also:
@@ -250,12 +271,14 @@ slots:
       - value: HP:0009894
         description: The CURIE denoting the Human Phenotype Ontology concept of 'Thickened ears'.
   object_label:
+    slot_uri: sssom:object_label
     description: The label of object of the mapping.
     range: string
     examples:
       - value: Thickened ears
     recommended: true
   object_category:
+    slot_uri: sssom:object_category
     description: The conceptual category to which the subject belongs to. This can
       be a string denoting the category or a term from a controlled vocabulary.
       This slot is deliberately underspecified. Conceptual categories can range from
@@ -275,6 +298,7 @@ slots:
       - value: biolink:Gene
         description: The CURIE of the biolink class for genes.
   mapping_justification:
+    slot_uri: sssom:mapping_justification
     description: A mapping justification is an action (or the written representation of that action) of showing a mapping to be right or reasonable.
     range: EntityReference
     pattern: "^semapv:(MappingReview|ManualMappingCuration|LogicalReasoning|LexicalMatching|CompositeMatching|UnspecifiedMatching|SemanticSimilarityThresholdMatching|LexicalSimilarityThresholdMatching|MappingChaining|MappingInversion|StructuralMatching|InstanceBasedMatching|BackgroundKnowledgeBasedMatching)$"
@@ -283,6 +307,7 @@ slots:
       - value: semapv:LexicalMatching
       - value: semapv:ManualMappingCuration
   object_type:
+    slot_uri: sssom:object_type
     description: The type of entity that is being mapped.
     range: entity_type_enum
     instantiates: sssom:Propagatable
@@ -291,6 +316,7 @@ slots:
     examples:
       - value: owl:Class
   mapping_set_id:
+    slot_uri: sssom:mapping_set_id
     description: A globally unique identifier for the mapping set (not each individual
       mapping). Should be IRI, ideally resolvable.
     required: true
@@ -308,6 +334,7 @@ slots:
       - value: "1.2.1"
         description: "(A semantic version tag that indicates that this is the 1st major, 2nd minor version, patch 1 (https://semver.org/).)"
   mapping_set_group:
+    slot_uri: sssom:mapping_set_group
     description: Set by the owners of the mapping registry. A way to group related mapping sets for example for UI purposes.
     range: string
   mapping_set_title:
@@ -338,6 +365,7 @@ slots:
       - value: orcid:0000-0002-7356-1779
         description: The ORCID of the creator of the mapping.
   creator_label:
+    slot_uri: sssom:creator_label
     description: A string identifying the creator of this mapping. In the spirit of
       provenance, consider using creator_id instead.
     range: string
@@ -360,6 +388,7 @@ slots:
       - value: orcid:0000-0002-7356-1779
         description: The ORCID of the author of the mapping.
   author_label:
+    slot_uri: sssom:author_label
     description: A string identifying the author of this mapping. In the spirit of
       provenance, consider using author_id instead.
     range: string
@@ -370,6 +399,7 @@ slots:
       - value: Nicolas Matentzoglu
         description: The human-readable name of the author of the mapping.
   reviewer_id:
+    slot_uri: sssom:reviewer_id
     description: Identifies the persons or groups that reviewed and confirmed the mapping.
       Recommended to be a list of ORCIDs or otherwise
       identifying URIs.
@@ -381,6 +411,7 @@ slots:
       - value: orcid:0000-0002-7356-1779
         description: The ORCID of the reviewer of the mapping.
   reviewer_label:
+    slot_uri: sssom:reviewer_label
     description: A string identifying the reviewer of this mapping. In the spirit of
       provenance, consider using reviewer_id instead.
     range: string
@@ -399,6 +430,7 @@ slots:
       - value: https://creativecommons.org/licenses/by/4.0/
         description: The URI of the Creative Commons Attribution 4.0 International license.
   subject_source:
+    slot_uri: sssom:subject_source
     description: URI of vocabulary or identifier source for the subject.
     range: EntityReference
     instantiates: sssom:Propagatable
@@ -410,6 +442,7 @@ slots:
       - value: wikidata:Q7876491
         description: A Wikidata identifier for the Uberon ontology resource.
   subject_source_version:
+    slot_uri: sssom:subject_source_version
     description: Version IRI or version string of the source of the subject term.
     range: string
     instantiates: sssom:Propagatable
@@ -419,6 +452,7 @@ slots:
       - value: http://purl.obolibrary.org/obo/mondo/releases/2021-01-30/mondo.owl
         description: A persistent Version IRI pointing to the Mondo version '2021-01-30'
   object_source:
+    slot_uri: sssom:object_source
     description: URI of vocabulary or identifier source for the object.
     range: EntityReference
     instantiates: sssom:Propagatable
@@ -430,6 +464,7 @@ slots:
       - value: wikidata:Q7876491
         description: A Wikidata identifier for the Uberon ontology resource.
   object_source_version:
+    slot_uri: sssom:object_source_version
     description: Version IRI or version string of the source of the object term.
     range: string
     instantiates: sssom:Propagatable
@@ -439,6 +474,7 @@ slots:
       - value: http://purl.obolibrary.org/obo/mondo/releases/2021-01-30/mondo.owl
         description: A persistent Version IRI pointing to the Mondo version '2021-01-30'
   mapping_provider:
+    slot_uri: sssom:mapping_provider
     description: URL pointing to the source that provided the mapping, for example
       an ontology that already contains the mappings, or a database from which it was derived.
     range: uri
@@ -459,6 +495,7 @@ slots:
       - value: http://purl.obolibrary.org/obo/mondo/mappings/2022-05-20/mondo_exactmatch_ncit.sssom.tsv
         description: A persistent, ideally versioned, link to the mapping set from which the current mapping set is derived.
   mapping_source:
+    slot_uri: sssom:mapping_source
     description: The mapping set this mapping was originally defined in. mapping_source is used for example when merging multiple
       mapping sets or deriving one mapping set from another.
     range: EntityReference
@@ -466,6 +503,7 @@ slots:
       - value: MONDO_MAPPINGS:mondo_exactmatch_ncit.sssom.tsv
         description: A reference to the mapping set that originally contained this mapping.
   mapping_cardinality:
+    slot_uri: sssom:mapping_cardinality
     description: A string indicating whether this mapping is from a 1:1 (the subject_id
       maps to a single object_id), 1:n (the subject maps to more than one object_id), 
       n:1, 1:0, 0:1 or n:n group. Note that this is a convenience field that should be derivable 
@@ -477,6 +515,7 @@ slots:
       - value: "1:n"
         description: A one-to-many mapping.
   mapping_tool:
+    slot_uri: sssom:mapping_tool
     description: A reference to the tool or algorithm that was used to generate the
       mapping. Should be a URL pointing to more info about it, but can be free text.
     range: string
@@ -489,6 +528,7 @@ slots:
       - value: AgreementMakerLight
         description: A string (name) denoting the AgreementMakerLight project.
   mapping_tool_version:
+    slot_uri: sssom:mapping_tool_version
     description: Version string that denotes the version of the mapping tool used.
     range: string
     instantiates: sssom:Propagatable
@@ -512,6 +552,7 @@ slots:
     examples:
       - value: 2021-01-01
   confidence:
+    slot_uri: sssom:confidence
     description: A score between 0 and 1 to denote the confidence or probability that
       the match is correct, where 1 denotes total confidence.
     range: double
@@ -521,6 +562,7 @@ slots:
       - value: 0.95
         description: A confidence score of 0.95, indicating 95% confidence.
   subject_match_field:
+    slot_uri: sssom:subject_match_field
     description: A list of properties (term annotations on the subject) that was used
       for the match.
     range: EntityReference
@@ -534,6 +576,7 @@ slots:
       - value: skos:prefLabel
         description: "The SKOS preferred label property (skos:prefLabel) was used to match the subject."
   object_match_field:
+    slot_uri: sssom:object_match_field
     description: A list of properties (term annotations on the object) that was used
       for the match.
     range: EntityReference
@@ -547,6 +590,7 @@ slots:
       - value: skos:prefLabel
         description: "The SKOS preferred label property (skos:prefLabel) was used to match the object."
   match_string:
+    slot_uri: sssom:match_string
     description: String that is shared by subj/obj. It is recommended to indicate the 
       fields for the match using the object and subject_match_field slots.
     range: string
@@ -555,6 +599,7 @@ slots:
       - value: "gala"
         description: "The 'gala' string was matched for both subject and object."
   subject_preprocessing:
+    slot_uri: sssom:subject_preprocessing
     description: Method of preprocessing applied to the fields of the subject. 
       If different preprocessing steps were performed on different fields, it is
       recommended to store the match in separate rows.
@@ -567,6 +612,7 @@ slots:
       - value: semapv:Stemming
       - value: semapv:StopWordRemoval
   object_preprocessing:
+    slot_uri: sssom:object_preprocessing
     description: Method of preprocessing applied to the fields of the object. 
       If different preprocessing steps were performed on different fields, it is
       recommended to store the match in separate rows.
@@ -579,6 +625,7 @@ slots:
       - value: semapv:Stemming
       - value: semapv:StopWordRemoval
   curation_rule:
+    slot_uri: sssom:curation_rule
     description: A curation rule is a (potentially) complex condition executed by an agent that led to the establishment of a mapping. 
       Curation rules often involve complex domain-specific considerations, which are hard to capture in an automated fashion. The curation
       rule is captured as a resource rather than a string, which enables higher levels of transparency and sharing across mapping sets.
@@ -593,6 +640,7 @@ slots:
       - https://github.com/mapping-commons/sssom/pull/258
       - https://github.com/mapping-commons/sssom/blob/master/examples/schema/curation_rule.sssom.tsv
   curation_rule_text:
+    slot_uri: sssom:curation_rule_text
     description: A curation rule is a (potentially) complex condition executed by an agent that led to the establishment of a mapping. 
       Curation rules often involve complex domain-specific considerations, which are hard to capture in an automated fashion. The curation
       rule should be captured as a resource (entity reference) rather than a string (see curation_rule element), which enables higher levels of transparency and sharing across mapping sets.
@@ -608,6 +656,7 @@ slots:
       - https://github.com/mapping-commons/sssom/pull/258
       - https://github.com/mapping-commons/sssom/blob/master/examples/schema/curation_rule_text.sssom.tsv
   similarity_score:
+    slot_uri: sssom:similarity_score
     description: A score between 0 and 1 to denote the similarity between two entities, where
       1 denotes equivalence, and 0 denotes disjointness. The score is meant to be used in conjunction 
       with the similarity_measure field, to document, for example, the lexical or semantic match
@@ -623,6 +672,7 @@ slots:
       - https://github.com/mapping-commons/sssom/pull/386
       - https://github.com/mapping-commons/sssom/blob/master/examples/schema/similarity_score.sssom.tsv
   similarity_measure:
+    slot_uri: sssom:similarity_measure
     description: The measure used for computing a similarity score.
       This field is meant to be used in conjunction with the similarity_score field, to document,
       for example, the lexical or semantic match of a matching algorithm.
@@ -641,6 +691,7 @@ slots:
       - https://github.com/mapping-commons/sssom/pull/386
       - https://github.com/mapping-commons/sssom/blob/master/examples/schema/similarity_score.sssom.tsv
   issue_tracker_item:
+    slot_uri: sssom:issue_tracker_item
     description: The issue tracker item discussing this mapping.
     range: EntityReference
     examples:
@@ -651,6 +702,7 @@ slots:
       - https://github.com/mapping-commons/sssom/pull/259
       - https://github.com/mapping-commons/sssom/blob/master/examples/schema/issue_tracker_item.sssom.tsv
   issue_tracker:
+    slot_uri: sssom:issue_tracker
     description: A URL location of the issue tracker for this entity.
     range: uri
     examples:
@@ -671,6 +723,7 @@ slots:
     range: string
     multivalued: true
   other:
+    slot_uri: sssom:other
     description: "Pipe separated list of key value pairs for properties not part of
       the SSSOM spec. Can be used to encode additional provenance data. NOTE. This
       field is not recommended for general use, and should be used sparingly. See
@@ -687,6 +740,7 @@ slots:
           is very different.
         description: A comment explaining a mapping authors reservation on a mapping.
   extension_definitions:
+    slot_uri: sssom:extension_definitions
     description: A list that defines the extension slots used in the mapping set.
     range: extension definition
     multivalued: true
@@ -694,20 +748,24 @@ slots:
       - https://github.com/mapping-commons/sssom/issues/328
       - https://github.com/mapping-commons/sssom/blob/master/examples/schema/extension-slots.sssom.tsv
   slot_name:
+    slot_uri: sssom:slot_name
     description: The name of the extension slot.
     range: ncname
     required: true
   property:
+    slot_uri: sssom:property
     description: The property associated with the extension slot. It is
       intended to provide a non-ambiguous meaning to the slot (contrary
       to the slot_name, which for brevity reasons may be ambiguous).
     range: uriorcurie
   type_hint:
+    slot_uri: sssom:type_hint
     description: Expected type of the values of the extension slot.
     range: uriorcurie
 
 classes:
   mapping set:
+    class_uri: sssom:MappingSet
     description: Represents a set of mappings.
     slot_usage:
       license:
@@ -823,6 +881,7 @@ classes:
             object_id:
               required: true
   mapping registry:
+    class_uri: sssom:MappingRegistry
     description: A registry for managing mapping sets. It holds a set of 
       mapping set references, and can import other registries.
     slots:
@@ -835,6 +894,7 @@ classes:
       - homepage
       - issue_tracker
   mapping set reference:
+    class_uri: sssom:MappingSetReference
     description: A reference to a mapping set. It allows to augment mapping 
       set metadata from the perspective of the registry, for example, providing 
       confidence, or a local filename or a grouping.
@@ -846,10 +906,12 @@ classes:
       - last_updated
       - local_name
   prefix:
+    class_uri: sssom:Prefix
     slots:
       - prefix_name
       - prefix_url
   extension definition:
+    class_uri: sssom:ExtensionDefinition
     description: A definition of an extension (non-standard) slot.
     slots:
       - slot_name
