@@ -3,10 +3,7 @@ name: spatial
 prefixes:
   ccf: http://purl.org/ccf/
   oboInOwl: http://www.geneontology.org/formats/oboInOwl#
-  loinc: http://purl.bioontology.org/ontology/LNC/
   linkml: https://w3id.org/linkml/
-  RO: http://purl.obolibrary.org/obo/RO_
-  IAO: http://purl.obolibrary.org/obo/IAO_
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   FMA: http://purl.org/sig/ont/fma/fma
   ASCTB-TEMP: https://purl.org/ccf/ASCTB-TEMP_
