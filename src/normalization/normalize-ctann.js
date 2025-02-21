@@ -66,14 +66,14 @@ function normalizeData(context, obj) {
       label: "Organ level extension column",
       type_of: [ "CtAnnExtensionDefinition" ],
       slot_name: "ext_organ_level",
-      property: "ccf:organ_level",
+      property: "http://purl.org/ccf/organ_level",
       type_hint: "xsd:string",
     }, {
       id: `${getPurl(context)}#extension2`,
       label: "Organ ID extension column",
       type_of: [ "CtAnnExtensionDefinition" ],
       slot_name: "ext_organ_id",
-      property: "ccf:organ_id",
+      property: "http://purl.org/ccf/organ_id",
       type_hint: "xsd:anyURI",
     }],
     mappings: getMappings(context, data)
