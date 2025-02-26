@@ -4,7 +4,11 @@ import { lookup } from 'mime-types';
 import { resolve } from 'path';
 import { info } from '../utils/logging.js';
 import { exec, throwOnError } from '../utils/sh-exec.js';
-import { getVersionTag, getCodeRepository, getCommitUrl } from '../utils/git.js';
+import { getCodeRepository, getCommitUrl } from '../utils/git.js';
+import { ReferenceExtractor } from './reference-extractor/reference-extractor.js';
+import { DOIExtractor } from './reference-extractor/doi-extractor.js';
+import { BioRxivExtractor } from './reference-extractor/biorxiv-extractor.js';
+import { get } from 'http';
 
 export function readMetadata(context) {
   const { path } = context.selectedDigitalObject;
@@ -96,7 +100,8 @@ function generateRawMetadata(context, metadata) {
     id: `${getMetadataUrl(context)}#raw-data`,
     label: metadata.title,
     ...metadata,
-    distributions: getRawDataDistributions(context, datatable)
+    distributions: getRawDataDistributions(context, datatable),
+    references: getRawDataReferences(context, metadata.description),
   }
 }
 
@@ -219,6 +224,14 @@ function getRawDataDistributions(context, datatable) {
       mediaType: lookup(downloadUrl),
     };
   }))
+}
+
+function getRawDataReferences(context, description) {
+  const extractor = new ReferenceExtractor();
+  extractor.registerStrategy('doi', new DOIExtractor());
+  extractor.registerStrategy('biorxiv', new BioRxivExtractor());
+
+  return extractor.extract(description);
 }
 
 function getDatasetIri(context) {
