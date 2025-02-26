@@ -101,7 +101,10 @@ function generateRawMetadata(context, metadata) {
     label: metadata.title,
     ...metadata,
     distributions: getRawDataDistributions(context, datatable),
-    references: getRawDataReferences(context, metadata.description),
+    references: removeDuplicateStrings([
+      ...(metadata.references || []), 
+      ...getRawDataReferences(context, metadata.description)
+    ]),
   }
 }
 
@@ -270,4 +273,8 @@ export function removeDuplicate(data, distinctProperties) {
   return data.filter((value, index, self) =>
     self.findIndex(v => distinctProperties.every(k => v[k] === value[k])) === index
   );
+}
+
+export function removeDuplicateStrings(strings) {
+  return [...new Set(strings)];
 }
