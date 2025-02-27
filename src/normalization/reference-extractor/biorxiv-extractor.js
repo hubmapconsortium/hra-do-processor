@@ -9,7 +9,7 @@ class BioRxivExtractor {
     const references = [];
     
     // Pattern for bioRxiv URLs
-    const biorxivUrlPattern = /https?:\/\/www\.biorxiv\.org\/content\/[^\s\)\]>]+/g;
+    const biorxivUrlPattern = /https?:\/\/(www\.)?biorxiv\.org\/content\/[^\s\)\]>]+/g;
     let match;
     
     while ((match = biorxivUrlPattern.exec(text)) !== null) {
