@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { info } from '../utils/logging.js';
 import { hash } from '../utils/hash.js';
-import { checkIfValidUrl } from '../utils/validation.js';
+import { checkIfValidIri, checkIfValidUrl } from '../utils/validation.js';
 import { ObjectBuilder } from '../utils/object-builder.js';
 import {
   normalizeMetadata,
@@ -187,7 +187,7 @@ function createDatasetObject(context, sample, dataset) {
   if (!checkDatasetId(dataset['@id'])) {
     return null;
   }
-  return new ObjectBuilder()
+  const normalizedDataset = new ObjectBuilder()
     .append('id', dataset['@id'])
     .append('label', getDatasetLabel(dataset))
     .append('type_of', ['Dataset'])
@@ -199,6 +199,18 @@ function createDatasetObject(context, sample, dataset) {
     .append('summaries', dataset.summaries?.map((summary, index) =>
       generateCellSummaryId(context, dataset, summary, index)) || [])
     .build();
+
+    if ('cell_count' in dataset) {
+      normalizedDataset['cell_count'] = ensureNumber(dataset['cell_count']);
+    }
+    if ('gene_count' in dataset) {
+      normalizedDataset['gene_count'] = ensureNumber(dataset['gene_count']);
+    }
+    if ('organ_id' in dataset) {
+      normalizedDataset['organ_id'] = checkIfValidIri(dataset['organ_id']);
+    }
+    
+    return normalizedDataset;
 }
 
 // ---------------------------------------------------------------------------------

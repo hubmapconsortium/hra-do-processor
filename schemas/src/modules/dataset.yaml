@@ -33,6 +33,9 @@ classes:
       - description
       - link
       - technology
+      - cell_count
+      - gene_count
+      - organ_id
       - thumbnail
       - summaries
 
@@ -93,6 +96,25 @@ slots:
     title: thumbnail
     description: Image or icon used in user interfaces.
     required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  cell_count:
+    title: cell count
+    description: Number of cells analyzed in the dataset.
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  gene_count:
+    title: gene count
+    description: Number of genes analyzed in the dataset.
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  organ_id:
+    title: organ identifier
+    description: Identifier of the organ from which the dataset was derived.
+    required: false
+    range: EntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   summaries:
