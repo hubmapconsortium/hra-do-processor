@@ -193,7 +193,7 @@ function createDatasetObject(context, sample, dataset) {
     .append('type_of', ['Dataset'])
     .append('pref_label', dataset.label)
     .append('description', dataset.description)
-    .append('external_link', dataset.link)
+    .append('link', dataset.link)
     .append('technology', dataset.technology || 'OTHER')
     .append('thumbnail', dataset.thumbnail || 'assets/icons/ico-unknown.svg')
     .append('cell_summaries', dataset.summaries?.map((summary, index) =>

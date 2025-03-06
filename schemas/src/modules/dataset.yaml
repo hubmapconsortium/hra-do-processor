@@ -31,7 +31,7 @@ classes:
     slots:
       - pref_label
       - description
-      - external_link
+      - link
       - technology
       - thumbnail
       - cell_summaries
@@ -74,8 +74,8 @@ classes:
         range: AssayDatasetData
 
 slots:
-  external_link:
-    title: external link
+  link:
+    title: link
     description: >-
       URL link directing to external resources or pages associated with
       the dataset.
