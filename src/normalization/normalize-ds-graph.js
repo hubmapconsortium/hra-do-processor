@@ -167,13 +167,13 @@ function normalizeDatasetData(context, data) {
     const donors = data['@graph']
     const sampleBlockDatasets = donors.map((donor) => {
       return donor['samples'].map((block) => {
-        return block['datasets']?.map((dataset) => createDatasetObject(context, block, dataset))
+        return block['datasets']?.map((dataset) => createDatasetObject(context, dataset))
       }).flat();
     }).flat();
     const sampleSectionDatasets = donors.map((donor) => {
       return donor['samples'].map((block) => {
         return block['sections']?.map((section) => {
-          return section['datasets']?.map((dataset) => createDatasetObject(context, section, dataset))
+          return section['datasets']?.map((dataset) => createDatasetObject(context, dataset))
         }).flat();
       }).flat();
     }).flat();
@@ -183,7 +183,7 @@ function normalizeDatasetData(context, data) {
   }
 }
 
-function createDatasetObject(context, sample, dataset) {
+function createDatasetObject(context, dataset) {
   if (!checkDatasetId(dataset['@id'])) {
     return null;
   }
