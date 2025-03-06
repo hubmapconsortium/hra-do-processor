@@ -89,30 +89,35 @@ slots:
     title: assay technology
     description: >-
       Type of technology or technique used to collect or analyze the data.
+    slot_uri: ccf:technology
     required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   thumbnail:
     title: thumbnail
     description: Image or icon used in user interfaces.
+    slot_uri: ccf:thumbnail
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   cell_count:
     title: cell count
     description: Number of cells analyzed in the dataset.
+    slot_uri: ccf:cell_count
     required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   gene_count:
     title: gene count
     description: Number of genes analyzed in the dataset.
+    slot_uri: ccf:gene_count
     required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   organ_id:
     title: organ identifier
     description: Identifier of the organ from which the dataset was derived.
+    slot_uri: ccf:organ_id
     required: false
     range: EntityID
     annotations:
