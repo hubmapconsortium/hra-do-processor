@@ -196,7 +196,7 @@ function createDatasetObject(context, sample, dataset) {
     .append('link', dataset.link)
     .append('technology', dataset.technology || 'OTHER')
     .append('thumbnail', dataset.thumbnail || 'assets/icons/ico-unknown.svg')
-    .append('cell_summaries', dataset.summaries?.map((summary, index) =>
+    .append('summaries', dataset.summaries?.map((summary, index) =>
       generateCellSummaryId(context, dataset, summary, index)) || [])
     .build();
 }

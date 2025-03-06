@@ -34,7 +34,7 @@ classes:
       - link
       - technology
       - thumbnail
-      - cell_summaries
+      - summaries
 
   CellSummaryID:
     title: Cell Summary Identifier
@@ -95,7 +95,7 @@ slots:
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  cell_summaries:
+  summaries:
     title: cell summary
     description: List of cell summary data associated with this dataset.
     slot_uri: ccf:has_cell_summary
