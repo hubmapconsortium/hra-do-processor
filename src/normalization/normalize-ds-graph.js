@@ -127,7 +127,7 @@ function createTissueBlockObject(context, donor, block) {
     .append('pref_label', block.label)
     .append('description', block.description)
     .append('rui_location', block.rui_location?.['@id'])
-    .append('external_link', block.link)
+    .append('link', block.link)
     .append('sections', block.sections
       ?.map((section) => createTissueSectionObject(block, section))
       .filter(onlyNonNull))
@@ -153,7 +153,7 @@ function createTissueSectionObject(block, section) {
     .append('type_of', ['TissueSection'])
     .append('pref_label', section.label)
     .append('description', section.description)
-    .append('external_link', section.link)
+    .append('link', section.link)
     .append('section_number', section.section_number)
     .append('datasets', section.datasets
       ?.map((dataset) => dataset['@id'])

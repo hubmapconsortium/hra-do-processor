@@ -32,7 +32,7 @@ classes:
       - pref_label
       - description
       - rui_location
-      - external_link
+      - link
       - sections
       - datasets
       - section_count
@@ -54,7 +54,7 @@ classes:
     slots:
       - pref_label
       - description
-      - external_link
+      - link
       - related_samples
       - datasets
       - section_number
@@ -107,8 +107,8 @@ classes:
         range: SampleData
 
 slots:
-  external_link:
-    title: external link
+  link:
+    title: link
     description: A link to an external resource to provide more information.
     slot_uri: ccf:url
     annotations:
