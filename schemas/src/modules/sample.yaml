@@ -154,6 +154,7 @@ slots:
   section_count:
     title: section count
     description: The number of sections contained within the tissue block.
+    slot_uri: ccf:section_count
     required: false
     range: integer
     annotations:
@@ -161,6 +162,7 @@ slots:
   section_size:
     title: section size
     description: The physical size of each tissue section.
+    slot_uri: ccf:section_size
     required: false
     range: float
     annotations:
@@ -168,11 +170,13 @@ slots:
   section_size_unit:
     title: section size unit
     description: The unit of measurement used for the section size.
+    slot_uri: ccf:section_size_unit
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   section_number:
     title: section number
     description: The order number of a specific section within a tissue block.
+    slot_uri: ccf:section_number
     required: false
     range: integer
     annotations:
