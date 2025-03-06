@@ -30,7 +30,7 @@ classes:
     slots:
       - pref_label
       - description
-      - external_link
+      - link
       - age
       - bmi
       - sex
@@ -40,7 +40,7 @@ classes:
       - consortium_name
       - provider_name
       - provider_uuid
-      - provides_samples
+      - samples
     slot_usage:
       sex_id:
         pattern: (loinc:LA3-6|loinc:LA2-8|loinc:LA4489-6)
@@ -80,26 +80,29 @@ classes:
         range: DonorData
 
 slots:
-  external_link:
-    title: external link
+  link:
+    title: link
     description: A link to an external resource to provide more information.
     slot_uri: ccf:url
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   age:
     title: age
+    slot_uri: ccf:age
     description: The age of the donor.
     range: double
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   bmi:
     title: body mass index
+    slot_uri: ccf:bmi
     description: The Body Mass Index (BMI) of the donor.
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   sex:
     title: biological sex
+    slot_uri: ccf:sex
     description: The biological sex of the donor.
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -127,6 +130,7 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   consortium_name:
     title: consortium name
+    slot_uri: ccf:consortium_name
     description: The name of the consortium associated with the data.
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -146,11 +150,11 @@ slots:
       sample data.
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  provides_samples:
-    title: provides
+  samples:
+    title: provides samples
     description: >-
       A collection of references to tissue samples associated with the donor.
-    slot_uri: ccf:provides
+    slot_uri: ccf:samples
     multivalued: true
     inlined: false
     range: SampleID

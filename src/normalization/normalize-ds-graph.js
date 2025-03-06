@@ -82,7 +82,7 @@ function createDonorObject(donor) {
     .append('type_of', ['Donor'])
     .append('pref_label', donor.label)
     .append('description', donor.description)
-    .append('external_link', donor.link)
+    .append('link', donor.link)
     .append('age', ensureNumber(donor.age))
     .append('sex', donor.sex)
     .append('sex_id', getSexId(donor.sex))
@@ -92,7 +92,7 @@ function createDonorObject(donor) {
     .append('consortium_name', donor.consortium_name)
     .append('provider_name', donor.provider_name)
     .append('provider_uuid', donor.provider_uuid)
-    .append('provides_samples',
+    .append('samples',
       donor.samples
         .map((sample) => sample['@id'])
         .filter(checkSampleId))
