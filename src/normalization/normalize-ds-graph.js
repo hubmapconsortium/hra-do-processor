@@ -49,7 +49,7 @@ function normalizeData(context, data) {
       donor: removeDuplicate(normalizeDonorData(data), ['id']),
       sample: removeDuplicate(normalizeSampleData(context, data), ['id']),
       dataset: removeDuplicate(normalizeDatasetData(context, data), ['id']),
-      spatial_entity: removeDuplicate(normalizeExtractionSiteData(data), ['id']),
+      spatial_entity: removeDuplicate(normalizeExtractionSiteData(context, data), ['id']),
       cell_summary: removeDuplicate(normalizeCellSummaryData(context, data), ['id']),
       collision: removeDuplicate(normalizeCollisionData(context, data), ['id']),
       corridor: removeDuplicate(normalizeCorridorData(context, data), ['id'])
@@ -205,12 +205,12 @@ function createDatasetObject(context, sample, dataset) {
 // NORMALIZING EXTRACTION SITE DATA
 // ---------------------------------------------------------------------------------
 
-function normalizeExtractionSiteData(data) {
+function normalizeExtractionSiteData(context, data) {
   try {
     const donors = data['@graph'];
     return donors.map((donor) => {
       return donor['samples'].map((block) =>
-        createExtractionSiteObject(block, block['rui_location'])
+        createExtractionSiteObject(context, block)
       ).filter(onlyNonNull);
     }).flat();
   } catch (error) {
@@ -218,7 +218,8 @@ function normalizeExtractionSiteData(data) {
   }  
 }
 
-function createExtractionSiteObject(block, spatialEntity) {
+function createExtractionSiteObject(context, block) {
+  const spatialEntity = block.rui_location;
   if (!spatialEntity || !checkExtractionSiteId(spatialEntity['@id'])) {
     return null;
   }
@@ -237,6 +238,11 @@ function createExtractionSiteObject(block, spatialEntity) {
     .append('slice_count', spatialEntity.slice_count)
     .append('slice_thickness', spatialEntity.slice_thickness)
     .append('placement', createPlacementObject(block, spatialEntity, spatialEntity.placement))
+    .append('all_collisions', spatialEntity.all_collisions?.map((collision, index) =>
+      generateCollisionId(context, spatialEntity, collision, index)).filter(onlyNonNull) || [])
+    .append('corridor', getCorridorId(context, spatialEntity.corridor))
+    .append('summaries', spatialEntity.summaries?.map((summary, index) =>
+      generateCellSummaryId(context, spatialEntity, summary, index)).filter(onlyNonNull) || [])
     .build();
 }
 
@@ -428,23 +434,22 @@ function normalizeDate(originalDate) {
   return `${year}-${formattedMonth}-${formattedDay}`;
 }
 
-function getCorridorId(context, block) {
-  const corridor = block.rui_location?.corridor;
-  return corridor ? [ generateCorridorId(context, block, corridor) ] : [];
+function getCorridorId(context, parent, corridor) {
+  return corridor ? generateCorridorId(context, parent, corridor) : null;
 }
 
-function generateCorridorId(context, block, corridor) {
+function generateCorridorId(context, parent, corridor) {
   const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getCorridorHash(block, corridor);
+  const hashCode = getCorridorHash(parent, corridor);
   return `${iri}/${version}#${hashCode}`;
 }
 
-function generateCollisionId(context, block, collision, index) {
+function generateCollisionId(context, parent, collision, index) {
   if (collision['collisions'].length === 0) {
     return null;
   }
   const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getCollisionHash(block, collision, index);
+  const hashCode = getCollisionHash(parent, collision, index);
   return `${iri}/${version}#${hashCode}`;
 }
 
@@ -454,9 +459,9 @@ function generateCollisionItemId(context, block, collision, collisionItem, index
   return `${iri}/${version}#${hashCode}`;
 }
 
-function generateCellSummaryId(context, dataset, summary, index) {
+function generateCellSummaryId(context, parent, summary, index) {
   const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getCellSummaryHash(dataset, summary, index);
+  const hashCode = getCellSummaryHash(parent, summary, index);
   return `${iri}/${version}#${hashCode}`;
 }
 
@@ -472,9 +477,9 @@ function generateGeneExpressionId(context, dataset, summary, summaryRow, expr, i
   return `${iri}/${version}#${hashCode}`;
 }
 
-function getCellSummaryHash(dataset, summary, index, length=0) {
+function getCellSummaryHash(parent, summary, index, length=0) {
   const { annotation_method, modality } = summary;
-  const primaryKey = `${dataset['@id']}-${annotation_method}-${modality}-${index}`;
+  const primaryKey = `${parent['@id']}-${annotation_method}-${modality}-${index}`;
   return getHashCode(primaryKey, length);
 }
 
@@ -493,9 +498,9 @@ function getGeneExpressionHash(dataset, summary, summaryRow, expr, index, length
   return getHashCode(primaryKey, length);
 }
 
-function getCollisionHash(block, collision, index, length=0) {
+function getCollisionHash(parent, collision, index, length=0) {
   const { collision_method } = collision;
-  const primaryKey = `${block['@id']}-${collision_method}-${index}`;
+  const primaryKey = `${parent['@id']}-${collision_method}-${index}`;
   return getHashCode(primaryKey, length);
 }
 
@@ -506,9 +511,9 @@ function getCollisionItemHash(block, collision, collisionItem, index, length=0) 
   return getHashCode(primaryKey, length);
 }
 
-function getCorridorHash(block, corridor, length=0) {
+function getCorridorHash(parent, corridor, length=0) {
   const { file } = corridor;
-  const primaryKey = `${block['@id']}-${file}`;
+  const primaryKey = `${parent['@id']}-${file}`;
   return getHashCode(primaryKey, length);
 }
 

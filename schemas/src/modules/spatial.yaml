@@ -43,6 +43,9 @@ classes:
       - slice_count
       - slice_thickness
       - placement
+      - all_collisions
+      - corridor
+      - summaries
     slot_usage:
       dimension_unit:
         pattern: (centimeter|millimeter)
@@ -102,9 +105,8 @@ classes:
       - placement
 
   AnatomicalStructureID:
+    is_a: EntityID
     title: Anatomical Structure Identifier
-    slots:
-      - id
     slot_usage:
       id:
         structured_pattern:
@@ -346,5 +348,33 @@ slots:
     title: file format
     description: The format of the file to read.
     required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  all_collisions:
+    title: has collision summaries
+    description: >-
+      Summaries of collision data indicating spatial collisions with other organs.
+    slot_uri: ccf:has_collision_summary
+    required: false
+    multivalued: true
+    range: EntityID
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  corridor:
+    title: corridor
+    description: >-
+      The corridor structures linked to the spatial positioning of the tissue sample.
+    slot_uri: ccf:has_corridor
+    required: false
+    range: EntityID
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  summaries:
+    title: has cell summary
+    description: List of cell summary data associated with this dataset.
+    slot_uri: ccf:has_cell_summary
+    required: false
+    multivalued: true
+    range: EntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
