@@ -53,17 +53,11 @@ classes:
       - pref_label
       - description
       - link
-      - related_samples
       - datasets
       - section_number
 
   SpatialEntityID:
     title: Spatial Entity Identifier
-    slots:
-      - id
-
-  SampleOrDonorID:
-    title: Sample or Donor Identifier
     slots:
       - id
 
@@ -99,15 +93,6 @@ slots:
     title: link
     description: A link to an external resource to provide more information.
     slot_uri: ccf:url
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  related_samples:
-    title: related sample
-    description: A collection of references to additional related samples.
-    slot_uri: ccf:related_sample
-    multivalued: true
-    inlined: false
-    range: TissueBlock
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   rui_location:
