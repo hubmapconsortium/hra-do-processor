@@ -137,9 +137,6 @@ function createTissueBlockObject(context, donor, block) {
     .append('section_count', block.section_count)
     .append('section_size', block.section_size)
     .append('section_size_unit', block.section_size_unit)
-    .append('collision_summaries', block.rui_location?.['all_collisions']?.map((collision, index) =>
-      generateCollisionId(context, block, collision, index)).filter(onlyNonNull) || [])
-    .append('corridors', getCorridorId(context, block))
     .build();
 }
 

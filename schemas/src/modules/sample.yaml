@@ -36,10 +36,8 @@ classes:
       - sections
       - datasets
       - section_count
-      - section_size # block_dimension
-      - section_size_unit # block_dimension_unit
-      - collision_summaries
-      - corridors
+      - section_size
+      - section_size_unit
 
   TissueSection:
     title: Tissue Section
@@ -61,16 +59,6 @@ classes:
 
   SpatialEntityID:
     title: Spatial Entity Identifier
-    slots:
-      - id
-
-  CollisionSummaryID:
-    title: Collision Summary Identifier
-    slots:
-      - id
-
-  CorridorID:
-    title: Corridor Identifier
     slots:
       - id
 
@@ -179,26 +167,5 @@ slots:
     slot_uri: ccf:section_number
     required: false
     range: integer
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  collision_summaries:
-    title: collision summary
-    description: >-
-      Summaries of collision data indicating spatial collisions with other organs.
-    slot_uri: ccf:has_collision_summary
-    required: false
-    multivalued: true
-    range: CollisionSummaryID
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  corridors:
-    title: corridor
-    description: >-
-      References to corridor structures linked to the spatial positioning of the
-      tissue block.
-    slot_uri: ccf:has_corridor
-    required: false
-    multivalued: true
-    range: CorridorID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
