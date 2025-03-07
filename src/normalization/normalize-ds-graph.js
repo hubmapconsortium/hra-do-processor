@@ -252,7 +252,7 @@ function createExtractionSiteObject(context, block) {
     .append('placement', createPlacementObject(block, spatialEntity, spatialEntity.placement))
     .append('all_collisions', spatialEntity.all_collisions?.map((collision, index) =>
       generateCollisionId(context, spatialEntity, collision, index)).filter(onlyNonNull) || [])
-    .append('corridor', getCorridorId(context, spatialEntity.corridor))
+    .append('corridor', getCorridorId(context, spatialEntity, spatialEntity.corridor))
     .append('summaries', spatialEntity.summaries?.map((summary, index) =>
       generateCellSummaryId(context, spatialEntity, summary, index)).filter(onlyNonNull) || [])
     .build();
@@ -410,8 +410,11 @@ function normalizeCorridorData(context, data) {
     const donors = data['@graph'];
     return donors.map((donor) => {
       return donor['samples'].map((block) => {
-        const corridor = block.rui_location?.corridor;
-        return corridor ? createCorridorObject(context, block, corridor) : null;
+        if ('rui_location' in block) {
+          const corridor = block.rui_location.corridor;
+          return corridor ? createCorridorObject(context, spatialEntity, corridor) : null;
+        }
+        return null;
       }).filter(onlyNonNull);
     }).flat();
   } catch (error) {
@@ -419,10 +422,10 @@ function normalizeCorridorData(context, data) {
   }
 }
 
-function createCorridorObject(context, block, corridor) {
+function createCorridorObject(context, spatialEntity, corridor) {
   return new ObjectBuilder()
-    .append('id', generateCorridorId(context, block, corridor))
-    .append('label', getCorridorLabel(block, corridor))
+    .append('id', generateCorridorId(context, spatialEntity, corridor))
+    .append('label', getCorridorLabel(spatialEntity, corridor))
     .append('type_of', ['Corridor'])
     .append('file_format', corridor.file_format)
     .append('file', corridor.file)
@@ -590,8 +593,8 @@ function getCollisionItemLabel(block, collision, collisionItem, index) {
   return `Collision details intersecting with ${as_label}, identified using the ${collision_method} method (#${hashCode})`;
 }
 
-function getCorridorLabel(block, collision) {
-  const hashCode = getCorridorHash(block, collision, 5);
+function getCorridorLabel(parent, collision) {
+  const hashCode = getCorridorHash(parent, collision, 5);
   return `Corridor of tissue block (#${hashCode})`;
 }
 
