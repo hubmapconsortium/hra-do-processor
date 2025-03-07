@@ -29,7 +29,7 @@ classes:
       - Instance
     slots:
       - file_format
-      - file_url
+      - file
 
   CorridorData:
     attributes:
@@ -97,12 +97,14 @@ slots:
   file_format:
     title: file format
     description: The format of the file to read.
+    slot_uri: ccf:file_format
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  file_url:
+  file:
     title: file link
     description: The URL of the file to download or viewing.
+    slot_uri: ccf:file_url
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

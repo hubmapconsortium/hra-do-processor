@@ -425,7 +425,7 @@ function createCorridorObject(context, block, corridor) {
     .append('label', getCorridorLabel(block, corridor))
     .append('type_of', ['Corridor'])
     .append('file_format', corridor.file_format)
-    .append('file_url', corridor.file)
+    .append('file', corridor.file)
     .build();
 }
 
