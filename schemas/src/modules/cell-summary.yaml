@@ -223,9 +223,8 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   percentage:
     title: percentage
-    description: Percentage of the total sample that this cell type represents.
-    slot_uri: ccf:percentage_of_total
-    required: true
+    description: The proportion relative to a whole.
+    slot_uri: ccf:percentage
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

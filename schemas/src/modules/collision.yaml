@@ -173,10 +173,8 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   percentage:
     title: percentage
-    description: >-
-      Percentage of total collision area that this spatial entity represents.
-    slot_uri: ccf:collision_percentage
-    required: true
+    description: The proportion relative to a whole.
+    slot_uri: ccf:percentage
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
