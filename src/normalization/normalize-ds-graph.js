@@ -324,8 +324,8 @@ function createCellSummaryObject(context, dataset, summary, index) {
     .append('type_of', ['CellSummary'])
     .append('annotation_method', summary.annotation_method)
     .append('modality', summary.modality)
-    .append('donor_sex', summary.sex)
-    .append('summary_rows', summary['summary'].map((summaryRow, itemIndex) =>
+    .append('sex', summary.sex)
+    .append('summary', summary['summary'].map((summaryRow, itemIndex) =>
       createCellSummaryRowObject(context, dataset, summary, summaryRow, itemIndex)))
     .build();
 }
@@ -337,7 +337,7 @@ function createCellSummaryRowObject(context, dataset, summary, summaryRow, index
     .append('type_of', ['CellSummaryRow'])
     .append('cell_id', summaryRow.cell_id)
     .append('cell_label', summaryRow.cell_label)
-    .append('gene_expressions', summaryRow['gene_expr']?.map((expr, itemIndex) =>
+    .append('gene_expr', summaryRow['gene_expr']?.map((expr, itemIndex) =>
       createGeneExpressionObject(context, dataset, summary, summaryRow, expr, itemIndex)) || [])
     .append('count', summaryRow.count)
     .append('percentage', summaryRow.percentage)
@@ -352,7 +352,7 @@ function createGeneExpressionObject(context, dataset, summary, summaryRow, expr,
     .append('gene_id', expr.gene_id)
     .append('gene_label', expr.gene_label)
     .append('ensembl_id', expr.ensembl_id)
-    .append('mean_gene_expression_value', expr.mean_gene_expr_value)
+    .append('mean_gene_expr_value', expr.mean_gene_expr_value)
     .build();
 }
 

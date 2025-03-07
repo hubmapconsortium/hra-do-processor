@@ -42,8 +42,8 @@ classes:
       - annotation_method
       - aggregated_summaries
       - modality
-      - donor_sex
-      - summary_rows
+      - sex
+      - summary
   
   CellSummaryRow:
     title: Cell Summary Row
@@ -59,7 +59,7 @@ classes:
     slots:
       - cell_id
       - cell_label
-      - gene_expressions
+      - gene_expr
       - count
       - percentage
 
@@ -89,7 +89,7 @@ classes:
      - gene_id
      - gene_label
      - ensembl_id
-     - mean_gene_expression_value
+     - mean_gene_expr_value
 
   GeneID:
     title: Gene Identifier
@@ -170,14 +170,14 @@ slots:
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  donor_sex:
+  sex:
     title: donor biological sex
     description: >-
       Biological sex of the donor from which the tissue samples were derived.
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  summary_rows:
+  summary:
     title: cell summary row
     description: >-
       Collection of detailed cell summary entries, listing each cell's 
@@ -202,7 +202,7 @@ slots:
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  gene_expressions:
+  gene_expr:
     title: gene expression
     description: List of gene expression profiles for the cell type.
     slot_uri: ccf:has_gene_expression
@@ -248,7 +248,7 @@ slots:
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  mean_gene_expression_value:
+  mean_gene_expr_value:
     title: mean gene expression value
     description: >-
       Average expression level of the gene across the sample or dataset.
