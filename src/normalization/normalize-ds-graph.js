@@ -385,7 +385,7 @@ function createCollisionObject(context, block, collision, index) {
     .append('label', getCollisionLabel(block, collision, index))
     .append('type_of', ['CollisionSummary'])
     .append('collision_method', collision.collision_method)
-    .append('collision_items', collision['collisions']?.map((collisionItem, itemIndex) =>
+    .append('collisions', collision['collisions']?.map((collisionItem, itemIndex) =>
       createCollisionItemObject(context, block, collision, collisionItem, itemIndex)) || [])
     .build();
 }

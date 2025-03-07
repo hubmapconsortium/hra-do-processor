@@ -28,7 +28,7 @@ classes:
       - Instance
     slots:
       - collision_method
-      - collision_items
+      - collisions
   
   CollisionItem:
     title: Collision Item
@@ -121,8 +121,8 @@ slots:
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  collision_items:
-    title: collision item
+  collisions:
+    title: collisions
     description: >-
       List of collision instances detailing specific spatial entity interactions.
     slot_uri: ccf:has_collision_item
