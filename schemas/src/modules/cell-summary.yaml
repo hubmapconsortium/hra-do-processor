@@ -40,6 +40,7 @@ classes:
       - Instance
     slots:
       - annotation_method
+      - aggregated_summary_count
       - aggregated_summaries
       - modality
       - sex
@@ -150,6 +151,14 @@ slots:
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
+  aggregated_summary_count:
+    title: aggregated summary count
+    description: Number of aggregared summaries.
+    slot_uri: ccf:aggregated_summary_count
+    required: false
+    range: integer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   aggregated_summaries:
     title: aggregated summary
     description: >-
@@ -158,7 +167,7 @@ slots:
     slot_uri: ccf:aggregates
     required: false
     multivalued: true
-    range: uriorcurie
+    range: EntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion    
   modality:

@@ -318,7 +318,7 @@ function normalizeCellSummaryData(context, data) {
 }
 
 function createCellSummaryObject(context, dataset, summary, index) {
-  return new ObjectBuilder()
+  const normalizedCellSummary = new ObjectBuilder()
     .append('id', generateCellSummaryId(context, dataset, summary, index))
     .append('label', getCellSummaryLabel(dataset, summary, index))
     .append('type_of', ['CellSummary'])
@@ -328,6 +328,15 @@ function createCellSummaryObject(context, dataset, summary, index) {
     .append('summary', summary['summary'].map((summaryRow, itemIndex) =>
       createCellSummaryRowObject(context, dataset, summary, summaryRow, itemIndex)))
     .build();
+  
+  if ('aggregated_summary_count' in summary) {
+    normalizedCellSummary['aggregated_summary_count'] = ensureNumber(summary.aggregated_summary_count);
+  }
+  if ('aggregated_summaries' in summary) {
+    normalizedCellSummary['aggregated_summaries'] = summary.aggregated_summaries;
+  }
+
+  return normalizedCellSummary;
 }
 
 function createCellSummaryRowObject(context, dataset, summary, summaryRow, index) {
