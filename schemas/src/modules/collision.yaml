@@ -41,15 +41,13 @@ classes:
     mixins:
       - Named
       - Instance
-    slots: 
-      - spatial_entity_reference
-      - volume
-      - percentage
-
-  SpatialEntityID:
-    title: Spatial Entity Identifier
     slots:
-      - id
+      - reference_organ
+      - as_3d_id
+      - as_id
+      - as_label
+      - as_volume
+      - percentage
 
   CollisionData:
     attributes:
@@ -118,6 +116,7 @@ slots:
     title: collision method
     description: >-
       Method used to determine or calculate collisions between spatial entities.
+    slot_uri: ccf:collision_method
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -132,17 +131,42 @@ slots:
     inlined_as_list: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  spatial_entity_reference:
+  reference_organ:
+    title: reference organ
+    description: >-
+      Reference to the reference organ's spatial entity.
+    slot_uri: ccf:has_reference_organ
+    range: EntityID
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  as_3d_id:
     title: spatial entity
     description: Reference to the spatial entity involved in the collision.
     slot_uri: ccf:has_spatial_entity
     required: true
-    range: SpatialEntityID
+    range: EntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  volume:
+  as_id:
+    title: organ ID
+    description: Identifier for the spatial entity involved in the collision.
+    slot_uri: ccf:organ_id
+    required: true
+    range: EntityID
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  as_label: 
+    title: organ label
+    description: Label for the spatial entity involved in the collision.
+    slot_uri: ccf:organ_label
+    required: true
+    range: string
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  as_volume:
     title: volume
     description: Volume of the spatial entity in the collision.
+    slot_uri: ccf:organ_volume
     required: true
     range: float
     annotations:
@@ -151,6 +175,7 @@ slots:
     title: percentage
     description: >-
       Percentage of total collision area that this spatial entity represents.
+    slot_uri: ccf:collision_percentage
     required: true
     range: float
     annotations:

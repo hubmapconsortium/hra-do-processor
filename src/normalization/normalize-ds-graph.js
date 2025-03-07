@@ -396,8 +396,11 @@ function createCollisionItemObject(context, spatialEntity, collisionSummary, col
     .append('id', generateCollisionItemId(context, spatialEntity, collisionSummary, collisionItem, index))
     .append('label', getCollisionItemLabel(spatialEntity, collisionSummary, collisionItem, index))
     .append('type_of', ['CollisionItem'])
-    .append('spatial_entity_reference', collisionItem.as_3d_id)
-    .append('volume', collisionItem.as_volume)
+    .append('reference_organ', collisionItem.reference_organ)
+    .append('as_3d_id', collisionItem.as_3d_id)
+    .append('as_id', collisionItem.as_id)
+    .append('as_label', collisionItem.as_label)
+    .append('as_volume', collisionItem.as_volume)
     .append('percentage', collisionItem.percentage)
     .build();
 }
