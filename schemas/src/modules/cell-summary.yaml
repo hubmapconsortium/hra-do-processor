@@ -64,9 +64,8 @@ classes:
       - percentage
 
   CellID:
+    is_a: EntityID
     title: Cell Identifier
-    slots:
-      - id
     slot_usage:
       id:
         structured_pattern:
@@ -92,9 +91,8 @@ classes:
      - mean_gene_expr_value
 
   GeneID:
+    is_a: EntityID
     title: Gene Identifier
-    slots:
-      - id
     slot_usage:
       id:
         structured_pattern:
@@ -167,13 +165,14 @@ slots:
     title: modality
     description: >-
       Type or method of data collection, such as imaging or sequencing.
+    slot_uri: ccf:modality
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   sex:
     title: donor biological sex
-    description: >-
-      Biological sex of the donor from which the tissue samples were derived.
+    description: The biological sex of the donor.
+    slot_uri: ccf:sex
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -192,6 +191,7 @@ slots:
   cell_id:
     title: cell type identifier
     description: Unique identifier assigned to a cell type.
+    slot_uri: ccf:cell_id
     required: true
     range: CellID
     annotations:
@@ -199,6 +199,7 @@ slots:
   cell_label:
     title: cell label
     description: Descriptive label assigned to a cell type.
+    slot_uri: ccf:cell_label
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -231,6 +232,7 @@ slots:
   gene_id:
     title: gene identifier
     description: Unique identifier assigned to a gene symbol.
+    slot_uri: ccf:gene_id
     required: true
     range: GeneID
     annotations:
@@ -238,6 +240,7 @@ slots:
   gene_label:
     title: gene label
     description: Descriptive label assigned to a gene symbol.
+    slot_uri: ccf:gene_label
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -245,6 +248,7 @@ slots:
     title: ensembl identifier
     description: >-
       Ensembl database identifier for the gene, used for cross-referencing.
+    slot_uri: ccf:ensembl_id
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -252,6 +256,7 @@ slots:
     title: mean gene expression value
     description: >-
       Average expression level of the gene across the sample or dataset.
+    slot_uri: ccf:mean_gene_expression
     required: true
     range: float
     annotations:
