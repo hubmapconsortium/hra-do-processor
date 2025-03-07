@@ -251,7 +251,7 @@ function createExtractionSiteObject(context, block) {
     .append('slice_thickness', spatialEntity.slice_thickness)
     .append('placement', createPlacementObject(block, spatialEntity, spatialEntity.placement))
     .append('all_collisions', spatialEntity.all_collisions?.map((collision, index) =>
-      generateCollisionId(context, spatialEntity, collision, index)).filter(onlyNonNull) || [])
+      generateCollisionSummaryId(context, spatialEntity, collision, index)).filter(onlyNonNull) || [])
     .append('corridor', getCorridorId(context, spatialEntity, spatialEntity.corridor))
     .append('summaries', spatialEntity.summaries?.map((summary, index) =>
       generateCellSummaryId(context, spatialEntity, summary, index)).filter(onlyNonNull) || [])
@@ -364,10 +364,15 @@ function normalizeCollisionData(context, data) {
   try {
     const donors = data['@graph'];
     return donors.map((donor) => {
-      return donor['samples'].map((block) => {
-        return block.rui_location?.all_collisions?.map((collision, index) =>
-          createCollisionObject(context, block, collision, index)
-        ).filter(onlyNonNull) || []
+      return donor.samples.map((block) => {
+      if (!block.rui_location) {
+        return [];
+      }
+      const spatialEntity = block.rui_location;
+      const collisionSummaries = spatialEntity.all_collisions || [];
+      return collisionSummaries
+        .map((collisionSummary, index) => createCollisionObject(context, spatialEntity, collisionSummary, index))
+        .filter(onlyNonNull);
       }).flat();
     }).flat();
   } catch (error) {
@@ -375,25 +380,21 @@ function normalizeCollisionData(context, data) {
   }
 }
 
-function createCollisionObject(context, block, collision, index) {
-  const collisionId = generateCollisionId(context, block, collision, index);
-  if (!collisionId) {
-    return null;
-  }
+function createCollisionObject(context, spatialEntity, collisionSummary, index) {
   return new ObjectBuilder()
-    .append('id', collisionId)
-    .append('label', getCollisionLabel(block, collision, index))
+    .append('id', generateCollisionSummaryId(context, spatialEntity, collisionSummary, index))
+    .append('label', getCollisionSummaryLabel(spatialEntity, collisionSummary, index)) 
     .append('type_of', ['CollisionSummary'])
-    .append('collision_method', collision.collision_method)
-    .append('collisions', collision['collisions']?.map((collisionItem, itemIndex) =>
-      createCollisionItemObject(context, block, collision, collisionItem, itemIndex)) || [])
+    .append('collision_method', collisionSummary.collision_method)
+    .append('collisions', collisionSummary['collisions']?.map((collisionItem, itemIndex) =>
+      createCollisionItemObject(context, spatialEntity, collisionSummary, collisionItem, itemIndex)) || [])
     .build();
 }
 
-function createCollisionItemObject(context, block, collision, collisionItem, index) {
+function createCollisionItemObject(context, spatialEntity, collisionSummary, collisionItem, index) {
   return new ObjectBuilder()
-    .append('id', generateCollisionItemId(context, block, collision, collisionItem, index))
-    .append('label', getCollisionItemLabel(block, collision, collisionItem, index))
+    .append('id', generateCollisionItemId(context, spatialEntity, collisionSummary, collisionItem, index))
+    .append('label', getCollisionItemLabel(spatialEntity, collisionSummary, collisionItem, index))
     .append('type_of', ['CollisionItem'])
     .append('spatial_entity_reference', collisionItem.as_3d_id)
     .append('volume', collisionItem.as_volume)
@@ -459,18 +460,15 @@ function generateCorridorId(context, parent, corridor) {
   return `${iri}/${version}#${hashCode}`;
 }
 
-function generateCollisionId(context, parent, collision, index) {
-  if (collision['collisions'].length === 0) {
-    return null;
-  }
+function generateCollisionSummaryId(context, parent, collisionSummary, index) {
   const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getCollisionHash(parent, collision, index);
+  const hashCode = getCollisionHash(parent, collisionSummary, index);
   return `${iri}/${version}#${hashCode}`;
 }
 
-function generateCollisionItemId(context, block, collision, collisionItem, index) {
+function generateCollisionItemId(context, parent, collisionSummary, collisionItem, index) {
   const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getCollisionItemHash(block, collision, collisionItem, index);
+  const hashCode = getCollisionItemHash(parent, collisionSummary, collisionItem, index);
   return `${iri}/${version}#${hashCode}`;
 }
 
@@ -513,16 +511,16 @@ function getGeneExpressionHash(dataset, summary, summaryRow, expr, index, length
   return getHashCode(primaryKey, length);
 }
 
-function getCollisionHash(parent, collision, index, length=0) {
-  const { collision_method } = collision;
+function getCollisionHash(parent, collisionSummary, index, length=0) {
+  const { collision_method } = collisionSummary;
   const primaryKey = `${parent['@id']}-${collision_method}-${index}`;
   return getHashCode(primaryKey, length);
 }
 
-function getCollisionItemHash(block, collision, collisionItem, index, length=0) {
-  const { collision_method } = collision;
+function getCollisionItemHash(parent, collisionSummary, collisionItem, index, length=0) {
+  const { collision_method } = collisionSummary;
   const { as_3d_id } = collisionItem;
-  const primaryKey = `${block['@id']}-${collision_method}-${as_3d_id}-${index}`;
+  const primaryKey = `${parent['@id']}-${collision_method}-${as_3d_id}-${index}`;
   return getHashCode(primaryKey, length);
 }
 
@@ -580,17 +578,17 @@ function getGeneExpressionLabel(dataset, summary, summaryRow, expr, index) {
   return `Gene expression for ${gene_label} in ${cell_label} (#${hashCode})`;
 }
 
-function getCollisionLabel(block, collision, index) {
-  const { collision_method } = collision;
-  const hashCode = getCollisionHash(block, collision, index, 5);
-  return `Collision summary of tissue block identified using the ${collision_method} method (#${hashCode})`;
+function getCollisionSummaryLabel(parent, collisionSummary, index) {
+  const { collision_method } = collisionSummary;
+  const hashCode = getCollisionHash(parent, collisionSummary, index, 5);
+  return `Collision summary using ${collision_method} method (#${hashCode})`;
 }
 
-function getCollisionItemLabel(block, collision, collisionItem, index) {
-  const { collision_method } = collision;
+function getCollisionItemLabel(parent, collisionSummary, collisionItem, index) {
+  const { collision_method } = collisionSummary;
   const { as_label } = collisionItem;
-  const hashCode = getCollisionItemHash(block, collision, collisionItem, index, 5);
-  return `Collision details intersecting with ${as_label}, identified using the ${collision_method} method (#${hashCode})`;
+  const hashCode = getCollisionItemHash(parent, collisionSummary, collisionItem, index, 5);
+  return `Collision with ${as_label} using the ${collision_method} method (#${hashCode})`;
 }
 
 function getCorridorLabel(parent, collision) {
