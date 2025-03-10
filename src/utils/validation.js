@@ -45,7 +45,7 @@ function validate(context, dataFile, schemaFile, errorFile) {
 
 export function checkIfValidIri(iri, hint = null) {
   try {
-    validateIri(yourIri, IriValidationStrategy.Pragmatic);
+    validateIri(iri, IriValidationStrategy.Pragmatic);
     return iri;
   } catch (e) {
     warning(`The ${hint || 'ID'} '${iri}' is not a vaid IRI. Please check the source metadata.`);
