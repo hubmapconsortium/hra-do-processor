@@ -33,19 +33,19 @@ classes:
 
   CorridorData:
     attributes:
-      donor:
+      donor_record:
         required: false
-      sample:
+      sample_record:
         required: false
-      dataset:
+      dataset_record:
         required: false
-      spatial_entity:
+      spatial_entity_record:
         required: false
-      cell_summary:
+      cell_summary_record:
         required: false
-      collision:
+      collision_record:
         required: false
-      corridor:
+      corridor_record:
         multivalued: true
         inlined_as_list: true
         range: Corridor

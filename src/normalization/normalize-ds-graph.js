@@ -46,13 +46,13 @@ function normalizeData(context, data) {
   const metadata = readMetadata(context);
   try {
     return {
-      donor: removeDuplicate(normalizeDonorData(data), ['id']),
-      sample: removeDuplicate(normalizeSampleData(context, data), ['id']),
-      dataset: removeDuplicate(normalizeDatasetData(context, data), ['id']),
-      spatial_entity: removeDuplicate(normalizeExtractionSiteData(context, data), ['id']),
-      cell_summary: removeDuplicate(normalizeCellSummaryData(context, data), ['id']),
-      collision: removeDuplicate(normalizeCollisionData(context, data), ['id']),
-      corridor: removeDuplicate(normalizeCorridorData(context, data), ['id'])
+      donor_record: removeDuplicate(normalizeDonorData(data), ['id']),
+      sample_record: removeDuplicate(normalizeSampleData(context, data), ['id']),
+      dataset_record: removeDuplicate(normalizeDatasetData(context, data), ['id']),
+      spatial_entity_record: removeDuplicate(normalizeExtractionSiteData(context, data), ['id']),
+      cell_summary_record: removeDuplicate(normalizeCellSummaryData(context, data), ['id']),
+      collision_record: removeDuplicate(normalizeCollisionData(context, data), ['id']),
+      corridor_record: removeDuplicate(normalizeCorridorData(context, data), ['id'])
     }
   } catch (error) {
     console.error(error);

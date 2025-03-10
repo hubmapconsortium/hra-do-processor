@@ -28,13 +28,13 @@ classes:
     title: Dataset Graph Data
     description: The data section for the "ds-graph" digital object.
     slots:
-      - donor
-      - sample
-      - dataset
-      - spatial_entity
-      - cell_summary
-      - collision
-      - corridor
+      - donor_record
+      - sample_record
+      - dataset_record
+      - spatial_entity_record
+      - cell_summary_record
+      - collision_record
+      - corridor_record
 
   DatasetGraphMetadata:
     title: Dataset Graph Metadata
@@ -62,52 +62,52 @@ classes:
         range: DatasetGraphData
 
 slots:
-  donor:
-    title: donor data
+  donor_record:
+    title: donor data records
     description: >-
       List of donors referenced in the experiment dataset metadata records.
     multivalued: true
     inlined_as_list: true
     range: Donor
-  sample:
-    title: tissue sample data
+  sample_record:
+    title: tissue sample data records
     description: >-
       List of tissue samples referenced in the experiment dataset metadata records.
     multivalued: true
     inlined_as_list: true
     range: TissueBlock
-  dataset:
-    title: dataset data
+  dataset_record:
+    title: dataset data records
     description: >-
       List of datasets referenced in the experiment dataset metadata records.
     multivalued: true
     inlined_as_list: true
     range: AssayDataset
-  spatial_entity:
-    title: spatial entity data
+  spatial_entity_record:
+    title: spatial entity data records
     description: >-
       List of spatial entities referenced in the experiment dataset metadata records.
     multivalued: true
     inlined_as_list: true
     range: SpatialEntity
-  cell_summary:
-    title: cell summary data
+  cell_summary_record:
+    title: cell summary data records
     description: >-
       List of cell summaries referenced in the experiment dataset metadata records.
     required: false
     multivalued: true
     inlined_as_list: true
     range: CellSummary
-  collision:
-    title: collision data
+  collision_record:
+    title: collision data records
     description: >-
       List of collisions referenced in the experiment dataset metadata records.
     required: false
     multivalued: true
     inlined_as_list: true
     range: CollisionSummary
-  corridor:
-    title: corridor data
+  corridor_record:
+    title: corridor data records
     description: >-
       List of corridors referenced in the experiment dataset metadata records.
     required: false
