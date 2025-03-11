@@ -424,7 +424,8 @@ function normalizeCorridorData(context, data) {
     return donors.map((donor) => {
       return donor['samples'].map((block) => {
         if ('rui_location' in block) {
-          const corridor = block.rui_location.corridor;
+          const spatialEntity = block.rui_location;
+          const corridor = spatialEntity.corridor;
           return corridor ? createCorridorObject(context, spatialEntity, corridor) : null;
         }
         return null;
