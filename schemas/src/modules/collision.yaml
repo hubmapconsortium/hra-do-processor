@@ -125,7 +125,7 @@ slots:
     description: >-
       List of collision instances detailing specific spatial entity interactions.
     slot_uri: ccf:has_collision_item
-    required: true
+    required: false
     range: CollisionItem
     multivalued: true
     inlined_as_list: true
