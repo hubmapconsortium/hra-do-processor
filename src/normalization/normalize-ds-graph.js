@@ -344,7 +344,7 @@ function createCellSummaryRowObject(context, dataset, summary, summaryRow, index
     .append('id', generateSummaryRowId(context, dataset, summary, summaryRow, index))
     .append('label', getSummaryRowLabel(dataset, summary, summaryRow, index))
     .append('type_of', ['CellSummaryRow'])
-    .append('cell_id', summaryRow.cell_id)
+    .append('cell_id', expandTempId(summaryRow.cell_id))
     .append('cell_label', summaryRow.cell_label)
     .append('gene_expr', summaryRow['gene_expr']?.map((expr, itemIndex) =>
       createGeneExpressionObject(context, dataset, summary, summaryRow, expr, itemIndex)) || [])
@@ -358,7 +358,7 @@ function createGeneExpressionObject(context, dataset, summary, summaryRow, expr,
     .append('id', generateGeneExpressionId(context, dataset, summary, summaryRow, expr, index))
     .append('label', getGeneExpressionLabel(dataset, summary, summaryRow, expr, index))
     .append('type_of', ['GeneExpression'])
-    .append('gene_id', expr.gene_id)
+    .append('gene_id', expandTempId(expr.gene_id))
     .append('gene_label', expr.gene_label)
     .append('ensembl_id', expr.ensembl_id)
     .append('mean_gene_expr_value', expr.mean_gene_expr_value)
@@ -607,6 +607,10 @@ function getCollisionItemLabel(parent, collisionSummary, collisionItem, index) {
 function getCorridorLabel(parent, collision) {
   const hashCode = getCorridorHash(parent, collision, 5);
   return `Corridor of tissue block (#${hashCode})`;
+}
+
+function expandTempId(str) {
+  return str.includes('ASCTB-TEMP') ? `https://purl.org/ccf/${str.replace('ASCTB-TEMP:', 'ASCTB-TEMP_')}` : str;
 }
 
 function getSexId(sex) {
