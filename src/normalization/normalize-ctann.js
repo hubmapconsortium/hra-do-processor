@@ -53,7 +53,7 @@ function normalizeData(context, obj) {
   return {
     id: `${getPurl(context)}#primary`,
     label: metadata.title,
-    type_of: ['CtAnnMappingSet'],
+    type_of: ['ccf:CtAnnMappingSet'],
     mapping_set_id: metadata.data_doi,
     mapping_set_title: metadata.title,
     mapping_set_version: metadata.version,
@@ -64,14 +64,14 @@ function normalizeData(context, obj) {
     extension_definitions: [{
       id: `${getPurl(context)}#extension1`,
       label: "Organ level extension column",
-      type_of: [ "CtAnnExtensionDefinition" ],
+      type_of: ['ccf:CtAnnExtensionDefinition'],
       slot_name: "ext_organ_level",
       property: "http://purl.org/ccf/organ_level",
       type_hint: "xsd:string",
     }, {
       id: `${getPurl(context)}#extension2`,
       label: "Organ ID extension column",
-      type_of: [ "CtAnnExtensionDefinition" ],
+      type_of: ['ccf:CtAnnExtensionDefinition'],
       slot_name: "ext_organ_id",
       property: "http://purl.org/ccf/organ_id",
       type_hint: "xsd:anyURI",
@@ -86,7 +86,7 @@ function getMappings(context, data) {
     mappings.push({
       id: `${getPurl(context)}#R${row.recordNumber}`,
       label: `Record ${row.recordNumber}`,
-      type_of: ['CtAnnMapping'],
+      type_of: ['ccf:CtAnnMapping'],
       subject_id: row.annotation_id,
       subject_label: row.annotation_label,
       predicate_id: row.match_category,
