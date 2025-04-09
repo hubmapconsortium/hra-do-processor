@@ -8,7 +8,7 @@ import { bumpDraft } from './drafting/bump-draft.js';
 import { newDraft } from './drafting/new-draft.js';
 import { enrich } from './enrichment/enrich.js';
 import { finalize } from './finalizing/finalize.js';
-import { test } from './test/test.js';
+import { validate } from './validation/validate.js';
 import { genAsctbCollectionJson } from './gen-asctb-collection-json.js';
 import { list } from './list.js';
 import { migrateCcfLandmarks } from './migration/ccf-landmarks/migrate.js';
@@ -189,11 +189,11 @@ program
   });
 
 program
-  .command('test')
+  .command('validate')
   .description('Runs the test suite against the generated enriched graph data')
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
-    test(getContext(program, command, str));
+    validate(getContext(program, command, str));
   });
 
 program.parse(process.argv);

@@ -1,12 +1,12 @@
-import { testDatasetGraph } from "./test-ds-graph.js";
+import { validateDatasetGraph } from "./validate-ds-graph.js";
 
-export function test(context) {
+export function validate(context) {
   const { selectedDigitalObject: obj } = context;
 
   const processedType = obj.type;
   switch (processedType) {
     case 'ds-graph':
-      testDatasetGraph(context);
+      validateDatasetGraph(context);
       break;
   }
 }

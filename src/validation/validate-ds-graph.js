@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import { SPARQLTestSuite, AskQueryTest }  from './sparql-test-suite.js';
 
-export function testDatasetGraph(context) {
+export function validateDatasetGraph(context) {
   const { selectedDigitalObject: obj } = context;
   const inputGraphPath = resolve(obj.path, 'enriched/enriched.ttl');
 
@@ -152,7 +152,7 @@ const testCases = [
          ccf:cell_id ?cellId ;
          ccf:cell_count ?count ;
          ccf:has_gene_expression ?geneExpression ;
-         ccf:percentage ?percentage .
+         ccf:percentage_of_total ?percentage .
      }`
   ),
 
@@ -191,7 +191,7 @@ const testCases = [
          rdfs:label ?itemLabel ;
          ccf:organ_id ?organId ;
          ccf:organ_label ?organLabel ;
-         ccf:percentage ?percentage ;
+         ccf:percentage_of_total ?percentage ;
          ccf:organ_volume ?volume ;
          ccf:has_reference_organ ?referenceOrgan ;
          ccf:has_spatial_entity ?collidedSpatialEntity .
