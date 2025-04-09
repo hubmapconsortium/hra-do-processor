@@ -174,7 +174,7 @@ slots:
   percentage:
     title: percentage
     description: The proportion relative to a whole.
-    slot_uri: ccf:percentage
+    slot_uri: ccf:percentage_of_total
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

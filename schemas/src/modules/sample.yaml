@@ -95,6 +95,13 @@ slots:
     slot_uri: ccf:url
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
+  description:
+    title: commentary description
+    description: A commentry description about the tissue block or section.
+    slot_uri: rdfs:comment
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   rui_location:
     title: registration location
     description: >-

@@ -232,6 +232,7 @@ slots:
   placement_date:
     title: placement date
     description: The date when the placement of the entity was established.
+    slot_uri: dct:created
     required: true
     range: date
     annotations:
