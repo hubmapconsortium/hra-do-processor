@@ -43,14 +43,12 @@ classes:
       - publication_lead_author
 
   CellSummaryID:
+    is_a: EntityID
     title: Cell Summary Identifier
-    slots:
-      - id
 
   SampleID:
+    is_a: EntityID
     title: Sample Identifier
-    slots:
-      - id
 
   AssayDatasetData:
     attributes:

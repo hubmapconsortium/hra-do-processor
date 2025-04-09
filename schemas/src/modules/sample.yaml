@@ -57,9 +57,8 @@ classes:
       - section_number
 
   SpatialEntityID:
+    is_a: EntityID
     title: Spatial Entity Identifier
-    slots:
-      - id
 
   SampleData:
     attributes:
