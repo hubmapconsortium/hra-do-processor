@@ -293,6 +293,8 @@ function createPlacementObject(block, spatialEntity, placement) {
 function normalizeCellSummaryData(context, data) {
   try {
     const donors = data['@graph'];
+
+    // Cell summaries found in the dataset from tissue blocks
     const sampleBlockCellSummaries = donors.map((donor) => {
       return donor['samples'].map((block) => {
         return block['datasets']?.map((dataset) => {
@@ -301,6 +303,8 @@ function normalizeCellSummaryData(context, data) {
         }).flat();
       }).flat();
     }).flat();
+
+    // Cell summaries found in the dataset from tissue sections
     const sampleSectionCellSummaries = donors.map((donor) => {
       return donor['samples'].map((block) => {
         return block['sections']?.map((section) => {
@@ -311,14 +315,26 @@ function normalizeCellSummaryData(context, data) {
         }).flat();
       }).flat();
     }).flat();
-    return [...sampleBlockCellSummaries, ...sampleSectionCellSummaries].filter(onlyNonNull);
+
+    // Cell summaries found in the spatial entity
+    const spatialEntityCellSummaries = donors.map((donor) => {
+      return donor['samples'].map((block) => {
+        return block['rui_location']['summaries']?.map((summary, index) => 
+          createAggregatedCellSummaryObject(context, block, summary, index))
+      }).flat();
+    }).flat();
+    
+    // Merge all
+    return [...sampleBlockCellSummaries, 
+      ...sampleSectionCellSummaries, 
+      ...spatialEntityCellSummaries].filter(onlyNonNull);
   } catch (error) {
     throw new Error("Problem in normalizing cell summary data: ", { cause: error });
   }
 }
 
 function createCellSummaryObject(context, dataset, summary, index) {
-  const normalizedCellSummary = new ObjectBuilder()
+  return new ObjectBuilder()
     .append('id', generateCellSummaryId(context, dataset, summary, index))
     .append('label', getCellSummaryLabel(dataset, summary, index))
     .append('type_of', ['ccf:CellSummary'])
@@ -328,15 +344,6 @@ function createCellSummaryObject(context, dataset, summary, index) {
     .append('summary', summary['summary'].map((summaryRow, itemIndex) =>
       createCellSummaryRowObject(context, dataset, summary, summaryRow, itemIndex)))
     .build();
-  
-  if ('aggregated_summary_count' in summary) {
-    normalizedCellSummary['aggregated_summary_count'] = ensureNumber(summary.aggregated_summary_count);
-  }
-  if ('aggregated_summaries' in summary) {
-    normalizedCellSummary['aggregated_summaries'] = summary.aggregated_summaries;
-  }
-
-  return normalizedCellSummary;
 }
 
 function createCellSummaryRowObject(context, dataset, summary, summaryRow, index) {
@@ -348,6 +355,35 @@ function createCellSummaryRowObject(context, dataset, summary, summaryRow, index
     .append('cell_label', summaryRow.cell_label)
     .append('gene_expr', summaryRow['gene_expr']?.map((expr, itemIndex) =>
       createGeneExpressionObject(context, dataset, summary, summaryRow, expr, itemIndex)) || [])
+    .append('count', summaryRow.count)
+    .append('percentage', summaryRow.percentage)
+    .build();
+}
+
+function createAggregatedCellSummaryObject(context, block, summary, index) {
+  return new ObjectBuilder()
+    .append('id', generateCellSummaryId(context, block, summary, index))
+    .append('label', getAggregatedCellSummaryLabel(block, summary, index))
+    .append('type_of', ['ccf:CellSummary'])
+    .append('annotation_method', summary.annotation_method)
+    .append('aggregated_summary_count', summary.aggregated_summary_count)
+    .append('aggregated_summaries', summary.aggregated_summaries)
+    .append('modality', summary.modality)
+    .append('sex', summary.sex)
+    .append('summary', summary['summary'].map((summaryRow, itemIndex) =>
+      createAggregatedCellSummaryRowObject(context, block, summary, summaryRow, itemIndex)))
+    .build();
+}
+
+function createAggregatedCellSummaryRowObject(context, block, summary, summaryRow, index) {
+  return new ObjectBuilder()
+    .append('id', generateSummaryRowId(context, block, summary, summaryRow, index))
+    .append('label', getAggregatedSummaryRowLabel(block, summary, summaryRow, index))
+    .append('type_of', ['ccf:CellSummaryRow'])
+    .append('cell_id', expandTempId(summaryRow.cell_id))
+    .append('cell_label', summaryRow.cell_label)
+    .append('gene_expr', summaryRow['gene_expr']?.map((expr, itemIndex) =>
+      createGeneExpressionObject(context, block, summary, summaryRow, expr, itemIndex)) || [])
     .append('count', summaryRow.count)
     .append('percentage', summaryRow.percentage)
     .build();
@@ -491,9 +527,9 @@ function generateCellSummaryId(context, parent, summary, index) {
   return `${iri}/${version}#${hashCode}`;
 }
 
-function generateSummaryRowId(context, dataset, summary, summaryRow, index) {
+function generateSummaryRowId(context, parent, summary, summaryRow, index) {
   const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getSummaryRowHash(dataset, summary, summaryRow, index);
+  const hashCode = getSummaryRowHash(parent, summary, summaryRow, index);
   return `${iri}/${version}#${hashCode}`;
 }
 
@@ -509,10 +545,10 @@ function getCellSummaryHash(parent, summary, index, length=0) {
   return getHashCode(primaryKey, length);
 }
 
-function getSummaryRowHash(dataset, summary, summaryRow, index, length=0) {
+function getSummaryRowHash(parent, summary, summaryRow, index, length=0) {
   const { annotation_method, modality } = summary;
   const { cell_label } = summaryRow;
-  const primaryKey = `${dataset['@id']}-${annotation_method}-${modality}-${cell_label}-${index}`;
+  const primaryKey = `${parent['@id']}-${annotation_method}-${modality}-${cell_label}-${index}`;
   return getHashCode(primaryKey, length);
 }
 
@@ -578,10 +614,21 @@ function getCellSummaryLabel(dataset, summary, index) {
   return `Cell summary of the ${technology} dataset calculated using the ${annotation_method} method (#${hashCode})`;
 }
 
+function getAggregatedCellSummaryLabel(block, summary, index) {
+  const hashCode = getCellSummaryHash(block, summary, index, 5);
+  return `Aggregated cell summary of a tissue block (#${hashCode})`;
+}
+
 function getSummaryRowLabel(dataset, summary, summaryRow, index) {
   const { cell_label } = summaryRow;
   const hashCode = getSummaryRowHash(dataset, summary, summaryRow, index, 5);
   return `Cell summary details for ${cell_label} (#${hashCode})`;
+}
+
+function getAggregatedSummaryRowLabel(block, summary, summaryRow, index) {
+  const { cell_label } = summaryRow;
+  const hashCode = getSummaryRowHash(block, summary, summaryRow, index, 5);
+  return `Aggregated cell summary details for ${cell_label} (#${hashCode})`;
 }
 
 function getGeneExpressionLabel(dataset, summary, summaryRow, expr, index) {
