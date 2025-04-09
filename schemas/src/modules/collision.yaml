@@ -149,7 +149,7 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   as_id:
     title: organ ID
-    description: Identifier for the spatial entity involved in the collision.
+    description: Identifier of the organ involved in the collision.
     slot_uri: ccf:organ_id
     required: true
     range: EntityID
@@ -157,7 +157,7 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   as_label: 
     title: organ label
-    description: Label for the spatial entity involved in the collision.
+    description: Label of the organ involved in the collision.
     slot_uri: ccf:organ_label
     required: true
     range: string
@@ -165,7 +165,7 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   as_volume:
     title: volume
-    description: Volume of the spatial entity in the collision.
+    description: Volume of the organ in the collision.
     slot_uri: ccf:organ_volume
     required: true
     range: float
