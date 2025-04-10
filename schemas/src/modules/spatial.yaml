@@ -61,6 +61,7 @@ classes:
       - Named
       - Instance
     slots:
+      - pref_label
       - source
       - target
       - placement_date
