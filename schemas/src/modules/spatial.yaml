@@ -15,6 +15,7 @@ imports:
   - linkml:types
   - ../shared/metadata-base
   - cell-summary
+  - collision
 
 settings:
   uberon: "UBERON"
@@ -360,7 +361,8 @@ slots:
     slot_uri: ccf:has_collision_summary
     required: false
     multivalued: true
-    range: EntityID
+    inlined_as_list: true
+    range: CollisionSummary
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   corridor:

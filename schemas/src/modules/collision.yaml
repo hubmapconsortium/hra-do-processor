@@ -24,7 +24,6 @@ classes:
       about the specific collision items identified.
     class_uri: ccf:CollisionSummary
     mixins:
-      - Named
       - Instance
     slots:
       - collision_method
@@ -39,7 +38,6 @@ classes:
       total volume.
     class_uri: ccf:CollisionItem
     mixins:
-      - Named
       - Instance
     slots:
       - reference_organ

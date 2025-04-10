@@ -25,7 +25,6 @@ classes:
       accessing the data.
     class_uri: ccf:Corridor
     mixins:
-      - Named
       - Instance
     slots:
       - file_format

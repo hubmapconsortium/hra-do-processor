@@ -51,7 +51,7 @@ function normalizeData(context, data) {
       dataset_record: removeDuplicate(normalizeDatasetData(context, data), ['id']),
       spatial_entity_record: removeDuplicate(normalizeExtractionSiteData(context, data), ['id']),
       cell_summary_record: [],
-      collision_record: removeDuplicate(normalizeCollisionData(context, data), ['id']),
+      collision_record: [],
       corridor_record: removeDuplicate(normalizeCorridorData(context, data), ['id'])
     }
   } catch (error) {
@@ -261,7 +261,7 @@ function createExtractionSiteObject(context, block) {
     .append('slice_thickness', spatialEntity.slice_thickness)
     .append('placement', createPlacementObject(block, spatialEntity, spatialEntity.placement))
     .append('all_collisions', spatialEntity.all_collisions?.map((collision, index) =>
-      generateCollisionSummaryId(context, spatialEntity, collision, index)).filter(onlyNonNull) || [])
+      createCollisionObject(context, collision, index)).filter(onlyNonNull) || [])
     .append('corridor', getCorridorId(context, spatialEntity, spatialEntity.corridor))
     .append('summaries', spatialEntity.summaries?.map((summary, index) =>
       createAggregatedCellSummaryObject(context, summary, index)).filter(onlyNonNull) || [])
@@ -362,41 +362,17 @@ function createGeneExpressionObject(context, expr, index) {
 // NORMALIZING COLLISION DATA
 // ---------------------------------------------------------------------------------
 
-function normalizeCollisionData(context, data) {
-  try {
-    const donors = data['@graph'];
-    return donors.map((donor) => {
-      return donor.samples.map((block) => {
-      if (!block.rui_location) {
-        return [];
-      }
-      const spatialEntity = block.rui_location;
-      const collisionSummaries = spatialEntity.all_collisions || [];
-      return collisionSummaries
-        .map((collisionSummary, index) => createCollisionObject(context, spatialEntity, collisionSummary, index))
-        .filter(onlyNonNull);
-      }).flat();
-    }).flat();
-  } catch (error) {
-    throw new Error("Problem in normalizing collision data: ", { cause: error });
-  }
-}
-
-function createCollisionObject(context, spatialEntity, collisionSummary, index) {
+function createCollisionObject(context, collisionSummary, index) {
   return new ObjectBuilder()
-    .append('id', generateCollisionSummaryId(context, spatialEntity, collisionSummary, index))
-    .append('label', getCollisionSummaryLabel(spatialEntity, collisionSummary, index)) 
     .append('type_of', ['ccf:CollisionSummary'])
     .append('collision_method', collisionSummary.collision_method)
     .append('collisions', collisionSummary['collisions']?.map((collisionItem, itemIndex) =>
-      createCollisionItemObject(context, spatialEntity, collisionSummary, collisionItem, itemIndex)) || [])
+      createCollisionItemObject(context, collisionItem, itemIndex)) || [])
     .build();
 }
 
-function createCollisionItemObject(context, spatialEntity, collisionSummary, collisionItem, index) {
+function createCollisionItemObject(context, collisionItem, index) {
   return new ObjectBuilder()
-    .append('id', generateCollisionItemId(context, spatialEntity, collisionSummary, collisionItem, index))
-    .append('label', getCollisionItemLabel(spatialEntity, collisionSummary, collisionItem, index))
     .append('type_of', ['ccf:CollisionItem'])
     .append('reference_organ', collisionItem.reference_organ)
     .append('as_3d_id', collisionItem.as_3d_id)
