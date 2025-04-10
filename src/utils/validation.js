@@ -34,7 +34,10 @@ function validate(context, dataFile, schemaFile, errorFile) {
     `ValidationError: The content was invalid!`,
     {
       errorFile: errorFile,
-      errorParser: (message) => JSON.parse(message).errors,
+      errorParser: (message) => {
+        const errors = JSON.parse(message).errors;
+        return errors.map(({ message, ...rest }) => rest);
+      },
     }
   );
   if (success) {
