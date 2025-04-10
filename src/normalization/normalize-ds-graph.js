@@ -208,6 +208,17 @@ function createDatasetObject(context, dataset) {
     if ('organ_id' in dataset) {
       normalizedDataset['organ_id'] = checkIfValidIri(dataset['organ_id']);
     }
+    if ('publication' in dataset) {
+      const = publicationDoi = checkIfValidIri(dataset['publication']);
+      normalizedDataset['publication'] = publicationDoi;
+      normalizedDataset['references'] = [publicationDoi];
+    }
+    if ('publication_title' in dataset) {
+      normalizedDataset['publication_title'] = dataset['publication_title'];
+    }
+    if ('publication_lead_author' in dataset) {
+      normalizedDataset['publication_lead_author'] = dataset['publication_lead_author'];
+    }
     
     return normalizedDataset;
 }

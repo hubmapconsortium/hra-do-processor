@@ -41,6 +41,7 @@ classes:
       - publication
       - publication_title
       - publication_lead_author
+      - references
 
   CellSummaryID:
     is_a: EntityID
