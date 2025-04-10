@@ -228,12 +228,20 @@ const testCases = [
          ccf:has_collision_item ?collisionItem .
         
        ?collisionItem a ccf:CollisionItem ;
-         ccf:organ_id ?organId ;
-         ccf:organ_label ?organLabel ;
-         ccf:percentage_of_total ?percentage ;
-         ccf:organ_volume ?volume ;
          ccf:has_reference_organ ?referenceOrgan ;
-         ccf:has_spatial_entity ?collidedSpatialEntity .
+         ccf:as_id ?asId ;
+         ccf:as_3d_id ?as3DId ;
+         ccf:as_label ?asLabel ;
+         ccf:as_volume ?asVolume ;
+         ccf:percentage_of_total ?percentage .
+
+       EXISTS { ?collisionItem ccf:collides_with_object [
+         ccf:anatomical_structure_id ?anatomicalStructureId ;
+         ccf:anatomical_structure_label ?anatomicalStructureLabel ;
+         ccf:anatomical_structure_volume ?anatomicalStructureVolume ;
+         ccf:has_reference_organ ?referenceOrganReference ;
+         ccf:has_spatial_entity ?spatialEntityReference ] .
+       }
      }`
   ),
 

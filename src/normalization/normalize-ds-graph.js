@@ -209,7 +209,7 @@ function createDatasetObject(context, dataset) {
       normalizedDataset['organ_id'] = checkIfValidIri(dataset['organ_id']);
     }
     if ('publication' in dataset) {
-      const = publicationDoi = checkIfValidIri(dataset['publication']);
+      const publicationDoi = checkIfValidIri(dataset['publication']);
       normalizedDataset['publication'] = publicationDoi;
       normalizedDataset['references'] = [publicationDoi];
     }
@@ -456,8 +456,20 @@ function createCollisionItemObject(context, spatialEntity, collisionSummary, col
     .append('as_id', collisionItem.as_id)
     .append('as_label', collisionItem.as_label)
     .append('as_volume', collisionItem.as_volume)
+    .append('collides_with_object', getCollidesWithAnatomicalStructure(collisionItem))
     .append('percentage', collisionItem.percentage)
     .build();
+}
+
+function getCollidesWithAnatomicalStructure(collisionItem) {
+  return new ObjectBuilder()
+    .append('type_of', ['ccf:AnatomicalStructureObject'])
+    .append('anatomical_structure_id', collisionItem.as_id)
+    .append('anatomical_structure_label', collisionItem.as_label)
+    .append('anatomical_structure_volume', collisionItem.as_volume)
+    .append('object_reference_id', collisionItem.reference_organ)
+    .append('spatial_entity_id', collisionItem.as_3d_id)
+    .build()
 }
 
 // ---------------------------------------------------------------------------------

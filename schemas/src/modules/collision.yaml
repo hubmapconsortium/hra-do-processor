@@ -47,7 +47,22 @@ classes:
       - as_id
       - as_label
       - as_volume
+      - collides_with_object
       - percentage
+
+  AnatomicalStructureObject:
+    title: Anatomical Structure Object
+    description: >-
+      The anatomical structure object that collides with the sample.
+    class_uri: ccf:AnatomicalStructureObject
+    mixins:
+      - Instance
+    slots:
+      - anatomical_structure_id
+      - anatomical_structure_label
+      - anatomical_structure_volume
+      - object_reference_id
+      - spatial_entity_id
 
   CollisionData:
     attributes:
@@ -176,5 +191,58 @@ slots:
     description: The proportion relative to a whole.
     slot_uri: ccf:percentage_of_total
     range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  collides_with_object:
+    title: collides with anatomical structure
+    description: >-
+      Details of the anatomical structure that collides with the sample.
+    slot_uri: ccf:collides_with_object
+    range: AnatomicalStructureObject
+    inlined: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  anatomical_structure_id:
+    title: anatomical structure ID
+    description: >-
+      Identifier of the anatomical structure that collides with the sample.
+    slot_uri: ccf:anatomical_structure_id
+    required: true
+    range: EntityID
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  anatomical_structure_label:
+    title: anatomical structure label
+    description: >-
+      Label of the anatomical structure that collides with the sample.
+    slot_uri: ccf:anatomical_structure_label
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  anatomical_structure_volume:
+    title: anatomical structure volume
+    description: >-
+      Volume of the anatomical structure that collides with the sample.
+    slot_uri: ccf:anatomical_structure_volume
+    required: true
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  object_reference_id:
+    title: object reference ID
+    description: >-
+      Identifier of the anatomical structure that collides with the sample.
+    slot_uri: ccf:has_object_reference
+    required: true
+    range: EntityID
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  spatial_entity_id:
+    title: spatial entity ID
+    description: >-
+      Identifier of the spatial entity involved in the collision.
+    slot_uri: ccf:has_spatial_entity
+    required: true
+    range: EntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
