@@ -26,10 +26,11 @@ const testCases = [
      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
      PREFIX dct: <http://purl.org/dc/terms/>
      ASK {
-       ?tissueBlock a ccf:TissueBlock ;
+       ?tissueBlock a ccf:Sample ;
          rdfs:label ?label ;
          skos:prefLabel ?prefLabel ;
          rdfs:comment ?comment ;
+         ccf:sample_type "Tissue Block" ;
          ccf:comes_from ?donor ;
          ccf:generates_dataset ?dataset ;
          ccf:has_registration_location ?spatialEntity ;
@@ -38,7 +39,9 @@ const testCases = [
          ccf:section_size ?sectionSize ;
          ccf:section_size_unit ?sectionSizeUnit ;
          ccf:url ?url .
-        
+
+       EXISTS { ?tisueBlock a ccf:TissueBlock }
+ 
        ?donor a ccf:Donor ;
          ccf:sex ?sex .
 
@@ -240,12 +243,14 @@ const testCases = [
      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
      ASK {
-       ?tissueSection a ccf:TissueSection ;
+       ?tissueSection a ccf:Sample ;
          rdfs:label ?label ;
          skos:prefLabel ?prefLabel ;
+         ccf:sample_type "Tissue Section" ;
          ccf:url ?url ;
          ccf:generates_dataset ?dataset .
-        
+
+       EXISTS { ?tissueSection a ccf:TissueSection }
        ?dataset a ccf:Dataset .
      }`
   ),
