@@ -149,6 +149,8 @@ const testCases = [
          ccf:publication ?publication ;
          ccf:publication_title ?publicationTitle ;
          ccf:publication_lead_author ?leadAuthor .
+
+       EXISTS { ?dataset dct:references ?referenceDoi }
      }`
   ),
   
