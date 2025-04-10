@@ -35,7 +35,6 @@ classes:
       findings, and contextual information such as the donor tissue's sex.
     class_uri: ccf:CellSummary
     mixins:
-      - Named
       - Instance
     slots:
       - annotation_method
@@ -54,7 +53,6 @@ classes:
       characteristics.
     class_uri: ccf:CellSummaryRow
     mixins:
-      - Named
       - Instance
     slots:
       - cell_id
@@ -82,7 +80,6 @@ classes:
       the cells.
     class_uri: ccf:GeneExpression
     mixins:
-     - Named
      - Instance
     slots:
      - gene_id

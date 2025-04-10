@@ -50,7 +50,7 @@ function normalizeData(context, data) {
       sample_record: removeDuplicate(normalizeSampleData(context, data), ['id']),
       dataset_record: removeDuplicate(normalizeDatasetData(context, data), ['id']),
       spatial_entity_record: removeDuplicate(normalizeExtractionSiteData(context, data), ['id']),
-      cell_summary_record: removeDuplicate(normalizeCellSummaryData(context, data), ['id']),
+      cell_summary_record: [],
       collision_record: removeDuplicate(normalizeCollisionData(context, data), ['id']),
       corridor_record: removeDuplicate(normalizeCorridorData(context, data), ['id'])
     }
@@ -196,7 +196,7 @@ function createDatasetObject(context, dataset) {
     .append('technology', dataset.technology || 'OTHER')
     .append('thumbnail', dataset.thumbnail || 'assets/icons/ico-unknown.svg')
     .append('summaries', dataset.summaries?.map((summary, index) =>
-      generateCellSummaryId(context, dataset, summary, index)) || [])
+      createCellSummaryObject(context, summary, index)) || [])
     .build();
 
     if ('cell_count' in dataset) {
@@ -264,7 +264,7 @@ function createExtractionSiteObject(context, block) {
       generateCollisionSummaryId(context, spatialEntity, collision, index)).filter(onlyNonNull) || [])
     .append('corridor', getCorridorId(context, spatialEntity, spatialEntity.corridor))
     .append('summaries', spatialEntity.summaries?.map((summary, index) =>
-      generateCellSummaryId(context, spatialEntity, summary, index)).filter(onlyNonNull) || [])
+      createAggregatedCellSummaryObject(context, summary, index)).filter(onlyNonNull) || [])
     .build();
 }
 
@@ -300,80 +300,31 @@ function createPlacementObject(block, spatialEntity, placement) {
 // NORMALIZING CELL SUMMARY DATA
 // ---------------------------------------------------------------------------------
 
-function normalizeCellSummaryData(context, data) {
-  try {
-    const donors = data['@graph'];
-
-    // Cell summaries found in the dataset from tissue blocks
-    const sampleBlockCellSummaries = donors.map((donor) => {
-      return donor['samples'].map((block) => {
-        return block['datasets']?.map((dataset) => {
-          return dataset['summaries']?.map((summary, index) => 
-            createCellSummaryObject(context, dataset, summary, index))
-        }).flat();
-      }).flat();
-    }).flat();
-
-    // Cell summaries found in the dataset from tissue sections
-    const sampleSectionCellSummaries = donors.map((donor) => {
-      return donor['samples'].map((block) => {
-        return block['sections']?.map((section) => {
-          return section['datasets']?.map((dataset) => {
-            return dataset['summaries']?.map((summary, index) => 
-              createCellSummaryObject(context, dataset, summary, index))
-          }).flat();
-        }).flat();
-      }).flat();
-    }).flat();
-
-    // Cell summaries found in the spatial entity
-    const spatialEntityCellSummaries = donors.map((donor) => {
-      return donor['samples'].map((block) => {
-        return block['rui_location']['summaries']?.map((summary, index) => 
-          createAggregatedCellSummaryObject(context, block, summary, index))
-      }).flat();
-    }).flat();
-    
-    // Merge all
-    return [...sampleBlockCellSummaries, 
-      ...sampleSectionCellSummaries, 
-      ...spatialEntityCellSummaries].filter(onlyNonNull);
-  } catch (error) {
-    throw new Error("Problem in normalizing cell summary data: ", { cause: error });
-  }
-}
-
-function createCellSummaryObject(context, dataset, summary, index) {
+function createCellSummaryObject(context, summary, index) {
   return new ObjectBuilder()
-    .append('id', generateCellSummaryId(context, dataset, summary, index))
-    .append('label', getCellSummaryLabel(dataset, summary, index))
     .append('type_of', ['ccf:CellSummary'])
     .append('annotation_method', summary.annotation_method)
     .append('modality', summary.modality)
     .append('sex', summary.sex)
     .append('summary', summary['summary'].map((summaryRow, itemIndex) =>
-      createCellSummaryRowObject(context, dataset, summary, summaryRow, itemIndex)))
+      createCellSummaryRowObject(context, summaryRow, itemIndex)))
     .build();
 }
 
-function createCellSummaryRowObject(context, dataset, summary, summaryRow, index) {
+function createCellSummaryRowObject(context, summaryRow, index) {
   return new ObjectBuilder()
-    .append('id', generateSummaryRowId(context, dataset, summary, summaryRow, index))
-    .append('label', getSummaryRowLabel(dataset, summary, summaryRow, index))
     .append('type_of', ['ccf:CellSummaryRow'])
     .append('cell_id', expandTempId(summaryRow.cell_id))
     .append('cell_label', summaryRow.cell_label)
     .append('gene_expr', summaryRow['gene_expr']?.map((expr, itemIndex) =>
-      createGeneExpressionObject(context, dataset, summary, summaryRow, expr, itemIndex)) || [])
+      createGeneExpressionObject(context, expr, itemIndex)) || [])
     .append('count', summaryRow.count)
     .append('percentage', summaryRow.percentage)
     .build();
 }
 
-function createAggregatedCellSummaryObject(context, block, summary, index) {
+function createAggregatedCellSummaryObject(context, summary, index) {
   return new ObjectBuilder()
-    .append('id', generateCellSummaryId(context, block, summary, index))
-    .append('label', getAggregatedCellSummaryLabel(block, summary, index))
     .append('type_of', ['ccf:CellSummary'])
     .append('annotation_method', summary.annotation_method)
     .append('aggregated_summary_count', summary.aggregated_summary_count)
@@ -381,28 +332,24 @@ function createAggregatedCellSummaryObject(context, block, summary, index) {
     .append('modality', summary.modality)
     .append('sex', summary.sex)
     .append('summary', summary['summary'].map((summaryRow, itemIndex) =>
-      createAggregatedCellSummaryRowObject(context, block, summary, summaryRow, itemIndex)))
+      createAggregatedCellSummaryRowObject(context, summaryRow, itemIndex)))
     .build();
 }
 
-function createAggregatedCellSummaryRowObject(context, block, summary, summaryRow, index) {
+function createAggregatedCellSummaryRowObject(context, summaryRow, index) {
   return new ObjectBuilder()
-    .append('id', generateSummaryRowId(context, block, summary, summaryRow, index))
-    .append('label', getAggregatedSummaryRowLabel(block, summary, summaryRow, index))
     .append('type_of', ['ccf:CellSummaryRow'])
     .append('cell_id', expandTempId(summaryRow.cell_id))
     .append('cell_label', summaryRow.cell_label)
     .append('gene_expr', summaryRow['gene_expr']?.map((expr, itemIndex) =>
-      createGeneExpressionObject(context, block, summary, summaryRow, expr, itemIndex)) || [])
+      createGeneExpressionObject(context, expr, itemIndex)) || [])
     .append('count', summaryRow.count)
     .append('percentage', summaryRow.percentage)
     .build();
 }
 
-function createGeneExpressionObject(context, dataset, summary, summaryRow, expr, index) {
+function createGeneExpressionObject(context, expr, index) {
   return new ObjectBuilder()
-    .append('id', generateGeneExpressionId(context, dataset, summary, summaryRow, expr, index))
-    .append('label', getGeneExpressionLabel(dataset, summary, summaryRow, expr, index))
     .append('type_of', ['ccf:GeneExpression'])
     .append('gene_id', expandTempId(expr.gene_id))
     .append('gene_label', expr.gene_label)

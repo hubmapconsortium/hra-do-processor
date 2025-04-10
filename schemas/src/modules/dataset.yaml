@@ -14,6 +14,7 @@ default_range: string
 imports:
   - linkml:types
   - ../shared/metadata-base
+  - cell-summary
 
 classes:
   AssayDataset:
@@ -42,14 +43,6 @@ classes:
       - publication_title
       - publication_lead_author
       - references
-
-  CellSummaryID:
-    is_a: EntityID
-    title: Cell Summary Identifier
-
-  SampleID:
-    is_a: EntityID
-    title: Sample Identifier
 
   AssayDatasetData:
     attributes:
@@ -132,7 +125,8 @@ slots:
     slot_uri: ccf:has_cell_summary
     required: false
     multivalued: true
-    range: CellSummaryID
+    inlined_as_list: true
+    range: CellSummary
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   publication:
