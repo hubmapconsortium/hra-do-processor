@@ -92,10 +92,6 @@ function createDonorObject(donor) {
     .append('consortium_name', donor.consortium_name)
     .append('provider_name', donor.provider_name)
     .append('provider_uuid', donor.provider_uuid)
-    .append('samples',
-      donor.samples
-        .map((sample) => sample['@id'])
-        .filter(checkSampleId))
     .build();
 }
 
@@ -137,6 +133,7 @@ function createTissueBlockObject(context, donor, block) {
     .append('section_count', block.section_count)
     .append('section_size', block.section_size)
     .append('section_size_unit', block.section_size_unit)
+    .append('donor', donor['@id'])
     .build();
 }
 

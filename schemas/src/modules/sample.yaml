@@ -38,6 +38,11 @@ classes:
       - section_count
       - section_size
       - section_size_unit
+      - donor
+
+  DonorID:
+    is_a: EntityID
+    title: Donor identifier
 
   TissueSection:
     title: Tissue Section
@@ -158,5 +163,14 @@ slots:
     slot_uri: ccf:section_number
     required: false
     range: integer
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  donor:
+    title: donor
+    description: >-
+      Reference to the donor associated with the tissue block.
+    slot_uri: ccf:comes_from
+    required: true
+    range: DonorID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

@@ -40,17 +40,11 @@ classes:
       - consortium_name
       - provider_name
       - provider_uuid
-      - samples
     slot_usage:
       sex_id:
         pattern: (loinc:LA3-6|loinc:LA2-8|loinc:LA4489-6)
       race_id:
         pattern: (loinc:LA10608-0|loinc:LA6156-9|loinc:LA10610-6|loinc:LA10611-4|loinc:LA4457-3|loinc:LA4489-6)
-
-  SampleID:
-    title: Sample Identifier
-    slots:
-      - id
 
   DonorData:
     attributes:
@@ -148,15 +142,5 @@ slots:
     description: >-
       A unique identifier for the tissue provider linked to the tissue
       sample data.
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  samples:
-    title: provides samples
-    description: >-
-      A collection of references to tissue samples associated with the donor.
-    slot_uri: ccf:samples
-    multivalued: true
-    inlined: false
-    range: SampleID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
