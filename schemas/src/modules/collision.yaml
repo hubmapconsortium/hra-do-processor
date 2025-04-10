@@ -142,7 +142,7 @@ slots:
   as_3d_id:
     title: spatial entity
     description: Reference to the spatial entity involved in the collision.
-    slot_uri: ccf:has_spatial_entity
+    slot_uri: ccf:as_3d_id
     required: true
     range: EntityID
     annotations:
@@ -150,7 +150,7 @@ slots:
   as_id:
     title: organ ID
     description: Identifier of the organ involved in the collision.
-    slot_uri: ccf:organ_id
+    slot_uri: ccf:as_id
     required: true
     range: EntityID
     annotations:
@@ -158,7 +158,7 @@ slots:
   as_label: 
     title: organ label
     description: Label of the organ involved in the collision.
-    slot_uri: ccf:organ_label
+    slot_uri: ccf:as_label
     required: true
     range: string
     annotations:
@@ -166,7 +166,7 @@ slots:
   as_volume:
     title: volume
     description: Volume of the organ in the collision.
-    slot_uri: ccf:organ_volume
+    slot_uri: ccf:as_volume
     required: true
     range: float
     annotations:
