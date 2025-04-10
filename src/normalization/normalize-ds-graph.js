@@ -122,6 +122,7 @@ function createTissueBlockObject(context, donor, block) {
     .append('type_of', ['ccf:Sample', 'ccf:TissueBlock'])
     .append('pref_label', block.label)
     .append('description', block.description)
+    .append('sample_type', block.sample_type)
     .append('rui_location', block.rui_location?.['@id'])
     .append('link', block.link)
     .append('sections', block.sections
@@ -147,6 +148,7 @@ function createTissueSectionObject(block, section) {
     .append('type_of', ['ccf:Sample', 'ccf:TissueSection'])
     .append('pref_label', section.label)
     .append('description', section.description)
+    .append('sample_type', section.sample_type)
     .append('link', section.link)
     .append('section_number', section.section_number)
     .append('datasets', section.datasets

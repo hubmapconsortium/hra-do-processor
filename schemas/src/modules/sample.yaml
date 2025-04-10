@@ -31,6 +31,7 @@ classes:
     slots:
       - pref_label
       - description
+      - sample_type
       - rui_location
       - link
       - sections
@@ -57,6 +58,7 @@ classes:
     slots:
       - pref_label
       - description
+      - sample_type
       - link
       - datasets
       - section_number
@@ -104,6 +106,15 @@ slots:
     description: A commentry description about the tissue block or section.
     slot_uri: rdfs:comment
     required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  sample_type:
+    title: sample type
+    description: >-
+      The type of sample, such as tissue block or tissue section.
+    slot_uri: ccf:sample_type
+    required: true
+    range: SampleTypeEnum
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   rui_location:
@@ -174,3 +185,11 @@ slots:
     range: DonorID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
+
+enums:
+  SampleTypeEnum:
+    permissible_values:
+      Tissue Block:
+        description: A defined piece of tissue extracted from a specific location
+      Tissue Section:
+        description: A thin slice or layer derived from a tissue block
