@@ -38,7 +38,7 @@ classes:
       - datasets
       - section_count
       - section_size
-      - section_size_unit
+      - section_units
       - donor
 
   DonorID:
@@ -162,7 +162,7 @@ slots:
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  section_size_unit:
+  section_units:
     title: section size unit
     description: The unit of measurement used for the section size.
     slot_uri: ccf:section_size_unit
