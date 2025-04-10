@@ -170,10 +170,6 @@ slots:
     title: title
     description: A name given to the resource.
     slot_uri: dct:title
-  description:
-    title: description
-    description: An account of the resource.
-    slot_uri: dct:description
   license:
     title: license
     description: >- 
@@ -383,6 +379,10 @@ slots:
     slot_uri: rdfs:label
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
+  description:
+    title: commentary description
+    description: A commentry description about the resource.
+    slot_uri: rdfs:comment
   see_also:
     title: see also
     description: >-

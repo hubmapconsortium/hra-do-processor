@@ -29,7 +29,7 @@ const testCases = [
        ?tissueBlock a ccf:TissueBlock ;
          rdfs:label ?label ;
          skos:prefLabel ?prefLabel ;
-         dct:description ?comment ;
+         rdfs:comment ?comment ;
          ccf:comes_from ?donor ;
          ccf:generates_dataset ?dataset ;
          ccf:has_registration_location ?spatialEntity ;
@@ -55,12 +55,11 @@ const testCases = [
     'Check Donor',
     'Check if donor information exists and connects to samples',
     `PREFIX ccf: <http://purl.org/ccf/>
-     PREFIX dct: <http://purl.org/dc/terms/>
      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
      ASK {
        ?donor a ccf:Donor ;
          rdfs:label ?label ;
-         dct:description ?comment ;
+         rdfs:comment ?comment ;
          ccf:age ?age ;
          ccf:bmi ?bmi ;
          ccf:sex ?sex ;
@@ -130,13 +129,12 @@ const testCases = [
     'Check Dataset',
     'Check if dataset exists and has proper properties',
     `PREFIX ccf: <http://purl.org/ccf/>
-     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
      PREFIX dct: <http://purl.org/dc/terms/>
      ASK {
        ?dataset a ccf:Dataset ;
          rdfs:label ?label ;
-         dct:description ?comment ;
+         rdfs:comment ?comment ;
          skos:prefLabel ?prefLabel ;
          ccf:url ?url ;
          ccf:thumbnail ?thumbnail ;
