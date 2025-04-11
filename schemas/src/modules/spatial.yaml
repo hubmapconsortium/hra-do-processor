@@ -16,6 +16,7 @@ imports:
   - ../shared/metadata-base
   - cell-summary
   - collision
+  - corridor
 
 settings:
   uberon: "UBERON"
@@ -371,7 +372,8 @@ slots:
       The corridor structures linked to the spatial positioning of the tissue sample.
     slot_uri: ccf:has_corridor
     required: false
-    range: EntityID
+    inlined: true
+    range: Corridor
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   summaries:

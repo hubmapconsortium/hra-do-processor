@@ -52,7 +52,7 @@ function normalizeData(context, data) {
       spatial_entity_record: removeDuplicate(normalizeExtractionSiteData(context, data), ['id']),
       cell_summary_record: [],
       collision_record: [],
-      corridor_record: removeDuplicate(normalizeCorridorData(context, data), ['id'])
+      corridor_record: []
     }
   } catch (error) {
     console.error(error);
@@ -245,7 +245,7 @@ function createExtractionSiteObject(context, block) {
   if (!spatialEntity || !checkExtractionSiteId(spatialEntity['@id'])) {
     return null;
   }
-  return new ObjectBuilder()
+  const normalizedExtractionSite = new ObjectBuilder()
     .append('id', spatialEntity['@id'])
     .append('label', spatialEntity.label)
     .append('pref_label', getSpatialEntityLabel(block))
@@ -262,10 +262,15 @@ function createExtractionSiteObject(context, block) {
     .append('placement', createPlacementObject(block, spatialEntity, spatialEntity.placement))
     .append('all_collisions', spatialEntity.all_collisions?.map((collision, index) =>
       createCollisionObject(context, collision, index)).filter(onlyNonNull) || [])
-    .append('corridor', getCorridorId(context, spatialEntity, spatialEntity.corridor))
     .append('summaries', spatialEntity.summaries?.map((summary, index) =>
       createAggregatedCellSummaryObject(context, summary, index)).filter(onlyNonNull) || [])
     .build();
+
+  if ('corridor' in spatialEntity) {
+    normalizedExtractionSite['corridor'] = createCorridorObject(context, spatialEntity.corridor);
+  }
+
+  return normalizedExtractionSite;
 }
 
 function createPlacementObject(block, spatialEntity, placement) {
@@ -399,28 +404,8 @@ function getCollidesWithAnatomicalStructure(collisionItem) {
 // NORMALIZING CORRIDOR DATA
 // ---------------------------------------------------------------------------------
 
-function normalizeCorridorData(context, data) {
-  try {
-    const donors = data['@graph'];
-    return donors.map((donor) => {
-      return donor['samples'].map((block) => {
-        if ('rui_location' in block) {
-          const spatialEntity = block.rui_location;
-          const corridor = spatialEntity.corridor;
-          return corridor ? createCorridorObject(context, spatialEntity, corridor) : null;
-        }
-        return null;
-      }).filter(onlyNonNull);
-    }).flat();
-  } catch (error) {
-    throw new Error("Problem in normalizing corridor data: ", { cause: error });
-  }
-}
-
-function createCorridorObject(context, spatialEntity, corridor) {
+function createCorridorObject(context, corridor) {
   return new ObjectBuilder()
-    .append('id', generateCorridorId(context, spatialEntity, corridor))
-    .append('label', getCorridorLabel(spatialEntity, corridor))
     .append('type_of', ['ccf:Corridor'])
     .append('file_format', corridor.file_format)
     .append('file', corridor.file)
