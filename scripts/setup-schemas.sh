@@ -54,7 +54,7 @@ for genSchemaFile in schemas/generated/linkml/*.yaml; do
   # Generate OWL schema definitions
   echo -n "-> Generating OWL schema..."
   mkdir -p schemas/generated/owl
-  gen-owl $genSchemaFile > schemas/generated/owl/${type}.owl.ttl
+  gen-owl --log_level ERROR $genSchemaFile > schemas/generated/owl/${type}.owl.ttl
   echo -e "\r-> Generating OWL schema... done"
   
   # Generate Mermaid diagrams
