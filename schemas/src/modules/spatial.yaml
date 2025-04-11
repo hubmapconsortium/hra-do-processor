@@ -36,6 +36,8 @@ classes:
       - Instance
     slots:
       - pref_label
+      - creator_first_name
+      - creator_last_name
       - creator_name
       - create_date
       - x_dimension
@@ -146,6 +148,16 @@ classes:
         range: SpatialData
 
 slots:
+  creator_first_name:
+    title: creator first name
+    description: The first name of the creator.
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  creator_last_name:
+    title: creator last name
+    description: The last name of the creator.
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   x_dimension:
     title: dimension in x-axis
     description: The length of the spatial entity along the X-axis.

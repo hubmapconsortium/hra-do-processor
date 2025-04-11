@@ -252,6 +252,8 @@ function createExtractionSiteObject(context, block) {
     .append('type_of', ['ccf:SpatialEntity'])
     .append('collides_with', spatialEntity.ccf_annotations)
     .append('create_date', normalizeDate(spatialEntity.creation_date))
+    .append('creator_first_name', spatialEntity.creator_first_name)
+    .append('creator_last_name', spatialEntity.creator_last_name)
     .append('creator_name', spatialEntity.creator)
     .append('x_dimension', spatialEntity.x_dimension)
     .append('y_dimension', spatialEntity.y_dimension)
