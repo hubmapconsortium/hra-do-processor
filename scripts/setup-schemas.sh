@@ -65,8 +65,8 @@ for genSchemaFile in schemas/generated/linkml/*.yaml; do
 
   # In headless environments, these optional commands will fail
   echo -n "-> Generating SVG and PNG ER diagrams..."
-  mmdc -p puppeteer-config.json -b transparent -i schemas/generated/erdiagram/${type}.mmd -o schemas/generated/erdiagram/${type}.svg
-  mmdc -p puppeteer-config.json -b white -i schemas/generated/erdiagram/${type}.mmd -o schemas/generated/erdiagram/${type}.png
+  mmdc -p puppeteer-config.json -b transparent -i schemas/generated/erdiagram/${type}.mmd -o schemas/generated/erdiagram/${type}.svg --quiet
+  mmdc -p puppeteer-config.json -b white -i schemas/generated/erdiagram/${type}.mmd -o schemas/generated/erdiagram/${type}.png --quiet
   echo -e "\r-> Generating SVG and PNG ER diagrams... done"
 done
 
