@@ -84,7 +84,7 @@ slots:
     title: age
     slot_uri: ccf:age
     description: The age of the donor.
-    range: double
+    range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   bmi:

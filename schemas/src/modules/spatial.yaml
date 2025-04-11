@@ -206,7 +206,7 @@ slots:
   slice_thickness:
     title: slice thickness
     description: The thickness of each slice within the spatial entity.
-    range: integer
+    range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   object_reference:

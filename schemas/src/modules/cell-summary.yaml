@@ -152,7 +152,7 @@ slots:
     description: Number of aggregared summaries.
     slot_uri: ccf:aggregated_summary_count
     required: false
-    range: integer
+    range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   aggregated_summaries:
