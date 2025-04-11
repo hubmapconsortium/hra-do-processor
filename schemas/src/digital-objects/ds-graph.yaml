@@ -32,9 +32,6 @@ classes:
       - sample_record
       - dataset_record
       - spatial_entity_record
-      - cell_summary_record
-      - collision_record
-      - corridor_record
 
   DatasetGraphMetadata:
     title: Dataset Graph Metadata
@@ -90,27 +87,3 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: SpatialEntity
-  cell_summary_record:
-    title: cell summary data records
-    description: >-
-      List of cell summaries referenced in the experiment dataset metadata records.
-    required: false
-    multivalued: true
-    inlined_as_list: true
-    range: CellSummary
-  collision_record:
-    title: collision data records
-    description: >-
-      List of collisions referenced in the experiment dataset metadata records.
-    required: false
-    multivalued: true
-    inlined_as_list: true
-    range: CollisionSummary
-  corridor_record:
-    title: corridor data records
-    description: >-
-      List of corridors referenced in the experiment dataset metadata records.
-    required: false
-    multivalued: true
-    inlined_as_list: true
-    range: Corridor

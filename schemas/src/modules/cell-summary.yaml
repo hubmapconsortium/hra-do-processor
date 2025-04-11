@@ -107,14 +107,6 @@ classes:
         required: false
       spatial_entity_record:
         required: false
-      cell_summary_record:
-        multivalued: true
-        inlined_as_list: true
-        range: CellSummary
-      collision_record:
-        required: false
-      corridor_record:
-        required: false
 
   CellSummaryMetadata:
     class_uri: dcat:Dataset

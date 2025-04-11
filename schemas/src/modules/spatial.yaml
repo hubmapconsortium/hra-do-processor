@@ -132,12 +132,6 @@ classes:
         multivalued: true
         inlined_as_list: true
         range: SpatialEntity
-      cell_summary_record:
-        required: false
-      collision_record:
-        required: false
-      corridor_record:
-        required: false
 
   Container:
     tree_root: true

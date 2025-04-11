@@ -40,14 +40,6 @@ classes:
         required: false
       spatial_entity_record:
         required: false
-      cell_summary_record:
-        required: false
-      collision_record:
-        required: false
-      corridor_record:
-        multivalued: true
-        inlined_as_list: true
-        range: Corridor
 
   CorridorMetadata:
     class_uri: dcat:Dataset

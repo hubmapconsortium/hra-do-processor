@@ -79,12 +79,6 @@ classes:
         required: false
       spatial_entity_record:
         required: false
-      cell_summary_record:
-        required: false
-      collision_record:
-        required: false
-      corridor_record:
-        required: false
 
   Container:
     tree_root: true

@@ -72,14 +72,6 @@ classes:
         required: false
       spatial_entity_record:
         required: false
-      cell_summary_record:
-        required: false
-      collision_record:
-        multivalued: true
-        inlined_as_list: true
-        range: CollisionSummary
-      corridor_record:
-        required: false
 
   CollisionMetadata:
     class_uri: dcat:Dataset

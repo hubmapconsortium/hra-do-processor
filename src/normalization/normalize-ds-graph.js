@@ -1,7 +1,6 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { info } from '../utils/logging.js';
-import { hash } from '../utils/hash.js';
 import { checkIfValidIri, checkIfValidUrl } from '../utils/validation.js';
 import { ObjectBuilder } from '../utils/object-builder.js';
 import {
@@ -49,10 +48,7 @@ function normalizeData(context, data) {
       donor_record: removeDuplicate(normalizeDonorData(data), ['id']),
       sample_record: removeDuplicate(normalizeSampleData(context, data), ['id']),
       dataset_record: removeDuplicate(normalizeDatasetData(context, data), ['id']),
-      spatial_entity_record: removeDuplicate(normalizeExtractionSiteData(context, data), ['id']),
-      cell_summary_record: [],
-      collision_record: [],
-      corridor_record: []
+      spatial_entity_record: removeDuplicate(normalizeExtractionSiteData(context, data), ['id'])
     }
   } catch (error) {
     console.error(error);
@@ -431,91 +427,6 @@ function normalizeDate(originalDate) {
   return `${year}-${formattedMonth}-${formattedDay}`;
 }
 
-function getCorridorId(context, parent, corridor) {
-  return corridor ? generateCorridorId(context, parent, corridor) : null;
-}
-
-function generateCorridorId(context, parent, corridor) {
-  const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getCorridorHash(parent, corridor);
-  return `${iri}/${version}#${hashCode}`;
-}
-
-function generateCollisionSummaryId(context, parent, collisionSummary, index) {
-  const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getCollisionHash(parent, collisionSummary, index);
-  return `${iri}/${version}#${hashCode}`;
-}
-
-function generateCollisionItemId(context, parent, collisionSummary, collisionItem, index) {
-  const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getCollisionItemHash(parent, collisionSummary, collisionItem, index);
-  return `${iri}/${version}#${hashCode}`;
-}
-
-function generateCellSummaryId(context, parent, summary, index) {
-  const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getCellSummaryHash(parent, summary, index);
-  return `${iri}/${version}#${hashCode}`;
-}
-
-function generateSummaryRowId(context, parent, summary, summaryRow, index) {
-  const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getSummaryRowHash(parent, summary, summaryRow, index);
-  return `${iri}/${version}#${hashCode}`;
-}
-
-function generateGeneExpressionId(context, dataset, summary, summaryRow, expr, index) {
-  const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getGeneExpressionHash(dataset, summary, summaryRow, expr, index);
-  return `${iri}/${version}#${hashCode}`;
-}
-
-function getCellSummaryHash(parent, summary, index, length=0) {
-  const { annotation_method, modality } = summary;
-  const primaryKey = `${parent['@id']}-${annotation_method}-${modality}-${index}`;
-  return getHashCode(primaryKey, length);
-}
-
-function getSummaryRowHash(parent, summary, summaryRow, index, length=0) {
-  const { annotation_method, modality } = summary;
-  const { cell_label } = summaryRow;
-  const primaryKey = `${parent['@id']}-${annotation_method}-${modality}-${cell_label}-${index}`;
-  return getHashCode(primaryKey, length);
-}
-
-function getGeneExpressionHash(dataset, summary, summaryRow, expr, index, length=0) {
-  const { annotation_method, modality } = summary;
-  const { cell_label } = summaryRow;
-  const { gene_label } = expr;
-  const primaryKey = `${dataset['@id']}-${annotation_method}-${modality}-${cell_label}-${gene_label}-${index}`;
-  return getHashCode(primaryKey, length);
-}
-
-function getCollisionHash(parent, collisionSummary, index, length=0) {
-  const { collision_method } = collisionSummary;
-  const primaryKey = `${parent['@id']}-${collision_method}-${index}`;
-  return getHashCode(primaryKey, length);
-}
-
-function getCollisionItemHash(parent, collisionSummary, collisionItem, index, length=0) {
-  const { collision_method } = collisionSummary;
-  const { as_3d_id } = collisionItem;
-  const primaryKey = `${parent['@id']}-${collision_method}-${as_3d_id}-${index}`;
-  return getHashCode(primaryKey, length);
-}
-
-function getCorridorHash(parent, corridor, length=0) {
-  const { file } = corridor;
-  const primaryKey = `${parent['@id']}-${file}`;
-  return getHashCode(primaryKey, length);
-}
-
-function getHashCode(str, length=0) {
-  const hashCode = hash(str).toString();
-  return (length > 1) ? hashCode.substring(0, length) : hashCode;
-}
-
 function getDonorLabel(donor) {
   const { race, sex, age, bmi, provider_name } = donor;
   return `Donor ${sex}, Race ${race}, Age ${age}, BMI ${bmi} from ${provider_name}`;
@@ -537,55 +448,6 @@ function getSpatialEntityLabel(sample) {
 
 function getPlacementLabel(sample) {
   return `Spatial placement of ${getSampleLabel(sample)}`
-}
-
-function getCellSummaryLabel(dataset, summary, index) {
-  const { technology } = dataset;
-  const { annotation_method } = summary;
-  const hashCode = getCellSummaryHash(dataset, summary, index, 5);
-  return `Cell summary of the ${technology} dataset calculated using the ${annotation_method} method (#${hashCode})`;
-}
-
-function getAggregatedCellSummaryLabel(block, summary, index) {
-  const hashCode = getCellSummaryHash(block, summary, index, 5);
-  return `Aggregated cell summary of a tissue block (#${hashCode})`;
-}
-
-function getSummaryRowLabel(dataset, summary, summaryRow, index) {
-  const { cell_label } = summaryRow;
-  const hashCode = getSummaryRowHash(dataset, summary, summaryRow, index, 5);
-  return `Cell summary details for ${cell_label} (#${hashCode})`;
-}
-
-function getAggregatedSummaryRowLabel(block, summary, summaryRow, index) {
-  const { cell_label } = summaryRow;
-  const hashCode = getSummaryRowHash(block, summary, summaryRow, index, 5);
-  return `Aggregated cell summary details for ${cell_label} (#${hashCode})`;
-}
-
-function getGeneExpressionLabel(dataset, summary, summaryRow, expr, index) {
-  const { cell_label } = summaryRow;
-  const { gene_label } = expr;
-  const hashCode = getGeneExpressionHash(dataset, summary, summaryRow, expr, index, 5);
-  return `Gene expression for ${gene_label} in ${cell_label} (#${hashCode})`;
-}
-
-function getCollisionSummaryLabel(parent, collisionSummary, index) {
-  const { collision_method } = collisionSummary;
-  const hashCode = getCollisionHash(parent, collisionSummary, index, 5);
-  return `Collision summary using ${collision_method} method (#${hashCode})`;
-}
-
-function getCollisionItemLabel(parent, collisionSummary, collisionItem, index) {
-  const { collision_method } = collisionSummary;
-  const { as_label } = collisionItem;
-  const hashCode = getCollisionItemHash(parent, collisionSummary, collisionItem, index, 5);
-  return `Collision with ${as_label} using the ${collision_method} method (#${hashCode})`;
-}
-
-function getCorridorLabel(parent, collision) {
-  const hashCode = getCorridorHash(parent, collision, 5);
-  return `Corridor of tissue block (#${hashCode})`;
 }
 
 function expandTempId(str) {
@@ -637,10 +499,6 @@ function onlyNonNull(item) {
 
 function checkDonorId(id) {
   return checkIfValidUrl(id, 'Donor ID');
-}
-
-function checkSampleId(id) {
-  return checkIfValidUrl(id, 'Sample ID');
 }
 
 function checkTissueBlockId(id) {
