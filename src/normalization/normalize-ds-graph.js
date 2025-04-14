@@ -48,7 +48,8 @@ function normalizeData(context, data) {
       donor_record: removeDuplicate(normalizeDonorData(data), ['id']),
       sample_record: removeDuplicate(normalizeSampleData(context, data), ['id']),
       dataset_record: removeDuplicate(normalizeDatasetData(context, data), ['id']),
-      spatial_entity_record: removeDuplicate(normalizeExtractionSiteData(context, data), ['id'])
+      spatial_entity_record: removeDuplicate(normalizeExtractionSiteData(context, data), ['id']),
+      spatial_placement_record: removeDuplicate(normalizePlacementData(context, data), ['id'])
     }
   } catch (error) {
     console.error(error);
@@ -257,7 +258,6 @@ function createExtractionSiteObject(context, block) {
     .append('dimension_unit', spatialEntity.dimension_units)
     .append('slice_count', spatialEntity.slice_count)
     .append('slice_thickness', spatialEntity.slice_thickness)
-    .append('placement', createPlacementObject(block, spatialEntity, spatialEntity.placement))
     .append('all_collisions', spatialEntity.all_collisions?.map((collision, index) =>
       createCollisionObject(context, collision, index)).filter(onlyNonNull) || [])
     .append('summaries', spatialEntity.summaries?.map((summary, index) =>
@@ -271,8 +271,26 @@ function createExtractionSiteObject(context, block) {
   return normalizedExtractionSite;
 }
 
-function createPlacementObject(block, spatialEntity, placement) {
-  if (!checkPlacementId(placement['@id'])) {
+// ---------------------------------------------------------------------------------
+// NORMALIZING PLACEMENT DATA
+// ---------------------------------------------------------------------------------
+
+function normalizePlacementData(context, data) {
+  try {
+    const donors = data['@graph'];
+    return donors.map((donor) => {
+      return donor['samples'].map((block) =>
+        createPlacementObject(context, block.rui_location)
+      ).filter(onlyNonNull);
+    }).flat();
+  } catch (error) {
+    throw new Error("Problem in normalizing extraction site data: ", { cause: error });
+  }  
+}
+
+function createPlacementObject(block, spatialEntity) {
+  const placement = spatialEntity.placement;
+  if (!placement || !checkPlacementId(placement['@id'])) {
     return null;
   }
   return new ObjectBuilder()

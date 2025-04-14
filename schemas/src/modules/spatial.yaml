@@ -47,7 +47,6 @@ classes:
       - collides_with
       - slice_count
       - slice_thickness
-      - placement
       - all_collisions
       - corridor
       - summaries
@@ -132,6 +131,10 @@ classes:
         multivalued: true
         inlined_as_list: true
         range: SpatialEntity
+      spatial_placement_record:
+        multivalued: true
+        inlined_as_list: true
+        range: SpatialPlacement
 
   Container:
     tree_root: true

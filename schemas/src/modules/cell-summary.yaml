@@ -97,38 +97,6 @@ classes:
           interpolated: true
           partial_match: false
 
-  CellSummaryData:
-    attributes:
-      donor_record:
-        required: false
-      sample_record:
-        required: false
-      dataset_record:
-        required: false
-      spatial_entity_record:
-        required: false
-
-  CellSummaryMetadata:
-    class_uri: dcat:Dataset
-    slots:
-      - title
-      - description
-      - created_by
-      - creation_date
-      - version
-      - license
-      - publisher
-      - see_also
-      - derived_from
-
-  Container:
-    tree_root: true
-    attributes:
-      iri:
-      metadata:
-      data:
-        range: CellSummaryData
-
 slots:
   annotation_method:
     title: annotation method

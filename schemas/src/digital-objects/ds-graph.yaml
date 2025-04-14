@@ -19,9 +19,6 @@ imports:
   - ../modules/sample
   - ../modules/dataset
   - ../modules/spatial
-  - ../modules/cell-summary
-  - ../modules/collision
-  - ../modules/corridor
 
 classes:
   DatasetGraphData:
@@ -32,6 +29,7 @@ classes:
       - sample_record
       - dataset_record
       - spatial_entity_record
+      - spatial_placement_record
 
   DatasetGraphMetadata:
     title: Dataset Graph Metadata
@@ -87,3 +85,10 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: SpatialEntity
+  spatial_placement_record:
+    title: spatial placement data records
+    description: >-
+      List of spatial placements referenced in the experiment dataset metadata records.
+    multivalued: true
+    inlined_as_list: true
+    range: SpatialPlacement

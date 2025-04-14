@@ -79,6 +79,8 @@ classes:
         required: false
       spatial_entity_record:
         required: false
+      spatial_placement_record:
+        required: false
 
   Container:
     tree_root: true
