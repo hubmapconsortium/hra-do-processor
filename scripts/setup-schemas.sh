@@ -70,6 +70,10 @@ for genSchemaFile in schemas/generated/linkml/*.yaml; do
   echo -e "\r-> Generating SVG and PNG ER diagrams... done"
 done
 
+echo -n "-> Patching ds-graph JSON-LD Context..."
+node src/patch-ds-graph-context.js schemas/generated/json-ld/ds-graph.context.jsonld
+echo -e "\r-> Patching ds-graph JSON-LD Context... done"
+
 # Generate ER diagrams
 OUT=er-diagrams.md
 
