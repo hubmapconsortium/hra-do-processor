@@ -52,19 +52,23 @@ const testCases = [
     'Check if donor information exists and connects to samples',
     `PREFIX ccf: <http://purl.org/ccf/>
      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+     PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
      ASK {
        ?donor a ccf:Donor ;
          rdfs:label ?label ;
-         rdfs:comment ?comment ;
          ccf:age ?age ;
-         ccf:bmi ?bmi ;
          ccf:sex ?sex ;
          ccf:tissue_provider_name ?providerName ;
          ccf:tissue_provider_uuid ?providerUuid ;
          ccf:consortium_name ?consortium ;
          ccf:url ?url .
 
+         OPTIONAL { ?donor rdfs:comment ?comment }
+         OPTIONAL { ?donor skos:prefLabel ?prefLabel }
          OPTIONAL { ?donor ccf:race ?race }
+         OPTIONAL { ?donor ccf:bmi ?bmi }
+         OPTIONAL { ?donor ccf:race_id ?raceId }
+         OPTIONAL { ?donor ccf:sex_id ?sexId }
      }`
   ),
 
@@ -83,10 +87,11 @@ const testCases = [
          ccf:y_dimension ?yDim ;
          ccf:z_dimension ?zDim ;
          ccf:dimension_unit ?dimUnit ;
-         ccf:collides_with ?organType ;
-         ccf:has_cell_summary ?cellSummary ;
-         ccf:has_collision_summary ?collisionSummary ;
-         ccf:has_corridor ?corridor .
+         ccf:collides_with ?organType .
+
+       OPTIONAL { ?spatialEntity ccf:has_cell_summary ?cellSummary }
+       OPTIONAL { ?spatialEntity ccf:has_collision_summary ?collisionSummary }
+       OPTIONAL { ?spatialEntity ccf:has_corridor ?corridor }
         
        ?placement a ccf:SpatialPlacement ;
          ccf:placement_for ?spatialEntity .
@@ -131,19 +136,23 @@ const testCases = [
      ASK {
        ?dataset a ccf:Dataset ;
          rdfs:label ?label ;
-         rdfs:comment ?comment ;
          ccf:url ?url ;
          ccf:thumbnail ?thumbnail ;
-         ccf:cell_count ?cellCount ;
-         ccf:gene_count ?geneCount ;
-         ccf:technology ?technology ;
-         ccf:organ_id ?organId ;
-         ccf:has_cell_summary ?cellSummary ;
-         ccf:publication ?publication ;
-         ccf:publication_title ?publicationTitle ;
-         ccf:publication_lead_author ?leadAuthor .
+         ccf:technology ?technology .
 
+       OPTIONAL { ?dataset rdfs:comment ?comment }
        OPTIONAL { ?dataset skos:prefLabel ?prefLabel }
+
+       OPTIONAL {
+         ?dataset ccf:has_cell_summary ?cellSummary ;
+           ccf:cell_count ?cellCount ;
+           ccf:gene_count ?geneCount 
+       }
+
+       OPTIONAL { ?dataset ccf:organ_id ?organId }
+       OPTIONAL { ?dataset ccf:publication ?publication }
+       OPTIONAL { ?dataset ccf:publication_title ?publicationTitle }
+       OPTIONAL { ?dataset ccf:publication_lead_author ?leadAuthor }
        OPTIONAL { ?dataset dct:references ?referenceDoi }
      }`
   ),
