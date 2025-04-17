@@ -28,28 +28,21 @@ const testCases = [
      ASK {
        ?tissueBlock a ccf:Sample ;
          rdfs:label ?label ;
-         skos:prefLabel ?prefLabel ;
          rdfs:comment ?comment ;
          ccf:sample_type "Tissue Block" ;
          ccf:comes_from ?donor ;
          ccf:generates_dataset ?dataset ;
          ccf:has_registration_location ?spatialEntity ;
-         ccf:subdivided_into_sections ?tissueSection ;
-         ccf:section_count ?sectionCount ;
-         ccf:section_size ?sectionSize ;
-         ccf:section_size_unit ?sectionSizeUnit ;
          ccf:url ?url .
 
-       EXISTS { ?tisueBlock a ccf:TissueBlock }
- 
-       ?donor a ccf:Donor ;
-         ccf:sex ?sex .
-
-       ?spatialEntity a ccf:SpatialEntity ;
-         ccf:has_placement ?placement .
-         
-       ?placement a ccf:SpatialPlacement ;
-         dct:created ?placementDate .
+       OPTIONAL { ?tisueBlock a ccf:TissueBlock }
+       OPTIONAL { ?tisueBlock skos:prefLabel ?prefLabel }       
+       OPTIONAL { 
+         ?tisueBlock ccf:subdivided_into_sections ?tissueSection ;
+           ccf:section_count ?sectionCount ;
+           ccf:section_size ?sectionSize ;
+           ccf:section_size_unit ?sectionSizeUnit .
+       }
      }`
   ),
 
@@ -71,9 +64,7 @@ const testCases = [
          ccf:consortium_name ?consortium ;
          ccf:url ?url .
 
-         EXISTS { ?donor ccf:race ?race }
-
-         ?sample a ccf:TissueBlock .
+         OPTIONAL { ?donor ccf:race ?race }
      }`
   ),
 
@@ -95,8 +86,10 @@ const testCases = [
          ccf:collides_with ?organType ;
          ccf:has_cell_summary ?cellSummary ;
          ccf:has_collision_summary ?collisionSummary ;
-         ccf:has_corridor ?corridor ;
-         ccf:has_placement ?placement .
+         ccf:has_corridor ?corridor .
+        
+       ?placement a ccf:SpatialPlacement ;
+         ccf:placement_for ?spatialEntity .
      }`
   ),
 
@@ -134,11 +127,11 @@ const testCases = [
     `PREFIX ccf: <http://purl.org/ccf/>
      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
      PREFIX dct: <http://purl.org/dc/terms/>
+     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
      ASK {
        ?dataset a ccf:Dataset ;
          rdfs:label ?label ;
          rdfs:comment ?comment ;
-         skos:prefLabel ?prefLabel ;
          ccf:url ?url ;
          ccf:thumbnail ?thumbnail ;
          ccf:cell_count ?cellCount ;
@@ -150,7 +143,8 @@ const testCases = [
          ccf:publication_title ?publicationTitle ;
          ccf:publication_lead_author ?leadAuthor .
 
-       EXISTS { ?dataset dct:references ?referenceDoi }
+       OPTIONAL { ?dataset skos:prefLabel ?prefLabel }
+       OPTIONAL { ?dataset dct:references ?referenceDoi }
      }`
   ),
   
@@ -184,8 +178,8 @@ const testCases = [
      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
      ASK {
        ?cellSummary a ccf:CellSummary ;
-         ccf:aggregated_summary_count ?count ;
-         ccf:aggregates ?aggregates ;
+         ccf:aggregated_summary_count ?aggregated_count ;
+         ccf:aggregates ?spatialEntity ;
          ccf:modality ?modality ;
          ccf:sex ?sex ;
          ccf:cell_annotation_method ?method ;
@@ -235,11 +229,11 @@ const testCases = [
          ccf:as_volume ?asVolume ;
          ccf:percentage_of_total ?percentage .
 
-       EXISTS { ?collisionItem ccf:collides_with_object [
+       OPTIONAL { ?collisionItem ccf:collides_with_object [
          ccf:anatomical_structure_id ?anatomicalStructureId ;
          ccf:anatomical_structure_label ?anatomicalStructureLabel ;
          ccf:anatomical_structure_volume ?anatomicalStructureVolume ;
-         ccf:has_reference_organ ?referenceOrganReference ;
+         ccf:has_object_reference ?referenceOrganReference ;
          ccf:has_spatial_entity ?spatialEntityReference ] .
        }
      }`
@@ -255,13 +249,12 @@ const testCases = [
      ASK {
        ?tissueSection a ccf:Sample ;
          rdfs:label ?label ;
-         skos:prefLabel ?prefLabel ;
          ccf:sample_type "Tissue Section" ;
          ccf:url ?url ;
          ccf:generates_dataset ?dataset .
 
-       EXISTS { ?tissueSection a ccf:TissueSection }
-       ?dataset a ccf:Dataset .
+       OPTIONAL { ?tissueSection a ccf:TissueSection }
+       OPTIONAL { ?tissueSection skos:prefLabel ?prefLabel }
      }`
   ),
 
@@ -274,10 +267,10 @@ const testCases = [
        ?spatialEntity ccf:x_dimension ?xDim ;
          ccf:y_dimension ?yDim ;
          ccf:z_dimension ?zDim ;
-         ccf:dimension_unit ?dimUnit ;
-         ccf:has_placement ?placement .
+         ccf:dimension_unit ?dimUnit .
         
        ?placement ccf:x_translation ?xTrans ;
+         ccf:placement_for ?spatialEntity ;
          ccf:y_translation ?yTrans ;
          ccf:z_translation ?zTrans ;
          ccf:translation_unit ?translationUnit ;
