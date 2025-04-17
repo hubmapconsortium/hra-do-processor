@@ -77,7 +77,7 @@ slots:
       List of datasets referenced in the experiment dataset metadata records.
     multivalued: true
     inlined_as_list: true
-    range: AssayDataset
+    range: Dataset
   spatial_entity_record:
     title: spatial entity data records
     description: >-

@@ -17,10 +17,10 @@ imports:
   - cell-summary
 
 classes:
-  AssayDataset:
-    title: Assay Dataset
+  Dataset:
+    title: Experiment Dataset
     description: >-
-      An assay dataset is a collection of data generated from a specific
+      An experiment dataset is a collection of data generated from a specific
       experimental assay, providing details about the description of
       the dataset, the technology or methodology used, and the
       associated cell summaries that outline the analyzed cell types a
@@ -53,7 +53,7 @@ classes:
       dataset_record:
         multivalued: true
         inlined_as_list: true
-        range: AssayDataset
+        range: Dataset
       spatial_entity_record:
         required: false
       spatial_placement_record:
