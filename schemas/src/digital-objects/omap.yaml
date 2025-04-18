@@ -16,11 +16,6 @@ imports:
   - ../shared/metadata-base
   - ../shared/instance-base
 
-settings:
-  uberon: "UBERON"
-  fma: "FMA"
-  hgnc: "HGNC"
-
 classes:
   Antibody:
     title: Antibody
@@ -85,7 +80,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "{hgnc}:\\d+"
+          syntax: "HGNC:\\d+"
           interpolated: true
           partial_match: false
 
@@ -204,7 +199,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "({uberon}|{fma}):\\d+"
+          syntax: "(UBERON|FMA):\\d+"
           interpolated: true
           partial_match: false
 

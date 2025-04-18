@@ -18,11 +18,6 @@ imports:
   - collision
   - corridor
 
-settings:
-  uberon: "UBERON"
-  fma: "FMA"
-  asctb_temp: "ASCTB-TEMP"
-
 classes:
   SpatialEntity:
     title: Spatial Entity
@@ -115,7 +110,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "({uberon}|{fma}):\\d+|{asctb_temp}[a-zA-Z0-9-]+"
+          syntax: "(UBERON|FMA):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
 

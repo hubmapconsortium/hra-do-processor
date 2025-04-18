@@ -17,13 +17,7 @@ default_range: string
 
 imports:
   - linkml:types
-  - ../shared/metadata-base
-
-settings:
-  cl: "CL"
-  pcl: "PCL"
-  asctb_temp: "ASCTB-TEMP"
-  hgnc: "HGNC"
+  - ../shared/metadata-base 
 
 classes:
   CellSummary:
@@ -67,7 +61,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "({cl}|{pcl}):\\d+|{asctb_temp}:[a-zA-Z0-9-]+"
+          syntax: "(CL|PCL):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
 
@@ -93,7 +87,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "{hgnc}:\\d{1,5}"
+          syntax: "HGNC:\\d{1,5}"
           interpolated: true
           partial_match: false
 
