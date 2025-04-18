@@ -24,11 +24,10 @@ classes:
       about the specific collision items identified.
     class_uri: ccf:CollisionSummary
     mixins:
-      - Named
       - Instance
     slots:
       - collision_method
-      - collision_items
+      - collisions
   
   CollisionItem:
     title: Collision Item
@@ -39,119 +38,147 @@ classes:
       total volume.
     class_uri: ccf:CollisionItem
     mixins:
-      - Named
       - Instance
-    slots: 
-      - spatial_entity_reference
-      - volume
+    slots:
+      - reference_organ
+      - as_3d_id
+      - as_id
+      - as_label
+      - as_volume
+      - collides_with_object
       - percentage
 
-  SpatialEntityID:
-    title: Spatial Entity Identifier
+  AnatomicalStructureObject:
+    title: Anatomical Structure Object
+    description: >-
+      The anatomical structure object that collides with the sample.
+    class_uri: ccf:AnatomicalStructureObject
+    mixins:
+      - Instance
     slots:
-      - id
-
-  CollisionData:
-    attributes:
-      donor:
-        required: false
-      sample:
-        required: false
-      dataset:
-        required: false
-      spatial_entity:
-        required: false
-      cell_summary:
-        required: false
-      collision:
-        multivalued: true
-        inlined_as_list: true
-        range: CollisionSummary
-      corridor:
-        required: false
-
-  CollisionMetadata:
-    class_uri: dcat:Dataset
-    slots:
-      - title
-      - description
-      - created_by
-      - creation_date
-      - version
-      - license
-      - publisher
-      - see_also
-      - derived_from
-
-  Container:
-    tree_root: true
-    attributes:
-      iri:
-        range: uriorcurie
-      metadata:
-        range: CollisionMetadata
-      data:
-        range: CollisionData
-    annotations:
-      owl.template: |-
-        AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
-        AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
-        {% for creator_iri in metadata.created_by %}
-        AnnotationAssertion( dct:creator {{iri}} {{creator_iri|e}} )
-        {% endfor %}
-        AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
-        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
-        AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
-        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
-        AnnotationAssertion( rdfs:seeAlso {{iri}} {{metadata.see_also|e}} )
-        AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Donor )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:TissueBlock )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:TissueSection )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Dataset )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:CellSummary )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Collision )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Corridor )
+      - anatomical_structure_id
+      - anatomical_structure_label
+      - anatomical_structure_volume
+      - object_reference_id
+      - spatial_entity_id
 
 slots:
   collision_method:
     title: collision method
     description: >-
       Method used to determine or calculate collisions between spatial entities.
+    slot_uri: ccf:collision_method
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  collision_items:
-    title: collision item
+  collisions:
+    title: collisions
     description: >-
       List of collision instances detailing specific spatial entity interactions.
     slot_uri: ccf:has_collision_item
-    required: true
+    required: false
     range: CollisionItem
     multivalued: true
     inlined_as_list: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  spatial_entity_reference:
-    title: spatial entity
-    description: Reference to the spatial entity involved in the collision.
-    slot_uri: ccf:has_spatial_entity
-    required: true
-    range: SpatialEntityID
+  reference_organ:
+    title: reference organ
+    description: >-
+      Reference to the reference organ's spatial entity.
+    slot_uri: ccf:has_reference_organ
+    range: EntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  volume:
+  as_3d_id:
+    title: spatial entity
+    description: Reference to the spatial entity involved in the collision.
+    slot_uri: ccf:as_3d_id
+    required: true
+    range: EntityID
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  as_id:
+    title: organ ID
+    description: Identifier of the organ involved in the collision.
+    slot_uri: ccf:as_id
+    required: true
+    range: EntityID
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  as_label: 
+    title: organ label
+    description: Label of the organ involved in the collision.
+    slot_uri: ccf:as_label
+    required: true
+    range: string
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  as_volume:
     title: volume
-    description: Volume of the spatial entity in the collision.
+    description: Volume of the organ in the collision.
+    slot_uri: ccf:as_volume
     required: true
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   percentage:
     title: percentage
+    description: The proportion relative to a whole.
+    slot_uri: ccf:percentage_of_total
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  collides_with_object:
+    title: collides with anatomical structure
     description: >-
-      Percentage of total collision area that this spatial entity represents.
+      Details of the anatomical structure that collides with the sample.
+    slot_uri: ccf:collides_with_object
+    range: AnatomicalStructureObject
+    inlined: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  anatomical_structure_id:
+    title: anatomical structure ID
+    description: >-
+      Identifier of the anatomical structure that collides with the sample.
+    slot_uri: ccf:anatomical_structure_id
+    required: true
+    range: EntityID
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  anatomical_structure_label:
+    title: anatomical structure label
+    description: >-
+      Label of the anatomical structure that collides with the sample.
+    slot_uri: ccf:anatomical_structure_label
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  anatomical_structure_volume:
+    title: anatomical structure volume
+    description: >-
+      Volume of the anatomical structure that collides with the sample.
+    slot_uri: ccf:anatomical_structure_volume
     required: true
     range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  object_reference_id:
+    title: object reference ID
+    description: >-
+      Identifier of the anatomical structure that collides with the sample.
+    slot_uri: ccf:has_object_reference
+    required: true
+    range: EntityID
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  spatial_entity_id:
+    title: spatial entity ID
+    description: >-
+      Identifier of the spatial entity involved in the collision.
+    slot_uri: ccf:has_spatial_entity
+    required: true
+    range: EntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

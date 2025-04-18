@@ -14,12 +14,13 @@ default_range: string
 imports:
   - linkml:types
   - ../shared/metadata-base
+  - cell-summary
 
 classes:
-  AssayDataset:
-    title: Assay Dataset
+  Dataset:
+    title: Experiment Dataset
     description: >-
-      An assay dataset is a collection of data generated from a specific
+      An experiment dataset is a collection of data generated from a specific
       experimental assay, providing details about the description of
       the dataset, the technology or methodology used, and the
       associated cell summaries that outline the analyzed cell types a
@@ -31,38 +32,31 @@ classes:
     slots:
       - pref_label
       - description
-      - external_link
+      - link
       - technology
+      - cell_count
+      - gene_count
+      - organ_id
       - thumbnail
-      - cell_summaries
-
-  CellSummaryID:
-    title: Cell Summary Identifier
-    slots:
-      - id
-
-  SampleID:
-    title: Sample Identifier
-    slots:
-      - id
+      - summaries
+      - publication
+      - publication_title
+      - publication_lead_author
+      - references
 
   AssayDatasetData:
     attributes:
-      donor:
+      donor_record:
         required: false
-      sample:
+      sample_record:
         required: false
-      dataset:
+      dataset_record:
         multivalued: true
         inlined_as_list: true
-        range: AssayDataset
-      spatial_entity:
+        range: Dataset
+      spatial_entity_record:
         required: false
-      cell_summary:
-        required: false
-      collision:
-        required: false
-      corridor:
+      spatial_placement_record:
         required: false
 
   Container:
@@ -74,8 +68,8 @@ classes:
         range: AssayDatasetData
 
 slots:
-  external_link:
-    title: external link
+  link:
+    title: link
     description: >-
       URL link directing to external resources or pages associated with
       the dataset.
@@ -86,21 +80,75 @@ slots:
     title: assay technology
     description: >-
       Type of technology or technique used to collect or analyze the data.
+    slot_uri: ccf:technology
     required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   thumbnail:
     title: thumbnail
     description: Image or icon used in user interfaces.
+    slot_uri: ccf:thumbnail
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  cell_summaries:
+  cell_count:
+    title: cell count
+    description: Number of cells analyzed in the dataset.
+    slot_uri: ccf:cell_count
+    range: integer
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  gene_count:
+    title: gene count
+    description: Number of genes analyzed in the dataset.
+    slot_uri: ccf:gene_count
+    range: integer
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  organ_id:
+    title: organ identifier
+    description: Identifier of the organ from which the dataset was derived.
+    slot_uri: ccf:organ_id
+    required: false
+    range: EntityID
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  summaries:
     title: cell summary
     description: List of cell summary data associated with this dataset.
     slot_uri: ccf:has_cell_summary
     required: false
     multivalued: true
-    range: CellSummaryID
+    inlined_as_list: true
+    range: CellSummary
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  publication:
+    title: publication
+    description: >-
+      Reference to the publication or study associated with the dataset,
+      providing context and details about the research.
+    slot_uri: ccf:publication
+    required: false
+    range: uriorcurie
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  publication_title:
+    title: publication title
+    description: >-
+      Title of the publication or study associated with the dataset.
+    slot_uri: ccf:publication_title
+    required: false
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  publication_lead_author:
+    title: publication lead author
+    description: >-
+      Name of the lead author of the publication or study associated with
+      the dataset.
+    slot_uri: ccf:publication_lead_author
+    required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

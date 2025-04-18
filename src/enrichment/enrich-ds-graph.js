@@ -37,11 +37,7 @@ export async function enrichDatasetGraphData(context) {
     const moduleSamplePath = resolve(obj.path, 'enriched/module-sample.ttl');
     const moduleDatasetPath = resolve(obj.path, 'enriched/module-dataset.ttl');
     const moduleSpatialPath = resolve(obj.path, 'enriched/module-spatial.ttl');
-    const moduleCellSummaryPath = resolve(obj.path, 'enriched/module-cell-summary.ttl');
-    const moduleCollisionPath = resolve(obj.path, 'enriched/module-collision.ttl');
-    const moduleCorridorPath = resolve(obj.path, 'enriched/module-corridor.ttl');
-    const modulePaths = [moduleMetadataPath, moduleDonorPath, moduleSamplePath, moduleDatasetPath, moduleSpatialPath,
-      moduleCellSummaryPath, moduleCollisionPath, moduleCorridorPath];
+    const modulePaths = [moduleMetadataPath, moduleDonorPath, moduleSamplePath, moduleDatasetPath, moduleSpatialPath];
 
     // Run the conversion functions in parallel
     await Promise.all([
@@ -49,10 +45,7 @@ export async function enrichDatasetGraphData(context) {
       convertToOwlPromise(context, normalizedPath, moduleDonorPath, 'donor'),
       convertToOwlPromise(context, normalizedPath, moduleSamplePath, 'sample'),
       convertToOwlPromise(context, normalizedPath, moduleDatasetPath, 'dataset'),
-      convertToOwlPromise(context, normalizedPath, moduleSpatialPath, 'spatial'),
-      convertToOwlPromise(context, normalizedPath, moduleCellSummaryPath, 'cell-summary'),
-      convertToOwlPromise(context, normalizedPath, moduleCollisionPath, 'collision'),
-      convertToOwlPromise(context, normalizedPath, moduleCorridorPath, 'corridor')
+      convertToOwlPromise(context, normalizedPath, moduleSpatialPath, 'spatial')
     ]);
 
     // Ensure merge is only executed after all conversions are complete

@@ -9,6 +9,7 @@ import { normalizeCollectionData, normalizeCollectionMetadata } from './normaliz
 import { normalizeGraphData, normalizeGraphMetadata } from './normalize-graph.js';
 import { normalizeLandmarkData, normalizeLandmarkMetadata } from './normalize-landmark.js';
 import { normalizeOmapData, normalizeOmapMetadata } from './normalize-omap.js';
+import { normalizeCtAnnData, normalizeCtAnnMetadata } from './normalize-ctann.js';
 import { normalizeDatasetGraphData, normalizeDatasetGraphMetadata } from './normalize-ds-graph.js';
 import { normalizeRefOrganData, normalizeRefOrganMetadata } from './normalize-ref-organ.js';
 import { cleanDirectory } from './utils.js';
@@ -42,6 +43,10 @@ export async function normalize(context) {
     case 'omap':
       normalizeOmapMetadata(context);
       processedType = await normalizeOmapData(context);
+      break;
+    case 'ctann':
+      normalizeCtAnnMetadata(context);
+      await normalizeCtAnnData(context);
       break;
     case 'collection':
       normalizeCollectionMetadata(context);

@@ -295,7 +295,7 @@ function normalizeAsctbRecord(context, data) {
     collector.push({
       id: generateAsctbRecordId(context, recordNumber),
       label: `Table ${doName}, Record ${recordNumber}`,
-      type_of: [`AsctbRecord`],
+      type_of: ['ccf:AsctbRecord'],
       record_number: recordNumber,
       anatomical_structure_list: asInstances,
       cell_type_list: ctInstances,
@@ -349,7 +349,7 @@ function normalizeCellMarkerDescriptor(context, data) {
       collector.push({
         id: generateCellMarkerDescriptorId(context, recordNumber),
         label: `Cell marker descriptor for ${primaryCt.name}`,
-        type_of: [`CellMarkerDescriptor`],
+        type_of: ['ccf:CellMarkerDescriptor'],
         primary_cell_type: primaryCt.id,
         primary_anatomical_structure: primaryAs,
         biomarker_set: biomarkers,
@@ -369,7 +369,7 @@ function generateAsInstance(context, recordNumber, data, index) {
   return {
     id: generateAsInstanceId(context, recordNumber, orderNumber),
     label: `${asName} (Table ${doName}, Record ${recordNumber}, Column AS/${orderNumber})`,
-    type_of: ['AnatomicalStructureRecord'],
+    type_of: ['ccf:AnatomicalStructureRecord'],
     ccf_pref_label: asName,
     source_concept: generateIdWhenEmpty(id, asName),
     record_number: recordNumber,
@@ -385,7 +385,7 @@ function generateCtInstance(context, recordNumber, data, index) {
   return {
     id: generateCtInstanceId(context, recordNumber, orderNumber),
     label: `${ctName} (Table ${doName}, Record ${recordNumber}, Column CT/${orderNumber})`,
-    type_of: ['CellTypeRecord'],
+    type_of: ['ccf:CellTypeRecord'],
     ccf_pref_label: ctName,
     source_concept: generateIdWhenEmpty(id, ctName),
     record_number: recordNumber,
@@ -401,7 +401,7 @@ function generateBmInstance(context, recordNumber, data, index) {
   return {
     id: generateBmInstanceId(context, recordNumber, orderNumber),
     label: `${bmName} (Table ${doName}, Record ${recordNumber}, Column BM/${orderNumber})`,
-    type_of: ['BiomarkerRecord'],
+    type_of: ['ccf:BiomarkerRecord'],
     ccf_pref_label: bmName,
     ccf_biomarker_type: b_type,
     source_concept: generateIdWhenEmpty(id, bmName),

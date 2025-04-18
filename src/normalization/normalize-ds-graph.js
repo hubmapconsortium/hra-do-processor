@@ -1,8 +1,7 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { info } from '../utils/logging.js';
-import { hash } from '../utils/hash.js';
-import { checkIfValidUrl } from '../utils/validation.js';
+import { checkIfValidIri, checkIfValidUrl } from '../utils/validation.js';
 import { ObjectBuilder } from '../utils/object-builder.js';
 import {
   normalizeMetadata,
@@ -46,13 +45,11 @@ function normalizeData(context, data) {
   const metadata = readMetadata(context);
   try {
     return {
-      donor: removeDuplicate(normalizeDonorData(data), ['id']),
-      sample: removeDuplicate(normalizeSampleData(context, data), ['id']),
-      dataset: removeDuplicate(normalizeDatasetData(context, data), ['id']),
-      spatial_entity: removeDuplicate(normalizeExtractionSiteData(data), ['id']),
-      cell_summary: removeDuplicate(normalizeCellSummaryData(context, data), ['id']),
-      collision: removeDuplicate(normalizeCollisionData(context, data), ['id']),
-      corridor: removeDuplicate(normalizeCorridorData(context, data), ['id'])
+      donor_record: removeDuplicate(normalizeDonorData(data), ['id']),
+      sample_record: removeDuplicate(normalizeSampleData(context, data), ['id']),
+      dataset_record: removeDuplicate(normalizeDatasetData(context, data), ['id']),
+      spatial_entity_record: removeDuplicate(normalizeExtractionSiteData(context, data), ['id']),
+      spatial_placement_record: removeDuplicate(normalizePlacementData(context, data), ['id'])
     }
   } catch (error) {
     console.error(error);
@@ -78,11 +75,11 @@ function createDonorObject(donor) {
   }
   return new ObjectBuilder()
     .append('id', donor['@id'])
-    .append('label', getDonorLabel(donor))
-    .append('type_of', ['Donor'])
-    .append('pref_label', donor.label)
+    .append('label', donor.label)
+    .append('type_of', ['ccf:Donor'])
+    .append('pref_label',  getDonorLabel(donor))
     .append('description', donor.description)
-    .append('external_link', donor.link)
+    .append('link', donor.link)
     .append('age', ensureNumber(donor.age))
     .append('sex', donor.sex)
     .append('sex_id', getSexId(donor.sex))
@@ -92,10 +89,6 @@ function createDonorObject(donor) {
     .append('consortium_name', donor.consortium_name)
     .append('provider_name', donor.provider_name)
     .append('provider_uuid', donor.provider_uuid)
-    .append('provides_samples',
-      donor.samples
-        .map((sample) => sample['@id'])
-        .filter(checkSampleId))
     .build();
 }
 
@@ -122,12 +115,13 @@ function createTissueBlockObject(context, donor, block) {
   }
   return new ObjectBuilder()
     .append('id', block['@id'])
-    .append('label', getSampleLabel(block))
-    .append('type_of', ['TissueBlock'])
-    .append('pref_label', block.label)
+    .append('label', block.label)
+    .append('type_of', ['ccf:Sample', 'ccf:TissueBlock'])
+    .append('pref_label', getSampleLabel(block))
     .append('description', block.description)
+    .append('sample_type', block.sample_type)
     .append('rui_location', block.rui_location?.['@id'])
-    .append('external_link', block.link)
+    .append('link', block.link)
     .append('sections', block.sections
       ?.map((section) => createTissueSectionObject(block, section))
       .filter(onlyNonNull))
@@ -137,9 +131,7 @@ function createTissueBlockObject(context, donor, block) {
     .append('section_count', block.section_count)
     .append('section_size', block.section_size)
     .append('section_size_unit', block.section_size_unit)
-    .append('collision_summaries', block.rui_location?.['all_collisions']?.map((collision, index) =>
-      generateCollisionId(context, block, collision, index)).filter(onlyNonNull) || [])
-    .append('corridors', getCorridorId(context, block))
+    .append('donor', donor['@id'])
     .build();
 }
 
@@ -149,11 +141,12 @@ function createTissueSectionObject(block, section) {
   }
   return new ObjectBuilder()
     .append('id', section['@id'])
-    .append('label', getSampleLabel(section))
-    .append('type_of', ['TissueSection'])
-    .append('pref_label', section.label)
+    .append('label', section.label)
+    .append('type_of', ['ccf:Sample', 'ccf:TissueSection'])
+    .append('pref_label', getSampleLabel(section))
     .append('description', section.description)
-    .append('external_link', section.link)
+    .append('sample_type', section.sample_type)
+    .append('link', section.link)
     .append('section_number', section.section_number)
     .append('datasets', section.datasets
       ?.map((dataset) => dataset['@id'])
@@ -170,13 +163,13 @@ function normalizeDatasetData(context, data) {
     const donors = data['@graph']
     const sampleBlockDatasets = donors.map((donor) => {
       return donor['samples'].map((block) => {
-        return block['datasets']?.map((dataset) => createDatasetObject(context, block, dataset))
+        return block['datasets']?.map((dataset) => createDatasetObject(context, dataset))
       }).flat();
     }).flat();
     const sampleSectionDatasets = donors.map((donor) => {
       return donor['samples'].map((block) => {
         return block['sections']?.map((section) => {
-          return section['datasets']?.map((dataset) => createDatasetObject(context, section, dataset))
+          return section['datasets']?.map((dataset) => createDatasetObject(context, dataset))
         }).flat();
       }).flat();
     }).flat();
@@ -186,34 +179,57 @@ function normalizeDatasetData(context, data) {
   }
 }
 
-function createDatasetObject(context, sample, dataset) {
+function createDatasetObject(context, dataset) {
   if (!checkDatasetId(dataset['@id'])) {
     return null;
   }
-  return new ObjectBuilder()
+  const normalizedDataset = new ObjectBuilder()
     .append('id', dataset['@id'])
-    .append('label', getDatasetLabel(dataset))
-    .append('type_of', ['Dataset'])
-    .append('pref_label', dataset.label)
+    .append('label', dataset.label)
+    .append('type_of', ['ccf:Dataset'])
+    .append('pref_label', getDatasetLabel(dataset))
     .append('description', dataset.description)
-    .append('external_link', dataset.link)
+    .append('link', dataset.link)
     .append('technology', dataset.technology || 'OTHER')
     .append('thumbnail', dataset.thumbnail || 'assets/icons/ico-unknown.svg')
-    .append('cell_summaries', dataset.summaries?.map((summary, index) =>
-      generateCellSummaryId(context, dataset, summary, index)) || [])
+    .append('summaries', dataset.summaries?.map((summary, index) =>
+      createCellSummaryObject(context, summary, index)) || [])
     .build();
+
+    if ('cell_count' in dataset) {
+      normalizedDataset['cell_count'] = ensureNumber(dataset['cell_count']);
+    }
+    if ('gene_count' in dataset) {
+      normalizedDataset['gene_count'] = ensureNumber(dataset['gene_count']);
+    }
+    if ('organ_id' in dataset) {
+      normalizedDataset['organ_id'] = checkIfValidIri(dataset['organ_id']);
+    }
+    if ('publication' in dataset) {
+      const publicationDoi = checkIfValidIri(dataset['publication']);
+      normalizedDataset['publication'] = publicationDoi;
+      normalizedDataset['references'] = [publicationDoi];
+    }
+    if ('publication_title' in dataset) {
+      normalizedDataset['publication_title'] = dataset['publication_title'];
+    }
+    if ('publication_lead_author' in dataset) {
+      normalizedDataset['publication_lead_author'] = dataset['publication_lead_author'];
+    }
+    
+    return normalizedDataset;
 }
 
 // ---------------------------------------------------------------------------------
 // NORMALIZING EXTRACTION SITE DATA
 // ---------------------------------------------------------------------------------
 
-function normalizeExtractionSiteData(data) {
+function normalizeExtractionSiteData(context, data) {
   try {
     const donors = data['@graph'];
     return donors.map((donor) => {
       return donor['samples'].map((block) =>
-        createExtractionSiteObject(block, block['rui_location'])
+        createExtractionSiteObject(context, block)
       ).filter(onlyNonNull);
     }).flat();
   } catch (error) {
@@ -221,17 +237,20 @@ function normalizeExtractionSiteData(data) {
   }  
 }
 
-function createExtractionSiteObject(block, spatialEntity) {
+function createExtractionSiteObject(context, block) {
+  const spatialEntity = block.rui_location;
   if (!spatialEntity || !checkExtractionSiteId(spatialEntity['@id'])) {
     return null;
   }
-  return new ObjectBuilder()
+  const normalizedExtractionSite = new ObjectBuilder()
     .append('id', spatialEntity['@id'])
-    .append('label', getSpatialEntityLabel(block))
-    .append('pref_label', spatialEntity.label)
-    .append('type_of', ['SpatialEntity'])
+    .append('label', spatialEntity.label)
+    .append('pref_label', getSpatialEntityLabel(block))
+    .append('type_of', ['ccf:SpatialEntity'])
     .append('collides_with', spatialEntity.ccf_annotations)
     .append('create_date', normalizeDate(spatialEntity.creation_date))
+    .append('creator_first_name', spatialEntity.creator_first_name)
+    .append('creator_last_name', spatialEntity.creator_last_name)
     .append('creator_name', spatialEntity.creator)
     .append('x_dimension', spatialEntity.x_dimension)
     .append('y_dimension', spatialEntity.y_dimension)
@@ -239,19 +258,46 @@ function createExtractionSiteObject(block, spatialEntity) {
     .append('dimension_unit', spatialEntity.dimension_units)
     .append('slice_count', spatialEntity.slice_count)
     .append('slice_thickness', spatialEntity.slice_thickness)
-    .append('placement', createPlacementObject(block, spatialEntity, spatialEntity.placement))
+    .append('all_collisions', spatialEntity.all_collisions?.map((collision, index) =>
+      createCollisionObject(context, collision, index)).filter(onlyNonNull) || [])
+    .append('summaries', spatialEntity.summaries?.map((summary, index) =>
+      createAggregatedCellSummaryObject(context, summary, index)).filter(onlyNonNull) || [])
     .build();
+
+  if ('corridor' in spatialEntity) {
+    normalizedExtractionSite['corridor'] = createCorridorObject(context, spatialEntity.corridor);
+  }
+
+  return normalizedExtractionSite;
 }
 
-function createPlacementObject(block, spatialEntity, placement) {
-  if (!checkPlacementId(placement['@id'])) {
+// ---------------------------------------------------------------------------------
+// NORMALIZING PLACEMENT DATA
+// ---------------------------------------------------------------------------------
+
+function normalizePlacementData(context, data) {
+  try {
+    const donors = data['@graph'];
+    return donors.map((donor) => {
+      return donor['samples'].map((block) =>
+        createPlacementObject(context, block.rui_location)
+      ).filter(onlyNonNull);
+    }).flat();
+  } catch (error) {
+    throw new Error("Problem in normalizing extraction site data: ", { cause: error });
+  }  
+}
+
+function createPlacementObject(block, spatialEntity) {
+  const placement = spatialEntity.placement;
+  if (!placement || !checkPlacementId(placement['@id'])) {
     return null;
   }
   return new ObjectBuilder()
     .append('id', placement['@id'])
-    .append('label', getPlacementLabel(block))
-    .append('type_of', ['SpatialPlacement'])
-    .append('pref_label', placement.label)
+    .append('label', placement.label)
+    .append('type_of', ['ccf:SpatialPlacement'])
+    .append('pref_label', getPlacementLabel(block))
     .append('placement_date', normalizeDate(placement.placement_date))
     .append('source', spatialEntity['@id'])
     .append('target', placement.target)
@@ -275,69 +321,61 @@ function createPlacementObject(block, spatialEntity, placement) {
 // NORMALIZING CELL SUMMARY DATA
 // ---------------------------------------------------------------------------------
 
-function normalizeCellSummaryData(context, data) {
-  try {
-    const donors = data['@graph'];
-    const sampleBlockCellSummaries = donors.map((donor) => {
-      return donor['samples'].map((block) => {
-        return block['datasets']?.map((dataset) => {
-          return dataset['summaries']?.map((summary, index) => 
-            createCellSummaryObject(context, dataset, summary, index))
-        }).flat();
-      }).flat();
-    }).flat();
-    const sampleSectionCellSummaries = donors.map((donor) => {
-      return donor['samples'].map((block) => {
-        return block['sections']?.map((section) => {
-          return section['datasets']?.map((dataset) => {
-            return dataset['summaries']?.map((summary, index) => 
-              createCellSummaryObject(context, dataset, summary, index))
-          }).flat();
-        }).flat();
-      }).flat();
-    }).flat();
-    return [...sampleBlockCellSummaries, ...sampleSectionCellSummaries].filter(onlyNonNull);
-  } catch (error) {
-    throw new Error("Problem in normalizing cell summary data: ", { cause: error });
-  }
-}
-
-function createCellSummaryObject(context, dataset, summary, index) {
+function createCellSummaryObject(context, summary, index) {
   return new ObjectBuilder()
-    .append('id', generateCellSummaryId(context, dataset, summary, index))
-    .append('label', getCellSummaryLabel(dataset, summary, index))
-    .append('type_of', ['CellSummary'])
+    .append('type_of', ['ccf:CellSummary'])
     .append('annotation_method', summary.annotation_method)
     .append('modality', summary.modality)
-    .append('donor_sex', summary.sex)
-    .append('summary_rows', summary['summary'].map((summaryRow, itemIndex) =>
-      createCellSummaryRowObject(context, dataset, summary, summaryRow, itemIndex)))
+    .append('sex', summary.sex)
+    .append('summary', summary['summary'].map((summaryRow, itemIndex) =>
+      createCellSummaryRowObject(context, summaryRow, itemIndex)))
     .build();
 }
 
-function createCellSummaryRowObject(context, dataset, summary, summaryRow, index) {
+function createCellSummaryRowObject(context, summaryRow, index) {
   return new ObjectBuilder()
-    .append('id', generateSummaryRowId(context, dataset, summary, summaryRow, index))
-    .append('label', getSummaryRowLabel(dataset, summary, summaryRow, index))
-    .append('type_of', ['CellSummaryRow'])
-    .append('cell_id', summaryRow.cell_id)
+    .append('type_of', ['ccf:CellSummaryRow'])
+    .append('cell_id', expandTempId(summaryRow.cell_id))
     .append('cell_label', summaryRow.cell_label)
-    .append('gene_expressions', summaryRow['gene_expr']?.map((expr, itemIndex) =>
-      createGeneExpressionObject(context, dataset, summary, summaryRow, expr, itemIndex)) || [])
+    .append('gene_expr', summaryRow['gene_expr']?.map((expr, itemIndex) =>
+      createGeneExpressionObject(context, expr, itemIndex)) || [])
     .append('count', summaryRow.count)
     .append('percentage', summaryRow.percentage)
     .build();
 }
 
-function createGeneExpressionObject(context, dataset, summary, summaryRow, expr, index) {
+function createAggregatedCellSummaryObject(context, summary, index) {
   return new ObjectBuilder()
-    .append('id', generateGeneExpressionId(context, dataset, summary, summaryRow, expr, index))
-    .append('label', getGeneExpressionLabel(dataset, summary, summaryRow, expr, index))
-    .append('type_of', ['GeneExpression'])
-    .append('gene_id', expr.gene_id)
+    .append('type_of', ['ccf:CellSummary'])
+    .append('annotation_method', summary.annotation_method)
+    .append('aggregated_summary_count', summary.aggregated_summary_count)
+    .append('aggregated_summaries', summary.aggregated_summaries)
+    .append('modality', summary.modality)
+    .append('sex', summary.sex)
+    .append('summary', summary['summary'].map((summaryRow, itemIndex) =>
+      createAggregatedCellSummaryRowObject(context, summaryRow, itemIndex)))
+    .build();
+}
+
+function createAggregatedCellSummaryRowObject(context, summaryRow, index) {
+  return new ObjectBuilder()
+    .append('type_of', ['ccf:CellSummaryRow'])
+    .append('cell_id', expandTempId(summaryRow.cell_id))
+    .append('cell_label', summaryRow.cell_label)
+    .append('gene_expr', summaryRow['gene_expr']?.map((expr, itemIndex) =>
+      createGeneExpressionObject(context, expr, itemIndex)) || [])
+    .append('count', summaryRow.count)
+    .append('percentage', summaryRow.percentage)
+    .build();
+}
+
+function createGeneExpressionObject(context, expr, index) {
+  return new ObjectBuilder()
+    .append('type_of', ['ccf:GeneExpression'])
+    .append('gene_id', expandTempId(expr.gene_id))
     .append('gene_label', expr.gene_label)
     .append('ensembl_id', expr.ensembl_id)
-    .append('mean_gene_expression_value', expr.mean_gene_expr_value)
+    .append('mean_gene_expr_value', expr.mean_gene_expr_value)
     .build();
 }
 
@@ -345,72 +383,48 @@ function createGeneExpressionObject(context, dataset, summary, summaryRow, expr,
 // NORMALIZING COLLISION DATA
 // ---------------------------------------------------------------------------------
 
-function normalizeCollisionData(context, data) {
-  try {
-    const donors = data['@graph'];
-    return donors.map((donor) => {
-      return donor['samples'].map((block) => {
-        return block.rui_location?.all_collisions?.map((collision, index) =>
-          createCollisionObject(context, block, collision, index)
-        ).filter(onlyNonNull) || []
-      }).flat();
-    }).flat();
-  } catch (error) {
-    throw new Error("Problem in normalizing collision data: ", { cause: error });
-  }
-}
-
-function createCollisionObject(context, block, collision, index) {
-  const collisionId = generateCollisionId(context, block, collision, index);
-  if (!collisionId) {
-    return null;
-  }
+function createCollisionObject(context, collisionSummary, index) {
   return new ObjectBuilder()
-    .append('id', collisionId)
-    .append('label', getCollisionLabel(block, collision, index))
-    .append('type_of', ['CollisionSummary'])
-    .append('collision_method', collision.collision_method)
-    .append('collision_items', collision['collisions']?.map((collisionItem, itemIndex) =>
-      createCollisionItemObject(context, block, collision, collisionItem, itemIndex)) || [])
+    .append('type_of', ['ccf:CollisionSummary'])
+    .append('collision_method', collisionSummary.collision_method)
+    .append('collisions', collisionSummary['collisions']?.map((collisionItem, itemIndex) =>
+      createCollisionItemObject(context, collisionItem, itemIndex)) || [])
     .build();
 }
 
-function createCollisionItemObject(context, block, collision, collisionItem, index) {
+function createCollisionItemObject(context, collisionItem, index) {
   return new ObjectBuilder()
-    .append('id', generateCollisionItemId(context, block, collision, collisionItem, index))
-    .append('label', getCollisionItemLabel(block, collision, collisionItem, index))
-    .append('type_of', ['CollisionItem'])
-    .append('spatial_entity_reference', collisionItem.as_3d_id)
-    .append('volume', collisionItem.as_volume)
+    .append('type_of', ['ccf:CollisionItem'])
+    .append('reference_organ', collisionItem.reference_organ)
+    .append('as_3d_id', collisionItem.as_3d_id)
+    .append('as_id', collisionItem.as_id)
+    .append('as_label', collisionItem.as_label)
+    .append('as_volume', collisionItem.as_volume)
+    .append('collides_with_object', getCollidesWithAnatomicalStructure(collisionItem))
     .append('percentage', collisionItem.percentage)
     .build();
+}
+
+function getCollidesWithAnatomicalStructure(collisionItem) {
+  return new ObjectBuilder()
+    .append('type_of', ['ccf:AnatomicalStructureObject'])
+    .append('anatomical_structure_id', collisionItem.as_id)
+    .append('anatomical_structure_label', collisionItem.as_label)
+    .append('anatomical_structure_volume', collisionItem.as_volume)
+    .append('object_reference_id', collisionItem.reference_organ)
+    .append('spatial_entity_id', collisionItem.as_3d_id)
+    .build()
 }
 
 // ---------------------------------------------------------------------------------
 // NORMALIZING CORRIDOR DATA
 // ---------------------------------------------------------------------------------
 
-function normalizeCorridorData(context, data) {
-  try {
-    const donors = data['@graph'];
-    return donors.map((donor) => {
-      return donor['samples'].map((block) => {
-        const corridor = block.rui_location?.corridor;
-        return corridor ? createCorridorObject(context, block, corridor) : null;
-      }).filter(onlyNonNull);
-    }).flat();
-  } catch (error) {
-    throw new Error("Problem in normalizing corridor data: ", { cause: error });
-  }
-}
-
-function createCorridorObject(context, block, corridor) {
+function createCorridorObject(context, corridor) {
   return new ObjectBuilder()
-    .append('id', generateCorridorId(context, block, corridor))
-    .append('label', getCorridorLabel(block, corridor))
-    .append('type_of', ['Corridor'])
+    .append('type_of', ['ccf:Corridor'])
     .append('file_format', corridor.file_format)
-    .append('file_url', corridor.file)
+    .append('file', corridor.file)
     .build();
 }
 
@@ -419,105 +433,27 @@ function createCorridorObject(context, block, corridor) {
 // ---------------------------------------------------------------------------------
 
 function normalizeDate(originalDate) {
-  const date = new Date(originalDate);
+  if (!originalDate) return null;
 
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
+  // Check if date is already in YYYY-MM-DD format
+  const isValidFormat = /^\d{4}-\d{2}-\d{2}$/.test(originalDate);
+  if (isValidFormat) return originalDate;
 
-  const formattedMonth = month < 10 ? `0${month}` : `${month}`;
-  const formattedDay = day < 10 ? `0${day}` : `${day}`;
+  try {
+    const date = new Date(originalDate);
+    if (isNaN(date.getTime())) return null;
 
-  return `${year}-${formattedMonth}-${formattedDay}`;
-}
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
 
-function getCorridorId(context, block) {
-  const corridor = block.rui_location?.corridor;
-  return corridor ? [ generateCorridorId(context, block, corridor) ] : [];
-}
+    const formattedMonth = month < 10 ? `0${month}` : `${month}`;
+    const formattedDay = day < 10 ? `0${day}` : `${day}`;
 
-function generateCorridorId(context, block, corridor) {
-  const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getCorridorHash(block, corridor);
-  return `${iri}/${version}#${hashCode}`;
-}
-
-function generateCollisionId(context, block, collision, index) {
-  if (collision['collisions'].length === 0) {
+    return `${year}-${formattedMonth}-${formattedDay}`;
+  } catch (error) {
     return null;
   }
-  const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getCollisionHash(block, collision, index);
-  return `${iri}/${version}#${hashCode}`;
-}
-
-function generateCollisionItemId(context, block, collision, collisionItem, index) {
-  const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getCollisionItemHash(block, collision, collisionItem, index);
-  return `${iri}/${version}#${hashCode}`;
-}
-
-function generateCellSummaryId(context, dataset, summary, index) {
-  const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getCellSummaryHash(dataset, summary, index);
-  return `${iri}/${version}#${hashCode}`;
-}
-
-function generateSummaryRowId(context, dataset, summary, summaryRow, index) {
-  const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getSummaryRowHash(dataset, summary, summaryRow, index);
-  return `${iri}/${version}#${hashCode}`;
-}
-
-function generateGeneExpressionId(context, dataset, summary, summaryRow, expr, index) {
-  const { iri, version } = context.selectedDigitalObject;
-  const hashCode = getGeneExpressionHash(dataset, summary, summaryRow, expr, index);
-  return `${iri}/${version}#${hashCode}`;
-}
-
-function getCellSummaryHash(dataset, summary, index, length=0) {
-  const { annotation_method, modality } = summary;
-  const primaryKey = `${dataset['@id']}-${annotation_method}-${modality}-${index}`;
-  return getHashCode(primaryKey, length);
-}
-
-function getSummaryRowHash(dataset, summary, summaryRow, index, length=0) {
-  const { annotation_method, modality } = summary;
-  const { cell_label } = summaryRow;
-  const primaryKey = `${dataset['@id']}-${annotation_method}-${modality}-${cell_label}-${index}`;
-  return getHashCode(primaryKey, length);
-}
-
-function getGeneExpressionHash(dataset, summary, summaryRow, expr, index, length=0) {
-  const { annotation_method, modality } = summary;
-  const { cell_label } = summaryRow;
-  const { gene_label } = expr;
-  const primaryKey = `${dataset['@id']}-${annotation_method}-${modality}-${cell_label}-${gene_label}-${index}`;
-  return getHashCode(primaryKey, length);
-}
-
-function getCollisionHash(block, collision, index, length=0) {
-  const { collision_method } = collision;
-  const primaryKey = `${block['@id']}-${collision_method}-${index}`;
-  return getHashCode(primaryKey, length);
-}
-
-function getCollisionItemHash(block, collision, collisionItem, index, length=0) {
-  const { collision_method } = collision;
-  const { as_3d_id } = collisionItem;
-  const primaryKey = `${block['@id']}-${collision_method}-${as_3d_id}-${index}`;
-  return getHashCode(primaryKey, length);
-}
-
-function getCorridorHash(block, corridor, length=0) {
-  const { file } = corridor;
-  const primaryKey = `${block['@id']}-${file}`;
-  return getHashCode(primaryKey, length);
-}
-
-function getHashCode(str, length=0) {
-  const hashCode = hash(str).toString();
-  return (length > 1) ? hashCode.substring(0, length) : hashCode;
 }
 
 function getDonorLabel(donor) {
@@ -543,42 +479,8 @@ function getPlacementLabel(sample) {
   return `Spatial placement of ${getSampleLabel(sample)}`
 }
 
-function getCellSummaryLabel(dataset, summary, index) {
-  const { technology } = dataset;
-  const { annotation_method } = summary;
-  const hashCode = getCellSummaryHash(dataset, summary, index, 5);
-  return `Cell summary of the ${technology} dataset calculated using the ${annotation_method} method (#${hashCode})`;
-}
-
-function getSummaryRowLabel(dataset, summary, summaryRow, index) {
-  const { cell_label } = summaryRow;
-  const hashCode = getSummaryRowHash(dataset, summary, summaryRow, index, 5);
-  return `Cell summary details for ${cell_label} (#${hashCode})`;
-}
-
-function getGeneExpressionLabel(dataset, summary, summaryRow, expr, index) {
-  const { cell_label } = summaryRow;
-  const { gene_label } = expr;
-  const hashCode = getGeneExpressionHash(dataset, summary, summaryRow, expr, index, 5);
-  return `Gene expression for ${gene_label} in ${cell_label} (#${hashCode})`;
-}
-
-function getCollisionLabel(block, collision, index) {
-  const { collision_method } = collision;
-  const hashCode = getCollisionHash(block, collision, index, 5);
-  return `Collision summary of tissue block identified using the ${collision_method} method (#${hashCode})`;
-}
-
-function getCollisionItemLabel(block, collision, collisionItem, index) {
-  const { collision_method } = collision;
-  const { as_label } = collisionItem;
-  const hashCode = getCollisionItemHash(block, collision, collisionItem, index, 5);
-  return `Collision details intersecting with ${as_label}, identified using the ${collision_method} method (#${hashCode})`;
-}
-
-function getCorridorLabel(block, collision) {
-  const hashCode = getCorridorHash(block, collision, 5);
-  return `Corridor of tissue block (#${hashCode})`;
+function expandTempId(str) {
+  return str.includes('ASCTB-TEMP') ? `https://purl.org/ccf/${str.replace('ASCTB-TEMP:', 'ASCTB-TEMP_')}` : str;
 }
 
 function getSexId(sex) {
@@ -626,10 +528,6 @@ function onlyNonNull(item) {
 
 function checkDonorId(id) {
   return checkIfValidUrl(id, 'Donor ID');
-}
-
-function checkSampleId(id) {
-  return checkIfValidUrl(id, 'Sample ID');
 }
 
 function checkTissueBlockId(id) {
