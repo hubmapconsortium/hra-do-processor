@@ -3,10 +3,7 @@ name: spatial
 prefixes:
   ccf: http://purl.org/ccf/
   oboInOwl: http://www.geneontology.org/formats/oboInOwl#
-  loinc: http://purl.bioontology.org/ontology/LNC/
   linkml: https://w3id.org/linkml/
-  RO: http://purl.obolibrary.org/obo/RO_
-  IAO: http://purl.obolibrary.org/obo/IAO_
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   FMA: http://purl.org/sig/ont/fma/fma
   ASCTB-TEMP: https://purl.org/ccf/ASCTB-TEMP_
@@ -17,6 +14,9 @@ default_range: string
 imports:
   - linkml:types
   - ../shared/metadata-base
+  - cell-summary
+  - collision
+  - corridor
 
 settings:
   uberon: "UBERON"
@@ -36,6 +36,8 @@ classes:
       - Instance
     slots:
       - pref_label
+      - creator_first_name
+      - creator_last_name
       - creator_name
       - create_date
       - x_dimension
@@ -45,7 +47,9 @@ classes:
       - collides_with
       - slice_count
       - slice_thickness
-      - placement
+      - all_collisions
+      - corridor
+      - summaries
     slot_usage:
       dimension_unit:
         pattern: (centimeter|millimeter)
@@ -61,6 +65,7 @@ classes:
       - Named
       - Instance
     slots:
+      - pref_label
       - source
       - target
       - placement_date
@@ -105,9 +110,8 @@ classes:
       - placement
 
   AnatomicalStructureID:
+    is_a: EntityID
     title: Anatomical Structure Identifier
-    slots:
-      - id
     slot_usage:
       id:
         structured_pattern:
@@ -117,22 +121,20 @@ classes:
 
   SpatialData:
     attributes:
-      donor:
+      donor_record:
         required: false
-      sample:
+      sample_record:
         required: false
-      dataset:
+      dataset_record:
         required: false
-      spatial_entity:
+      spatial_entity_record:
         multivalued: true
         inlined_as_list: true
         range: SpatialEntity
-      cell_summary:
-        required: false
-      collision:
-        required: false
-      corridor:
-        required: false
+      spatial_placement_record:
+        multivalued: true
+        inlined_as_list: true
+        range: SpatialPlacement
 
   Container:
     tree_root: true
@@ -143,6 +145,16 @@ classes:
         range: SpatialData
 
 slots:
+  creator_first_name:
+    title: creator first name
+    description: The first name of the creator.
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  creator_last_name:
+    title: creator last name
+    description: The last name of the creator.
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   x_dimension:
     title: dimension in x-axis
     description: The length of the spatial entity along the X-axis.
@@ -191,7 +203,7 @@ slots:
   slice_thickness:
     title: slice thickness
     description: The thickness of each slice within the spatial entity.
-    range: integer
+    range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   object_reference:
@@ -233,6 +245,7 @@ slots:
   placement_date:
     title: placement date
     description: The date when the placement of the entity was established.
+    slot_uri: dct:created
     required: true
     range: date
     annotations:
@@ -349,5 +362,36 @@ slots:
     title: file format
     description: The format of the file to read.
     required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  all_collisions:
+    title: has collision summaries
+    description: >-
+      Summaries of collision data indicating spatial collisions with other organs.
+    slot_uri: ccf:has_collision_summary
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: CollisionSummary
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  corridor:
+    title: corridor
+    description: >-
+      The corridor structures linked to the spatial positioning of the tissue sample.
+    slot_uri: ccf:has_corridor
+    required: false
+    inlined: true
+    range: Corridor
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  summaries:
+    title: has cell summary
+    description: List of cell summary data associated with this dataset.
+    slot_uri: ccf:has_cell_summary
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: CellSummary
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

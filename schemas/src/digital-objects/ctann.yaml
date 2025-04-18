@@ -1,0 +1,174 @@
+id: https://purl.humanatlas.io/schema/ctann
+name: ctann
+prefixes:
+  ccf: http://purl.org/ccf/
+  obo: http://purl.obolibrary.org/obo/
+  linkml: https://w3id.org/linkml/
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  FMA: http://purl.org/sig/ont/fma/fma
+  CL: http://purl.obolibrary.org/obo/CL_
+  CT: https://celltypist.org/resource/
+
+default_prefix: ccf
+default_range: string
+
+imports:
+  - linkml:types
+  - ../shared/metadata-base
+  - ../modules/sssom
+
+classes:
+  CtAnnMappingSet:
+    is_a: mapping set
+    title: Cell Type Annotation Mapping Set
+    slots:
+      - id
+      - label
+      - type_of
+      - mappings
+      - extension_definitions
+    slot_usage:
+      mapping_set_id:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      mapping_set_title:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      mapping_set_version:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      mapping_date:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      creator_label:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      creator_id:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      license:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+
+  CtAnnMapping:
+    is_a: mapping
+    title: Cell Type Annotation Mapping
+    slots:
+      - id
+      - label
+      - type_of
+      - ext_organ_level
+      - ext_organ_id
+    slot_usage:
+      subject_id:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      subject_label:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      predicate_id:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      object_id:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      object_label:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      mapping_justification:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+
+  CtAnnExtensionDefinition:
+    is_a: extension definition
+    title: Cell Type Annotation Extension Definition
+    description: The definition of the extension columns used in the 'ctann' mappings.
+    slots:
+      - id
+      - label
+      - type_of
+    slot_usage:
+      slot_name:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      property:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+      type_hint:
+        annotations:
+          owl: AnnotationProperty, AnnotationAssertion
+
+  AnatomicalStructureID:
+    slots:
+      - id
+
+  CtAnnMetadata:
+    title: Cell Type Annotation Metadata
+    description: The metadata section for the "ct-ann" digital object.
+    class_uri: dcat:Dataset
+    slots:
+      - title
+      - description
+      - created_by
+      - creation_date
+      - version
+      - license
+      - publisher
+      - see_also
+      - derived_from
+
+  Container:
+    tree_root: true
+    attributes:
+      iri:
+        range: uriorcurie
+      metadata:
+        range: CtAnnMetadata
+      data:
+        range: CtAnnMappingSet
+        inlined: true
+    annotations:
+      owl.template: |-
+        AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
+        AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
+        {% for creator_iri in metadata.created_by %}
+        AnnotationAssertion( dct:creator {{iri}} {{creator_iri|e}} )
+        {% endfor %}
+        AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
+        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
+        AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
+        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
+        AnnotationAssertion( rdfs:seeAlso {{iri}} {{metadata.see_also|e}} )
+        AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
+
+slots:
+  mappings:
+    slot_uri: sssom:mappings
+    description: Contains a list of mapping objects.
+    range: CtAnnMapping
+    multivalued: true
+    inlined_as_list: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  extension_definitions:
+    slot_uri: sssom:extension_definitions
+    description: A list that defines the extension slots used in the mapping set.
+    range: CtAnnExtensionDefinition
+    multivalued: true
+    inlined_as_list: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  ext_organ_level:
+    slot_uri: ccf:ext_organ_level
+    title: Organ Level
+    description: The organ level where the annotated cell type is located.
+    range: string
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  ext_organ_id:
+    slot_uri: ccf:ext_organ_id
+    title: Organ ID
+    description: The external organ ID where the annotated cell type is located.
+    range: AnatomicalStructureID
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion

@@ -84,7 +84,7 @@ classes:
         {% for s in has_characterizing_marker_set %}
         SubClassOf(
           {% for r in s.references %}
-            Annotation(dct:reference "{{r|e}}")
+            Annotation(dct:references "{{r|e}}")
           {% endfor %}
           {{id}}
           ObjectSomeValuesFrom(

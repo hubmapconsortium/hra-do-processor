@@ -2,7 +2,6 @@ id: https://purl.humanatlas.io/specs/cell-summary
 name: cell-summary
 prefixes:
   ccf: http://purl.org/ccf/
-  ASCTB-TEMP: https://purl.org/ccf/ASCTB-TEMP_
   oboInOwl: http://www.geneontology.org/formats/oboInOwl#
   loinc: http://purl.bioontology.org/ontology/LNC/
   linkml: https://w3id.org/linkml/
@@ -36,14 +35,14 @@ classes:
       findings, and contextual information such as the donor tissue's sex.
     class_uri: ccf:CellSummary
     mixins:
-      - Named
       - Instance
     slots:
       - annotation_method
+      - aggregated_summary_count
       - aggregated_summaries
       - modality
-      - donor_sex
-      - summary_rows
+      - sex
+      - summary
   
   CellSummaryRow:
     title: Cell Summary Row
@@ -54,19 +53,17 @@ classes:
       characteristics.
     class_uri: ccf:CellSummaryRow
     mixins:
-      - Named
       - Instance
     slots:
       - cell_id
       - cell_label
-      - gene_expressions
+      - gene_expr
       - count
       - percentage
 
   CellID:
+    is_a: EntityID
     title: Cell Identifier
-    slots:
-      - id
     slot_usage:
       id:
         structured_pattern:
@@ -83,64 +80,22 @@ classes:
       the cells.
     class_uri: ccf:GeneExpression
     mixins:
-     - Named
      - Instance
     slots:
      - gene_id
      - gene_label
      - ensembl_id
-     - mean_gene_expression_value
+     - mean_gene_expr_value
 
   GeneID:
+    is_a: EntityID
     title: Gene Identifier
-    slots:
-      - id
     slot_usage:
       id:
         structured_pattern:
           syntax: "{hgnc}:\\d{1,5}"
           interpolated: true
           partial_match: false
-
-  CellSummaryData:
-    attributes:
-      donor:
-        required: false
-      sample:
-        required: false
-      dataset:
-        required: false
-      spatial_entity:
-        required: false
-      cell_summary:
-        multivalued: true
-        inlined_as_list: true
-        range: CellSummary
-      collision:
-        required: false
-      corridor:
-        required: false
-
-  CellSummaryMetadata:
-    class_uri: dcat:Dataset
-    slots:
-      - title
-      - description
-      - created_by
-      - creation_date
-      - version
-      - license
-      - publisher
-      - see_also
-      - derived_from
-
-  Container:
-    tree_root: true
-    attributes:
-      iri:
-      metadata:
-      data:
-        range: CellSummaryData
 
 slots:
   annotation_method:
@@ -152,6 +107,14 @@ slots:
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
+  aggregated_summary_count:
+    title: aggregated summary count
+    description: Number of aggregared summaries.
+    slot_uri: ccf:aggregated_summary_count
+    required: false
+    range: float
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   aggregated_summaries:
     title: aggregated summary
     description: >-
@@ -160,24 +123,25 @@ slots:
     slot_uri: ccf:aggregates
     required: false
     multivalued: true
-    range: uriorcurie
+    range: EntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion    
   modality:
     title: modality
     description: >-
       Type or method of data collection, such as imaging or sequencing.
+    slot_uri: ccf:modality
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  donor_sex:
+  sex:
     title: donor biological sex
-    description: >-
-      Biological sex of the donor from which the tissue samples were derived.
+    description: The biological sex of the donor.
+    slot_uri: ccf:sex
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  summary_rows:
+  summary:
     title: cell summary row
     description: >-
       Collection of detailed cell summary entries, listing each cell's 
@@ -192,6 +156,7 @@ slots:
   cell_id:
     title: cell type identifier
     description: Unique identifier assigned to a cell type.
+    slot_uri: ccf:cell_id
     required: true
     range: CellID
     annotations:
@@ -199,10 +164,11 @@ slots:
   cell_label:
     title: cell label
     description: Descriptive label assigned to a cell type.
+    slot_uri: ccf:cell_label
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  gene_expressions:
+  gene_expr:
     title: gene expression
     description: List of gene expression profiles for the cell type.
     slot_uri: ccf:has_gene_expression
@@ -222,15 +188,15 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   percentage:
     title: percentage
-    description: Percentage of the total sample that this cell type represents.
+    description: The proportion relative to a whole.
     slot_uri: ccf:percentage_of_total
-    required: true
     range: float
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   gene_id:
     title: gene identifier
     description: Unique identifier assigned to a gene symbol.
+    slot_uri: ccf:gene_id
     required: true
     range: GeneID
     annotations:
@@ -238,6 +204,7 @@ slots:
   gene_label:
     title: gene label
     description: Descriptive label assigned to a gene symbol.
+    slot_uri: ccf:gene_label
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -245,13 +212,15 @@ slots:
     title: ensembl identifier
     description: >-
       Ensembl database identifier for the gene, used for cross-referencing.
+    slot_uri: ccf:ensembl_id
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  mean_gene_expression_value:
+  mean_gene_expr_value:
     title: mean gene expression value
     description: >-
       Average expression level of the gene across the sample or dataset.
+    slot_uri: ccf:mean_gene_expression
     required: true
     range: float
     annotations:
