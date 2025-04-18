@@ -33,6 +33,7 @@ if [ -e "$ENV/bin/activate" ]; then
   set -u
 
   # Install python deps
+  python -m pip install --upgrade pip
   python -m pip install -r "$ROOT_DIR/requirements-freeze.txt"
   python -m pip install "cwltool"
   python -m pip cache purge
