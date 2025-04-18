@@ -41,10 +41,6 @@ classes:
       - section_units
       - donor
 
-  DonorID:
-    is_a: EntityID
-    title: Donor identifier
-
   TissueSection:
     title: Tissue Section
     description: >-
@@ -62,10 +58,6 @@ classes:
       - link
       - datasets
       - section_number
-
-  SpatialEntityID:
-    is_a: EntityID
-    title: Spatial Entity Identifier
 
   SampleData:
     attributes:
@@ -120,7 +112,7 @@ slots:
       the reference atlas.
     slot_uri: ccf:has_registration_location
     required: false
-    range: SpatialEntityID
+    range: EntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   sections:
@@ -137,7 +129,7 @@ slots:
     title: generates dataset
     description: Datasets generated from the tissue block or section.
     slot_uri: ccf:generates_dataset
-    range: Dataset
+    range: EntityID
     multivalued: true
     inlined: false
     annotations:
@@ -178,7 +170,7 @@ slots:
       Reference to the donor associated with the tissue block.
     slot_uri: ccf:comes_from
     required: true
-    range: DonorID
+    range: EntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
 
