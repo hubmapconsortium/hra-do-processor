@@ -1,5 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 
+// Usage: node patch-ds-graph-context.js <context.jsonld>
+
 // Check if file argument is provided
 if (process.argv.length < 3) {
   console.error('Please provide a JSON file path as an argument');
