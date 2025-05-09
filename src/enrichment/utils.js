@@ -171,7 +171,7 @@ export function extractClassHierarchy(context, ontologyName, upperTerm, lowerTer
 }
 
 export function extractOntologySubset(context, ontologyName, inputPath, predicates) {
-  info('Extracting a subset of UBERON ontology.');
+  info('Extracting a subset of ' + ontologyName + ' ontology.');
 
   const seedTerms = collectEntities(context, ontologyName, inputPath, true);
   if (isFileEmpty(seedTerms)) {

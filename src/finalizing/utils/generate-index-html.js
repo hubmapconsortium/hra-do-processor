@@ -57,6 +57,7 @@ function getStructuredData(context, metadata) {
         name: funder.funder,
       })),
       citation: was_derived_from.citation,
+      references: was_derived_from.references,
       includedInDataCatalog: {
         '@type': 'DataCatalog',
         '@id': `${context.purlIri}${type}/${name}`,

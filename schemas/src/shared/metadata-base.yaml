@@ -77,7 +77,7 @@ classes:
       - downloadUrl
       - accessUrl
       - mediaType
-  Dataset:
+  RawDataset:
     is_a: ProvEntity
     class_uri: dcat:Dataset
     slots:
@@ -98,6 +98,7 @@ classes:
       - project_leads
       - externalReviewers
       - distributions
+      - references
 
 slots:
   # DCAT properties
@@ -141,7 +142,7 @@ slots:
       update of an entity resulting in a new one, or the construction 
       of a new entity based on a pre-existing entity.
     slot_uri: prov:wasDerivedFrom
-    range: Dataset
+    range: RawDataset
     inlined: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -169,10 +170,6 @@ slots:
     title: title
     description: A name given to the resource.
     slot_uri: dct:title
-  description:
-    title: description
-    description: An account of the resource.
-    slot_uri: dct:description
   license:
     title: license
     description: >- 
@@ -382,6 +379,10 @@ slots:
     slot_uri: rdfs:label
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
+  description:
+    title: commentary description
+    description: A commentry description about the resource.
+    slot_uri: rdfs:comment
   see_also:
     title: see also
     description: >-

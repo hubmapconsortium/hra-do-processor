@@ -38,7 +38,7 @@ function normalizeData(context, metadata, data) {
     {
       id: `${iri}#primary`,
       label: `An illustration of ${illustrationName}`,
-      type_of: ['FtuIllustration', illustrationRepresentation],
+      type_of: ['ccf:FtuIllustration', illustrationRepresentation],
       located_in: data[0]['organ_mapped_to'],
       image_file: normalizeIllustrationImage(context, metadata),
       illustration_node: normalizeIllustrationNode(context, data),
@@ -58,7 +58,7 @@ function normalizeIllustrationImage(context, metadata) {
       return {
         id: `${iri}#${fileType}`,
         label: `${fileTypeName} image of ${illustrationName}`,
-        type_of: ['FtuIllustrationFile'],
+        type_of: ['ccf:FtuIllustrationFile'],
         file_url: `${context.cdnIri}${type}/${name}/${version}/${item}`,
         file_format: getMimeType(fileType),
       };
@@ -87,7 +87,7 @@ function normalizeIllustrationNode(context, data) {
     return {
       id: `${iri}#${nodeId}`,
       label: `An illustration node of ${nodeLabel}`,
-      type_of: ['FtuIllustrationNode', nodeRepresentation],
+      type_of: ['ccf:FtuIllustrationNode', nodeRepresentation],
       node_name: nodeId,
       part_of_illustration: `${iri}#primary`,
     };

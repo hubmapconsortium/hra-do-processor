@@ -1,0 +1,54 @@
+id: https://purl.humanatlas.io/specs/metadata
+name: metadata
+prefixes:
+  ccf: http://purl.org/ccf/
+  oboInOwl: http://www.geneontology.org/formats/oboInOwl#
+  loinc: http://purl.bioontology.org/ontology/LNC/
+  linkml: https://w3id.org/linkml/
+  RO: http://purl.obolibrary.org/obo/RO_
+  IAO: http://purl.obolibrary.org/obo/IAO_
+
+default_prefix: ccf
+default_range: string
+
+imports:
+  - linkml:types
+  - ../shared/metadata-base
+
+classes:
+  DigitalObjectMetadata:
+    title: Digital Object Metadata
+    description: The metadadata section for the digital object.
+    class_uri: dcat:Dataset
+    slots:
+      - title
+      - description
+      - created_by
+      - creation_date
+      - version
+      - license
+      - publisher
+      - see_also
+      - derived_from
+
+  Container:
+    tree_root: true
+    attributes:
+      iri:
+        range: uriorcurie
+      metadata:
+        range: DigitalObjectMetadata
+      data:
+    annotations:
+      owl.template: |-
+        AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
+        AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
+        {% for creator_iri in metadata.created_by %}
+        AnnotationAssertion( dct:creator {{iri}} {{creator_iri|e}} )
+        {% endfor %}
+        AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
+        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
+        AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
+        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
+        AnnotationAssertion( rdfs:seeAlso {{iri}} {{metadata.see_also|e}} )
+        AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
