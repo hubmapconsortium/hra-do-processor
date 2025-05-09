@@ -33,11 +33,7 @@ function validate(context, dataFile, schemaFile, errorFile) {
     `check-jsonschema -o json --schemafile ${schemaFile} ${dataFile}`,
     `ValidationError: The content was invalid!`,
     {
-      errorFile: errorFile,
-      errorParser: (message) => {
-        const errors = JSON.parse(message).errors;
-        return errors.map(({ message, ...rest }) => rest);
-      },
+      errorFile: errorFile
     }
   );
   if (success) {
