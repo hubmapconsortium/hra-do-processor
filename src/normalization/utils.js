@@ -61,7 +61,7 @@ function flatten(metadata) {
     version: metadata.version,
     license: metadata.license,
     publisher: metadata.publisher,
-    see_also: metadata.see_also
+    see_also: metadata.id
   };
   if (metadata.was_derived_from) {
     output.derived_from = metadata.was_derived_from.id;
@@ -122,7 +122,7 @@ function generateGraphMetadata(context, metadata) {
   const { type, name, version } = context.selectedDigitalObject;
   const processorHome = context.processorHome;
   return {
-    id: getDatasetIri(context),
+    id: getMetadataUrl(context),
     type,
     name,
     label: getGraphTitle(name, version),
@@ -144,7 +144,7 @@ function generateGraphMetadata(context, metadata) {
     creation_date: getTodayDate(),
     publisher: "HuBMAP",
     license: "https://creativecommons.org/licenses/by/4.0/",
-    see_also: `${getMetadataUrl(context)}/`,
+    see_also: getDatasetIri(context),
     distributions: getGraphDataDistributions(context)
   };
 }
@@ -158,6 +158,14 @@ function getGraphDataDistributions(context) {
   const accessUrl = getMetadataUrl(context);
   return [
     {
+      id: `${accessUrl}#json`,
+      label: getGraphDataDistributionTitle(name, version, "JSON"),
+      title: getGraphDataDistributionTitle(name, version, "JSON"),
+      downloadUrl: getDataDownloadUrl(context, 'json'),
+      accessUrl: `${accessUrl}#json`,
+      mediaType: 'application/json',
+    },
+    {
       id: `${accessUrl}#turtle`,
       label: getGraphDataDistributionTitle(name, version, "Turtle"),
       title: getGraphDataDistributionTitle(name, version, "Turtle"),
@@ -169,7 +177,7 @@ function getGraphDataDistributions(context) {
       id: `${accessUrl}#jsonld`,
       label: getGraphDataDistributionTitle(name, version, "JSON-LD"),
       title: getGraphDataDistributionTitle(name, version, "JSON-LD"),
-      downloadUrl: getDataDownloadUrl(context, 'json'),
+      downloadUrl: getDataDownloadUrl(context, 'jsonld'),
       accessUrl: `${accessUrl}#jsonld`,
       mediaType: 'application/ld+json',
     },

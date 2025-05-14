@@ -35,7 +35,7 @@ function getStructuredData(context, metadata) {
   return {
     '@context': 'http://schema.org/',
     '@type': 'Dataset',
-    '@id': `${context.purlIri}${type}/${name}/${version}`,
+    '@id': `${context.lodIri}${type}/${name}/${version}`,
     name: title,
     description: description,
     version: version,
@@ -59,7 +59,7 @@ function getStructuredData(context, metadata) {
       citation: was_derived_from.citation,
       includedInDataCatalog: {
         '@type': 'DataCatalog',
-        '@id': `${context.purlIri}${type}/${name}`,
+        '@id': `${context.lodIri}${type}/${name}`,
         name: `Catalog of ${type}/${name}`,
       },
       version: was_derived_from.version,

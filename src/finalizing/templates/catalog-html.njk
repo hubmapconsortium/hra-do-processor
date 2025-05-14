@@ -18,7 +18,7 @@
   <body>
     <hra-app-shell logo-text="Human Reference Atlas Knowledge Graph" logo-text-small="HRA KG"
       logo-url="{{ lodIri }}" hide-menu>
-        <div class="main" typeof="dcat:Catalog" resource="{{ iri }}">
+        <div class="main" typeof="dcat:Catalog" resource="{{ noSlashIri }}">
           <h1 class="page-title" property="dct:title">{{ noSlashIri }}</h1>
           <ul>
           {%- for item in items -%}
