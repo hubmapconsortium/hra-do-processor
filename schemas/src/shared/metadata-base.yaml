@@ -371,14 +371,6 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
 
   # RDFS properties
-  label:
-    title: label
-    description: >-
-      A string used to provide a human-readable version of 
-      a resource's name.
-    slot_uri: rdfs:label
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
   description:
     title: commentary description
     description: A commentry description about the resource.
