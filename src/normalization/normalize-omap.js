@@ -124,7 +124,7 @@ function normalizeExperimentData(context, metadata, data) {
   return new ObjectBuilder()
     .append('id', getExperimentIri(context, referenceData.omap_id))
     .append('label', `${referenceData.omap_id} experiment`)
-    .append('type_of', ['MultiplexedAntibodyBasedImagingExperiment'])
+    .append('type_of', ['ccf:MultiplexedAntibodyBasedImagingExperiment'])
     .append('study_method', referenceData.method)
     .append('tissue_preservation', referenceData.tissue_preservation)
     .append(
@@ -147,7 +147,7 @@ function normalizeExperimentCycleData(context, data) {
       new ObjectBuilder()
         .append('id', getExperimentCycleIri(context, omapId, cycleNumber))
         .append('label', `${omapId} experiment, Cycle ${cycleNumber}`)
-        .append('type_of', ['ExperimentCycle'])
+        .append('type_of', ['ccf:ExperimentCycle'])
         .append('cycle_number', cycleNumber)
         .append(
           'uses_antibodies',
@@ -181,7 +181,7 @@ function normalizeExperimentCycleData(context, data) {
                   'label',
                   getDilutedAntibodyInstanceLabel(row.rrid, row.lot_number, row.dilution, row.concentration_value)
                 )
-                .append('type_of', ['ExperimentUsedAntibody'])
+                .append('type_of', ['ccf:ExperimentUsedAntibody'])
                 .append('concentration', row.concentration_value)
                 .append('dilution', row.dilution)
                 .append('cycle_number', cycleNumber)
@@ -222,7 +222,7 @@ function normalizeAntibodyPanelData(context, data) {
   return new ObjectBuilder()
     .append('id', getAntibodyPanelIri(context, omapId))
     .append('label', getAntibodyPanelLabel(omapId))
-    .append('type_of', ['AntibodyPanel'])
+    .append('type_of', ['ccf:AntibodyPanel'])
     .append('contains_antibodies', antibodyComponents)
     .build();
 }

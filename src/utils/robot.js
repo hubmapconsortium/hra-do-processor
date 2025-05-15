@@ -1,10 +1,24 @@
 import sh from 'shelljs';
 import { throwOnError } from './sh-exec.js';
 
-export function query(input, query, output) {
+export function query(input, query, output, useDb = false) {
+  if (useDb) {
+    throwOnError(
+      `robot query -tdb-directory ${input} --keep-tdb-mappings true --query ${query} ${output}`,
+      `Querying ${input} failed.`
+    );
+  } else {
+    throwOnError(
+      `robot query -i ${input} --query ${query} ${output}`,
+      `Querying ${input} failed.`
+    );
+  }
+}
+
+export function materialize(input, output) {
   throwOnError(
-    `robot query -i ${input} --query ${query} ${output}`,
-    `Querying ${input} failed.`
+    `robot query -i ${input} --create-tdb true --tdb-directory ${output}`,
+    'Materialization failed.'
   );
 }
 

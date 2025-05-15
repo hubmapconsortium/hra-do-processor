@@ -14,26 +14,22 @@ default_range: string
 imports:
   - linkml:types
   - ../shared/metadata-base
+  - ../modules/metadata
   - ../modules/donor
   - ../modules/sample
   - ../modules/dataset
   - ../modules/spatial
-  - ../modules/cell-summary
-  - ../modules/collision
-  - ../modules/corridor
 
 classes:
   DatasetGraphData:
     title: Dataset Graph Data
     description: The data section for the "ds-graph" digital object.
     slots:
-      - donor
-      - sample
-      - dataset
-      - spatial_entity
-      - cell_summary
-      - collision
-      - corridor
+      - donor_record
+      - sample_record
+      - dataset_record
+      - spatial_entity_record
+      - spatial_placement_record
 
   DatasetGraphMetadata:
     title: Dataset Graph Metadata
@@ -59,74 +55,40 @@ classes:
         range: DatasetGraphMetadata
       data:
         range: DatasetGraphData
-    annotations:
-      owl.template: |-
-        AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
-        AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
-        {% for creator_iri in metadata.created_by %}
-        AnnotationAssertion( dct:creator {{iri}} {{creator_iri|e}} )
-        {% endfor %}
-        AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
-        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
-        AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
-        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
-        AnnotationAssertion( rdfs:seeAlso {{iri}} {{metadata.see_also|e}} )
-        AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Donor )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:TissueBlock )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:TissueSection )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Dataset )
 
 slots:
-  donor:
-    title: donor data
+  donor_record:
+    title: donor data records
     description: >-
       List of donors referenced in the experiment dataset metadata records.
     multivalued: true
     inlined_as_list: true
     range: Donor
-  sample:
-    title: tissue sample data
+  sample_record:
+    title: tissue sample data records
     description: >-
       List of tissue samples referenced in the experiment dataset metadata records.
     multivalued: true
     inlined_as_list: true
     range: TissueBlock
-  dataset:
-    title: dataset data
+  dataset_record:
+    title: dataset data records
     description: >-
       List of datasets referenced in the experiment dataset metadata records.
     multivalued: true
     inlined_as_list: true
-    range: AssayDataset
-  spatial_entity:
-    title: spatial entity data
+    range: Dataset
+  spatial_entity_record:
+    title: spatial entity data records
     description: >-
       List of spatial entities referenced in the experiment dataset metadata records.
     multivalued: true
     inlined_as_list: true
     range: SpatialEntity
-  cell_summary:
-    title: cell summary data
+  spatial_placement_record:
+    title: spatial placement data records
     description: >-
-      List of cell summaries referenced in the experiment dataset metadata records.
-    required: false
+      List of spatial placements referenced in the experiment dataset metadata records.
     multivalued: true
     inlined_as_list: true
-    range: CellSummary
-  collision:
-    title: collision data
-    description: >-
-      List of collisions referenced in the experiment dataset metadata records.
-    required: false
-    multivalued: true
-    inlined_as_list: true
-    range: CollisionSummary
-  corridor:
-    title: corridor data
-    description: >-
-      List of corridors referenced in the experiment dataset metadata records.
-    required: false
-    multivalued: true
-    inlined_as_list: true
-    range: Corridor
+    range: SpatialPlacement

@@ -95,7 +95,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         label: `Spatial entity of ${landmarkLabel}`,
         pref_label: landmarkName,
         rui_rank: landmarkRank,
-        type_of: ['SpatialEntity'],
+        type_of: ['ccf:SpatialEntity'],
         creators: metadata.creators.map((c) => {
           return {
             id: `https://orcid.org/${c.orcid}`,
@@ -115,7 +115,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         object_reference: {
           id: `${id}_obj`,
           label: `3D object of ${landmarkLabel}`,
-          type_of: ['SpatialObjectReference'],
+          type_of: ['ccf:SpatialObjectReference'],
           file_name: gltfFile.replace(/^.*[\\/]/, ''),
           file_url: gltfFile,
           file_format: 'model/gltf-binary',
@@ -123,7 +123,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
           placement: {
             id: `${id}ObjPlacement`,
             label: `Local placement of ${landmarkLabel}`,
-            type_of: ['SpatialPlacement'],
+            type_of: ['ccf:SpatialPlacement'],
             source: `${id}_obj`,
             target: id,
             x_scaling: 1,
@@ -145,7 +145,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
           {
             id: `${id}_global_placement`,
             label: `Global placement of ${landmarkLabel}`,
-            type_of: ['SpatialPlacement'],
+            type_of: ['ccf:SpatialPlacement'],
             source: id,
             target: parentIri,
             x_scaling: 1,
@@ -205,7 +205,7 @@ function getExtractionSet(nodeId, crosswalk, baseIri, organLabel) {
   const extractionSetIri = `${baseIri}#${encodeURIComponent(results.extraction_set_id.replace('#', ''))}`;
   return {
     id: extractionSetIri,
-    type_of: ['ExtractionSet'],
+    type_of: ['ccf:ExtractionSet'],
     label: `Landmarks in ${organLabel.toLowerCase()}`,
     pref_label: results.extraction_set_label,
     extraction_set_for: results.extraction_set_for,

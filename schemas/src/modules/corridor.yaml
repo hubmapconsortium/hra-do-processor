@@ -25,84 +25,23 @@ classes:
       accessing the data.
     class_uri: ccf:Corridor
     mixins:
-      - Named
       - Instance
     slots:
       - file_format
-      - file_url
-
-  CorridorData:
-    attributes:
-      donor:
-        required: false
-      sample:
-        required: false
-      dataset:
-        required: false
-      spatial_entity:
-        required: false
-      cell_summary:
-        required: false
-      collision:
-        required: false
-      corridor:
-        multivalued: true
-        inlined_as_list: true
-        range: Corridor
-
-  CorridorMetadata:
-    class_uri: dcat:Dataset
-    slots:
-      - title
-      - description
-      - created_by
-      - creation_date
-      - version
-      - license
-      - publisher
-      - see_also
-      - derived_from
-
-  Container:
-    tree_root: true
-    attributes:
-      iri:
-        range: uriorcurie
-      metadata:
-        range: CorridorMetadata
-      data:
-        range: CorridorData
-    annotations:
-      owl.template: |-
-        AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
-        AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
-        {% for creator_iri in metadata.created_by %}
-        AnnotationAssertion( dct:creator {{iri}} {{creator_iri|e}} )
-        {% endfor %}
-        AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
-        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
-        AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
-        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
-        AnnotationAssertion( rdfs:seeAlso {{iri}} {{metadata.see_also|e}} )
-        AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Donor )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:TissueBlock )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:TissueSection )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Dataset )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:CellSummary )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Collision )
-        AnnotationAssertion( IAO:0000700 {{iri}} ccf:Corridor )
+      - file
 
 slots:
   file_format:
     title: file format
     description: The format of the file to read.
+    slot_uri: ccf:file_format
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  file_url:
+  file:
     title: file link
     description: The URL of the file to download or viewing.
+    slot_uri: ccf:file_url
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
