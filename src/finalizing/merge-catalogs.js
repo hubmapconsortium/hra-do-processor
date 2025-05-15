@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { relative, resolve } from 'path';
 import sh from 'shelljs';
 import { mergeTurtles, reifyTurtle } from '../utils/reify.js';
 
@@ -11,5 +11,6 @@ export function mergeCatalogs(context) {
 }
 
 function listMetadataGraphs(context) {
-  return sh.exec(`find ${resolve(context.deploymentHome)} -name metadata.ttl`).split('\n');
+  const dist = relative(process.cwd(), context.deploymentHome);
+  return sh.exec(`find ${dist} -name metadata.ttl`).split('\n');
 }

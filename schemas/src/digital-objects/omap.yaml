@@ -20,9 +20,9 @@ classes:
   Antibody:
     title: Antibody
     description: >-
-      An antibody is a protein produced by the immune system or engineered 
-      in the lab that specifically binds to a target molecule, such as a 
-      protein or antigen on a cell, and is widely used for identifying, 
+      An antibody is a protein produced by the immune system or engineered
+      in the lab that specifically binds to a target molecule, such as a
+      protein or antigen on a cell, and is widely used for identifying,
       labeling, or isolating specific cell types or biomarkers.
     slots:
       - id
@@ -71,9 +71,9 @@ classes:
   Protein:
     title: Protein
     description: >-
-       a protein is a biological macromolecule composed of amino 
-       acids that performs essential functions, such as providing 
-       structure, facilitating biochemical reactions (enzymes), 
+       a protein is a biological macromolecule composed of amino
+       acids that performs essential functions, such as providing
+       structure, facilitating biochemical reactions (enzymes),
        signaling, transport, and regulating cellular processes.
     slots:
       - id
@@ -87,7 +87,7 @@ classes:
   DetectStatement:
     title: Detect Statement
     description: >-
-      A description of an antibody that identifies and binds 
+      A description of an antibody that identifies and binds
       specifically to a target protein.
     slots:
       - protein_id
@@ -96,8 +96,8 @@ classes:
   BindsToStatement:
     title: Binds-to Statement
     description: >-
-      A description of an antibody that binds specifically to a 
-      secondary antibody, typically as part of a detection or 
+      A description of an antibody that binds specifically to a
+      secondary antibody, typically as part of a detection or
       amplification process in experimental assays.
     slots:
       - antibody_id
@@ -106,10 +106,10 @@ classes:
   ExperimentUsedAntibody:
     title: Experiment-used Antibody
     description: >-
-      An experiment-used antibody is a detailed record of an antibody 
-      utilized in a specific experiment, including information about 
-      its concentration and dilution, the cycle or stage in which it 
-      was applied, the experiment where it was used, and the primary 
+      An experiment-used antibody is a detailed record of an antibody
+      utilized in a specific experiment, including information about
+      its concentration and dilution, the cycle or stage in which it
+      was applied, the experiment where it was used, and the primary
       antibody it is derived from or based on.
     class_uri: ccf:ExperimentUsedAntibody
     mixins:
@@ -126,8 +126,8 @@ classes:
   RegisteredAntibody:
     title: Registered Antibody
     description: >-
-      A registered antibody is an antibody with documented information, 
-      including its factory-assigned lot number, ensuring traceability 
+      A registered antibody is an antibody with documented information,
+      including its factory-assigned lot number, ensuring traceability
       and consistency for use in experiments or applications.
     mixins:
       - Named
@@ -138,9 +138,9 @@ classes:
   MultiplexedAntibodyBasedImagingExperiment:
     title: Mutliplexed Antibody-based Imaging Experiment
     description: >-
-      A Multiplexed Antibody-based Imaging Experiment is a technique that 
+      A Multiplexed Antibody-based Imaging Experiment is a technique that
       uses multiple antibodies, each tagged with distinct markers or labels,
-      to simultaneously visualize and analyze multiple proteins or biomarkers 
+      to simultaneously visualize and analyze multiple proteins or biomarkers
       within a single sample.
     class_uri: ccf:MultiplexedAntibodyBasedImagingExperiment
     mixins:
@@ -168,8 +168,8 @@ classes:
   ExperimentCycle:
     title: Experiment Cycle
     description: >-
-      An experiment cycle refers to a single round of staining, imaging, 
-      and data acquisition for a specific set of antibodies, repeated 
+      An experiment cycle refers to a single round of staining, imaging,
+      and data acquisition for a specific set of antibodies, repeated
       iteratively to detect multiple targets within the same sample.
     class_uri: ccf:ExperimentCycle
     mixins:
@@ -182,9 +182,9 @@ classes:
   AntibodyPanel:
     title: Antibody Panel
     description: >-
-      An antibody panel is a curated set of antibodies selected for a 
-      specific experiment or analysis, designed to target multiple 
-      proteins or biomarkers of interest simultaneously, often in 
+      An antibody panel is a curated set of antibodies selected for a
+      specific experiment or analysis, designed to target multiple
+      proteins or biomarkers of interest simultaneously, often in
       multiplexed assays or imaging studies.
     class_uri: ccf:AntibodyPanel
     mixins:
@@ -353,18 +353,18 @@ slots:
     title: protocol DOI
     description: Reference DOI for the experimental protocol used.
     required: false
-    range: uriorcurie
+    range: Named
+    inlined: false
     multivalued: true
-    inlined_as_list: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   author_orcid:
     title: author ORCID
     description: Reference to the author by the ORCID identifier.
     required: true
-    range: uriorcurie
+    range: Named
+    inlined: false
     multivalued: true
-    inlined_as_list: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   has_cycle:
@@ -486,7 +486,7 @@ slots:
     inlined_as_list: false
   binds_to:
     title: binds to
-    description: >- 
+    description: >-
       Reference to the secondary antibodies or molecules that this antibody
       binds to.
     required: false

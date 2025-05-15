@@ -138,8 +138,8 @@ slots:
   was_derived_from:
     title: was derived from
     description: >-
-      A derivation is a transformation of an entity into another, an 
-      update of an entity resulting in a new one, or the construction 
+      A derivation is a transformation of an entity into another, an
+      update of an entity resulting in a new one, or the construction
       of a new entity based on a pre-existing entity.
     slot_uri: prov:wasDerivedFrom
     range: RawDataset
@@ -149,21 +149,22 @@ slots:
   derived_from:
     title: was derived from
     description: >-
-      A derivation is a transformation of an entity into another, an 
-      update of an entity resulting in a new one, or the construction 
-      of a new entity based on a pre-existing entity.    
+      A derivation is a transformation of an entity into another, an
+      update of an entity resulting in a new one, or the construction
+      of a new entity based on a pre-existing entity.
     slot_uri: prov:wasDerivedFrom
-    range: uriorcurie
+    range: Named
+    inlined: false
   had_member:
     title: had member
     description: >-
-      A collection is an entity that provides a structure to some 
-      constituents, which are themselves entities. These constituents 
+      A collection is an entity that provides a structure to some
+      constituents, which are themselves entities. These constituents
       are said to be member of the collections.
     slot_uri: prov:hadMember
-    range: uriorcurie
+    range: Named
+    inlined: false
     multivalued: true
-    inlined_as_list: true
 
   # Dublin Core properties
   title:
@@ -172,8 +173,8 @@ slots:
     slot_uri: dct:title
   license:
     title: license
-    description: >- 
-      A legal document giving official permission to do something 
+    description: >-
+      A legal document giving official permission to do something
       with the resource.
     slot_uri: dct:license
   publisher:
@@ -205,15 +206,15 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   created_by:
     title: creator
-    description: An entity responsible for making the resource.    
+    description: An entity responsible for making the resource.
     slot_uri: dct:creator
-    range: uriorcurie
+    range: Named
+    inlined: false
     multivalued: true
-    inlined_as_list: true
   references:
     title: references
     description: >-
-      A related resource that is referenced, cited, or otherwise 
+      A related resource that is referenced, cited, or otherwise
       pointed to by the described resource.
     slot_uri: dct:references
     range: string
@@ -230,7 +231,7 @@ slots:
   version:
     title: version
     description: >-
-      The version of the CreativeWork embodied by a specified 
+      The version of the CreativeWork embodied by a specified
       resource.
     slot_uri: schema:version
   name:
@@ -242,9 +243,9 @@ slots:
   type:
     title: type
     description: >-
-      An additional type for the item, typically used for 
-      adding more specific types from external vocabularies 
-      in microdata syntax. 
+      An additional type for the item, typically used for
+      adding more specific types from external vocabularies
+      in microdata syntax.
     slot_uri: schema:additionalType
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -278,7 +279,7 @@ slots:
   funder:
     title: funder
     description: >-
-      A person or organization that supports (sponsors) 
+      A person or organization that supports (sponsors)
       something through some kind of financial contribution.
     slot_uri: schema:funder
     annotations:
@@ -292,7 +293,7 @@ slots:
   citation:
     title: citation
     description: >-
-      A citation or reference to another creative work, such 
+      A citation or reference to another creative work, such
       as another publication, web page, scholarly article, etc.
     slot_uri: schema:citation
     annotations:
@@ -300,15 +301,15 @@ slots:
   creation_date:
     title: created date
     description: >-
-      The date on which the CreativeWork was created or the 
+      The date on which the CreativeWork was created or the
       item was added to a DataFeed.
     slot_uri: schema:dateCreated
   propertyId:
     title: property ID
     description: >-
-      A commonly used identifier for the characteristic 
-      represented by the property, e.g. a manufacturer or a 
-      standard code for a property. 
+      A commonly used identifier for the characteristic
+      represented by the property, e.g. a manufacturer or a
+      standard code for a property.
     slot_uri: schema:propertyID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -321,8 +322,8 @@ slots:
   reviewers:
     title: reviewer
     description: >-
-      People or organizations that have reviewed the 
-      content on this web page for accuracy and/or 
+      People or organizations that have reviewed the
+      content on this web page for accuracy and/or
       completeness.
     slot_uri: schema:reviewedBy
     range: Person
@@ -333,7 +334,7 @@ slots:
   funders:
     title: funding
     description: >-
-      A Grant that directly or indirectly provide 
+      A Grant that directly or indirectly provide
       funding or sponsorship for this item.
     slot_uri: schema:funding
     range: Grant
@@ -344,8 +345,8 @@ slots:
   target_product:
     title: target product
     description: >-
-      Target Operating System / Product to which 
-      the code applies. If applies to several versions, 
+      Target Operating System / Product to which
+      the code applies. If applies to several versions,
       just the product name can be used.
     slot_uri: schema:targetProduct
     range: SoftwareSourceCode
@@ -354,11 +355,12 @@ slots:
   code_repository:
     title: code repository
     description: >-
-      Link to the repository where the un-compiled, 
-      human readable code and related code is located 
+      Link to the repository where the un-compiled,
+      human readable code and related code is located
       (SVN, GitHub, CodePlex).
     slot_uri: schema:codeRepository
-    range: uriorcurie
+    range: Named
+    inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
 
@@ -378,10 +380,11 @@ slots:
   see_also:
     title: see also
     description: >-
-      A reference used to indicate a resource that might 
+      A reference used to indicate a resource that might
       provide additional information about the subject resource.
     slot_uri: rdfs:seeAlso
-    range: uriorcurie
+    range: Named
+    inlined: false
 
   # SKOS properties
   pref_label:
@@ -394,10 +397,11 @@ slots:
   ontology_root:
     title: has ontology root term
     description: >-
-      Relates an ontology to a term that is a designated 
-      root term of the ontology. 
+      Relates an ontology to a term that is a designated
+      root term of the ontology.
     slot_uri: obo:IAO_0000700
-    range: uriorcurie
+    range: Named
+    inlined: false
     multivalued: true
 
   # HRA properties
@@ -410,18 +414,17 @@ slots:
   doi:
     title: DOI
     description: >-
-      A DOI, or Digital Object Identifier, is a 
-      unique string of numbers, letters, and symbols 
+      A DOI, or Digital Object Identifier, is a
+      unique string of numbers, letters, and symbols
       that identifies a specific publication.
     slot_uri: ccf:doi
-    range: uriorcurie
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
+    range: Named
+    inlined: false
   citationOverall:
     title: citation
     description: >-
-      A written reference to a source, such as a 
-      book, article, or website, that identifies 
+      A written reference to a source, such as a
+      book, article, or website, that identifies
       the original source of information in a work.
     slot_uri: ccf:citation_overall
     annotations:
@@ -436,9 +439,9 @@ slots:
   project_leads:
     title: project lead
     description: >-
-      A person who is responsible for leading a project 
+      A person who is responsible for leading a project
       or a specific aspect of a project, including
-      planning, implementation, and tracking. 
+      planning, implementation, and tracking.
     slot_uri: ccf:project_lead
     range: Person
     multivalued: true
@@ -448,8 +451,8 @@ slots:
   externalReviewers:
     title: external reviewer
     description: >-
-      An independent expert from outside an organization 
-      who provides critical feedback and evaluation on 
+      An independent expert from outside an organization
+      who provides critical feedback and evaluation on
       a program, project, or proposal.
     slot_uri: ccf:external_reviewer
     range: Person

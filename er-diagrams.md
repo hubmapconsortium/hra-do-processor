@@ -32,13 +32,10 @@ AnatomicalStructureID {
 FtuMetadata {
     string title  
     string description  
-    uriorcurieList created_by  
     string creation_date  
     string version  
     string license  
     string publisher  
-    uriorcurie see_also  
-    uriorcurie derived_from  
 }
 
 Container ||--|o FtuMetadata : "metadata"
@@ -49,6 +46,9 @@ FtuIllustration ||--}o FtuIllustrationNode : "illustration_node"
 FtuIllustration ||--}o Named : "type_of"
 FtuIllustrationNode ||--}o Named : "type_of"
 FtuIllustrationFile ||--}o Named : "type_of"
+FtuMetadata ||--}o Named : "created_by"
+FtuMetadata ||--|o Named : "see_also"
+FtuMetadata ||--|o Named : "derived_from"
 
 ```
 
@@ -143,13 +143,10 @@ CharacterizingMarkerSet {
 AsctbMetadata {
     string title  
     string description  
-    uriorcurieList created_by  
     string creation_date  
     string version  
     string license  
     string publisher  
-    uriorcurie see_also  
-    uriorcurie derived_from  
 }
 
 Container ||--|o AsctbMetadata : "metadata"
@@ -183,6 +180,9 @@ CellType ||--}o CellType : "ccf_ct_isa"
 CellType ||--}o AnatomicalStructure : "ccf_located_in"
 CellType ||--}o CharacterizingMarkerSet : "has_characterizing_marker_set"
 CharacterizingMarkerSet ||--}o Biomarker : "members"
+AsctbMetadata ||--}o Named : "created_by"
+AsctbMetadata ||--|o Named : "see_also"
+AsctbMetadata ||--|o Named : "derived_from"
 
 ```
 
@@ -198,16 +198,20 @@ Container {
 BasicMetadata {
     string title  
     string description  
-    uriorcurieList created_by  
     string creation_date  
     string version  
     string license  
     string publisher  
-    uriorcurie see_also  
-    uriorcurie derived_from  
+}
+Named {
+    uriorcurie id  
+    string label  
 }
 
 Container ||--|o BasicMetadata : "metadata"
+BasicMetadata ||--}o Named : "created_by"
+BasicMetadata ||--|o Named : "see_also"
+BasicMetadata ||--|o Named : "derived_from"
 
 ```
 
@@ -285,18 +289,22 @@ Container {
 CollectionMetadata {
     string title  
     string description  
-    uriorcurieList created_by  
     string version  
     string creation_date  
     string license  
     string publisher  
-    uriorcurie see_also  
-    uriorcurie derived_from  
-    uriorcurieList had_member  
-    uriorcurieList ontology_root  
+}
+Named {
+    uriorcurie id  
+    string label  
 }
 
 Container ||--|o CollectionMetadata : "metadata"
+CollectionMetadata ||--}o Named : "created_by"
+CollectionMetadata ||--|o Named : "see_also"
+CollectionMetadata ||--|o Named : "derived_from"
+CollectionMetadata ||--}o Named : "had_member"
+CollectionMetadata ||--}o Named : "ontology_root"
 
 ```
 
@@ -337,13 +345,10 @@ SpatialEntityID {
 CollisionMetadata {
     string title  
     string description  
-    uriorcurieList created_by  
     string creation_date  
     string version  
     string license  
     string publisher  
-    uriorcurie see_also  
-    uriorcurie derived_from  
 }
 
 Container ||--|o CollisionMetadata : "metadata"
@@ -353,6 +358,9 @@ CollisionSummary ||--}| CollisionItem : "collision_items"
 CollisionSummary ||--}o Named : "type_of"
 CollisionItem ||--|| SpatialEntityID : "spatial_entity_reference"
 CollisionItem ||--}o Named : "type_of"
+CollisionMetadata ||--}o Named : "created_by"
+CollisionMetadata ||--|o Named : "see_also"
+CollisionMetadata ||--|o Named : "derived_from"
 
 ```
 
@@ -385,19 +393,19 @@ Named {
 CorridorMetadata {
     string title  
     string description  
-    uriorcurieList created_by  
     string creation_date  
     string version  
     string license  
     string publisher  
-    uriorcurie see_also  
-    uriorcurie derived_from  
 }
 
 Container ||--|o CorridorMetadata : "metadata"
 Container ||--|o CorridorData : "data"
 CorridorData ||--}o Corridor : "corridor"
 Corridor ||--}o Named : "type_of"
+CorridorMetadata ||--}o Named : "created_by"
+CorridorMetadata ||--|o Named : "see_also"
+CorridorMetadata ||--|o Named : "derived_from"
 
 ```
 
@@ -628,11 +636,9 @@ Dataset {
     string creation_date  
     string version  
     string license  
-    uriorcurie see_also  
     string publisher  
     string citation  
     string citationOverall  
-    uriorcurie doi  
     string hubmapId  
     uriorcurie id  
     string label  
@@ -693,13 +699,10 @@ SampleID {
 DatasetGraphMetadata {
     string title  
     string description  
-    uriorcurieList created_by  
     string creation_date  
     string version  
     string license  
     string publisher  
-    uriorcurie see_also  
-    uriorcurie derived_from  
 }
 
 Container ||--|o DatasetGraphMetadata : "metadata"
@@ -743,7 +746,9 @@ TissueBlock ||--|o SampleOrDonorID : "links_back_to"
 TissueBlock ||--}o Named : "type_of"
 Dataset ||--}o Creator : "creators"
 Dataset ||--}o Person : "reviewers"
+Dataset ||--|o Named : "see_also"
 Dataset ||--}o Grant : "funders"
+Dataset ||--|o Named : "doi"
 Dataset ||--}o Person : "project_leads"
 Dataset ||--}o Person : "externalReviewers"
 Dataset ||--}o Distribution : "distributions"
@@ -755,6 +760,9 @@ TissueSection ||--|o SampleOrDonorID : "links_back_to"
 TissueSection ||--}o Named : "type_of"
 Donor ||--}o SampleID : "provides_samples"
 Donor ||--}o Named : "type_of"
+DatasetGraphMetadata ||--}o Named : "created_by"
+DatasetGraphMetadata ||--|o Named : "see_also"
+DatasetGraphMetadata ||--|o Named : "derived_from"
 
 ```
 
@@ -770,16 +778,20 @@ Container {
 GraphMetadata {
     string title  
     string description  
-    uriorcurieList created_by  
     string version  
     string creation_date  
     string license  
     string publisher  
-    uriorcurie see_also  
-    uriorcurie derived_from  
+}
+Named {
+    uriorcurie id  
+    string label  
 }
 
 Container ||--|o GraphMetadata : "metadata"
+GraphMetadata ||--}o Named : "created_by"
+GraphMetadata ||--|o Named : "see_also"
+GraphMetadata ||--|o Named : "derived_from"
 
 ```
 
@@ -847,13 +859,10 @@ Creator {
 LandmarkMetadata {
     string title  
     string description  
-    uriorcurieList created_by  
     string creation_date  
     string version  
     string license  
     string publisher  
-    uriorcurie see_also  
-    uriorcurie derived_from  
 }
 
 Container ||--|o LandmarkMetadata : "metadata"
@@ -872,6 +881,9 @@ SpatialPlacement ||--|| SpatialEntity : "target"
 SpatialPlacement ||--}o Named : "type_of"
 SpatialObjectReference ||--|| SpatialPlacement : "placement"
 SpatialObjectReference ||--}o Named : "type_of"
+LandmarkMetadata ||--}o Named : "created_by"
+LandmarkMetadata ||--|o Named : "see_also"
+LandmarkMetadata ||--|o Named : "derived_from"
 
 ```
 
@@ -910,8 +922,6 @@ RegisteredAntibody {
 MultiplexedAntibodyBasedImagingExperiment {
     string study_method  
     string tissue_preservation  
-    uriorcurieList protocol_doi  
-    uriorcurieList author_orcid  
     uriorcurie id  
     string label  
 }
@@ -949,13 +959,10 @@ Protein {
 OmapMetadata {
     string title  
     string description  
-    uriorcurieList created_by  
     string creation_date  
     string version  
     string license  
     string publisher  
-    uriorcurie see_also  
-    uriorcurie derived_from  
 }
 
 Container ||--|o OmapMetadata : "metadata"
@@ -970,6 +977,8 @@ ExperimentUsedAntibody ||--|| MultiplexedAntibodyBasedImagingExperiment : "used_
 ExperimentUsedAntibody ||--|| RegisteredAntibody : "based_on"
 ExperimentUsedAntibody ||--}o Named : "type_of"
 RegisteredAntibody ||--}o Named : "type_of"
+MultiplexedAntibodyBasedImagingExperiment ||--}o Named : "protocol_doi"
+MultiplexedAntibodyBasedImagingExperiment ||--}| Named : "author_orcid"
 MultiplexedAntibodyBasedImagingExperiment ||--}| ExperimentCycle : "has_cycle"
 MultiplexedAntibodyBasedImagingExperiment ||--|| AnatomicalStructure : "sample_organ"
 MultiplexedAntibodyBasedImagingExperiment ||--}o Named : "type_of"
@@ -979,6 +988,9 @@ Antibody ||--}o DetectStatement : "detects"
 Antibody ||--}o BindsToStatement : "binds_to"
 BindsToStatement ||--|| Antibody : "antibody_id"
 DetectStatement ||--}| Protein : "protein_id"
+OmapMetadata ||--}o Named : "created_by"
+OmapMetadata ||--|o Named : "see_also"
+OmapMetadata ||--|o Named : "derived_from"
 
 ```
 
@@ -1049,13 +1061,10 @@ Creator {
 RefOrganMetadata {
     string title  
     string description  
-    uriorcurieList created_by  
     string creation_date  
     string version  
     string license  
     string publisher  
-    uriorcurie see_also  
-    uriorcurie derived_from  
 }
 
 Container ||--|o RefOrganMetadata : "metadata"
@@ -1074,6 +1083,9 @@ SpatialPlacement ||--|| SpatialEntity : "target"
 SpatialPlacement ||--}o Named : "type_of"
 SpatialObjectReference ||--|| SpatialPlacement : "placement"
 SpatialObjectReference ||--}o Named : "type_of"
+RefOrganMetadata ||--}o Named : "created_by"
+RefOrganMetadata ||--|o Named : "see_also"
+RefOrganMetadata ||--|o Named : "derived_from"
 
 ```
 
@@ -1123,11 +1135,9 @@ Dataset {
     string creation_date  
     string version  
     string license  
-    uriorcurie see_also  
     string publisher  
     string citation  
     string citationOverall  
-    uriorcurie doi  
     string hubmapId  
     uriorcurie id  
     string label  
@@ -1183,7 +1193,9 @@ TissueBlock ||--|o SampleOrDonorID : "links_back_to"
 TissueBlock ||--}o Named : "type_of"
 Dataset ||--}o Creator : "creators"
 Dataset ||--}o Person : "reviewers"
+Dataset ||--|o Named : "see_also"
 Dataset ||--}o Grant : "funders"
+Dataset ||--|o Named : "doi"
 Dataset ||--}o Person : "project_leads"
 Dataset ||--}o Person : "externalReviewers"
 Dataset ||--}o Distribution : "distributions"
@@ -1275,16 +1287,20 @@ Container {
 VocabMetadata {
     string title  
     string description  
-    uriorcurieList created_by  
     string creation_date  
     string version  
     string license  
     string publisher  
-    uriorcurie see_also  
-    uriorcurie derived_from  
+}
+Named {
+    uriorcurie id  
+    string label  
 }
 
 Container ||--|o VocabMetadata : "metadata"
+VocabMetadata ||--}o Named : "created_by"
+VocabMetadata ||--|o Named : "see_also"
+VocabMetadata ||--|o Named : "derived_from"
 
 ```
 
@@ -1302,7 +1318,6 @@ Container {
     string creation_date  
     string publisher  
     string license  
-    uriorcurie see_also  
     uriorcurie id  
     string label  
 }
@@ -1312,11 +1327,9 @@ Dataset {
     string creation_date  
     string version  
     string license  
-    uriorcurie see_also  
     string publisher  
     string citation  
     string citationOverall  
-    uriorcurie doi  
     string hubmapId  
     uriorcurie id  
     string label  
@@ -1353,11 +1366,14 @@ Creator {
 }
 
 Container ||--}| Creator : "creators"
+Container ||--|o Named : "see_also"
 Container ||--}| Distribution : "distributions"
 Container ||--|o Dataset : "was_derived_from"
 Dataset ||--}o Creator : "creators"
 Dataset ||--}o Person : "reviewers"
+Dataset ||--|o Named : "see_also"
 Dataset ||--}o Grant : "funders"
+Dataset ||--|o Named : "doi"
 Dataset ||--}o Person : "project_leads"
 Dataset ||--}o Person : "externalReviewers"
 Dataset ||--}o Distribution : "distributions"
