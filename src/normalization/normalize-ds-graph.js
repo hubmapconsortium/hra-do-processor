@@ -433,27 +433,16 @@ function createCorridorObject(context, corridor) {
 // ---------------------------------------------------------------------------------
 
 function normalizeDate(originalDate) {
-  if (!originalDate) return null;
+  const date = new Date(originalDate);
 
-  // Check if date is already in YYYY-MM-DD format
-  const isValidFormat = /^\d{4}-\d{2}-\d{2}$/.test(originalDate);
-  if (isValidFormat) return originalDate;
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate() + 1;
 
-  try {
-    const date = new Date(originalDate);
-    if (isNaN(date.getTime())) return null;
+  const formattedMonth = month < 10 ? `0${month}` : `${month}`;
+  const formattedDay = day < 10 ? `0${day}` : `${day}`;
 
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-
-    const formattedMonth = month < 10 ? `0${month}` : `${month}`;
-    const formattedDay = day < 10 ? `0${day}` : `${day}`;
-
-    return `${year}-${formattedMonth}-${formattedDay}`;
-  } catch (error) {
-    return null;
-  }
+  return `${year}-${formattedMonth}-${formattedDay}`;
 }
 
 function getDonorLabel(donor) {
