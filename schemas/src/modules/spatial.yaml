@@ -6,7 +6,6 @@ prefixes:
   linkml: https://w3id.org/linkml/
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   FMA: http://purl.org/sig/ont/fma/fma
-  ASCTB-TEMP: https://purl.org/ccf/ASCTB-TEMP_
 
 default_prefix: ccf
 default_range: string
@@ -104,16 +103,6 @@ classes:
       - file_format
       - placement
 
-  AnatomicalStructureID:
-    is_a: EntityID
-    title: Anatomical Structure Identifier
-    slot_usage:
-      id:
-        structured_pattern:
-          syntax: "(UBERON|FMA):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+"
-          interpolated: true
-          partial_match: false
-
   SpatialData:
     attributes:
       donor_record:
@@ -186,7 +175,7 @@ slots:
       Identifies other anatomical structures that intersect or collide with
       this spatial entity.
     multivalued: true
-    range: AnatomicalStructureID
+    range: EntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   slice_count:
