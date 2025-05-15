@@ -75,7 +75,7 @@ function createDonorObject(donor) {
   }
   return new ObjectBuilder()
     .append('id', donor['@id'])
-    .append('label', donor.label)
+    .append('label', donor.label || "Not available")
     .append('type_of', ['ccf:Donor'])
     .append('pref_label',  getDonorLabel(donor))
     .append('description', donor.description)
@@ -115,7 +115,7 @@ function createTissueBlockObject(context, donor, block) {
   }
   return new ObjectBuilder()
     .append('id', block['@id'])
-    .append('label', block.label)
+    .append('label', block.label || "Not available")
     .append('type_of', ['ccf:Sample', 'ccf:TissueBlock'])
     .append('pref_label', getSampleLabel(block))
     .append('description', block.description)
@@ -141,7 +141,7 @@ function createTissueSectionObject(block, section) {
   }
   return new ObjectBuilder()
     .append('id', section['@id'])
-    .append('label', section.label)
+    .append('label', section.label || "Not available")
     .append('type_of', ['ccf:Sample', 'ccf:TissueSection'])
     .append('pref_label', getSampleLabel(section))
     .append('description', section.description)
@@ -185,7 +185,7 @@ function createDatasetObject(context, dataset) {
   }
   const normalizedDataset = new ObjectBuilder()
     .append('id', dataset['@id'])
-    .append('label', dataset.label)
+    .append('label', dataset.label || "Not available")
     .append('type_of', ['ccf:Dataset'])
     .append('pref_label', getDatasetLabel(dataset))
     .append('description', dataset.description)
@@ -244,7 +244,7 @@ function createExtractionSiteObject(context, block) {
   }
   const normalizedExtractionSite = new ObjectBuilder()
     .append('id', spatialEntity['@id'])
-    .append('label', spatialEntity.label)
+    .append('label', spatialEntity.label || "Not available")
     .append('pref_label', getSpatialEntityLabel(block))
     .append('type_of', ['ccf:SpatialEntity'])
     .append('collides_with', spatialEntity.ccf_annotations)
@@ -295,7 +295,7 @@ function createPlacementObject(block, spatialEntity) {
   }
   return new ObjectBuilder()
     .append('id', placement['@id'])
-    .append('label', placement.label)
+    .append('label', placement.label || "Not available")
     .append('type_of', ['ccf:SpatialPlacement'])
     .append('pref_label', getPlacementLabel(block))
     .append('placement_date', normalizeDate(placement.placement_date))
