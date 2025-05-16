@@ -33,6 +33,7 @@ classes:
       - creators
       - creation_date
       - publisher
+      - references
       - license
       - see_also
       - distributions

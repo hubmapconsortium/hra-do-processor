@@ -96,6 +96,7 @@ function generateRawMetadata(context, metadata) {
     id: `${getMetadataUrl(context)}#raw-data`,
     label: metadata.title,
     ...metadata,
+    references: metadata.references || [],
     distributions: getRawDataDistributions(context, datatable)
   }
 }
