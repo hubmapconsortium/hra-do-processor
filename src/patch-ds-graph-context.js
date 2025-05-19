@@ -40,6 +40,11 @@ try {
   context['cell_source'] = {
     '@reverse': 'summaries'
   };
+  // Add ASCTB-TEMP prefix definition
+  context['ASCTB-TEMP'] = {
+    "@id": "https://purl.org/ccf/ASCTB-TEMP_",
+    "@prefix": true
+  };
 
   // Update the original JSON with modified context
   jsonData['@context'] = context;
