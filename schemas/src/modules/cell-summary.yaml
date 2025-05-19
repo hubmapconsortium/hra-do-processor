@@ -165,7 +165,7 @@ slots:
   gene_expr:
     title: gene expression
     description: List of gene expression profiles for the cell type.
-    slot_uri: ccf:has_gene_expression
+    slot_uri: ccf:gene_expr
     required: false
     range: GeneExpression
     multivalued: true
@@ -214,7 +214,7 @@ slots:
     title: mean gene expression value
     description: >-
       Average expression level of the gene across the sample or dataset.
-    slot_uri: ccf:mean_gene_expression
+    slot_uri: ccf:mean_gene_expr_value
     required: true
     range: float
     annotations:
