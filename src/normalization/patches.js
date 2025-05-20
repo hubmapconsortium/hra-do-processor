@@ -322,6 +322,10 @@ export function normalizeDoi(doi) {
   else if (/^doi\.org\/.*/.test(normDoi)) {
     normDoi = normDoi.replace(/^doi\.org\//, 'https://doi.org/');
   }
+  // Case 4: dx.doi.org/10.1016/j.exphem.2018.09.004
+  else if (/^dx\.doi\.org\/.*/.test(normDoi)) {
+    normDoi = normDoi.replace(/^dx\.doi\.org\//, 'https://dx.doi.org/');
+  }
   return normDoi;
 }
 
