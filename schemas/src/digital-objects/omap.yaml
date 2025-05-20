@@ -361,7 +361,7 @@ slots:
   author_orcid:
     title: author ORCID
     description: Reference to the author by the ORCID identifier.
-    required: true
+    required: false
     range: Named
     inlined: false
     multivalued: true
