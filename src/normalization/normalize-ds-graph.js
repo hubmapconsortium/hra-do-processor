@@ -42,7 +42,6 @@ export async function getRawData(context) {
 }
 
 function normalizeData(context, data) {
-  const metadata = readMetadata(context);
   try {
     return {
       donor_record: removeDuplicate(normalizeDonorData(data), ['id']),
