@@ -13,7 +13,6 @@ prefixes:
   FMA: http://purl.org/sig/ont/fma/fma
   HGNC: http://identifiers.org/hgnc/
   HGNCO: http://purl.bioontology.org/ontology/HGNC/
-  ASCTB-TEMP: "https://purl.org/ccf/ASCTB-TEMP_"
 
 default_prefix: ccf
 default_range: string
@@ -46,7 +45,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "(UBERON|FMA):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+|https://purl.org/ccf/ASCTB-TEMP_[a-zA-Z0-9-]+"
+          syntax: "(UBERON|FMA):\\d+|https://purl.org/ccf/ASCTB-TEMP_[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
     annotations:
@@ -66,7 +65,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "(CL|PCL|LMHA):\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+|https://purl.org/ccf/ASCTB-TEMP_[a-zA-Z0-9-]+"
+          syntax: "(CL|PCL|LMHA):\\d+|https://purl.org/ccf/ASCTB-TEMP_[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
     annotations:
@@ -102,7 +101,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "HGNC:\\d+|ASCTB-TEMP:[a-zA-Z0-9-]+|HGNCO:[a-zA-Z0-9-]+|https://purl.org/ccf/ASCTB-TEMP_[a-zA-Z0-9-]+"
+          syntax: "HGNC:\\d+|HGNCO:[a-zA-Z0-9-]+|https://purl.org/ccf/ASCTB-TEMP_[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
     annotations:
