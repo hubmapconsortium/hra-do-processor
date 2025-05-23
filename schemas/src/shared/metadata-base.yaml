@@ -304,6 +304,7 @@ slots:
       The date on which the CreativeWork was created or the
       item was added to a DataFeed.
     slot_uri: schema:dateCreated
+    range: date
   propertyId:
     title: property ID
     description: >-
