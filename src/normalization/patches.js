@@ -336,6 +336,19 @@ export function normalizeString(str) {
     .trim();
 }
 
+export function normalizeDate(originalDate) {
+  const date = new Date(originalDate);
+  const year = date.getUTCFullYear();
+  const month = date.getUTCMonth() + 1;
+  const day = date.getUTCDate();
+
+  const formattedMonth = month < 10 ? `0${month}` : `${month}`;
+  const formattedDay = day < 10 ? `0${day}` : `${day}`;
+
+  return `${year}-${formattedMonth}-${formattedDay}`;
+}
+
+
 export function isIdValid(id) {
   return /(UBERON|FMA|CL|PCL|LMHA|HGNC):\d+|https\:\/\/purl.org\/ccf\/ASCTB\-TEMP\_[a-zA-Z0-9\-]+/.test(id);
 }

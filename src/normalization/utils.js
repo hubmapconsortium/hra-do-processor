@@ -8,7 +8,7 @@ import { getCodeRepository, getCommitUrl } from '../utils/git.js';
 import { ReferenceExtractor } from './reference-extractor/reference-extractor.js';
 import { DOIExtractor } from './reference-extractor/doi-extractor.js';
 import { BioRxivExtractor } from './reference-extractor/biorxiv-extractor.js';
-import { get } from 'http';
+import { normalizeDate } from './patches.js';
 
 export function readMetadata(context) {
   const { path } = context.selectedDigitalObject;
@@ -96,6 +96,7 @@ function generateRawMetadata(context, metadata) {
   metadata.project_leads = metadata.project_leads?.map((leader) => normalizePersonData(leader));
   metadata.reviewers = metadata.reviewers?.map((reviewer) => normalizePersonData(reviewer));
   metadata.externalReviewers = metadata.externalReviewers?.map((reviewer) => normalizePersonData(reviewer));
+  metadata.creation_date = metadata.creation_date ? normalizeDate(metadata.creation_date) : null;
   return {
     id: `${getMetadataUrl(context)}#raw-data`,
     label: metadata.title,

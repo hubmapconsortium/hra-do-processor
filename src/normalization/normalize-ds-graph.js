@@ -10,6 +10,7 @@ import {
   writeNormalizedMetadata,
   removeDuplicate
 } from './utils.js';
+import { normalizeDate } from './patches.js';
 
 export function normalizeDatasetGraphMetadata(context) {
   const rawMetadata = readMetadata(context);
@@ -430,19 +431,6 @@ function createCorridorObject(context, corridor) {
 // ---------------------------------------------------------------------------------
 // HELPER FUNCTIONS
 // ---------------------------------------------------------------------------------
-
-function normalizeDate(originalDate) {
-  const date = new Date(originalDate);
-
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate() + 1;
-
-  const formattedMonth = month < 10 ? `0${month}` : `${month}`;
-  const formattedDay = day < 10 ? `0${day}` : `${day}`;
-
-  return `${year}-${formattedMonth}-${formattedDay}`;
-}
 
 function getDonorLabel(donor) {
   const { race, sex, age, bmi, provider_name } = donor;
