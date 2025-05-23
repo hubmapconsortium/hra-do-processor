@@ -20,6 +20,12 @@ try {
     process.exit(1);
   }
 
+  // Use dcterms id
+  context['creation_date'] = {
+    '@type': 'xsd:date',
+    '@id': 'dct:created'
+  };
+
   // Add placement
   context['placement'] = {
     '@reverse': 'source'
