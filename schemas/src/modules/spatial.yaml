@@ -129,6 +129,12 @@ classes:
         range: SpatialData
 
 slots:
+  creator:
+    title: creator
+    description: The creator of the spatial entity.
+    slot_uri: dct:creator
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   creator_first_name:
     title: creator first name
     description: The first name of the creator.
@@ -169,6 +175,23 @@ slots:
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
+  dimension_units:
+    title: dimension unit
+    description: The unit of measurement used for the spatial entity's dimensions.
+    slot_uri: ccf:dimension_unit
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  ccf_annotations:
+    title: collides with
+    description: >-
+      Identifies other anatomical structures that intersect or collide with
+      this spatial entity.
+    slot_uri: ccf:collides_with
+    multivalued: true
+    range: EntityID
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion  
   collides_with:
     title: collides with
     description: >-
@@ -264,6 +287,13 @@ slots:
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
+  scaling_units:
+    title: scaling unit
+    description: The unit of measurement for scaling, usually represented as a ratio.
+    slot_uri: ccf:scaling_unit
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   x_rotation:
     title: rotation in x-axis
     description: Rotation of the spatial entity around the X-axis.
@@ -288,6 +318,13 @@ slots:
   rotation_unit:
     title: rotation unit
     description: The unit for rotation, typically measured in degrees.
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  rotation_units:
+    title: rotation unit
+    description: The unit for rotation, typically measured in degrees.
+    slot_uri: ccf:rotation_unit
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -321,6 +358,13 @@ slots:
   translation_unit:
     title: translation unit
     description: The unit for translation distances.
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  translation_units:
+    title: translation unit
+    description: The unit for translation distances.
+    slot_uri: ccf:translation_unit
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
