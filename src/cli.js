@@ -138,6 +138,7 @@ program
   .command('finalize')
   .description('Finalize the deployment home before sending to the live server')
   .option('--skip-db', 'Skip recreating the blazegraph database.')
+  .option('--exclude-base-href', 'Exclude the base href element from html pages.', false)
   .action((_options, command) => {
     finalize(getContext(program, command));
   });
