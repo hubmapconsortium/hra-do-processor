@@ -25,3 +25,7 @@ spleen-white-pulp,UBERON:0001959,white pulp of spleen,#FTUWhitePulp_Inset1
 spleen-white-pulp,UBERON:0001959,white pulp of spleen,#FTUWhitePulp_Inset2
 thymus-thymus-lobule,UBERON:0002125,thymus lobule,#FTUThymusLobule_Inset1,Thymus,UBERON:0002370
 thymus-thymus-lobule,UBERON:0002125,thymus lobule,#FTUThymusLobule_Inset2,Thymus,UBERON:0002370
+mouth-submandibular-gland,UBERON:0001736,submandibular gland,#FTUSubmandibularGland
+mouth-sublingual-gland,UBERON:0001832,sublingual gland,#FTUSublingualGland
+mouth-parotid-gland,UBERON:0001831,parotid gland,#FTUParotidGland
+skin-hair-follicle,UBERON:0002073,hair follicle,#FTUHairFollicle
