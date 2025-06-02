@@ -73,6 +73,8 @@ program
 program
   .command('update-collection')
   .description("Update a collection to the latest version of each digital object in it's metadata")
+  .option('--update-2d-ftu-crosswalks', 'Update 2D FTUs with the overall crosswalk in the release.', false)
+  .option('--update-ref-organ-crosswalks', 'Update reference organs with the overall crosswalk in the release.', false)
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     updateCollection(getContext(program, command, str));
