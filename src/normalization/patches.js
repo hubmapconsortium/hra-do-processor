@@ -326,6 +326,9 @@ export function normalizeDoi(doi) {
   else if (/^dx\.doi\.org\/.*/.test(normDoi)) {
     normDoi = normDoi.replace(/^dx\.doi\.org\//, 'https://doi.org/');
   }
+  else if (/^http\:\/\/doi.org\/.*/.test(normDoi)) {
+    normDoi = normDoi.replace(/^http\:\/\/doi.org\//, 'https://doi.org/');
+  }
   return normDoi;
 }
 
