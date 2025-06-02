@@ -59,7 +59,7 @@ function normalizeIllustrationImage(context, metadata) {
         id: `${iri}#${fileType}`,
         label: `${fileTypeName} image of ${illustrationName}`,
         type_of: ['FtuIllustrationFile'],
-        file_url: `${context.cdnIri}${type}/${name}/${version}/${item}`,
+        file_url: `${context.cdnIri}${type}/${name}/${version}/assets/${item}`,
         file_format: getMimeType(fileType),
       };
     });
