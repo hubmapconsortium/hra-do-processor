@@ -8,6 +8,7 @@ import { bumpDraft } from './drafting/bump-draft.js';
 import { newDraft } from './drafting/new-draft.js';
 import { enrich } from './enrichment/enrich.js';
 import { finalize } from './finalizing/finalize.js';
+import { deployDoiXml } from './finalizing/misc-files.js';
 import { genAsctbCollectionJson } from './gen-asctb-collection-json.js';
 import { list } from './list.js';
 import { migrateCcfLandmarks } from './migration/ccf-landmarks/migrate.js';
@@ -15,11 +16,11 @@ import { migrateCcfOwl } from './migration/ccf-owl/migrate.js';
 import { migrateCcfReleases } from './migration/ccf-releases/migrate.js';
 import { migrateSchemas } from './migration/schemas/migrate.js';
 import { normalize } from './normalization/normalize.js';
+import { update2dFtuCrosswalk } from './update-2d-ftu-crosswalk.js';
 import { updateCollection } from './update-collection.js';
 import { updateRefOrganCrosswalk } from './update-ref-organ-crosswalk.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
 import { error } from './utils/logging.js';
-import { update2dFtuCrosswalk } from './update-2d-ftu-crosswalk.js';
 
 const program = new Command();
 
@@ -132,6 +133,13 @@ program
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     deploy(getContext(program, command, str));
+  });
+
+program
+  .command('deploy-doi-xml')
+  .description('Write the DOI xml for a given Digital Object to the deployment home')
+  .action((_options, command) => {
+    deployDoiXml(getContext(program, command));
   });
 
 program

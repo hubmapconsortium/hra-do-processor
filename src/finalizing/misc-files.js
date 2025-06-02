@@ -22,3 +22,9 @@ export function miscFiles(context) {
     miscDoFiles({ ...context, selectedDigitalObject });
   }
 }
+
+
+export function deployDoiXml(context) {
+  const metadata = readMetadata(context);
+  writeDoiXml(context, metadata);
+}
