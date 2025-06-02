@@ -138,8 +138,9 @@ program
 program
   .command('deploy-doi-xml')
   .description('Write the DOI xml for a given Digital Object to the deployment home')
-  .action((_options, command) => {
-    deployDoiXml(getContext(program, command));
+  .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
+  .action((str, _options, command) => {
+    deployDoiXml(getContext(program, command, str));
   });
 
 program
