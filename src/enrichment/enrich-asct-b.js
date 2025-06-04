@@ -185,6 +185,8 @@ function findOrganName(name) {
     outputName = 'Bone-Marrow';
   } else if (snakeCaseString === 'Spinal_cord') {
     outputName = 'Spinal_Cord';
+  } else if (snakeCaseString === 'Allen_brain') {
+    outputName = 'Brain';
   }
   return outputName;
 }
