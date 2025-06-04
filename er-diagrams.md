@@ -16,6 +16,7 @@ Named {
 }
 FtuIllustrationNode {
     string node_name  
+    string node_group  
     string part_of_illustration  
     uriorcurie id  
     string label  
@@ -43,7 +44,9 @@ Container ||--}o FtuIllustration : "data"
 FtuIllustration ||--|o AnatomicalStructureID : "located_in"
 FtuIllustration ||--}o FtuIllustrationFile : "image_file"
 FtuIllustration ||--}o FtuIllustrationNode : "illustration_node"
+FtuIllustration ||--|o Named : "representation_of"
 FtuIllustration ||--}o Named : "type_of"
+FtuIllustrationNode ||--|o Named : "representation_of"
 FtuIllustrationNode ||--}o Named : "type_of"
 FtuIllustrationFile ||--}o Named : "type_of"
 FtuMetadata ||--}o Named : "created_by"
@@ -637,6 +640,7 @@ Dataset {
     string version  
     string license  
     string publisher  
+    stringList references  
     string citation  
     string citationOverall  
     string hubmapId  
@@ -978,7 +982,7 @@ ExperimentUsedAntibody ||--|| RegisteredAntibody : "based_on"
 ExperimentUsedAntibody ||--}o Named : "type_of"
 RegisteredAntibody ||--}o Named : "type_of"
 MultiplexedAntibodyBasedImagingExperiment ||--}o Named : "protocol_doi"
-MultiplexedAntibodyBasedImagingExperiment ||--}| Named : "author_orcid"
+MultiplexedAntibodyBasedImagingExperiment ||--}o Named : "author_orcid"
 MultiplexedAntibodyBasedImagingExperiment ||--}| ExperimentCycle : "has_cycle"
 MultiplexedAntibodyBasedImagingExperiment ||--|| AnatomicalStructure : "sample_organ"
 MultiplexedAntibodyBasedImagingExperiment ||--}o Named : "type_of"
@@ -1136,6 +1140,7 @@ Dataset {
     string version  
     string license  
     string publisher  
+    stringList references  
     string citation  
     string citationOverall  
     string hubmapId  
@@ -1317,6 +1322,7 @@ Container {
     string version  
     string creation_date  
     string publisher  
+    stringList references  
     string license  
     uriorcurie id  
     string label  
@@ -1328,6 +1334,7 @@ Dataset {
     string version  
     string license  
     string publisher  
+    stringList references  
     string citation  
     string citationOverall  
     string hubmapId  

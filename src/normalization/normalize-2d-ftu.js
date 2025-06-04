@@ -40,6 +40,7 @@ function normalizeData(context, metadata, data) {
       label: `An illustration of ${illustrationName}`,
       type_of: ['FtuIllustration', illustrationRepresentation],
       located_in: data[0]['organ_mapped_to'],
+      representation_of: illustrationRepresentation,
       image_file: normalizeIllustrationImage(context, metadata),
       illustration_node: normalizeIllustrationNode(context, data),
     },
@@ -80,22 +81,26 @@ function getMimeType(fileType) {
 function normalizeIllustrationNode(context, data) {
   const { iri } = context.selectedDigitalObject;
   const seen = new Set();
-  return data.map((item) => {
-    const nodeId = item['node_id'];
-    if (!seen.has(nodeId)) {
-      seen.add(nodeId);
-      //const nodeLabel = item['node_label'];
-      const nodeLabel = item['node_id'].replace(/_/g, ' ').toLowerCase();
-      const nodeRepresentation = item['node_mapped_to'] || '';
-      return {
-        id: `${iri}#${nodeId}`,
-        label: `An illustration node of ${nodeLabel}`,
-        type_of: ['FtuIllustrationNode', nodeRepresentation],
-        node_name: nodeId,
-        part_of_illustration: `${iri}#primary`,
-      };
-    } else {
-      return undefined;
-    }
-  }).filter((item) => item?.type_of[1]);
+  return data
+    .map((item) => {
+      const nodeId = item['node_id'];
+      if (!seen.has(nodeId)) {
+        seen.add(nodeId);
+        //const nodeLabel = item['node_label'];
+        const nodeLabel = item['node_id'].replace(/_/g, ' ').toLowerCase();
+        const nodeRepresentation = item['node_mapped_to'] || '';
+        return {
+          id: `${iri}#${nodeId}`,
+          label: `An illustration node of ${nodeLabel}`,
+          type_of: ['FtuIllustrationNode', nodeRepresentation],
+          node_name: nodeId,
+          node_group: item['node_group'] || undefined,
+          part_of_illustration: `${iri}#primary`,
+          representation_of: nodeRepresentation,
+        };
+      } else {
+        return undefined;
+      }
+    })
+    .filter((item) => item?.type_of[1]);
 }
