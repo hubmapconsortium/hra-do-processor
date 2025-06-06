@@ -36,8 +36,12 @@ export function buildBlazegraphJournal(context) {
   }
 
   const catalog = resolve(context.deploymentHome, 'catalog.ttl');
-  const catalogGraph = context.lodIri.replace(/\/$/, '');
+  const catalogGraph = context.purlIri.replace(/\/$/, '');
   sparqlUpdate += `LOAD <file://${catalog}> INTO GRAPH <${catalogGraph}>;\n`;
+
+  // Deprecated: The catalog should now be referred to as https://purl.humanatlas.io ie purlIri
+  const catalogGraph2 = 'https://lod.humanatlas.io';
+  sparqlUpdate += `LOAD <file://${catalog}> INTO GRAPH <${catalogGraph2}>;\n`;
 
   const loadScript = resolve(context.deploymentHome, 'blazegraph.load.rq');
   writeFileSync(loadScript, sparqlUpdate);
