@@ -13,6 +13,7 @@ export function renderReadmeMd(templateFile, context, metadata) {
   env.addFilter('fileType', (mediaType) => {
     switch (mediaType) {
       case 'text/turtle': return 'Turtle';
+      case 'application/json': return 'JSON';
       case 'application/ld+json': return 'JSON-LD';
       case 'application/rdf+xml': return 'RDF/XML';
       case 'application/n-triples': return 'N-Triples';
@@ -22,6 +23,7 @@ export function renderReadmeMd(templateFile, context, metadata) {
   env.addFilter('pageId', (mediaType) => {
     switch (mediaType) {
       case 'text/turtle': return 'turtle';
+      case 'application/json': return 'json';
       case 'application/ld+json': return 'jsonld';
       case 'application/rdf+xml': return 'rdfxml';
       case 'application/n-triples': return 'ntriples';
