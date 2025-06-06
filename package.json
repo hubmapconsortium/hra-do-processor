@@ -1,6 +1,6 @@
 {
   "name": "do-processor",
-  "version": "0.0.0",
+  "version": "0.9.0",
   "description": "Human Reference Atlas (HRA) Digital Object (DO) Processor - do-processor",
   "main": "src/cli.js",
   "bin": {
