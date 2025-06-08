@@ -50,14 +50,14 @@
   <date dateType="Available">{{ creation_date }}</date>
 </dates>
 <descriptions>
-  <description descriptionType="Abstract">{{ description }}</description>
+  <description descriptionType="Abstract">{{ description | escape }}</description>
 </descriptions>
 <language>EN</language>
 <alternateIdentifiers>
   <alternateIdentifier alternateIdentifierType="HuBMAP ID">{{ hubmapId }}</alternateIdentifier>
-  <alternateIdentifier alternateIdentifierType="How to Cite This {{ cite_model_mappings[type] or cite_model_mappings.default }}">{{ citation }}</alternateIdentifier>
+  <alternateIdentifier alternateIdentifierType="How to Cite This {{ cite_model_mappings[type] or cite_model_mappings.default }}">{{ citation | escape }}</alternateIdentifier>
   {% if citationOverall -%}
-  <alternateIdentifier alternateIdentifierType="How to Cite {{ cite_overall_model_mappings[type] or cite_overall_model_mappings.default }} Overall">{{ citationOverall }}</alternateIdentifier>
+  <alternateIdentifier alternateIdentifierType="How to Cite {{ cite_overall_model_mappings[type] or cite_overall_model_mappings.default }} Overall">{{ citationOverall | escape }}</alternateIdentifier>
   {%- endif %}
 </alternateIdentifiers>
 <formats>
