@@ -280,7 +280,7 @@ function normalizePlacementData(context, data) {
     const donors = data['@graph'];
     return donors.map((donor) => {
       return donor['samples'].map((block) =>
-        createPlacementObject(context, block.rui_location)
+        createPlacementObject(block, block.rui_location)
       ).filter(onlyNonNull);
     }).flat();
   } catch (error) {
