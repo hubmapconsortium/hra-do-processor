@@ -289,6 +289,9 @@ function normalizePlacementData(context, data) {
 }
 
 function createPlacementObject(block, spatialEntity) {
+  if (!spatialEntity) {
+    return null;
+  }
   const placement = spatialEntity.placement;
   if (!placement || !checkPlacementId(placement['@id'])) {
     return null;
