@@ -5,79 +5,93 @@
 {{ was_derived_from.description }}
 
 **Publisher:**
+
 {{ was_derived_from.publisher }}
 
-{% if 'funders' in was_derived_from %}
+{% if 'funders' in was_derived_from -%}
 **Funder:**
-{% for funder in was_derived_from.funders %}
+
+{% for funder in was_derived_from.funders -%}
 * {{ funder.funder }} (Award number: {{ funder.awardNumber or '-' }})
 {% endfor %}
-{% endif %}
+{%- endif %}
 
 **License:**
+
 {{ was_derived_from.license }}
 
 **Creator(s):**
-{% for person in was_derived_from.creators %}
+
+{% for person in was_derived_from.creators -%}
 * [{{ person.fullName }}]({{ person.id }})
 {% endfor %}
 
 **Project lead:**
-{% for person in was_derived_from.project_leads %}
+
+{% for person in was_derived_from.project_leads -%}
 * [{{ person.fullName }}]({{ person.id }})
 {% endfor %}
 
 **Reviewer(s):**
-{% for person in was_derived_from.reviewers %}
+
+{% for person in was_derived_from.reviewers -%}
 * [{{ person.fullName }}]({{ person.id }})
 {% endfor %}
 
-{% if 'externalReviewers' in was_derived_from %}
+{% if 'externalReviewers' in was_derived_from and was_derived_from.externalReviewers | length > 0 -%}
 **External Reviewer(s):**
-{% for person in was_derived_from.externalReviewers %}
+
+{% for person in was_derived_from.externalReviewers -%}
 * [{{ person.fullName }}]({{ person.id }})
 {% endfor %}
-{% endif %}
+{%- endif %}
 
-{% if 'doi' in was_derived_from %}
+{% if 'doi' in was_derived_from -%}
 **DOI:**
-{{ was_derived_from.doi }}
-{% endif %}
 
-{% if 'hubmapId' in was_derived_from %}
+{{ was_derived_from.doi }}
+{%- endif %}
+
+{% if 'hubmapId' in was_derived_from -%}
 **HuBMAP ID:**
+
 {{ was_derived_from.hubmapId }}
-{% endif %}
+{%- endif %}
 
 **Date published:**
+
 {{ was_derived_from.creation_date }}
 
 **Date last processed:**
+
 {{ creation_date }}
 
 **Processor:**
+
 {% for creator in creators -%}
 [{{ creator.name }}, v{{ creator.version }}]({{ creator.id }})
-{%- endfor %}
+{% endfor %}
 
 ### Downloads
 
 **Graph Data:**
-{% for distribution in distributions %}
+
+{% for distribution in distributions -%}
 * <a id="{{ distribution.mediaType | pageId }}" href="{{ distribution.downloadUrl }}">Processed graph distribution file in {{ distribution.mediaType | fileType }} format</a>
 {% endfor %}
 
-**Raw Data:**
-{% for distribution in was_derived_from.distributions %}
+**Raw Data:**<a id="raw-data"/>
+
+{% for distribution in was_derived_from.distributions -%}
 * [{{ distribution.title }}]({{ distribution.downloadUrl }})
 {% endfor %}
 
-{% if had_member %}
-
+{% if had_member -%}
 ### Collection
 
 **Digital Objects merged into this collection:**
-{% for member in had_member %}
+
+{% for member in had_member -%}
 * [{{ member }}]({{ member }})
 {% endfor %}
-{% endif %}
+{%- endif %}
