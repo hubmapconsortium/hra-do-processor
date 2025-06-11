@@ -1,7 +1,7 @@
 import { writeFileSync } from 'fs';
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { update } from '../utils/blazegraph.js';
+import { load, update } from '../utils/blazegraph.js';
 import { getDeployedDigitalObjects, getRedundantGraph } from './utils.js';
 
 /**
@@ -12,6 +12,7 @@ export function buildBlazegraphJournal(context) {
   const digitalObjects = getDeployedDigitalObjects(context, false);
   const journal = context.journal ?? resolve(context.deploymentHome, 'blazegraph.jnl');
   sh.rm('-f', journal);
+  const incremental = context.includeAllVersions;
 
   let sparqlUpdate = '';
 
@@ -26,26 +27,44 @@ export function buildBlazegraphJournal(context) {
     }
     const iri = `${context.purlIri}${doString}`;
     const graph = resolve(context.deploymentHome, obj.doString, 'graph.ttl');
-    sparqlUpdate += `LOAD <file://${graph}> INTO GRAPH <${iri}>;\n`;
+
+    if (incremental) {
+      load(iri, graph, journal);
+    } else {
+      sparqlUpdate += `LOAD <file://${graph}> INTO GRAPH <${iri}>;\n`;
+    }
 
     const redundant = getRedundantGraph(context, obj);
     if (redundant) {
       const redundantIri = `${iri}/redundant`;
-      sparqlUpdate += `LOAD <file://${redundant}> INTO GRAPH <${redundantIri}>;\n`;
+      if (incremental) {
+        load(redundantIri, redundant, journal);
+      } else {
+        sparqlUpdate += `LOAD <file://${redundant}> INTO GRAPH <${redundantIri}>;\n`;
+      }
     }
   }
 
   const catalog = resolve(context.deploymentHome, 'catalog.ttl');
   const catalogGraph = context.purlIri.replace(/\/$/, '');
-  sparqlUpdate += `LOAD <file://${catalog}> INTO GRAPH <${catalogGraph}>;\n`;
+  if (incremental) {
+    load(catalogGraph, catalog, journal);
+  } else {
+    sparqlUpdate += `LOAD <file://${catalog}> INTO GRAPH <${catalogGraph}>;\n`;
+  }
 
   // Deprecated: The catalog should now be referred to as https://purl.humanatlas.io ie purlIri
   const catalogGraph2 = 'https://lod.humanatlas.io';
-  sparqlUpdate += `LOAD <file://${catalog}> INTO GRAPH <${catalogGraph2}>;\n`;
+  if (incremental) {
+    load(catalogGraph2, catalog, journal);
+  } else {
+    sparqlUpdate += `LOAD <file://${catalog}> INTO GRAPH <${catalogGraph2}>;\n`;
+  }
 
-  const loadScript = resolve(context.deploymentHome, 'blazegraph.load.rq');
-  writeFileSync(loadScript, sparqlUpdate);
-  update(loadScript, journal);
-
-  sh.rm('-f', loadScript);
+  if (!incremental) {
+    const loadScript = resolve(context.deploymentHome, 'blazegraph.load.rq');
+    writeFileSync(loadScript, sparqlUpdate);
+    update(loadScript, journal);
+    sh.rm('-f', loadScript);
+  }
 }
