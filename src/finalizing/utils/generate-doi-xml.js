@@ -4,12 +4,6 @@ import { resolve } from 'path';
 
 // TODO: Factor these properties out
 const TYPE_MAPPINGS = {
-  model_mappings: {
-    'asct-b': 'ASCT+B',
-    '2d-ftu': '2D Reference FTU',
-    omap: 'Organ Mapping Antibody Panels(OMAPs)',
-    'ref-organ': '3D Reference Organs',
-  },
   resource_mappings: {
     'asct-b': 'Dataset',
     '2d-ftu': 'Image',
@@ -18,22 +12,38 @@ const TYPE_MAPPINGS = {
     'asct-b-crosswalk': 'Dataset',
     'ref-organ-crosswalk': 'Dataset',
     '2d-ftu-crosswalk': 'Dataset',
+    ctann: 'Dataset',
+    millitome: 'Dataset',
+    landmark: 'Model',
+    'ds-graph': 'Dataset',
+    default: 'Dataset',
   },
   resource_title_mappings: {
     'asct-b': 'ASCT+B Table',
     '2d-ftu': '2D reference human organ FTU object',
     omap: 'Organ Mapping Antibody Panel',
     'ref-organ': '3D reference human organ model',
-    'asct-b-crosswalk': 'ASCT+B Crosswalk Table',
-    '2d-ftu-crosswalk': 'ASCT+B table to 2D FTU crosswalk Table',
-    'ref-organ-crosswalk': 'ASCT+B table to 3D model crosswalk Table',
+    'asct-b-crosswalk': 'ASCT+B crosswalk table',
+    '2d-ftu-crosswalk': 'ASCT+B table to 2D FTU crosswalk table',
+    'ref-organ-crosswalk': 'ASCT+B table to 3D model crosswalk table',
+    ctann: 'Cell type annotation label to ASCT+B Table crosswalk table',
+    landmark: '3D reference human organ landmarks model',
+    millitome: '3D extraction sites using the millitome process',
+    default: 'Dataset',
   },
-  cite_model_mappings: { 'asct-b': 'Data Table', '2d-ftu': '2D Data', omap: 'OMAP Tables', 'ref-organ': '3D Data' },
+  cite_model_mappings: {
+    'asct-b': 'Data Table',
+    '2d-ftu': '2D Data',
+    omap: 'OMAP Tables',
+    'ref-organ': '3D Data',
+    default: 'Data',
+  },
   cite_overall_model_mappings: {
     'asct-b': 'ASCT+B Tables',
     '2d-ftu': '2D Data',
     omap: 'OMAP Tables',
     'ref-organ': '3D Data',
+    default: 'Data',
   },
   extension_fixes: { ai: 'svg', xlsx: 'csv' },
 };

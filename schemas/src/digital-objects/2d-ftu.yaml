@@ -21,8 +21,8 @@ classes:
   FtuIllustration:
     title: FTU Illustration
     description: >-
-      A two-dimensional illustration of an organ's functional tissue 
-      unit, featuring image assets and labeled nodes that highlight 
+      A two-dimensional illustration of an organ's functional tissue
+      unit, featuring image assets and labeled nodes that highlight
       the constituent cell types.
     class_uri: ccf:FtuIllustration
     mixins:
@@ -32,6 +32,7 @@ classes:
       - located_in
       - image_file
       - illustration_node
+      - representation_of
 
   FtuIllustrationFile:
     title: FTU Illustration File
@@ -47,8 +48,8 @@ classes:
   FtuIllustrationNode:
     title: FTU Illustration Node
     description: >-
-      A section of the illustration image representing a highlighted 
-      cell type, annotated with the corresponding Cell Ontology ID 
+      A section of the illustration image representing a highlighted
+      cell type, annotated with the corresponding Cell Ontology ID
       using the type_of relationship.
     class_uri: ccf:FtuIllustrationNode
     mixins:
@@ -56,7 +57,9 @@ classes:
       - Instance
     slots:
       - node_name
+      - node_group
       - part_of_illustration
+      - representation_of
 
   AnatomicalStructureID:
     title: Anatomical Structure Identifier
@@ -149,14 +152,28 @@ slots:
   node_name:
     title: node name
     description: >-
-      The name assigned to each node within the FTU illustration, identifying 
+      The name assigned to each node within the FTU illustration, identifying
       its anatomical or structural role.
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  node_group:
+    title: node group
+    description: >-
+      A grouping name assigned to each node within the FTU illustration, identifying
+      groups of anatomical or structural roles.
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  representation_of:
+    title: representation of
+    description: The way that something is shown or described.
+    required: false
+    range: Named
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   part_of_illustration:
     title: is part of illustration
     description: >-
-      Indicates the part of the illustration to which this node belongs to 
+      Indicates the part of the illustration to which this node belongs to
       connect to the overall FTU structure.
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

@@ -39,7 +39,8 @@ function createListing(context, path, items, itemType) {
   const iri = `${context.lodIri}${path ? path + '/' : path}`;
   const noSlashIri = iri.replace(/\/+$/, '');
   const lodIri = context.lodIri;
-  writeIndexHtml(context, path, { iri, items, itemType, lodIri, noSlashIri });
+  const includeBaseHref = !context.excludeBaseHref;
+  writeIndexHtml(context, path, { iri, items, itemType, lodIri, noSlashIri, includeBaseHref });
   reifyCatalog(context, iri, path);
 }
 

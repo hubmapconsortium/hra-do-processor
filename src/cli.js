@@ -9,6 +9,7 @@ import { newDraft } from './drafting/new-draft.js';
 import { enrich } from './enrichment/enrich.js';
 import { finalize } from './finalizing/finalize.js';
 import { validate } from './validation/validate.js';
+import { deployDoiXml } from './finalizing/misc-files.js';
 import { genAsctbCollectionJson } from './gen-asctb-collection-json.js';
 import { list } from './list.js';
 import { migrateCcfLandmarks } from './migration/ccf-landmarks/migrate.js';
@@ -16,11 +17,11 @@ import { migrateCcfOwl } from './migration/ccf-owl/migrate.js';
 import { migrateCcfReleases } from './migration/ccf-releases/migrate.js';
 import { migrateSchemas } from './migration/schemas/migrate.js';
 import { normalize } from './normalization/normalize.js';
+import { update2dFtuCrosswalk } from './update-2d-ftu-crosswalk.js';
 import { updateCollection } from './update-collection.js';
 import { updateRefOrganCrosswalk } from './update-ref-organ-crosswalk.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
 import { error } from './utils/logging.js';
-import { update2dFtuCrosswalk } from './update-2d-ftu-crosswalk.js';
 
 const program = new Command();
 
@@ -73,6 +74,8 @@ program
 program
   .command('update-collection')
   .description("Update a collection to the latest version of each digital object in it's metadata")
+  .option('--update-2d-ftu-crosswalks', 'Update 2D FTUs with the overall crosswalk in the release.', false)
+  .option('--update-ref-organ-crosswalks', 'Update reference organs with the overall crosswalk in the release.', false)
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     updateCollection(getContext(program, command, str));
@@ -136,9 +139,18 @@ program
   });
 
 program
+  .command('deploy-doi-xml')
+  .description('Write the DOI xml for a given Digital Object to the deployment home')
+  .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
+  .action((str, _options, command) => {
+    deployDoiXml(getContext(program, command, str));
+  });
+
+program
   .command('finalize')
   .description('Finalize the deployment home before sending to the live server')
   .option('--skip-db', 'Skip recreating the blazegraph database.')
+  .option('--exclude-base-href', 'Exclude the base href element from html pages.', false)
   .action((_options, command) => {
     finalize(getContext(program, command));
   });

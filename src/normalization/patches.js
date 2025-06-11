@@ -324,7 +324,10 @@ export function normalizeDoi(doi) {
   }
   // Case 4: dx.doi.org/10.1016/j.exphem.2018.09.004
   else if (/^dx\.doi\.org\/.*/.test(normDoi)) {
-    normDoi = normDoi.replace(/^dx\.doi\.org\//, 'https://dx.doi.org/');
+    normDoi = normDoi.replace(/^dx\.doi\.org\//, 'https://doi.org/');
+  }
+  else if (/^http\:\/\/doi.org\/.*/.test(normDoi)) {
+    normDoi = normDoi.replace(/^http\:\/\/doi.org\//, 'https://doi.org/');
   }
   return normDoi;
 }

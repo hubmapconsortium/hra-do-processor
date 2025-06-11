@@ -18,7 +18,8 @@ export function renderIndexHtml(templateFile, context, metadata) {
   const doString = context.selectedDigitalObject.doString;
   const iri = `${context.lodIri}${doString}`;
   const lodIri = context.lodIri;
-  return env.renderString(template, { ...metadata, ...context.selectedDigitalObject, iri, lodIri });
+  const includeBaseHref = !context.excludeBaseHref;
+  return env.renderString(template, { ...metadata, ...context.selectedDigitalObject, iri, lodIri, includeBaseHref });
 }
 
 export function writeIndexHtml(context, metadata) {

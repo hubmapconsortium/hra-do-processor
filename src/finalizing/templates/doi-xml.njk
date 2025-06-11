@@ -16,7 +16,7 @@
 </creators>
 <publisher>{{ publisher }}</publisher>
 <publicationYear>{{ creation_date | year }}</publicationYear>
-<resourceType resourceTypeGeneral="{{ resource_mappings[resource_type] }}">{{ resource_title_mappings[resource_type] }}</resourceType>
+<resourceType resourceTypeGeneral="{{ resource_mappings[resource_type] or resource_mappings.default }}">{{ resource_title_mappings[resource_type] or resource_title_mappings.default }}</resourceType>
 <subjects>
   <subject>{{ title }}, {{ version }}</subject>
 </subjects>
@@ -50,13 +50,15 @@
   <date dateType="Available">{{ creation_date }}</date>
 </dates>
 <descriptions>
-  <description descriptionType="Abstract">{{ description }}</description>
+  <description descriptionType="Abstract">{{ description | escape }}</description>
 </descriptions>
 <language>EN</language>
 <alternateIdentifiers>
   <alternateIdentifier alternateIdentifierType="HuBMAP ID">{{ hubmapId }}</alternateIdentifier>
-  <alternateIdentifier alternateIdentifierType="How to Cite This {{ cite_model_mappings[type] }}">{{ citation }}</alternateIdentifier>
-  <alternateIdentifier alternateIdentifierType="How to Cite {{ cite_overall_model_mappings[type] }} Overall">{{ citationOverall }}</alternateIdentifier>
+  <alternateIdentifier alternateIdentifierType="How to Cite This {{ cite_model_mappings[type] or cite_model_mappings.default }}">{{ citation | escape }}</alternateIdentifier>
+  {% if citationOverall -%}
+  <alternateIdentifier alternateIdentifierType="How to Cite {{ cite_overall_model_mappings[type] or cite_overall_model_mappings.default }} Overall">{{ citationOverall | escape }}</alternateIdentifier>
+  {%- endif %}
 </alternateIdentifiers>
 <formats>
 	<format>.{{ datatable | fileExtension }}</format>

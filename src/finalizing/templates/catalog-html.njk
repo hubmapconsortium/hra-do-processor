@@ -10,8 +10,9 @@
     <link rel="icon" type="image/png" href="https://humanatlas.io/favicon.png" />
 
     <title>Catalog for {{ noSlashIri }}</title>
+    {% if includeBaseHref %}
     <base href="{{ iri }}">
-
+    {% endif %}
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <script src="https://apps.humanatlas.io/components/hra-app-shell.wc.js"></script>
   </head>
