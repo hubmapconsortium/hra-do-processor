@@ -72,10 +72,6 @@
 [{{ creator.name }}, v{{ creator.version }}]({{ creator.id }})
 {% endfor %}
 
-### Downloads
-
-**Graph Data:**
-
 {% if 'references' in was_derived_from %}
 **References:**
 {% for reference in was_derived_from.references %}
@@ -83,7 +79,10 @@
 {% endfor %}
 {% endif %}
 
-**Downloads:**
+### Downloads
+
+**Graph Data:**
+
 {% for distribution in distributions -%}
 * <a id="{{ distribution.mediaType | pageId }}" href="{{ distribution.downloadUrl }}">Processed graph distribution file in {{ distribution.mediaType | fileType }} format</a>
 {% endfor %}
