@@ -101,11 +101,8 @@ function generateRawMetadata(context, metadata) {
     id: `${getMetadataUrl(context)}#raw-data`,
     label: metadata.title,
     ...metadata,
-    distributions: getRawDataDistributions(context, datatable),
-    references: removeDuplicateStrings([
-      ...(metadata.references || []), 
-      ...getRawDataReferences(context, metadata.description)
-    ]),
+    references: metadata.references || [],
+    distributions: getRawDataDistributions(context, datatable)
   }
 }
 
