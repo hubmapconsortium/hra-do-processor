@@ -17,10 +17,6 @@ imports:
   - ../shared/metadata-base
   - ../modules/spatial
 
-settings:
-  uberon: "UBERON"
-  fma: "FMA"
-
 classes:
   SpatialEntity:
     title: Spatial Entity

@@ -4,7 +4,11 @@ import { lookup } from 'mime-types';
 import { resolve } from 'path';
 import { info } from '../utils/logging.js';
 import { exec, throwOnError } from '../utils/sh-exec.js';
-import { getVersionTag, getCodeRepository, getCommitUrl } from '../utils/git.js';
+import { getCodeRepository, getCommitUrl } from '../utils/git.js';
+import { ReferenceExtractor } from './reference-extractor/reference-extractor.js';
+import { DOIExtractor } from './reference-extractor/doi-extractor.js';
+import { BioRxivExtractor } from './reference-extractor/biorxiv-extractor.js';
+import { normalizeDate } from './patches.js';
 
 export function readMetadata(context) {
   const { path } = context.selectedDigitalObject;
@@ -92,6 +96,7 @@ function generateRawMetadata(context, metadata) {
   metadata.project_leads = metadata.project_leads?.map((leader) => normalizePersonData(leader));
   metadata.reviewers = metadata.reviewers?.map((reviewer) => normalizePersonData(reviewer));
   metadata.externalReviewers = metadata.externalReviewers?.map((reviewer) => normalizePersonData(reviewer));
+  metadata.creation_date = metadata.creation_date ? normalizeDate(metadata.creation_date) : null;
   return {
     id: `${getMetadataUrl(context)}#raw-data`,
     label: metadata.title,
@@ -230,6 +235,14 @@ function getRawDataDistributions(context, datatable) {
   }))
 }
 
+function getRawDataReferences(context, description) {
+  const extractor = new ReferenceExtractor();
+  extractor.registerStrategy('doi', new DOIExtractor());
+  extractor.registerStrategy('biorxiv', new BioRxivExtractor());
+
+  return extractor.extract(description);
+}
+
 function getDatasetIri(context) {
   const { type, name, version } = context.selectedDigitalObject;
   return `${context.purlIri}${type}/${name}/${version}`;
@@ -266,4 +279,8 @@ export function removeDuplicate(data, distinctProperties) {
   return data.filter((value, index, self) =>
     self.findIndex(v => distinctProperties.every(k => v[k] === value[k])) === index
   );
+}
+
+export function removeDuplicateStrings(strings) {
+  return [...new Set(strings)];
 }

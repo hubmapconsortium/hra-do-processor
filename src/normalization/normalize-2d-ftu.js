@@ -38,7 +38,7 @@ function normalizeData(context, metadata, data) {
     {
       id: `${iri}#primary`,
       label: `An illustration of ${illustrationName}`,
-      type_of: ['FtuIllustration', illustrationRepresentation],
+      type_of: ['ccf:FtuIllustration', illustrationRepresentation],
       located_in: data[0]['organ_mapped_to'],
       representation_of: illustrationRepresentation,
       image_file: normalizeIllustrationImage(context, metadata),

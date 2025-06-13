@@ -13,6 +13,10 @@ imports:
   - linkml:types
 
 classes:
+  EntityID:
+    abstract: true
+    slots:
+      - id
   Named:
     mixin: true
     slots:
