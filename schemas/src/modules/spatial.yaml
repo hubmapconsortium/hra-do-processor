@@ -149,7 +149,7 @@ slots:
     title: dimension in x-axis
     description: The length of the spatial entity along the X-axis.
     required: true
-    range: float
+    range: decimal
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -157,7 +157,7 @@ slots:
     title: dimension in y-axis
     description: The length of the spatial entity along the Y-axis.
     required: true
-    range: float
+    range: decimal
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -165,7 +165,7 @@ slots:
     title: dimension in z-axis
     description: The length of the spatial entity along the Z-axis.
     required: true
-    range: float
+    range: decimal
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -210,7 +210,7 @@ slots:
   slice_thickness:
     title: slice thickness
     description: The thickness of each slice within the spatial entity.
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   object_reference:
@@ -261,7 +261,7 @@ slots:
     title: scaling in x-axis
     description: Scaling factor applied along the X-axis.
     required: true
-    range: float
+    range: decimal
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -269,7 +269,7 @@ slots:
     title: scaling in y-axis
     description: Scaling factor applied along the Y-axis.
     required: true
-    range: float
+    range: decimal
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -277,7 +277,7 @@ slots:
     title: scaling in z-axis
     description: Scaling factor applied along the Z-axis.
     required: true
-    range: float
+    range: decimal
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -298,21 +298,21 @@ slots:
     title: rotation in x-axis
     description: Rotation of the spatial entity around the X-axis.
     required: true
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   y_rotation:
     title: rotation in y-axis
     description: Rotation of the spatial entity around the Y-axis.
     required: true
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   z_rotation:
     title: rotation in z-axis
     description: Rotation of the spatial entity around the Z-axis.
     required: true
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   rotation_unit:
@@ -338,21 +338,21 @@ slots:
     title: translation in x-axis
     description: The positional offset along the X-axis.
     required: true
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   y_translation:
     title: translation in y-axis
     description: The positional offset along the Y-axis.
     required: true
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   z_translation:
     title: translation in z-axis
     description: The positional offset along the Z-axis.
     required: true
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   translation_unit:

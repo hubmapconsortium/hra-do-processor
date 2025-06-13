@@ -106,7 +106,7 @@ slots:
     description: Number of aggregared summaries.
     slot_uri: ccf:aggregated_summary_count
     required: false
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   aggregated_summaries:
@@ -184,7 +184,7 @@ slots:
     title: percentage
     description: The proportion relative to a whole.
     slot_uri: ccf:percentage_of_total
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   gene_id:
@@ -216,6 +216,6 @@ slots:
       Average expression level of the gene across the sample or dataset.
     slot_uri: ccf:mean_gene_expr_value
     required: true
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion

@@ -290,7 +290,7 @@ slots:
     title: concentration
     description: The concentration of the antibody used in the experiment.
     required: false
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   dilution:

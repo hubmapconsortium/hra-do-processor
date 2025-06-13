@@ -119,14 +119,14 @@ slots:
     description: Volume of the organ in the collision.
     slot_uri: ccf:as_volume
     required: true
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   percentage:
     title: percentage
     description: The proportion relative to a whole.
     slot_uri: ccf:percentage_of_total
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   collides_with_object:
@@ -161,7 +161,7 @@ slots:
       Volume of the anatomical structure that collides with the sample.
     slot_uri: ccf:anatomical_structure_volume
     required: true
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   object_reference_id:

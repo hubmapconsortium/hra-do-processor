@@ -147,7 +147,7 @@ slots:
     description: The physical size of each tissue section.
     slot_uri: ccf:section_size
     required: false
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   section_units:

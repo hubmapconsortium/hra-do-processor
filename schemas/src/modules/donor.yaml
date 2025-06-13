@@ -80,14 +80,14 @@ slots:
     title: age
     slot_uri: ccf:age
     description: The age of the donor.
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   bmi:
     title: body mass index
     slot_uri: ccf:bmi
     description: The Body Mass Index (BMI) of the donor.
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   sex:
