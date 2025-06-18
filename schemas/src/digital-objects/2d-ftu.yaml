@@ -4,6 +4,7 @@ prefixes:
   ccf: http://purl.org/ccf/
   linkml: https://w3id.org/linkml/
   UBERON: http://purl.obolibrary.org/obo/UBERON_
+  FMA: http://purl.org/sig/ont/fma/fma
   CL: http://purl.obolibrary.org/obo/CL_
   LMHA: http://purl.obolibrary.org/obo/LMHA_
   IAO: http://purl.obolibrary.org/obo/IAO_
@@ -15,10 +16,6 @@ imports:
   - linkml:types
   - ../shared/metadata-base
   - ../shared/instance-base
-
-settings:
-  uberon: "UBERON"
-  fma: "FMA"
 
 classes:
   FtuIllustration:
@@ -71,7 +68,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "({uberon}|{fma}):\\d+"
+          syntax: "(UBERON|FMA):\\d+"
           interpolated: true
           partial_match: false
 

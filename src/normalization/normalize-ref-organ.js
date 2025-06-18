@@ -84,7 +84,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
           }
           return accumulator;
         }, new Set()),
-      ].concat(['SpatialEntity']);
+      ].concat(['ccf:SpatialEntity']);
 
       const organName = getOrganName(nodeId, crosswalk);
       const organMetadata = getOrganMetadata(obj.name);
@@ -129,7 +129,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
         object_reference: {
           id: `${id}_obj`,
           label: `3D object of ${organLabel}`,
-          type_of: ['SpatialObjectReference'],
+          type_of: ['ccf:SpatialObjectReference'],
           file_name: gltfFile.replace(/^.*[\\/]/, ''),
           file_url: gltfFile,
           file_format: 'model/gltf-binary',
@@ -137,7 +137,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
           placement: {
             id: `${id}_obj_placement`,
             label: `Local placement of ${organLabel}`,
-            type_of: ['SpatialPlacement'],
+            type_of: ['ccf:SpatialPlacement'],
             source: `${id}_obj`,
             target: id,
             placement_date: creationDate,
@@ -160,7 +160,7 @@ async function processSpatialEntities(context, metadata, gltfFile, cache, crossw
           {
             id: `${id}_global_placement`,
             label: `Global placement of ${organLabel}`,
-            type_of: ['SpatialPlacement'],
+            type_of: ['ccf:SpatialPlacement'],
             source: id,
             target: parentIri,
             placement_date: creationDate,
