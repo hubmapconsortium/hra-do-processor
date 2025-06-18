@@ -33,7 +33,7 @@ AnatomicalStructureID {
 FtuMetadata {
     string title  
     string description  
-    string creation_date  
+    date creation_date  
     string version  
     string license  
     string publisher  
@@ -146,7 +146,7 @@ CharacterizingMarkerSet {
 AsctbMetadata {
     string title  
     string description  
-    string creation_date  
+    date creation_date  
     string version  
     string license  
     string publisher  
@@ -201,7 +201,7 @@ Container {
 BasicMetadata {
     string title  
     string description  
-    string creation_date  
+    date creation_date  
     string version  
     string license  
     string publisher  
@@ -225,14 +225,14 @@ BasicMetadata ||--|o Named : "derived_from"
 erDiagram
 CellSummary {
     string annotation_method  
-    float aggregated_summary_count  
+    decimal aggregated_summary_count  
     string modality  
     string sex  
 }
 CellSummaryRow {
     string cell_label  
     integer count  
-    float percentage  
+    decimal percentage  
 }
 CellID {
     uriorcurie id  
@@ -240,7 +240,7 @@ CellID {
 GeneExpression {
     string gene_label  
     string ensembl_id  
-    float mean_gene_expr_value  
+    decimal mean_gene_expr_value  
 }
 GeneID {
     uriorcurie id  
@@ -298,14 +298,14 @@ Distribution {
 RawDataset {
     string title  
     string description  
-    string creation_date  
+    date creation_date  
     string version  
     string license  
     string publisher  
+    stringList references  
     string citation  
     string citationOverall  
     string hubmapId  
-    stringList references  
     uriorcurie id  
     string label  
 }
@@ -350,7 +350,7 @@ CollectionMetadata {
     string title  
     string description  
     string version  
-    string creation_date  
+    date creation_date  
     string license  
     string publisher  
 }
@@ -378,12 +378,12 @@ CollisionSummary {
 }
 CollisionItem {
     string as_label  
-    float as_volume  
-    float percentage  
+    decimal as_volume  
+    decimal percentage  
 }
 AnatomicalStructureObject {
     string anatomical_structure_label  
-    float anatomical_structure_volume  
+    decimal anatomical_structure_volume  
 }
 EntityID {
     uriorcurie id  
@@ -438,14 +438,14 @@ Distribution {
 RawDataset {
     string title  
     string description  
-    string creation_date  
+    date creation_date  
     string version  
     string license  
     string publisher  
+    stringList references  
     string citation  
     string citationOverall  
     string hubmapId  
-    stringList references  
     uriorcurie id  
     string label  
 }
@@ -542,14 +542,14 @@ Distribution {
 RawDataset {
     string title  
     string description  
-    string creation_date  
+    date creation_date  
     string version  
     string license  
     string publisher  
+    stringList references  
     string citation  
     string citationOverall  
     string hubmapId  
-    stringList references  
     uriorcurie id  
     string label  
 }
@@ -683,7 +683,7 @@ AnatomicalStructureID {
 CtAnnMetadata {
     string title  
     string description  
-    string creation_date  
+    date creation_date  
     string version  
     string license  
     string publisher  
@@ -742,19 +742,19 @@ Named {
 }
 CellSummary {
     string annotation_method  
-    float aggregated_summary_count  
+    decimal aggregated_summary_count  
     string modality  
     string sex  
 }
 CellSummaryRow {
     string cell_label  
     integer count  
-    float percentage  
+    decimal percentage  
 }
 GeneExpression {
     string gene_label  
     string ensembl_id  
-    float mean_gene_expr_value  
+    decimal mean_gene_expr_value  
 }
 GeneID {
     uriorcurie id  
@@ -801,8 +801,8 @@ Donor {
     string pref_label  
     string description  
     string link  
-    float age  
-    float bmi  
+    decimal age  
+    decimal bmi  
     string sex  
     string race  
     string consortium_name  
@@ -838,18 +838,18 @@ DatasetGraphData {
 SpatialPlacement {
     string pref_label  
     date placement_date  
-    float x_scaling  
-    float y_scaling  
-    float z_scaling  
+    decimal x_scaling  
+    decimal y_scaling  
+    decimal z_scaling  
     string scaling_unit  
-    float x_rotation  
-    float y_rotation  
-    float z_rotation  
+    decimal x_rotation  
+    decimal y_rotation  
+    decimal z_rotation  
     string rotation_unit  
     string rotation_order  
-    float x_translation  
-    float y_translation  
-    float z_translation  
+    decimal x_translation  
+    decimal y_translation  
+    decimal z_translation  
     string translation_unit  
     uriorcurie id  
     string label  
@@ -864,30 +864,30 @@ SpatialEntity {
     string creator_last_name  
     string creator_name  
     date create_date  
-    float x_dimension  
-    float y_dimension  
-    float z_dimension  
+    decimal x_dimension  
+    decimal y_dimension  
+    decimal z_dimension  
     string dimension_unit  
     integer slice_count  
-    float slice_thickness  
+    decimal slice_thickness  
     uriorcurie id  
     string label  
 }
 CellSummary {
     string annotation_method  
-    float aggregated_summary_count  
+    decimal aggregated_summary_count  
     string modality  
     string sex  
 }
 CellSummaryRow {
     string cell_label  
     integer count  
-    float percentage  
+    decimal percentage  
 }
 GeneExpression {
     string gene_label  
     string ensembl_id  
-    float mean_gene_expr_value  
+    decimal mean_gene_expr_value  
 }
 GeneID {
     uriorcurie id  
@@ -907,12 +907,12 @@ CollisionSummary {
 }
 CollisionItem {
     string as_label  
-    float as_volume  
-    float percentage  
+    decimal as_volume  
+    decimal percentage  
 }
 AnatomicalStructureObject {
     string anatomical_structure_label  
-    float anatomical_structure_volume  
+    decimal anatomical_structure_volume  
 }
 Dataset {
     string pref_label  
@@ -935,54 +935,8 @@ TissueBlock {
     SampleTypeEnum sample_type  
     string link  
     integer section_count  
-    float section_size  
-    string section_size_unit  
-    uriorcurie id  
-    string label  
-}
-CorridorID {
-    uriorcurie id  
-}
-CollisionSummaryID {
-    uriorcurie id  
-}
-Dataset {
-    string title  
-    string description  
-    string creation_date  
-    string version  
-    string license  
-    string publisher  
-    stringList references  
-    string citation  
-    string citationOverall  
-    string hubmapId  
-    uriorcurie id  
-    string label  
-}
-Distribution {
-    string title  
-    uri downloadUrl  
-    uri accessUrl  
-    string mediaType  
-    uriorcurie id  
-    string label  
-}
-Person {
-    string fullName  
-    string firstName  
-    string lastName  
-    string orcid  
-    string conforms_to  
-    uriorcurie id  
-    string label  
-}
-Grant {
-    string funder  
-    string awardNumber  
-}
-Creator {
-    string conforms_to  
+    decimal section_size  
+    string section_units  
     uriorcurie id  
     string label  
 }
@@ -999,8 +953,8 @@ Donor {
     string pref_label  
     string description  
     string link  
-    float age  
-    float bmi  
+    decimal age  
+    decimal bmi  
     string sex  
     string race  
     string consortium_name  
@@ -1012,7 +966,7 @@ Donor {
 DatasetGraphMetadata {
     string title  
     string description  
-    string creation_date  
+    date creation_date  
     string version  
     string license  
     string publisher  
@@ -1085,7 +1039,7 @@ GraphMetadata {
     string title  
     string description  
     string version  
-    string creation_date  
+    date creation_date  
     string license  
     string publisher  
 }
@@ -1114,9 +1068,9 @@ LandmarkData {
 }
 SpatialEntity {
     string pref_label  
-    float x_dimension  
-    float y_dimension  
-    float z_dimension  
+    decimal x_dimension  
+    decimal y_dimension  
+    decimal z_dimension  
     string dimension_unit  
     integer rui_rank  
     uriorcurie id  
@@ -1133,18 +1087,18 @@ ExtractionSet {
     string label  
 }
 SpatialPlacement {
-    float x_scaling  
-    float y_scaling  
-    float z_scaling  
+    decimal x_scaling  
+    decimal y_scaling  
+    decimal z_scaling  
     string scaling_unit  
-    float x_rotation  
-    float y_rotation  
-    float z_rotation  
+    decimal x_rotation  
+    decimal y_rotation  
+    decimal z_rotation  
     string rotation_unit  
     string rotation_order  
-    float x_translation  
-    float y_translation  
-    float z_translation  
+    decimal x_translation  
+    decimal y_translation  
+    decimal z_translation  
     string translation_unit  
     uriorcurie id  
     string label  
@@ -1165,7 +1119,7 @@ Creator {
 LandmarkMetadata {
     string title  
     string description  
-    string creation_date  
+    date creation_date  
     string version  
     string license  
     string publisher  
@@ -1213,7 +1167,7 @@ Named {
     string label  
 }
 ExperimentUsedAntibody {
-    float concentration  
+    decimal concentration  
     integer dilution  
     integer cycle_number  
     boolean is_core_panel  
@@ -1265,7 +1219,7 @@ Protein {
 OmapMetadata {
     string title  
     string description  
-    string creation_date  
+    date creation_date  
     string version  
     string license  
     string publisher  
@@ -1311,9 +1265,9 @@ Container {
 SpatialEntity {
     string pref_label  
     date create_date  
-    float x_dimension  
-    float y_dimension  
-    float z_dimension  
+    decimal x_dimension  
+    decimal y_dimension  
+    decimal z_dimension  
     string dimension_unit  
     string organ_owner_sex  
     string organ_side  
@@ -1333,18 +1287,18 @@ ExtractionSet {
 SpatialPlacement {
     string pref_label  
     date placement_date  
-    float x_scaling  
-    float y_scaling  
-    float z_scaling  
+    decimal x_scaling  
+    decimal y_scaling  
+    decimal z_scaling  
     string scaling_unit  
-    float x_rotation  
-    float y_rotation  
-    float z_rotation  
+    decimal x_rotation  
+    decimal y_rotation  
+    decimal z_rotation  
     string rotation_unit  
     string rotation_order  
-    float x_translation  
-    float y_translation  
-    float z_translation  
+    decimal x_translation  
+    decimal y_translation  
+    decimal z_translation  
     string translation_unit  
     uriorcurie id  
     string label  
@@ -1368,7 +1322,7 @@ Creator {
 RefOrganMetadata {
     string title  
     string description  
-    string creation_date  
+    date creation_date  
     string version  
     string license  
     string publisher  
@@ -1417,7 +1371,7 @@ TissueBlock {
     SampleTypeEnum sample_type  
     string link  
     integer section_count  
-    float section_size  
+    decimal section_size  
     string section_units  
     uriorcurie id  
     string label  
@@ -1428,52 +1382,6 @@ Named {
 }
 EntityID {
     uriorcurie id  
-}
-CorridorID {
-    uriorcurie id  
-}
-CollisionSummaryID {
-    uriorcurie id  
-}
-Dataset {
-    string title  
-    string description  
-    string creation_date  
-    string version  
-    string license  
-    string publisher  
-    stringList references  
-    string citation  
-    string citationOverall  
-    string hubmapId  
-    uriorcurie id  
-    string label  
-}
-Distribution {
-    string title  
-    uri downloadUrl  
-    uri accessUrl  
-    string mediaType  
-    uriorcurie id  
-    string label  
-}
-Person {
-    string fullName  
-    string firstName  
-    string lastName  
-    string orcid  
-    string conforms_to  
-    uriorcurie id  
-    string label  
-}
-Grant {
-    string funder  
-    string awardNumber  
-}
-Creator {
-    string conforms_to  
-    uriorcurie id  
-    string label  
 }
 TissueSection {
     string pref_label  
@@ -1514,18 +1422,18 @@ SpatialData {
 SpatialPlacement {
     string pref_label  
     date placement_date  
-    float x_scaling  
-    float y_scaling  
-    float z_scaling  
+    decimal x_scaling  
+    decimal y_scaling  
+    decimal z_scaling  
     string scaling_unit  
-    float x_rotation  
-    float y_rotation  
-    float z_rotation  
+    decimal x_rotation  
+    decimal y_rotation  
+    decimal z_rotation  
     string rotation_unit  
     string rotation_order  
-    float x_translation  
-    float y_translation  
-    float z_translation  
+    decimal x_translation  
+    decimal y_translation  
+    decimal z_translation  
     string translation_unit  
     uriorcurie id  
     string label  
@@ -1540,30 +1448,30 @@ SpatialEntity {
     string creator_last_name  
     string creator_name  
     date create_date  
-    float x_dimension  
-    float y_dimension  
-    float z_dimension  
+    decimal x_dimension  
+    decimal y_dimension  
+    decimal z_dimension  
     string dimension_unit  
     integer slice_count  
-    float slice_thickness  
+    decimal slice_thickness  
     uriorcurie id  
     string label  
 }
 CellSummary {
     string annotation_method  
-    float aggregated_summary_count  
+    decimal aggregated_summary_count  
     string modality  
     string sex  
 }
 CellSummaryRow {
     string cell_label  
     integer count  
-    float percentage  
+    decimal percentage  
 }
 GeneExpression {
     string gene_label  
     string ensembl_id  
-    float mean_gene_expr_value  
+    decimal mean_gene_expr_value  
 }
 GeneID {
     uriorcurie id  
@@ -1583,12 +1491,12 @@ CollisionSummary {
 }
 CollisionItem {
     string as_label  
-    float as_volume  
-    float percentage  
+    decimal as_volume  
+    decimal percentage  
 }
 AnatomicalStructureObject {
     string anatomical_structure_label  
-    float anatomical_structure_volume  
+    decimal anatomical_structure_volume  
 }
 
 Container ||--|o SpatialData : "data"
@@ -1759,7 +1667,7 @@ Container {
 VocabMetadata {
     string title  
     string description  
-    string creation_date  
+    date creation_date  
     string version  
     string license  
     string publisher  
@@ -1787,7 +1695,7 @@ Container {
     string title  
     string description  
     string version  
-    string creation_date  
+    date creation_date  
     string publisher  
     stringList references  
     string license  
@@ -1797,7 +1705,7 @@ Container {
 RawDataset {
     string title  
     string description  
-    string creation_date  
+    date creation_date  
     string version  
     string license  
     string publisher  
@@ -1805,7 +1713,6 @@ RawDataset {
     string citation  
     string citationOverall  
     string hubmapId  
-    stringList references  
     uriorcurie id  
     string label  
 }
