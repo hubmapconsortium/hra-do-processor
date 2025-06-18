@@ -72,13 +72,6 @@
 [{{ creator.name }}, v{{ creator.version }}]({{ creator.id }})
 {% endfor %}
 
-{% if 'references' in was_derived_from %}
-**References:**
-{% for reference in was_derived_from.references %}
-* [{{ reference }}]({{ reference }})
-{% endfor %}
-{% endif %}
-
 ### Downloads
 
 **Graph Data:**
