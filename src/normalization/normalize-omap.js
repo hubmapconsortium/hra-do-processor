@@ -66,11 +66,10 @@ function normalizeData(context, data) {
 function normalizeAntibodyData(context, data) {
   return data
     .map((row, idx, arr) => {
-      const obj = new ObjectBuilder()
+      return new ObjectBuilder()
         .append('id', getAntibodyIri(row.rrid))
         .append('parent_class', 'ccf:Antibody')
         .append('host', row.host)
-        .append('isotype', row.isotype)
         .append('clonality', row.clonality)
         .append('clone_id', `${row.clone_id}`)
         .append('conjugate', row.conjugate)
@@ -78,19 +77,9 @@ function normalizeAntibodyData(context, data) {
         .append('recombinant', row.recombinant)
         .append('producer', row.vendor)
         .append('catalog_number', `${row.catalog_number}`)
-        .append('rationale', row.rationale)
+        .append('antibody_type', row.HGNC_ID ? 'Primary' : 'Secondary')
         .build();
-      if (row.HGNC_ID) {
-        obj['antibody_type'] = 'Primary';
-        obj['detects'] = split(row.HGNC_ID).map((text) => normalizeProteinId(text));
-      } else {
-        const prevRow = arr[idx - 1];
-        obj['antibody_type'] = 'Secondary';
-        obj['binds_to'] = getAntibodyIri(prevRow.rrid);
-      }
-      return obj;
     })
-    .reduce(mergeDuplicateAntibodyData, []);
 }
 
 function mergeDuplicateAntibodyData(acc, item) {
@@ -139,70 +128,88 @@ function normalizeExperimentData(context, metadata, data) {
 
 function normalizeExperimentCycleData(context, data) {
   const omapId = data[0].omap_id;
-  const cycleNumbers = [...new Set(data.map((row) => row.cycle_number))];
-  const cycles = [];
-  for (let index = 0; index < cycleNumbers.length; index++) {
-    const cycleNumber = cycleNumbers[index];
-    cycles.push(
-      new ObjectBuilder()
-        .append('id', getExperimentCycleIri(context, omapId, cycleNumber))
-        .append('label', `${omapId} experiment, Cycle ${cycleNumber}`)
-        .append('type_of', ['ccf:ExperimentCycle'])
-        .append('cycle_number', cycleNumber)
-        .append(
-          'uses_antibodies',
-          data
-            .filter((row) => row.cycle_number === cycleNumber)
-            .filter(
-              (row, idx, arr) =>
-                arr.findIndex(
-                  (obj) =>
-                    obj.rrid === row.rrid &&
-                    obj.lot_number === row.lot_number &&
-                    obj.dilution === row.dilution &&
-                    obj.concentration_value === row.concentration_value
-                ) === idx
-            ) // remove duplicates
-            .map((row) => {
-              return new ObjectBuilder()
-                .append(
-                  'id',
-                  getDilutedAntibodyInstanceIri(
-                    context,
-                    omapId,
-                    cycleNumber,
-                    row.rrid,
-                    row.lot_number,
-                    row.dilution,
-                    row.concentration_value
-                  )
-                )
-                .append(
-                  'label',
-                  getDilutedAntibodyInstanceLabel(row.rrid, row.lot_number, row.dilution, row.concentration_value)
-                )
-                .append('type_of', ['ccf:ExperimentUsedAntibody'])
-                .append('concentration', row.concentration_value)
-                .append('dilution', row.dilution)
-                .append('cycle_number', cycleNumber)
-                .append('is_core_panel', row.core_panel === 'Y')
-                .append('used_by_experiment', getExperimentIri(context, omapId))
-                .append(
-                  'based_on',
-                  new ObjectBuilder()
-                    .append('id', getAntibodyInstanceIri(context, row.rrid, row.lot_number))
-                    .append('label', getAntibodyInstanceLabel(row.rrid, row.lot_number))
-                    .append('type_of', [getAntibodyIri(row.rrid)])
-                    .append('lot_number', row.lot_number ? `${row.lot_number}` : null)
-                    .build()
-                )
-                .build();
-            })
-        )
-        .build()
+  const uniqueCycleNumbers = [...new Set(data.map(row => row.cycle_number))];
+  
+  return uniqueCycleNumbers.map(cycleNumber => 
+    createExperimentCycle(context, omapId, cycleNumber, data)
+  );
+}
+
+function createExperimentCycle(context, omapId, cycleNumber, allData) {
+  const cycleData = allData.filter(row => row.cycle_number === cycleNumber);
+  const uniqueAntibodies = removeDuplicateAntibodies(cycleData);
+  
+  return new ObjectBuilder()
+    .append('id', getExperimentCycleIri(context, omapId, cycleNumber))
+    .append('label', `${omapId} experiment, Cycle ${cycleNumber}`)
+    .append('type_of', ['ccf:ExperimentCycle'])
+    .append('cycle_number', cycleNumber)
+    .append('uses_antibodies', uniqueAntibodies.map(row => 
+      createUsedAntibodyObject(context, omapId, cycleNumber, row, allData)
+    ))
+    .build();
+}
+
+function removeDuplicateAntibodies(cycleData) {
+  return cycleData.filter((row, index, array) => {
+    const isFirstOccurrence = array.findIndex(existingRow => 
+      existingRow.rrid === row.rrid &&
+      existingRow.lot_number === row.lot_number &&
+      existingRow.dilution === row.dilution &&
+      existingRow.concentration_value === row.concentration_value
+    ) === index;
+    return isFirstOccurrence;
+  });
+}
+
+function createUsedAntibodyObject(context, omapId, cycleNumber, row, allData) {
+  const antibodyObject = new ObjectBuilder()
+    .append('id', getDilutedAntibodyInstanceIri(
+      context, omapId, cycleNumber, row.rrid, row.lot_number, 
+      row.dilution, row.concentration_value
+    ))
+    .append('label', getDilutedAntibodyInstanceLabel(
+      row.rrid, row.lot_number, row.dilution, row.concentration_value
+    ))
+    .append('type_of', ['ccf:ExperimentUsedAntibody'])
+    .append('concentration', row.concentration_value)
+    .append('dilution', row.dilution)
+    .append('cycle_number', cycleNumber)
+    .append('is_core_panel', row.core_panel === 'Y')
+    .append('used_by_experiment', getExperimentIri(context, omapId))
+    .append('rationale', row.rationale)
+    .append('based_on', createAntibodyInstanceObject(context, row))
+    .build();
+
+  addDetectionOrBindingInfo(antibodyObject, row, allData);
+  return antibodyObject;
+}
+
+function createAntibodyInstanceObject(context, row) {
+  return new ObjectBuilder()
+    .append('id', getAntibodyInstanceIri(context, row.rrid, row.lot_number))
+    .append('label', getAntibodyInstanceLabel(row.rrid, row.lot_number))
+    .append('type_of', [getAntibodyIri(row.rrid)])
+    .append('lot_number', row.lot_number ? `${row.lot_number}` : null)
+    .append('isotype', row.isotype)
+    .build();
+}
+
+function addDetectionOrBindingInfo(antibodyObject, row, allData) {
+  if (row.HGNC_ID) {
+    antibodyObject.detects = split(row.HGNC_ID).map(text => normalizeProteinId(text));
+  } else {
+    const rowIndex = allData.findIndex(dataRow => 
+      dataRow.rrid === row.rrid && 
+      dataRow.lot_number === row.lot_number &&
+      dataRow.dilution === row.dilution &&
+      dataRow.concentration_value === row.concentration_value
     );
+    const previousRow = allData[rowIndex - 1];
+    if (previousRow) {
+      antibodyObject.binds_to = getAntibodyIri(previousRow.rrid);
+    }
   }
-  return cycles;
 }
 
 function normalizeAntibodyPanelData(context, data) {
