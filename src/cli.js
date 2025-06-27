@@ -9,6 +9,7 @@ import { newDraft } from './drafting/new-draft.js';
 import { enrich } from './enrichment/enrich.js';
 import { finalize } from './finalizing/finalize.js';
 import { validate } from './validation/validate.js';
+import { reconstruct } from './reconstruction/reconstruct.js';
 import { deployDoiXml } from './finalizing/misc-files.js';
 import { genAsctbCollectionJson } from './gen-asctb-collection-json.js';
 import { list } from './list.js';
@@ -116,6 +117,14 @@ program
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .action((str, _options, command) => {
     enrich(getContext(program, command, str));
+  });
+
+program
+  .command('reconstruct')
+  .description('Reconstructs a given digital object from the enriched graph data')
+  .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
+  .action((str, _options, command) => {
+    reconstruct(getContext(program, command, str));
   });
 
 program
