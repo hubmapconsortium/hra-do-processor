@@ -34,58 +34,68 @@
 ![diagram](./index-7.svg)
 
 
-## dataset
+## ctann
 
 ![diagram](./index-8.svg)
 
 
-## donor
+## dataset
 
 ![diagram](./index-9.svg)
 
 
-## ds-graph
+## donor
 
 ![diagram](./index-10.svg)
 
 
-## graph
+## ds-graph
 
 ![diagram](./index-11.svg)
 
 
-## landmark
+## graph
 
 ![diagram](./index-12.svg)
 
 
-## omap
+## landmark
 
 ![diagram](./index-13.svg)
 
 
-## ref-organ
+## omap
 
 ![diagram](./index-14.svg)
 
 
-## sample
+## ref-organ
 
 ![diagram](./index-15.svg)
 
 
-## spatial
+## sample
 
 ![diagram](./index-16.svg)
 
 
-## vocab
+## spatial
 
 ![diagram](./index-17.svg)
 
 
-## basic-metadata
+## sssom
 
 ![diagram](./index-18.svg)
+
+
+## vocab
+
+![diagram](./index-19.svg)
+
+
+## basic-metadata
+
+![diagram](./index-20.svg)
 
 

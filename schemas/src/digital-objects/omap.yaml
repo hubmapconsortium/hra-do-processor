@@ -16,11 +16,6 @@ imports:
   - ../shared/metadata-base
   - ../shared/instance-base
 
-settings:
-  uberon: "UBERON"
-  fma: "FMA"
-  hgnc: "HGNC"
-
 classes:
   Antibody:
     title: Antibody
@@ -34,7 +29,6 @@ classes:
       - parent_class
       - antibody_type
       - host
-      - isotype
       - clonality
       - clone_id
       - conjugate
@@ -42,8 +36,6 @@ classes:
       - recombinant
       - producer
       - catalog_number
-      - detects
-      - binds_to
     slot_usage:
       id:
         structured_pattern:
@@ -52,26 +44,6 @@ classes:
           partial_match: false
       antibody_type:
         pattern: (Primary|Secondary)
-    annotations:
-      owl.template: |-
-        {% for statement in detects %}
-          {% for protein_id in statement.protein_id %}
-          AnnotationAssertion(
-            Annotation(ccf:rationale "{{statement.rationale}}")
-            ccf:detects
-            {{id}}
-            {{protein_id}}
-          )
-          {% endfor %}
-        {% endfor %}
-        {% for statement in binds_to %}
-        AnnotationAssertion(
-          Annotation(ccf:rationale "{{statement.rationale}}")
-          ccf:binds_to
-          {{id}}
-          {{statement.antibody_id}}
-        )
-        {% endfor %}
 
   Protein:
     title: Protein
@@ -85,7 +57,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "{hgnc}:\\d+"
+          syntax: "HGNC:\\d+"
           interpolated: true
           partial_match: false
 
@@ -121,12 +93,36 @@ classes:
       - Named
       - Instance
     slots:
+      - record_number
+      - antibody_id
       - concentration
       - dilution
       - cycle_number
       - is_core_panel
       - used_by_experiment
       - based_on
+      - detects
+      - binds_to
+    annotations:
+      owl.template: |-
+        {% if detects %}
+          {% for i in range(detects.protein_id|length) %}
+          AnnotationAssertion(
+            Annotation(ccf:rationale "{{detects.rationale}}")
+            ccf:detects
+            {{id}}
+            {{detects.protein_id[i]}}
+          )
+          {% endfor %}
+        {% endif %}
+        {% if binds_to %}
+          AnnotationAssertion(
+            Annotation(ccf:rationale "{{binds_to.rationale}}")
+            ccf:binds_to
+            {{id}}
+            {{binds_to.antibody_id}}
+          )
+        {% endif %}
 
   RegisteredAntibody:
     title: Registered Antibody
@@ -139,6 +135,7 @@ classes:
       - Instance
     slots:
       - lot_number
+      - isotype
 
   MultiplexedAntibodyBasedImagingExperiment:
     title: Mutliplexed Antibody-based Imaging Experiment
@@ -204,7 +201,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "({uberon}|{fma}):\\d+"
+          syntax: "(UBERON|FMA):\\d+"
           interpolated: true
           partial_match: false
 
@@ -295,7 +292,7 @@ slots:
     title: concentration
     description: The concentration of the antibody used in the experiment.
     required: false
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   dilution:
@@ -366,7 +363,7 @@ slots:
   author_orcid:
     title: author ORCID
     description: Reference to the author by the ORCID identifier.
-    required: true
+    required: false
     range: Named
     inlined: false
     multivalued: true
@@ -478,8 +475,6 @@ slots:
       can detect.
     required: false
     range: DetectStatement
-    multivalued: true
-    inlined_as_list: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   protein_id:
@@ -496,8 +491,6 @@ slots:
       binds to.
     required: false
     range: BindsToStatement
-    multivalued: true
-    inlined_as_list: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   antibody_id:
@@ -511,3 +504,11 @@ slots:
       The justification or purpose behind the use of the antibody in the
       experiment.
     required: true
+  record_number:
+    title: record number
+    description: Numerical identifier for individual records.
+    required: true
+    slot_uri: ccf:record_number
+    range: integer
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty

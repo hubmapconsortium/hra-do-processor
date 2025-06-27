@@ -21,16 +21,6 @@ imports:
   - linkml:types
   - ../shared/metadata-base
 
-settings:
-  uberon: "UBERON"
-  fma: "FMA"
-  cl: "CL"
-  pcl: "PCL"
-  lmha: "LMHA"
-  hgnc: "HGNC"
-  hgnco: "HGNCO"
-  asctb_temp: "https://purl.org/ccf/ASCTB-TEMP_"
-
 classes:
   AsctbConcept:
     abstract: true
@@ -55,7 +45,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "({uberon}|{fma}):\\d+|{asctb_temp}[a-zA-Z0-9-]+"
+          syntax: "(UBERON|FMA):\\d+|https://purl.org/ccf/ASCTB-TEMP_[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
     annotations:
@@ -75,7 +65,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "({cl}|{pcl}|{lmha}):\\d+|{asctb_temp}[a-zA-Z0-9-]+"
+          syntax: "(CL|PCL|LMHA):\\d+|https://purl.org/ccf/ASCTB-TEMP_[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
     annotations:
@@ -84,7 +74,7 @@ classes:
         {% for s in has_characterizing_marker_set %}
         SubClassOf(
           {% for r in s.references %}
-            Annotation(dct:reference "{{r|e}}")
+            Annotation(dct:references "{{r|e}}")
           {% endfor %}
           {{id}}
           ObjectSomeValuesFrom(
@@ -111,7 +101,7 @@ classes:
     slot_usage:
       id:
         structured_pattern:
-          syntax: "{hgnc}:\\d+|{asctb_temp}[a-zA-Z0-9-]+|{hgnco}:[a-zA-Z0-9-]+"
+          syntax: "HGNC:\\d+|HGNCO:[a-zA-Z0-9-]+|https://purl.org/ccf/ASCTB-TEMP_[a-zA-Z0-9-]+"
           interpolated: true
           partial_match: false
     annotations:

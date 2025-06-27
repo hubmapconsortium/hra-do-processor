@@ -9,6 +9,7 @@ import { enrichGraphData, enrichGraphMetadata } from './enrich-graph.js';
 import { enrichRefOrganData, enrichRefOrganMetadata } from './enrich-ref-organ.js';
 import { enrichLandmarkData, enrichLandmarkMetadata } from './enrich-landmark.js';
 import { enrichOmapData, enrichOmapMetadata } from './enrich-omap.js';
+import { enrichCtAnnData, enrichCtAnnMetadata } from './enrich-ctann.js';
 import { enrichDatasetGraphData, enrichDatasetGraphMetadata } from './enrich-ds-graph.js';
 import { cleanDirectory } from './utils.js';
 
@@ -46,10 +47,14 @@ export async function enrich(context) {
       enrichCollectionMetadata(context);
       enrichCollectionData(context);
       break;
+    case 'ctann':
+      enrichCtAnnMetadata(context);
+      enrichCtAnnData(context);
+      break;
     case 'ds-graph':
-      // await enrichDatasetGraphData(context);
-      // enrichDatasetGraphMetadata(context);
-      // break;
+      await enrichDatasetGraphData(context);
+      enrichDatasetGraphMetadata(context);
+      break;
     case 'millitome':
     case 'vocab':
     case 'graph':

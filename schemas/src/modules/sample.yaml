@@ -19,44 +19,34 @@ classes:
   TissueBlock:
     title: Tissue Block
     description: >-
-      A tissue block is a defined piece of tissue extracted from a 
-      specific location for research or analysis, with detailed 
-      information about its extraction site, tissue sections, 
-      associated datasets, section counts and sizes, and collision 
+      A tissue block is a defined piece of tissue extracted from a
+      specific location for research or analysis, with detailed
+      information about its extraction site, tissue sections,
+      associated datasets, section counts and sizes, and collision
       summaries related to spatial overlaps.
     class_uri: ccf:TissueBlock
     mixins:
       - Named
       - Instance
     slots:
-      - partially_overlaps
       - pref_label
       - description
+      - sample_type
       - rui_location
-      - extraction_site
-      - external_link
+      - link
       - sections
       - datasets
       - section_count
-      - section_size # block_dimension
-      - section_size_unit # block_dimension_unit
-      - collision_summaries
-      - corridors
-      - links_back_to
-    slot_usage:
-      partially_overlaps:
-        annotations:
-          owl.template: |-
-            {% for organ_part in partially_overlaps %}
-            ClassAssertion(ObjectSomeValuesFrom(RO:0002151 {{organ_part}}) {{id}})
-            {% endfor %}
+      - section_size
+      - section_units
+      - donor
 
   TissueSection:
     title: Tissue Section
     description: >-
-      A tissue section is a thin slice or layer derived from a tissue block, 
-      associated with a specific section number, and linked to datasets 
-      generated from its analysis. 
+      A tissue section is a thin slice or layer derived from a tissue block,
+      associated with a specific section number, and linked to datasets
+      generated from its analysis.
     class_uri: ccf:TissueSection
     mixins:
       - Named
@@ -64,49 +54,24 @@ classes:
     slots:
       - pref_label
       - description
-      - external_link
-      - related_samples
+      - sample_type
+      - link
       - datasets
       - section_number
-      - links_back_to
-
-  SpatialEntityID:
-    title: Spatial Entity Identifier
-    slots:
-      - id
-
-  CollisionSummaryID:
-    title: Collision Summary Identifier
-    slots:
-      - id
-
-  CorridorID:
-    title: Corridor Identifier
-    slots:
-      - id
-
-  SampleOrDonorID:
-    title: Sample or Donor Identifier
-    slots:
-      - id
 
   SampleData:
     attributes:
-      donor:
+      donor_record:
         required: false
-      sample:
+      sample_record:
         multivalued: true
         inlined_as_list: true
         range: TissueBlock
-      dataset:
+      dataset_record:
         required: false
-      spatial_entity:
-        required: false 
-      cell_summary:
+      spatial_entity_record:
         required: false
-      collision:
-        required: false
-      corridor:
+      spatial_placement_record:
         required: false
 
   Container:
@@ -118,32 +83,28 @@ classes:
         range: SampleData
 
 slots:
-  external_link:
-    title: external link
+  link:
+    title: link
     description: A link to an external resource to provide more information.
     slot_uri: ccf:url
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  related_samples:
-    title: related sample
-    description: A collection of references to additional related samples.
-    slot_uri: ccf:related_sample
-    multivalued: true
-    inlined: false
-    range: TissueBlock
+  description:
+    title: commentary description
+    description: A commentry description about the tissue block or section.
+    slot_uri: rdfs:comment
+    required: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  partially_overlaps:
-    title: partially overlaps
+  sample_type:
+    title: sample type
     description: >-
-      Identifies other anatomical structures that partially overlap with
-      the spatial positioning of the tissue block.
-    multivalued: true
-    range: Named
-    slot_uri: RO:0002151
+      The type of sample, such as tissue block or tissue section.
+    slot_uri: ccf:sample_type
+    required: true
+    range: SampleTypeEnum
     annotations:
-      owl.template: |-
-        AnnotationAssertion( rdfs:label RO:0002151 "partially overlaps" )
+      owl: AnnotationProperty, AnnotationAssertion
   rui_location:
     title: registration location
     description: >-
@@ -151,16 +112,7 @@ slots:
       the reference atlas.
     slot_uri: ccf:has_registration_location
     required: false
-    range: SpatialEntityID
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  extraction_site:
-    title: extraction site
-    description: >-
-      Reference to the anatomical site from which the tissue was extracted.
-    slot_uri: ccf:has_extraction_site
-    required: false
-    range: SpatialEntityID
+    range: EntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   sections:
@@ -177,7 +129,7 @@ slots:
     title: generates dataset
     description: Datasets generated from the tissue block or section.
     slot_uri: ccf:generates_dataset
-    range: Dataset
+    range: EntityID
     multivalued: true
     inlined: false
     annotations:
@@ -185,6 +137,7 @@ slots:
   section_count:
     title: section count
     description: The number of sections contained within the tissue block.
+    slot_uri: ccf:section_count
     required: false
     range: integer
     annotations:
@@ -192,51 +145,39 @@ slots:
   section_size:
     title: section size
     description: The physical size of each tissue section.
+    slot_uri: ccf:section_size
     required: false
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  section_size_unit:
+  section_units:
     title: section size unit
     description: The unit of measurement used for the section size.
+    slot_uri: ccf:section_size_unit
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   section_number:
     title: section number
     description: The order number of a specific section within a tissue block.
+    slot_uri: ccf:section_number
     required: false
     range: integer
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  collision_summaries:
-    title: collision summary
+  donor:
+    title: donor
     description: >-
-      Summaries of collision data indicating spatial collisions with other organs.
-    slot_uri: ccf:has_collision_summary
-    required: false
-    multivalued: true
-    range: CollisionSummaryID
+      Reference to the donor associated with the tissue block.
+    slot_uri: ccf:comes_from
+    required: true
+    range: EntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
-  corridors:
-    title: corridor
-    description: >-
-      References to corridor structures linked to the spatial positioning of the 
-      tissue block.
-    slot_uri: ccf:has_corridor
-    required: false
-    multivalued: true
-    range: CorridorID
-    annotations:
-      owl: AnnotationProperty, AnnotationAssertion
-  links_back_to:
-    title: links back to
-    description: >-
-      URI that links back to a related resource as a reference connection.
-    required: false
-    range: SampleOrDonorID
-    annotations:
-      owl: ObjectProperty, ObjectPropertyAssertion
-      owl.template: |-
-        AnnotationAssertion( rdfs:label ccf:links_back_to "links back to" )
-        TransitiveObjectProperty( ccf:links_back_to )
+
+enums:
+  SampleTypeEnum:
+    permissible_values:
+      Tissue Block:
+        description: A defined piece of tissue extracted from a specific location
+      Tissue Section:
+        description: A thin slice or layer derived from a tissue block

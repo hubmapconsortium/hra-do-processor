@@ -3,13 +3,9 @@ name: spatial
 prefixes:
   ccf: http://purl.org/ccf/
   oboInOwl: http://www.geneontology.org/formats/oboInOwl#
-  loinc: http://purl.bioontology.org/ontology/LNC/
   linkml: https://w3id.org/linkml/
-  RO: http://purl.obolibrary.org/obo/RO_
-  IAO: http://purl.obolibrary.org/obo/IAO_
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   FMA: http://purl.org/sig/ont/fma/fma
-  ASCTB-TEMP: https://purl.org/ccf/ASCTB-TEMP_
 
 default_prefix: ccf
 default_range: string
@@ -17,11 +13,9 @@ default_range: string
 imports:
   - linkml:types
   - ../shared/metadata-base
-
-settings:
-  uberon: "UBERON"
-  fma: "FMA"
-  asctb_temp: "ASCTB-TEMP"
+  - cell-summary
+  - collision
+  - corridor
 
 classes:
   SpatialEntity:
@@ -36,6 +30,8 @@ classes:
       - Instance
     slots:
       - pref_label
+      - creator_first_name
+      - creator_last_name
       - creator_name
       - create_date
       - x_dimension
@@ -45,7 +41,9 @@ classes:
       - collides_with
       - slice_count
       - slice_thickness
-      - placement
+      - all_collisions
+      - corridor
+      - summaries
     slot_usage:
       dimension_unit:
         pattern: (centimeter|millimeter)
@@ -61,6 +59,7 @@ classes:
       - Named
       - Instance
     slots:
+      - pref_label
       - source
       - target
       - placement_date
@@ -104,35 +103,22 @@ classes:
       - file_format
       - placement
 
-  AnatomicalStructureID:
-    title: Anatomical Structure Identifier
-    slots:
-      - id
-    slot_usage:
-      id:
-        structured_pattern:
-          syntax: "({uberon}|{fma}):\\d+|{asctb_temp}[a-zA-Z0-9-]+"
-          interpolated: true
-          partial_match: false
-
   SpatialData:
     attributes:
-      donor:
+      donor_record:
         required: false
-      sample:
+      sample_record:
         required: false
-      dataset:
+      dataset_record:
         required: false
-      spatial_entity:
+      spatial_entity_record:
         multivalued: true
         inlined_as_list: true
         range: SpatialEntity
-      cell_summary:
-        required: false
-      collision:
-        required: false
-      corridor:
-        required: false
+      spatial_placement_record:
+        multivalued: true
+        inlined_as_list: true
+        range: SpatialPlacement
 
   Container:
     tree_root: true
@@ -143,11 +129,27 @@ classes:
         range: SpatialData
 
 slots:
+  creator:
+    title: creator
+    description: The creator of the spatial entity.
+    slot_uri: dct:creator
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  creator_first_name:
+    title: creator first name
+    description: The first name of the creator.
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  creator_last_name:
+    title: creator last name
+    description: The last name of the creator.
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   x_dimension:
     title: dimension in x-axis
     description: The length of the spatial entity along the X-axis.
     required: true
-    range: float
+    range: decimal
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -155,7 +157,7 @@ slots:
     title: dimension in y-axis
     description: The length of the spatial entity along the Y-axis.
     required: true
-    range: float
+    range: decimal
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -163,7 +165,7 @@ slots:
     title: dimension in z-axis
     description: The length of the spatial entity along the Z-axis.
     required: true
-    range: float
+    range: decimal
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -173,13 +175,30 @@ slots:
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
+  dimension_units:
+    title: dimension unit
+    description: The unit of measurement used for the spatial entity's dimensions.
+    slot_uri: ccf:dimension_unit
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  ccf_annotations:
+    title: collides with
+    description: >-
+      Identifies other anatomical structures that intersect or collide with
+      this spatial entity.
+    slot_uri: ccf:collides_with
+    multivalued: true
+    range: EntityID
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion  
   collides_with:
     title: collides with
     description: >-
       Identifies other anatomical structures that intersect or collide with
       this spatial entity.
     multivalued: true
-    range: AnatomicalStructureID
+    range: EntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   slice_count:
@@ -191,7 +210,7 @@ slots:
   slice_thickness:
     title: slice thickness
     description: The thickness of each slice within the spatial entity.
-    range: integer
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   object_reference:
@@ -233,6 +252,7 @@ slots:
   placement_date:
     title: placement date
     description: The date when the placement of the entity was established.
+    slot_uri: dct:created
     required: true
     range: date
     annotations:
@@ -241,7 +261,7 @@ slots:
     title: scaling in x-axis
     description: Scaling factor applied along the X-axis.
     required: true
-    range: float
+    range: decimal
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -249,7 +269,7 @@ slots:
     title: scaling in y-axis
     description: Scaling factor applied along the Y-axis.
     required: true
-    range: float
+    range: decimal
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -257,7 +277,7 @@ slots:
     title: scaling in z-axis
     description: Scaling factor applied along the Z-axis.
     required: true
-    range: float
+    range: decimal
     minimum_value: 0.0
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -267,30 +287,44 @@ slots:
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
+  scaling_units:
+    title: scaling unit
+    description: The unit of measurement for scaling, usually represented as a ratio.
+    slot_uri: ccf:scaling_unit
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   x_rotation:
     title: rotation in x-axis
     description: Rotation of the spatial entity around the X-axis.
     required: true
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   y_rotation:
     title: rotation in y-axis
     description: Rotation of the spatial entity around the Y-axis.
     required: true
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   z_rotation:
     title: rotation in z-axis
     description: Rotation of the spatial entity around the Z-axis.
     required: true
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   rotation_unit:
     title: rotation unit
     description: The unit for rotation, typically measured in degrees.
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  rotation_units:
+    title: rotation unit
+    description: The unit for rotation, typically measured in degrees.
+    slot_uri: ccf:rotation_unit
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -304,26 +338,33 @@ slots:
     title: translation in x-axis
     description: The positional offset along the X-axis.
     required: true
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   y_translation:
     title: translation in y-axis
     description: The positional offset along the Y-axis.
     required: true
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   z_translation:
     title: translation in z-axis
     description: The positional offset along the Z-axis.
     required: true
-    range: float
+    range: decimal
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   translation_unit:
     title: translation unit
     description: The unit for translation distances.
+    required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  translation_units:
+    title: translation unit
+    description: The unit for translation distances.
+    slot_uri: ccf:translation_unit
     required: true
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
@@ -349,5 +390,36 @@ slots:
     title: file format
     description: The format of the file to read.
     required: true
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  all_collisions:
+    title: has collision summaries
+    description: >-
+      Summaries of collision data indicating spatial collisions with other organs.
+    slot_uri: ccf:has_collision_summary
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: CollisionSummary
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  corridor:
+    title: corridor
+    description: >-
+      The corridor structures linked to the spatial positioning of the tissue sample.
+    slot_uri: ccf:has_corridor
+    required: false
+    inlined: true
+    range: Corridor
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  summaries:
+    title: has cell summary
+    description: List of cell summary data associated with this dataset.
+    slot_uri: ccf:has_cell_summary
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: CellSummary
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
