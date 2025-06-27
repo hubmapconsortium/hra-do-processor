@@ -10,6 +10,7 @@ const DEFAULT_CDN_IRI = process.env.DEFAULT_CDN_IRI || 'https://cdn.humanatlas.i
 
 const DEFAULT_DO_HOME = resolve(process.env.DO_HOME || './digital-objects');
 const DEFAULT_DEPLOY_HOME = resolve(process.env.DEPLOY_HOME || './dist');
+const DEFAULT_RECONSTRUCT_HOME = resolve(process.env.RECONSTRUCT_HOME || './.store');
 export const PROCESSOR_HOME = resolve(process.env.PROCESSOR_HOME || dirname(dirname(getDirName(import.meta.url))));
 
 export function getProcessorVersion() {
@@ -22,6 +23,7 @@ export function getContext(program, subcommand, selectedDigitalObject) {
     doHome: DEFAULT_DO_HOME,
     processorHome: PROCESSOR_HOME,
     deploymentHome: DEFAULT_DEPLOY_HOME,
+    reconstructionHome: DEFAULT_RECONSTRUCT_HOME,
     purlIri: DEFAULT_PURL_IRI,
     lodIri: DEFAULT_LOD_IRI,
     cdnIri: DEFAULT_CDN_IRI,

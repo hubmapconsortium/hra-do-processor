@@ -4,6 +4,7 @@ digital-objects/*/*/*/normalized
 digital-objects/*/*/*/enriched
 scratch
 schemas/generated/*
+.store/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -299,3 +300,6 @@ dist
 
 # VSCode settings
 .vscode
+
+# MacOS specific ignores
+.DS_Store
