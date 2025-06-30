@@ -207,6 +207,24 @@ function transformRecords(context) {
       return parts[0];
     };
     
+    // Get the base column name (e.g., "AS/1/LABEL" -> "AS/1", "CT/2/ID" -> "CT/2")
+    const getBaseColumn = (col) => {
+      const parts = col.split('/');
+      if (parts.length >= 2) {
+        return `${parts[0]}/${parts[1]}`;
+      }
+      return col;
+    };
+    
+    // Get the suffix type (e.g., "AS/1/LABEL" -> "LABEL", "CT/2/ID" -> "ID", "AS/1" -> "")
+    const getSuffixType = (col) => {
+      const parts = col.split('/');
+      if (parts.length >= 3) {
+        return parts[2];
+      }
+      return '';
+    };
+    
     const prefixA = getPrefix(a);
     const prefixB = getPrefix(b);
     
@@ -219,13 +237,31 @@ function transformRecords(context) {
       if (orderA !== orderB) {
         return orderA - orderB;
       }
+      
+      // If same prefix, sort by base column first, then by suffix type
+      const baseColumnA = getBaseColumn(a);
+      const baseColumnB = getBaseColumn(b);
+      
+      if (baseColumnA !== baseColumnB) {
+        return baseColumnA.localeCompare(baseColumnB);
+      }
+      
+      // If same base column, sort by suffix type: base column first, then LABEL, then ID
+      const suffixA = getSuffixType(a);
+      const suffixB = getSuffixType(b);
+      
+      const suffixOrder = { '': 0, 'LABEL': 1, 'ID': 2 };
+      const suffixOrderA = suffixOrder[suffixA] ?? 3;
+      const suffixOrderB = suffixOrder[suffixB] ?? 3;
+      
+      return suffixOrderA - suffixOrderB;
     }
     
     // If only one is in our order list, prioritize it
     if (orderA !== -1 && orderB === -1) return -1;
     if (orderA === -1 && orderB !== -1) return 1;
     
-    // If neither is in our order list or they're the same prefix, sort alphabetically
+    // If neither is in our order list, sort alphabetically
     return a.localeCompare(b);
   });
 
