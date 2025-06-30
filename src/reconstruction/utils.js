@@ -4,7 +4,7 @@ import { resolve } from 'path';
 import { throwOnError } from '../utils/sh-exec.js';
 import { info } from '../utils/logging.js';
 import { reifyDoTurtle, reifyMetadataTurtle, reifyRedundantTurtle } from '../utils/reify.js';
-import { loadDoIntoTripleStore, loadRedundantIntoTripleStore } from '../deployment/utils.js';
+import { loadDoIntoTripleStore, loadMetadataIntoTripleStore, loadRedundantIntoTripleStore } from '../deployment/utils.js';
 
 // Prefix definitions for shortening URIs
 const PREFIX_MAPPINGS = {
@@ -53,6 +53,7 @@ export function loadGraph(context) {
 
   info(`Reifying "${obj.doString}" metadata`);
   reifyMetadataTurtle(context, metadataTtl);
+  loadMetadataIntoTripleStore(context, resolve(context.reconstructionHome, 'blazegraph.jnl'));
 
   // Check if the enrichment produces redundant graph
   const redundant = resolve(obj.path, 'enriched/redundant.ttl');

@@ -21,11 +21,17 @@ function queryGraph(context) {
     const processorHome = resolve(context.processorHome);
     const reconstructPath = resolve(context.reconstructionHome);
     const journalPath = resolve(reconstructPath, 'blazegraph.jnl');
-    const queryPath = resolve(processorHome, 'src/reconstruction/queries/get-asct-b-records.rq');
-    const outputPath = resolve(reconstructPath, 'records.tsv');
 
-    executeBlazegraphQuery(journalPath, queryPath, outputPath);
+    // Query records
+    const recordsQueryPath = resolve(processorHome, 'src/reconstruction/queries/get-asct-b-records.rq');
+    const recordsOutputPath = resolve(reconstructPath, 'records.tsv');
+    executeBlazegraphQuery(journalPath, recordsQueryPath, recordsOutputPath);
     
+    // Query metadata
+    const metadataQueryPath = resolve(processorHome, 'src/reconstruction/queries/get-asct-b-metadata.rq');
+    const metadataOutputPath = resolve(reconstructPath, 'metadata.tsv');
+    executeBlazegraphQuery(journalPath, metadataQueryPath, metadataOutputPath);
+
     info('Graph query completed successfully');
   } catch (err) {
     error('Error during graph query:', err);
@@ -36,9 +42,22 @@ function queryGraph(context) {
 function transformRecords(context) {
   const reconstructPath = resolve(context.reconstructionHome);
   const inputFilePath = resolve(reconstructPath, 'records.tsv');
+  const metadataFilePath = resolve(reconstructPath, 'metadata.tsv');
 
   info('Reading TSV file...');
   const fileContent = readFileSync(inputFilePath, 'utf8');
+
+  // Read and parse metadata
+  info('Reading metadata file...');
+  const metadataContent = readFileSync(metadataFilePath, 'utf8');
+  const metadataLines = metadataContent.trim().split(/\r?\n/);
+  const metadataHeaders = metadataLines[0].split('\t');
+  const metadataData = metadataLines[1].split('\t');
+  
+  const metadata = {};
+  metadataHeaders.forEach((header, index) => {
+    metadata[header] = metadataData[index] || '';
+  });
 
   // Parse TSV content
   const lines = fileContent.trim().split(/\r?\n/); // Handle both \r\n and \n line endings
@@ -265,7 +284,27 @@ function transformRecords(context) {
     return a.localeCompare(b);
   });
 
-  // Write output
-  const outputContent = [newHeader.join(','), ...transformedRows.map(row => newHeader.map(col => row[col] || '').join(','))].join('\n');
+  // Create metadata rows
+  const metadataRows = [
+    [metadata['?tableTitle'], '', '', '', '', '', '', '', ''], // First row with table title
+    ['', '', '', '', '', '', '', '', ''], // Empty second row
+    [`Author Name(s):`, metadata['?authorNames']],
+    [`Author ORCID(s):`, metadata['?authorOrcids']],
+    [`Reviewer(s):`, metadata['?reviewerNames']],
+    [`Reviewer ORCID(s):`, metadata['?reviewerOrcids']],
+    [`General Publication(s):`, metadata['?generalPublications']],
+    [`Data DOI:`, metadata['?dataDoi']],
+    [`Date:`, metadata['?date']],
+    [`Version Number:`, metadata['?versionNumber']]
+  ];
+
+  // Write output with metadata at the top
+  const csvDataRows = transformedRows.map(row => newHeader.map(col => row[col] || '').join(','));
+  const outputContent = [
+    ...metadataRows.map(row => row.join(',')),
+    newHeader.join(','),
+    ...csvDataRows
+  ].join('\n');
+  
   writeReconstructedData(context, outputContent, 'reconstructed.csv');
 }
