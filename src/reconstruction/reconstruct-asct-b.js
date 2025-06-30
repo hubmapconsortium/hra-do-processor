@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { info, error } from '../utils/logging.js';
-import { writeReconstructedData, executeBlazegraphQuery, loadGraph } from './utils.js';
+import { writeReconstructedData, executeBlazegraphQuery, loadGraph, shortenId } from './utils.js';
 
 export function reconstructAsctb(context) {
   try {   
@@ -92,7 +92,7 @@ function transformRecords(context) {
       const columnPrefix = `AS/${entry.orderNumber}`;
       transformedRow[columnPrefix] = entry.prefLabel;
       transformedRow[`${columnPrefix}/LABEL`] = entry.conceptLabel;
-      transformedRow[`${columnPrefix}/ID`] = entry.sourceConcept;
+      transformedRow[`${columnPrefix}/ID`] = shortenId(entry.sourceConcept);
       
       allColumns.add(columnPrefix);
       allColumns.add(`${columnPrefix}/LABEL`);
@@ -121,7 +121,7 @@ function transformRecords(context) {
       const columnPrefix = `CT/${entry.orderNumber}`;
       transformedRow[columnPrefix] = entry.prefLabel;
       transformedRow[`${columnPrefix}/LABEL`] = entry.conceptLabel;
-      transformedRow[`${columnPrefix}/ID`] = entry.sourceConcept;
+      transformedRow[`${columnPrefix}/ID`] = shortenId(entry.sourceConcept);
       
       allColumns.add(columnPrefix);
       allColumns.add(`${columnPrefix}/LABEL`);
@@ -172,7 +172,7 @@ function transformRecords(context) {
       const columnPrefix = `${bmPrefix}/${entry.orderNumber}`;
       transformedRow[columnPrefix] = entry.prefLabel;
       transformedRow[`${columnPrefix}/LABEL`] = entry.conceptLabel;
-      transformedRow[`${columnPrefix}/ID`] = entry.sourceConcept;
+      transformedRow[`${columnPrefix}/ID`] = shortenId(entry.sourceConcept);
       
       allColumns.add(columnPrefix);
       allColumns.add(`${columnPrefix}/LABEL`);

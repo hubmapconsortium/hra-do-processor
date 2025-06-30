@@ -6,6 +6,32 @@ import { info } from '../utils/logging.js';
 import { reifyDoTurtle, reifyMetadataTurtle, reifyRedundantTurtle } from '../utils/reify.js';
 import { loadDoIntoTripleStore, loadRedundantIntoTripleStore } from '../deployment/utils.js';
 
+// Prefix definitions for shortening URIs
+const PREFIX_MAPPINGS = {
+  'http://purl.obolibrary.org/obo/UBERON_': 'UBERON:',
+  'http://purl.obolibrary.org/obo/CL_': 'CL:',
+  'http://purl.obolibrary.org/obo/PCL_': 'PCL:',
+  'http://purl.obolibrary.org/obo/LMHA_': 'LMHA:',
+  'http://purl.org/sig/ont/fma/fma': 'FMA:',
+  'http://identifiers.org/hgnc/': 'HGNC:'
+};
+
+export function shortenId(uri) {
+  if (!uri || typeof uri !== 'string') {
+    return uri;
+  }
+
+  // Check each prefix mapping
+  for (const [fullPrefix, shortPrefix] of Object.entries(PREFIX_MAPPINGS)) {
+    if (uri.startsWith(fullPrefix)) {
+      return uri.replace(fullPrefix, shortPrefix);
+    }
+  }
+
+  // Return original URI if no prefix matches
+  return uri;
+}
+
 export function loadGraph(context) {
   const obj = context.selectedDigitalObject;
   const reconstructPath = resolve(context.reconstructionHome);
