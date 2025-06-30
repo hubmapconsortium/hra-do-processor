@@ -1,38 +1,30 @@
-import { existsSync, mkdirSync, rmSync } from 'fs';
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { info } from '../utils/logging.js';
-import { reifyDoTurtle, reifyMetadataTurtle, reifyRedundantTurtle } from '../utils/reify.js';
-import { loadDoIntoTripleStore, loadRedundantIntoTripleStore } from '../deployment/utils.js';
+import { header, warning } from '../utils/logging.js';
+import { reconstructAsctb } from './reconstruct-asct-b.js';
+import { cleanDirectory } from './utils.js';
 
 export function reconstruct(context) {
-  const obj = context.selectedDigitalObject;
-  const reconstructPath = resolve(context.reconstructionHome);
-  const graphTtl = resolve(reconstructPath, 'graph.ttl');
-  const metadataTtl = resolve(reconstructPath, 'metadata.ttl');
+  const { selectedDigitalObject: obj } = context;
+  sh.mkdir('-p', resolve(obj.path, 'reconstructed'));
+  header(context, 'run-reconstruction');
 
-  // Remove existing reconstruct path if it exists, then create fresh
-  if (existsSync(reconstructPath)) {
-    rmSync(reconstructPath, { recursive: true, force: true });
-  }
-  mkdirSync(reconstructPath, { recursive: true });
+  // Clean up any existing files
+  cleanDirectory(context);
 
-  sh.cp(resolve(obj.path, 'enriched/enriched.ttl'), graphTtl);
-  sh.cp(resolve(obj.path, 'enriched/enriched-metadata.ttl'), metadataTtl);
-
-  info(`Reifying "${obj.doString}"`);
-  reifyDoTurtle(context, graphTtl);
-  loadDoIntoTripleStore(context, resolve(context.reconstructionHome, 'blazegraph.jnl'));
-
-  info(`Reifying "${obj.doString}" metadata`);
-  reifyMetadataTurtle(context, metadataTtl);
-
-  // Check if the enrichment produces redundant graph
-  const redundant = resolve(obj.path, 'enriched/redundant.ttl');
-  if (existsSync(redundant)) {
-    const redundantReconstructPath = resolve(reconstructPath, 'redundant.ttl');
-    sh.cp(redundant, redundantReconstructPath);
-    reifyRedundantTurtle(context, redundantReconstructPath);
-    loadRedundantIntoTripleStore(context, resolve(context.reconstructionHome, 'blazegraph.jnl'));
+  switch (obj.type) {
+    case 'asct-b':
+      reconstructAsctb(context);
+      break;
+    case 'omap':
+    case 'ctann':
+    case 'ref-organ':
+    case '2d-ftu':
+    case 'collection':
+      warning(`"${obj.type}" digital object type is not yet implemented.`);
+      break;
+    default:
+      error(`"${obj.type}" digital object type is not supported for reconstruction.`);
+      break;
   }
 }

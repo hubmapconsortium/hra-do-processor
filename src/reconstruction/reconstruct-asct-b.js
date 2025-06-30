@@ -1,9 +1,10 @@
 import { resolve } from 'path';
 import { info, error } from '../utils/logging.js';
-import { executeBlazegraphQuery } from './utils.js';
+import { executeBlazegraphQuery, loadGraph } from './utils.js';
 
 export function reconstructAsctb(context) {
   try {   
+    loadGraph(context);
     queryGraph(context);
 
     info('ASCT-B reconstruction completed successfully');
