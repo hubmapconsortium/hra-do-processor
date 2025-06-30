@@ -41,7 +41,7 @@ function transformRecords(context) {
   const fileContent = readFileSync(inputFilePath, 'utf8');
 
   // Parse TSV content
-  const lines = fileContent.trim().split('\n');
+  const lines = fileContent.trim().split(/\r?\n/); // Handle both \r\n and \n line endings
   const headers = lines[0].split('\t');
   const dataRows = lines.slice(1).map(line => {
     const values = line.split('\t');
