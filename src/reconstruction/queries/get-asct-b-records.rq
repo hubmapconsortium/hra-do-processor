@@ -1,0 +1,125 @@
+PREFIX ccf: <http://purl.org/ccf/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?record_number_str ?record_references_str
+       ?as_pref_label_str ?as_source_concept_str ?as_concept_label_str ?as_record_number_str ?as_order_number_str
+       ?ct_pref_label_str ?ct_source_concept_str ?ct_concept_label_str ?ct_record_number_str ?ct_order_number_str
+       ?bm_pref_label_str ?bm_biomarker_type_str ?bm_source_concept_str ?bm_concept_label_str ?bm_record_number_str ?bm_order_number_str
+WHERE {
+    # Get ASCT+B Records
+    ?record rdf:type ccf:AsctbRecord .
+    OPTIONAL { ?record ccf:record_number ?record_number }
+    OPTIONAL { ?record dct:references ?record_references }
+    
+    # Get Anatomical Structure Records
+    OPTIONAL {
+        ?record ccf:anatomical_structure ?anatomical_structure .
+        ?anatomical_structure rdf:type ccf:AnatomicalStructureRecord .
+        OPTIONAL { ?anatomical_structure ccf:ccf_pref_label ?as_pref_label }
+        OPTIONAL { ?anatomical_structure ccf:source_concept ?as_source_concept .
+            ?as_source_concept rdfs:label ?as_concept_label
+        }
+        OPTIONAL { ?anatomical_structure ccf:record_number ?as_record_number }
+        OPTIONAL { ?anatomical_structure ccf:order_number ?as_order_number }
+    }
+    
+    # Get Cell Type Records
+    OPTIONAL {
+        ?record ccf:cell_type ?cell_type .
+        ?cell_type rdf:type ccf:CellTypeRecord .
+        OPTIONAL { ?cell_type ccf:ccf_pref_label ?ct_pref_label }
+        OPTIONAL { ?cell_type ccf:source_concept ?ct_source_concept .
+            ?ct_source_concept rdfs:label ?ct_concept_label
+        }
+        OPTIONAL { ?cell_type ccf:record_number ?ct_record_number }
+        OPTIONAL { ?cell_type ccf:order_number ?ct_order_number }
+    }
+    
+    # Get Biomarker Records (Gene Markers)
+    OPTIONAL {
+        ?record ccf:gene_marker ?biomarker .
+        ?biomarker rdf:type ccf:BiomarkerRecord .
+        OPTIONAL { ?biomarker ccf:ccf_pref_label ?bm_pref_label }
+        OPTIONAL { ?biomarker ccf:ccf_biomarker_type ?bm_biomarker_type }
+        OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
+            ?bm_source_concept rdfs:label ?bm_concept_label
+        }
+        OPTIONAL { ?biomarker ccf:record_number ?bm_record_number }
+        OPTIONAL { ?biomarker ccf:order_number ?bm_order_number }
+    }
+    
+    # Get Biomarker Records (Protein Markers)
+    OPTIONAL {
+        ?record ccf:protein_marker ?biomarker .
+        ?biomarker rdf:type ccf:BiomarkerRecord .
+        OPTIONAL { ?biomarker ccf:ccf_pref_label ?bm_pref_label }
+        OPTIONAL { ?biomarker ccf:ccf_biomarker_type ?bm_biomarker_type }
+        OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
+            ?bm_source_concept rdfs:label ?bm_concept_label
+        }
+        OPTIONAL { ?biomarker ccf:record_number ?bm_record_number }
+        OPTIONAL { ?biomarker ccf:order_number ?bm_order_number }
+    }
+    
+    # Get Biomarker Records (Lipid Markers)
+    OPTIONAL {
+        ?record ccf:lipid_marker ?biomarker .
+        ?biomarker rdf:type ccf:BiomarkerRecord .
+        OPTIONAL { ?biomarker ccf:ccf_pref_label ?bm_pref_label }
+        OPTIONAL { ?biomarker ccf:ccf_biomarker_type ?bm_biomarker_type }
+        OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
+            ?bm_source_concept rdfs:label ?bm_concept_label
+        }
+        OPTIONAL { ?biomarker ccf:record_number ?bm_record_number }
+        OPTIONAL { ?biomarker ccf:order_number ?bm_order_number }
+    }
+    
+    # Get Biomarker Records (Metabolite Markers)
+    OPTIONAL {
+        ?record ccf:metabolite_marker ?biomarker .
+        ?biomarker rdf:type ccf:BiomarkerRecord .
+        OPTIONAL { ?biomarker ccf:ccf_pref_label ?bm_pref_label }
+        OPTIONAL { ?biomarker ccf:ccf_biomarker_type ?bm_biomarker_type }
+        OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
+            ?bm_source_concept rdfs:label ?bm_concept_label
+        }
+        OPTIONAL { ?biomarker ccf:record_number ?bm_record_number }
+        OPTIONAL { ?biomarker ccf:order_number ?bm_order_number }
+    }
+    
+    # Get Biomarker Records (Proteoform Markers)
+    OPTIONAL {
+        ?record ccf:proteoform_marker ?biomarker .
+        ?biomarker rdf:type ccf:BiomarkerRecord .
+        OPTIONAL { ?biomarker ccf:ccf_pref_label ?bm_pref_label }
+        OPTIONAL { ?biomarker ccf:ccf_biomarker_type ?bm_biomarker_type }
+        OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
+            ?bm_source_concept rdfs:label ?bm_concept_label
+        }
+        OPTIONAL { ?biomarker ccf:record_number ?bm_record_number }
+        OPTIONAL { ?biomarker ccf:order_number ?bm_order_number }
+    }
+    
+    # Bind all values to STR
+    BIND(STR(?record_number) AS ?record_number_str)
+    BIND(STR(?record_references) AS ?record_references_str)
+    BIND(STR(?as_pref_label) AS ?as_pref_label_str)
+    BIND(STR(?as_source_concept) AS ?as_source_concept_str)
+    BIND(STR(?as_concept_label) AS ?as_concept_label_str)
+    BIND(STR(?as_record_number) AS ?as_record_number_str)
+    BIND(STR(?as_order_number) AS ?as_order_number_str)
+    BIND(STR(?ct_pref_label) AS ?ct_pref_label_str)
+    BIND(STR(?ct_source_concept) AS ?ct_source_concept_str)
+    BIND(STR(?ct_concept_label) AS ?ct_concept_label_str)
+    BIND(STR(?ct_record_number) AS ?ct_record_number_str)
+    BIND(STR(?ct_order_number) AS ?ct_order_number_str)
+    BIND(STR(?bm_pref_label) AS ?bm_pref_label_str)
+    BIND(STR(?bm_biomarker_type) AS ?bm_biomarker_type_str)
+    BIND(STR(?bm_source_concept) AS ?bm_source_concept_str)
+    BIND(STR(?bm_concept_label) AS ?bm_concept_label_str)
+    BIND(STR(?bm_record_number) AS ?bm_record_number_str)
+    BIND(STR(?bm_order_number) AS ?bm_order_number_str)
+}
+ORDER BY ?record_number_str ?as_order_number_str ?ct_order_number_str ?bm_order_number_str
