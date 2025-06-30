@@ -3,7 +3,8 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dct: <http://purl.org/dc/terms/>
 
-SELECT DISTINCT ?record_number_str ?record_references_str
+SELECT DISTINCT ?record_number_str 
+       (GROUP_CONCAT(DISTINCT ?record_references_str; SEPARATOR=", ") AS ?record_references_str)
        ?as_pref_label_str ?as_source_concept_str ?as_concept_label_str ?as_record_number_str ?as_order_number_str
        ?ct_pref_label_str ?ct_source_concept_str ?ct_concept_label_str ?ct_record_number_str ?ct_order_number_str
        ?bm_pref_label_str ?bm_biomarker_type_str ?bm_source_concept_str ?bm_concept_label_str ?bm_record_number_str ?bm_order_number_str
@@ -122,4 +123,7 @@ WHERE {
     BIND(STR(?bm_record_number) AS ?bm_record_number_str)
     BIND(STR(?bm_order_number) AS ?bm_order_number_str)
 }
+GROUP BY ?record_number_str ?as_pref_label_str ?as_source_concept_str ?as_concept_label_str ?as_record_number_str ?as_order_number_str
+         ?ct_pref_label_str ?ct_source_concept_str ?ct_concept_label_str ?ct_record_number_str ?ct_order_number_str
+         ?bm_pref_label_str ?bm_biomarker_type_str ?bm_source_concept_str ?bm_concept_label_str ?bm_record_number_str ?bm_order_number_str
 ORDER BY ?record_number_str ?as_order_number_str ?ct_order_number_str ?bm_order_number_str
