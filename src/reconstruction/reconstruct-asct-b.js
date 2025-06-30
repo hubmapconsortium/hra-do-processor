@@ -197,8 +197,37 @@ function transformRecords(context) {
     transformedRows.push(transformedRow);
   });
 
-  // Create sorted column headers
-  const newHeader = Array.from(allColumns).sort();
+  // Create column headers in the specified order: AS, CT, BM, REF
+  const columnOrder = ['AS', 'CT', 'BGene', 'BProtein', 'BLipid', 'BMetabolite', 'BProteoform', 'REF'];
+  
+  const newHeader = Array.from(allColumns).sort((a, b) => {
+    // Get the prefix of each column (e.g., "AS/1" -> "AS", "CT/2/LABEL" -> "CT")
+    const getPrefix = (col) => {
+      const parts = col.split('/');
+      return parts[0];
+    };
+    
+    const prefixA = getPrefix(a);
+    const prefixB = getPrefix(b);
+    
+    // Find the order of each prefix in our desired order
+    const orderA = columnOrder.indexOf(prefixA);
+    const orderB = columnOrder.indexOf(prefixB);
+    
+    // If both prefixes are in our order list, sort by their position
+    if (orderA !== -1 && orderB !== -1) {
+      if (orderA !== orderB) {
+        return orderA - orderB;
+      }
+    }
+    
+    // If only one is in our order list, prioritize it
+    if (orderA !== -1 && orderB === -1) return -1;
+    if (orderA === -1 && orderB !== -1) return 1;
+    
+    // If neither is in our order list or they're the same prefix, sort alphabetically
+    return a.localeCompare(b);
+  });
 
   // Write output
   const outputContent = [newHeader.join(','), ...transformedRows.map(row => newHeader.map(col => row[col] || '').join(','))].join('\n');
