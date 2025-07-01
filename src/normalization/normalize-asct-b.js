@@ -424,7 +424,7 @@ function generateReferenceInstance(context, recordNumber, data, index) {
     order_number: orderNumber,
   };
   if (name) {
-    obj.external_id = name;
+    obj.external_id = normalizePubMedUrl(name);
   }
   return obj;
 }
@@ -482,6 +482,17 @@ function checkNotEmpty(str) {
 function checkIsDoi(str) {
   const doiRegex = /(10\.\d{4,9}\/[\w\-._;()/:]+)/i;
   return doiRegex.test(str);
+}
+
+function normalizePubMedUrl(str) {
+  // Check if the string contains a PubMed URL
+  const pubmedRegex = /(?:https?:\/\/(?:www\.)?(?:pubmed\.ncbi\.nlm\.nih\.gov|ncbi\.nlm\.nih\.gov\/pubmed)\/(\d+)(?:\/?$|\/.*))/i;
+  const match = str.match(pubmedRegex);
+  if (match) {
+    const pmid = match[1];
+    return `PMID:${pmid}`;
+  }
+  return str;
 }
 
 function removeDuplicates(array) {
