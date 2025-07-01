@@ -137,12 +137,7 @@ classes:
       - lipid_marker_list
       - metabolites_marker_list
       - proteoforms_marker_list
-      - references
-    slot_usage:
-      references:
-        range: string
-        annotations:
-          owl: AnnotationAssertion, AnnotationProperty
+      - reference_list
 
   AnatomicalStructureRecord:
     title: Anatomical Structure Record
@@ -187,6 +182,21 @@ classes:
       - ccf_pref_label
       - ccf_biomarker_type
       - source_concept
+      - record_number
+      - order_number
+
+  ReferenceRecord:
+    title: Reference Record
+    description: >-
+      A reference record represents a specific value in the ASCT+B table, 
+      located in the "REF" column, identified by its row (record number) and 
+      column (order number).
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - doi
+      - external_id
       - record_number
       - order_number
 
@@ -471,6 +481,32 @@ slots:
     inlined_as_list: true
     range: BiomarkerRecord
     slot_uri: ccf:proteoform_marker
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  reference_list:
+    title: reference list
+    description: List of references for the ASCT+B record.
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: ReferenceRecord
+    slot_uri: ccf:reference
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  doi:
+    title: doi
+    description: Digital Object Identifier for the reference record.
+    required: true
+    slot_uri: ccf:doi
+    range: uriorcurie
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  external_id:
+    title: external id
+    description: External identifier for the reference record.
+    required: false
+    slot_uri: ccf:external_id
+    range: string
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   primary_cell_type:
