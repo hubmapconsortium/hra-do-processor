@@ -198,20 +198,35 @@ function transformRecords(context) {
       allColumns.add(`${columnPrefix}/ID`);
     });
 
-    // Process references (record_references_str)
-    const references = group[0]['?record_references_str'];
-    if (references && references.trim()) {
-      const refList = references.split(',').map(ref => ref.trim()).filter(ref => ref);
-      refList.forEach((ref, index) => {
-        const refNumber = index + 1;
-        const columnPrefix = `REF/${refNumber}`;
-        transformedRow[columnPrefix] = ref;
-        transformedRow[`${columnPrefix}/ID`] = ref; // Using the same value for ID as specified
-        
-        allColumns.add(columnPrefix);
-        allColumns.add(`${columnPrefix}/ID`);
-      });
-    }
+    // Process references (ref_)
+    const refEntries = group.reduce((acc, row) => {
+      const refRecordNumber = row['?ref_record_number_str'];
+      const refOrderNumber = row['?ref_order_number_str'];
+      if (!refRecordNumber || !refOrderNumber) {
+        return acc;
+      }
+
+      const key = `${refRecordNumber}-${refOrderNumber}`;
+
+      if (!acc[key]) {
+        acc[key] = {
+          recordNumber: refRecordNumber,
+          orderNumber: refOrderNumber,
+          doi: row['?ref_doi_str'],
+          external_id: row['?ref_external_id_str'],
+        };
+      }
+      return acc;
+    }, {});
+
+    Object.values(refEntries).forEach(entry => {
+      const columnPrefix = `REF/${entry.orderNumber}`;
+      transformedRow[columnPrefix] = entry.external_id;
+      transformedRow[`${columnPrefix}/ID`] = entry.doi;
+      
+      allColumns.add(columnPrefix);
+      allColumns.add(`${columnPrefix}/ID`);
+    });
 
     transformedRows.push(transformedRow);
   });
@@ -299,10 +314,10 @@ function transformRecords(context) {
   ];
 
   // Write output with metadata at the top
-  const csvDataRows = transformedRows.map(row => newHeader.map(col => row[col] || '').join(','));
+  const csvDataRows = transformedRows.map(row => newHeader.map(col => `"${row[col] || ''}"`).join(','));
   const outputContent = [
-    ...metadataRows.map(row => row.join(',')),
-    newHeader.join(','),
+    ...metadataRows.map(row => row.map(cell => `"${cell}"`).join(',')),
+    newHeader.map(col => `"${col}"`).join(','),
     ...csvDataRows
   ].join('\n');
   
