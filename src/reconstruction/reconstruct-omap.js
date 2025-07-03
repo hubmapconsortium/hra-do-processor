@@ -5,7 +5,7 @@ import { writeReconstructedData, executeBlazegraphQuery, loadGraph, shortenId } 
 
 export function reconstructOmap(context) {
   try {   
-    // loadGraph(context);
+    loadGraph(context);
     queryGraph(context);
     transformRecords(context);
 
