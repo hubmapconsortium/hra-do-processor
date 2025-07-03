@@ -168,6 +168,10 @@ function transformRecords(context) {
     }, {});
 
     Object.values(bmEntries).forEach(entry => {
+      // Skip if biomarkerType is empty
+      if (!entry.biomarkerType) {
+        return;
+      }
       // Map biomarker type to prefix
       let bmPrefix;
       switch (entry.biomarkerType) {
