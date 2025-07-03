@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import sh from 'shelljs';
 import { header, warning } from '../utils/logging.js';
 import { reconstructAsctb } from './reconstruct-asct-b.js';
+import { reconstructOmap } from './reconstruct-omap.js';
 import { cleanDirectory } from './utils.js';
 
 export function reconstruct(context) {
@@ -17,6 +18,8 @@ export function reconstruct(context) {
       reconstructAsctb(context);
       break;
     case 'omap':
+      reconstructOmap(context);
+      break;
     case 'ctann':
     case 'ref-organ':
     case '2d-ftu':
