@@ -364,7 +364,6 @@ slots:
     title: author ORCID
     description: Reference to the author by the ORCID identifier.
     required: false
-    range: Named
     inlined: false
     multivalued: true
     annotations:
