@@ -232,6 +232,12 @@ function transformRecords(context) {
       allColumns.add(`${columnPrefix}/ID`);
     });
 
+    // Ensure at least one REF column exists
+    if (Object.keys(refEntries).length === 0) {
+      allColumns.add('REF/1');
+      allColumns.add('REF/1/ID');
+    }
+
     transformedRows.push(transformedRow);
   });
 
