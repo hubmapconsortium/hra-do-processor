@@ -9,13 +9,14 @@ SELECT DISTINCT
   ?label_str
 WHERE {
   ?spatialEntity a ccf:SpatialEntity ;
-      skos:prefLabel ?label ;
       ccf:rui_rank ?record_order ;
       ccf:representation_of ?organ_concept ;
       ccf:has_object_reference ?objectReference .
 
   ?objectReference ccf:file_subpath ?node_name .
-  ?organ_concept oboInOwl:id ?ontology_id .
+
+  ?organ_concept rdfs:label ?label ;
+      oboInOwl:id ?ontology_id .
 
   # Use BIND(STR()) to convert the results into string
   BIND(STR(?record_order) AS ?record_order_str)
