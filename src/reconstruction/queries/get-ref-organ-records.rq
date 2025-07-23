@@ -1,0 +1,26 @@
+PREFIX ccf: <http://purl.org/ccf/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT
+  ?record_order_str
+  ?node_name_str
+  ?ontology_id_str
+  ?label_str
+WHERE {
+  ?spatialEntity a ccf:SpatialEntity ;
+      skos:prefLabel ?label ;
+      ccf:rui_rank ?record_order ;
+      ccf:representation_of ?organ_concept ;
+      ccf:has_object_reference ?objectReference .
+
+  ?objectReference ccf:file_subpath ?node_name .
+  ?organ_concept oboInOwl:id ?ontology_id .
+
+  # Use BIND(STR()) to convert the results into string
+  BIND(STR(?record_order) AS ?record_order_str)
+  BIND(STR(?node_name) AS ?node_name_str) 
+  BIND(STR(?ontology_id) AS ?ontology_id_str)
+  BIND(STR(?label) AS ?label_str)
+}
+ORDER BY ?record_order

@@ -4,6 +4,7 @@ import { header, warning, error } from '../utils/logging.js';
 import { reconstructAsctb } from './reconstruct-asct-b.js';
 import { reconstructOmap } from './reconstruct-omap.js';
 import { reconstructCtann } from './reconstruct-ctann.js';
+import { reconstructRefOrgan } from './reconstruct-ref-organ.js';
 import { cleanDirectory } from './utils.js';
 
 export function reconstruct(context) {
@@ -25,6 +26,8 @@ export function reconstruct(context) {
       reconstructCtann(context);
       break;
     case 'ref-organ':
+      reconstructRefOrgan(context);
+      break;
     case '2d-ftu':
     case 'collection':
       warning(`"${obj.type}" digital object type is not yet implemented.`);
