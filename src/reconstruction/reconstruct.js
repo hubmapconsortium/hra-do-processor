@@ -1,11 +1,12 @@
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { header, warning, error } from '../utils/logging.js';
+import { header, error } from '../utils/logging.js';
 import { reconstructAsctb } from './reconstruct-asct-b.js';
 import { reconstructOmap } from './reconstruct-omap.js';
 import { reconstructCtann } from './reconstruct-ctann.js';
 import { reconstructRefOrgan } from './reconstruct-ref-organ.js';
 import { reconstruct2dFtu } from './reconstruct-2d-ftu.js';
+import { reconstructCollection } from './reconstruct-collection.js';
 import { cleanDirectory } from './utils.js';
 
 export function reconstruct(context) {
@@ -33,7 +34,7 @@ export function reconstruct(context) {
       reconstruct2dFtu(context);
       break;
     case 'collection':
-      warning(`"${obj.type}" digital object type is not yet implemented.`);
+      reconstructCollection(context);
       break;
     default:
       error(`"${obj.type}" digital object type is not supported for reconstruction.`);
