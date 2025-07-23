@@ -1,0 +1,74 @@
+PREFIX ccf: <http://purl.org/ccf/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT 
+    ?tableTitle
+    ?authorNames
+    ?authorOrcids
+    ?reviewerNames
+    ?reviewerOrcids
+    ?generalPublications
+    ?dataDoi
+    ?date
+    ?versionNumber
+WHERE {
+    # Find concepts with raw-data suffix
+    ?rawDataConcept a dcat:Dataset .
+    FILTER(STRENDS(STR(?rawDataConcept), "#raw-data"))
+    
+    # Get table title and bind to string
+    ?rawDataConcept dct:title ?tableTitleRaw .
+    BIND(STR(?tableTitleRaw) AS ?tableTitle)
+    
+    # Get data DOI and bind to string
+    ?rawDataConcept ccf:doi ?dataDoiRaw .
+    BIND(STR(?dataDoiRaw) AS ?dataDoi)
+    
+    # Get date created and bind to string
+    ?rawDataConcept schema:dateCreated ?dateRaw .
+    BIND(STR(?dateRaw) AS ?date)
+    
+    # Extract version number from IRI
+    BIND(REPLACE(STR(?rawDataConcept), ".*/([^/]+)#raw-data$", "$1") AS ?versionNumber)
+    
+    # Get author names and ORCIDs
+    {
+        SELECT ?rawDataConcept 
+               (GROUP_CONCAT(DISTINCT ?authorName; separator="; ") AS ?authorNames)
+               (GROUP_CONCAT(DISTINCT ?authorOrcid; separator="; ") AS ?authorOrcids)
+        WHERE {
+            ?rawDataConcept dct:creator ?author .
+            ?author rdfs:label ?authorName .
+            ?author schema:identifier ?authorOrcid .
+        }
+        GROUP BY ?rawDataConcept
+    }
+    
+    # Get reviewer names and ORCIDs
+    {
+        SELECT ?rawDataConcept 
+               (GROUP_CONCAT(DISTINCT ?reviewerName; separator="; ") AS ?reviewerNames)
+               (GROUP_CONCAT(DISTINCT ?reviewerOrcid; separator="; ") AS ?reviewerOrcids)
+        WHERE {
+            ?rawDataConcept schema:reviewedBy ?reviewer .
+            ?reviewer rdfs:label ?reviewerName .
+            ?reviewer schema:identifier ?reviewerOrcid .
+        }
+        GROUP BY ?rawDataConcept
+    }
+    
+    # General publications is blank
+        {
+        SELECT ?rawDataConcept 
+               (GROUP_CONCAT(DISTINCT ?generalPublication; separator="; ") AS ?generalPublications)
+        WHERE {
+            ?rawDataConcept dct:references ?generalPublication .
+        }
+        GROUP BY ?rawDataConcept
+    }
+}

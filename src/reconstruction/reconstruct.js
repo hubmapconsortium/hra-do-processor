@@ -1,8 +1,9 @@
 import { resolve } from 'path';
 import sh from 'shelljs';
-import { header, warning } from '../utils/logging.js';
+import { header, warning, error } from '../utils/logging.js';
 import { reconstructAsctb } from './reconstruct-asct-b.js';
 import { reconstructOmap } from './reconstruct-omap.js';
+import { reconstructCtann } from './reconstruct-ctann.js';
 import { cleanDirectory } from './utils.js';
 
 export function reconstruct(context) {
@@ -21,6 +22,8 @@ export function reconstruct(context) {
       reconstructOmap(context);
       break;
     case 'ctann':
+      reconstructCtann(context);
+      break;
     case 'ref-organ':
     case '2d-ftu':
     case 'collection':

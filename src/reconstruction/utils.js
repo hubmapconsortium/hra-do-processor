@@ -85,3 +85,36 @@ export function cleanDirectory(context) {
     'Clean normalized directory failed.'
   );
 }
+
+// Format date from YYYY-MM-DD to quoted "Month DD, YYYY"
+export function formatToMonthDDYYYY(dateStr) {
+  if (!dateStr || dateStr === '') return '';
+  try {
+    // Parse date string directly to avoid timezone issues
+    const match = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (match) {
+      const [, year, month, day] = match;
+      const monthNames = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+      ];
+      const monthName = monthNames[parseInt(month, 10) - 1];
+      return `"${monthName} ${parseInt(day, 10)}, ${year}"`;
+    }
+    return `"${dateStr}"`;
+  } catch (e) {
+    return `"${dateStr}"`;
+  }
+}
+
+// Quote CSV field if it contains commas, quotes, or newlines
+export function quoteIfNeeded(str) {
+  if (!str) return str;
+  // Quote if contains comma, double quote, or newline
+  if (str.includes(',') || str.includes('"') || str.includes('\n')) {
+    // Escape any existing double quotes by doubling them
+    const escaped = str.replace(/"/g, '""');
+    return `"${escaped}"`;
+  }
+  return str;
+}
