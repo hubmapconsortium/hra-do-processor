@@ -107,14 +107,3 @@ export function formatToMonthDDYYYY(dateStr) {
   }
 }
 
-// Quote CSV field if it contains commas, quotes, or newlines
-export function quoteIfNeeded(str) {
-  if (!str) return str;
-  // Quote if contains comma, double quote, or newline
-  if (str.includes(',') || str.includes('"') || str.includes('\n')) {
-    // Escape any existing double quotes by doubling them
-    const escaped = str.replace(/"/g, '""');
-    return `"${escaped}"`;
-  }
-  return str;
-}

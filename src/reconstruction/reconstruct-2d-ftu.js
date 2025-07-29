@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import Papa from 'papaparse';
 import { info, error } from '../utils/logging.js';
-import { writeReconstructedData, executeBlazegraphQuery, loadGraph, shortenId, quoteIfNeeded } from './utils.js';
+import { writeReconstructedData, executeBlazegraphQuery, loadGraph, shortenId } from './utils.js';
 
 export function reconstruct2dFtu(context) {
   try {   
@@ -59,11 +59,11 @@ function transformRecords(context) {
     return {
       'node_id': row['?node_id_str'] || '',
       'node_group': row['?node_group_str'] || '',
-      'node_label': quoteIfNeeded(row['?node_label_str'] || ''),
+      'node_label': row['?node_label_str'] || '',
       'node_mapped_to': shortenId(row['?node_mapped_to_str'] || ''),
-      'tissue_label': quoteIfNeeded(row['?tissue_label_str'] || ''),
+      'tissue_label': row['?tissue_label_str'] || '',
       'tissue_mapped_to': shortenId(row['?tissue_mapped_to_str'] || ''),
-      'organ_label': quoteIfNeeded(row['?organ_label_str'] || ''),
+      'organ_label': row['?organ_label_str'] || '',
       'organ_mapped_to': shortenId(row['?organ_mapped_to_str'] || '')
     };
   });

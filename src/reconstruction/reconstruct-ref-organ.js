@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import Papa from 'papaparse';
 import { info, error } from '../utils/logging.js';
-import { writeReconstructedData, executeBlazegraphQuery, loadGraph, shortenId, quoteIfNeeded } from './utils.js';
+import { writeReconstructedData, executeBlazegraphQuery, loadGraph, shortenId } from './utils.js';
 
 export function reconstructRefOrgan(context) {
   try {   
@@ -66,7 +66,7 @@ function transformRecords(context) {
     return {
       'node_name': row['?node_name_str'] || '',
       'OntologyID': shortenId(row['?ontology_id_str'] || ''),
-      'label': quoteIfNeeded(row['?label_str'] || '')
+      'label': row['?label_str'] || ''
     };
   });
 

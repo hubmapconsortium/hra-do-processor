@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import Papa from 'papaparse';
 import { info, error } from '../utils/logging.js';
-import { writeReconstructedData, executeBlazegraphQuery, loadGraph, shortenId, formatToMonthDDYYYY, quoteIfNeeded } from './utils.js';
+import { writeReconstructedData, executeBlazegraphQuery, loadGraph, shortenId, formatToMonthDDYYYY } from './utils.js';
 
 export function reconstructCtann(context) {
   try {   
@@ -77,9 +77,9 @@ function transformRecords(context) {
     return {
       'Organ_Level': row['?Organ_Level_str'] || '',
       'Organ_ID': shortenId(row['?Organ_ID_str'] || ''),
-      'Annotation_Label': quoteIfNeeded(row['?Annotation_Label_str'] || ''),
+      'Annotation_Label': row['?Annotation_Label_str'] || '',
       'Annotation_Label_ID': row['?Annotation_Label_ID_str'] || '',
-      'CL_Label': quoteIfNeeded(row['?CL_Label_str'] || ''),
+      'CL_Label': row['?CL_Label_str'] || '',
       'CL_ID': shortenId(row['?CL_ID_str'] || ''),
       'CL_Match': shortenId(row['?CL_Match_str'] || '')
     };
