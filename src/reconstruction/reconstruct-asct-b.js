@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
+import Papa from 'papaparse';
 import { info, error } from '../utils/logging.js';
 import { writeReconstructedData, executeBlazegraphQuery, loadGraph, shortenId } from './utils.js';
 
@@ -323,13 +324,17 @@ function transformRecords(context) {
     [`Version Number:`, metadata['?versionNumber']]
   ];
 
-  // Write output with metadata at the top
-  const csvDataRows = transformedRows.map(row => newHeader.map(col => `"${row[col] || ''}"`).join(','));
-  const outputContent = [
-    ...metadataRows.map(row => row.map(cell => `"${cell}"`).join(',')),
-    newHeader.map(col => `"${col}"`).join(','),
-    ...csvDataRows
-  ].join('\n');
+  // Combine metadata rows, headers, and data rows for Papa.unparse
+  const allRows = [
+    ...metadataRows,
+    newHeader,
+    ...transformedRows.map(row => newHeader.map(col => row[col] || ''))
+  ];
+  
+  // Write output with metadata at the top using Papa.unparse
+  const outputContent = Papa.unparse(allRows, {
+    quotes: true
+  });
   
   writeReconstructedData(context, outputContent, 'reconstructed.csv');
 }

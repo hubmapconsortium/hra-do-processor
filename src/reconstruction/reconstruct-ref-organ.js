@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
+import Papa from 'papaparse';
 import { info, error } from '../utils/logging.js';
 import { writeReconstructedData, executeBlazegraphQuery, loadGraph, shortenId, quoteIfNeeded } from './utils.js';
 
@@ -72,12 +73,12 @@ function transformRecords(context) {
   // Define the column order based on the expected CSV structure
   const columnHeaders = ['node_name', 'OntologyID', 'label'];
   
-  // Create CSV content without metadata
-  const csvDataRows = transformedRows.map(row => columnHeaders.map(col => `${row[col] || ''}`).join(','));
-  const outputContent = [
-    columnHeaders.join(','),
-    ...csvDataRows
-  ].join('\n');
+  // Create CSV content without metadata using Papa.unparse
+  const outputContent = Papa.unparse(transformedRows, {
+    columns: columnHeaders,
+    header: true,
+    quotes: true
+  });
   
   writeReconstructedData(context, outputContent, 'reconstructed.csv');
 }
