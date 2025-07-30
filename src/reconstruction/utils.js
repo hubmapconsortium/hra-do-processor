@@ -90,9 +90,9 @@ export function cleanDirectory(context) {
   const { selectedDigitalObject: obj } = context;
   const path = resolve(obj.path, 'reconstructed/');
   
-  // Remove all files except reconstructed.csv
+  // Remove all files except reconstructed.csv or reconstructed.yml
   throwOnError(
-    `find ${path} -type f ! -name "reconstructed.csv" -exec rm -f {} +`,
+    `find ${path} -type f ! -name "reconstructed.csv" ! -name "reconstructed.yaml" -exec rm -f {} +`,
     'Clean reconstruction directory failed.'
   );
 }

@@ -43,30 +43,25 @@ function transformRecords(context) {
   const fileContent = readFileSync(inputFilePath, 'utf8');
 
   // Parse CSV content
-  const lines = fileContent.trim().split(/\r?\n/); // Handle both \r\n and \n line endings
-  const headers = lines[0].split('\t');
-  const dataRows = lines.slice(1).map(line => {
-    const values = line.split('\t');
-    const row = {};
-    headers.forEach((header, index) => {
-      row[header] = values[index] || '';
-    });
-    return row;
+  const result = Papa.parse(fileContent, {
+    header: true,
+    skipEmptyLines: true
   });
+  const dataRows = result.data;
 
   // Sort by record_order to ensure proper row positioning
   dataRows.sort((a, b) => {
-    const orderA = parseInt(a['?record_order_str'] || '0');
-    const orderB = parseInt(b['?record_order_str'] || '0');
+    const orderA = parseInt(a['record_order'] || '0');
+    const orderB = parseInt(b['record_order'] || '0');
     return orderA - orderB;
   });
 
   // Transform rows to CSV format
   const transformedRows = dataRows.map(row => {
     return {
-      'node_name': row['?node_name_str'] || '',
-      'OntologyID': shortenId(row['?ontology_id_str'] || ''),
-      'label': row['?label_str'] || ''
+      'node_name': row['node_name'] || '',
+      'OntologyID': shortenId(row['ontology_id'] || ''),
+      'label': row['label'] || ''
     };
   });
 

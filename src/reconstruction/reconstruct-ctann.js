@@ -51,37 +51,29 @@ function transformRecords(context) {
   // Read and parse metadata
   info('Reading metadata file...');
   const metadataContent = readFileSync(metadataFilePath, 'utf8');
-  const metadataLines = metadataContent.trim().split(/\r?\n/);
-  const metadataHeaders = metadataLines[0].split('\t');
-  const metadataData = metadataLines[1].split('\t');
-  
-  const metadata = {};
-  metadataHeaders.forEach((header, index) => {
-    metadata[header] = metadataData[index] || '';
+  const metadataResult = Papa.parse(metadataContent, {
+    header: true,
+    skipEmptyLines: true
   });
+  const metadata = metadataResult.data[0];
 
   // Parse CSV content
-  const lines = fileContent.trim().split(/\r?\n/); // Handle both \r\n and \n line endings
-  const headers = lines[0].split('\t');
-  const dataRows = lines.slice(1).map(line => {
-    const values = line.split('\t');
-    const row = {};
-    headers.forEach((header, index) => {
-      row[header] = values[index] || '';
-    });
-    return row;
+  const result = Papa.parse(fileContent, {
+    header: true,
+    skipEmptyLines: true
   });
+  const dataRows = result.data;
 
   // Transform rows to CSV format
   const transformedRows = dataRows.map(row => {
     return {
-      'Organ_Level': row['?Organ_Level_str'] || '',
-      'Organ_ID': shortenId(row['?Organ_ID_str'] || ''),
-      'Annotation_Label': row['?Annotation_Label_str'] || '',
-      'Annotation_Label_ID': row['?Annotation_Label_ID_str'] || '',
-      'CL_Label': row['?CL_Label_str'] || '',
-      'CL_ID': shortenId(row['?CL_ID_str'] || ''),
-      'CL_Match': shortenId(row['?CL_Match_str'] || '')
+      'Organ_Level': row['Organ_Level'] || '',
+      'Organ_ID': shortenId(row['Organ_ID'] || ''),
+      'Annotation_Label': row['Annotation_Label'] || '',
+      'Annotation_Label_ID': row['Annotation_Label_ID'] || '',
+      'CL_Label': row['CL_Label'] || '',
+      'CL_ID': shortenId(row['CL_ID'] || ''),
+      'CL_Match': shortenId(row['CL_Match'] || '')
     };
   });
 
@@ -93,16 +85,16 @@ function transformRecords(context) {
   
   // Create metadata rows matching azimuth-crosswalk.csv format
   const metadataRows = [
-    [metadata['?tableTitle'], '', '', '', '', '', ''], // First row with table title
+    [metadata['tableTitle'], '', '', '', '', '', ''], // First row with table title
     ['', '', '', '', '', '', ''], // Empty second row
-    [`Author Name(s):`, metadata['?authorNames']],
-    [`Author ORCID(s):`, `"${metadata['?authorOrcids']?.replace(/;\s*/g, ', ')}"`],
-    [`Reviewer(s):`, `"${metadata['?reviewerNames']?.replace(/;\s*/g, ', ')}"`],
-    [`Reviewer ORCID(s):`, `"${metadata['?reviewerOrcids']?.replace(/;\s*/g, ', ')}"`],
-    [`General Publication(s):`, metadata['?generalPublications']],
-    [`Data DOI:`, metadata['?dataDoi']],
-    [`Date:`, formatToMonthDDYYYY(metadata['?date'])],
-    [`Version number:`, metadata['?versionNumber']]
+    [`Author Name(s):`, metadata['authorNames']],
+    [`Author ORCID(s):`, `"${metadata['authorOrcids']?.replace(/;\s*/g, ', ')}"`],
+    [`Reviewer(s):`, `"${metadata['reviewerNames']?.replace(/;\s*/g, ', ')}"`],
+    [`Reviewer ORCID(s):`, `"${metadata['reviewerOrcids']?.replace(/;\s*/g, ', ')}"`],
+    [`General Publication(s):`, metadata['generalPublications']],
+    [`Data DOI:`, metadata['dataDoi']],
+    [`Date:`, formatToMonthDDYYYY(metadata['date'])],
+    [`Version number:`, metadata['versionNumber']]
   ];
 
   // Combine metadata rows, headers, and data rows for Papa.unparse

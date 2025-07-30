@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
+import Papa from 'papaparse';
 import { info, error } from '../utils/logging.js';
 import { writeReconstructedData, executeBlazegraphQuery, loadGraph } from './utils.js';
 
@@ -42,20 +43,15 @@ function transformRecords(context) {
   const fileContent = readFileSync(inputFilePath, 'utf8');
 
   // Parse CSV content
-  const lines = fileContent.trim().split(/\r?\n/);
-  const headers = lines[0].split('\t');
-  const dataRows = lines.slice(1).map(line => {
-    const values = line.split('\t');
-    const row = {};
-    headers.forEach((header, index) => {
-      row[header] = values[index] || '';
-    });
-    return row;
+  const result = Papa.parse(fileContent, {
+    header: true,
+    skipEmptyLines: true
   });
+  const dataRows = result.data;
 
   // Transform sub_graph URLs to abbreviated format
   const digitalObjects = dataRows.map(row => {
-    const subGraphStr = row['?sub_graph_str'] || '';
+    const subGraphStr = row['sub_graph'] || '';
     return abbreviateSubGraph(subGraphStr);
   }).filter(item => item !== '') // Remove empty items
     .sort(); // Sort alphabetically

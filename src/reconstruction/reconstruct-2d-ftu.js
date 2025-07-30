@@ -43,28 +43,23 @@ function transformRecords(context) {
   const fileContent = readFileSync(inputFilePath, 'utf8');
 
   // Parse CSV content
-  const lines = fileContent.trim().split(/\r?\n/); // Handle both \r\n and \n line endings
-  const headers = lines[0].split('\t');
-  const dataRows = lines.slice(1).map(line => {
-    const values = line.split('\t');
-    const row = {};
-    headers.forEach((header, index) => {
-      row[header] = values[index] || '';
-    });
-    return row;
+  const result = Papa.parse(fileContent, {
+    header: true,
+    skipEmptyLines: true
   });
+  const dataRows = result.data;
 
   // Transform rows to CSV format
   const transformedRows = dataRows.map(row => {
     return {
-      'node_id': row['?node_id_str'] || '',
-      'node_group': row['?node_group_str'] || '',
-      'node_label': row['?node_label_str'] || '',
-      'node_mapped_to': shortenId(row['?node_mapped_to_str'] || ''),
-      'tissue_label': row['?tissue_label_str'] || '',
-      'tissue_mapped_to': shortenId(row['?tissue_mapped_to_str'] || ''),
-      'organ_label': row['?organ_label_str'] || '',
-      'organ_mapped_to': shortenId(row['?organ_mapped_to_str'] || '')
+      'node_id': row['node_id'] || '',
+      'node_group': row['node_group'] || '',
+      'node_label': row['node_label'] || '',
+      'node_mapped_to': shortenId(row['node_mapped_to'] || ''),
+      'tissue_label': row['tissue_label'] || '',
+      'tissue_mapped_to': shortenId(row['tissue_mapped_to'] || ''),
+      'organ_label': row['organ_label'] || '',
+      'organ_mapped_to': shortenId(row['organ_mapped_to'] || '')
     };
   });
 
