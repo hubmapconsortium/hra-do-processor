@@ -7,15 +7,11 @@ import { reconstructCtann } from './reconstruct-ctann.js';
 import { reconstructRefOrgan } from './reconstruct-ref-organ.js';
 import { reconstruct2dFtu } from './reconstruct-2d-ftu.js';
 import { reconstructCollection } from './reconstruct-collection.js';
-import { cleanDirectory } from './utils.js';
 
 export function reconstruct(context) {
   const { selectedDigitalObject: obj } = context;
   sh.mkdir('-p', resolve(obj.path, 'reconstructed'));
   header(context, 'run-reconstruction');
-
-  // Clean up any existing files
-  cleanDirectory(context);
 
   switch (obj.type) {
     case 'asct-b':

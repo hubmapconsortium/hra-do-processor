@@ -1,10 +1,14 @@
 import sh from 'shelljs';
-import { existsSync, mkdirSync, rmSync, writeFileSync } from 'fs';
+import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 import { throwOnError } from '../utils/sh-exec.js';
 import { info } from '../utils/logging.js';
 import { reifyDoTurtle, reifyMetadataTurtle, reifyRedundantTurtle } from '../utils/reify.js';
 import { loadDoIntoTripleStore, loadMetadataIntoTripleStore, loadRedundantIntoTripleStore } from '../deployment/utils.js';
+
+// Configuration flag to control cleanup of reconstruction artifacts
+// Set to false to preserve intermediate files for debugging
+export const CLEANUP_ARTIFACTS = true;
 
 // Prefix definitions for shortening URIs
 const PREFIX_MAPPINGS = {
@@ -38,13 +42,6 @@ export function loadGraph(context) {
   const graphTtl = resolve(doPath, 'reconstructed/graph.ttl');
   const metadataTtl = resolve(doPath, 'reconstructed/metadata.ttl');
 
-  // Remove existing reconstructed directory if it exists, then create fresh
-  const reconstructedPath = resolve(doPath, 'reconstructed');
-  if (existsSync(reconstructedPath)) {
-    rmSync(reconstructedPath, { recursive: true, force: true });
-  }
-  mkdirSync(reconstructedPath, { recursive: true });
-
   sh.cp(resolve(obj.path, 'enriched/enriched.ttl'), graphTtl);
   sh.cp(resolve(obj.path, 'enriched/enriched-metadata.ttl'), metadataTtl);
 
@@ -76,14 +73,23 @@ export function writeReconstructedData(context, data, outputFile) {
   const reconstructedPath = resolve(path, 'reconstructed/', outputFile);
   writeFileSync(reconstructedPath, data, 'utf8');
   info(`Reconstructed digital object written to ${reconstructedPath}`);
+  
+  // Clean up intermediate files after writing the final CSV
+  cleanDirectory(context);
 }
 
 export function cleanDirectory(context) {
+  if (!CLEANUP_ARTIFACTS) {
+    return;
+  }
+  
   const { selectedDigitalObject: obj } = context;
   const path = resolve(obj.path, 'reconstructed/');
+  
+  // Remove all files except reconstructed.csv
   throwOnError(
-    `find ${path} -type f -exec rm -f {} +`,
-    'Clean normalized directory failed.'
+    `find ${path} -type f ! -name "reconstructed.csv" -exec rm -f {} +`,
+    'Clean reconstruction directory failed.'
   );
 }
 
