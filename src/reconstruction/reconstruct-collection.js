@@ -24,7 +24,7 @@ function queryGraph(context) {
 
     // Query records only (no metadata)
     const recordsQueryPath = resolve(processorHome, 'src/reconstruction/queries/get-collection-records.rq');
-    const recordsOutputPath = resolve(doPath, 'reconstructed/records.tsv');
+    const recordsOutputPath = resolve(doPath, 'reconstructed/records.csv');
     executeBlazegraphQuery(journalPath, recordsQueryPath, recordsOutputPath);
 
     info('Graph query completed successfully');
@@ -36,12 +36,12 @@ function queryGraph(context) {
 
 function transformRecords(context) {
   const doPath = resolve(context.selectedDigitalObject.path);
-  const inputFilePath = resolve(doPath, 'reconstructed/records.tsv');
+  const inputFilePath = resolve(doPath, 'reconstructed/records.csv');
 
-  info('Reading TSV file...');
+  info('Reading CSV file...');
   const fileContent = readFileSync(inputFilePath, 'utf8');
 
-  // Parse TSV content
+  // Parse CSV content
   const lines = fileContent.trim().split(/\r?\n/);
   const headers = lines[0].split('\t');
   const dataRows = lines.slice(1).map(line => {

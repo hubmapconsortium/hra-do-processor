@@ -25,12 +25,12 @@ function queryGraph(context) {
 
     // Query records
     const recordsQueryPath = resolve(processorHome, 'src/reconstruction/queries/get-omap-records.rq');
-    const recordsOutputPath = resolve(doPath, 'reconstructed/records.tsv');
+    const recordsOutputPath = resolve(doPath, 'reconstructed/records.csv');
     executeBlazegraphQuery(journalPath, recordsQueryPath, recordsOutputPath);
     
     // Query metadata
     const metadataQueryPath = resolve(processorHome, 'src/reconstruction/queries/get-omap-metadata.rq');
-    const metadataOutputPath = resolve(doPath, 'reconstructed/metadata.tsv');
+    const metadataOutputPath = resolve(doPath, 'reconstructed/metadata.csv');
     executeBlazegraphQuery(journalPath, metadataQueryPath, metadataOutputPath);
 
     info('Graph query completed successfully');
@@ -42,10 +42,10 @@ function queryGraph(context) {
 
 function transformRecords(context) {
   const doPath = resolve(context.selectedDigitalObject.path);
-  const inputFilePath = resolve(doPath, 'reconstructed/records.tsv');
-  const metadataFilePath = resolve(doPath, 'reconstructed/metadata.tsv');
+  const inputFilePath = resolve(doPath, 'reconstructed/records.csv');
+  const metadataFilePath = resolve(doPath, 'reconstructed/metadata.csv');
 
-  info('Reading TSV file...');
+  info('Reading CSV file...');
   const fileContent = readFileSync(inputFilePath, 'utf8');
 
   // Read and parse metadata
@@ -60,7 +60,7 @@ function transformRecords(context) {
     metadata[header] = metadataData[index] || '';
   });
 
-  // Parse TSV content
+  // Parse CSV content
   const lines = fileContent.trim().split(/\r?\n/); // Handle both \r\n and \n line endings
   const headers = lines[0].split('\t');
   const dataRows = lines.slice(1).map(line => {
