@@ -20,17 +20,17 @@ export function reconstructOmap(context) {
 function queryGraph(context) {
   try {
     const processorHome = resolve(context.processorHome);
-    const reconstructPath = resolve(context.reconstructionHome);
-    const journalPath = resolve(reconstructPath, 'blazegraph.jnl');
+    const doPath = resolve(context.selectedDigitalObject.path);
+    const journalPath = resolve(doPath, 'reconstructed/blazegraph.jnl');
 
     // Query records
     const recordsQueryPath = resolve(processorHome, 'src/reconstruction/queries/get-omap-records.rq');
-    const recordsOutputPath = resolve(reconstructPath, 'records.tsv');
+    const recordsOutputPath = resolve(doPath, 'reconstructed/records.tsv');
     executeBlazegraphQuery(journalPath, recordsQueryPath, recordsOutputPath);
     
     // Query metadata
     const metadataQueryPath = resolve(processorHome, 'src/reconstruction/queries/get-omap-metadata.rq');
-    const metadataOutputPath = resolve(reconstructPath, 'metadata.tsv');
+    const metadataOutputPath = resolve(doPath, 'reconstructed/metadata.tsv');
     executeBlazegraphQuery(journalPath, metadataQueryPath, metadataOutputPath);
 
     info('Graph query completed successfully');
@@ -41,9 +41,9 @@ function queryGraph(context) {
 }
 
 function transformRecords(context) {
-  const reconstructPath = resolve(context.reconstructionHome);
-  const inputFilePath = resolve(reconstructPath, 'records.tsv');
-  const metadataFilePath = resolve(reconstructPath, 'metadata.tsv');
+  const doPath = resolve(context.selectedDigitalObject.path);
+  const inputFilePath = resolve(doPath, 'reconstructed/records.tsv');
+  const metadataFilePath = resolve(doPath, 'reconstructed/metadata.tsv');
 
   info('Reading TSV file...');
   const fileContent = readFileSync(inputFilePath, 'utf8');

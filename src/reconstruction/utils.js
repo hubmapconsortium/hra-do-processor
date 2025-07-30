@@ -34,34 +34,35 @@ export function shortenId(uri) {
 
 export function loadGraph(context) {
   const obj = context.selectedDigitalObject;
-  const reconstructPath = resolve(context.reconstructionHome);
-  const graphTtl = resolve(reconstructPath, 'graph.ttl');
-  const metadataTtl = resolve(reconstructPath, 'metadata.ttl');
+  const doPath = resolve(obj.path);
+  const graphTtl = resolve(doPath, 'reconstructed/graph.ttl');
+  const metadataTtl = resolve(doPath, 'reconstructed/metadata.ttl');
 
-  // Remove existing reconstruct path if it exists, then create fresh
-  if (existsSync(reconstructPath)) {
-    rmSync(reconstructPath, { recursive: true, force: true });
+  // Remove existing reconstructed directory if it exists, then create fresh
+  const reconstructedPath = resolve(doPath, 'reconstructed');
+  if (existsSync(reconstructedPath)) {
+    rmSync(reconstructedPath, { recursive: true, force: true });
   }
-  mkdirSync(reconstructPath, { recursive: true });
+  mkdirSync(reconstructedPath, { recursive: true });
 
   sh.cp(resolve(obj.path, 'enriched/enriched.ttl'), graphTtl);
   sh.cp(resolve(obj.path, 'enriched/enriched-metadata.ttl'), metadataTtl);
 
   info(`Reifying "${obj.doString}"`);
   reifyDoTurtle(context, graphTtl);
-  loadDoIntoTripleStore(context, resolve(context.reconstructionHome, 'blazegraph.jnl'));
+  loadDoIntoTripleStore(context, resolve(doPath, 'reconstructed/blazegraph.jnl'));
 
   info(`Reifying "${obj.doString}" metadata`);
   reifyMetadataTurtle(context, metadataTtl);
-  loadMetadataIntoTripleStore(context, resolve(context.reconstructionHome, 'blazegraph.jnl'));
+  loadMetadataIntoTripleStore(context, resolve(doPath, 'reconstructed/blazegraph.jnl'));
 
   // Check if the enrichment produces redundant graph
   const redundant = resolve(obj.path, 'enriched/redundant.ttl');
   if (existsSync(redundant)) {
-    const redundantReconstructPath = resolve(reconstructPath, 'redundant.ttl');
+    const redundantReconstructPath = resolve(doPath, 'reconstructed/redundant.ttl');
     sh.cp(redundant, redundantReconstructPath);
     reifyRedundantTurtle(context, redundantReconstructPath);
-    loadRedundantIntoTripleStore(context, resolve(context.reconstructionHome, 'blazegraph.jnl'));
+    loadRedundantIntoTripleStore(context, resolve(doPath, 'reconstructed/blazegraph.jnl'));
   }
 }
 

@@ -20,12 +20,12 @@ export function reconstruct2dFtu(context) {
 function queryGraph(context) {
   try {
     const processorHome = resolve(context.processorHome);
-    const reconstructPath = resolve(context.reconstructionHome);
-    const journalPath = resolve(reconstructPath, 'blazegraph.jnl');
+    const doPath = resolve(context.selectedDigitalObject.path);
+    const journalPath = resolve(doPath, 'reconstructed/blazegraph.jnl');
 
     // Query records only (no metadata)
     const recordsQueryPath = resolve(processorHome, 'src/reconstruction/queries/get-2d-ftu-records.rq');
-    const recordsOutputPath = resolve(reconstructPath, 'records.tsv');
+    const recordsOutputPath = resolve(doPath, 'reconstructed/records.tsv');
     executeBlazegraphQuery(journalPath, recordsQueryPath, recordsOutputPath);
 
     info('Graph query completed successfully');
@@ -36,8 +36,8 @@ function queryGraph(context) {
 }
 
 function transformRecords(context) {
-  const reconstructPath = resolve(context.reconstructionHome);
-  const inputFilePath = resolve(reconstructPath, 'records.tsv');
+  const doPath = resolve(context.selectedDigitalObject.path);
+  const inputFilePath = resolve(doPath, 'reconstructed/records.tsv');
 
   info('Reading TSV file...');
   const fileContent = readFileSync(inputFilePath, 'utf8');
