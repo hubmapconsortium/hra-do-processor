@@ -3,7 +3,7 @@ PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX schema1: <http://schema.org/>
+PREFIX schema: <http://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT 
@@ -30,7 +30,7 @@ WHERE {
     BIND(STR(?dataDoiRaw) AS ?dataDoi)
     
     # Get date created and bind to string
-    ?rawDataConcept schema1:dateCreated ?dateRaw .
+    ?rawDataConcept schema:dateCreated ?dateRaw .
     BIND(STR(?dateRaw) AS ?date)
     
     # Extract version number from IRI
@@ -44,7 +44,7 @@ WHERE {
         WHERE {
             ?rawDataConcept dct:creator ?author .
             ?author rdfs:label ?authorName .
-            ?author schema1:identifier ?authorOrcid .
+            ?author schema:identifier ?authorOrcid .
         }
         GROUP BY ?rawDataConcept
     }
@@ -55,13 +55,20 @@ WHERE {
                (GROUP_CONCAT(DISTINCT ?reviewerName; separator="; ") AS ?reviewerNames)
                (GROUP_CONCAT(DISTINCT ?reviewerOrcid; separator="; ") AS ?reviewerOrcids)
         WHERE {
-            ?rawDataConcept schema1:reviewedBy ?reviewer .
+            ?rawDataConcept schema:reviewedBy ?reviewer .
             ?reviewer rdfs:label ?reviewerName .
-            ?reviewer schema1:identifier ?reviewerOrcid .
+            ?reviewer schema:identifier ?reviewerOrcid .
         }
         GROUP BY ?rawDataConcept
     }
     
-    # General publications is blank
-    BIND("" AS ?generalPublications)
+    # General publications
+    {
+        SELECT ?rawDataConcept 
+               (GROUP_CONCAT(DISTINCT ?reference; separator="; ") AS ?generalPublications)
+        WHERE {
+            ?rawDataConcept dct:references ?reference .
+        }
+        GROUP BY ?rawDataConcept
+    }
 }
