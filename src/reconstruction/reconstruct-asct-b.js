@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import Papa from 'papaparse';
 import { info, error } from '../utils/logging.js';
-import { writeReconstructedData, executeBlazegraphQuery, loadGraph, shortenId } from './utils.js';
+import { writeReconstructedData, executeBlazegraphQuery, loadGraph, shortenId, formatToMonthDDYYYY } from './utils.js';
 
 export function reconstructAsctb(context) {
   try {   
@@ -51,31 +51,23 @@ function transformRecords(context) {
   // Read and parse metadata
   info('Reading metadata file...');
   const metadataContent = readFileSync(metadataFilePath, 'utf8');
-  const metadataLines = metadataContent.trim().split(/\r?\n/);
-  const metadataHeaders = metadataLines[0].split('\t');
-  const metadataData = metadataLines[1].split('\t');
-  
-  const metadata = {};
-  metadataHeaders.forEach((header, index) => {
-    metadata[header] = metadataData[index] || '';
+  const metadataResult = Papa.parse(metadataContent, {
+    header: true,
+    skipEmptyLines: true
   });
+  const metadata = metadataResult.data[0];
 
   // Parse CSV content
-  const lines = fileContent.trim().split(/\r?\n/); // Handle both \r\n and \n line endings
-  const headers = lines[0].split('\t');
-  const dataRows = lines.slice(1).map(line => {
-    const values = line.split('\t');
-    const row = {};
-    headers.forEach((header, index) => {
-      row[header] = values[index] || '';
-    });
-    return row;
+  const result = Papa.parse(fileContent, {
+    header: true,
+    skipEmptyLines: true
   });
+  const dataRows = result.data;
 
-  // Group records by record_number_str
+  // Group records by record_number
   const recordGroups = {};
   dataRows.forEach(row => {
-    const recordNumber = row['?record_number_str'];
+    const recordNumber = row['record_number'];
     if (!recordGroups[recordNumber]) {
       recordGroups[recordNumber] = [];
     }
@@ -92,17 +84,17 @@ function transformRecords(context) {
 
     // Process anatomical structures (as_)
     const asEntries = group.reduce((acc, row) => {
-      const asRecordNumber = row['?as_record_number_str'];
-      const asOrderNumber = row['?as_order_number_str'];
+      const asRecordNumber = row['as_record_number'];
+      const asOrderNumber = row['as_order_number'];
       const key = `${asRecordNumber}-${asOrderNumber}`;
       
       if (!acc[key]) {
         acc[key] = {
           recordNumber: asRecordNumber,
           orderNumber: asOrderNumber,
-          prefLabel: row['?as_pref_label_str'],
-          sourceConcept: row['?as_source_concept_str'],
-          conceptLabel: row['?as_concept_label_str']
+          prefLabel: row['as_pref_label'],
+          sourceConcept: row['as_source_concept'],
+          conceptLabel: row['as_concept_label']
         };
       }
       return acc;
@@ -121,17 +113,17 @@ function transformRecords(context) {
 
     // Process cell types (ct_)
     const ctEntries = group.reduce((acc, row) => {
-      const ctRecordNumber = row['?ct_record_number_str'];
-      const ctOrderNumber = row['?ct_order_number_str'];
+      const ctRecordNumber = row['ct_record_number'];
+      const ctOrderNumber = row['ct_order_number'];
       const key = `${ctRecordNumber}-${ctOrderNumber}`;
       
       if (!acc[key]) {
         acc[key] = {
           recordNumber: ctRecordNumber,
           orderNumber: ctOrderNumber,
-          prefLabel: row['?ct_pref_label_str'],
-          sourceConcept: row['?ct_source_concept_str'],
-          conceptLabel: row['?ct_concept_label_str']
+          prefLabel: row['ct_pref_label'],
+          sourceConcept: row['ct_source_concept'],
+          conceptLabel: row['ct_concept_label']
         };
       }
       return acc;
@@ -150,9 +142,9 @@ function transformRecords(context) {
 
     // Process biomarkers (bm_)
     const bmEntries = group.reduce((acc, row) => {
-      const bmRecordNumber = row['?bm_record_number_str'];
-      const bmOrderNumber = row['?bm_order_number_str'];
-      const biomarkerType = row['?bm_biomarker_type_str'];
+      const bmRecordNumber = row['bm_record_number'];
+      const bmOrderNumber = row['bm_order_number'];
+      const biomarkerType = row['bm_biomarker_type'];
       const key = `${bmRecordNumber}-${bmOrderNumber}`;
       
       if (!acc[key]) {
@@ -160,9 +152,9 @@ function transformRecords(context) {
           recordNumber: bmRecordNumber,
           orderNumber: bmOrderNumber,
           biomarkerType: biomarkerType,
-          prefLabel: row['?bm_pref_label_str'],
-          sourceConcept: row['?bm_source_concept_str'],
-          conceptLabel: row['?bm_concept_label_str']
+          prefLabel: row['bm_pref_label'],
+          sourceConcept: row['bm_source_concept'],
+          conceptLabel: row['bm_concept_label']
         };
       }
       return acc;
@@ -205,8 +197,8 @@ function transformRecords(context) {
 
     // Process references (ref_)
     const refEntries = group.reduce((acc, row) => {
-      const refRecordNumber = row['?ref_record_number_str'];
-      const refOrderNumber = row['?ref_order_number_str'];
+      const refRecordNumber = row['ref_record_number'];
+      const refOrderNumber = row['ref_order_number'];
       if (!refRecordNumber || !refOrderNumber) {
         return acc;
       }
@@ -217,8 +209,8 @@ function transformRecords(context) {
         acc[key] = {
           recordNumber: refRecordNumber,
           orderNumber: refOrderNumber,
-          doi: row['?ref_doi_str'],
-          external_id: row['?ref_external_id_str'],
+          doi: row['ref_doi'],
+          external_id: row['ref_external_id'],
         };
       }
       return acc;
@@ -312,16 +304,16 @@ function transformRecords(context) {
 
   // Create metadata rows
   const metadataRows = [
-    [metadata['?tableTitle'], '', '', '', '', '', '', '', ''], // First row with table title
+    [metadata['tableTitle'], '', '', '', '', '', '', '', ''], // First row with table title
     ['', '', '', '', '', '', '', '', ''], // Empty second row
-    [`Author Name(s):`, metadata['?authorNames']],
-    [`Author ORCID(s):`, metadata['?authorOrcids']],
-    [`Reviewer(s):`, metadata['?reviewerNames']],
-    [`Reviewer ORCID(s):`, metadata['?reviewerOrcids']],
-    [`General Publication(s):`, metadata['?generalPublications']],
-    [`Data DOI:`, metadata['?dataDoi']],
-    [`Date:`, metadata['?date']],
-    [`Version Number:`, metadata['?versionNumber']]
+    [`Author Name(s):`, metadata['authorNames']],
+    [`Author ORCID(s):`, metadata['authorOrcids']],
+    [`Reviewer(s):`, metadata['reviewerNames']],
+    [`Reviewer ORCID(s):`, metadata['reviewerOrcids']],
+    [`General Publication(s):`, metadata['generalPublications']],
+    [`Data DOI:`, metadata['dataDoi']],
+    [`Date:`, formatToMonthDDYYYY(metadata['date'])],
+    [`Version Number:`, metadata['versionNumber']]
   ];
 
   // Combine metadata rows, headers, and data rows for Papa.unparse
