@@ -7,14 +7,14 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT DISTINCT 
-  ?Organ_Level_str
-  ?Organ_ID_str
-  ?Annotation_Label_str
-  ?Annotation_Label_ID_str
-  ?CL_Label_str
-  ?CL_ID_str
-  ?CL_Match_str
-  ?record_label_str
+  ?Organ_Level
+  ?Organ_ID
+  ?Annotation_Label
+  ?Annotation_Label_ID
+  ?CL_Label
+  ?CL_ID
+  ?CL_Match
+  ?record_label
   ?record_number
 WHERE {
   ?ctAnnMapping a ccf:CtAnnMapping .
@@ -39,15 +39,5 @@ WHERE {
   
   # Extract record number from label like "Record 133"
   BIND(xsd:integer(REPLACE(STR(?record_label), "^Record\\s+(\\d+)$", "$1")) AS ?record_number)
-  
-  # Bind all values to STR
-  BIND(STR(?Organ_Level) AS ?Organ_Level_str)
-  BIND(STR(?Organ_ID) AS ?Organ_ID_str)
-  BIND(STR(?Annotation_Label) AS ?Annotation_Label_str)
-  BIND(STR(?Annotation_Label_ID) AS ?Annotation_Label_ID_str)
-  BIND(STR(?CL_Label) AS ?CL_Label_str)
-  BIND(STR(?CL_ID) AS ?CL_ID_str)
-  BIND(STR(?CL_Match) AS ?CL_Match_str)
-  BIND(STR(?record_label) AS ?record_label_str)
 }
 ORDER BY ?record_number 

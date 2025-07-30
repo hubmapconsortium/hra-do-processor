@@ -6,22 +6,22 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 SELECT DISTINCT 
-    ?experiment_str
-    ?study_method_str ?tissue_preservation_str
+    ?experiment
+    ?study_method ?tissue_preservation
     (GROUP_CONCAT(DISTINCT ?protocol_doi; separator=", ") AS ?protocol_doi_str)
     (GROUP_CONCAT(DISTINCT ?author_orcid; separator=", ") AS ?author_orcid_str)
-    ?sample_organ_str ?sample_organ_label_str
-    ?cycle_str ?cycle_number_str ?used_antibody_str
-    ?antibody_manufacturer_str ?antibody_type_str
-    ?concentration_str ?dilution_str ?is_core_panel_str
-    ?registered_antibody_str ?clone_id_str ?lot_number_str 
-    ?catalog_number_str ?host_str ?isotype_str 
-    ?clonality_str ?conjugate_str ?recombinant_str 
-    ?record_number_str ?antibody_str 
+    ?sample_organ ?sample_organ_label
+    ?cycle ?cycle_number ?used_antibody
+    ?antibody_manufacturer ?antibody_type
+    ?concentration ?dilution ?is_core_panel
+    ?registered_antibody ?clone_id ?lot_number 
+    ?catalog_number ?host ?isotype 
+    ?clonality ?conjugate ?recombinant 
+    ?record_number ?antibody 
     (GROUP_CONCAT(DISTINCT ?detected_protein_id; separator=", ") AS ?detected_protein_id_str) 
     (GROUP_CONCAT(DISTINCT ?detected_protein_label; separator=", ") AS ?detected_protein_label_str)
     (GROUP_CONCAT(DISTINCT ?uniprot_id; separator=", ") AS ?uniprot_id_str)
-    ?rationale_str
+    ?rationale
 WHERE {
     # Get MultiplexedAntibodyBasedImagingExperiment instances
     ?experiment rdf:type ccf:MultiplexedAntibodyBasedImagingExperiment .
@@ -90,33 +90,6 @@ WHERE {
         OPTIONAL { ?antibody ccf:conjugate ?conjugate . }
       }
     }
-    
-    # Bind all values to STR
-    BIND(STR(?experiment) AS ?experiment_str)
-    BIND(STR(?study_method) AS ?study_method_str)
-    BIND(STR(?tissue_preservation) AS ?tissue_preservation_str)
-    BIND(STR(?sample_organ) AS ?sample_organ_str)
-    BIND(STR(?sample_organ_label) AS ?sample_organ_label_str)
-    BIND(STR(?cycle) AS ?cycle_str)
-    BIND(STR(?cycle_number) AS ?cycle_number_str)
-    BIND(STR(?used_antibody) AS ?used_antibody_str)
-    BIND(STR(?antibody_manufacturer) AS ?antibody_manufacturer_str)
-    BIND(STR(?antibody_type) AS ?antibody_type_str)
-    BIND(STR(?concentration) AS ?concentration_str)
-    BIND(STR(?dilution) AS ?dilution_str)
-    BIND(STR(?is_core_panel) AS ?is_core_panel_str)
-    BIND(STR(?record_number) AS ?record_number_str)
-    BIND(STR(?registered_antibody) AS ?registered_antibody_str)
-    BIND(STR(?clone_id) AS ?clone_id_str)
-    BIND(STR(?lot_number) AS ?lot_number_str)
-    BIND(STR(?catalog_number) AS ?catalog_number_str)
-    BIND(STR(?host) AS ?host_str)
-    BIND(STR(?isotype) AS ?isotype_str)
-    BIND(STR(?clonality) AS ?clonality_str)
-    BIND(STR(?conjugate) AS ?conjugate_str)
-    BIND(STR(?recombinant) AS ?recombinant_str)
-    BIND(STR(?antibody) AS ?antibody_str)
-    BIND(STR(?rationale) AS ?rationale_str)
 }
-GROUP BY ?experiment_str ?study_method_str ?tissue_preservation_str ?sample_organ_str ?sample_organ_label_str ?cycle_str ?cycle_number_str ?used_antibody_str ?antibody_manufacturer_str ?antibody_type_str ?concentration_str ?dilution_str ?is_core_panel_str ?record_number_str ?registered_antibody_str ?clone_id_str ?lot_number_str ?catalog_number_str ?host_str ?isotype_str ?clonality_str ?conjugate_str ?recombinant_str ?antibody_str ?detected_protein_id_str ?detected_protein_label_str ?uniprot_id_str ?rationale_str
-ORDER BY ?record_number_str ?cycle_number_str
+GROUP BY ?experiment ?study_method ?tissue_preservation ?sample_organ ?sample_organ_label ?cycle ?cycle_number ?used_antibody ?antibody_manufacturer ?antibody_type ?concentration ?dilution ?is_core_panel ?record_number ?registered_antibody ?clone_id ?lot_number ?catalog_number ?host ?isotype ?clonality ?conjugate ?recombinant ?antibody ?detected_protein_id_str ?detected_protein_label_str ?uniprot_id_str ?rationale
+ORDER BY ?record_number ?cycle_number

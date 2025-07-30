@@ -21,17 +21,14 @@ WHERE {
     ?rawDataConcept a dcat:Dataset .
     FILTER(STRENDS(STR(?rawDataConcept), "#raw-data"))
     
-    # Get table title and bind to string
-    ?rawDataConcept dct:title ?tableTitleRaw .
-    BIND(STR(?tableTitleRaw) AS ?tableTitle)
+    # Get table title
+    ?rawDataConcept dct:title ?tableTitle .
     
-    # Get data DOI and bind to string
-    ?rawDataConcept ccf:doi ?dataDoiRaw .
-    BIND(STR(?dataDoiRaw) AS ?dataDoi)
+    # Get data DOI
+    ?rawDataConcept ccf:doi ?dataDoi .
     
-    # Get date created and bind to string
-    ?rawDataConcept schema1:dateCreated ?dateRaw .
-    BIND(STR(?dateRaw) AS ?date)
+    # Get date created
+    ?rawDataConcept schema1:dateCreated ?date .
     
     # Extract version number from IRI
     BIND(REPLACE(STR(?rawDataConcept), ".*/([^/]+)#raw-data$", "$1") AS ?versionNumber)

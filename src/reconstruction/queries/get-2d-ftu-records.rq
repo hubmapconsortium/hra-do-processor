@@ -3,15 +3,15 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 SELECT DISTINCT
-  ?node_id_str
-  ?node_group_str
-  ?node_label_str
-  ?node_mapped_to_str
+  ?node_id
+  ?node_group
+  ?node_label
+  ?node_mapped_to
   ?ftu_illustration
-  ?tissue_label_str
-  ?tissue_mapped_to_str
-  ?organ_label_str
-  ?organ_mapped_to_str
+  ?tissue_label
+  ?tissue_mapped_to
+  ?organ_label
+  ?organ_mapped_to
 WHERE {
   ?ftu_illustration_node a ccf:FtuIllustrationNode ;
       ccf:node_name ?node_id ;
@@ -30,13 +30,5 @@ WHERE {
   ?parent_organ_concept rdfs:label ?organ_label .
   ?parent_organ_concept oboInOwl:id ?organ_mapped_to .
 
-  # Implement BIND(STR()) to convert results to strings
-  BIND(STR(?node_id) AS ?node_id_str)
-  BIND(STR(?node_group) AS ?node_group_str)
-  BIND(STR(?node_label) AS ?node_label_str)
-  BIND(STR(?biological_concept) AS ?node_mapped_to_str)
-  BIND(STR(?tissue_label) AS ?tissue_label_str)
-  BIND(STR(?tissue_mapped_to) AS ?tissue_mapped_to_str)
-  BIND(STR(?organ_label) AS ?organ_label_str)
-  BIND(STR(?organ_mapped_to) AS ?organ_mapped_to_str)
+  BIND(?biological_concept AS ?node_mapped_to)
 }
