@@ -64,8 +64,12 @@ export function loadGraph(context) {
 }
 
 export function executeBlazegraphQuery(journalPath, queryPath, outputPath) {
-  const command = `blazegraph-runner select --journal=${journalPath} --outformat=tsv ${queryPath} ${outputPath}`;
-  throwOnError(command, 'Error executing blazegraph query');
+  const jsonOutputPath = outputPath.replace(/\.csv$/, '.json');
+  const blazegraphCommand = `blazegraph-runner select --journal=${journalPath} --outformat=json ${queryPath} ${jsonOutputPath}`;
+  const json2csvCommand = `node src/reconstruction/json2csv.js ${jsonOutputPath} ${outputPath}`;
+  
+  throwOnError(blazegraphCommand, 'Error executing blazegraph query');
+  throwOnError(json2csvCommand, 'Error converting JSON to CSV');
 }
 
 export function writeReconstructedData(context, data, outputFile) {
