@@ -86,6 +86,12 @@ function transformRecords(context) {
     const asEntries = group.reduce((acc, row) => {
       const asRecordNumber = row['as_record_number'];
       const asOrderNumber = row['as_order_number'];
+      
+      // Skip entries with missing record number or order number
+      if (!asRecordNumber || !asOrderNumber) {
+        return acc;
+      }
+      
       const key = `${asRecordNumber}-${asOrderNumber}`;
       
       if (!acc[key]) {
@@ -115,6 +121,12 @@ function transformRecords(context) {
     const ctEntries = group.reduce((acc, row) => {
       const ctRecordNumber = row['ct_record_number'];
       const ctOrderNumber = row['ct_order_number'];
+      
+      // Skip entries with missing record number or order number
+      if (!ctRecordNumber || !ctOrderNumber) {
+        return acc;
+      }
+      
       const key = `${ctRecordNumber}-${ctOrderNumber}`;
       
       if (!acc[key]) {
@@ -199,6 +211,12 @@ function transformRecords(context) {
     const ftuEntries = group.reduce((acc, row) => {
       const ftuRecordNumber = row['ftu_record_number'];
       const ftuOrderNumber = row['ftu_order_number'];
+      
+      // Skip entries with missing record number or order number
+      if (!ftuRecordNumber || !ftuOrderNumber) {
+        return acc;
+      }
+      
       const key = `${ftuRecordNumber}-${ftuOrderNumber}`;
       
       if (!acc[key]) {

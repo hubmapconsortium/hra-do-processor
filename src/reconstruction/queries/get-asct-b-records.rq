@@ -18,102 +18,102 @@ WHERE {
     OPTIONAL {
         ?record ccf:anatomical_structure ?anatomical_structure .
         ?anatomical_structure rdf:type ccf:AnatomicalStructureRecord .
+        ?anatomical_structure ccf:record_number ?as_record_number .
+        ?anatomical_structure ccf:order_number ?as_order_number .
         OPTIONAL { ?anatomical_structure ccf:ccf_pref_label ?as_pref_label }
         OPTIONAL { ?anatomical_structure ccf:source_concept ?as_source_concept .
             ?as_source_concept rdfs:label ?as_concept_label
         }
-        OPTIONAL { ?anatomical_structure ccf:record_number ?as_record_number }
-        OPTIONAL { ?anatomical_structure ccf:order_number ?as_order_number }
     }
     
     # Get Cell Type Records
     OPTIONAL {
         ?record ccf:cell_type ?cell_type .
         ?cell_type rdf:type ccf:CellTypeRecord .
+        ?cell_type ccf:record_number ?ct_record_number .
+        ?cell_type ccf:order_number ?ct_order_number .
         OPTIONAL { ?cell_type ccf:ccf_pref_label ?ct_pref_label }
         OPTIONAL { ?cell_type ccf:source_concept ?ct_source_concept .
             ?ct_source_concept rdfs:label ?ct_concept_label
         }
-        OPTIONAL { ?cell_type ccf:record_number ?ct_record_number }
-        OPTIONAL { ?cell_type ccf:order_number ?ct_order_number }
     }
     
     # Get Biomarker Records (Gene Markers)
     OPTIONAL {
         ?record ccf:gene_marker ?biomarker .
         ?biomarker rdf:type ccf:BiomarkerRecord .
+        ?biomarker ccf:record_number ?bm_record_number .
+        ?biomarker ccf:order_number ?bm_order_number .
         OPTIONAL { ?biomarker ccf:ccf_pref_label ?bm_pref_label }
         OPTIONAL { ?biomarker ccf:ccf_biomarker_type ?bm_biomarker_type }
         OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
             ?bm_source_concept rdfs:label ?bm_concept_label
         }
-        OPTIONAL { ?biomarker ccf:record_number ?bm_record_number }
-        OPTIONAL { ?biomarker ccf:order_number ?bm_order_number }
     }
     
     # Get Biomarker Records (Protein Markers)
     OPTIONAL {
         ?record ccf:protein_marker ?biomarker .
         ?biomarker rdf:type ccf:BiomarkerRecord .
+        ?biomarker ccf:record_number ?bm_record_number .
+        ?biomarker ccf:order_number ?bm_order_number .
         OPTIONAL { ?biomarker ccf:ccf_pref_label ?bm_pref_label }
         OPTIONAL { ?biomarker ccf:ccf_biomarker_type ?bm_biomarker_type }
         OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
             ?bm_source_concept rdfs:label ?bm_concept_label
         }
-        OPTIONAL { ?biomarker ccf:record_number ?bm_record_number }
-        OPTIONAL { ?biomarker ccf:order_number ?bm_order_number }
     }
     
     # Get Biomarker Records (Lipid Markers)
     OPTIONAL {
         ?record ccf:lipid_marker ?biomarker .
         ?biomarker rdf:type ccf:BiomarkerRecord .
+        ?biomarker ccf:record_number ?bm_record_number .
+        ?biomarker ccf:order_number ?bm_order_number .
         OPTIONAL { ?biomarker ccf:ccf_pref_label ?bm_pref_label }
         OPTIONAL { ?biomarker ccf:ccf_biomarker_type ?bm_biomarker_type }
         OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
             ?bm_source_concept rdfs:label ?bm_concept_label
         }
-        OPTIONAL { ?biomarker ccf:record_number ?bm_record_number }
-        OPTIONAL { ?biomarker ccf:order_number ?bm_order_number }
     }
     
     # Get Biomarker Records (Metabolite Markers)
     OPTIONAL {
         ?record ccf:metabolite_marker ?biomarker .
         ?biomarker rdf:type ccf:BiomarkerRecord .
+        ?biomarker ccf:record_number ?bm_record_number .
+        ?biomarker ccf:order_number ?bm_order_number .
         OPTIONAL { ?biomarker ccf:ccf_pref_label ?bm_pref_label }
         OPTIONAL { ?biomarker ccf:ccf_biomarker_type ?bm_biomarker_type }
         OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
             ?bm_source_concept rdfs:label ?bm_concept_label
         }
-        OPTIONAL { ?biomarker ccf:record_number ?bm_record_number }
-        OPTIONAL { ?biomarker ccf:order_number ?bm_order_number }
     }
     
     # Get Biomarker Records (Proteoform Markers)
     OPTIONAL {
         ?record ccf:proteoform_marker ?biomarker .
         ?biomarker rdf:type ccf:BiomarkerRecord .
+        ?biomarker ccf:record_number ?bm_record_number .
+        ?biomarker ccf:order_number ?bm_order_number .
         OPTIONAL { ?biomarker ccf:ccf_pref_label ?bm_pref_label }
         OPTIONAL { ?biomarker ccf:ccf_biomarker_type ?bm_biomarker_type }
         OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
             ?bm_source_concept rdfs:label ?bm_concept_label
         }
-        OPTIONAL { ?biomarker ccf:record_number ?bm_record_number }
-        OPTIONAL { ?biomarker ccf:order_number ?bm_order_number }
     }
 
     # Get FTU Records
     OPTIONAL {
         ?record ccf:ftu_types ?ftu .
         ?ftu rdf:type ccf:FtuRecord .
+        ?ftu ccf:record_number ?ftu_record_number .
+        ?ftu ccf:order_number ?ftu_order_number .
         OPTIONAL { ?ftu ccf:ccf_pref_label ?ftu_pref_label }
         OPTIONAL { ?ftu ccf:source_concept ?ftu_source_concept .
             ?ftu_source_concept rdfs:label ?ftu_concept_label
         }
         OPTIONAL { ?ftu ccf:notes ?ftu_notes }
-        OPTIONAL { ?ftu ccf:record_number ?ftu_record_number }
-        OPTIONAL { ?ftu ccf:order_number ?ftu_order_number }
     }
 
     # Get Reference Records
