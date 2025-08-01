@@ -146,11 +146,15 @@ export function createObject(name, structureType) {
 }
 
 export class Reference {
-  constructor(id) {
-    this.id = id;
+  constructor(name) {
+    this.name = !this.checkIsDoi(name) ? name : '';
   }
   isValid() {
-    return !!this.id || !!this.doi || !!this.notes;
+    return !!this.id;
+  }
+  checkIsDoi(str) {
+    const doiRegex = /(10\.\d{4,9}\/[\w\-._;()/:]+)/i;
+    return doiRegex.test(str);
   }
 }
 
@@ -219,6 +223,15 @@ export class Row {
     this.cell_types = this.cell_types.filter((s) => s.isValid());
     this.ftu_types = this.ftu_types.filter((s) => s.isValid());
     this.references = this.references.filter((s) => s.isValid());
+    
+    // Remove duplicates based on 'id' property
+    const seenIds = new Set();
+    this.references = this.references.filter((s) => {
+      if (s.id && seenIds.has(s.id)) return false;
+      if (s.id) seenIds.add(s.id);
+      return true;
+    });
+    
     this.biomarkers_gene = this.biomarkers_gene.filter((s) => s.isValid());
     this.biomarkers_protein = this.biomarkers_protein.filter((s) => s.isValid());
     this.biomarkers_lipids = this.biomarkers_lipids.filter((s) => s.isValid());

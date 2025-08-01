@@ -156,10 +156,12 @@ function normalizeCtData(context, data) {
       .filter((id) => passIdFilterCriteria(context, id));
 
     // Get the references
-    const references = row.references.map((ref) => {
-      const refString = checkNotEmpty(ref.id) ? ref.id : 'N/A';
-      return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
-    });
+    const references = row.references
+      .filter(({id}) => checkNotEmpty(id))
+      .map((ref) => {
+        const refString = ref.id;
+        return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
+      });
 
     // Get the last cell type as the primary cell
     const last_ct = valid_ct.pop();
@@ -285,11 +287,14 @@ function normalizeAsctbRecord(context, data) {
       .map((item, order) => generateBmInstance(context, recordNumber, item, order))
       .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept));
 
+    // Generate FTU instances
+    const ftuInstances = row.ftu_types
+      .map((item, order) => generateFtuInstance(context, recordNumber, item, order))
+      .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept));
+
     // Populate all valid references
-    const references = row.references.map((ref) => {
-      const refString = checkNotEmpty(ref.id) ? ref.id : 'N/A';
-      return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
-    });
+    const references = row.references
+      .map((item, order) => generateReferenceInstance(context, recordNumber, item, order));
 
     // Collect all the items
     collector.push({
@@ -304,7 +309,8 @@ function normalizeAsctbRecord(context, data) {
       lipid_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.BL),
       metabolites_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.BM),
       proteoforms_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.BF),
-      references: references,
+      ftu_list: ftuInstances,
+      reference_list: references,
     });
     return collector;
   }, []);
@@ -339,10 +345,12 @@ function normalizeCellMarkerDescriptor(context, data) {
       .filter((id) => passIdFilterCriteria(context, id));
 
     // Populate all valid references
-    const references = row.references.map((ref) => {
-      const refString = checkNotEmpty(ref.id) ? ref.id : 'N/A';
-      return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
-    });
+    const references = row.references
+      .filter(({id}) => checkNotEmpty(id))
+      .map((ref) => {
+        const refString = ref.id;
+        return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
+      });
 
     // Collect all the items if the components are complete.
     if (primaryAs && primaryCt && biomarkers) {
@@ -353,7 +361,7 @@ function normalizeCellMarkerDescriptor(context, data) {
         primary_cell_type: primaryCt.id,
         primary_anatomical_structure: primaryAs,
         biomarker_set: biomarkers,
-        references: references,
+        references: removeDuplicates(references),
         source_record: generateAsctbRecordId(context, recordNumber),
       });
     }
@@ -379,7 +387,7 @@ function generateAsInstance(context, recordNumber, data, index) {
 
 function generateCtInstance(context, recordNumber, data, index) {
   const { name: doName } = context.selectedDigitalObject;
-  const { id, name } = data;
+  const { id, name, notes } = data;
   const ctName = normalizeString(name);
   const orderNumber = index + 1;
   return {
@@ -388,6 +396,7 @@ function generateCtInstance(context, recordNumber, data, index) {
     type_of: ['ccf:CellTypeRecord'],
     ccf_pref_label: ctName,
     source_concept: generateIdWhenEmpty(id, ctName),
+    notes: notes,
     record_number: recordNumber,
     order_number: orderNumber,
   };
@@ -410,6 +419,41 @@ function generateBmInstance(context, recordNumber, data, index) {
   };
 }
 
+function generateFtuInstance(context, recordNumber, data, index) {
+  const { name: doName } = context.selectedDigitalObject;
+  const { id, name, notes } = data;
+  const ftuName = normalizeString(name);
+  const orderNumber = index + 1;
+  return {
+    id: generateFtuInstanceId(context, recordNumber, orderNumber),
+    label: `${ftuName} (Table ${doName}, Record ${recordNumber}, Column FTU/${orderNumber})`,
+    type_of: ['ccf:FtuRecord'],
+    ccf_pref_label: ftuName,
+    source_concept: id,
+    notes: notes,
+    record_number: recordNumber,
+    order_number: orderNumber,
+  };
+}
+
+function generateReferenceInstance(context, recordNumber, data, index) {
+  const { id, name, notes } = data;
+  const orderNumber = index + 1;
+  const refString = checkIsDoi(id) ? normalizeDoi(id) : normalizeString(id);
+  const obj = {
+    id: generateReferenceInstanceId(context, recordNumber, orderNumber),
+    doi: refString,
+    type_of: ['ccf:ReferenceRecord'],
+    notes: notes,
+    record_number: recordNumber,
+    order_number: orderNumber,
+  };
+  if (name) {
+    obj.external_id = normalizePubMedUrl(name);
+  }
+  return obj;
+}
+
 function generateAsctbRecordId(context, recordNumber) {
   const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
   return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}`;
@@ -428,6 +472,16 @@ function generateCtInstanceId(context, recordNumber, orderNumber) {
 function generateBmInstanceId(context, recordNumber, orderNumber) {
   const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
   return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}-BM${orderNumber}`;
+}
+
+function generateFtuInstanceId(context, recordNumber, orderNumber) {
+  const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
+  return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}-FTU${orderNumber}`;
+}
+
+function generateReferenceInstanceId(context, recordNumber, orderNumber) {
+  const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
+  return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}-REF${orderNumber}`;
 }
 
 function generateCellMarkerDescriptorId(context, recordNumber) {
@@ -458,6 +512,17 @@ function checkNotEmpty(str) {
 function checkIsDoi(str) {
   const doiRegex = /(10\.\d{4,9}\/[\w\-._;()/:]+)/i;
   return doiRegex.test(str);
+}
+
+function normalizePubMedUrl(str) {
+  // Check if the string contains a PubMed URL
+  const pubmedRegex = /(?:https?:\/\/(?:www\.)?(?:pubmed\.ncbi\.nlm\.nih\.gov|ncbi\.nlm\.nih\.gov\/pubmed)\/(\d+)(?:\/?$|\/.*))/i;
+  const match = str.match(pubmedRegex);
+  if (match) {
+    const pmid = match[1];
+    return `PMID:${pmid}`;
+  }
+  return str;
 }
 
 function removeDuplicates(array) {

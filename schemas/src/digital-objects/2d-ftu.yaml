@@ -175,5 +175,6 @@ slots:
     description: >-
       Indicates the part of the illustration to which this node belongs to
       connect to the overall FTU structure.
+    range: EntityID
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
