@@ -316,6 +316,25 @@ function transformRecords(context) {
       const baseColumnB = getBaseColumn(b);
       
       if (baseColumnA !== baseColumnB) {
+        // Extract numeric parts for proper numerical sorting
+        const extractNumber = (baseCol) => {
+          const parts = baseCol.split('/');
+          if (parts.length >= 2) {
+            const num = parseInt(parts[1], 10);
+            return isNaN(num) ? 0 : num;
+          }
+          return 0;
+        };
+        
+        const numA = extractNumber(baseColumnA);
+        const numB = extractNumber(baseColumnB);
+        
+        // If both have valid numbers, compare numerically
+        if (numA !== 0 && numB !== 0) {
+          return numA - numB;
+        }
+        
+        // Fall back to lexicographic comparison if numbers aren't valid
         return baseColumnA.localeCompare(baseColumnB);
       }
       
