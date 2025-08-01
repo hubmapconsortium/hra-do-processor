@@ -413,13 +413,14 @@ function generateBmInstance(context, recordNumber, data, index) {
 }
 
 function generateReferenceInstance(context, recordNumber, data, index) {
-  const { id, name } = data;
+  const { id, name, notes } = data;
   const orderNumber = index + 1;
   const refString = checkIsDoi(id) ? normalizeDoi(id) : normalizeString(id);
   const obj = {
     id: generateReferenceInstanceId(context, recordNumber, orderNumber),
     doi: refString,
     type_of: ['ccf:ReferenceRecord'],
+    notes: notes,
     record_number: recordNumber,
     order_number: orderNumber,
   };

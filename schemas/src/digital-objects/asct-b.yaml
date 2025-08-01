@@ -197,6 +197,7 @@ classes:
     slots:
       - doi
       - external_id
+      - notes
       - record_number
       - order_number
 
@@ -537,5 +538,12 @@ slots:
     description: >- 
       Reference to the ASCT+B record that contains the actual information.
     range: AsctbRecord
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  notes:
+    title: notes
+    description: >-
+      Reference to the notes column in the ASCT+B table
+    slot_uri: ccf:notes
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
