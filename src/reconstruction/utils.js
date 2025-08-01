@@ -134,11 +134,11 @@ export function formatToMonthDDYYYY(dateStr) {
         'July', 'August', 'September', 'October', 'November', 'December'
       ];
       const monthName = monthNames[parseInt(month, 10) - 1];
-      return `"${monthName} ${parseInt(day, 10)}, ${year}"`;
+      return `${monthName} ${parseInt(day, 10)}, ${year}`;
     }
-    return `"${dateStr}"`;
+    return `${dateStr}`;
   } catch (e) {
-    return `"${dateStr}"`;
+    return `${dateStr}`;
   }
 }
 
