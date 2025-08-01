@@ -195,6 +195,38 @@ function transformRecords(context) {
       allColumns.add(`${columnPrefix}/ID`);
     });
 
+    // Process functional tissue unit (ftu_)
+    const ftuEntries = group.reduce((acc, row) => {
+      const ftuRecordNumber = row['ftu_record_number'];
+      const ftuOrderNumber = row['ftu_order_number'];
+      const key = `${ftuRecordNumber}-${ftuOrderNumber}`;
+      
+      if (!acc[key]) {
+        acc[key] = {
+          recordNumber: ftuRecordNumber,
+          orderNumber: ftuOrderNumber,
+          prefLabel: row['ftu_pref_label'],
+          sourceConcept: row['ftu_source_concept'],
+          conceptLabel: row['ftu_concept_label'],
+          notes: row['ftu_notes'],
+        };
+      }
+      return acc;
+    }, {});
+
+    Object.values(ftuEntries).forEach(entry => {
+      const columnPrefix = `FTU/${entry.orderNumber}`;
+      transformedRow[columnPrefix] = entry.prefLabel;
+      transformedRow[`${columnPrefix}/LABEL`] = entry.conceptLabel;
+      transformedRow[`${columnPrefix}/ID`] = shortenId(entry.sourceConcept);
+      transformedRow[`${columnPrefix}/NOTES`] = entry.notes;
+      
+      allColumns.add(columnPrefix);
+      allColumns.add(`${columnPrefix}/LABEL`);
+      allColumns.add(`${columnPrefix}/ID`);
+      allColumns.add(`${columnPrefix}/NOTES`);
+    });
+
     // Process references (ref_)
     const refEntries = group.reduce((acc, row) => {
       const refRecordNumber = row['ref_record_number'];
@@ -211,6 +243,7 @@ function transformRecords(context) {
           orderNumber: refOrderNumber,
           doi: row['ref_doi'],
           external_id: row['ref_external_id'],
+          notes: row['notes'],
         };
       }
       return acc;
@@ -220,22 +253,25 @@ function transformRecords(context) {
       const columnPrefix = `REF/${entry.orderNumber}`;
       transformedRow[columnPrefix] = entry.external_id;
       transformedRow[`${columnPrefix}/ID`] = entry.doi;
+      transformedRow[`${columnPrefix}/NOTES`] = entry.notes;
       
       allColumns.add(columnPrefix);
       allColumns.add(`${columnPrefix}/ID`);
+      allColumns.add(`${columnPrefix}/NOTES`);
     });
 
     // Ensure at least one REF column exists
     if (Object.keys(refEntries).length === 0) {
       allColumns.add('REF/1');
-      allColumns.add('REF/1/ID');
+      allColumns.add('REF/1/ID'),
+      allColumns.add('REF/1/NOTES');
     }
 
     transformedRows.push(transformedRow);
   });
 
   // Create column headers in the specified order: AS, CT, BM, REF
-  const columnOrder = ['AS', 'CT', 'BGene', 'BProtein', 'BLipid', 'BMetabolite', 'BProteoform', 'REF'];
+  const columnOrder = ['AS', 'CT', 'BGene', 'BProtein', 'BLipid', 'BMetabolite', 'BProteoform', 'FTU', 'REF'];
   
   const newHeader = Array.from(allColumns).sort((a, b) => {
     // Get the prefix of each column (e.g., "AS/1" -> "AS", "CT/2/LABEL" -> "CT")

@@ -7,7 +7,8 @@ SELECT DISTINCT ?record_number
        ?as_pref_label ?as_source_concept ?as_concept_label ?as_record_number ?as_order_number
        ?ct_pref_label ?ct_source_concept ?ct_concept_label ?ct_record_number ?ct_order_number
        ?bm_pref_label ?bm_biomarker_type ?bm_source_concept ?bm_concept_label ?bm_record_number ?bm_order_number
-       ?ref_doi ?ref_external_id ?ref_record_number ?ref_order_number
+       ?ftu_pref_label ?ftu_source_concept ?ftu_concept_label ?ftu_notes ?ftu_record_number ?ftu_order_number
+       ?ref_doi ?ref_external_id ?ref_notes ?ref_record_number ?ref_order_number
 WHERE {
     # Get ASCT+B Records
     ?record rdf:type ccf:AsctbRecord .
@@ -102,12 +103,26 @@ WHERE {
         OPTIONAL { ?biomarker ccf:order_number ?bm_order_number }
     }
 
+    # Get FTU Records
+    OPTIONAL {
+        ?record ccf:ftu_types ?ftu .
+        ?ftu rdf:type ccf:FtuRecord .
+        OPTIONAL { ?ftu ccf:ccf_pref_label ?ftu_pref_label }
+        OPTIONAL { ?ftu ccf:source_concept ?ftu_source_concept .
+            ?ftu_source_concept rdfs:label ?ftu_concept_label
+        }
+        OPTIONAL { ?ftu ccf:notes ?ftu_notes }
+        OPTIONAL { ?ftu ccf:record_number ?ftu_record_number }
+        OPTIONAL { ?ftu ccf:order_number ?ftu_order_number }
+    }
+
     # Get Reference Records
     OPTIONAL {
         ?record ccf:reference ?reference .
         ?reference rdf:type ccf:ReferenceRecord .
         OPTIONAL { ?reference ccf:doi ?ref_doi }
         OPTIONAL { ?reference ccf:external_id ?ref_external_id }
+        OPTIONAL { ?reference ccf:notes ?ref_notes }
         OPTIONAL { ?reference ccf:record_number ?ref_record_number }
         OPTIONAL { ?reference ccf:order_number ?ref_order_number }
     }
@@ -117,5 +132,6 @@ GROUP BY ?record_number
          ?as_pref_label ?as_source_concept ?as_concept_label ?as_record_number ?as_order_number
          ?ct_pref_label ?ct_source_concept ?ct_concept_label ?ct_record_number ?ct_order_number
          ?bm_pref_label ?bm_biomarker_type ?bm_source_concept ?bm_concept_label ?bm_record_number ?bm_order_number
-         ?ref_doi ?ref_external_id ?ref_record_number ?ref_order_number
+         ?ftu_pref_label ?ftu_source_concept ?ftu_concept_label ?ftu_notes ?ftu_record_number ?ftu_order_number
+         ?ref_doi ?ref_external_id ?ref_notes ?ref_record_number ?ref_order_number
 ORDER BY ?record_number
