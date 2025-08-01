@@ -123,6 +123,7 @@ program
   .command('reconstruct')
   .description('Reconstructs a given digital object from the enriched graph data')
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
+  .option('--keep-artifacts', 'Keep intermediate files for debugging (default: cleanup artifacts)', false)
   .action((str, _options, command) => {
     reconstruct(getContext(program, command, str));
   });

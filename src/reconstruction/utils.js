@@ -6,9 +6,6 @@ import { info } from '../utils/logging.js';
 import { reifyDoTurtle, reifyMetadataTurtle, reifyRedundantTurtle } from '../utils/reify.js';
 import { loadDoIntoTripleStore, loadMetadataIntoTripleStore, loadRedundantIntoTripleStore } from '../deployment/utils.js';
 
-// Configuration flag to control cleanup of reconstruction artifacts
-// Set to false to preserve intermediate files for debugging
-export const CLEANUP_ARTIFACTS = true;
 
 // Prefix definitions for shortening URIs
 const PREFIX_MAPPINGS = {
@@ -83,7 +80,8 @@ export function writeReconstructedData(context, data, outputFile) {
 }
 
 export function cleanDirectory(context) {
-  if (!CLEANUP_ARTIFACTS) {
+  // Skip cleanup if --keep-artifacts flag is set
+  if (context.keepArtifacts) {
     return;
   }
   
