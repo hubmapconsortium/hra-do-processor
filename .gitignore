@@ -4,7 +4,6 @@ digital-objects/*/*/*/normalized
 digital-objects/*/*/*/enriched
 scratch
 schemas/generated/*
-.store/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
