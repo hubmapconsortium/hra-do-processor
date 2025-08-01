@@ -387,7 +387,7 @@ function generateAsInstance(context, recordNumber, data, index) {
 
 function generateCtInstance(context, recordNumber, data, index) {
   const { name: doName } = context.selectedDigitalObject;
-  const { id, name } = data;
+  const { id, name, notes } = data;
   const ctName = normalizeString(name);
   const orderNumber = index + 1;
   return {
@@ -396,6 +396,7 @@ function generateCtInstance(context, recordNumber, data, index) {
     type_of: ['ccf:CellTypeRecord'],
     ccf_pref_label: ctName,
     source_concept: generateIdWhenEmpty(id, ctName),
+    notes: notes,
     record_number: recordNumber,
     order_number: orderNumber,
   };

@@ -5,7 +5,7 @@ PREFIX dct: <http://purl.org/dc/terms/>
 
 SELECT DISTINCT ?record_number 
        ?as_pref_label ?as_source_concept ?as_concept_label ?as_record_number ?as_order_number
-       ?ct_pref_label ?ct_source_concept ?ct_concept_label ?ct_record_number ?ct_order_number
+       ?ct_pref_label ?ct_source_concept ?ct_concept_label ?ct_notes ?ct_record_number ?ct_order_number
        ?bm_pref_label ?bm_biomarker_type ?bm_source_concept ?bm_concept_label ?bm_record_number ?bm_order_number
        ?ftu_pref_label ?ftu_source_concept ?ftu_concept_label ?ftu_notes ?ftu_record_number ?ftu_order_number
        ?ref_doi ?ref_external_id ?ref_notes ?ref_record_number ?ref_order_number
@@ -36,6 +36,7 @@ WHERE {
         OPTIONAL { ?cell_type ccf:source_concept ?ct_source_concept .
             ?ct_source_concept rdfs:label ?ct_concept_label
         }
+        OPTIONAL { ?cell_type ccf:notes ?ct_notes }
     }
     
     # Get Biomarker Records (Gene Markers)
@@ -130,7 +131,7 @@ WHERE {
 }
 GROUP BY ?record_number 
          ?as_pref_label ?as_source_concept ?as_concept_label ?as_record_number ?as_order_number
-         ?ct_pref_label ?ct_source_concept ?ct_concept_label ?ct_record_number ?ct_order_number
+         ?ct_pref_label ?ct_source_concept ?ct_concept_label ?ct_notes ?ct_record_number ?ct_order_number
          ?bm_pref_label ?bm_biomarker_type ?bm_source_concept ?bm_concept_label ?bm_record_number ?bm_order_number
          ?ftu_pref_label ?ftu_source_concept ?ftu_concept_label ?ftu_notes ?ftu_record_number ?ftu_order_number
          ?ref_doi ?ref_external_id ?ref_notes ?ref_record_number ?ref_order_number

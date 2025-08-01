@@ -134,6 +134,7 @@ function transformRecords(context) {
           recordNumber: ctRecordNumber,
           orderNumber: ctOrderNumber,
           prefLabel: row['ct_pref_label'],
+          notes: row['ct_notes'],
           sourceConcept: row['ct_source_concept'],
           conceptLabel: row['ct_concept_label']
         };
@@ -146,10 +147,12 @@ function transformRecords(context) {
       transformedRow[columnPrefix] = entry.prefLabel;
       transformedRow[`${columnPrefix}/LABEL`] = entry.conceptLabel;
       transformedRow[`${columnPrefix}/ID`] = shortenId(entry.sourceConcept);
+      transformedRow[`${columnPrefix}/NOTES`] = entry.notes;
       
       allColumns.add(columnPrefix);
       allColumns.add(`${columnPrefix}/LABEL`);
       allColumns.add(`${columnPrefix}/ID`);
+      allColumns.add(`${columnPrefix}/NOTES`);
     });
 
     // Process biomarkers (bm_)

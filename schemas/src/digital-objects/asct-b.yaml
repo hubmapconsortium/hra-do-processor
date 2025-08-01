@@ -167,6 +167,7 @@ classes:
     slots:
       - ccf_pref_label
       - source_concept
+      - notes
       - record_number
       - order_number
 
