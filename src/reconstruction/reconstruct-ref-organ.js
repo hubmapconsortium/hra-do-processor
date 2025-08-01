@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import Papa from 'papaparse';
 import { info, error } from '../utils/logging.js';
-import { writeReconstructedData, executeBlazegraphQuery, loadGraph, shortenId } from './utils.js';
+import { writeReconstructedData, loadGraph, queryGraph, shortenId } from './utils.js';
 
 export function reconstructRefOrgan(context) {
   try {   
@@ -17,23 +17,6 @@ export function reconstructRefOrgan(context) {
   }
 }
 
-function queryGraph(context) {
-  try {
-    const processorHome = resolve(context.processorHome);
-    const doPath = resolve(context.selectedDigitalObject.path);
-    const journalPath = resolve(doPath, 'reconstructed/blazegraph.jnl');
-
-    // Query records only (no metadata)
-    const recordsQueryPath = resolve(processorHome, 'src/reconstruction/queries/get-ref-organ-records.rq');
-    const recordsOutputPath = resolve(doPath, 'reconstructed/records.csv');
-    executeBlazegraphQuery(journalPath, recordsQueryPath, recordsOutputPath);
-
-    info('Graph query completed successfully');
-  } catch (err) {
-    error('Error during graph query:', err);
-    throw err;
-  }
-}
 
 function transformRecords(context) {
   const doPath = resolve(context.selectedDigitalObject.path);

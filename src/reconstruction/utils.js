@@ -2,7 +2,7 @@ import sh from 'shelljs';
 import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 import { throwOnError } from '../utils/sh-exec.js';
-import { info } from '../utils/logging.js';
+import { info, error } from '../utils/logging.js';
 import { reifyDoTurtle, reifyMetadataTurtle, reifyRedundantTurtle } from '../utils/reify.js';
 import { loadDoIntoTripleStore, loadMetadataIntoTripleStore, loadRedundantIntoTripleStore } from '../deployment/utils.js';
 
@@ -57,6 +57,32 @@ export function loadGraph(context) {
     sh.cp(redundant, redundantReconstructPath);
     reifyRedundantTurtle(context, redundantReconstructPath);
     loadRedundantIntoTripleStore(context, resolve(doPath, 'reconstructed/blazegraph.jnl'));
+  }
+}
+
+export function queryGraph(context) {
+  try {
+    const processorHome = resolve(context.processorHome);
+    const doPath = resolve(context.selectedDigitalObject.path);
+    const journalPath = resolve(doPath, 'reconstructed/blazegraph.jnl');
+    const type = context.selectedDigitalObject.type;
+
+    // Always query records
+    const recordsQueryPath = resolve(processorHome, `src/reconstruction/queries/get-${type}-records.rq`);
+    const recordsOutputPath = resolve(doPath, 'reconstructed/records.csv');
+    executeBlazegraphQuery(journalPath, recordsQueryPath, recordsOutputPath);
+    
+    // Auto-detect and query metadata if file exists
+    const metadataQueryPath = resolve(processorHome, `src/reconstruction/queries/get-${type}-metadata.rq`);
+    if (existsSync(metadataQueryPath)) {
+      const metadataOutputPath = resolve(doPath, 'reconstructed/metadata.csv');
+      executeBlazegraphQuery(journalPath, metadataQueryPath, metadataOutputPath);
+    }
+
+    info('Graph query completed successfully');
+  } catch (err) {
+    error('Error during graph query:', err);
+    throw err;
   }
 }
 
