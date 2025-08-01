@@ -287,6 +287,11 @@ function normalizeAsctbRecord(context, data) {
       .map((item, order) => generateBmInstance(context, recordNumber, item, order))
       .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept));
 
+    // Generate FTU instances
+    const ftuInstances = row.ftu_types
+      .map((item, order) => generateFtuInstance(context, recordNumber, item, order))
+      .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept));
+
     // Populate all valid references
     const references = row.references
       .map((item, order) => generateReferenceInstance(context, recordNumber, item, order));
@@ -304,6 +309,7 @@ function normalizeAsctbRecord(context, data) {
       lipid_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.BL),
       metabolites_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.BM),
       proteoforms_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.BF),
+      ftu_list: ftuInstances,
       reference_list: references,
     });
     return collector;
@@ -412,6 +418,23 @@ function generateBmInstance(context, recordNumber, data, index) {
   };
 }
 
+function generateFtuInstance(context, recordNumber, data, index) {
+  const { name: doName } = context.selectedDigitalObject;
+  const { id, name, notes } = data;
+  const ftuName = normalizeString(name);
+  const orderNumber = index + 1;
+  return {
+    id: generateFtuInstanceId(context, recordNumber, orderNumber),
+    label: `${ftuName} (Table ${doName}, Record ${recordNumber}, Column FTU/${orderNumber})`,
+    type_of: ['ccf:FtuRecord'],
+    ccf_pref_label: ftuName,
+    source_concept: id,
+    notes: notes,
+    record_number: recordNumber,
+    order_number: orderNumber,
+  };
+}
+
 function generateReferenceInstance(context, recordNumber, data, index) {
   const { id, name, notes } = data;
   const orderNumber = index + 1;
@@ -448,6 +471,11 @@ function generateCtInstanceId(context, recordNumber, orderNumber) {
 function generateBmInstanceId(context, recordNumber, orderNumber) {
   const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
   return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}-BM${orderNumber}`;
+}
+
+function generateFtuInstanceId(context, recordNumber, orderNumber) {
+  const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
+  return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}-FTU${orderNumber}`;
 }
 
 function generateReferenceInstanceId(context, recordNumber, orderNumber) {

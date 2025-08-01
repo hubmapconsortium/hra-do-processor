@@ -137,6 +137,7 @@ classes:
       - lipid_marker_list
       - metabolites_marker_list
       - proteoforms_marker_list
+      - ftu_list
       - reference_list
 
   AnatomicalStructureRecord:
@@ -182,6 +183,22 @@ classes:
       - ccf_pref_label
       - ccf_biomarker_type
       - source_concept
+      - record_number
+      - order_number
+
+  FtuRecord:
+    title: Functional Tissue Unit Record
+    description: >-
+      A functional tissue unit (FTU) record represents a specific value in
+      the ASCT+B table, located in the "FTU" column, identified by its row
+      (record number) and column (order number).
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - ccf_pref_label
+      - source_concept
+      - notes
       - record_number
       - order_number
 
@@ -482,6 +499,16 @@ slots:
     inlined_as_list: true
     range: BiomarkerRecord
     slot_uri: ccf:proteoform_marker
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  ftu_list:
+    title: functional tissue unit
+    description: List of FTUs referenced within ASCT+B records.
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: FtuRecord
+    slot_uri: ccf:ftu_types
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   reference_list:
