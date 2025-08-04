@@ -1,7 +1,5 @@
 
-import { writeFileSync } from 'fs';
-import { resolve } from 'path';
-import { error } from '../utils/logging.js';
+import { logValidationErrors as logErrors } from './validation-logging.js';
 
 
 export function compareObjects(obj1, obj2, options = {}) {
@@ -21,9 +19,7 @@ export function compareObjects(obj1, obj2, options = {}) {
   };
 }
 
-/**
- * Validate structural equality (keys, types, nested structure)
- */
+// Validate structural equality (keys, types, nested structure)
 function validateStructure(obj1, obj2, path, errors) {
   // Check for null/undefined mismatches
   if ((obj1 == null) !== (obj2 == null)) {
@@ -107,9 +103,7 @@ function validateStructure(obj1, obj2, path, errors) {
   }
 }
 
-/**
- * Validate semantic equality (actual values)
- */
+// Validate semantic equality (actual values)
 function validateValues(obj1, obj2, path, errors) {
   // Skip if structural validation already failed
   if (obj1 == null || obj2 == null) {
@@ -154,7 +148,6 @@ function validateValues(obj1, obj2, path, errors) {
   }
 }
 
-
 // Check using set comparison to see if the arrays have the same elements.
 function validateArrayValues(arr1, arr2, path, errors) {
   // Skip if arrays have different lengths (already caught by structural validation)
@@ -186,41 +179,12 @@ function validateArrayValues(arr1, arr2, path, errors) {
   });
 }
 
-
-/**
- * Get consistent type string for objects
- */
 function getObjectType(obj) {
   if (obj === null) return 'null';
   if (Array.isArray(obj)) return 'array';
   return typeof obj;
 }
 
-
 export function logValidationErrors(errors, context, file1Path = '', file2Path = '') {
-  if (!errors || errors.length === 0) {
-    return;
-  }
-
-  try {
-    const doPath = resolve(context.selectedDigitalObject.path);
-    const logPath = resolve(doPath, 'reconstructed', 'validation-error.log');
-
-    const logEntry = {
-      timestamp: new Date().toISOString(),
-      level: 'ERROR',
-      message: 'YAML validation failed',
-      details: {
-        structural_errors: errors.filter(e => e.type === 'structural'),
-        semantic_errors: errors.filter(e => e.type === 'semantic'),
-        file1: file1Path,
-        file2: file2Path,
-        total_errors: errors.length
-      }
-    };
-
-    writeFileSync(logPath, JSON.stringify(logEntry, null, 2));
-  } catch (err) {
-    error(`Failed to write validation error log: ${err.message}`);
-  }
+  logErrors(errors, context, file1Path, file2Path);
 }
