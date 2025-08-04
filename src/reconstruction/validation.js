@@ -135,13 +135,9 @@ function validateValues(obj1, obj2, path, errors) {
     return;
   }
 
-  // Handle arrays
+  // Handle arrays (order-independent)
   if (Array.isArray(obj1)) {
-    const minLength = Math.min(obj1.length, obj2.length);
-    for (let i = 0; i < minLength; i++) {
-      const newPath = `${path}[${i}]`;
-      validateValues(obj1[i], obj2[i], newPath, errors);
-    }
+    validateArrayValues(obj1, obj2, path, errors);
     return;
   }
 
@@ -157,6 +153,39 @@ function validateValues(obj1, obj2, path, errors) {
     });
   }
 }
+
+
+// Check using set comparison to see if the arrays have the same elements.
+function validateArrayValues(arr1, arr2, path, errors) {
+  // Skip if arrays have different lengths (already caught by structural validation)
+  if (arr1.length !== arr2.length) {
+    return;
+  }
+
+  const set1 = new Set(arr1);
+  const set2 = new Set(arr2);
+
+  // Find elements missing in each array
+  const missingInArr2 = [...set1].filter(item => !set2.has(item));
+  const missingInArr1 = [...set2].filter(item => !set1.has(item));
+
+  missingInArr2.forEach(item => {
+    errors.push({
+      type: 'semantic',
+      path: path,
+      message: `Array element missing in second array: "${item}"`
+    });
+  });
+
+  missingInArr1.forEach(item => {
+    errors.push({
+      type: 'semantic', 
+      path: path,
+      message: `Array element missing in first array: "${item}"`
+    });
+  });
+}
+
 
 /**
  * Get consistent type string for objects
