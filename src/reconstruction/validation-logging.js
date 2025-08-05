@@ -38,17 +38,55 @@ export function logValidationIssues(issues, context, file1Path = '', file2Path =
 }
 
 export function logValidationErrors(errors, context, file1Path = '', file2Path = '') {
-  logValidationIssues(errors, context, file1Path, file2Path, {
-    level: 'ERROR',
-    message: 'Validation failed',
-    logFileName: 'validation-error.log'
-  });
+  if (!errors || errors.length === 0) {
+    return;
+  }
+
+  try {
+    const doPath = resolve(context.selectedDigitalObject.path);
+    const logPath = resolve(doPath, 'reconstructed', 'validation-error.log');
+
+    const logEntry = {
+      timestamp: new Date().toISOString(),
+      level: 'ERROR',
+      error_details: errors.map(error => ({
+        path: error.path,
+        message: error.message
+      })),
+      original_file: file1Path,
+      reconstructed_file: file2Path,
+      total_issues: errors.length
+    };
+
+    writeFileSync(logPath, JSON.stringify(logEntry, null, 2));
+  } catch (err) {
+    error(`Failed to write validation error log: ${err.message}`);
+  }
 }
 
 export function logValidationWarnings(warnings, context, file1Path = '', file2Path = '') {
-  logValidationIssues(warnings, context, file1Path, file2Path, {
-    level: 'WARNING',
-    message: 'Validation completed with warnings',
-    logFileName: 'validation-warning.log'
-  });
+  if (!warnings || warnings.length === 0) {
+    return;
+  }
+
+  try {
+    const doPath = resolve(context.selectedDigitalObject.path);
+    const logPath = resolve(doPath, 'reconstructed', 'validation-warning.log');
+
+    const logEntry = {
+      timestamp: new Date().toISOString(),
+      level: 'WARNING',
+      warning_details: warnings.map(warning => ({
+        path: warning.path,
+        message: warning.message
+      })),
+      original_file: file1Path,
+      reconstructed_file: file2Path,
+      total_issues: warnings.length
+    };
+
+    writeFileSync(logPath, JSON.stringify(logEntry, null, 2));
+  } catch (err) {
+    error(`Failed to write validation warning log: ${err.message}`);
+  }
 }
