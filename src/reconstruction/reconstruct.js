@@ -9,7 +9,7 @@ import { reconstructCtann } from './reconstruct-ctann.js';
 import { reconstructRefOrgan } from './reconstruct-ref-organ.js';
 import { reconstruct2dFtu } from './reconstruct-2d-ftu.js';
 import { reconstructCollection } from './reconstruct-collection.js';
-import { compareObjects, logValidationErrors } from './validation.js';
+import { compareObjects, logValidationErrors } from './json-validation.js';
 import { compareCSVFiles } from './csv-validation.js';
 import { logValidationWarnings } from './validation-logging.js';
 
