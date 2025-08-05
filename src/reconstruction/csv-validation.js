@@ -95,8 +95,8 @@ function compareRows(rows1, rows2, headers, softValidationColumns, errors, warni
   }
 
   // Create hash maps for efficient matching
-  const hashToRow1 = createRowHashMap(rows1, headers);
-  const hashToRow2 = createRowHashMap(rows2, headers);
+  const hashToRow1 = createRowHashMap(rows1, headers, softValidationColumns);
+  const hashToRow2 = createRowHashMap(rows2, headers, softValidationColumns);
 
   const hashes1 = new Set(Object.keys(hashToRow1));
   const hashes2 = new Set(Object.keys(hashToRow2));
@@ -111,16 +111,19 @@ function compareRows(rows1, rows2, headers, softValidationColumns, errors, warni
 }
 
 // Create hash map of row hash to row data for efficient lookup
-function createRowHashMap(rows, headers) {
+function createRowHashMap(rows, headers, softValidationColumns = []) {
   const hashMap = {};
   
   rows.forEach((row, index) => {
-    const hash = createRowHash(row, headers);
+    const hash = createRowHash(row, headers, softValidationColumns);
+    // Use index + 1 to match expected numbering (1-based indexing)
+    const rowNumber = index + 1; 
+    const rowWithIndex = { ...row, _rowIndex: rowNumber };
     if (hashMap[hash]) {
       // Handle duplicate rows by appending index
-      hashMap[`${hash}_${index}`] = row;
+      hashMap[`${hash}_${index}`] = rowWithIndex;
     } else {
-      hashMap[hash] = row;
+      hashMap[hash] = rowWithIndex;
     }
   });
   
@@ -128,8 +131,11 @@ function createRowHashMap(rows, headers) {
 }
 
 // Create deterministic hash for a row based on column values
-function createRowHash(row, headers) {
-  const values = headers.map(header => String(row[header] || '').trim().toLowerCase());
+function createRowHash(row, headers, softValidationColumns = []) {
+  const values = headers.map(header => {
+    const value = String(row[header] || '').trim();
+    return softValidationColumns.includes(header) ? value : value.toLowerCase();
+  });
   return createHash('md5').update(values.join('|')).digest('hex');
 }
 
@@ -148,7 +154,13 @@ function processUnmatchedRows(unmatchedHashes1, unmatchedHashes2, hashToRow1, ha
       
       const matchResult = attemptSoftMatch(row1, row2, headers, softValidationColumns);
       if (matchResult.isMatch) {
-        softMatches.push({ hash1, hash2, differences: matchResult.differences });
+        softMatches.push({ 
+          hash1, 
+          hash2, 
+          differences: matchResult.differences,
+          row1Index: row1._rowIndex,
+          row2Index: row2._rowIndex
+        });
         break;
       }
     }
@@ -166,8 +178,8 @@ function processUnmatchedRows(unmatchedHashes1, unmatchedHashes2, hashToRow1, ha
     match.differences.forEach(diff => {
       warnings.push({
         type: 'semantic',
-        path: diff.column,
-        message: `Soft validation difference in ${diff.column}: "${diff.value1}" vs "${diff.value2}"`
+        path: `${diff.column}[${match.row2Index}]`,
+        message: `Value mismatch: '${diff.value1}' vs '${diff.value2}'`
       });
     });
   });
