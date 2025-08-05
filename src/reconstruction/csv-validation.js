@@ -168,10 +168,8 @@ function processUnmatchedRows(unmatchedHashes1, unmatchedHashes2, hashToRow1, ha
 
   // Remove soft-matched hashes from unmatched lists
   const softMatchedHashes1 = softMatches.map(m => m.hash1);
-  const softMatchedHashes2 = softMatches.map(m => m.hash2);
   
   const reallyUnmatched1 = unmatchedHashes1.filter(h => !softMatchedHashes1.includes(h));
-  const reallyUnmatched2 = unmatchedHashes2.filter(h => !softMatchedHashes2.includes(h));
 
   // Report soft matches as warnings
   softMatches.forEach(match => {
@@ -187,21 +185,15 @@ function processUnmatchedRows(unmatchedHashes1, unmatchedHashes2, hashToRow1, ha
   // Report really unmatched rows as errors
   reallyUnmatched1.forEach(hash => {
     const row = hashToRow1[hash];
+    const csvValues = headers.map(header => `'${row[header] || ''}'`).join(',');
     errors.push({
       type: 'semantic',
-      path: 'rows',
-      message: `Row missing in second CSV: ${JSON.stringify(row)}`
+      path: `rows[${row._rowIndex}]`,
+      message: `Row missing in the reconstructed file: ${csvValues}`
     });
   });
 
-  reallyUnmatched2.forEach(hash => {
-    const row = hashToRow2[hash];  
-    errors.push({
-      type: 'semantic',
-      path: 'rows',
-      message: `Row missing in first CSV: ${JSON.stringify(row)}`
-    });
-  });
+  // Skip logging extra rows in reconstructed file - redundant information
 }
 
 // Attempt to match two rows using soft validation rules
