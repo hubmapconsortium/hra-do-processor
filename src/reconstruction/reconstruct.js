@@ -61,7 +61,7 @@ function validate(context) {
     case 'omap':
       break;
     case 'ctann':
-      validateCtann(context, doPath);
+      validateTableWithMetadata(context, doPath);
       break;
     case 'ref-organ':
     case '2d-ftu':
@@ -73,9 +73,10 @@ function validate(context) {
   }
 }
 
-function validateCtann(context, doPath) {
+// Validate DO that use a table with metadata as the raw data
+function validateTableWithMetadata(context, doPath) {
   const { selectedDigitalObject: obj } = context;
-  const rawData = resolve(doPath, `raw/${obj.name}-crosswalk.csv`);
+  const rawData = resolve(doPath, `raw/${getRawData(obj)}`);
   const reconstructedPath = resolve(doPath, 'reconstructed');
   const reconstructedData = resolve(reconstructedPath, 'reconstructed.csv');
 
@@ -151,9 +152,10 @@ function validateCtann(context, doPath) {
   }
 }
 
+// Validate DO that use a crosswalk as the raw data
 function validateCrosswalk(context, doPath) {
   const { selectedDigitalObject: obj } = context;
-  const rawData = resolve(doPath, 'raw/crosswalk.csv');
+  const rawData = resolve(doPath, `raw/${getRawData(obj)}`);
   const reconstructedData = resolve(doPath, 'reconstructed/reconstructed.csv');
 
   // Check file existence
@@ -202,22 +204,10 @@ function extractCsvContent(filePath, startRow) {
   return lines.slice(startIndex).join('\n');
 }
 
-// Get soft validation columns configuration for different digital object types
-function getSoftValidationColumns(objectType) {
-  switch (objectType) {
-    case 'ref-organ':
-      return ['label'];
-    case '2d-ftu':
-      return ['node_label', 'tissue_label', 'organ_label'];
-    case 'ctann':
-      return ['CL_Label'];
-    default:
-      return [];
-  }
-}
-
+// Validate DO collection only
 function validateCollection(context, doPath) {
-  const rawData = resolve(doPath, 'raw/digital-objects.yaml');
+  const { selectedDigitalObject: obj } = context;
+  const rawData = resolve(doPath, `raw/${getRawData(obj)}`);
   const reconstructedData = resolve(doPath, 'reconstructed/reconstructed.yaml');
   try {
     // Parse YAML files
@@ -235,5 +225,32 @@ function validateCollection(context, doPath) {
     }
   } catch (err) {
     error(`Collection validation error: ${err.message}`);
+  }
+}
+
+// Get raw data file based on its digital object type
+function getRawData(obj) {
+  switch (obj.type) {
+    case 'ctann':
+      return `${obj.name}-crosswalk.csv`;
+    case 'ref-organ':
+    case '2d-ftu':
+      return "crosswalk.csv";
+    case 'collection':
+      return "digital-objects.yaml"
+  }
+}
+
+// Get soft validation columns configuration for different digital object types
+function getSoftValidationColumns(objectType) {
+  switch (objectType) {
+    case 'ref-organ':
+      return ['label'];
+    case '2d-ftu':
+      return ['node_label', 'tissue_label', 'organ_label'];
+    case 'ctann':
+      return ['CL_Label'];
+    default:
+      return [];
   }
 }
