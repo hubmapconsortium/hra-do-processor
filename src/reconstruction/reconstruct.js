@@ -16,32 +16,32 @@ import { validateTableMetadata } from './validate-table-metadata.js';
 
 export function reconstruct(context) {
   const { selectedDigitalObject: obj } = context;
-  // sh.mkdir('-p', resolve(obj.path, 'reconstructed'));
-  // header(context, 'run-reconstruction');
+  sh.mkdir('-p', resolve(obj.path, 'reconstructed'));
+  header(context, 'run-reconstruction');
 
-  // switch (obj.type) {
-  //   case 'asct-b':
-  //     reconstructAsctb(context);
-  //     break;
-  //   case 'omap':
-  //     reconstructOmap(context);
-  //     break;
-  //   case 'ctann':
-  //     reconstructCtann(context);
-  //     break;
-  //   case 'ref-organ':
-  //     reconstructRefOrgan(context);
-  //     break;
-  //   case '2d-ftu':
-  //     reconstruct2dFtu(context);
-  //     break;
-  //   case 'collection':
-  //     reconstructCollection(context);
-  //     break;
-  //   default:
-  //     error(`"${obj.type}" digital object type is not supported for reconstruction.`);
-  //     break;
-  // }
+  switch (obj.type) {
+    case 'asct-b':
+      reconstructAsctb(context);
+      break;
+    case 'omap':
+      reconstructOmap(context);
+      break;
+    case 'ctann':
+      reconstructCtann(context);
+      break;
+    case 'ref-organ':
+      reconstructRefOrgan(context);
+      break;
+    case '2d-ftu':
+      reconstruct2dFtu(context);
+      break;
+    case 'collection':
+      reconstructCollection(context);
+      break;
+    default:
+      error(`"${obj.type}" digital object type is not supported for reconstruction.`);
+      break;
+  }
   // Validate the reconstructed object
   validate(context)
 }
