@@ -59,7 +59,6 @@ function validate(context) {
     case 'asct-b':
       break;
     case 'omap':
-      break;
     case 'ctann':
       validateTableWithMetadata(context, doPath);
       break;
@@ -231,6 +230,8 @@ function validateCollection(context, doPath) {
 // Get raw data file based on its digital object type
 function getRawData(obj) {
   switch (obj.type) {
+    case 'omap':
+      return `omap-${obj.name}.csv`;
     case 'ctann':
       return `${obj.name}-crosswalk.csv`;
     case 'ref-organ':
@@ -244,6 +245,8 @@ function getRawData(obj) {
 // Get soft validation columns configuration for different digital object types
 function getSoftValidationColumns(objectType) {
   switch (objectType) {
+    case 'omap':
+      return ['organ', 'concentration_value', 'author_orcids', 'uniprot_accession_number', 'HGNC_ID', 'target_symbol', 'rationale', 'clone_id'];
     case 'ref-organ':
       return ['label'];
     case '2d-ftu':
