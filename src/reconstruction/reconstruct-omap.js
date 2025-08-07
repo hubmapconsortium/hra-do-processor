@@ -71,7 +71,7 @@ function transformRecords(context) {
       // Extract protein information - need to parse from detected_protein_id_str
       const detectedProteinId = row['detected_protein_id_str'] || '';
       transformedRow['uniprot_accession_number'] = row['uniprot_id_str'] || '';
-      transformedRow['HGNC_ID'] = row['detected_protein_id_str']?.replace('http://identifiers.org/hgnc/', 'HGNC:') || '';
+      transformedRow['HGNC_ID'] = row['detected_protein_id_str']?.replaceAll('http://identifiers.org/hgnc/', 'HGNC:') || '';
       transformedRow['target_symbol'] = row['detected_protein_label_str'] || '';
       // Antibody host information
       transformedRow['host'] = row['host'] || '';
@@ -117,7 +117,7 @@ function transformRecords(context) {
       transformedRow['core_panel'] = row['is_core_panel'] === 'true' ? 'Y' : 'N';
       
       // Rationale
-      transformedRow['rationale'] = row['rationale'] || '';
+      transformedRow['rationale'] = row['detects_rationale'] || row['binds_to_rationale'];
       
       // Organ information
       transformedRow['organ'] = row['sample_organ_label'] || '';

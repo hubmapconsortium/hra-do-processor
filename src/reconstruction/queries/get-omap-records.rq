@@ -21,7 +21,7 @@ SELECT DISTINCT
     (GROUP_CONCAT(DISTINCT ?detected_protein_id; separator=", ") AS ?detected_protein_id_str) 
     (GROUP_CONCAT(DISTINCT ?detected_protein_label; separator=", ") AS ?detected_protein_label_str)
     (GROUP_CONCAT(DISTINCT ?uniprot_id; separator=", ") AS ?uniprot_id_str)
-    ?rationale
+    ?detects_rationale ?binds_to_rationale
 WHERE {
     # Get MultiplexedAntibodyBasedImagingExperiment instances
     ?experiment rdf:type ccf:MultiplexedAntibodyBasedImagingExperiment .
@@ -59,7 +59,7 @@ WHERE {
           ?detects_statement owl:annotatedSource ?used_antibody .
           ?detects_statement owl:annotatedTarget ?detected_protein_id .
           ?detects_statement owl:annotatedProperty ccf:detects .
-          ?detects_statement ccf:rationale ?rationale .
+          ?detects_statement ccf:rationale ?detects_rationale .
         }
 
         ?detected_protein_id rdfs:label ?detected_protein_label .
@@ -71,6 +71,19 @@ WHERE {
         ?hasDbXref_statement owl:annotatedTarget ?uniprot_id .
         ?hasDbXref_statement owl:annotatedProperty oboInOwl:hasDbXref .
         ?hasDbXref_statement rdfs:comment "UniProt ID"^^xsd:string.
+      }
+
+      OPTIONAL {
+        ?used_antibody ccf:binds_to ?bound_protein_id .
+
+        # Protein binding information with rationale
+        OPTIONAL {
+          ?binds_to_statement rdf:type owl:Axiom .
+          ?binds_to_statement owl:annotatedSource ?used_antibody .
+          ?binds_to_statement owl:annotatedTarget ?bound_protein_id .
+          ?binds_to_statement owl:annotatedProperty ccf:binds_to .
+          ?binds_to_statement ccf:rationale ?binds_to_rationale .
+        }
       }
 
       # Registered antibody details
@@ -91,5 +104,5 @@ WHERE {
       }
     }
 }
-GROUP BY ?experiment ?study_method ?tissue_preservation ?sample_organ ?sample_organ_label ?cycle ?cycle_number ?used_antibody ?antibody_manufacturer ?antibody_type ?concentration ?dilution ?is_core_panel ?record_number ?registered_antibody ?clone_id ?lot_number ?catalog_number ?host ?isotype ?clonality ?conjugate ?recombinant ?antibody ?detected_protein_id_str ?detected_protein_label_str ?uniprot_id_str ?rationale
+GROUP BY ?experiment ?study_method ?tissue_preservation ?sample_organ ?sample_organ_label ?cycle ?cycle_number ?used_antibody ?antibody_manufacturer ?antibody_type ?concentration ?dilution ?is_core_panel ?record_number ?registered_antibody ?clone_id ?lot_number ?catalog_number ?host ?isotype ?clonality ?conjugate ?recombinant ?antibody ?detected_protein_id_str ?detected_protein_label_str ?uniprot_id_str ?detects_rationale ?binds_to_rationale
 ORDER BY ?record_number ?cycle_number
