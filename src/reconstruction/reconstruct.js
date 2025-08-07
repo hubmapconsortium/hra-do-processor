@@ -57,7 +57,6 @@ function validate(context) {
   const doPath = resolve(obj.path);
   switch (obj.type) {
     case 'asct-b':
-      break;
     case 'omap':
     case 'ctann':
       validateTableWithMetadata(context, doPath);
@@ -111,12 +110,15 @@ function validateTableWithMetadata(context, doPath) {
     writeFileSync(tempRawPath, rawContent);
     writeFileSync(tempReconstructedPath, reconstructedContent);
 
-    // Configure soft validation columns for ctann
+    // Apply soft validation to values in specific columns, depending on the specified DO type
     const softValidationColumns = getSoftValidationColumns(obj.type);
+
+    // Apply soft validation to table headers, depending on the specified DO type
+    const softValidationHeader = getSoftValiadtionHeader(obj.type);
     
     // Compare CSV files with order-independent comparison
     const tableContentResult = compareCSVFiles(tempRawPath, tempReconstructedPath, {
-      softValidationColumns
+      softValidationColumns, softValidationHeader
     });
     
     allErrors = allErrors.concat(tableContentResult.errors);
@@ -230,6 +232,8 @@ function validateCollection(context, doPath) {
 // Get raw data file based on its digital object type
 function getRawData(obj) {
   switch (obj.type) {
+    case 'asct-b':
+      return `asct-b-vh-${obj.name}.csv`;
     case 'omap':
       return `omap-${obj.name}.csv`;
     case 'ctann':
@@ -245,8 +249,10 @@ function getRawData(obj) {
 // Get soft validation columns configuration for different digital object types
 function getSoftValidationColumns(objectType) {
   switch (objectType) {
+    case 'asct-b':
+      return ['LABEL'];
     case 'omap':
-      return ['organ', 'concentration_value', 'author_orcids', 'uniprot_accession_number', 'HGNC_ID', 'target_symbol', 'rationale', 'clone_id'];
+      return ['organ', 'concentration_value', 'author_orcids', 'uniprot_accession_number', 'HGNC_ID', 'target_symbol', 'clone_id'];
     case 'ref-organ':
       return ['label'];
     case '2d-ftu':
@@ -255,5 +261,14 @@ function getSoftValidationColumns(objectType) {
       return ['CL_Label'];
     default:
       return [];
+  }
+}
+
+function getSoftValiadtionHeader(objectType) {
+  switch (objectType) {
+    case 'asct-b':
+      return true;
+    default:
+      return false
   }
 }

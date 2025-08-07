@@ -4,7 +4,7 @@ import { createHash } from 'crypto';
 
 
 export function compareCSVFiles(csvPath1, csvPath2, options = {}) {
-  const { softValidationColumns = [] } = options;
+  const { softValidationColumns = [], softValidationHeader } = options;
   const errors = [];
   const warnings = [];
 
@@ -14,7 +14,7 @@ export function compareCSVFiles(csvPath1, csvPath2, options = {}) {
     const csv2Data = parseCsvFile(csvPath2);
 
     // Validate column headers
-    validateHeaders(csv1Data.headers, csv2Data.headers, errors);
+    validateHeaders(csv1Data.headers, csv2Data.headers, errors, warnings, options);
 
     // If headers are valid, compare row data
     if (errors.length === 0) {
@@ -57,10 +57,41 @@ function parseCsvFile(csvPath) {
   return { headers, rows };
 }
 
-/**
- * Validate that CSV headers match exactly in name and order
- */
-function validateHeaders(headers1, headers2, errors) {
+// Validate that CSV headers match accordingly
+function validateHeaders(headers1, headers2, errors, warnings, options = {}) {
+  const { softValidationHeader } = options;
+
+  if (softValidationHeader) {
+    validateHeadersSoftly(headers1, headers2, warnings);
+  } else {
+    validateHeadersStrictly(headers1, headers2, errors);
+  }
+}
+
+// Find missing columns in reconstructed table (headers2) compared to raw table (headers1)
+function validateHeadersSoftly(headers1, headers2, warnings) {
+  // Use case-insensitive comparison
+const headers2Lower = headers2.map((h) => h.toLowerCase());
+  const missingColumns = [];
+
+  for (const header1 of headers1) {
+    const header1Lower = header1.toLowerCase();
+    if (!headers2Lower.includes(header1Lower)) {
+      missingColumns.push(header1);
+    }
+  }
+
+  if (missingColumns.length > 0) {
+    warnings.push({
+      type: 'structural',
+      path: 'headers',
+      message: `Missing columns in reconstructed table: ${missingColumns.join(', ')}`,
+    });
+  }
+}
+
+// Check header count, their name and order
+function validateHeadersStrictly(headers1, headers2, errors) {
   // Check header count
   if (headers1.length !== headers2.length) {
     errors.push({
