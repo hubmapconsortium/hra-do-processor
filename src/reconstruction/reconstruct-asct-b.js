@@ -78,7 +78,8 @@ function transformRecords(context) {
           orderNumber: asOrderNumber,
           prefLabel: row['as_pref_label'],
           sourceConcept: row['as_source_concept'],
-          conceptLabel: row['as_concept_label']
+          conceptLabel: row['as_concept_label'],
+          notes: row['as_notes']
         };
       }
       return acc;
@@ -89,10 +90,12 @@ function transformRecords(context) {
       transformedRow[columnPrefix] = entry.prefLabel;
       transformedRow[`${columnPrefix}/LABEL`] = entry.conceptLabel;
       transformedRow[`${columnPrefix}/ID`] = shortenId(entry.sourceConcept);
+      transformedRow[`${columnPrefix}/NOTES`] = entry.notes;
       
       allColumns.add(columnPrefix);
       allColumns.add(`${columnPrefix}/LABEL`);
       allColumns.add(`${columnPrefix}/ID`);
+      allColumns.add(`${columnPrefix}/NOTES`);
     });
 
     // Process cell types (ct_)
@@ -138,7 +141,7 @@ function transformRecords(context) {
       const bmRecordNumber = row['bm_record_number'];
       const bmOrderNumber = row['bm_order_number'];
       const biomarkerType = row['bm_biomarker_type'];
-      const key = `${bmRecordNumber}-${bmOrderNumber}`;
+      const key = `${biomarkerType}-${bmRecordNumber}-${bmOrderNumber}`;
       
       if (!acc[key]) {
         acc[key] = {
@@ -147,7 +150,8 @@ function transformRecords(context) {
           biomarkerType: biomarkerType,
           prefLabel: row['bm_pref_label'],
           sourceConcept: row['bm_source_concept'],
-          conceptLabel: row['bm_concept_label']
+          conceptLabel: row['bm_concept_label'],
+          notes: row['bm_notes']
         };
       }
       return acc;
@@ -182,10 +186,12 @@ function transformRecords(context) {
       transformedRow[columnPrefix] = entry.prefLabel;
       transformedRow[`${columnPrefix}/LABEL`] = entry.conceptLabel;
       transformedRow[`${columnPrefix}/ID`] = shortenId(entry.sourceConcept);
+      transformedRow[`${columnPrefix}/NOTES`] = entry.notes;
       
       allColumns.add(columnPrefix);
       allColumns.add(`${columnPrefix}/LABEL`);
       allColumns.add(`${columnPrefix}/ID`);
+      allColumns.add(`${columnPrefix}/NOTES`);
     });
 
     // Process functional tissue unit (ftu_)

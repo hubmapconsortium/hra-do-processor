@@ -152,6 +152,7 @@ classes:
     slots:
       - ccf_pref_label
       - source_concept
+      - notes
       - record_number
       - order_number
 
@@ -184,6 +185,7 @@ classes:
       - ccf_pref_label
       - ccf_biomarker_type
       - source_concept
+      - notes
       - record_number
       - order_number
 

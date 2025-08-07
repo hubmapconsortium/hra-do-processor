@@ -4,9 +4,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dct: <http://purl.org/dc/terms/>
 
 SELECT DISTINCT ?record_number 
-       ?as_pref_label ?as_source_concept ?as_concept_label ?as_record_number ?as_order_number
+       ?as_pref_label ?as_source_concept ?as_concept_label ?as_notes ?as_record_number ?as_order_number
        ?ct_pref_label ?ct_source_concept ?ct_concept_label ?ct_notes ?ct_record_number ?ct_order_number
-       ?bm_pref_label ?bm_biomarker_type ?bm_source_concept ?bm_concept_label ?bm_record_number ?bm_order_number
+       ?bm_pref_label ?bm_biomarker_type ?bm_source_concept ?bm_concept_label ?bm_notes ?bm_record_number ?bm_order_number
        ?ftu_pref_label ?ftu_source_concept ?ftu_concept_label ?ftu_notes ?ftu_record_number ?ftu_order_number
        ?ref_doi ?ref_external_id ?ref_notes ?ref_record_number ?ref_order_number
 WHERE {
@@ -24,6 +24,7 @@ WHERE {
         OPTIONAL { ?anatomical_structure ccf:source_concept ?as_source_concept .
             ?as_source_concept rdfs:label ?as_concept_label
         }
+        OPTIONAL { ?anatomical_structure ccf:notes ?as_notes }
     }
     
     # Get Cell Type Records
@@ -102,6 +103,7 @@ WHERE {
         OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
             ?bm_source_concept rdfs:label ?bm_concept_label
         }
+        OPTIONAL { ?biomarker ccf:notes ?bm_notes }
     }
 
     # Get FTU Records
@@ -130,9 +132,9 @@ WHERE {
     
 }
 GROUP BY ?record_number 
-         ?as_pref_label ?as_source_concept ?as_concept_label ?as_record_number ?as_order_number
+         ?as_pref_label ?as_source_concept ?as_concept_label ?as_notes ?as_record_number ?as_order_number
          ?ct_pref_label ?ct_source_concept ?ct_concept_label ?ct_notes ?ct_record_number ?ct_order_number
-         ?bm_pref_label ?bm_biomarker_type ?bm_source_concept ?bm_concept_label ?bm_record_number ?bm_order_number
+         ?bm_pref_label ?bm_biomarker_type ?bm_source_concept ?bm_concept_label ?bm_notes ?bm_record_number ?bm_order_number
          ?ftu_pref_label ?ftu_source_concept ?ftu_concept_label ?ftu_notes ?ftu_record_number ?ftu_order_number
          ?ref_doi ?ref_external_id ?ref_notes ?ref_record_number ?ref_order_number
 ORDER BY ?record_number
