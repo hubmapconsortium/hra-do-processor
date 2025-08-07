@@ -227,6 +227,41 @@ function processUnmatchedRows(unmatchedHashes1, unmatchedHashes2, hashToRow1, ha
   // Skip logging extra rows in reconstructed file - redundant information
 }
 
+// Check if two values are equal when treated as arrays (order-independent)
+function tryArrayComparison(value1, value2) {
+  // Try to parse values as arrays (assuming they might be delimited)
+  const array1 = parseAsArray(value1);
+  const array2 = parseAsArray(value2);
+  
+  // If both are arrays and have same length, compare order-independently
+  if (Array.isArray(array1) && Array.isArray(array2) && array1.length === array2.length) {
+    const sorted1 = [...array1].sort();
+    const sorted2 = [...array2].sort();
+    return sorted1.every((item, index) => item === sorted2[index]);
+  }
+  
+  return false;
+}
+
+// Parse a string value as an array, detecting common delimiters
+function parseAsArray(value) {
+  if (!value || typeof value !== 'string') {
+    return null;
+  }
+  
+  // Common delimiters: comma, semicolon, pipe
+  const delimiters = [',', ';', '|', '\n', '\r\n'];
+  
+  for (const delimiter of delimiters) {
+    if (value.includes(delimiter)) {
+      return value.split(delimiter).map(item => item.trim()).filter(item => item.length > 0);
+    }
+  }
+  
+  // If no delimiter found, treat as single-item array if it looks like it could be part of an array
+  return null;
+}
+
 // Attempt to match two rows using soft validation rules
 function attemptSoftMatch(row1, row2, headers, softValidationColumns) {
   const differences = [];
@@ -236,6 +271,12 @@ function attemptSoftMatch(row1, row2, headers, softValidationColumns) {
     const value1 = String(row1[header] || '').trim();
     const value2 = String(row2[header] || '').trim();
     if (value1 !== value2) {
+      // Try array-like comparison if values are different
+      if (tryArrayComparison(value1, value2)) {
+        // Values match when treated as arrays, continue to next column header
+        continue;
+      }
+      
       const isSoftColumn = softValidationColumns.includes(header);
       if (isSoftColumn) {
         // This is a soft validation difference
