@@ -100,9 +100,6 @@ export function writeReconstructedData(context, data, outputFile) {
   const reconstructedPath = resolve(path, 'reconstructed/', outputFile);
   writeFileSync(reconstructedPath, data, 'utf8');
   info(`Reconstructed digital object written to ${reconstructedPath}`);
-  
-  // Clean up intermediate files after writing the final CSV
-  cleanDirectory(context);
 }
 
 export function cleanDirectory(context) {
@@ -116,7 +113,7 @@ export function cleanDirectory(context) {
   
   // Remove all files except reconstructed.csv or reconstructed.yml
   throwOnError(
-    `find ${path} -type f ! -name "reconstructed.csv" ! -name "reconstructed.yaml" -exec rm -f {} +`,
+    `find ${path} -type f ! -name "reconstructed.csv" ! -name "reconstructed.yaml" ! -name "validation-error.log" ! -name "validation-warning.log" -exec rm -f {} +`,
     'Clean reconstruction directory failed.'
   );
 }

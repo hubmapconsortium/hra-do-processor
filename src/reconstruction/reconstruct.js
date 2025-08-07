@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { readFileSync, existsSync, writeFileSync, unlinkSync } from 'fs';
+import { readFileSync, existsSync, writeFileSync } from 'fs';
 import sh from 'shelljs';
 import yaml from 'js-yaml';
 import { header, error, info } from '../utils/logging.js';
@@ -13,6 +13,7 @@ import { compareObjects, logValidationErrors } from './json-validation.js';
 import { compareCSVFiles } from './csv-validation.js';
 import { logValidationWarnings } from './validation-logging.js';
 import { validateTableMetadata } from './validate-table-metadata.js';
+import { cleanDirectory } from './utils.js';
 
 export function reconstruct(context) {
   const { selectedDigitalObject: obj } = context;
@@ -44,6 +45,9 @@ export function reconstruct(context) {
   }
   // Validate the reconstructed object
   validate(context)
+
+  // Cleanup artifacts
+  cleanDirectory(context);
 }
 
 function validate(context) {
@@ -123,14 +127,6 @@ function validateTableWithMetadata(context, doPath) {
     
     allErrors = allErrors.concat(tableContentResult.errors);
     allWarnings = allWarnings.concat(tableContentResult.warnings);
-
-    // Clean up temporary files
-    try {
-      unlinkSync(tempRawPath);
-      unlinkSync(tempReconstructedPath);
-    } catch (cleanupErr) {
-      // Ignore cleanup errors
-    }
 
     // Report combined results
     const hasErrors = allErrors.length > 0;
