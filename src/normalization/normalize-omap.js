@@ -66,19 +66,24 @@ function normalizeData(context, data) {
 function normalizeAntibodyData(context, data) {
   return data
     .map((row) => {
-      return new ObjectBuilder()
+      const antibody = new ObjectBuilder()
         .append('id', getAntibodyIri(row.rrid))
         .append('parent_class', 'ccf:Antibody')
         .append('antibody_type', row.HGNC_ID ? 'Primary' : 'Secondary')
         .append('host', row.host)
-        .append('clonality', row.clonality)
-        .append('clone_id', `${row.clone_id}`)
         .append('conjugate', row.conjugate)
         .append('fluorescent', row.fluorescent_reporter)
         .append('recombinant', row.recombinant)
         .append('producer', row.vendor)
         .append('catalog_number', `${row.catalog_number}`)
         .build();
+      if (row.clonality) {
+        antibody.clonality = row.clonality;
+      }
+      if (row.clone_id) {
+        antibody.clone_id = row.clone_id + "";
+      }
+      return antibody;
     })
     .reduce(mergeDuplicateAntibodyData, []);
 }

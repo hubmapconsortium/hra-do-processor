@@ -1,0 +1,98 @@
+PREFIX ccf: <http://purl.org/ccf/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?record_number 
+       ?as_pref_label ?as_source_concept ?as_concept_label ?as_notes ?as_record_number ?as_order_number
+       ?ct_pref_label ?ct_source_concept ?ct_concept_label ?ct_notes ?ct_record_number ?ct_order_number
+       ?bm_pref_label ?bm_biomarker_type ?bm_source_concept ?bm_concept_label ?bm_notes ?bm_record_number ?bm_order_number
+       ?ftu_pref_label ?ftu_source_concept ?ftu_concept_label ?ftu_notes ?ftu_record_number ?ftu_order_number
+       ?ref_doi ?ref_external_id ?ref_notes ?ref_record_number ?ref_order_number
+WHERE {
+    # Get ASCT+B Records
+    ?record rdf:type ccf:AsctbRecord .
+    OPTIONAL { ?record ccf:record_number ?record_number }
+    
+    # Get Anatomical Structure Records
+    OPTIONAL {
+        ?record ccf:anatomical_structure ?anatomical_structure .
+        ?anatomical_structure rdf:type ccf:AnatomicalStructureRecord .
+        ?anatomical_structure ccf:record_number ?as_record_number .
+        ?anatomical_structure ccf:order_number ?as_order_number .
+        OPTIONAL { ?anatomical_structure ccf:ccf_pref_label ?as_pref_label }
+        OPTIONAL { ?anatomical_structure ccf:source_concept ?as_source_concept .
+            ?as_source_concept rdfs:label ?as_concept_label
+        }
+        OPTIONAL { ?anatomical_structure ccf:notes ?as_notes }
+    }
+    
+    # Get Cell Type Records
+    OPTIONAL {
+        ?record ccf:cell_type ?cell_type .
+        ?cell_type rdf:type ccf:CellTypeRecord .
+        ?cell_type ccf:record_number ?ct_record_number .
+        ?cell_type ccf:order_number ?ct_order_number .
+        OPTIONAL { ?cell_type ccf:ccf_pref_label ?ct_pref_label }
+        OPTIONAL { ?cell_type ccf:source_concept ?ct_source_concept .
+            ?ct_source_concept rdfs:label ?ct_concept_label
+        }
+        OPTIONAL { ?cell_type ccf:notes ?ct_notes }
+    }
+    
+    # Get Biomarker Records (All Types)
+    OPTIONAL {
+        {
+            ?record ccf:gene_marker ?biomarker .
+        } UNION {
+            ?record ccf:protein_marker ?biomarker .
+        } UNION {
+            ?record ccf:lipid_marker ?biomarker .
+        } UNION {
+            ?record ccf:metabolite_marker ?biomarker .
+        } UNION {
+            ?record ccf:proteoform_marker ?biomarker .
+        }
+        ?biomarker rdf:type ccf:BiomarkerRecord .
+        ?biomarker ccf:record_number ?bm_record_number .
+        ?biomarker ccf:order_number ?bm_order_number .
+        OPTIONAL { ?biomarker ccf:ccf_pref_label ?bm_pref_label }
+        OPTIONAL { ?biomarker ccf:ccf_biomarker_type ?bm_biomarker_type }
+        OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
+            ?bm_source_concept rdfs:label ?bm_concept_label
+        }
+        OPTIONAL { ?biomarker ccf:notes ?bm_notes }
+    }
+
+    # Get FTU Records
+    OPTIONAL {
+        ?record ccf:ftu_types ?ftu .
+        ?ftu rdf:type ccf:FtuRecord .
+        ?ftu ccf:record_number ?ftu_record_number .
+        ?ftu ccf:order_number ?ftu_order_number .
+        OPTIONAL { ?ftu ccf:ccf_pref_label ?ftu_pref_label }
+        OPTIONAL { ?ftu ccf:source_concept ?ftu_source_concept .
+            ?ftu_source_concept rdfs:label ?ftu_concept_label
+        }
+        OPTIONAL { ?ftu ccf:notes ?ftu_notes }
+    }
+
+    # Get Reference Records
+    OPTIONAL {
+        ?record ccf:reference ?reference .
+        ?reference rdf:type ccf:ReferenceRecord .
+        OPTIONAL { ?reference ccf:doi ?ref_doi }
+        OPTIONAL { ?reference ccf:external_id ?ref_external_id }
+        OPTIONAL { ?reference ccf:notes ?ref_notes }
+        OPTIONAL { ?reference ccf:record_number ?ref_record_number }
+        OPTIONAL { ?reference ccf:order_number ?ref_order_number }
+    }
+    
+}
+GROUP BY ?record_number 
+         ?as_pref_label ?as_source_concept ?as_concept_label ?as_notes ?as_record_number ?as_order_number
+         ?ct_pref_label ?ct_source_concept ?ct_concept_label ?ct_notes ?ct_record_number ?ct_order_number
+         ?bm_pref_label ?bm_biomarker_type ?bm_source_concept ?bm_concept_label ?bm_notes ?bm_record_number ?bm_order_number
+         ?ftu_pref_label ?ftu_source_concept ?ftu_concept_label ?ftu_notes ?ftu_record_number ?ftu_order_number
+         ?ref_doi ?ref_external_id ?ref_notes ?ref_record_number ?ref_order_number
+ORDER BY ?record_number
