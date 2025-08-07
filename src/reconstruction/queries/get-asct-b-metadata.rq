@@ -60,7 +60,7 @@ WHERE {
     }
     
     # General publications
-    {
+    OPTIONAL {
         SELECT ?rawDataConcept 
                (GROUP_CONCAT(DISTINCT ?reference; separator="; ") AS ?generalPublications)
         WHERE {
