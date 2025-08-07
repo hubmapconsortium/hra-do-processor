@@ -40,61 +40,19 @@ WHERE {
         OPTIONAL { ?cell_type ccf:notes ?ct_notes }
     }
     
-    # Get Biomarker Records (Gene Markers)
+    # Get Biomarker Records (All Types)
     OPTIONAL {
-        ?record ccf:gene_marker ?biomarker .
-        ?biomarker rdf:type ccf:BiomarkerRecord .
-        ?biomarker ccf:record_number ?bm_record_number .
-        ?biomarker ccf:order_number ?bm_order_number .
-        OPTIONAL { ?biomarker ccf:ccf_pref_label ?bm_pref_label }
-        OPTIONAL { ?biomarker ccf:ccf_biomarker_type ?bm_biomarker_type }
-        OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
-            ?bm_source_concept rdfs:label ?bm_concept_label
+        {
+            ?record ccf:gene_marker ?biomarker .
+        } UNION {
+            ?record ccf:protein_marker ?biomarker .
+        } UNION {
+            ?record ccf:lipid_marker ?biomarker .
+        } UNION {
+            ?record ccf:metabolite_marker ?biomarker .
+        } UNION {
+            ?record ccf:proteoform_marker ?biomarker .
         }
-    }
-    
-    # Get Biomarker Records (Protein Markers)
-    OPTIONAL {
-        ?record ccf:protein_marker ?biomarker .
-        ?biomarker rdf:type ccf:BiomarkerRecord .
-        ?biomarker ccf:record_number ?bm_record_number .
-        ?biomarker ccf:order_number ?bm_order_number .
-        OPTIONAL { ?biomarker ccf:ccf_pref_label ?bm_pref_label }
-        OPTIONAL { ?biomarker ccf:ccf_biomarker_type ?bm_biomarker_type }
-        OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
-            ?bm_source_concept rdfs:label ?bm_concept_label
-        }
-    }
-    
-    # Get Biomarker Records (Lipid Markers)
-    OPTIONAL {
-        ?record ccf:lipid_marker ?biomarker .
-        ?biomarker rdf:type ccf:BiomarkerRecord .
-        ?biomarker ccf:record_number ?bm_record_number .
-        ?biomarker ccf:order_number ?bm_order_number .
-        OPTIONAL { ?biomarker ccf:ccf_pref_label ?bm_pref_label }
-        OPTIONAL { ?biomarker ccf:ccf_biomarker_type ?bm_biomarker_type }
-        OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
-            ?bm_source_concept rdfs:label ?bm_concept_label
-        }
-    }
-    
-    # Get Biomarker Records (Metabolite Markers)
-    OPTIONAL {
-        ?record ccf:metabolite_marker ?biomarker .
-        ?biomarker rdf:type ccf:BiomarkerRecord .
-        ?biomarker ccf:record_number ?bm_record_number .
-        ?biomarker ccf:order_number ?bm_order_number .
-        OPTIONAL { ?biomarker ccf:ccf_pref_label ?bm_pref_label }
-        OPTIONAL { ?biomarker ccf:ccf_biomarker_type ?bm_biomarker_type }
-        OPTIONAL { ?biomarker ccf:source_concept ?bm_source_concept .
-            ?bm_source_concept rdfs:label ?bm_concept_label
-        }
-    }
-    
-    # Get Biomarker Records (Proteoform Markers)
-    OPTIONAL {
-        ?record ccf:proteoform_marker ?biomarker .
         ?biomarker rdf:type ccf:BiomarkerRecord .
         ?biomarker ccf:record_number ?bm_record_number .
         ?biomarker ccf:order_number ?bm_order_number .

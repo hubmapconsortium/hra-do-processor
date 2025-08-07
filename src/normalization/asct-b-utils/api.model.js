@@ -135,6 +135,16 @@ export const objectFieldMap = {
   NOTE: 'notes',
 };
 
+export function getBiomarkerColumnName(biomarkerType) {
+  switch (biomarkerType) {
+    case "gene": return "BG";
+    case "protein": return "BP";
+    case "lipids": return "BL";
+    case "metabolites": return "BM";
+    case "proteoforms": return "BF";
+  }
+}
+
 export function createObject(name, structureType) {
   switch (structureType) {
     case 'REF':
