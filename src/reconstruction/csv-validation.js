@@ -18,7 +18,7 @@ export function compareCSVFiles(csvPath1, csvPath2, options = {}) {
 
     // If headers are valid, compare row data
     if (errors.length === 0) {
-      compareRows(csv1Data.rows, csv2Data.rows, csv1Data.headers, softValidationColumns, errors, warnings);
+      compareRows(csv1Data.rows, csv2Data.rows, csv2Data.headers, softValidationColumns, errors, warnings);
     }
 
   } catch (err) {
