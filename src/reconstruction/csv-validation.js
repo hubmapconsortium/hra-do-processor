@@ -127,18 +127,18 @@ function compareRows(rows1, rows2, headers, softValidationColumns, errors, warni
   }
 
   // Create hash maps for efficient matching
-  const hashToRow1 = createRowHashMap(rows1, headers, softValidationColumns);
-  const hashToRow2 = createRowHashMap(rows2, headers, softValidationColumns);
+  const hashToRows1 = createRowHashMap(rows1, headers, softValidationColumns);
+  const hashToRows2 = createRowHashMap(rows2, headers, softValidationColumns);
 
-  const hashes1 = new Set(Object.keys(hashToRow1));
-  const hashes2 = new Set(Object.keys(hashToRow2));
+  const hashes1 = new Set(Object.keys(hashToRows1));
+  const hashes2 = new Set(Object.keys(hashToRows2));
 
   // Find unmatched rows
-  const unmatchedInRows1 = [...hashes1].filter(hash => !hashes2.has(hash));
-  const unmatchedInRows2 = [...hashes2].filter(hash => !hashes1.has(hash));
+  const unmatchedHashes1 = [...hashes1].filter(hash => !hashes2.has(hash));
+  const unmatchedHashes2 = [...hashes2].filter(hash => !hashes1.has(hash));
 
   // Process unmatched rows - try soft validation
-  processUnmatchedRows(unmatchedInRows1, unmatchedInRows2, hashToRow1, hashToRow2, 
+  processUnmatchedRows(unmatchedHashes1, unmatchedHashes2, hashToRows1, hashToRows2, 
                       headers, softValidationColumns, errors, warnings);
 }
 
