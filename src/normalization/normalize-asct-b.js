@@ -5,7 +5,7 @@ import { resolve } from 'path';
 import sh from 'shelljs';
 import { info, more, warning } from '../utils/logging.js';
 import { makeASCTBData } from './asct-b-utils/api.functions.js';
-import { getBiomarkerColumnName } from './asct-b-utils/api.model.js';
+import { PROTEIN_PRESENCE, getBiomarkerColumnName } from './asct-b-utils/api.model.js';
 import {
   getPatchesForAnatomicalStructure,
   getPatchesForBiomarker,
@@ -425,8 +425,8 @@ function generateCtInstance(context, recordNumber, data, index) {
 
 function generateBmInstance(context, recordNumber, data, index) {
   const { name: doName } = context.selectedDigitalObject;
-  const { id, name, b_type, notes } = data;
-  const bmName = normalizeString(name);
+  const { id, name, proteinPresence, b_type, notes } = data;
+  const bmName = `${normalizeString(name)}${presenceSymbol(proteinPresence)}`;
   const orderNumber = index + 1;
   const biomarkerColumnName = getBiomarkerColumnName(b_type);
   return {
@@ -440,6 +440,15 @@ function generateBmInstance(context, recordNumber, data, index) {
     record_number: recordNumber,
     order_number: orderNumber,
   };
+}
+
+function presenceSymbol(proteinPresence) {
+  switch(proteinPresence) {
+    case PROTEIN_PRESENCE.POS: return '+';
+    case PROTEIN_PRESENCE.NEG: return '-';
+    case PROTEIN_PRESENCE.INTERMEDIATE: return '+/-';
+    default: return '';
+  }
 }
 
 function generateFtuInstance(context, recordNumber, data, index) {
