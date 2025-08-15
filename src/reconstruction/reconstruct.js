@@ -246,7 +246,7 @@ function getRawData(obj) {
 function getSoftValidationColumns(objectType) {
   switch (objectType) {
     case 'asct-b':
-      return ['LABEL'];
+      return ['AS/*', 'CT/*', 'BGene/*', 'BProtein/*', 'BLipid/*', 'BMetabolite/*', 'BProteoform/*', 'FTU/*', 'REF/*'];
     case 'omap':
       return ['organ', 'concentration_value', 'author_orcids', 'uniprot_accession_number', 'HGNC_ID', 'target_symbol', 'clone_id'];
     case 'ref-organ':

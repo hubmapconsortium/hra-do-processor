@@ -277,7 +277,7 @@ function attemptSoftMatch(row1, row2, headers, softValidationColumns) {
         continue;
       }
       
-      const isSoftColumn = softValidationColumns.includes(header);
+      const isSoftColumn = isHeaderInSoftValidation(header, softValidationColumns);
       if (isSoftColumn) {
         // This is a soft validation difference
         differences.push({
@@ -297,4 +297,29 @@ function attemptSoftMatch(row1, row2, headers, softValidationColumns) {
     isMatch: hardDifferences === 0,
     differences
   };
+}
+
+// Check if a header matches any pattern in softValidationColumns
+function isHeaderInSoftValidation(header, softValidationColumns) {
+  // Check exact match first
+  if (softValidationColumns.includes(header)) {
+    return true;
+  }
+  
+  // Check wildcard patterns
+  for (const pattern of softValidationColumns) {
+    if (pattern.includes('*')) {
+      // Only * is a wildcard, everything else is literal
+      const regexPattern = pattern
+        .replace(/[.+?^${}()|[\]\\]/g, '\\$&') // Escape special regex chars (but not *)
+        .replace(/\*/g, '.*'); // Convert * to .*
+      
+      const regex = new RegExp(`^${regexPattern}$`);
+      if (regex.test(header)) {
+        return true;
+      }
+    }
+  }
+  
+  return false;
 }
