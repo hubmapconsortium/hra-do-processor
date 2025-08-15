@@ -123,6 +123,7 @@ function compareRows(rows1, rows2, headers, softValidationColumns, errors, warni
       path: 'rows',
       message: `Row count mismatch: ${rows1.length} vs ${rows2.length}`
     });
+    return;
   }
 
   // Create hash maps for efficient matching
