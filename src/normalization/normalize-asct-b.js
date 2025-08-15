@@ -472,7 +472,7 @@ function generateReferenceInstance(context, recordNumber, data, index) {
     order_number: orderNumber,
   };
   if (name) {
-    obj.external_id = normalizePubMedUrl(name);
+    obj.external_id = name;
   }
   return obj;
 }

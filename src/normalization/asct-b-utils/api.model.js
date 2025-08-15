@@ -157,7 +157,7 @@ export function createObject(name, structureType) {
 
 export class Reference {
   constructor(name) {
-    this.name = !this.checkIsDoi(name) ? name : '';
+    this.name = name;
   }
   isValid() {
     return !!this.id;

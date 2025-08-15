@@ -248,7 +248,7 @@ function transformRecords(context) {
           orderNumber: refOrderNumber,
           doi: row['ref_doi'],
           external_id: row['ref_external_id'],
-          notes: row['notes'],
+          notes: row['ref_notes'],
         };
       }
       return acc;
