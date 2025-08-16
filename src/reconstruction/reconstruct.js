@@ -114,15 +114,12 @@ function validateTableWithMetadata(context, doPath) {
     writeFileSync(tempRawPath, rawContent);
     writeFileSync(tempReconstructedPath, reconstructedContent);
 
-    // Apply soft validation to values in specific columns, depending on the specified DO type
-    const softValidationColumns = getSoftValidationColumns(obj.type);
-
     // Apply soft validation to table headers, depending on the specified DO type
     const softValidationHeader = getSoftValiadtionHeader(obj.type);
     
     // Compare CSV files with order-independent comparison
     const tableContentResult = compareCSVFiles(tempRawPath, tempReconstructedPath, {
-      softValidationColumns, softValidationHeader
+      softValidationHeader
     });
     
     allErrors = allErrors.concat(tableContentResult.errors);
@@ -165,14 +162,9 @@ function validateCrosswalk(context, doPath) {
     return;
   }
 
-  try {
-    // Configure soft validation columns based on digital object type
-    const softValidationColumns = getSoftValidationColumns(obj.type);
-    
+  try {  
     // Compare CSV files with order-independent comparison
-    const result = compareCSVFiles(rawData, reconstructedData, {
-      softValidationColumns
-    });
+    const result = compareCSVFiles(rawData, reconstructedData);
 
     // Report results
     if (result.hasErrors) {
@@ -239,24 +231,6 @@ function getRawData(obj) {
       return "crosswalk.csv";
     case 'collection':
       return "digital-objects.yaml"
-  }
-}
-
-// Get soft validation columns configuration for different digital object types
-function getSoftValidationColumns(objectType) {
-  switch (objectType) {
-    case 'asct-b':
-      return ['AS/*', 'CT/*', 'BGene/*', 'BProtein/*', 'BLipid/*', 'BMetabolite/*', 'BProteoform/*', 'FTU/*', 'REF/*'];
-    case 'omap':
-      return ['organ', 'concentration_value', 'author_orcids', 'uniprot_accession_number', 'HGNC_ID', 'target_symbol', 'clone_id'];
-    case 'ref-organ':
-      return ['label'];
-    case '2d-ftu':
-      return ['node_label', 'tissue_label', 'organ_label'];
-    case 'ctann':
-      return ['CL_Label'];
-    default:
-      return [];
   }
 }
 

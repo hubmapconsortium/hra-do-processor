@@ -17,9 +17,8 @@ export function validateTableMetadata(context, rawFilePath, reconstructedFilePat
     // Validate metadata structure
     if (rawMetadata.length !== reconstructedMetadata.length) {
       errors.push({
-        type: 'structural',
-        path: `metadata_header[${startRow}-${endRow}]`,
-        message: `Metadata row count mismatch in rows ${startRow}-${endRow}: ${rawMetadata.length} vs ${reconstructedMetadata.length}`
+        path: `metadata_headers`,
+        message: `Metadata row count mismatch: ${rawMetadata.length} vs ${reconstructedMetadata.length}`
       });
       return createResult(errors, warnings, context, rawFilePath, reconstructedFilePath);
     }
@@ -37,8 +36,8 @@ export function validateTableMetadata(context, rawFilePath, reconstructedFilePat
         // Throw a warning to notify manual evaluation
         if (normRawMetadataRow !== normReconstructedMetadataRow) {
           warnings.push({
-            type: 'semantic',
-            path: `metadata_header[${rowNumber}]`,
+            path: `metadata_headers`,
+            position: rowNumber,
             message: `Metadata row ${rowNumber} mismatch: '${normRawMetadataRow}' vs '${normReconstructedMetadataRow}'`
           });
         }
@@ -46,8 +45,7 @@ export function validateTableMetadata(context, rawFilePath, reconstructedFilePat
     }
   } catch (err) {
     errors.push({
-      type: 'parse_error',
-      path: `metadata_header[${startRow}-${endRow}]`,
+      path: `metadata_headers`,
       message: `Metadata validation failed: ${err.message}`
     });
   }

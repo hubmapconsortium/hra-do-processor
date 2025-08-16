@@ -24,7 +24,6 @@ function validateStructure(obj1, obj2, path, errors) {
   // Check for null/undefined mismatches
   if ((obj1 == null) !== (obj2 == null)) {
     errors.push({
-      type: 'structural',
       path: path,
       message: `Null/undefined mismatch: ${obj1} vs ${obj2}`
     });
@@ -41,7 +40,6 @@ function validateStructure(obj1, obj2, path, errors) {
 
   if (type1 !== type2) {
     errors.push({
-      type: 'structural',
       path: path,
       message: `Type mismatch: ${type1} vs ${type2}`
     });
@@ -52,7 +50,6 @@ function validateStructure(obj1, obj2, path, errors) {
   if (Array.isArray(obj1)) {
     if (obj1.length !== obj2.length) {
       errors.push({
-        type: 'structural',
         path: path,
         message: `Array length mismatch: ${obj1.length} vs ${obj2.length}`
       });
@@ -80,7 +77,6 @@ function validateStructure(obj1, obj2, path, errors) {
 
     missingInObj2.forEach(key => {
       errors.push({
-        type: 'structural',
         path: `${path}.${key}`,
         message: `Key missing in second object: ${key}`
       });
@@ -88,7 +84,6 @@ function validateStructure(obj1, obj2, path, errors) {
 
     missingInObj1.forEach(key => {
       errors.push({
-        type: 'structural',
         path: `${path}.${key}`,
         message: `Key missing in first object: ${key}`
       });
@@ -121,7 +116,6 @@ function validateValues(obj1, obj2, path, errors) {
   if (type1 === 'string' || type1 === 'number' || type1 === 'boolean') {
     if (obj1 !== obj2) {
       errors.push({
-        type: 'semantic',
         path: path,
         message: `Value mismatch: "${obj1}" vs "${obj2}"`
       });
@@ -164,7 +158,6 @@ function validateArrayValues(arr1, arr2, path, errors) {
 
   missingInArr2.forEach(item => {
     errors.push({
-      type: 'semantic',
       path: path,
       message: `Array element missing in second array: "${item}"`
     });
@@ -172,7 +165,6 @@ function validateArrayValues(arr1, arr2, path, errors) {
 
   missingInArr1.forEach(item => {
     errors.push({
-      type: 'semantic', 
       path: path,
       message: `Array element missing in first array: "${item}"`
     });

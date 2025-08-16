@@ -76,10 +76,7 @@ export function logValidationWarnings(warnings, context, file1Path = '', file2Pa
     const logEntry = {
       timestamp: new Date().toISOString(),
       level: 'WARNING',
-      warning_details: warnings.map(warning => ({
-        path: warning.path,
-        message: warning.message
-      })),
+      warning_details: warnings,
       original_file: file1Path,
       reconstructed_file: file2Path,
       total_issues: warnings.length
