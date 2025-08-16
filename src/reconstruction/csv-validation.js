@@ -4,7 +4,6 @@ import { createHash } from 'crypto';
 
 
 export function compareCSVFiles(csvPath1, csvPath2, options = {}) {
-  const { softValidationHeader } = options;
   const errors = [];
   const warnings = [];
 
@@ -58,9 +57,9 @@ function parseCsvFile(csvPath) {
 
 // Validate that CSV headers match accordingly
 function validateHeaders(headers1, headers2, errors, warnings, options = {}) {
-  const { softValidationHeader } = options;
+  const { useSoftValidationOnHeaders } = options;
 
-  if (softValidationHeader) {
+  if (useSoftValidationOnHeaders) {
     validateHeadersSoftly(headers1, headers2, warnings);
   } else {
     validateHeadersStrictly(headers1, headers2, errors);

@@ -115,11 +115,11 @@ function validateTableWithMetadata(context, doPath) {
     writeFileSync(tempReconstructedPath, reconstructedContent);
 
     // Apply soft validation to table headers, depending on the specified DO type
-    const softValidationHeader = getSoftValiadtionHeader(obj.type);
+    const useSoftValidationOnHeaders = shouldUseSoftValidationOnHeaders(obj.type);
     
     // Compare CSV files with order-independent comparison
     const tableContentResult = compareCSVFiles(tempRawPath, tempReconstructedPath, {
-      softValidationHeader
+      useSoftValidationOnHeaders
     });
     
     allErrors = allErrors.concat(tableContentResult.errors);
@@ -234,7 +234,7 @@ function getRawData(obj) {
   }
 }
 
-function getSoftValiadtionHeader(objectType) {
+function shouldUseSoftValidationOnHeaders(objectType) {
   switch (objectType) {
     case 'asct-b':
       return true;
