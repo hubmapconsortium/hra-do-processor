@@ -4,3 +4,4 @@ check-jsonschema
 linkml-owl
 linkml # use version required by linkml-owl above
 semsql
+datacite

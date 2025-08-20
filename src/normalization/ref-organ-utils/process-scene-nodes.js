@@ -2,10 +2,12 @@
 // https://github.com/hubmapconsortium/ccf-ui/blob/main/projects/ccf-body-ui/src/lib/util/process-scene-nodes.ts
 
 import { Matrix4 } from '@math.gl/core';
-import { AABB, Vec3 } from 'cannon-es';
+import cannon from 'cannon-es';
 import { __awaiter } from 'tslib';
 import { loadGLTF, registerGLTFLoaders } from './load-gltf.js';
 import { traverseScene } from './scene-traversal.js';
+
+const { AABB, Vec3 } = cannon;
 
 function childNames(scene, names = []) {
   for (const child of scene.nodes || scene.children || []) {
