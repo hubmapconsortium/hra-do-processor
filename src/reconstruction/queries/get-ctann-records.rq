@@ -1,0 +1,43 @@
+PREFIX ccf: <http://purl.org/ccf/>
+PREFIX sssom: <https://w3id.org/sssom/>
+PREFIX CL: <http://purl.obolibrary.org/obo/CL_>
+PREFIX UBERON: <http://purl.obolibrary.org/obo/UBERON_>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT 
+  ?Organ_Level
+  ?Organ_ID
+  ?Annotation_Label
+  ?Annotation_Label_ID
+  ?CL_Label
+  ?CL_ID
+  ?CL_Match
+  ?record_label
+  ?record_number
+WHERE {
+  ?ctAnnMapping a ccf:CtAnnMapping .
+  
+  # Get organ level and organ ID from extension properties
+  ?ctAnnMapping ccf:ext_organ_level ?Organ_Level .
+  ?ctAnnMapping ccf:ext_organ_id ?Organ_ID .
+  
+  # Get annotation label and ID from subject properties
+  ?ctAnnMapping sssom:subject_label ?Annotation_Label .
+  ?ctAnnMapping owl:annotatedSource ?Annotation_Label_ID .
+  
+  # Get CL (Cell Line) label and ID from object properties
+  ?ctAnnMapping sssom:object_label ?CL_Label .
+  ?ctAnnMapping owl:annotatedTarget ?CL_ID .
+  
+  # Get mapping justification as CL_Match
+  ?ctAnnMapping owl:annotatedProperty ?CL_Match .
+  
+  # Get record label to extract record number for ordering
+  ?ctAnnMapping rdfs:label ?record_label .
+  
+  # Extract record number from label like "Record 133"
+  BIND(xsd:integer(REPLACE(STR(?record_label), "^Record\\s+(\\d+)$", "$1")) AS ?record_number)
+}
+ORDER BY ?record_number 

@@ -1,0 +1,21 @@
+PREFIX ccf: <http://purl.org/ccf/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT
+  ?record_order
+  ?node_name
+  ?ontology_id
+  ?label
+WHERE {
+  ?spatialEntity a ccf:SpatialEntity ;
+      ccf:rui_rank ?record_order ;
+      ccf:representation_of ?organ_concept ;
+      ccf:has_object_reference ?objectReference .
+
+  ?objectReference ccf:file_subpath ?node_name .
+
+  ?organ_concept rdfs:label ?label ;
+      oboInOwl:id ?ontology_id .
+}
+ORDER BY ?record_order

@@ -1,0 +1,8 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+SELECT DISTINCT ?sub_graph
+WHERE {
+  ?ontology_id a owl:Ontology ;
+      prov:hadMember ?sub_graph
+}

@@ -5,7 +5,7 @@ import { resolve } from 'path';
 import sh from 'shelljs';
 import { info, more, warning } from '../utils/logging.js';
 import { makeASCTBData } from './asct-b-utils/api.functions.js';
-import { BM_TYPE } from './asct-b-utils/api.model.js';
+import { PROTEIN_PRESENCE, getBiomarkerColumnName } from './asct-b-utils/api.model.js';
 import {
   getPatchesForAnatomicalStructure,
   getPatchesForBiomarker,
@@ -156,10 +156,12 @@ function normalizeCtData(context, data) {
       .filter((id) => passIdFilterCriteria(context, id));
 
     // Get the references
-    const references = row.references.map((ref) => {
-      const refString = checkNotEmpty(ref.id) ? ref.id : 'N/A';
-      return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
-    });
+    const references = row.references
+      .filter(({id}) => checkNotEmpty(id))
+      .map((ref) => {
+        const refString = ref.id;
+        return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
+      });
 
     // Get the last cell type as the primary cell
     const last_ct = valid_ct.pop();
@@ -280,16 +282,39 @@ function normalizeAsctbRecord(context, data) {
       .map((item, order) => generateCtInstance(context, recordNumber, item, order))
       .filter(({ source_concept }) => passCtIdFilterCriteria(context, source_concept));
 
-    // Generate biomarker instances
-    const bmInstances = row.biomarkers
+    // Generate gene biomarker instances
+    const bgInstances = row.biomarkers_gene
       .map((item, order) => generateBmInstance(context, recordNumber, item, order))
       .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept));
 
+    // Generate protein biomarker instances
+    const bpInstances = row.biomarkers_protein
+      .map((item, order) => generateBmInstance(context, recordNumber, item, order))
+      .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept));    
+
+    // Generate lipid biomarker instances
+    const blInstances = row.biomarkers_lipids
+      .map((item, order) => generateBmInstance(context, recordNumber, item, order))
+      .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept)); 
+
+    // Generate metabolites biomarker instances
+    const bmInstances = row.biomarkers_meta
+      .map((item, order) => generateBmInstance(context, recordNumber, item, order))
+      .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept)); 
+
+    // Generate proteoform biomarker instances
+    const bfInstances = row.biomarkers_prot
+    .map((item, order) => generateBmInstance(context, recordNumber, item, order))
+    .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept)); 
+
+    // Generate FTU instances
+    const ftuInstances = row.ftu_types
+      .map((item, order) => generateFtuInstance(context, recordNumber, item, order))
+      .filter(({ source_concept }) => passAsIdFilterCriteria(context, source_concept));
+
     // Populate all valid references
-    const references = row.references.map((ref) => {
-      const refString = checkNotEmpty(ref.id) ? ref.id : 'N/A';
-      return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
-    });
+    const references = row.references
+      .map((item, order) => generateReferenceInstance(context, recordNumber, item, order));
 
     // Collect all the items
     collector.push({
@@ -299,12 +324,13 @@ function normalizeAsctbRecord(context, data) {
       record_number: recordNumber,
       anatomical_structure_list: asInstances,
       cell_type_list: ctInstances,
-      gene_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.G),
-      protein_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.P),
-      lipid_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.BL),
-      metabolites_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.BM),
-      proteoforms_marker_list: bmInstances.filter(({ ccf_biomarker_type }) => ccf_biomarker_type === BM_TYPE.BF),
-      references: references,
+      gene_marker_list: bgInstances,
+      protein_marker_list: bpInstances,
+      lipid_marker_list: blInstances,
+      metabolites_marker_list: bmInstances,
+      proteoforms_marker_list: bfInstances,
+      ftu_list: ftuInstances,
+      reference_list: references,
     });
     return collector;
   }, []);
@@ -339,10 +365,12 @@ function normalizeCellMarkerDescriptor(context, data) {
       .filter((id) => passIdFilterCriteria(context, id));
 
     // Populate all valid references
-    const references = row.references.map((ref) => {
-      const refString = checkNotEmpty(ref.id) ? ref.id : 'N/A';
-      return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
-    });
+    const references = row.references
+      .filter(({id}) => checkNotEmpty(id))
+      .map((ref) => {
+        const refString = ref.id;
+        return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
+      });
 
     // Collect all the items if the components are complete.
     if (primaryAs && primaryCt && biomarkers) {
@@ -353,7 +381,7 @@ function normalizeCellMarkerDescriptor(context, data) {
         primary_cell_type: primaryCt.id,
         primary_anatomical_structure: primaryAs,
         biomarker_set: biomarkers,
-        references: references,
+        references: removeDuplicates(references),
         source_record: generateAsctbRecordId(context, recordNumber),
       });
     }
@@ -363,7 +391,7 @@ function normalizeCellMarkerDescriptor(context, data) {
 
 function generateAsInstance(context, recordNumber, data, index) {
   const { name: doName } = context.selectedDigitalObject;
-  const { id, name } = data;
+  const { id, name, notes } = data;
   const asName = normalizeString(name);
   const orderNumber = index + 1;
   return {
@@ -372,6 +400,7 @@ function generateAsInstance(context, recordNumber, data, index) {
     type_of: ['ccf:AnatomicalStructureRecord'],
     ccf_pref_label: asName,
     source_concept: generateIdWhenEmpty(id, asName),
+    notes: notes,
     record_number: recordNumber,
     order_number: orderNumber,
   };
@@ -379,7 +408,7 @@ function generateAsInstance(context, recordNumber, data, index) {
 
 function generateCtInstance(context, recordNumber, data, index) {
   const { name: doName } = context.selectedDigitalObject;
-  const { id, name } = data;
+  const { id, name, notes } = data;
   const ctName = normalizeString(name);
   const orderNumber = index + 1;
   return {
@@ -388,6 +417,7 @@ function generateCtInstance(context, recordNumber, data, index) {
     type_of: ['ccf:CellTypeRecord'],
     ccf_pref_label: ctName,
     source_concept: generateIdWhenEmpty(id, ctName),
+    notes: notes,
     record_number: recordNumber,
     order_number: orderNumber,
   };
@@ -395,19 +425,65 @@ function generateCtInstance(context, recordNumber, data, index) {
 
 function generateBmInstance(context, recordNumber, data, index) {
   const { name: doName } = context.selectedDigitalObject;
-  const { id, name, b_type } = data;
-  const bmName = normalizeString(name);
+  const { id, name, proteinPresence, b_type, notes } = data;
+  const bmName = `${normalizeString(name)}${presenceSymbol(proteinPresence)}`;
   const orderNumber = index + 1;
+  const biomarkerColumnName = getBiomarkerColumnName(b_type);
   return {
-    id: generateBmInstanceId(context, recordNumber, orderNumber),
-    label: `${bmName} (Table ${doName}, Record ${recordNumber}, Column BM/${orderNumber})`,
+    id: generateBmInstanceId(context, recordNumber, biomarkerColumnName, orderNumber),
+    label: `${bmName} (Table ${doName}, Record ${recordNumber}, Column ${biomarkerColumnName}/${orderNumber})`,
     type_of: ['ccf:BiomarkerRecord'],
     ccf_pref_label: bmName,
     ccf_biomarker_type: b_type,
     source_concept: generateIdWhenEmpty(id, bmName),
+    notes: notes,
     record_number: recordNumber,
     order_number: orderNumber,
   };
+}
+
+function presenceSymbol(proteinPresence) {
+  switch(proteinPresence) {
+    case PROTEIN_PRESENCE.POS: return '+';
+    case PROTEIN_PRESENCE.NEG: return '-';
+    case PROTEIN_PRESENCE.INTERMEDIATE: return '+/-';
+    default: return '';
+  }
+}
+
+function generateFtuInstance(context, recordNumber, data, index) {
+  const { name: doName } = context.selectedDigitalObject;
+  const { id, name, notes } = data;
+  const ftuName = normalizeString(name);
+  const orderNumber = index + 1;
+  return {
+    id: generateFtuInstanceId(context, recordNumber, orderNumber),
+    label: `${ftuName} (Table ${doName}, Record ${recordNumber}, Column FTU/${orderNumber})`,
+    type_of: ['ccf:FtuRecord'],
+    ccf_pref_label: ftuName,
+    source_concept: id,
+    notes: notes,
+    record_number: recordNumber,
+    order_number: orderNumber,
+  };
+}
+
+function generateReferenceInstance(context, recordNumber, data, index) {
+  const { id, name, notes } = data;
+  const orderNumber = index + 1;
+  const refString = checkIsDoi(id) ? normalizeDoi(id) : normalizeString(id);
+  const obj = {
+    id: generateReferenceInstanceId(context, recordNumber, orderNumber),
+    doi: refString,
+    type_of: ['ccf:ReferenceRecord'],
+    notes: notes,
+    record_number: recordNumber,
+    order_number: orderNumber,
+  };
+  if (name) {
+    obj.external_id = name;
+  }
+  return obj;
 }
 
 function generateAsctbRecordId(context, recordNumber) {
@@ -425,9 +501,19 @@ function generateCtInstanceId(context, recordNumber, orderNumber) {
   return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}-CT${orderNumber}`;
 }
 
-function generateBmInstanceId(context, recordNumber, orderNumber) {
+function generateBmInstanceId(context, recordNumber, biomarkerType, orderNumber) {
   const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
-  return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}-BM${orderNumber}`;
+  return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}-${biomarkerType}${orderNumber}`;
+}
+
+function generateFtuInstanceId(context, recordNumber, orderNumber) {
+  const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
+  return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}-FTU${orderNumber}`;
+}
+
+function generateReferenceInstanceId(context, recordNumber, orderNumber) {
+  const { type: doType, name: doName, version: doVersion } = context.selectedDigitalObject;
+  return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}-REF${orderNumber}`;
 }
 
 function generateCellMarkerDescriptorId(context, recordNumber) {
@@ -458,6 +544,17 @@ function checkNotEmpty(str) {
 function checkIsDoi(str) {
   const doiRegex = /(10\.\d{4,9}\/[\w\-._;()/:]+)/i;
   return doiRegex.test(str);
+}
+
+function normalizePubMedUrl(str) {
+  // Check if the string contains a PubMed URL
+  const pubmedRegex = /(?:https?:\/\/(?:www\.)?(?:pubmed\.ncbi\.nlm\.nih\.gov|ncbi\.nlm\.nih\.gov\/pubmed)\/(\d+)(?:\/?$|\/.*))/i;
+  const match = str.match(pubmedRegex);
+  if (match) {
+    const pmid = match[1];
+    return `PMID:${pmid}`;
+  }
+  return str;
 }
 
 function removeDuplicates(array) {

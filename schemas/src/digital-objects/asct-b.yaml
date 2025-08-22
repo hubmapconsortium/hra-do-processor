@@ -137,12 +137,8 @@ classes:
       - lipid_marker_list
       - metabolites_marker_list
       - proteoforms_marker_list
-      - references
-    slot_usage:
-      references:
-        range: string
-        annotations:
-          owl: AnnotationAssertion, AnnotationProperty
+      - ftu_list
+      - reference_list
 
   AnatomicalStructureRecord:
     title: Anatomical Structure Record
@@ -156,6 +152,7 @@ classes:
     slots:
       - ccf_pref_label
       - source_concept
+      - notes
       - record_number
       - order_number
 
@@ -171,6 +168,7 @@ classes:
     slots:
       - ccf_pref_label
       - source_concept
+      - notes
       - record_number
       - order_number
 
@@ -187,6 +185,39 @@ classes:
       - ccf_pref_label
       - ccf_biomarker_type
       - source_concept
+      - notes
+      - record_number
+      - order_number
+
+  FtuRecord:
+    title: Functional Tissue Unit Record
+    description: >-
+      A functional tissue unit (FTU) record represents a specific value in
+      the ASCT+B table, located in the "FTU" column, identified by its row
+      (record number) and column (order number).
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - ccf_pref_label
+      - source_concept
+      - notes
+      - record_number
+      - order_number
+
+  ReferenceRecord:
+    title: Reference Record
+    description: >-
+      A reference record represents a specific value in the ASCT+B table, 
+      located in the "REF" column, identified by its row (record number) and 
+      column (order number).
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - doi
+      - external_id
+      - notes
       - record_number
       - order_number
 
@@ -473,6 +504,42 @@ slots:
     slot_uri: ccf:proteoform_marker
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
+  ftu_list:
+    title: functional tissue unit
+    description: List of FTUs referenced within ASCT+B records.
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: FtuRecord
+    slot_uri: ccf:ftu_types
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  reference_list:
+    title: reference list
+    description: List of references for the ASCT+B record.
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: ReferenceRecord
+    slot_uri: ccf:reference
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  doi:
+    title: doi
+    description: Digital Object Identifier for the reference record.
+    required: true
+    slot_uri: ccf:doi
+    range: uriorcurie
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  external_id:
+    title: external id
+    description: External identifier for the reference record.
+    required: false
+    slot_uri: ccf:external_id
+    range: string
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
   primary_cell_type:
     title: primary cell type
     description: The cell type in the cell marker descriptor.
@@ -501,5 +568,12 @@ slots:
     description: >- 
       Reference to the ASCT+B record that contains the actual information.
     range: AsctbRecord
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  notes:
+    title: notes
+    description: >-
+      Reference to the notes column in the ASCT+B table
+    slot_uri: ccf:notes
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
