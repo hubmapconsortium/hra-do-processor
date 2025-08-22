@@ -13,16 +13,16 @@ default_range: string
 imports:
   - linkml:types
   - ../shared/metadata-base
-  - cell-summary
-  - collision
-  - corridor
+  - ../modules/cell-summary
+  - ../modules/collision
+  - ../modules/corridor
 
 classes:
   SpatialEntity:
     title: Spatial Entity
     description: >-
-      A spatial entity is a defined object or structure with a specific 
-      location, boundary, and orientation in physical or conceptual 
+      A spatial entity is a defined object or structure with a specific
+      location, boundary, and orientation in physical or conceptual
       space, such as an organ, tissue, or cell in anatomical studies.
     class_uri: ccf:SpatialEntity
     mixins:
@@ -51,8 +51,8 @@ classes:
   SpatialPlacement:
     title: Spatial Placement
     description: >-
-      Spatial placement refers to the positioning and orientation of 
-      an entity within a defined space or context, often describing 
+      Spatial placement refers to the positioning and orientation of
+      an entity within a defined space or context, often describing
       its location relative to other entities or a coordinate system.
     class_uri: ccf:SpatialPlacement
     mixins:
@@ -89,8 +89,8 @@ classes:
   SpatialObjectReference:
     title: Spatial Object Reference
     description: >-
-      A spatial object reference is a record describing a spatial entity, 
-      including its placement within a defined space, the associated file 
+      A spatial object reference is a record describing a spatial entity,
+      including its placement within a defined space, the associated file
       name, URL for access, and file format.
     class_uri: ccf:SpatialObjectReference
     mixins:
@@ -191,7 +191,7 @@ slots:
     multivalued: true
     range: EntityID
     annotations:
-      owl: AnnotationProperty, AnnotationAssertion  
+      owl: AnnotationProperty, AnnotationAssertion
   collides_with:
     title: collides with
     description: >-

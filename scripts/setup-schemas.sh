@@ -12,7 +12,7 @@ for schemaFile in schemas/src/{metadata,modules,digital-objects}/*.yaml; do
 
   # Generate resolved LinkML schema definitions
   mkdir -p schemas/generated/linkml
-  gen-linkml -f yaml --no-materialize $schemaFile > schemas/generated/linkml/${type}.yaml
+  gen-linkml -f yaml --no-materialize-attributes $schemaFile > schemas/generated/linkml/${type}.yaml
   echo -e "\rProcessing $schemaFile... done"
 done
 
@@ -56,7 +56,7 @@ for genSchemaFile in schemas/generated/linkml/*.yaml; do
   mkdir -p schemas/generated/owl
   gen-owl --log_level ERROR $genSchemaFile > schemas/generated/owl/${type}.owl.ttl
   echo -e "\r-> Generating OWL schema... done"
-  
+
   # Generate Mermaid diagrams
   echo -n "-> Generating ER diagram..."
   mkdir -p schemas/generated/erdiagram

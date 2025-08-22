@@ -14,7 +14,7 @@ default_range: string
 imports:
   - linkml:types
   - ../shared/metadata-base
-  - cell-summary
+  - ../modules/cell-summary
 
 classes:
   Dataset:

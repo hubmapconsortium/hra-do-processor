@@ -17,9 +17,11 @@ Named {
 FtuIllustrationNode {
     string node_name  
     string node_group  
-    string part_of_illustration  
     uriorcurie id  
     string label  
+}
+EntityID {
+    uriorcurie id  
 }
 FtuIllustrationFile {
     uri file_url  
@@ -46,6 +48,7 @@ FtuIllustration ||--}o FtuIllustrationFile : "image_file"
 FtuIllustration ||--}o FtuIllustrationNode : "illustration_node"
 FtuIllustration ||--|o Named : "representation_of"
 FtuIllustration ||--}o Named : "type_of"
+FtuIllustrationNode ||--|o EntityID : "part_of_illustration"
 FtuIllustrationNode ||--|o Named : "representation_of"
 FtuIllustrationNode ||--}o Named : "type_of"
 FtuIllustrationFile ||--}o Named : "type_of"
@@ -77,13 +80,21 @@ Named {
 }
 AsctbRecord {
     integer record_number  
-    stringList references  
     uriorcurie id  
     string label  
 }
-BiomarkerRecord {
+ReferenceRecord {
+    uriorcurie doi  
+    string external_id  
+    string notes  
+    integer record_number  
+    integer order_number  
+    uriorcurie id  
+    string label  
+}
+FtuRecord {
     string ccf_pref_label  
-    string ccf_biomarker_type  
+    string notes  
     integer record_number  
     integer order_number  
     uriorcurie id  
@@ -98,8 +109,18 @@ AsctbConcept {
     string ccf_asctb_type  
     boolean ccf_is_provisional  
 }
+BiomarkerRecord {
+    string ccf_pref_label  
+    string ccf_biomarker_type  
+    string notes  
+    integer record_number  
+    integer order_number  
+    uriorcurie id  
+    string label  
+}
 CellTypeRecord {
     string ccf_pref_label  
+    string notes  
     integer record_number  
     integer order_number  
     uriorcurie id  
@@ -107,6 +128,7 @@ CellTypeRecord {
 }
 AnatomicalStructureRecord {
     string ccf_pref_label  
+    string notes  
     integer record_number  
     integer order_number  
     uriorcurie id  
@@ -171,7 +193,12 @@ AsctbRecord ||--}o BiomarkerRecord : "protein_marker_list"
 AsctbRecord ||--}o BiomarkerRecord : "lipid_marker_list"
 AsctbRecord ||--}o BiomarkerRecord : "metabolites_marker_list"
 AsctbRecord ||--}o BiomarkerRecord : "proteoforms_marker_list"
+AsctbRecord ||--}o FtuRecord : "ftu_list"
+AsctbRecord ||--}o ReferenceRecord : "reference_list"
 AsctbRecord ||--}o Named : "type_of"
+ReferenceRecord ||--}o Named : "type_of"
+FtuRecord ||--|| AsctbConcept : "source_concept"
+FtuRecord ||--}o Named : "type_of"
 BiomarkerRecord ||--|| AsctbConcept : "source_concept"
 BiomarkerRecord ||--}o Named : "type_of"
 CellTypeRecord ||--|| AsctbConcept : "source_concept"
@@ -1167,6 +1194,7 @@ Named {
     string label  
 }
 ExperimentUsedAntibody {
+    integer record_number  
     decimal concentration  
     integer dilution  
     integer cycle_number  
@@ -1174,14 +1202,38 @@ ExperimentUsedAntibody {
     uriorcurie id  
     string label  
 }
+BindsToStatement {
+    string rationale  
+}
+Antibody {
+    uriorcurie id  
+    uriorcurie parent_class  
+    string antibody_type  
+    string host  
+    string clonality  
+    string clone_id  
+    string conjugate  
+    string fluorescent  
+    string recombinant  
+    string producer  
+    string catalog_number  
+}
+DetectStatement {
+    string rationale  
+}
+Protein {
+    uriorcurie id  
+}
 RegisteredAntibody {
     string lot_number  
+    string isotype  
     uriorcurie id  
     string label  
 }
 MultiplexedAntibodyBasedImagingExperiment {
     string study_method  
     string tissue_preservation  
+    stringList author_orcid  
     uriorcurie id  
     string label  
 }
@@ -1192,29 +1244,6 @@ ExperimentCycle {
     integer cycle_number  
     uriorcurie id  
     string label  
-}
-Antibody {
-    uriorcurie id  
-    uriorcurie parent_class  
-    string antibody_type  
-    string host  
-    string isotype  
-    string clonality  
-    string clone_id  
-    string conjugate  
-    string fluorescent  
-    string recombinant  
-    string producer  
-    string catalog_number  
-}
-BindsToStatement {
-    string rationale  
-}
-DetectStatement {
-    string rationale  
-}
-Protein {
-    uriorcurie id  
 }
 OmapMetadata {
     string title  
@@ -1233,21 +1262,21 @@ OmapDataset ||--}| ExperimentCycle : "cycles"
 OmapDataset ||--|| AntibodyPanel : "antibody_panel"
 AntibodyPanel ||--}| ExperimentUsedAntibody : "contains_antibodies"
 AntibodyPanel ||--}o Named : "type_of"
+ExperimentUsedAntibody ||--|| Antibody : "antibody_id"
 ExperimentUsedAntibody ||--|| MultiplexedAntibodyBasedImagingExperiment : "used_by_experiment"
 ExperimentUsedAntibody ||--|| RegisteredAntibody : "based_on"
+ExperimentUsedAntibody ||--|o DetectStatement : "detects"
+ExperimentUsedAntibody ||--|o BindsToStatement : "binds_to"
 ExperimentUsedAntibody ||--}o Named : "type_of"
+BindsToStatement ||--|| Antibody : "antibody_id"
+DetectStatement ||--}| Protein : "protein_id"
 RegisteredAntibody ||--}o Named : "type_of"
 MultiplexedAntibodyBasedImagingExperiment ||--}o Named : "protocol_doi"
-MultiplexedAntibodyBasedImagingExperiment ||--}o Named : "author_orcid"
 MultiplexedAntibodyBasedImagingExperiment ||--}| ExperimentCycle : "has_cycle"
 MultiplexedAntibodyBasedImagingExperiment ||--|| AnatomicalStructure : "sample_organ"
 MultiplexedAntibodyBasedImagingExperiment ||--}o Named : "type_of"
 ExperimentCycle ||--}| ExperimentUsedAntibody : "uses_antibodies"
 ExperimentCycle ||--}o Named : "type_of"
-Antibody ||--}o DetectStatement : "detects"
-Antibody ||--}o BindsToStatement : "binds_to"
-BindsToStatement ||--|| Antibody : "antibody_id"
-DetectStatement ||--}| Protein : "protein_id"
 OmapMetadata ||--}o Named : "created_by"
 OmapMetadata ||--|o Named : "see_also"
 OmapMetadata ||--|o Named : "derived_from"
