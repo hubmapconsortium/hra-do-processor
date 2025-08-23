@@ -158,6 +158,7 @@ function normalizeCtData(context, data) {
     // Get the references
     const references = row.references
       .filter(({id}) => checkNotEmpty(id))
+      .filter((ref) => ref !== 'No DOI')
       .map((ref) => {
         const refString = ref.id;
         return checkIsDoi(refString) ? normalizeDoi(refString) : normalizeString(refString);
@@ -290,22 +291,22 @@ function normalizeAsctbRecord(context, data) {
     // Generate protein biomarker instances
     const bpInstances = row.biomarkers_protein
       .map((item, order) => generateBmInstance(context, recordNumber, item, order))
-      .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept));    
+      .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept));
 
     // Generate lipid biomarker instances
     const blInstances = row.biomarkers_lipids
       .map((item, order) => generateBmInstance(context, recordNumber, item, order))
-      .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept)); 
+      .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept));
 
     // Generate metabolites biomarker instances
     const bmInstances = row.biomarkers_meta
       .map((item, order) => generateBmInstance(context, recordNumber, item, order))
-      .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept)); 
+      .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept));
 
     // Generate proteoform biomarker instances
     const bfInstances = row.biomarkers_prot
     .map((item, order) => generateBmInstance(context, recordNumber, item, order))
-    .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept)); 
+    .filter(({ source_concept }) => passIdFilterCriteria(context, source_concept));
 
     // Generate FTU instances
     const ftuInstances = row.ftu_types
@@ -480,8 +481,9 @@ function generateReferenceInstance(context, recordNumber, data, index) {
     record_number: recordNumber,
     order_number: orderNumber,
   };
-  if (name) {
-    obj.external_id = name;
+  const cleanName = checkIsDoi(name) ? normalizeDoi(name) : normalizeString(name);
+  if (cleanName) {
+    obj.external_id = cleanName;
   }
   return obj;
 }

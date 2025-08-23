@@ -335,7 +335,7 @@ export function normalizeDoi(doi) {
 export function normalizeString(str) {
   return str.replace(/"/g, "'")  // Replace all double quotes with single quotes
     .replace(/\r/g, "")  // Remove carriage return characters
-    .replace(/\s+/g, " ")  // Replace multiple spaces (including leading/trailing spaces) with a single space
+    .replace(/[\r\n\s\u2000-\u200A\u202F\u205F\u3000\u2028\u2029]+/g, " ")  // Replace multiple spaces (including leading/trailing spaces) with a single space
     .trim();
 }
 
