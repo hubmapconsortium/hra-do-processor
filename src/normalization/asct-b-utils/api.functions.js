@@ -73,7 +73,18 @@ function setData(column, columnNumber, row, value, warnings) {
       if (objectArray.length === 0 && arrayName) {
         row[arrayName] = objectArray;
       }
-      objectArray.push(createObject(value, originalArrayName));
+      // Split combined biomarker tokens (if this is a biomarker array) into separate objects.
+      const biomarkerArrays = new Set(['BG','BGENE','BP','BPROTEIN','BL','BLIPID','BM','BMETABOLITES','BF','BPROTEOFORM']);
+      let tokens = [value];
+      if (value && typeof value === 'string' && biomarkerArrays.has(originalArrayName.toUpperCase())) {
+        const escapeForCharClass = (s) => s.replace(/[-\\\]^]/g, '\\$&');
+        const delimChars = escapeForCharClass(DELIMETER) + ',|';
+        const separators = new RegExp('[' + delimChars + ']+' );
+        tokens = value.split(separators).map((s) => s.trim()).filter(Boolean);
+      }
+      for (const token of tokens) {
+        objectArray.push(createObject(token, originalArrayName));
+      }
     } else if (column.length === 3 && arrayName) {
       let arrayIndex = parseInt(column[1], 10) - 1;
       const fieldName = objectFieldMap[column[2]]; // || (column[2]?.toLowerCase() ?? '').trim();
@@ -99,6 +110,7 @@ function setData(column, columnNumber, row, value, warnings) {
     }
   }
 }
+
 
 const invalidCharacterRegex = /_/gi;
 const isLinkRegex = /^http/gi;
