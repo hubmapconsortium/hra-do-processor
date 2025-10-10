@@ -138,7 +138,7 @@ fi
 
 echo ">>> RUN compare_and_mismatched_reason.py"
 # Adjust path if your script lives elsewhere:
-COMPARE_SCRIPT="compare_and_mismatched_reason.py"
+COMPARE_SCRIPT="testing/compare_and_mismatched_reason.py"
 
 if ! command -v "${PYTHON_BIN}" >/dev/null 2>&1; then
   echo "ERROR: python interpreter '${PYTHON_BIN}' not found" >&2
