@@ -33,6 +33,8 @@ function subsetCrosswalk(crosswalkRows, gltf) {
         OntologyID: node.extras.ontologyid,
         label: node.extras.label,
       });
+    } else {
+      console.log('Uncrosswalked node:', node.name, node.extras);
     }
   }
   return results;
