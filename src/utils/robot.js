@@ -81,7 +81,7 @@ export function merge(inputs, output, outputFormat = "owl") {
     (collector, owlInput) => (`${collector} --input ${owlInput}`), "");
   try {
     throwOnError(
-      `robot merge ${inputParams} \
+      `JAVA_TOOL_OPTIONS="-XX:TieredStopAtLevel=1" robot merge ${inputParams} \
              convert --format ${outputFormat} -o ${output}`,
       'Merge ontologies failed. See errors above.'
     );
