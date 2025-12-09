@@ -27,7 +27,7 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends 
 
 COPY scripts scripts
 COPY schemas schemas
-COPY requirements.txt requirements-freeze.txt package.json package-lock.json puppeteer-config.json /build/
+COPY src requirements.txt requirements-freeze.txt package.json package-lock.json puppeteer-config.json /build/
 
 RUN ./scripts/setup-environment.sh /venv
 
