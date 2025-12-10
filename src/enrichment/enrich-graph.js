@@ -14,6 +14,8 @@ import {
   runCompleteClosure,
 } from './utils.js';
 
+const SKIP_CLOSURE = new Set(['fma']);
+
 export function enrichGraphMetadata(context) {
   const { selectedDigitalObject: obj } = context;
   const normalizedPath = resolve(obj.path, 'normalized/normalized-metadata.yaml');
@@ -66,10 +68,12 @@ export function enrichGraphData(context) {
     info(`Creating graph: ${enrichedPath}`);
     rdfConvert(enrichedMergePath, enrichedPath, 'ttl');
 
-    info('Optimizing graph...');
-    const redundantPath = resolve(obj.path, 'enriched/redundant.ttl');
-    runCompleteClosure(enrichedPath, redundantPath);
-    logOutput(redundantPath);
+    if (!SKIP_CLOSURE.has(obj.name)) {
+      info('Optimizing graph...');
+      const redundantPath = resolve(obj.path, 'enriched/redundant.ttl');
+      runCompleteClosure(enrichedPath, redundantPath);
+      logOutput(redundantPath);
+    }
 
     const enrichedJsonPath = resolve(obj.path, 'enriched/enriched.json');
     convertNormalizedDataToJson(context, normalizedPath, enrichedJsonPath, 'graph');
