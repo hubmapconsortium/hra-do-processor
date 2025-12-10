@@ -25,15 +25,11 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends 
   libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 \
   libxss1 libxtst6 ca-certificates fonts-liberation libnss3 lsb-release xdg-utils
 
-COPY scripts scripts
-COPY schemas schemas
-COPY src requirements.txt requirements-freeze.txt package.json package-lock.json puppeteer-config.json /build/
+COPY . .
 
 RUN ./scripts/setup-environment.sh /venv
 
 ENV PATH="/venv/bin:$PATH"
-
-COPY . .
 
 RUN npm install -g .
 
