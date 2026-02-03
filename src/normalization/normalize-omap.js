@@ -115,14 +115,14 @@ function normalizeExperimentData(context, metadata, data) {
     )
     .append('author_orcid', split(referenceData.author_orcids || referenceData.author_orcid))
     .append('has_cycle', [...new Set(cycle_ids)])
-    .append('sample_organ', referenceData.organ_uberon)
+    .append('sample_organ', referenceData.organ_uberon?.replaceAll('_', ':') ?? '')
     .build();
 }
 
 function normalizeExperimentCycleData(context, data) {
   const omapId = data[0].omap_id;
   const uniqueCycleNumbers = [...new Set(data.map(row => row.cycle_number))];
-  return uniqueCycleNumbers.map(cycleNumber => 
+  return uniqueCycleNumbers.map(cycleNumber =>
     createExperimentCycle(context, omapId, cycleNumber, data)
   );
 }
@@ -135,7 +135,7 @@ function createExperimentCycle(context, omapId, cycleNumber, allData) {
     .append('label', `${omapId} experiment, Cycle ${cycleNumber}`)
     .append('type_of', ['ccf:ExperimentCycle'])
     .append('cycle_number', cycleNumber)
-    .append('uses_antibodies', uniqueAntibodies.map(row => 
+    .append('uses_antibodies', uniqueAntibodies.map(row =>
       createUsedAntibodyObject(context, omapId, cycleNumber, row, allData)
     ))
     .build();
@@ -149,8 +149,8 @@ function removeDuplicateAntibodies(cycleData) {
 }
 
 function getRowIndexFromAllData(row, allData) {
-  return allData.findIndex(dataRow => 
-    dataRow.rrid === row.rrid && 
+  return allData.findIndex(dataRow =>
+    dataRow.rrid === row.rrid &&
     dataRow.HGNC_ID === row.HGNC_ID &&
     dataRow.conjugate === row.conjugate &&
     dataRow.lot_number === row.lot_number &&
@@ -162,7 +162,7 @@ function getRowIndexFromAllData(row, allData) {
 function createUsedAntibodyObject(context, omapId, cycleNumber, row, allData) {
   const antibodyObject = new ObjectBuilder()
     .append('id', getDilutedAntibodyInstanceIri(
-      context, omapId, cycleNumber, row.rrid, row.lot_number, 
+      context, omapId, cycleNumber, row.rrid, row.lot_number,
       row.dilution, row.concentration_value
     ))
     .append('label', getDilutedAntibodyInstanceLabel(
