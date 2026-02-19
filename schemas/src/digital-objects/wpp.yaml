@@ -43,6 +43,7 @@ classes:
       - Named
       - Instance
     slots:
+      - record_source
       - record_number
       - behavior
       - behavior_x
@@ -453,6 +454,15 @@ slots:
     required: true
     slot_uri: wpp:source_concept
     range: WppConcept
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  record_source:
+    title: record source
+    description: >-
+      A reference to the PURL of the source of the records
+    required: true
+    slot_uri: wpp:record_source
+    range: Named
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   record_number:

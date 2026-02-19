@@ -173,7 +173,6 @@ export class TableParser {
 
       // Add record and order numbers in objects and arrays where appropriate
       const purl = this.options.purl ?? '';
-      record.id = `${purl}#R${record.record_number}`;
       for (let [key, value] of Object.entries(record)) {
         const field = key.replace(/_list$/, '').toLowerCase();
         const type = snakeToCamelCase(field) + 'Field';
@@ -193,6 +192,8 @@ export class TableParser {
           value.id = `${purl}#R${value.record_number}-${type}`;
         }
       }
+      record.id = `${purl}#R${record.record_number}`;
+      record.record_source = this.options.recordSource || purl || undefined;
       record.type_of = ['Record'];
       return record;
     });

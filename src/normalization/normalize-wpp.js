@@ -31,7 +31,7 @@ export async function getRawData(context) {
     csvString = readFileSync(resolve(path, 'raw', dataUrl), 'utf8');
   }
   csvString = csvString.replace(/\uFFFD/g, ' '); // Remove bad unicode character
-  const data = parseTable(csvString, { purl: `${iri}/${version}`, ...WPP_TABLE_PARSER_CONFIG });
+  const data = parseTable(csvString, { purl: `${iri}/${version}`, recordSource: iri, ...WPP_TABLE_PARSER_CONFIG });
 
   info(`Reading data: ${dataUrl}`);
 
