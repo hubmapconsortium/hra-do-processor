@@ -523,7 +523,7 @@ function generateCellMarkerDescriptorId(context, recordNumber) {
   return `${context.purlIri}${doType}/${doName}/${doVersion}#R${recordNumber}-cell-marker-descriptor`;
 }
 
-function generateIdWhenEmpty(id, name) {
+export function generateIdWhenEmpty(id, name) {
   return checkNotEmpty(id) ? id : generateId(name);
 }
 

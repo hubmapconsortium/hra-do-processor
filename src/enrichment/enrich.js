@@ -5,12 +5,12 @@ import { enrich2dFtuData, enrich2dFtuMetadata } from './enrich-2d-ftu.js';
 import { enrichAsctbData, enrichAsctbMetadata } from './enrich-asct-b.js';
 import { enrichBasicData, enrichBasicMetadata } from './enrich-basic.js';
 import { enrichCollectionData, enrichCollectionMetadata } from './enrich-collection.js';
+import { enrichCtAnnData, enrichCtAnnMetadata } from './enrich-ctann.js';
 import { enrichGraphData, enrichGraphMetadata } from './enrich-graph.js';
-import { enrichRefOrganData, enrichRefOrganMetadata } from './enrich-ref-organ.js';
 import { enrichLandmarkData, enrichLandmarkMetadata } from './enrich-landmark.js';
 import { enrichOmapData, enrichOmapMetadata } from './enrich-omap.js';
-import { enrichCtAnnData, enrichCtAnnMetadata } from './enrich-ctann.js';
-import { enrichDatasetGraphData, enrichDatasetGraphMetadata } from './enrich-ds-graph.js';
+import { enrichRefOrganData, enrichRefOrganMetadata } from './enrich-ref-organ.js';
+import { enrichWppData, enrichWppMetadata } from './enrich-wpp.js';
 import { cleanDirectory } from './utils.js';
 
 export async function enrich(context) {
@@ -51,10 +51,14 @@ export async function enrich(context) {
       enrichCtAnnMetadata(context);
       enrichCtAnnData(context);
       break;
-    case 'ds-graph':
-      await enrichDatasetGraphData(context);
-      enrichDatasetGraphMetadata(context);
+    case 'wpp':
+      enrichWppMetadata(context);
+      enrichWppData(context);
       break;
+    case 'ds-graph':
+    // await enrichDatasetGraphData(context);
+    // enrichDatasetGraphMetadata(context);
+    // break;
     case 'millitome':
     case 'vocab':
     case 'graph':

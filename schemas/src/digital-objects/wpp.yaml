@@ -1,0 +1,521 @@
+id: https://purl.wholepersonphysiome.org/schema/wpp
+name: wpp
+prefixes:
+  wpp: https://purl.wholepersonphysiome.org/schema/wpp#
+  ccf: http://purl.org/ccf/
+  linkml: https://w3id.org/linkml/
+  skos: http://www.w3.org/2004/02/skos/core#
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  CL: http://purl.obolibrary.org/obo/CL_
+  PCL: http://purl.obolibrary.org/obo/PCL_
+  LMHA: http://purl.obolibrary.org/obo/LMHA_
+  SO: http://purl.obolibrary.org/obo/SO_
+  RO: http://purl.obolibrary.org/obo/RO_
+  IAO: http://purl.obolibrary.org/obo/IAO_
+  FMA: http://purl.org/sig/ont/fma/fma
+  HGNC: http://identifiers.org/hgnc/
+  HGNCO: http://purl.bioontology.org/ontology/HGNC/
+  GO: http://purl.obolibrary.org/obo/GO_
+  ISBN: http://identifiers.org/isbn/
+  LOINC: https://loinc.org/
+
+default_prefix: wpp
+default_range: string
+
+imports:
+  - linkml:types
+  - ../shared/metadata-base
+
+classes:
+  WppDataset:
+    title: WPP Data
+    description: The data section for the "wpp" digital object.
+    slots:
+      - wpp_records
+      - ontology_terms
+
+  Record:
+    title: WPP Record
+    class_uri: wpp:Record
+    description: >-
+      An WPP record is a single row in the WPP table that ...
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - record_number
+      - behavior
+      - behavior_x
+      - behavior_y
+      - behavior_z
+      - clinical_measure_list
+      - effect
+      - effector
+      - effector_location
+      - effector_scale
+      - effect_parameters_quantative
+      - effect_scale
+      - function_list
+      - interaction
+      - process
+      - process_triple
+      - quantitative_notes
+      - reference_list
+      - regulation
+      - signal
+      - signal_scale
+      - state
+      - time_scale
+      - x_target
+
+  WppConcept:
+    abstract: true
+    slots:
+      - id
+      - label
+      - conforms_to
+      - parent_class
+      - pref_label
+      - is_provisional
+
+  OntologyTerm:
+    is_a: WppConcept
+    title: Ontology Term
+    description: >-
+      An ontology term
+    annotations:
+      owl: Class
+
+  WppField:
+    abstract: true
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - conforms_to
+      - pref_label
+      - source_concept
+      - record_number
+      - record_field
+
+  WppListFieldItem:
+    abstract: true
+    mixins:
+      - Named
+      - Instance
+    slots:
+      - conforms_to
+      - pref_label
+      - source_concept
+      - notes
+      - record_number
+      - order_number
+      - record_field
+
+  EffectorField:
+    class_uri: wpp:EffectorField
+    is_a: WppField
+    title: EffectorField
+    description: >-
+      EffectorField
+
+  EffectorLocationField:
+    class_uri: wpp:EffectorLocationField
+    is_a: WppField
+    title: EffectorLocationField
+    description: >-
+      EffectorLocationField
+
+  InteractionField:
+    class_uri: wpp:InteractionField
+    is_a: WppListFieldItem
+    title: InteractionField
+    description: >-
+      InteractionField
+
+  ClinicalMeasureField:
+    class_uri: wpp:ClinicalMeasureField
+    is_a: WppListFieldItem
+    title: Clinical Measure Field
+    description: >-
+      A function record represents a specific value
+      in the WPP table, located in the "ClinicalMeasure" column, identified
+      by its row (record number) and column (order number).
+
+  FunctionField:
+    class_uri: wpp:FunctionField
+    is_a: WppListFieldItem
+    title: Function Field
+    description: >-
+      A function record represents a specific value
+      in the WPP table, located in the "Function" column, identified
+      by its row (record number) and column (order number).
+
+  ReferenceField:
+    class_uri: wpp:ReferenceField
+    is_a: WppListFieldItem
+    title: Reference Field
+    description: >-
+      A reference record represents a specific value in the ASCT+B table,
+      located in the "REF" column, identified by its row (record number) and
+      column (order number).
+    slots:
+      - doi
+      - external_id
+      - chapter
+
+  WppMetadata:
+    title: WPP Metadata
+    description: The metadata section for the "wpp" digital object.
+    class_uri: dcat:Dataset
+    slots:
+      - title
+      - description
+      - created_by
+      - creation_date
+      - version
+      - license
+      - publisher
+      - see_also
+      - derived_from
+
+  Container:
+    tree_root: true
+    attributes:
+      iri:
+        range: uriorcurie
+      metadata:
+        range: WppMetadata
+      data:
+        range: WppDataset
+    annotations:
+      owl.template: |-
+        AnnotationAssertion( dct:title {{iri}} "{{metadata.title|e}}" )
+        AnnotationAssertion( dct:description {{iri}} "{{metadata.description|e}}" )
+        {% for creator_iri in metadata.created_by %}
+        AnnotationAssertion( dct:creator {{iri}} {{creator_iri|e}} )
+        {% endfor %}
+        AnnotationAssertion( schema:version {{iri}} "{{metadata.version|e}}" )
+        AnnotationAssertion( schema:dateCreated {{iri}} "{{metadata.creation_date|e}}" )
+        AnnotationAssertion( dct:license {{iri}} "{{metadata.license|e}}" )
+        AnnotationAssertion( dct:publisher {{iri}} "{{metadata.publisher|e}}" )
+        AnnotationAssertion( rdfs:seeAlso {{iri}} {{metadata.see_also|e}} )
+        AnnotationAssertion( prov:wasDerivedFrom {{iri}} {{metadata.derived_from|e}} )
+
+slots:
+  # Top level slots
+  ontology_terms:
+    title: ontology term data
+    description: List of ontology terms referenced in the WPP records.
+    multivalued: true
+    inlined_as_list: true
+    range: OntologyTerm
+  wpp_records:
+    title: WPP record
+    description: Records containing WPP concepts and related data.
+    multivalued: true
+    inlined_as_list: true
+    range: Record
+
+  # WPP record slots
+  behavior:
+    title: behavior
+    description: TODO behavior description
+    required: false
+    slot_uri: wpp:behavior_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  behavior_x:
+    title: behavior x
+    description: TODO behavior_x description
+    required: false
+    slot_uri: wpp:behavior_x_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  behavior_y:
+    title: behavior y
+    description: TODO behavior_y description
+    required: false
+    slot_uri: wpp:behavior_y_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  behavior_z:
+    title: behavior z
+    description: TODO behavior_z description
+    required: false
+    slot_uri: wpp:behavior_z_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  clinical_measure_list:
+    title: clinical measure list
+    description: List of clinical measure instances related to WPP records.
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: ClinicalMeasureField
+    slot_uri: wpp:clinical_measure_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  effect:
+    title: effect
+    description: TODO effect description
+    required: false
+    slot_uri: wpp:effect_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  effector:
+    title: effector
+    description: TODO effector description
+    required: false
+    inlined: true
+    range: EffectorField
+    slot_uri: wpp:effector_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  effector_location:
+    title: effector location
+    description: TODO effector_location description
+    required: false
+    inlined: true
+    range: EffectorLocationField
+    slot_uri: wpp:effector_location_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  effector_scale:
+    title: effector scale
+    description: TODO effector_scale description
+    required: false
+    slot_uri: wpp:effector_scale_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  effect_parameters_quantative:
+    title: effect parameters quantative scale
+    description: TODO effect_parameters_quantative description
+    required: false
+    slot_uri: wpp:effect_parameters_quantative_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  effect_scale:
+    title: effect scale
+    description: TODO effect_scale description
+    required: false
+    slot_uri: wpp:effect_scale_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  function_list:
+    title: anatomical structure
+    description: List of anatomical structure instances related to WPP records.
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: FunctionField
+    slot_uri: wpp:function_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  interaction:
+    title: interaction
+    description: TODO interaction description
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: InteractionField
+    slot_uri: wpp:interaction_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  process:
+    title: process
+    description: TODO process description
+    required: false
+    slot_uri: wpp:process_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  process_triple:
+    title: process triple
+    description: TODO process_triple description
+    required: false
+    slot_uri: wpp:process_triple_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  quantitative_notes:
+    title: quantitative notes
+    description: TODO quantitative_notes description
+    required: false
+    slot_uri: wpp:quantitative_notes_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  reference_list:
+    title: references
+    description: List of reference instances related to WPP records.
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: ReferenceField
+    slot_uri: wpp:reference_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  regulation:
+    title: regulation
+    description: TODO regulation description
+    required: false
+    slot_uri: wpp:regulation_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  signal:
+    title: signal
+    description: TODO signal description
+    required: false
+    slot_uri: wpp:signal_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  signal_scale:
+    title: signal scale
+    description: TODO signal_scale description
+    required: false
+    slot_uri: wpp:signal_scale_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  state:
+    title: state
+    description: TODO state description
+    required: false
+    slot_uri: wpp:state_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  time_scale:
+    title: time scale
+    description: TODO time_scale description
+    required: false
+    slot_uri: wpp:time_scale_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  x_target:
+    title: x_target
+    description: TODO x_target description
+    required: false
+    slot_uri: wpp:x_target_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  # General slots
+  id:
+    title: concept identifier
+    description: Unique identifier for WPP concepts.
+    required: true
+    range: uriorcurie
+    identifier: true
+  label:
+    title: label
+    description: Human-readable label or name for the concept.
+    required: false
+    slot_uri: rdfs:label
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  pref_label:
+    title: preferred label
+    slot_uri: skos:prefLabel
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  is_provisional:
+    title: is provisional?
+    description: Flag indicating whether the concept is in provisional status.
+    required: false
+    slot_uri: wpp:is_provisional
+    range: boolean
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  source_concept:
+    title: source concept
+    description: >-
+      Source concept providing the origin of this record within the
+      WPP model.
+    required: true
+    slot_uri: wpp:source_concept
+    range: WppConcept
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  record_number:
+    title: record number
+    description: Numerical identifier for individual records.
+    required: true
+    slot_uri: wpp:record_number
+    range: integer
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  record_field:
+    title: record field
+    description: Field the object was derived from.
+    required: true
+    slot_uri: wpp:record_field
+    range: string
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  order_number:
+    title: order number
+    description: Order position within a defined sequence.
+    required: true
+    slot_uri: wpp:order_number
+    range: integer
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  doi:
+    title: doi
+    description: Digital Object Identifier for the reference record.
+    required: false
+    slot_uri: wpp:doi_field
+    # range: uriorcurie
+    range: string
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  external_id:
+    title: external id
+    description: External identifier for the reference record.
+    required: false
+    slot_uri: wpp:external_id
+    range: string
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  notes:
+    title: notes
+    description: >-
+      Reference to the notes column in the WPP table
+    slot_uri: wpp:notes_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+  chapter:
+    title: notes
+    description: >-
+      Reference to the chapter column in the WPP table
+    slot_uri: wpp:chapter_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  # unused currently
+  source_record:
+    title: source record
+    description: >-
+      Reference to the WPP record that contains the actual information.
+    range: Record
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
