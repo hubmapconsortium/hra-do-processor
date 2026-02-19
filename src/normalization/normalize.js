@@ -6,12 +6,12 @@ import { normalize2dFtuData, normalize2dFtuMetadata } from './normalize-2d-ftu.j
 import { normalizeAsctbData, normalizeAsctbMetadata } from './normalize-asct-b.js';
 import { normalizeBasicData, normalizeBasicMetadata } from './normalize-basic.js';
 import { normalizeCollectionData, normalizeCollectionMetadata } from './normalize-collection.js';
+import { normalizeCtAnnData, normalizeCtAnnMetadata } from './normalize-ctann.js';
 import { normalizeGraphData, normalizeGraphMetadata } from './normalize-graph.js';
 import { normalizeLandmarkData, normalizeLandmarkMetadata } from './normalize-landmark.js';
 import { normalizeOmapData, normalizeOmapMetadata } from './normalize-omap.js';
-import { normalizeCtAnnData, normalizeCtAnnMetadata } from './normalize-ctann.js';
-import { normalizeDatasetGraphData, normalizeDatasetGraphMetadata } from './normalize-ds-graph.js';
 import { normalizeRefOrganData, normalizeRefOrganMetadata } from './normalize-ref-organ.js';
+import { normalizeWppData, normalizeWppMetadata } from './normalize-wpp.js';
 import { cleanDirectory } from './utils.js';
 
 export async function normalize(context) {
@@ -53,9 +53,9 @@ export async function normalize(context) {
       normalizeCollectionData(context);
       break;
     case 'ds-graph':
-      await normalizeDatasetGraphData(context);
-      normalizeDatasetGraphMetadata(context);
-      break;
+    // await normalizeDatasetGraphData(context);
+    // normalizeDatasetGraphMetadata(context);
+    // break;
     case 'millitome':
     case 'vocab':
     case 'graph':
@@ -63,6 +63,10 @@ export async function normalize(context) {
       normalizeGraphMetadata(context);
       normalizeGraphData(context);
       processedType = 'graph';
+      break;
+    case 'wpp':
+      normalizeWppMetadata(context);
+      await normalizeWppData(context);
       break;
     default:
       warning(`"${obj.type}" digital object type is using basic processing.`);

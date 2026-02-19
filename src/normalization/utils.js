@@ -120,7 +120,7 @@ export function normalizeMetadataOfCollection(context, metadata, doList) {
   return {
     ...normalizeMetadata(context, structuredClone(metadata)),
     ontology_root: metadata.ontologyRoot,
-    had_member: doList.map((doItem) => `https://purl.humanatlas.io/${doItem}`)
+    had_member: doList.map((doItem) => `${context.purlIri}${doItem}`)
   };
 }
 
