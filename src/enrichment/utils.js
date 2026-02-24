@@ -162,7 +162,7 @@ export function filterClasses(context, ontologyName, classTermFile) {
 export function extractClassHierarchy(context, ontologyName, upperTerm, lowerTerms, intermediates = 'all') {
   const { selectedDigitalObject: obj, processorHome } = context;
 
-  const ontologyPath = resolve(processorHome, `mirrors/${ontologyName}.owl`);
+  const ontologyPath = resolve(processorHome, `mirrors/${ontologyName.split('-')[0]}.owl`);
   const outputPath = resolve(obj.path, `enriched/${ontologyName}-extract.owl`);
 
   extract(ontologyPath, upperTerm, lowerTerms, outputPath, intermediates);
