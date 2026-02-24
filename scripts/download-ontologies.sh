@@ -83,3 +83,12 @@ curl -L "$OBO_BASE_URL/ro/core.owl" \
 robot convert -i "$MIRROR_DIR/ro.owl" \
      --format owl \
      -o "$MIRROR_DIR/ro.owl"
+
+echo "Downloading the latest GO ontology..."
+curl -L "$OBO_BASE_URL/go.owl" \
+     --create-dirs -o "$MIRROR_DIR/go.owl" \
+     --retry 4 \
+     --max-time 200 && \
+robot convert -i "$MIRROR_DIR/go.owl" \
+     --format owl \
+     -o "$MIRROR_DIR/go.owl"

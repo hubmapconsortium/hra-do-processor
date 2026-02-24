@@ -78,6 +78,20 @@ export function enrichWppData(context) {
       inputPaths.push(clExtractPath);
     }
 
+    const goEntitiesPath = collectEntities(context, 'go', enrichedWithValidationPath);
+    if (!isFileEmpty(goEntitiesPath)) {
+      info('Extracting GO.');
+      [
+        'http://purl.obolibrary.org/obo/GO_0008150',
+        'http://purl.obolibrary.org/obo/GO_0003674',
+        'http://purl.obolibrary.org/obo/GO_0005575',
+      ].forEach((top, index) => {
+        const goExtractPath = extractClassHierarchy(context, `go-${index + 1}`, top, goEntitiesPath);
+        logOutput(goExtractPath);
+        inputPaths.push(goExtractPath);
+      });
+    }
+
     info('Merging files:');
     for (const inputPath of inputPaths) {
       more(` -> ${inputPath}`);
