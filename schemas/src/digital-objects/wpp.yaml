@@ -57,6 +57,7 @@ classes:
       - effect_parameters_quantative
       - effect_scale
       - function_list
+      - function_notes
       - interaction
       - process
       - process_triple
@@ -322,6 +323,14 @@ slots:
     inlined_as_list: true
     range: FunctionField
     slot_uri: wpp:function_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  function_notes:
+    title: function notes
+    description: TODO function_notes description
+    required: false
+    slot_uri: wpp:function_notes_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 

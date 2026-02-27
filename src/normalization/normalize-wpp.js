@@ -47,7 +47,7 @@ export async function getRawData(context) {
   return data;
 }
 
-const WPP_TABLE_PARSER_CONFIG = {
+export const WPP_TABLE_PARSER_CONFIG = {
   headerFirstColumnName: 'Function/1',
   metadataTitleRow: 0,
   defaultObjectProp: 'pref_label',
@@ -92,6 +92,7 @@ const WPP_TABLE_PARSER_CONFIG = {
     'effectparameters (quantitative values)': 'effect_parameters_quantative',
     effectscale: 'effect_scale',
     function: 'function_list',
+    functionnotes: 'function_notes',
     interaction: 'interaction',
     process: 'process',
     'process triple': 'process_triple',

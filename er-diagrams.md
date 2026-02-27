@@ -27,6 +27,7 @@ Record {
     string effector_scale  
     string effect_parameters_quantative  
     string effect_scale  
+    string function_notes  
     string process  
     string process_triple  
     string quantitative_notes  
