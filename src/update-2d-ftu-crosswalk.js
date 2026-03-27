@@ -42,16 +42,15 @@ function subsetCrosswalk(crosswalkRows, svgFile, svgIds, ftuInfo) {
       organ_label: row.organ_label || ftuInfo?.organ_label,
       organ_mapped_to: row.organ_id || ftuInfo?.organ_id,
     }));
-  const matches = [];
-  for (const svgId of svgIds) {
-    const row = rows.find((n) => n.node_id.toLowerCase() === svgId);
-    if (row) {
-      matches.push(row);
-    }
-  }
+
+  // Check if crosswalk nodes and node groups actually exist in the SVG
   const unmatchedCells = rows.filter((row) => !svgIds.has(row.node_id.toLowerCase())).map((n) => n.node_id);
   if (unmatchedCells.length > 0) {
     console.log(`WARNING: mapped cells not present in "${svgFile}": ${unmatchedCells.join(', ')}\n`);
+  }
+  const unmatchedCellGroups = Array.from(new Set(rows.filter((row) => !svgIds.has(row.node_group.toLowerCase())).map((n) => n.node_group)));
+  if (unmatchedCellGroups.length > 0) {
+    console.log(`WARNING: mapped cell groups not present in "${svgFile}": ${unmatchedCellGroups.join(', ')}\n`);
   }
   return rows;
 }
