@@ -134,10 +134,14 @@ function normalizeData(context, data) {
 }
 
 function normalizeSourceData(obj) {
-  const id = obj.source_concept?.replace('ISBN: ', 'ISBN:').replace('ISBN ', 'ISBN:').replace('LOINC ', 'LOINC:') ?? '';
+  const id = obj.source_concept?.replace('UBERON: ', 'UBERON:').replace('ISBN: ', 'ISBN:').replace('ISBN ', 'ISBN:').replace('LOINC ', 'LOINC:') ?? '';
   if (obj.pref_label) {
-    obj.source_concept = generateIdWhenEmpty(id, obj.pref_label ?? '');
+    obj.source_concept = generateIdWhenEmpty(id ?? '', obj.pref_label ?? '');
+  } else if (obj.label) {
+    obj.source_concept = generateIdWhenEmpty(id ?? '', obj.label ?? '');
   }
-
+  if (obj.source_concept?.indexOf(':') === -1) {
+    obj.source_concept = generateIdWhenEmpty('', id);
+  }
   return obj;
 }
