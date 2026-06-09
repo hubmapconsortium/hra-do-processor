@@ -1,0 +1,13 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX indexTerm: <urn:temp-ccf-asctb-type>
+
+CONSTRUCT { ?iri dct:isReferencedBy ?purl . }
+WHERE {
+  ?iri indexTerm: [] .
+  ?purl a owl:Ontology ; rdfs:seeAlso [] .
+  { ?iri ?pred1 [] . FILTER(?pred1 != indexTerm:) }
+  UNION
+  { [] ?pred2 ?iri . FILTER(?pred2 != indexTerm:) }
+}

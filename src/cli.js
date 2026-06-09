@@ -23,6 +23,7 @@ import { updateCollection } from './update-collection.js';
 import { updateRefOrganCrosswalk } from './update-ref-organ-crosswalk.js';
 import { getContext, getProcessorVersion, parseDirectory } from './utils/context.js';
 import { error } from './utils/logging.js';
+import { buildKgExplorerData } from './finalizing/build-explorer-data.js';
 
 const program = new Command();
 
@@ -161,8 +162,19 @@ program
   .description('Finalize the deployment home before sending to the live server')
   .option('--skip-db', 'Skip recreating the blazegraph database.')
   .option('--exclude-base-href', 'Exclude the base href element from html pages.', false)
+  .option('--hra-path <hraPath>', 'Path to the HRA graph to use in generating the explorer data')
+  .option('--hra-url <hraUrl>', 'Path to the HRA graph to use in generating the explorer data')
   .action((_options, command) => {
     finalize(getContext(program, command));
+  });
+
+program
+  .command('create-explorer-data')
+  .description('Create a blazegraph database from select digital objects')
+  .option('--hra-path <hraPath>', 'Path to the HRA graph to use in generating the explorer data')
+  .option('--hra-url <hraUrl>', 'Path to the HRA graph to use in generating the explorer data')
+  .action((_options, command) => {
+    buildKgExplorerData(getContext(program, command));
   });
 
 program

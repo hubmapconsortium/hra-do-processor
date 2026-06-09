@@ -47,16 +47,11 @@ export function reifyRedundantTurtle(context, inputPath) {
 }
 
 export function reifyCatalog(context, graphName, catalog) {
-  const catalogPath = resolve(context.deploymentHome, catalog, 'index.html');
+  const catalogPath = resolve(context.deploymentHome, catalog, 'metadata.json');
   const inputPath = resolve(context.deploymentHome, catalog, 'metadata.ttl');
   info(`Reifying ${graphName}`);
-  throwOnError(
-    `rdf-formatter ${catalogPath} ${inputPath} --pretty \
-    --ns=dcat=http://www.w3.org/ns/dcat# \
-    --ns=dc=http://purl.org/dc/terms/ `,
-    `Unable to convert catalog ${catalogPath}`
-  );
-  reifyTurtle(inputPath, graphName, true);
+  convert(catalogPath, inputPath);
+  reifyTurtle(inputPath, graphName);
 }
 
 export function reifyTurtle(inputPath, graphName, jsonldIsJson = false) {

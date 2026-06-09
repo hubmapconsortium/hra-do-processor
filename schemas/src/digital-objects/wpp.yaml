@@ -18,6 +18,7 @@ prefixes:
   GO: http://purl.obolibrary.org/obo/GO_
   ISBN: http://identifiers.org/isbn/
   LOINC: https://loinc.org/
+  VT: http://purl.obolibrary.org/obo/VT_
 
 default_prefix: wpp
 default_range: string

@@ -1,0 +1,123 @@
+PREFIX ccf: <http://purl.org/ccf/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX hint: <http://www.bigdata.com/queryHints#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX body: <http://purl.obolibrary.org/obo/UBERON_0013702>
+PREFIX HRA: <https://purl.humanatlas.io/collection/hra>
+PREFIX LOD: <urn:kg-catalog>
+PREFIX GRAPH_TERMS: <urn:kg-terms-index>
+
+CONSTRUCT {
+  ?lod a dcat:Catalog ;
+    dcat:last ?latestLodPurl ;
+    rdfs:seeAlso ?graphPurl ;
+    dct:title ?title ;
+    schema:additionalType ?doType ;
+    schema:name ?doName ;
+    ccf:latestVersion ?doVersion ;
+    ccf:hraVersion ?hraVersion ;
+    schema:version ?version ;
+    schema:dateCreated ?lastUpdated ;
+    dcat:dataset ?lodPurl ;
+    ccf:organ ?organ ;
+    ccf:organ_id ?organ_id ;
+    ccf:cell_count ?unique_cells ;
+    ccf:biomarker_count ?unique_biomarkers .
+}
+WHERE {
+  GRAPH LOD: {
+    ?lod a dcat:Catalog ;
+      dcat:dataset ?lodPurl .
+
+    ?lodPurl a dcat:Dataset ;
+      schema:version ?version ;
+      rdfs:seeAlso ?graphPurlVersioned .
+
+    BIND(IRI(STRBEFORE(STR(?graphPurlVersioned), CONCAT('/', ?version))) as ?graphPurl)
+  }
+
+  GRAPH LOD: {
+    ?lod dcat:hasCurrentVersion ?latestLodPurl .
+
+    # organ, unique_cells, unique_biomarkers
+    ?lod a dcat:Catalog ;
+      dcat:dataset ?latestLodPurl .
+
+    ?latestLodPurl
+      schema:additionalType ?doType ;
+      schema:name ?doName ;
+      schema:version ?doVersion ;
+      prov:wasDerivedFrom [
+        dct:title ?title ;
+        schema:dateCreated ?lastUpdated ;
+      ] .
+  }
+
+  OPTIONAL {
+    GRAPH LOD: {
+      [] a dcat:Dataset ;
+          schema:additionalType ?hraType ;
+          schema:name ?hraName ;
+          schema:version ?hraVersion ;
+          prov:hadMember ?graphPurlVersioned .
+      FILTER(?hraType = 'collection' && ?hraName = 'hra')
+    }
+  }
+
+  OPTIONAL {
+    SELECT DISTINCT ?graphPurl ?organ ?organ_id {
+      {
+        SELECT (SAMPLE(?organ) as ?organ) ?organ_id
+        WHERE {
+          GRAPH HRA: {
+            ?refOrgan a ccf:SpatialEntity ;
+                ccf:has_reference_organ ?refOrgan ;
+                ccf:representation_of ?refOrganTerm .
+
+            ?organ_id ccf:ccf_part_of body: .
+            ?organ_id ccf:ccf_pref_label ?organ_label .
+            ?refOrganTerm ccf:ccf_part_of* ?organ_id .
+            FILTER(!CONTAINS(STR(?organ_label), ' system'))
+
+            BIND(LCASE(?organ_label) as ?organ)
+          }
+        }
+        GROUP BY ?organ_id
+        ORDER BY ?organ
+      }
+      GRAPH GRAPH_TERMS: {
+        ?organ_id dct:isReferencedBy ?graphPurl .
+      }
+    }
+  }
+
+  OPTIONAL {
+    SELECT ?graphPurl (COUNT(DISTINCT ?cell_id) as ?unique_cells) {
+      GRAPH HRA: {
+        ?cell_id ccf:ccf_asctb_type 'CT'^^xsd:string .
+      }
+      GRAPH GRAPH_TERMS: {
+        ?cell_id dct:isReferencedBy ?graphPurl .
+      }
+    }
+    GROUP BY ?graphPurl
+  }
+
+  OPTIONAL {
+    SELECT ?graphPurl (COUNT(DISTINCT ?biomarker) as ?unique_biomarkers) {
+      GRAPH HRA: {
+        ?biomarker ccf:ccf_asctb_type 'BM'^^xsd:string .
+      }
+      GRAPH GRAPH_TERMS: {
+        ?biomarker dct:isReferencedBy ?graphPurl .
+      }
+    }
+    GROUP BY ?graphPurl
+  }
+}

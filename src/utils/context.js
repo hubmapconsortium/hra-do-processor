@@ -7,6 +7,7 @@ import { getDirName } from './source-info.js';
 const DEFAULT_PURL_IRI = process.env.DEFAULT_PURL_IRI || 'https://purl.humanatlas.io/';
 const DEFAULT_LOD_IRI = process.env.DEFAULT_LOD_IRI || 'https://lod.humanatlas.io/';
 const DEFAULT_CDN_IRI = process.env.DEFAULT_CDN_IRI || 'https://cdn.humanatlas.io/digital-objects/';
+const DEFAULT_HRA_URL = process.env.DEFAULT_HRA_URL || 'https://cdn.humanatlas.io/digital-objects/collection/hra/latest/graph.ttl';
 
 const DEFAULT_DO_HOME = resolve(process.env.DO_HOME || './digital-objects');
 const DEFAULT_DEPLOY_HOME = resolve(process.env.DEPLOY_HOME || './dist');
@@ -25,6 +26,7 @@ export function getContext(program, subcommand, selectedDigitalObject) {
     purlIri: DEFAULT_PURL_IRI,
     lodIri: DEFAULT_LOD_IRI,
     cdnIri: DEFAULT_CDN_IRI,
+    hraUrl: DEFAULT_HRA_URL,
     ...program.opts(),
     ...subcommand.opts(),
   };

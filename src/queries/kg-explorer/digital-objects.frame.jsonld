@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "schema": "http://schema.org/",
+    "ccf": "http://purl.org/ccf/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "purl": {
+      "@id": "rdfs:seeAlso",
+      "@type": "@id"
+    },
+    "lod": {
+      "@id": "dcat:last",
+      "@type": "@id"
+    },
+    "title": "dct:title",
+    "doType": "schema:additionalType",
+    "doName": "schema:name",
+    "doVersion": "ccf:latestVersion",
+    "lastUpdated": "schema:dateCreated",
+    "hraVersions": {
+      "@id": "ccf:hraVersion"
+    },
+    "versions": {
+      "@id": "schema:version"
+    },
+    "datasets": {
+      "@id": "dcat:dataset",
+      "@type": "@id"
+    },
+    "cell_count": {
+      "@id": "ccf:cell_count",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "biomarker_count": {
+      "@id": "ccf:biomarker_count",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "organs": "ccf:organ",
+    "organIds": {
+      "@id": "ccf:organ_id",
+      "@type": "@id"
+    }
+  },
+  "@type": "dcat:Catalog"
+  
+}

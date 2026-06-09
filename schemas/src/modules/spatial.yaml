@@ -44,6 +44,7 @@ classes:
       - all_collisions
       - corridor
       - summaries
+      # add sameAs
     slot_usage:
       dimension_unit:
         pattern: (centimeter|millimeter)

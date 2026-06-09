@@ -1,40 +1,21 @@
 <!doctype html>
-<html lang="en" prefix="dct: http://purl.org/dc/terms/
-                        rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-                        dcat: http://www.w3.org/ns/dcat#
-                        foaf: http://xmlns.com/foaf/0.1/">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/png" href="https://humanatlas.io/favicon.png" />
 
-    <title>Catalog for {{ noSlashIri }}</title>
-    {% if includeBaseHref %}
-    <base href="{{ iri }}">
-    {% endif %}
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-    <script src="https://apps.humanatlas.io/components/hra-app-shell.wc.js"></script>
+    <title>KG Explorer|{{ noSlashIri }}</title>
+    <base href="{{ lodIri }}">
+    <script type="application/ld+json">
+    {{ getStructuredData() | json }}
+    </script>
+
+    <base href="https://cdn.humanatlas.io/ui/kg-explorer/" />
+    <link href="https://cdn.humanatlas.io/ui/kg-explorer/styles.css" rel="stylesheet" />
+    <script src="https://cdn.humanatlas.io/ui/kg-explorer/main.js" type="module"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="https://cdn.humanatlas.io/ui/kg-explorer/favicon.png" />
   </head>
   <body>
-    <hra-app-shell logo-text="Human Reference Atlas Knowledge Graph" logo-text-small="HRA KG"
-      logo-url="{{ lodIri }}" hide-menu>
-        <div class="main" typeof="dcat:Catalog" resource="{{ noSlashIri }}">
-          <h1 class="page-title" property="dct:title">{{ noSlashIri }}</h1>
-          <ul>
-          {%- for item in items -%}
-          {% if itemType == 'Dataset' %}
-            <li property="dcat:dataset" typeof="dcat:Dataset" resource="{{ iri }}{{ item }}">
-              <a href="{{ item }}/" resource="{{ iri }}{{ item }}"><span property="dct:title">{{ item }}</span></a>
-            </li>
-          {% elif itemType == 'Catalog' %}
-            <li property="dcat:catalog" typeof="dcat:Catalog" resource="{{ iri }}{{ item }}">
-              <a href="{{ item }}/" resource="{{ iri }}{{ item }}"><span property="dct:title">{{ item }}</span></a>
-            </li>
-          {%- endif -%}
-          {%- endfor -%}
-          </ul>
-        </div>
-    </hra-app-shell>
+    <hra-kg-explorer mirror-url="{{ lodIri }}"></hra-kg-explorer>
   </body>
 </html>

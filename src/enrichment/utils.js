@@ -128,7 +128,7 @@ export function isFileEmpty(path) {
 export function collectEntities(context, ontologyName, inputPath, useOboId = false) {
   const { selectedDigitalObject: obj, processorHome } = context;
 
-  const queryPath = resolve(processorHome, `src/utils/get-${ontologyName}-terms.sparql`);
+  const queryPath = resolve(processorHome, `src/queries/term-extraction/get-${ontologyName}-terms.rq`);
   const outputPath = resolve(obj.path, `enriched/${ontologyName}-terms.csv`);
 
   query(inputPath, queryPath, outputPath);

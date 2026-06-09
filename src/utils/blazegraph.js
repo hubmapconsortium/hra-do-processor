@@ -1,6 +1,7 @@
 import { writeFileSync } from 'fs';
 import sh from 'shelljs';
 import { throwOnError } from './sh-exec.js';
+import { sparqlJsonToCsv } from './sparql-json2csv.js';
 
 export function mergeTurtles(outputPath, _prefixesPath, ontologyPaths) {
   const tempJournal = `${outputPath}.jnl`;
@@ -42,6 +43,22 @@ export function load(graphName, inputPath, journalPath) {
   writeFileSync(loadScript, sparqlUpdate);
   update(loadScript, journalPath);
   sh.rm('-f', loadScript);
+}
+
+export function construct(queryPath, outputPath, journalPath) {
+  throwOnError(
+    `blazegraph-runner construct --journal=${journalPath} ${queryPath} ${outputPath}`,
+    `Failed to construct from ${queryPath}.`
+  );
+}
+
+export async function select(queryPath, outputPath, journalPath) {
+  throwOnError(
+    `blazegraph-runner --outformat=json select --journal=${journalPath} ${queryPath} ${outputPath}.json`,
+    `Failed to select from ${queryPath}.`
+  );
+  await sparqlJsonToCsv(`${outputPath}.json`, outputPath);
+  sh.rm('-f', `${outputPath}.json`);
 }
 
 export function update(script, journalPath) {

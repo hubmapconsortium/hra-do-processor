@@ -37,8 +37,8 @@ classes:
     is_a: AsctbConcept
     title: Anatomical Structure
     description: >-
-      An anatomical structure is a distinct biological entity, such as 
-      an organ or tissue with a defined form and function within an 
+      An anatomical structure is a distinct biological entity, such as
+      an organ or tissue with a defined form and function within an
       organism.
     slots:
       - ccf_part_of
@@ -55,8 +55,8 @@ classes:
     is_a: AsctbConcept
     title: Cell Type
     description: >-
-      A cell type is a distinct classification of cells defined by 
-      specific structural, functional, and molecular characteristics 
+      A cell type is a distinct classification of cells defined by
+      specific structural, functional, and molecular characteristics
       within an organism.
     slots:
       - ccf_ct_isa
@@ -93,8 +93,8 @@ classes:
     is_a: AsctbConcept
     title: Biomarker
     description: >-
-      A biomarker is a specific molecule or feature, such as a gene, 
-      protein, or surface marker, that uniquely identifies or 
+      A biomarker is a specific molecule or feature, such as a gene,
+      protein, or surface marker, that uniquely identifies or
       distinguishes a particular cell type.
     slots:
       - ccf_biomarker_type
@@ -110,7 +110,7 @@ classes:
   CharacterizingMarkerSet:
     title: Characterizing Marker Set
     description: >-
-      A characterizing marker set is a group of biomarkers used collectively 
+      A characterizing marker set is a group of biomarkers used collectively
       to define and distinguish a specific cell type or state.
     slots:
       - members
@@ -122,8 +122,8 @@ classes:
   AsctbRecord:
     title: ASCT+B Record
     description: >-
-      An ASCT+B record is a single row in the ASCT+B table that documents 
-      anatomical structures (AS), cell types (CT), and biomarkers (B), 
+      An ASCT+B record is a single row in the ASCT+B table that documents
+      anatomical structures (AS), cell types (CT), and biomarkers (B),
       providing a structured representation of their relationships.
     mixins:
       - Named
@@ -143,8 +143,8 @@ classes:
   AnatomicalStructureRecord:
     title: Anatomical Structure Record
     description: >-
-      An anatomical structure record represents a specific value 
-      in the ASCT+B table, located in the "AS" column, identified 
+      An anatomical structure record represents a specific value
+      in the ASCT+B table, located in the "AS" column, identified
       by its row (record number) and column (order number).
     mixins:
       - Named
@@ -159,8 +159,8 @@ classes:
   CellTypeRecord:
     title: Cell Type Record
     description: >-
-      An cell type record represents a specific value in the ASCT+B table, 
-      located in the "CT" column, identified by its row (record number) 
+      An cell type record represents a specific value in the ASCT+B table,
+      located in the "CT" column, identified by its row (record number)
       and column (order number).
     mixins:
       - Named
@@ -175,8 +175,8 @@ classes:
   BiomarkerRecord:
     title: Biomarker Record
     description: >-
-      An biomarker record represents a specific value in the ASCT+B table, 
-      located in the "B" column, identified by its row (record number) and 
+      An biomarker record represents a specific value in the ASCT+B table,
+      located in the "B" column, identified by its row (record number) and
       column (order number).
     mixins:
       - Named
@@ -208,8 +208,8 @@ classes:
   ReferenceRecord:
     title: Reference Record
     description: >-
-      A reference record represents a specific value in the ASCT+B table, 
-      located in the "REF" column, identified by its row (record number) and 
+      A reference record represents a specific value in the ASCT+B table,
+      located in the "REF" column, identified by its row (record number) and
       column (order number).
     mixins:
       - Named
@@ -224,8 +224,8 @@ classes:
   CellMarkerDescriptor:
     title: Cell Marker Descriptor
     description: >-
-      A cell marker descriptor is study-derived information about a set 
-      of biomarkers used to identify a specific cell type within a particular 
+      A cell marker descriptor is study-derived information about a set
+      of biomarkers used to identify a specific cell type within a particular
       tissue location, supported by associated scientific references.
     mixins:
       - Named
@@ -308,7 +308,7 @@ slots:
   biomarkers:
     title: biomarker data
     description: >-
-      List of biomarkers (i.e., gene, protein, lipid, metabolites, proteoforms) 
+      List of biomarkers (i.e., gene, protein, lipid, metabolites, proteoforms)
       referenced in the ASCT+B records.
     multivalued: true
     inlined_as_list: true
@@ -411,7 +411,7 @@ slots:
   source_concept:
     title: source concept
     description: >-
-      Source concept providing the origin of this record within the 
+      Source concept providing the origin of this record within the
       ASCT+B model.
     required: true
     slot_uri: ccf:source_concept
@@ -529,7 +529,8 @@ slots:
     description: Digital Object Identifier for the reference record.
     required: true
     slot_uri: ccf:doi
-    range: uriorcurie
+    # range: uriorcurie
+    range: string
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   external_id:
@@ -565,7 +566,7 @@ slots:
       owl: AnnotationAssertion, AnnotationProperty
   source_record:
     title: source record
-    description: >- 
+    description: >-
       Reference to the ASCT+B record that contains the actual information.
     range: AsctbRecord
     annotations:

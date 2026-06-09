@@ -1,4 +1,4 @@
-import { readdirSync } from 'fs';
+import { existsSync, readdirSync } from 'fs';
 import { resolve } from 'path';
 import semver from 'semver';
 import { getDigitalObjectInformation } from './digital-object.js';
@@ -13,8 +13,11 @@ import { getDigitalObjectInformation } from './digital-object.js';
  */
 export function getLatestDigitalObject(doPath, doType, doName, purlIri) {
   const versions = getDigitalObjectVersions(doPath, doType, doName);
+  const draftPath = resolve(doPath, doType, doName, 'draft')
 
-  if (versions.length > 0) {
+  if (versions.length === 0 && existsSync(draftPath)) {
+    return getDigitalObjectInformation([doType, doName, 'draft'].join('/'), purlIri);
+  } else if (versions.length > 0) {
     // Convert to a digital object "object"
     return getDigitalObjectInformation([doType, doName, versions[0]].join('/'), purlIri);
   } else {

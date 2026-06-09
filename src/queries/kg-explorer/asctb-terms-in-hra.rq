@@ -1,0 +1,9 @@
+PREFIX ccf: <http://purl.org/ccf/>
+PREFIX HRA: <https://purl.humanatlas.io/collection/hra>
+PREFIX indexTerm: <urn:temp-ccf-asctb-type>
+
+CONSTRUCT { ?iri indexTerm: ?asctb_type . }
+FROM HRA:
+WHERE {
+  ?iri ccf:ccf_asctb_type ?asctb_type .
+}

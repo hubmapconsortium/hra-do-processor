@@ -1,4 +1,5 @@
 import { buildBlazegraphJournal } from './build-blazegraph.js';
+import { buildKgExplorerData } from './build-explorer-data.js';
 import { createCatalogs } from './create-catalogs.js';
 import { deriveLatest } from './derive-latest.js';
 import { mergeCatalogs } from './merge-catalogs.js';
@@ -11,11 +12,12 @@ import { miscFiles } from './misc-files.js';
  *
  * @param {object} context
  */
-export function finalize(context) {
+export async function finalize(context) {
   miscFiles(context);
   deriveLatest(context);
   createCatalogs(context);
   mergeCatalogs(context);
+  await buildKgExplorerData(context);
   if (!context.skipDb) {
     buildBlazegraphJournal(context);
   }
