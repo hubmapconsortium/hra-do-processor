@@ -77,6 +77,10 @@ export const WPP_TABLE_PARSER_CONFIG = {
     'review_orcids_list',
     'general_publications_list',
   ],
+  additionalObjectFields: [
+    'behavior', 'behavior_x', 'behavior_y', 'behavior_z',
+    'signal'
+  ],
   metadataValueArrayDelimeter: ';',
   dataPropertyMapping: {
     id: 'source_concept',
@@ -84,6 +88,7 @@ export const WPP_TABLE_PARSER_CONFIG = {
     'behavior x': 'behavior_x',
     'behavior y': 'behavior_y',
     'behavior z': 'behavior_z',
+    cde: 'common_data_element_list',
     clinicalmeasure: 'clinical_measure_list',
     effect: 'effect',
     effector: 'effector',
@@ -116,6 +121,7 @@ function normalizeData(context, data) {
   }
 
   for (const record of data) {
+    // delete record.cde; // temporarily disable CDE columns
     for (const [_key, value] of Object.entries(record)) {
       if (Array.isArray(value)) {
         value.forEach((entry) => {
@@ -134,7 +140,7 @@ function normalizeData(context, data) {
 }
 
 function normalizeSourceData(obj) {
-  const id = obj.source_concept?.replace('UBERON: ', 'UBERON:').replace('ISBN: ', 'ISBN:').replace('ISBN ', 'ISBN:').replace('LOINC ', 'LOINC:') ?? '';
+  const id = obj.source_concept?.replace?.('UBERON: ', 'UBERON:').replace('ISBN: ', 'ISBN:').replace('ISBN ', 'ISBN:').replace('LOINC ', 'LOINC:') ?? '';
   if (obj.pref_label) {
     obj.source_concept = generateIdWhenEmpty(id ?? '', obj.pref_label ?? '');
   } else if (obj.label) {

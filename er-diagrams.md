@@ -19,10 +19,6 @@ OntologyTerm {
 }
 Record {
     integer record_number  
-    string behavior  
-    string behavior_x  
-    string behavior_y  
-    string behavior_z  
     string effect  
     string effector_scale  
     string effect_parameters_quantative  
@@ -32,7 +28,6 @@ Record {
     string process_triple  
     string quantitative_notes  
     string regulation  
-    string signal  
     string signal_scale  
     string state  
     string time_scale  
@@ -44,10 +39,7 @@ Named {
     uriorcurie id  
     string label  
 }
-ReferenceField {
-    string doi  
-    string external_id  
-    string chapter  
+CommonDataElementField {
     string conforms_to  
     string pref_label  
     string notes  
@@ -64,6 +56,27 @@ WppConcept {
     uriorcurie parent_class  
     string pref_label  
     boolean is_provisional  
+}
+SignalField {
+    string conforms_to  
+    string pref_label  
+    integer record_number  
+    string record_field  
+    uriorcurie id  
+    string label  
+}
+ReferenceField {
+    string doi  
+    string external_id  
+    string chapter  
+    string conforms_to  
+    string pref_label  
+    string notes  
+    integer record_number  
+    integer order_number  
+    string record_field  
+    uriorcurie id  
+    string label  
 }
 InteractionField {
     string conforms_to  
@@ -111,6 +124,38 @@ ClinicalMeasureField {
     uriorcurie id  
     string label  
 }
+BehaviorZField {
+    string conforms_to  
+    string pref_label  
+    integer record_number  
+    string record_field  
+    uriorcurie id  
+    string label  
+}
+BehaviorYField {
+    string conforms_to  
+    string pref_label  
+    integer record_number  
+    string record_field  
+    uriorcurie id  
+    string label  
+}
+BehaviorXField {
+    string conforms_to  
+    string pref_label  
+    integer record_number  
+    string record_field  
+    uriorcurie id  
+    string label  
+}
+BehaviorField {
+    string conforms_to  
+    string pref_label  
+    integer record_number  
+    string record_field  
+    uriorcurie id  
+    string label  
+}
 WppMetadata {
     string title  
     string description  
@@ -125,13 +170,23 @@ Container ||--|o WppDataset : "data"
 WppDataset ||--}o Record : "wpp_records"
 WppDataset ||--}o OntologyTerm : "ontology_terms"
 Record ||--|| Named : "record_source"
+Record ||--|o BehaviorField : "behavior"
+Record ||--|o BehaviorXField : "behavior_x"
+Record ||--|o BehaviorYField : "behavior_y"
+Record ||--|o BehaviorZField : "behavior_z"
 Record ||--}o ClinicalMeasureField : "clinical_measure_list"
 Record ||--|o EffectorField : "effector"
 Record ||--|o EffectorLocationField : "effector_location"
 Record ||--}o FunctionField : "function_list"
 Record ||--}o InteractionField : "interaction"
 Record ||--}o ReferenceField : "reference_list"
+Record ||--|o SignalField : "signal"
+Record ||--}o CommonDataElementField : "common_data_element_list"
 Record ||--}o Named : "type_of"
+CommonDataElementField ||--|| WppConcept : "source_concept"
+CommonDataElementField ||--}o Named : "type_of"
+SignalField ||--|| WppConcept : "source_concept"
+SignalField ||--}o Named : "type_of"
 ReferenceField ||--|| WppConcept : "source_concept"
 ReferenceField ||--}o Named : "type_of"
 InteractionField ||--|| WppConcept : "source_concept"
@@ -144,6 +199,14 @@ EffectorField ||--|| WppConcept : "source_concept"
 EffectorField ||--}o Named : "type_of"
 ClinicalMeasureField ||--|| WppConcept : "source_concept"
 ClinicalMeasureField ||--}o Named : "type_of"
+BehaviorZField ||--|| WppConcept : "source_concept"
+BehaviorZField ||--}o Named : "type_of"
+BehaviorYField ||--|| WppConcept : "source_concept"
+BehaviorYField ||--}o Named : "type_of"
+BehaviorXField ||--|| WppConcept : "source_concept"
+BehaviorXField ||--}o Named : "type_of"
+BehaviorField ||--|| WppConcept : "source_concept"
+BehaviorField ||--}o Named : "type_of"
 WppMetadata ||--}o Named : "created_by"
 WppMetadata ||--|o Named : "see_also"
 WppMetadata ||--|o Named : "derived_from"

@@ -70,6 +70,7 @@ classes:
       - state
       - time_scale
       - x_target
+      - common_data_element_list
 
   WppConcept:
     abstract: true
@@ -115,6 +116,34 @@ classes:
       - order_number
       - record_field
 
+  BehaviorField:
+    class_uri: wpp:BehaviorField
+    is_a: WppField
+    title: BehaviorField
+    description: >-
+      BehaviorField
+
+  BehaviorXField:
+    class_uri: wpp:BehaviorXField
+    is_a: WppField
+    title: BehaviorXField
+    description: >-
+      BehaviorXField
+
+  BehaviorYField:
+    class_uri: wpp:BehaviorYField
+    is_a: WppField
+    title: BehaviorYField
+    description: >-
+      BehaviorYField
+
+  BehaviorZField:
+    class_uri: wpp:BehaviorZField
+    is_a: WppField
+    title: BehaviorZField
+    description: >-
+      BehaviorZField
+
   EffectorField:
     class_uri: wpp:EffectorField
     is_a: WppField
@@ -145,6 +174,15 @@ classes:
       in the WPP table, located in the "ClinicalMeasure" column, identified
       by its row (record number) and column (order number).
 
+  CommonDataElementField:
+    class_uri: wpp:CommonDataElementField
+    is_a: WppListFieldItem
+    title: Common Data Element Field
+    description: >-
+      A function record represents a specific value
+      in the WPP table, located in the "CDE" column, identified
+      by its row (record number) and column (order number).
+
   FunctionField:
     class_uri: wpp:FunctionField
     is_a: WppListFieldItem
@@ -166,6 +204,13 @@ classes:
       - doi
       - external_id
       - chapter
+
+  SignalField:
+    class_uri: wpp:SignalField
+    is_a: WppField
+    title: SignalField
+    description: >-
+      SignalField
 
   WppMetadata:
     title: WPP Metadata
@@ -225,6 +270,8 @@ slots:
     title: behavior
     description: TODO behavior description
     required: false
+    inlined: true
+    range: BehaviorField
     slot_uri: wpp:behavior_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -233,6 +280,8 @@ slots:
     title: behavior x
     description: TODO behavior_x description
     required: false
+    inlined: true
+    range: BehaviorXField
     slot_uri: wpp:behavior_x_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -241,6 +290,8 @@ slots:
     title: behavior y
     description: TODO behavior_y description
     required: false
+    inlined: true
+    range: BehaviorYField
     slot_uri: wpp:behavior_y_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -249,6 +300,8 @@ slots:
     title: behavior z
     description: TODO behavior_z description
     required: false
+    inlined: true
+    range: BehaviorZField
     slot_uri: wpp:behavior_z_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -261,6 +314,17 @@ slots:
     inlined_as_list: true
     range: ClinicalMeasureField
     slot_uri: wpp:clinical_measure_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  common_data_element_list:
+    title: common data element list
+    description: List of common data element instances related to WPP records.
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: CommonDataElementField
+    slot_uri: wpp:common_data_element_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -393,6 +457,8 @@ slots:
     title: signal
     description: TODO signal description
     required: false
+    inlined: true
+    range: SignalField
     slot_uri: wpp:signal_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty

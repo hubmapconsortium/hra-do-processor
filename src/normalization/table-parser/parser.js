@@ -55,6 +55,7 @@ export class TableParser {
     const headerRow = (this.headerRow = this.findHeaderRow());
     const defaultObjectProp = this.options?.defaultObjectProp ?? 'name';
     const dataPropertyMapping = this.options?.dataPropertyMapping ?? {};
+    const additionalObjectFields = new Set(this.options?.additionalObjectFields ?? []);
 
     const header = this.csvData?.[headerRow] ?? [];
     this.columns = header.map((col, columnNumber) => {
@@ -64,7 +65,10 @@ export class TableParser {
       });
 
       // Check if a column will be used to construct an object
-      const isPartOfObject = header.some((otherCol) => col !== otherCol && otherCol.startsWith(col + '/'));
+      const isPartOfObject =
+        header.some((otherCol) => col !== otherCol && otherCol.startsWith(col + '/')) ||
+        (elements.length == 1 && additionalObjectFields.has(elements[0]));
+
       if (isPartOfObject) {
         elements.push(defaultObjectProp);
       }

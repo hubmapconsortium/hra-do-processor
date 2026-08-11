@@ -4,10 +4,10 @@ import sh from 'shelljs';
 import { writeMetadata } from './metadata.js';
 
 export function migrateSchemas(context) {
-  const { processorHome, doHome, version = 'v1.0' } = context;
+  const { processorHome, doHome, version = 'draft' } = context;
 
   const genDir = resolve(processorHome, 'schemas/generated');
-  for (const doSpecFile of globSync(resolve(genDir, 'linkml/*.yaml'))) {
+  for (const doSpecFile of globSync(resolve(genDir, 'linkml/wpp*.yaml'))) {
     const doType = basename(doSpecFile, '.yaml');
     const rawDir = resolve(doHome, 'schema', doType, version, 'raw');
 
