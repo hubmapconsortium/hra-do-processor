@@ -33,7 +33,7 @@ async function getRawData(context) {
 function normalizeData(context, metadata, data) {
   const { iri, name } = context.selectedDigitalObject;
   const illustrationName = name.replace(/-/g, ' ');
-  const illustrationRepresentation = data[0]['tissue_mapped_to'];
+  const illustrationRepresentation = data[0]['tissue_mapped_to']?.replace('UBERON_', 'UBERON:');
   return [
     {
       id: `${iri}#primary`,
