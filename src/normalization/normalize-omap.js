@@ -81,7 +81,7 @@ function normalizeAntibodyData(context, data) {
         antibody.clonality = row.clonality;
       }
       if (row.clone_id) {
-        antibody.clone_id = row.clone_id + "";
+        antibody.clone_id = row.clone_id + '';
       }
       return antibody;
     })
@@ -104,7 +104,7 @@ function normalizeExperimentData(context, metadata, data) {
   const referenceData = data[0]; // Use the first data as the reference
   const cycle_ids = data.map((row) => getExperimentCycleIri(context, row.omap_id, row.cycle_number));
   return new ObjectBuilder()
-    .append('id', getExperimentIri(context, referenceData.omap_id))
+    .append('id', getExperimentIri(context, referenceData.omap_id?.replace('_', '-')))
     .append('label', `${referenceData.omap_id} experiment`)
     .append('type_of', ['ccf:MultiplexedAntibodyBasedImagingExperiment'])
     .append('study_method', referenceData.method)
@@ -121,23 +121,22 @@ function normalizeExperimentData(context, metadata, data) {
 
 function normalizeExperimentCycleData(context, data) {
   const omapId = data[0].omap_id;
-  const uniqueCycleNumbers = [...new Set(data.map(row => row.cycle_number))];
-  return uniqueCycleNumbers.map(cycleNumber =>
-    createExperimentCycle(context, omapId, cycleNumber, data)
-  );
+  const uniqueCycleNumbers = [...new Set(data.map((row) => row.cycle_number))];
+  return uniqueCycleNumbers.map((cycleNumber) => createExperimentCycle(context, omapId, cycleNumber, data));
 }
 
 function createExperimentCycle(context, omapId, cycleNumber, allData) {
-  const cycleData = allData.filter(row => row.cycle_number === cycleNumber);
+  const cycleData = allData.filter((row) => row.cycle_number === cycleNumber);
   const uniqueAntibodies = removeDuplicateAntibodies(cycleData);
   return new ObjectBuilder()
     .append('id', getExperimentCycleIri(context, omapId, cycleNumber))
     .append('label', `${omapId} experiment, Cycle ${cycleNumber}`)
     .append('type_of', ['ccf:ExperimentCycle'])
     .append('cycle_number', cycleNumber)
-    .append('uses_antibodies', uniqueAntibodies.map(row =>
-      createUsedAntibodyObject(context, omapId, cycleNumber, row, allData)
-    ))
+    .append(
+      'uses_antibodies',
+      uniqueAntibodies.map((row) => createUsedAntibodyObject(context, omapId, cycleNumber, row, allData))
+    )
     .build();
 }
 
@@ -149,25 +148,32 @@ function removeDuplicateAntibodies(cycleData) {
 }
 
 function getRowIndexFromAllData(row, allData) {
-  return allData.findIndex(dataRow =>
-    dataRow.rrid === row.rrid &&
-    dataRow.HGNC_ID === row.HGNC_ID &&
-    dataRow.conjugate === row.conjugate &&
-    dataRow.lot_number === row.lot_number &&
-    dataRow.dilution === row.dilution &&
-    dataRow.concentration_value === row.concentration_value
+  return allData.findIndex(
+    (dataRow) =>
+      dataRow.rrid === row.rrid &&
+      dataRow.HGNC_ID === row.HGNC_ID &&
+      dataRow.conjugate === row.conjugate &&
+      dataRow.lot_number === row.lot_number &&
+      dataRow.dilution === row.dilution &&
+      dataRow.concentration_value === row.concentration_value
   );
 }
 
 function createUsedAntibodyObject(context, omapId, cycleNumber, row, allData) {
   const antibodyObject = new ObjectBuilder()
-    .append('id', getDilutedAntibodyInstanceIri(
-      context, omapId, cycleNumber, row.rrid, row.lot_number,
-      row.dilution, row.concentration_value
-    ))
-    .append('label', getDilutedAntibodyInstanceLabel(
-      row.rrid, row.lot_number, row.dilution, row.concentration_value
-    ))
+    .append(
+      'id',
+      getDilutedAntibodyInstanceIri(
+        context,
+        omapId,
+        cycleNumber,
+        row.rrid,
+        row.lot_number,
+        row.dilution,
+        row.concentration_value
+      )
+    )
+    .append('label', getDilutedAntibodyInstanceLabel(row.rrid, row.lot_number, row.dilution, row.concentration_value))
     .append('type_of', ['ccf:ExperimentUsedAntibody'])
     .append('record_number', getRowIndexFromAllData(row, allData) + 1)
     .append('antibody_id', getAntibodyIri(row.rrid))
@@ -196,8 +202,8 @@ function createAntibodyInstanceObject(context, row) {
 function addDetectionOrBindingInfo(antibodyObject, row, allData) {
   if (row.HGNC_ID) {
     antibodyObject.detects = {
-      protein_id: split(row.HGNC_ID).map(text => normalizeProteinId(text)),
-      rationale: row.rationale
+      protein_id: split(row.HGNC_ID).map((text) => normalizeProteinId(text)),
+      rationale: row.rationale,
     };
   } else {
     const rowIndex = getRowIndexFromAllData(row, allData);
@@ -205,7 +211,7 @@ function addDetectionOrBindingInfo(antibodyObject, row, allData) {
     if (previousRow) {
       antibodyObject.binds_to = {
         antibody_id: getAntibodyIri(previousRow.rrid),
-        rationale: row.rationale
+        rationale: row.rationale,
       };
     }
   }
@@ -213,18 +219,17 @@ function addDetectionOrBindingInfo(antibodyObject, row, allData) {
 
 function normalizeAntibodyPanelData(context, data) {
   const omapId = data[0].omap_id;
-  const antibodyComponents = data
-    .map((row) =>
-      getDilutedAntibodyInstanceIri(
-        context,
-        omapId,
-        row.cycle_number,
-        row.rrid,
-        row.lot_number,
-        row.dilution,
-        row.concentration_value
-      )
-    );
+  const antibodyComponents = data.map((row) =>
+    getDilutedAntibodyInstanceIri(
+      context,
+      omapId,
+      row.cycle_number,
+      row.rrid,
+      row.lot_number,
+      row.dilution,
+      row.concentration_value
+    )
+  );
   return new ObjectBuilder()
     .append('id', getAntibodyPanelIri(context, omapId))
     .append('label', getAntibodyPanelLabel(omapId))
