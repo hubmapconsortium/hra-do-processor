@@ -30,3 +30,5 @@ mouth-sublingual-gland,UBERON:0001832,sublingual gland,#FTUSublingualGland
 mouth-parotid-gland,UBERON:0001831,parotid gland,#FTUParotidGland
 skin-hair-follicle,UBERON:0002073,hair follicle,#FTUHairFollicle
 placenta-chorionic-terminal-villus,UBERON:8600030,chorionic terminal villus,#FTUChorionicTerminalVillus
+pancreas-endocrine-pancreas,UBERON:0000016,endocrine pancreas,#FTUEndocrineGland,Pancreas,UBERON:0001264
+pancreas-exocrine-pancreas,UBERON:0000017,exocrine pancreas,#FTUExocrinePancreas,Pancreas,UBERON:0001264
