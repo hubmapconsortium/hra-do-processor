@@ -174,7 +174,7 @@ function extractDoiData(context, metadata) {
           },
         ],
         fundingReferences:
-          metadata.funders?.map(({ awardNumber, funder }) => ({ funderName: funder, awardNumber })) ?? [],
+          metadata.funders?.map(({ awardUrl, awardNumber, funder }) => ({ funderName: funder, awardNumber, awardUrl })) ?? [],
         url: `https://entity.api.hubmapconsortium.org/redirect/${metadata.hubmapId}`,
         schemaVersion: 'http://datacite.org/schema/kernel-4',
       },

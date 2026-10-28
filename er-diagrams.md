@@ -23,6 +23,7 @@ Record {
     string effector_scale  
     string effect_parameters_quantative  
     string effect_scale  
+    string equation  
     string function_notes  
     string process  
     string process_triple  
@@ -74,6 +75,27 @@ ReferenceField {
     string notes  
     integer record_number  
     integer order_number  
+    string record_field  
+    uriorcurie id  
+    string label  
+}
+ParameterField {
+    string parameter_description  
+    string parameter_value  
+    string units  
+    string conforms_to  
+    string pref_label  
+    string notes  
+    integer record_number  
+    integer order_number  
+    string record_field  
+    uriorcurie id  
+    string label  
+}
+ModelField {
+    string conforms_to  
+    string pref_label  
+    integer record_number  
     string record_field  
     uriorcurie id  
     string label  
@@ -179,6 +201,8 @@ Record ||--|o EffectorField : "effector"
 Record ||--|o EffectorLocationField : "effector_location"
 Record ||--}o FunctionField : "function_list"
 Record ||--}o InteractionField : "interaction"
+Record ||--|o ModelField : "model"
+Record ||--}o ParameterField : "parameter_list"
 Record ||--}o ReferenceField : "reference_list"
 Record ||--|o SignalField : "signal"
 Record ||--}o CommonDataElementField : "common_data_element_list"
@@ -189,6 +213,10 @@ SignalField ||--|| WppConcept : "source_concept"
 SignalField ||--}o Named : "type_of"
 ReferenceField ||--|| WppConcept : "source_concept"
 ReferenceField ||--}o Named : "type_of"
+ParameterField ||--|| WppConcept : "source_concept"
+ParameterField ||--}o Named : "type_of"
+ModelField ||--|| WppConcept : "source_concept"
+ModelField ||--}o Named : "type_of"
 InteractionField ||--|| WppConcept : "source_concept"
 InteractionField ||--}o Named : "type_of"
 FunctionField ||--|| WppConcept : "source_concept"
@@ -269,6 +297,7 @@ Named {
 Grant {
     string funder  
     string awardNumber  
+    string awardUrl  
 }
 Creator {
     string conforms_to  

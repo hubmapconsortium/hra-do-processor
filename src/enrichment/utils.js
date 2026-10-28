@@ -112,7 +112,9 @@ function getConversionCommand(context, inputPath, outputPath, overrideType) {
   const mkSchema = `perl -pe 's|^id:.*|id: ${obj.iri}|' ${schemaPath} > ${outputSchema}`;
 
   // Step 2: Transform the normalized data from YAML to OWL using linkml-data2owl
-  const linkmlCommand = `linkml-data2owl --output-type ttl --schema ${outputSchema} ${inputPath} -o ${outputPath}`;
+  // (wrapped to work around a funowl bug with backslashes in string literals)
+  const data2owl = resolve(processorHome, 'src/enrichment/linkml-data2owl.py');
+  const linkmlCommand = `python ${data2owl} --output-type ttl --schema ${outputSchema} ${inputPath} -o ${outputPath}`;
 
   // Step 3: Remove the temporary schema
   const rmSchema = `rm -f ${outputSchema}`;

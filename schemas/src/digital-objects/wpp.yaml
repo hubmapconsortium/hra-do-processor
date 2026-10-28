@@ -1,8 +1,9 @@
 id: https://purl.wholepersonphysiome.org/schema/wpp
 name: wpp
 prefixes:
-  wpp: https://purl.wholepersonphysiome.org/schema/wpp#
+  wppo: https://purl.wholepersonphysiome.org/schema/wpp#
   ccf: http://purl.org/ccf/
+  dcterms: http://purl.org/dc/terms/
   linkml: https://w3id.org/linkml/
   skos: http://www.w3.org/2004/02/skos/core#
   UBERON: http://purl.obolibrary.org/obo/UBERON_
@@ -19,8 +20,10 @@ prefixes:
   ISBN: http://identifiers.org/isbn/
   LOINC: https://loinc.org/
   VT: http://purl.obolibrary.org/obo/VT_
+  CDE: https://cde.nlm.nih.gov#
+  WPP: https://purl.wholepersonphysiome.org/collection/wpp#
 
-default_prefix: wpp
+default_prefix: wppo
 default_range: string
 
 imports:
@@ -28,6 +31,9 @@ imports:
   - ../shared/metadata-base
 
 classes:
+  Any:
+    class_uri: linkml:Any
+
   WppDataset:
     title: WPP Data
     description: The data section for the "wpp" digital object.
@@ -37,7 +43,7 @@ classes:
 
   Record:
     title: WPP Record
-    class_uri: wpp:Record
+    class_uri: wppo:Record
     description: >-
       An WPP record is a single row in the WPP table that ...
     mixins:
@@ -57,9 +63,12 @@ classes:
       - effector_scale
       - effect_parameters_quantative
       - effect_scale
+      - equation
       - function_list
       - function_notes
       - interaction
+      - model
+      - parameter_list
       - process
       - process_triple
       - quantitative_notes
@@ -117,56 +126,56 @@ classes:
       - record_field
 
   BehaviorField:
-    class_uri: wpp:BehaviorField
+    class_uri: wppo:BehaviorField
     is_a: WppField
     title: BehaviorField
     description: >-
       BehaviorField
 
   BehaviorXField:
-    class_uri: wpp:BehaviorXField
+    class_uri: wppo:BehaviorXField
     is_a: WppField
     title: BehaviorXField
     description: >-
       BehaviorXField
 
   BehaviorYField:
-    class_uri: wpp:BehaviorYField
+    class_uri: wppo:BehaviorYField
     is_a: WppField
     title: BehaviorYField
     description: >-
       BehaviorYField
 
   BehaviorZField:
-    class_uri: wpp:BehaviorZField
+    class_uri: wppo:BehaviorZField
     is_a: WppField
     title: BehaviorZField
     description: >-
       BehaviorZField
 
   EffectorField:
-    class_uri: wpp:EffectorField
+    class_uri: wppo:EffectorField
     is_a: WppField
     title: EffectorField
     description: >-
       EffectorField
 
   EffectorLocationField:
-    class_uri: wpp:EffectorLocationField
+    class_uri: wppo:EffectorLocationField
     is_a: WppField
     title: EffectorLocationField
     description: >-
       EffectorLocationField
 
   InteractionField:
-    class_uri: wpp:InteractionField
+    class_uri: wppo:InteractionField
     is_a: WppListFieldItem
     title: InteractionField
     description: >-
       InteractionField
 
   ClinicalMeasureField:
-    class_uri: wpp:ClinicalMeasureField
+    class_uri: wppo:ClinicalMeasureField
     is_a: WppListFieldItem
     title: Clinical Measure Field
     description: >-
@@ -175,7 +184,7 @@ classes:
       by its row (record number) and column (order number).
 
   CommonDataElementField:
-    class_uri: wpp:CommonDataElementField
+    class_uri: wppo:CommonDataElementField
     is_a: WppListFieldItem
     title: Common Data Element Field
     description: >-
@@ -184,7 +193,7 @@ classes:
       by its row (record number) and column (order number).
 
   FunctionField:
-    class_uri: wpp:FunctionField
+    class_uri: wppo:FunctionField
     is_a: WppListFieldItem
     title: Function Field
     description: >-
@@ -192,8 +201,24 @@ classes:
       in the WPP table, located in the "Function" column, identified
       by its row (record number) and column (order number).
 
+  ModelField:
+    class_uri: wppo:ModelField
+    is_a: WppField
+    title: Model Field
+    description: TODO model field description
+
+  ParameterField:
+    class_uri: wppo:ParameterField
+    is_a: WppListFieldItem
+    title: Parameter Field
+    description: TODO parameter field description
+    slots:
+      - parameter_description
+      - parameter_value
+      - units
+
   ReferenceField:
-    class_uri: wpp:ReferenceField
+    class_uri: wppo:ReferenceField
     is_a: WppListFieldItem
     title: Reference Field
     description: >-
@@ -206,7 +231,7 @@ classes:
       - chapter
 
   SignalField:
-    class_uri: wpp:SignalField
+    class_uri: wppo:SignalField
     is_a: WppField
     title: SignalField
     description: >-
@@ -272,7 +297,7 @@ slots:
     required: false
     inlined: true
     range: BehaviorField
-    slot_uri: wpp:behavior_field
+    slot_uri: wppo:behavior_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -282,7 +307,7 @@ slots:
     required: false
     inlined: true
     range: BehaviorXField
-    slot_uri: wpp:behavior_x_field
+    slot_uri: wppo:behavior_x_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -292,7 +317,7 @@ slots:
     required: false
     inlined: true
     range: BehaviorYField
-    slot_uri: wpp:behavior_y_field
+    slot_uri: wppo:behavior_y_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -302,7 +327,7 @@ slots:
     required: false
     inlined: true
     range: BehaviorZField
-    slot_uri: wpp:behavior_z_field
+    slot_uri: wppo:behavior_z_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -313,7 +338,7 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: ClinicalMeasureField
-    slot_uri: wpp:clinical_measure_field
+    slot_uri: wppo:clinical_measure_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -324,7 +349,7 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: CommonDataElementField
-    slot_uri: wpp:common_data_element_field
+    slot_uri: wppo:common_data_element_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -332,7 +357,7 @@ slots:
     title: effect
     description: TODO effect description
     required: false
-    slot_uri: wpp:effect_field
+    slot_uri: wppo:effect_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -342,7 +367,7 @@ slots:
     required: false
     inlined: true
     range: EffectorField
-    slot_uri: wpp:effector_field
+    slot_uri: wppo:effector_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -352,7 +377,7 @@ slots:
     required: false
     inlined: true
     range: EffectorLocationField
-    slot_uri: wpp:effector_location_field
+    slot_uri: wppo:effector_location_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -360,7 +385,7 @@ slots:
     title: effector scale
     description: TODO effector_scale description
     required: false
-    slot_uri: wpp:effector_scale_field
+    slot_uri: wppo:effector_scale_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -368,7 +393,17 @@ slots:
     title: effect parameters quantative scale
     description: TODO effect_parameters_quantative description
     required: false
-    slot_uri: wpp:effect_parameters_quantative_field
+    slot_uri: wppo:effect_parameters_quantative_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  equation:
+    title: equation
+    description: TODO equation description
+    required: false
+    slot_uri: wppo:equation_field
+    # range: "http://qudt.org/schema/qudt/LatexString"
+    range: string
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -376,7 +411,7 @@ slots:
     title: effect scale
     description: TODO effect_scale description
     required: false
-    slot_uri: wpp:effect_scale_field
+    slot_uri: wppo:effect_scale_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -387,7 +422,7 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: FunctionField
-    slot_uri: wpp:function_field
+    slot_uri: wppo:function_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -395,7 +430,7 @@ slots:
     title: function notes
     description: TODO function_notes description
     required: false
-    slot_uri: wpp:function_notes_field
+    slot_uri: wppo:function_notes_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -406,7 +441,29 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: InteractionField
-    slot_uri: wpp:interaction_field
+    slot_uri: wppo:interaction_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  model:
+    title: model
+    description: TODO model description
+    required: false
+    multivalued: false
+    inlined: true
+    range: ModelField
+    slot_uri: wppo:model_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  parameter_list:
+    title: parameter
+    description: TODO parameter description
+    required: false
+    multivalued: true
+    inlined_as_list: true
+    range: ParameterField
+    slot_uri: wppo:parameter_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -414,7 +471,7 @@ slots:
     title: process
     description: TODO process description
     required: false
-    slot_uri: wpp:process_field
+    slot_uri: wppo:process_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -422,7 +479,7 @@ slots:
     title: process triple
     description: TODO process_triple description
     required: false
-    slot_uri: wpp:process_triple_field
+    slot_uri: wppo:process_triple_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -430,7 +487,7 @@ slots:
     title: quantitative notes
     description: TODO quantitative_notes description
     required: false
-    slot_uri: wpp:quantitative_notes_field
+    slot_uri: wppo:quantitative_notes_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -441,7 +498,7 @@ slots:
     multivalued: true
     inlined_as_list: true
     range: ReferenceField
-    slot_uri: wpp:reference_field
+    slot_uri: wppo:reference_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -449,7 +506,7 @@ slots:
     title: regulation
     description: TODO regulation description
     required: false
-    slot_uri: wpp:regulation_field
+    slot_uri: wppo:regulation_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -459,7 +516,7 @@ slots:
     required: false
     inlined: true
     range: SignalField
-    slot_uri: wpp:signal_field
+    slot_uri: wppo:signal_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -467,7 +524,7 @@ slots:
     title: signal scale
     description: TODO signal_scale description
     required: false
-    slot_uri: wpp:signal_scale_field
+    slot_uri: wppo:signal_scale_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -475,7 +532,7 @@ slots:
     title: state
     description: TODO state description
     required: false
-    slot_uri: wpp:state_field
+    slot_uri: wppo:state_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -483,7 +540,23 @@ slots:
     title: time scale
     description: TODO time_scale description
     required: false
-    slot_uri: wpp:time_scale_field
+    slot_uri: wppo:time_scale_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  parameter_value:
+    title: parameter value
+    description: TODO parameter value description
+    required: false
+    slot_uri: wppo:parameter_value_field
+    range: string
+    # range: Any
+    # any_of:
+    #   - range: string
+    #   - range: integer
+    #   - range: decimal
+    #   - range: float
+    #   - range: double
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -491,7 +564,7 @@ slots:
     title: x_target
     description: TODO x_target description
     required: false
-    slot_uri: wpp:x_target_field
+    slot_uri: wppo:x_target_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 
@@ -502,6 +575,13 @@ slots:
     required: true
     range: uriorcurie
     identifier: true
+  parameter_description:
+    title: parameter description
+    description: Human-readable description of the parameter.
+    required: false
+    slot_uri: dct:description
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
   label:
     title: label
     description: Human-readable label or name for the concept.
@@ -518,7 +598,7 @@ slots:
     title: is provisional?
     description: Flag indicating whether the concept is in provisional status.
     required: false
-    slot_uri: wpp:is_provisional
+    slot_uri: wppo:is_provisional
     range: boolean
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -528,7 +608,7 @@ slots:
       Source concept providing the origin of this record within the
       WPP model.
     required: true
-    slot_uri: wpp:source_concept
+    slot_uri: wppo:source_concept
     range: WppConcept
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -537,7 +617,7 @@ slots:
     description: >-
       A reference to the PURL of the source of the records
     required: true
-    slot_uri: wpp:record_source
+    slot_uri: wppo:record_source
     range: Named
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -545,7 +625,7 @@ slots:
     title: record number
     description: Numerical identifier for individual records.
     required: true
-    slot_uri: wpp:record_number
+    slot_uri: wppo:record_number
     range: integer
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -553,7 +633,7 @@ slots:
     title: record field
     description: Field the object was derived from.
     required: true
-    slot_uri: wpp:record_field
+    slot_uri: wppo:record_field
     range: string
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -561,7 +641,7 @@ slots:
     title: order number
     description: Order position within a defined sequence.
     required: true
-    slot_uri: wpp:order_number
+    slot_uri: wppo:order_number
     range: integer
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -569,7 +649,7 @@ slots:
     title: doi
     description: Digital Object Identifier for the reference record.
     required: false
-    slot_uri: wpp:doi_field
+    slot_uri: wppo:doi_field
     # range: uriorcurie
     range: string
     annotations:
@@ -578,7 +658,7 @@ slots:
     title: external id
     description: External identifier for the reference record.
     required: false
-    slot_uri: wpp:external_id
+    slot_uri: wppo:external_id
     range: string
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
@@ -586,14 +666,24 @@ slots:
     title: notes
     description: >-
       Reference to the notes column in the WPP table
-    slot_uri: wpp:notes_field
+    slot_uri: wppo:notes_field
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
   chapter:
     title: notes
     description: >-
       Reference to the chapter column in the WPP table
-    slot_uri: wpp:chapter_field
+    slot_uri: wppo:chapter_field
+    annotations:
+      owl: AnnotationAssertion, AnnotationProperty
+
+  units:
+    title: units
+    description: TODO units description
+    required: false
+    slot_uri: wppo:units_field
+    # range: uriorcurie
+    range: string
     annotations:
       owl: AnnotationAssertion, AnnotationProperty
 

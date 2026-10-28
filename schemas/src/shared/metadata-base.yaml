@@ -68,6 +68,7 @@ classes:
     slots:
       - funder
       - awardNumber
+      - awardUrl
   Distribution:
     mixins:
       - Named
@@ -289,6 +290,12 @@ slots:
     title: award
     description: An award won by or for this item.
     slot_uri: schema:award
+    annotations:
+      owl: AnnotationProperty, AnnotationAssertion
+  awardUrl:
+    title: award URL
+    description: A webpage description an award won by or for this item.
+    slot_uri: schema:url
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   citation:
