@@ -64,7 +64,9 @@ program
 
 program
   .command('bump-draft')
-  .description('Increments the latest version of the digital object based on the given option, default is --minor')
+  .description(
+    'Increments the latest version of the digital object based on the given option, default is --minor. A digital object with no released versions becomes v1.0.'
+  )
   .argument('<digital-object-path>', 'Path to the digital object relative to DO_HOME')
   .option('--major', 'Increments the latest digital object version by 1', false)
   .option('--minor', 'Increments the latest digital object version by 0.1', false)

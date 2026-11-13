@@ -1,25 +1,35 @@
 import semver from 'semver';
 import sh from 'shelljs';
-import { getLatestDigitalObject } from '../utils/get-latest.js';
+import { getDigitalObjectVersions } from '../utils/get-latest.js';
 import { resolve } from 'path';
 import { existsSync } from 'fs';
 
+/** The version a digital object gets the first time its draft is released */
+const FIRST_VERSION = 'v1.0';
+
 /**
- * Converts the draft into the latest version based on the given option, default is --minor
+ * Converts the draft into the latest version based on the given option, default is --minor.
+ * If the digital object has no released versions yet, the draft becomes v1.0.
  * @param {Object} context
  */
 export function bumpDraft(context) {
   const { selectedDigitalObject: obj, major, patch } = context;
-  let latest = getLatestDigitalObject(context.doHome, obj.type, obj.name, obj.iri)?.version ?? '0';
 
-  const releaseType = major ? 'major' : patch ? 'patch' : 'minor';
-  latest = semver.inc(semver.coerce(latest), releaseType);
+  // Only look at released versions. (getLatestDigitalObject falls back to the draft itself when nothing has been
+  // released, and 'draft' can't be incremented.)
+  const [latestReleased] = getDigitalObjectVersions(context.doHome, obj.type, obj.name);
 
-  //  formating the version
-  const newVersion =
-    semver.patch(latest) == 0
-      ? `v${semver.major(latest)}.${semver.minor(latest)}`
-      : `v${semver.major(latest)}.${semver.minor(latest)}.${semver.patch(latest)}`;
+  let newVersion = FIRST_VERSION;
+  if (latestReleased) {
+    const releaseType = major ? 'major' : patch ? 'patch' : 'minor';
+    const next = semver.inc(semver.coerce(latestReleased), releaseType);
+
+    //  formating the version
+    newVersion =
+      semver.patch(next) == 0
+        ? `v${semver.major(next)}.${semver.minor(next)}`
+        : `v${semver.major(next)}.${semver.minor(next)}.${semver.patch(next)}`;
+  }
 
   const draftPath = resolve(obj.path);
   const newVersionPath = resolve(context.doHome, obj.type, obj.name, newVersion, 'raw');
