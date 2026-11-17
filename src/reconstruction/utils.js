@@ -1,6 +1,7 @@
 import sh from 'shelljs';
 import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
+import { fileURLToPath } from 'url';
 import { throwOnError } from '../utils/sh-exec.js';
 import { info, error } from '../utils/logging.js';
 import { reifyDoTurtle, reifyMetadataTurtle, reifyRedundantTurtle } from '../utils/reify.js';
@@ -89,7 +90,9 @@ export function queryGraph(context) {
 export function executeBlazegraphQuery(journalPath, queryPath, outputPath) {
   const jsonOutputPath = outputPath.replace(/\.csv$/, '.json');
   const blazegraphCommand = `blazegraph-runner select --journal=${journalPath} --outformat=json ${queryPath} ${jsonOutputPath}`;
-  const json2csvCommand = `node src/reconstruction/json2csv.js ${jsonOutputPath} ${outputPath}`;
+  // Resolve the script from this file, so reconstruct works from any working directory
+  const json2csvScript = fileURLToPath(new URL('./json2csv.js', import.meta.url));
+  const json2csvCommand = `node ${json2csvScript} ${jsonOutputPath} ${outputPath}`;
   
   throwOnError(blazegraphCommand, 'Error executing blazegraph query');
   throwOnError(json2csvCommand, 'Error converting JSON to CSV');
