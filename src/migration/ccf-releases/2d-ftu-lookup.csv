@@ -25,9 +25,10 @@ spleen-white-pulp,UBERON:0001959,white pulp of spleen,#FTUWhitePulp_Inset1
 spleen-white-pulp,UBERON:0001959,white pulp of spleen,#FTUWhitePulp_Inset2
 thymus-thymus-lobule,UBERON:0002125,thymus lobule,#FTUThymusLobule_Inset1,Thymus,UBERON:0002370
 thymus-thymus-lobule,UBERON:0002125,thymus lobule,#FTUThymusLobule_Inset2,Thymus,UBERON:0002370
-mouth-submandibular-gland,UBERON:0001736,submandibular gland,#FTUSubmandibularGland
-mouth-sublingual-gland,UBERON:0001832,sublingual gland,#FTUSublingualGland
-mouth-parotid-gland,UBERON:0001831,parotid gland,#FTUParotidGland
+mouth-gingival-attachment,UBERON:8000014,gingival attachment,#FTUGingivalAttachment,Mouth,UBERON:0000165
+mouth-submandibular-gland,UBERON:8000013,submandibular gland,#FTUSubmandibularGland,UBERON:0000165
+mouth-sublingual-gland,UBERON:8000012,sublingual gland,#FTUSublingualGland,UBERON:0000165
+mouth-parotid-gland,UBERON:8000011,parotid gland,#FTUParotidGland,UBERON:0000165
 skin-hair-follicle,UBERON:0002073,hair follicle,#FTUHairFollicle
 placenta-chorionic-terminal-villus,UBERON:8600030,chorionic terminal villus,#FTUChorionicTerminalVillus
 pancreas-endocrine-pancreas,UBERON:0000016,endocrine pancreas,#FTUEndocrineGland,Pancreas,UBERON:0001264
