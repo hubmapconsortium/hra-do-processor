@@ -381,9 +381,13 @@ slots:
       owl: AnnotationProperty, AnnotationAssertion
   sample_organ:
     title: sample organ
-    description: The anatomical structure or organ sampled in the experiment.
+    description: >-
+      The anatomical structures or organs sampled in the experiment. A panel
+      may be used on more than one organ.
     required: true
     range: AnatomicalStructure
+    multivalued: true
+    inlined: false
     annotations:
       owl: AnnotationProperty, AnnotationAssertion
   cycle_number:

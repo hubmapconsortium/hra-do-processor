@@ -120,8 +120,15 @@ function transformRecords(context) {
       transformedRow['rationale'] = row['detects_rationale'] || row['binds_to_rationale'];
       
       // Organ information
-      transformedRow['organ'] = row['sample_organ_label'] || '';
-      transformedRow['organ_uberon'] = row['sample_organ']?.replace('http://purl.obolibrary.org/obo/UBERON_', 'UBERON:') || '';
+      // An experiment can sample several organs; each comes back as 'iri|label', tab-separated
+      const organs = (row['sample_organ_str'] || '')
+        .split('\t')
+        .filter((item) => item)
+        .map((item) => item.split('|'))
+        .map(([iri, label]) => ({ id: iri.replace('http://purl.obolibrary.org/obo/UBERON_', 'UBERON:'), label }))
+        .sort((a, b) => a.id.localeCompare(b.id));
+      transformedRow['organ'] = organs.map((organ) => organ.label).join('; ');
+      transformedRow['organ_uberon'] = organs.map((organ) => organ.id).join('; ');
       
       transformedRows.push(transformedRow);
       

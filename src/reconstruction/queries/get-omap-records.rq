@@ -10,7 +10,7 @@ SELECT DISTINCT
     ?study_method ?tissue_preservation
     (GROUP_CONCAT(DISTINCT ?protocol_doi; separator=", ") AS ?protocol_doi_str)
     (GROUP_CONCAT(DISTINCT ?author_orcid; separator=", ") AS ?author_orcid_str)
-    ?sample_organ ?sample_organ_label
+    (GROUP_CONCAT(DISTINCT CONCAT(STR(?sample_organ), "|", COALESCE(STR(?sample_organ_label), "")); separator="\t") AS ?sample_organ_str)
     ?cycle ?cycle_number ?used_antibody
     ?antibody_manufacturer ?antibody_type
     ?concentration ?dilution ?is_core_panel
@@ -104,5 +104,5 @@ WHERE {
       }
     }
 }
-GROUP BY ?experiment ?study_method ?tissue_preservation ?sample_organ ?sample_organ_label ?cycle ?cycle_number ?used_antibody ?antibody_manufacturer ?antibody_type ?concentration ?dilution ?is_core_panel ?record_number ?registered_antibody ?clone_id ?lot_number ?catalog_number ?host ?isotype ?clonality ?conjugate ?recombinant ?antibody ?detected_protein_id_str ?detected_protein_label_str ?uniprot_id_str ?detects_rationale ?binds_to_rationale
+GROUP BY ?experiment ?study_method ?tissue_preservation ?cycle ?cycle_number ?used_antibody ?antibody_manufacturer ?antibody_type ?concentration ?dilution ?is_core_panel ?record_number ?registered_antibody ?clone_id ?lot_number ?catalog_number ?host ?isotype ?clonality ?conjugate ?recombinant ?antibody ?detected_protein_id_str ?detected_protein_label_str ?uniprot_id_str ?detects_rationale ?binds_to_rationale
 ORDER BY ?record_number ?cycle_number

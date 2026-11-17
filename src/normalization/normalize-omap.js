@@ -115,8 +115,17 @@ function normalizeExperimentData(context, metadata, data) {
     )
     .append('author_orcid', split(referenceData.author_orcids || referenceData.author_orcid))
     .append('has_cycle', [...new Set(cycle_ids)])
-    .append('sample_organ', referenceData.organ_uberon?.replaceAll('_', ':') ?? '')
+    .append('sample_organ', getSampleOrgans(data))
     .build();
+}
+
+/**
+ * The organs sampled in the experiment: every UBERON ID in the organ_uberon column, across all rows, in the order
+ * they first appear. A cell may list several organs, e.g. 'UBERON:0002097; UBERON:0002048'.
+ */
+function getSampleOrgans(data) {
+  const organs = data.flatMap((row) => split(`${row.organ_uberon ?? ''}`) ?? []).map((id) => id.replaceAll('_', ':'));
+  return [...new Set(organs)];
 }
 
 function normalizeExperimentCycleData(context, data) {
